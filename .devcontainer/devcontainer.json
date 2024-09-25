@@ -1,0 +1,30 @@
+{
+  "name": "Hugo",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "GO_VERSION": "1.22.3",
+      "HUGO_VERSION": "0.126.3",
+      "NODE_VERSION": "18"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "files.autoSave": "onFocusChange"
+      },
+      "extensions": [
+        "budparr.language-hugo-vscode",
+        "tamasfe.even-better-toml",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "remoteUser": "node",
+  "postCreateCommand": "npm install && npm run build",
+  "forwardPorts": [1313, 3000]
+}

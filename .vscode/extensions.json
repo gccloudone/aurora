@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "budparr.language-hugo-vscode",
+    "tamasfe.even-better-toml",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "redhat.vscode-yaml"
+  ]
+}
