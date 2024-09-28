@@ -1,0 +1,9 @@
+[hugoVersion]
+extended = true
+min = "0.126.3"
+
+[[imports]]
+path = "github.com/gccloudone/gcds-hugo"
+
+[[imports]]
+path = "github.com/gethugothemes/hugo-modules/pwa"

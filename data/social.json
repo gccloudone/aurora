@@ -1,0 +1,14 @@
+{
+  "links": [
+    {
+      "name": "github",
+      "icon": "fab fa-github",
+      "link": "https://github.com/gccloudone"
+    },
+    {
+      "name": "youtube",
+      "icon": "fab fa-youtube",
+      "link": "https://youtube.com/@GCCloudOne"
+    }
+  ]
+}

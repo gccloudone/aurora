@@ -1,0 +1,18 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Aurora"
+url = "/"
+weight = 1
+identifier = "home"
+
+[[main]]
+name = "Contact us"
+url = "/contact"
+weight = 4
+
+[[main]]
+name = "Get involved"
+url = "/get-involved"
+weight = 4
