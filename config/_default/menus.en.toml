@@ -21,3 +21,8 @@ weight = 4
 name = "Get involved"
 url = "/get-involved"
 weight = 4
+
+[[breadcrumb]]
+name = "GC Cloud One"
+url = "https://gccloudone.ca"
+weight = 1
