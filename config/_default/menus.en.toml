@@ -2,10 +2,15 @@
 
 # main menu
 [[main]]
-name = "Aurora"
+name = "GC Cloud One: Aurora"
 url = "/"
 weight = 1
 identifier = "home"
+
+[[main]]
+name = "Components"
+url = "/components"
+weight = 4
 
 [[main]]
 name = "Contact us"
