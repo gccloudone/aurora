@@ -60,3 +60,22 @@ ul {
   height: 100%;
   content: "";
   background-color: var(--gcds-color-blue-900); }
+
+gcds-fieldset[fieldset-id="field-toc"] {
+  padding-top: 1em; }
+
+#TableOfContents ol {
+  list-style-type: disc;
+  margin: 1em;
+  padding-inline-start: 20px; }
+
+ol {
+  list-style-type: auto;
+  padding-inline-start: 40px; }
+  ol li {
+    margin: 0.5em 0px; }
+
+ul {
+  list-style: disc; }
+  ul li {
+    margin-top: 0.5em; }
