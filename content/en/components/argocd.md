@@ -1,6 +1,8 @@
 ---
 title: "Argo CD"
-description: "Argo CD automates Kubernetes deployments by syncing desired app states from Git to clusters, enabling GitOps workflows."
-image: "/images/cncf/argocd/argocd.svg"
+alias: "GitOps"
+type: "Core"
+description: "Argo CD is a declarative, GitOps-based continuous delivery tool for Kubernetes."
+image: "/images/cncf/argocd.svg"
 sidebar: false
 ---
