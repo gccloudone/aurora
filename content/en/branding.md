@@ -48,12 +48,20 @@ Aurora’s visual identity is deeply connected to the values of the Canadian par
 
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrate">
 <gcds-card
-    card-title="Parliament"
+    card-title="Parliament (Day)"
     title-element="h4"
     href="#"
-    description="These backdrops symbolize the platform's commitment to 24/7 availability, supporting critical government functions with clarity, collaboration, and security. They reflect our role as public servants in guiding and enacting the visions of Parliament, ensuring the resilience and efficiency of government operations while delivering essential public services that align with the needs and values of Canadians."
+    description="This backdrop symbolizes the platform's commitment to 24/7 availability, supporting critical government functions with clarity, collaboration, and security. They reflect our role as public servants in guiding and enacting the visions of Parliament, ensuring the resilience and efficiency of government operations while delivering essential public services that align with the needs and values of Canadians."
     badge="New"
     img-src="/images/aurora/parliament.jpg">
+</gcds-card>
+<gcds-card
+    card-title="Parliament (Aurora)"
+    title-element="h4"
+    href="#"
+    description="This aurora backdrop represents the dynamic and ever-evolving nature of the platform, embodying the continuous adaptation and innovation required to support critical government functions. The image of the aurora illuminating Parliament reflects our dedication as public servants to guide and enact the visions of government while ensuring resilience, collaboration, and security."
+    badge="New"
+    img-src="/images/aurora/parliament-aurora.jpg">
 </gcds-card>
 </gcds-grid>
 
