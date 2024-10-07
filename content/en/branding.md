@@ -17,29 +17,26 @@ The Aurora initiative brings its story to life through three memorable character
     card-title="Maple the beaver"
     title-element="h4"
     href="#"
-    description="As the national animal of Canada, Maple the Beaver symbolizes hard work, diligence, and community building. Maple is a core ambassador of the Aurora platform, representing the infrastructure and foundational aspects of the cloud-native environment, much like how a beaver constructs its lodge. Maple’s role is to guide users through the intricacies of Kubernetes, highlighting the benefits of collaboration and shared responsibility."
-    badge="New"
+    description="Maple the Beaver, Canada’s national animal, embodies hard work and community. As a core ambassador of the Aurora platform, Maple represents the foundational infrastructure, guiding users through Kubernetes and emphasizing collaboration and shared responsibility."
+    badge="Maple"
     img-src="/images/aurora/maple.png">
 </gcds-card>
-
 <gcds-card
     card-title="Tundra the Wolf"
     title-element="h4"
     href="#"
-    description="Represents security, leadership, and defense, key pillars of the Aurora platform. Much like a wolf protects its pack, Tundra embodies the defense-in-depth security model of Aurora, guarding applications with **zero trust principles** and ensuring compliance across all cloud-native systems. Tundra leads users through best practices in security, reinforcing the importance of protecting data and applications."
-    badge="New"
+    description="Tundra, symbolizing security and leadership, represents the defense-in-depth model of the Aurora platform. Like a wolf protecting its pack, Tundra embodies zero trust principles, guiding users through best practices to safeguard data and applications across cloud-native systems."
+    badge="Tundra"
     img-src="/images/aurora/tundra.png">
 </gcds-card>
-
 <gcds-card
     card-title="Nova the Loon"
     title-element="h4"
     href="#"
-    description="Reflects adaptability, vision, and navigation—key traits in a rapidly evolving cloud-native world. Nova is the guiding force behind the networking and connectivity aspects of Aurora, much like Kubernetes' service mesh or eBPF technologies. Nova helps users navigate the complexities of multi-cloud and multi-cluster environments, ensuring seamless connectivity and secure communication between components."
-    badge="New"
+    description="Nova embodies adaptability, vision, and navigation, key traits in the evolving cloud-native landscape. As the guide for Aurora’s networking and connectivity, Nova helps users navigate multi-cloud and multi-cluster complexities, ensuring seamless and secure communication, much like a service mesh or eBPF."
+    badge="Nova"
     img-src="/images/aurora/nova.png">
 </gcds-card>
-
 </gcds-grid>
 
 ## Visual Identity
@@ -51,16 +48,16 @@ Aurora’s visual identity is deeply connected to the values of the Canadian par
     card-title="Parliament (Day)"
     title-element="h4"
     href="#"
-    description="This backdrop symbolizes the platform's commitment to 24/7 availability, supporting critical government functions with clarity, collaboration, and security. They reflect our role as public servants in guiding and enacting the visions of Parliament, ensuring the resilience and efficiency of government operations while delivering essential public services that align with the needs and values of Canadians."
-    badge="New"
+    description="This backdrop reflects the platform’s commitment to 24/7 availability, supporting government operations with clarity, collaboration, and security. It highlights our role in ensuring resilient, efficient services aligned with the needs of Canadians."
+    badge="Day"
     img-src="/images/aurora/parliament.jpg">
 </gcds-card>
 <gcds-card
     card-title="Parliament (Aurora)"
     title-element="h4"
     href="#"
-    description="This aurora backdrop represents the dynamic and ever-evolving nature of the platform, embodying the continuous adaptation and innovation required to support critical government functions. The image of the aurora illuminating Parliament reflects our dedication as public servants to guide and enact the visions of government while ensuring resilience, collaboration, and security."
-    badge="New"
+    description="This aurora-lit backdrop symbolizes the platform’s adaptability and innovation. It represents our dedication to guiding government visions with resilience, collaboration, and security in support of critical services."
+    badge="Aurora"
     img-src="/images/aurora/parliament-aurora.jpg">
 </gcds-card>
 </gcds-grid>
