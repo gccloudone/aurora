@@ -1,0 +1,19 @@
+home: Accueil
+read_more: En savoir plus
+send: Envoyer
+related_posts: Articles connexes
+categories: Catégories
+tags: Étiquettes
+toc: Table des matières
+share: Partager
+
+search_input_placeholder: Aurora
+search_no_results: Aucun résultat pour
+search_initial_message: Tapez quelque chose pour rechercher...
+search_navigate: pour naviguer
+search_select: pour sélectionner
+search_close: pour fermer
+
+components_heading: Composant vedette
+components_no_description: Aucune description disponible.
+components_read_more: En savoir plus sur

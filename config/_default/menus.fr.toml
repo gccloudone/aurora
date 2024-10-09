@@ -1,0 +1,46 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "GC Cloud One: Aurora"
+url = "/"
+weight = 1
+identifier = "acceuil"
+
+[[main]]
+name = "Plateforme"
+url = "/plateforme"
+weight = 2
+
+  [[main]]
+  name = "Proposition"
+  parent = "Plateforme"
+  url = "/proposition"
+  weight = 1
+
+  [[main]]
+  name = "Image de marque"
+  parent = "Plateforme"
+  url = "/image-de-marque"
+  weight = 2
+
+  [[main]]
+  name = "Composants"
+  parent = "Plateforme"
+  url = "/composants"
+  weight = 3
+
+[[main]]
+name = "Contactez-nous"
+url = "/contactez-nous"
+weight = 4
+
+[[main]]
+name = "Participez"
+url = "/participez"
+weight = 5
+
+[[breadcrumb]]
+name = "GC Cloud One"
+url = "https://gccloudone.ca"
+weight = 1
