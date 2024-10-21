@@ -5,7 +5,6 @@ draft: false
 sidebar: false
 ---
 
-
 The branding for the **Aurora** initiative draws inspiration from the whimsical and approachable style seen in the **Children’s Illustrated Guide to Kubernetes**, blending storytelling with cloud-native technology to make the platform more accessible and relatable. Our branding revolves around three unique characters and stunning vector backdrops, designed to represent the values of collaboration, innovation, and trust within the Government of Canada's cloud ecosystem.
 
 ## Characters
