@@ -11,7 +11,7 @@ The branding for the **Aurora** initiative draws inspiration from the whimsical 
 
 The Aurora initiative brings its story to life through three memorable characters such as Maple the Beaver, Nova the Loon, and Tundra the Wolf. Each character embodies the core values of the platform: collaboration, adaptability, and security.
 
-<gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrate">
+<gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr 1fr" gap="400" class="hydrate">
 <gcds-card
     card-title="Maple the beaver"
     title-element="h4"
