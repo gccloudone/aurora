@@ -15,4 +15,4 @@ With a GitHub account, use our <gcds-link external href="https://github.com/gccl
 
 Use this form to share your feedback, express interest in using Aurora, ask questions, or sign up for our mailing list.
 
-* [GC Forms](https://forms-formulaires.alpha.canada.ca/en/id/cm2jbp567008td1eckzthh4ai)
+* <gcds-link external href="https://forms-formulaires.alpha.canada.ca/en/id/cm2jbp567008td1eckzthh4ai">GC Forms</gcds-link>
