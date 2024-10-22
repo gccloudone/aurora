@@ -12,7 +12,7 @@ At **GC Cloud One: Aurora**, we’re building a collaborative community around c
 We regularly host meetups focused on sharing best practices, discussing new features, and addressing real-world challenges. These meetups are a great way to meet fellow developers who are actively building and deploying on Aurora’s platform.
 
 - **What to Expect**: Lightning talks, hands-on workshops, and Q&A sessions on topics like Kubernetes networking, security (e.g., zero trust), and multi-cloud deployments.
-- **How to Join**: Follow our gcxchange <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412">Aurora community</gcds-link> to find upcoming meetups and register to attend.
+- **How to Join**: Follow our gcxchange <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412">Aurora community</gcds-link> (GC Network) to find upcoming meetups and register to attend.
 - **Virtual & In-Person**: We offer both virtual and in-person meetups to make it accessible to participants across various regions.
 
 ## Attend hackathons
@@ -22,7 +22,7 @@ Looking for hands-on experience? Participate in our hackathons, where you’ll w
 - **Focus Areas**: Automation, scaling workloads, security integration, and improving developer experience on Aurora.
 - **Who Should Attend**: Developers, DevOps engineers, and security professionals interested in learning by doing.
 
-Check out our upcoming events <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412/_layouts/15/Events.aspx">upcoming events</gcds-link>.
+Check out our upcoming events <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412/_layouts/15/Events.aspx">upcoming events</gcds-link> (GC Network).
 
 ## Contribute to open source projects
 
