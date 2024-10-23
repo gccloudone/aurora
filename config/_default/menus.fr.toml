@@ -19,26 +19,32 @@ weight = 2
   weight = 1
 
   [[main]]
+  name = "Architecture"
+  parent = "Plateforme"
+  url = "/architecture"
+  weight = 2
+
+  [[main]]
   name = "Image de marque"
   parent = "Plateforme"
   url = "/image-de-marque"
-  weight = 2
+  weight = 3
 
   [[main]]
   name = "Composants"
   parent = "Plateforme"
   url = "/composants"
-  weight = 3
+  weight = 4
 
 [[main]]
 name = "Contactez-nous"
 url = "/contactez-nous"
-weight = 4
+weight = 5
 
 [[main]]
 name = "Participez"
 url = "/participez"
-weight = 5
+weight = 6
 
 [[breadcrumb]]
 name = "GC Cloud One"
