@@ -1,0 +1,23 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Service infonuagique unifié du GC: Aurore"
+url = "/fr"
+weight = 1
+identifier = "acceuil"
+
+[[main]]
+name = "Contactez-nous"
+url = "/fr/contact"
+weight = 5
+
+[[main]]
+name = "Participez"
+url = "/fr/impliquez-vous"
+weight = 6
+
+[[breadcrumb]]
+name = "Service infonuagique unifié du GC"
+url = "https://gccloudone.ca"
+weight = 1
