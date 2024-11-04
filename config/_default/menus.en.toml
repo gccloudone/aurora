@@ -8,14 +8,25 @@ weight = 1
 identifier = "home"
 
 [[main]]
+name = "Platform"
+url = "/platform"
+weight = 5
+
+  [[main]]
+  name = "Proposal"
+  parent = "Platform"
+  url = "/proposal"
+  weight = 1
+
+[[main]]
 name = "Contact us"
 url = "/contact"
-weight = 5
+weight = 10
 
 [[main]]
 name = "Get involved"
 url = "/get-involved"
-weight = 6
+weight = 15
 
 [[breadcrumb]]
 name = "GC Cloud One"

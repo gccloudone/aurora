@@ -8,14 +8,25 @@ weight = 1
 identifier = "acceuil"
 
 [[main]]
+name = "Plate-forme"
+url = "/platform"
+weight = 5
+
+  [[main]]
+  name = "Proposition"
+  parent = "Plate-forme"
+  url = "/fr/proposition"
+  weight = 1
+
+[[main]]
 name = "Contactez-nous"
 url = "/fr/contact"
-weight = 5
+weight = 10
 
 [[main]]
 name = "Participez"
 url = "/fr/impliquez-vous"
-weight = 6
+weight = 15
 
 [[breadcrumb]]
 name = "Service infonuagique unifié du GC"
