@@ -41,7 +41,7 @@ draft: false
     <li class="list-none">
       <h3 class="mb-400">Illustrated guide</h3>
       <p class="mb-400">We're hoping to share the upcoming Children's Illustrated Guide to Aurora, a fun and engaging way to explore complex cloud technologies before the end of the year.</p>
-      <p class="mb-400">Featuring friendly characters like Maple the beaver, Aurora the loon, and Tundra the wolf that will aid you in your cloud native journey.</p>
+      <p class="mb-400">The guide will introduce friendly figures that will support readers on their cloud-native journey, making the exploration of complex cloud technologies both enjoyable and accessible.</p>
       <p>Coming soon</p>
     </li>
   </gcds-grid>

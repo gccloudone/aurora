@@ -7,13 +7,13 @@ sidebar: false
 
 ## Comment s'impliquer dans notre communauté
 
-Rejoignez notre <gcds-link href="{{< relref "/impliquez-vous" >}}">communauté grandissante</gcds-link> pour collaborer avec des professionnels partageant les mêmes idées et contribuer au développement de la plateforme.
+Rejoignez notre <gcds-link href="{{< relref "/impliquez-vous" >}}">communauté grandissante</gcds-link> pour collaborer avec des professionnels partageant les mêmes idées et contribuer au développement de la plate-forme.
 
 <hr class="my-500" />
 
-## Donner votre avis ou demander du soutien
+## Donnez votre avis ou demandez du soutien
 
-Utilisez ce formulaire pour partager vos commentaires, exprimer votre intérêt pour utiliser Aurora, et/ou poser des questions :
+Utilisez ce formulaire pour partager vos commentaires, exprimer votre intérêt pour utiliser Aurora ou poser des questions :
 
 * <gcds-link external href="https://forms-formulaires.alpha.canada.ca/en/id/cm2jbp567008td1eckzthh4ai">Formulaires GC</gcds-link>
 
