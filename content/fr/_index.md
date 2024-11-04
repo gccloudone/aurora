@@ -5,7 +5,7 @@ date: 2024-10-21
 draft: false
 ---
 
-## Commencez à utiliser la plateforme
+## Commencez à utiliser la plate-forme
 
 <article class="py-500 bg-primary text-light bg-full-width">
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" gap="450" class="hydrated">

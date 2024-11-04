@@ -18,6 +18,12 @@ weight = 5
   url = "/fr/proposition"
   weight = 1
 
+  [[main]]
+  name = "Composants"
+  parent = "Plate-forme"
+  url = "/fr/components"
+  weight = 5
+
 [[main]]
 name = "Contactez-nous"
 url = "/fr/contact"
