@@ -2,7 +2,7 @@
 title: "Argo CD"
 alias: "GitOps"
 type: "Core"
-description: "Argo CD est un outil de livraison continue basé sur GitOps et déclaratif pour Kubernetes."
+description: "Argo CD is a declarative, GitOps-based continuous delivery tool for Kubernetes."
 image: "/images/cncf/argocd.svg"
 sidebar: false
 ---
