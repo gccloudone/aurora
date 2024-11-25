@@ -25,13 +25,25 @@ weight = 5
   weight = 5
 
 [[main]]
-name = "Contact us"
-url = "/contact"
+name = "Community"
+url = "/community"
 weight = 10
 
+  [[main]]
+  name = "Get involved"
+  parent = "Community"
+  url = "/get-involved"
+  weight = 1
+
+  [[main]]
+  name = "Rules of Engagement"
+  parent = "Community"
+  url = "/rules-of-engagement"
+  weight = 1
+
 [[main]]
-name = "Get involved"
-url = "/get-involved"
+name = "Contact us"
+url = "/contact"
 weight = 15
 
 [[breadcrumb]]

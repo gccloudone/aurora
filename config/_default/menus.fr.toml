@@ -9,7 +9,7 @@ identifier = "acceuil"
 
 [[main]]
 name = "Plate-forme"
-url = "/platform"
+url = "/fr/platform"
 weight = 5
 
   [[main]]
@@ -25,13 +25,25 @@ weight = 5
   weight = 5
 
 [[main]]
-name = "Contactez-nous"
-url = "/fr/contact"
+name = "Communauté"
+url = "/fr/communaute"
 weight = 10
 
+  [[main]]
+  name = "Participez"
+  url = "/fr/impliquez-vous"
+  parent = "Communauté"
+  weight = 1
+
+  [[main]]
+  name = "Règles d'engagement"
+  parent = "Communauté"
+  url = "/fr/regles-dengagement"
+  weight = 1
+
 [[main]]
-name = "Participez"
-url = "/fr/impliquez-vous"
+name = "Contactez-nous"
+url = "/fr/contact"
 weight = 15
 
 [[breadcrumb]]
