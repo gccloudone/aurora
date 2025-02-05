@@ -7,6 +7,10 @@ showToc: true
 translationKey: "vision"
 ---
 
+### Vision
+
+Aurora aims to unify the best of both worlds open-source and proprietary Kubernetes environments, offering a standardized, scalable, and secure hosting solution.
+
 ## Overview
 
 One of the goals of the Aurora team is to design and build a cloud agnostic platform that supports teams looking to take advantage of "cloud-first" designs.
@@ -32,10 +36,6 @@ The product vision board consists of five sections.
 1. **Needs:** the provided benefit of using the product
 1. **Product:** key features of the product
 1. **Business Goals:** benefits to the organisation
-
-### Vision
-
-Aurora unifies the best of both worlds open-source and proprietary Kubernetes environments, offering a standardized, scalable, and secure hosting solution.
 
 ### Goals
 
