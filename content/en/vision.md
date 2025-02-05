@@ -7,7 +7,7 @@ showToc: true
 translationKey: "vision"
 ---
 
-### Vision
+## Vision
 
 Aurora aims to unify the best of both worlds open-source and proprietary Kubernetes environments, offering a standardized, scalable, and secure hosting solution.
 
