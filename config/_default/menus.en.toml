@@ -19,6 +19,12 @@ weight = 5
   weight = 1
 
   [[main]]
+  name = "Vision"
+  parent = "Platform"
+  url = "/vision"
+  weight = 3
+
+  [[main]]
   name = "Components"
   parent = "Platform"
   url = "/components"
