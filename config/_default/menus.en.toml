@@ -24,6 +24,7 @@ weight = 5
   url = "/vision"
   weight = 3
 
+  [[main]]
   name = "Architectural Plan"
   parent = "Platform"
   url = "/architecture"
