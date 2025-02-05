@@ -43,14 +43,14 @@ By 2028, Aurora will be the cornerstone of application hosting for Canada’s fe
 
 ### Target Group
 
-"Solution builders" is the umbrella term that encompasses both traditional Information Technology (IT) users, such as application developers as well as non-traditional IT users, such as data scientists and data analysts. The term "solution" is used instead "app" or "system" to better reflect the range of solutions that could be available on the CNP. For example, this can include large-scale solutions for corporate initiatives as well as smaller solutions that may be standalone and serve very specific purposes.
+"Solution builders" is the umbrella term that encompasses both traditional Information Technology (IT) users, such as application developers as well as non-traditional IT users, such as data scientists and data analysts. The term "solution" is used instead "app" or "system" to better reflect the range of solutions that could be available on Aurora. For example, this can include large-scale solutions for corporate initiatives as well as smaller solutions that may be standalone and serve very specific purposes.
 
 ### Needs
 
 There are five key benefits of using Aurora:
 
 1. **Self-service solutions**
-Enable solution builders to have more autonomy over their solutions and enforce the self-serve model.
+Enable solution builders to have more autonomy over their solutions and enforce the self-serve model with appropriate guardrails.
 1. **Consistent infrastructure configuration**
 Reduce ambiguity and confusion with infrastructure configuration across environments.
 1. **Reduce manual intervention**
@@ -84,7 +84,7 @@ Through the promotion of Infrastructure as Code (IaC) infrastructure can be prov
 The benefits of the Aurura Platform to Shared Services Canada include:
 
 1. **IT spending targeted to needs**
-Rather than pay for infrastructure that may sit dormant, it can be targeted when needed
+Rather than pay for infrastructure that may sit dormant, it can be targeted when needed.
 
 1. **Increased visibility into IT consumption costs**
 Available tooling that provides more insight into a solution's consumpton costs including how efficient a solution is utilizing its resources.
