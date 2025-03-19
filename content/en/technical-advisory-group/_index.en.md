@@ -11,7 +11,7 @@ date: 2025-01-01
 
 ## 1. Overview and Mandate
 
-The **Aurora Technical Advisory Group (TAG)** is an **advisory body** that provides expert guidance and recommendations on the Aurora project’s architecture, standards, security, and best practices. By convening architects, technical leads, and relevant stakeholders within Shared Services Canada (SSC) and broader Government of Canada (GoC) contexts, the Aurora TAG:
+The **Aurora Technical Advisory Group (TAG)** is an **advisory body** that provides expert guidance and recommendations on the Aurora product’s architecture, standards, security, and best practices. By convening architects, technical leads, and relevant stakeholders within Shared Services Canada (SSC) and broader Government of Canada (GoC) contexts, the Aurora TAG:
 
 - Evaluates **technical proposals** and **enhancement requests**, ensuring alignment with GoC policies and SSC enterprise standards.
 - Recommends **best practices** and **compliance** approaches for security, architecture, and operational workflows.
@@ -53,9 +53,9 @@ Although the TAG’s role is advisory, its recommendations carry significant inf
     - The TAG is **sponsored by a Director** (EX level or Assistant Director) who oversees Aurora’s broader strategic direction.
     - The sponsor reviews escalations, assists with resource constraints, and can override or confirm TAG recommendations in exceptional circumstances.
 2. **Advisory Nature**
-    - The Aurora TAG **does not implement** solutions directly; rather, it **advises** on technical directions. Implementation falls to the appropriate project teams or operational groups.
+    - The Aurora TAG **does not implement** solutions directly; rather, it **advises** on technical directions. Implementation falls to the appropriate product teams or operational groups.
 3. **Decision Influence**
-    - TAG recommendations typically guide project decisions. Where necessary, decisions are ratified by the sponsor, the Aurora Director, or an SSC/GoC governance body (e.g., an Architecture Review Board).
+    - TAG recommendations typically guide product decisions. Where necessary, decisions are ratified by the sponsor, the Aurora Director, or an SSC/GoC governance body (e.g., an Architecture Review Board).
     - If the TAG is unable to reach consensus or a **veto** is invoked, the matter is escalated to the **Director** (or designated sponsor) for resolution.
 
 ---
@@ -67,11 +67,11 @@ Although the TAG’s role is advisory, its recommendations carry significant inf
 - **Core Voting Members**:
     - Typically **IT-04** (Senior Architects, Lead Engineers) and/or **IT-05** (Principal Architect, Chief Engineer).
     - Additional specialized members can include **IT-03** (Technical Advisors) for domain expertise (e.g., Security, Cloud).
-    - Membership size: ~8–12 people to ensure diverse perspectives but maintain efficient discussions.
+    - Membership size: ~8–12 people to ensure diverse perspectives but maintain efficient discussions for product alignment.
 - **Observers / Guests**:
     - Non-voting participants who attend specific meetings to share subject-matter input or learn about Aurora’s technical direction.
     - May include policy advisors, security analysts, or external consultants.
-    - Observers can speak, but **only core members** count for consensus or formal voting.
+    - Observers are **welcome to participate in discussions**, but only core members contribute to consensus or formal voting.
 
 ### 4.2 Responsibilities by Role
 
@@ -108,7 +108,7 @@ Although the TAG’s role is advisory, its recommendations carry significant inf
 ## 5. Meetings and Operations
 
 1. **Frequency**
-    - The TAG typically meets **bi-weekly** or **monthly**, depending on Aurora’s phase and urgency of open items.
+    - The TAG typically meets **bi-weekly** or **monthly**, depending on Aurora’s phase and urgency of open product items.
     - Ad-hoc meetings may be convened if urgent security or architecture issues arise.
 2. **Agenda**
     - The Chair sends out an agenda at least **3 business days** before each meeting, listing major discussion topics (e.g., new AEPs, unresolved action items, critical updates).
@@ -195,7 +195,7 @@ Although the TAG’s role is advisory, its recommendations carry significant inf
     - Core members are expected to attend at least 75% of scheduled meetings each quarter.
     - Missing multiple consecutive meetings without valid reason can lead to re-evaluation of membership status.
 3. **Review of Membership**
-    - Annually (or at major project milestones), the sponsor and Chair review the membership roster to ensure the right mix of skill sets and each member’s continued engagement.
+    - Annually (or at major product milestones), the sponsor and Chair review the membership roster to ensure the right mix of skill sets and each member’s continued engagement.
     - Additional members or specialized observers can be added if new competencies are required (e.g., advanced data analytics, enterprise security).
 4. **Removal of Members**
     - By sponsor discretion or majority TAG consensus, a member not fulfilling responsibilities or violating code of conduct can be removed.
@@ -321,7 +321,7 @@ These resources include industry-leading open-source governance models, Governme
 
 ---
 
-## Additional Industry amd Community References:
+## Additional Industry and Community References:
 
 - **AWS Cloud Architecture Best Practices:**
 

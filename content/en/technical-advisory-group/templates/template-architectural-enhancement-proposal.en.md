@@ -1,6 +1,6 @@
 ---
-title: "Architectural Enhancement Proposal (AEP) "
-linkTitle: "Architectural Enhancement Proposal (AEP) "
+title: "Architectural Enhancement Proposal (AEP)"
+linkTitle: "Architectural Enhancement Proposal (AEP)"
 weight: 25
 type: "sigs"
 draft: false
@@ -29,11 +29,11 @@ The AEP model draws inspiration from industry best practices, including the **Ku
 ### 3. Status
 
 - Track the **current state** of the proposal:
-    - **Draft** – Initial version, open for discussion.
-    - **Under Review** – Actively being evaluated by TAG.
-    - **Approved** – Accepted for implementation.
-    - **Rejected** – Decision made not to proceed (with documented reasons).
-    - **Deferred** – Postponed for later review due to dependencies or other priorities.
+  - **Draft** – Initial version, open for discussion.
+  - **Under Review** – Actively being evaluated by TAG.
+  - **Approved** – Accepted for implementation.
+  - **Rejected** – Decision made not to proceed (with documented reasons).
+  - **Deferred** – Postponed for later review due to dependencies or other priorities.
 
 ### 4. Summary
 
@@ -46,7 +46,7 @@ The AEP model draws inspiration from industry best practices, including the **Ku
 
 - Clearly **define the problem or opportunity** driving this proposal.
 - Provide **context on the current state** and any limitations that necessitate the change.
-- Address **external factors** such as:
+- Consider **external factors** such as:
   - **Compliance with Government of Canada (GoC) cybersecurity policies**
   - **Performance bottlenecks**
   - **Operational inefficiencies**
@@ -75,10 +75,10 @@ The AEP model draws inspiration from industry best practices, including the **Ku
 
 ### 📌 Implications and Considerations
 
-- **Security**: Will this introduce new risks or enhance security posture?
-- **Compliance**: Does it align with **GoC policies** and regulatory requirements?
-- **Operational Impact**: Will this require new skills, training, or additional maintenance effort?
-- **Cost and Resource Estimates**: If applicable, provide an estimate of the financial or personnel impact.
+- **Security:** Will this introduce new risks or enhance security posture?
+- **Compliance:** Does this align with **GoC cybersecurity and regulatory requirements**?
+- **Operational Impact:** Will this require new skills, training, or additional maintenance effort?
+- **Cost and Resource Estimates:** If applicable, provide an estimate of the financial or personnel impact.
 
 ### 📌 Impact on Stakeholders
 
@@ -107,16 +107,16 @@ The AEP model draws inspiration from industry best practices, including the **Ku
 
 - This section logs **all TAG discussions** related to the proposal.
 - Capture:
-    - Key points raised
-    - Concerns or objections
-    - Requests for additional information
-    - Changes made in response to feedback
+  - Key points raised
+  - Concerns or objections
+  - Requests for additional information
+  - Changes made in response to feedback
 - This serves as **change history** to track how the proposal evolved.
 
 ## 8. Decision (Outcome)
 
 - Once the TAG reaches a decision, this section is **formally updated** with the outcome:
-  - ✅ **Approved** – Decision date, and vote tally (if applicable).
+  - ✅ **Approved** – Decision date and vote tally (if applicable).
   - ❌ **Rejected** – Documented reasons for non-approval.
   - ⏳ **Deferred** – Explanation for postponement.
 - Approved AEPs should be **referenced in official meeting minutes** and logged in the **Record of Architectural Decision (RoAD)**.
@@ -135,5 +135,5 @@ Options for managing AEPs include:
 By maintaining a **centralized repository**, the TAG ensures:
 
 - **Historical traceability** of architectural decisions.
-- **Documentation of rejected proposals**, providing insight into past considerations.
+- **Documenting rejected proposals** to provide insight into past considerations.
 - **A consistent and structured approach** for future architecture enhancements.
