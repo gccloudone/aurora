@@ -133,7 +133,7 @@ Some TAG meetings may include **non-voting observers or advisors**, such as:
 - **Policy authorities (e.g., SSC compliance leads, security officers)**
 - **External consultants (if engaged on specific projects)**
 
-##### Rules for Observers
+#### Rules for Observers
 
 - **May contribute to discussions by invitation** but **do not participate in votes**.
 - **Attend specific meetings as needed**, based on the agenda.
