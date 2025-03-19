@@ -45,7 +45,7 @@ In Aurora’s context, this role could be held by an **Assistant Director, Direc
 
 The **TAG Chair is the primary leader** and ensures that the group remains **focused, organized, and aligned with its mandate**. This role requires **deep technical expertise, leadership skills, and governance awareness**.
 
-### Key Responsibilities:
+#### Key Responsibilities
 
 - **Facilitates and convenes TAG meetings** – Schedules meetings, sets agendas, and ensures effective discussions.
 - **Chairs discussions** – Keeps conversations **on track**, ensures all voices are heard, and summarizes decisions.
@@ -54,7 +54,7 @@ The **TAG Chair is the primary leader** and ensures that the group remains **foc
 - **Follows up on action items** – Tracks progress and ensures **commitments are met** between meetings.
 - **Represents the TAG externally** – Provides updates to **higher governance forums, stakeholders, and sponsors**.
 
-### Chair Term and Rotation Policy (If Applicable)
+#### Chair Term and Rotation Policy (If Applicable)
 
 - The Chair **may rotate every 6-12 months**, or
 - The role **may remain fixed**, with a **deputy (Co-Chair) as backup**.
@@ -68,7 +68,7 @@ The **TAG Chair is the primary leader** and ensures that the group remains **foc
 
 The **Co-Chair serves as a backup leader** and supports the Chair in running the TAG. This ensures continuity **if the Chair is unavailable** and provides an additional point of leadership within the group.
 
-### Key Responsibilities:
+#### Key Responsibilities
 
 - **Steps in for the Chair when needed** – Chairs meetings if the Chair is absent.
 - **Supports meeting facilitation** – Manages timekeeping, ensures discussions remain productive.
@@ -92,7 +92,7 @@ TAG members are **technical experts who actively contribute to architecture disc
 
 While the **IT-03 / IT-04 distinction** is illustrative of general role expectations, in practice, individuals may take on higher responsibilities based on expertise and project needs.
 
-### Key Responsibilities:
+#### Key Responsibilities
 
 - **Attend meetings regularly** and contribute to discussions.
 - **Provide technical expertise** – Share insights and best practices related to **cloud, security, infrastructure, and application architecture**.
@@ -101,7 +101,7 @@ While the **IT-03 / IT-04 distinction** is illustrative of general role expectat
 - **Prepare for meetings** – Review agenda items and **relevant documents** beforehand.
 - **Champion proposals** – Members may **lead** drafting an **AEP (Architectural Enhancement Proposal)** in their area of expertise.
 
-### Active Participation and Continuity
+#### Active Participation and Continuity
 
 - Members should be **engaged and responsive** – CNCF TAGs emphasize that inactive members should **step back** or be **temporarily replaced**.
 - If a member **takes extended leave or changes roles**, they should notify the Chair and **identify a delegate if needed**.
@@ -114,7 +114,7 @@ While the **IT-03 / IT-04 distinction** is illustrative of general role expectat
 
 If Aurora TAG has administrative support, this role helps with **meeting logistics and documentation**.
 
-### Key Responsibilities:
+#### Key Responsibilities
 
 - **Schedules meetings** – On behalf of the Chair.
 - **Manages email lists and communication channels**.
@@ -133,7 +133,7 @@ Some TAG meetings may include **non-voting observers or advisors**, such as:
 - **Policy authorities (e.g., SSC compliance leads, security officers)**
 - **External consultants (if engaged on specific projects)**
 
-### Rules for Observers:
+##### Rules for Observers
 
 - **May contribute to discussions by invitation** but **do not participate in votes**.
 - **Attend specific meetings as needed**, based on the agenda.
