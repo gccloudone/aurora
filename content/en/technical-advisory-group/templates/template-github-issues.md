@@ -84,30 +84,28 @@ By integrating **TAG actions into existing workflows**, they remain **visible be
 
 ## 6. Recommended GitHub Issue Template
 
-```sh
-## Title:
+### Title
 
 - **“Aurora TAG Meeting – YYYY-MM-DD”**
 
-## Description:
+### Description
 
-## Overview
+### Overview
 
 - Short introduction or goal of the meeting.
 
-## Agenda
+### Agenda
 
 - Copy the agenda bullet points (from the meeting template).
 
-## Next Meeting Agenda Items
+### Next Meeting Agenda Items
 
 - Placeholder for items earmarked for discussion in the next session.
 
-## Action Items and Records of Architectural Decisions (RoADs)
+### Action Items and Records of Architectural Decisions (RoADs)
 
 - List action items with assigned owners and due dates.
 
-## Links
+### Links
 
 - OneNote, SharePoint, past meeting notes, or other references.
-```

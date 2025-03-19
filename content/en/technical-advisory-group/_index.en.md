@@ -232,7 +232,7 @@ Although the TAG’s role is advisory, its recommendations carry significant inf
 
 ---
 
-## Signatures
+## 13. Signatures
 
 | **Role**               | **Name and Classification** | **Signature** | **Date** |
 |------------------------|-----------------------------|---------------|----------|
@@ -241,19 +241,19 @@ Although the TAG’s role is advisory, its recommendations carry significant inf
 
 ---
 
-## Revision History
+## 14. Revision History
 
 | **Version** | **Date**   | **Summary of Changes**                 | **Approved By**        |
 |-------------|------------|----------------------------------------|------------------------|
 | 1.0         | 2025-04-15 | Initial issuance of Aurora TAG Charter | Director and TAG Chair |
 
-## References
+## 15. References
 
 The following authoritative references have been used to inform the structure, governance, and best practices of the **Aurora Technical Advisory Group (TAG)**.
 
 These resources include industry-leading open-source governance models, Government of Canada policies, and technical frameworks that align with Aurora’s mission.
 
-## TAG Best Practices and Charters (CNCF / Industry)
+### TAG Best Practices and Charters (CNCF / Industry)
 
 - **CNCF Technical Advisory Group (TAG) – Governance and Charter:**
 
@@ -285,7 +285,7 @@ These resources include industry-leading open-source governance models, Governme
 
 ---
 
-## Government of Canada – Treasury Board and SSC
+### Government of Canada – Treasury Board and SSC
 
 - **Treasury Board Digital Standards and Governance:**
 
@@ -309,7 +309,7 @@ These resources include industry-leading open-source governance models, Governme
 
 ---
 
-## BC Government – Digital Standards and Guidelines
+### BC Government – Digital Standards and Guidelines
 
 - **BC Government Digital Principles and Standards (ideal for government-aligned governance):**
 
@@ -321,7 +321,7 @@ These resources include industry-leading open-source governance models, Governme
 
 ---
 
-## Additional Industry and Community References:
+### Additional Industry and Community References:
 
 - **AWS Cloud Architecture Best Practices:**
 
