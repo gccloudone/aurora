@@ -59,8 +59,8 @@ Meeting minutes should follow a structured format to capture key discussions, de
 Maintaining an accurate attendance record is important for accountability and tracking expertise present.
 
 - **Present:**
-    - [x]  John Doe – Senior Architect
-    - [ ]  Jane Smith – Product Lead
+  - [x]  John Doe – Senior Architect
+  - [ ]  Jane Smith – Product Lead
 - **Regrets:** (List names and roles of those unable to attend)
 
 ### 2. Agenda Items and Discussion Summary
@@ -89,10 +89,10 @@ If formal voting occurs, record the outcome, e.g.:
 
 Tracking assigned actions ensures follow-up. A structured table is recommended:
 
-| **Action Item** | **Responsible** | **Deadline** |
-| --- | --- | --- |
-| Prototype new logging solution | Alice (DevOps) | May 15, 2025 |
-| Schedule security review meeting | Bob (Security) | April 30, 2025 |
+| **Action Item**                  | **Responsible** | **Deadline**   |
+|----------------------------------|-----------------|----------------|
+| Prototype new logging solution   | Alice (DevOps)  | May 15, 2025   |
+| Schedule security review meeting | Bob (Security)  | April 30, 2025 |
 
 Even if no new actions arise, this section should remain (noted as “N/A”) to maintain consistency.
 
@@ -100,10 +100,10 @@ Even if no new actions arise, this section should remain (noted as “N/A”) to
 
 If decisions are not recorded inline, maintain a separate summary table:
 
-| **Decision** | **Responsible** | **Notes** |
-| --- | --- | --- |
-| Migrate to AWS | Cloud Team | Phase 1 complete by Q3 2025 |
-| Standardize  APIs | API Working Group | Finalize specs by Q2 2025 |
+| **Decision**      | **Responsible**   | **Notes**                   |
+|-------------------|-------------------|-----------------------------|
+| Migrate to AWS    | Cloud Team        | Phase 1 complete by Q3 2025 |
+| Standardize  APIs | API Working Group | Finalize specs by Q2 2025   |
 
 For architectural decisions, reference corresponding Records of Architectural Decisions (RoADs).
 

@@ -21,10 +21,14 @@ The AEP model draws inspiration from industry best practices, including the **Ku
   - Example: **“AEP-001: Adopt New Logging Framework”**
 - The ID should be used consistently in GitHub **tickets, meeting minutes, and documentation** to ensure traceability.
 
+---
+
 ### 2. Authors and Date
 
 - Include the **name(s) of the proposer(s)** and the **submission date**.
 - If a TAG member is sponsoring the proposal, their name should be listed as well.
+
+---
 
 ### 3. Status
 
@@ -35,12 +39,16 @@ The AEP model draws inspiration from industry best practices, including the **Ku
   - **Rejected** – Decision made not to proceed (with documented reasons).
   - **Deferred** – Postponed for later review due to dependencies or other priorities.
 
+---
+
 ### 4. Summary
 
 - A concise, **one-paragraph overview** of the proposal, outlining:
   - The **intended change**
   - The **problem being addressed**
   - The **expected benefits or impact**
+
+---
 
 ### 5. Background and Motivation
 
@@ -112,6 +120,8 @@ The AEP model draws inspiration from industry best practices, including the **Ku
   - Requests for additional information
   - Changes made in response to feedback
 - This serves as **change history** to track how the proposal evolved.
+
+---
 
 ## 8. Decision (Outcome)
 

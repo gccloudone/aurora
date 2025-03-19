@@ -2,7 +2,7 @@
 title: "Templates"
 linkTitle: "Templates"
 weight: 15
-type: "sigs"
+type: "templates"
 draft: false
 lang: "en"
 ---

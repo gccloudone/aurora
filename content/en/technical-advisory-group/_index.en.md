@@ -9,6 +9,10 @@ lang: "en"
 date: 2025-01-01
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 ## 1. Overview and Mandate
 
 The **Aurora Technical Advisory Group (TAG)** is an **advisory body** that provides expert guidance and recommendations on the Aurora product’s architecture, standards, security, and best practices. By convening architects, technical leads, and relevant stakeholders within Shared Services Canada (SSC) and broader Government of Canada (GoC) contexts, the Aurora TAG:
@@ -44,7 +48,6 @@ Although the TAG’s role is advisory, its recommendations carry significant inf
 
     Develop and maintain clear processes for architectural proposals (AEPs), decision logs, meeting minutes, and other documentation to ensure **transparency and continuity**.
 
-
 ---
 
 ## 3. Authority and Governance
@@ -65,13 +68,13 @@ Although the TAG’s role is advisory, its recommendations carry significant inf
 ### 4.1 Composition
 
 - **Core Voting Members**:
-    - Typically **IT-04** (Senior Architects, Lead Engineers) and/or **IT-05** (Principal Architect, Chief Engineer).
-    - Additional specialized members can include **IT-03** (Technical Advisors) for domain expertise (e.g., Security, Cloud).
-    - Membership size: ~8–12 people to ensure diverse perspectives but maintain efficient discussions for product alignment.
+  - Typically **IT-04** (Senior Architects, Lead Engineers) and/or **IT-05** (Principal Architect, Chief Engineer).
+  - Additional specialized members can include **IT-03** (Technical Advisors) for domain expertise (e.g., Security, Cloud).
+  - Membership size: ~8–12 people to ensure diverse perspectives but maintain efficient discussions for product alignment.
 - **Observers / Guests**:
-    - Non-voting participants who attend specific meetings to share subject-matter input or learn about Aurora’s technical direction.
-    - May include policy advisors, security analysts, or external consultants.
-    - Observers are **welcome to participate in discussions**, but only core members contribute to consensus or formal voting.
+  - Non-voting participants who attend specific meetings to share subject-matter input or learn about Aurora’s technical direction.
+  - May include policy advisors, security analysts, or external consultants.
+  - Observers are **welcome to participate in discussions**, but only core members contribute to consensus or formal voting.
 
 ### 4.2 Responsibilities by Role
 
@@ -246,6 +249,8 @@ Although the TAG’s role is advisory, its recommendations carry significant inf
 | **Version** | **Date**   | **Summary of Changes**                 | **Approved By**        |
 |-------------|------------|----------------------------------------|------------------------|
 | 1.0         | 2025-04-15 | Initial issuance of Aurora TAG Charter | Director and TAG Chair |
+
+---
 
 ## 15. References
 

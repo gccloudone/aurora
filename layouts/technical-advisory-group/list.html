@@ -36,8 +36,10 @@
         {{ $content := .Content | replaceRE "<p>(.*?)</p>" "<gcds-text character-limit=\"false\">$1</gcds-text>" }}
         {{ $content | safeHTML }}
         <ul>
+          {{ $currentPage := . }}
+          {{ $currentDir := .File.Dir }}
           {{ range where .Site.RegularPages "Section" "technical-advisory-group" }}
-            {{ if and (ne .File.BaseFileName "_index") (eq .File.Dir "technical-advisory-group/templates/") }}
+            {{ if and (ne .File.BaseFileName "_index") (hasPrefix .File.Dir $currentDir) }}
               <li>
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
               </li>
