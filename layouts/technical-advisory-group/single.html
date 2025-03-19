@@ -1,0 +1,42 @@
+{{ define "main" }}
+  {{ $showSidebar := .Site.Params.sidebar }}
+  {{ if isset .Params "sidebar" }}
+    {{ $showSidebar = .Params.sidebar }}
+  {{ end }}
+
+  {{ partial "verify" . }}
+  {{ partial "header" . }}
+  <gcds-container size="xl" main-container centered tag="main">
+    <gcds-grid
+      tag="section"
+      columns="1fr"
+      columns-desktop="{{ if $showSidebar }}
+        1fr 3fr
+      {{ else }}
+        1fr
+      {{ end }}"
+      align-items="start"
+      class="hydrated">
+      {{ if $showSidebar }}
+        <aside role="complementary">
+          {{ partial "side-navigation" . }}
+        </aside>
+      {{ end }}
+      <section class="mb-400">
+        {{ partial "heading" . }}
+        {{ $showToc := or .Params.showToc .Site.Params.showToc }}
+        {{ if and $showToc .TableOfContents }}
+        <gcds-fieldset
+          fieldset-id="field-toc"
+          legend=""
+          class="mb-400">
+            {{ .TableOfContents }}
+          </gcds-fieldset>
+        {{ end }}
+        {{ $content := .Content | replaceRE "<p>(.*?)</p>" "<gcds-text character-limit=\"false\">$1</gcds-text>" }}
+        {{ $content | safeHTML }}
+        {{ partial "date-modified" . }}
+      </section>
+    </gcds-grid>
+  </gcds-container>
+{{ end }}

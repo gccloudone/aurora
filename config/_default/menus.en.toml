@@ -53,6 +53,12 @@ weight = 10
   url = "/rules-of-engagement"
   weight = 1
 
+  [[main]]
+  name = "Technical Advisory Group"
+  parent = "Community"
+  url = "/technical-advisory-group"
+  weight = 1
+
 [[main]]
 name = "Contact us"
 url = "/contact"
