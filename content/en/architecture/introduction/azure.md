@@ -5,14 +5,37 @@ type: "architecture"
 weight: 10
 draft: false
 lang: "en"
+showToc: true
 date: 2025-01-01
 ---
 
 *Welcome!* In this guide, we’ll explore the **Aurora Platform** on Azure from four different views. Each view offers a perspective on how the system is structured. We’ll use simple language and analogies to make things clear. You should have a good understanding of Aurora’s cloud architecture. Let’s dive in!
 
+## Repositories that Power Aurora
+
+Before we dive into the views of Aurora’s architecture, it’s helpful to know where the platform's core code lives. Aurora is developed and delivered entirely as code — from infrastructure to platform components — and these efforts are organized across three GitHub Enterprise organizations:
+
+- **[`gccloudone`](https://github.com/gccloudone):** This is home to Aurora’s public-facing content, including documentation, diagrams, and our [Hugo-based website](https://aurora.gccloudone.ca).
+- **[`gccloudone-aurora`](https://github.com/gccloudone-aurora):** The main source of Aurora’s tooling — including Kubernetes manifests, controllers, policies, and other GitOps-configured components that define the platform.
+- **[`gccloudone-aurora-iac`](https://github.com/gccloudone-aurora-iac):** This organization contains all Infrastructure as Code used to deploy Aurora environments. Currently, it includes our full Terraform implementation for Azure.
+
+These repositories represent the foundation of Aurora — they encode how we build, secure, and scale the platform. Everything described in the views below is defined and managed through these open source assets.
+
 ## Single Cluster Instance View
 
 ![Single Cluster Instance View](/images/architecture/diagrams/single-cluster-instance-view.svg)
+
+### Overview
+
+This view zooms into a single Aurora Kubernetes cluster deployed on Azure. It highlights how workloads run within a secure, isolated Virtual Network (VNet), with tightly controlled entry and exit points. Network Security Groups (NSGs) enforce traffic policies — allowing only specific types of ingress (e.g., HTTPS) and egress (e.g., access to update services or private endpoints). Applications are accessed through a load balancer, while services like Key Vault or Blob Storage are reached via Private Endpoints within the Azure backbone — ensuring no traffic flows over the public internet.
+
+The use of multiple pools (system, gateway, user/general) ensures stronger isolation between user workloads and system components, ensuring that a compromise of a user workload (container escape, for example) would not be able to impact a system component, which likely has elevated permissions.
+
+Administrators connect to the cluster using a VPN or ExpressRoute, accessing a jumpbox that sits in the same VNet as the AKS node pool. From there, they can securely run kubectl commands. The Kubernetes API server, managed by Azure, is configured as private — reachable only from within the network and not exposed to the internet.
+
+To support cloud-native networking and secure routing, Aurora deploys internal route reflectors using BGP and Cilium, ensuring scalable and resilient communication between pods and networks. This view represents a single, secure Aurora cluster — the foundation for a broader multi-cloud platform strategy.
+
+### Breakdown
 
 **What this view represents:** This is a close-up look at one Aurora Kubernetes cluster running in Azure. Imagine zooming in on a single cluster – you’ll see how it’s set up in the cloud network, how it connects to users and admins, and how it reaches other services. It’s like looking at one “instance” of the platform in action.
 
@@ -55,6 +78,16 @@ This single cluster view basically shows an Aurora AKS cluster in its own secure
 ## Multi-Cluster Instances View
 
 ![Multi Cluster Instance View](/images/architecture/diagrams/multi-cluster-instance-view.svg)
+
+### Overview
+
+This view zooms out from a single cluster to show how Aurora manages multiple AKS clusters across environments like Dev, NonProd, Prod, and Management. Each environment is logically separated using its own Azure subscription and virtual network, providing strong isolation and governance boundaries. Clusters are named consistently (e.g., gen-dev-cc-00, gen-uat-cc-00, gen-prod-cc-00) and grouped by environment to support development pipelines, testing, production workloads, and shared services.
+
+The Enterprise hub-and-spoke design allows environments to communicate securely when needed (e.g., ArgoCD in Management deploying to Dev), while still enforcing strict separation where appropriate (e.g., Dev cannot reach Prod). NSGs and route-sharing policies ensure that traffic is tightly controlled, enabling secure inter-cluster operations without increasing complexity.. This hub-and-spoke design allows environments to communicate securely when needed (e.g., ArgoCD in Management deploying to Dev), while still enforcing strict separation where appropriate (e.g., Dev cannot reach Prod). NSGs and route-sharing policies ensure that traffic is tightly controlled, enabling secure inter-cluster operations without increasing complexity.
+
+The result is a scalable, secure architecture where multiple clusters operate independently but are managed as a unified platform. Jumpboxes provide secure admin access per environment, and gateways maintain separation while enabling controlled entry. Aurora’s multi-cluster design supports multiple teams and stages of delivery while preserving operational integrity.
+
+### Breakdown
 
 **What this view represents:** Aurora isn’t just one cluster – it’s designed to manage multiple clusters (for different purposes or environments). The Multi-Cluster Instances View zooms out a bit. It shows how several cluster instances coexist and connect (or stay isolated) within the Aurora Platform on Azure. Think of it as looking at a neighborhood of clusters: dev clusters, test clusters, prod clusters, maybe a management cluster – each is like a house on a street, and this view is the map of the neighborhood.
 
@@ -102,6 +135,16 @@ So, the multi-cluster view essentially shows multiple clusters, divided by purpo
 
 ![Platform View](/images/architecture/diagrams/platform-view.svg)
 
+### Overview
+
+This view zooms into the internal architecture of an Aurora cluster to show the standardized platform components that are automatically deployed with every instance. Rather than starting from a blank Kubernetes cluster, Aurora equips each environment with production-grade tooling out-of-the-box. Key components include Cilium for secure networking, Istio for ingress and service mesh, Prometheus and Fluent Bit for monitoring and logging, cert-manager for TLS automation, and Gatekeeper (OPA) for policy enforcement. These tools run in dedicated system namespaces and are managed by Aurora—keeping platform and application concerns cleanly separated.
+
+Argo CD powers the GitOps delivery model behind the scenes, ensuring all platform components and configurations are defined as code and continuously reconciled. Namespaces follow a clear convention: system for platform tooling, gateway for ingress components, and dedicated frontend/backend spaces for application teams. Services like Velero (for backup), Workload Identity (for Azure integration), and OpenCost (for cost visibility) round out a complete developer-ready foundation.
+
+For application teams, this means less operational overhead and faster onboarding. Developers can focus on shipping code, while Aurora enforces security, handles connectivity, and provides the observability, governance, and automation needed to run workloads reliably across environments.
+
+### Breakdown
+
 **What this view represents:** Now we zoom *inward*. The Platform View focuses on what’s inside each Aurora cluster – specifically, the common platform components that Aurora provides on top of vanilla Kubernetes. In other words, when you create an Aurora cluster, it’s not empty; it comes with a bunch of built-in capabilities (networking, monitoring, security, etc.). This view lays out those components and how they relate. It’s like an x-ray of the cluster’s software architecture.
 
 **How it functions:** Aurora Platform leverages many open-source tools and Kubernetes add-ons to provide a full-featured environment. These are typically running in their own namespaces within the cluster and serve platform-wide roles (as opposed to your application code, which would run in separate namespaces). The platform components cover areas like networking, security, ingress, logging, monitoring, backup, and more – all of which make the cluster production-ready. Let’s break down the key components you’d find and their roles:
@@ -132,9 +175,17 @@ In summary, the Platform View is like looking under the hood of a high-end car: 
 
 ---
 
-## Infrastructure as Code View
+## Infrastructure / Config as Code View
 
-![Infrastructure as Code View](/images/architecture/diagrams/iac-cac-view.svg)
+![Infrastructure / Config as Code View](/images/architecture/diagrams/iac-cac-view.svg)
+
+### Overview
+
+This view shows how the entire Aurora platform is delivered, maintained, and scaled — not just within a single cluster or cloud, but across multiple environments and cloud providers. Aurora is built around Infrastructure as Code (Terraform) and GitOps(Argo CD). Terraform provisions the underlying cloud infrastructure like networks, clusters, and route reflectors, while Argo CD applies all platform components (e.g., Istio, OPA, Cilium) as code directly from Git. This makes every cluster reproducible, consistent, and auditable — no manual setup, no drift.
+
+The high-level architecture emphasizes cloud-agnostic design, meaning Aurora can be deployed on Azure AKS, AWS EKS, or GCP GKE using equivalent Terraform modules and shared platform manifests. This allows Aurora to provide a consistent developer experience regardless of cloud provider, reducing complexity for teams and avoiding vendor lock-in. Clusters become interchangeable "instances" of the Aurora platform, each bootstrapped automatically and kept in sync by GitOps.
+
+### Breakdown
 
 **What this view represents:** The Platform High-Level View is the big picture architecture of Aurora – it ties everything together in a simplified way, often highlighting the relationships between the platform components, the infrastructure, and how it’s managed. This view steps back to show not just one cluster or multiple, but how the Aurora platform is delivered and maintained across potentially multiple clouds or regions. It’s a bit like a blueprint or flowchart of the entire system from a product standpoint.
 
