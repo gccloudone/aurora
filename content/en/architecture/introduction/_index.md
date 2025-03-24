@@ -3,7 +3,7 @@ title: "Introduction"
 linkTitle: "Introduction"
 type: "architecture"
 weight: 10
-draft: false
+draft: true
 lang: "en"
 date: 2024-10-21
 ---

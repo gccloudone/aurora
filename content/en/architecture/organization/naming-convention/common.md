@@ -3,7 +3,7 @@ title: "Common Naming Convention"
 linkTitle: "Common"
 type: "architecture"
 weight: 15
-draft: false
+draft: true
 lang: "en"
 date: 2024-10-21
 showToc: true
