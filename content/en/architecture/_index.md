@@ -5,7 +5,7 @@ type: "architecture"
 weight: 10
 draft: false
 lang: "en"
-date: 2024-10-21
+date: 2025-01-01
 ---
 
 <gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
