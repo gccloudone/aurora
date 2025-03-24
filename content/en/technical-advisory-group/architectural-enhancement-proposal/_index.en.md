@@ -5,6 +5,7 @@ weight: 25
 type: "aep"
 draft: false
 lang: "en"
+date: 2025-01-01
 ---
 
-The following are a list of architectural enhancement proposals that have been submitted.
+The following are a list of architectural enhancement proposals that have been submitted by the community.
