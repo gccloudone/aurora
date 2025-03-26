@@ -255,6 +255,8 @@ Aurora’s architecture is complex under the hood, but it’s designed to make l
 
 ![Configuration as Code Extended View](/images/architecture/diagrams/cac-extended-view.svg)
 
+### Overview
+
 With respect to the platform charts each of the now 35 components is toggleable, allowing departments to enable only what they need, while maintaining alignment with a consistent, composable platform. Every cluster becomes reproducible, consistent, and auditable — eliminating manual setup and configuration drift.
 
 Each cluster is treated as an interchangeable instance of Aurora — automatically bootstrapped and continuously reconciled through GitOps.
