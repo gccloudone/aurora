@@ -29,6 +29,7 @@ This guide provides a unified format and highlights any tool-specific nuances be
 | [CSP:Azure]          | Coordination with cloud service providers                      | [CSP:Azure] Finalize VNet rules for IP range approval    |
 | [COMMUNITY]          | Community building, outreach, events, documentation            | [COMMUNITY] Schedule SIG:Networking kickoff meetup       |
 | [OSS]                | Open source platform work, infrastructure, release             | [OSS] Migrate core Terraform module to GitHub public     |
+| [PARTNER:SecOps]     | Integration with internal horizontal partners or stakeholders  | [PARTNER:SecOps] Align audit logging with GC standards   |
 
 ---
 
