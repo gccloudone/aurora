@@ -10,6 +10,4 @@ This section provides documentation to help platform team members, contributors,
 
 You'll find guidance on naming conventions, workflows, operating procedures, and other internal standards that support consistent delivery, governance, and collaboration.
 
----
-
-> Use this section as your source of truth for how we work together as a team across departments, clouds, and environments.
+Use this section as your source of truth for how we work together as a team across departments, clouds, and environments.

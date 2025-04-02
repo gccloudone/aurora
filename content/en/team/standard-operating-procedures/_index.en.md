@@ -17,9 +17,6 @@ SOPs ensure that everyone — from platform engineers to partner departments —
 
 Here are the current procedures in place:
 
-- [Issue & PR Naming Conventions](/docs/standard-operating-procedures/issue-naming/)  
-  Standardized naming and labeling for tracking work in Jira and GitHub across Aurora.
-
----
+- [Issue & PR Naming Conventions](/docs/standard-operating-procedures/issue-naming/): Standardized naming and labeling for tracking work.
 
 > SOPs are living documents. If you spot something that needs updating or expanding, please open an issue or contact the Aurora Product Office.

@@ -44,7 +44,7 @@ weight = 10
   [[main]]
   name = "Standard Operating Procedures"
   parent = "Team"
-  url = "/standard-operating-procedures"
+  url = "/team/standard-operating-procedures"
   weight = 1
 
 [[main]]
