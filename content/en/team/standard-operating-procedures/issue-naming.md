@@ -30,6 +30,7 @@ This guide provides a unified format and highlights any tool-specific nuances be
 | [COMMUNITY]          | Community building, outreach, events, documentation            | [COMMUNITY] Schedule SIG:Networking kickoff meetup       |
 | [OSS]                | Open source platform work, infrastructure, release             | [OSS] Migrate core Terraform module to GitHub public     |
 | [PARTNER:SecOps]     | Integration with internal horizontal partners or stakeholders  | [PARTNER:SecOps] Align audit logging with GC standards   |
+| [SERVICE]            | Shared horizontal services used across the platform            | [SERVICE:Vault] Enable dynamic secrets for CI/CD Runners |
 
 ---
 
