@@ -47,6 +47,9 @@
     {{ $styles := resources.Get "scss/main.scss" | resources.ToCSS }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" />
 
+    {{ $styles := resources.Get "scss/custom.scss" | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+
     <style>
       html {
         font-size: 16px;
