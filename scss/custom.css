@@ -17,3 +17,8 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #f1f1f1; }
+
+code[class^="language-"] {
+  padding: 1.25em;
+  margin-bottom: 1.0em;
+  display: block; }

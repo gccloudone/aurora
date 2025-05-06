@@ -1,0 +1,73 @@
+Creating bootstrap-local-cc-00 cluster...
+[bootstrap-local-cc-00]: Creating cluster...
+[bootstrap-local-cc-00]: Custom certificate found, adding volume...
+WARN[0000] No node filter specified                     
+INFO[0000] Prep: Network                                
+INFO[0000] Created network 'k3d-bootstrap-local-cc-00'  
+INFO[0000] Created image volume k3d-bootstrap-local-cc-00-images 
+INFO[0000] Starting new tools node...                   
+INFO[0000] Starting node 'k3d-bootstrap-local-cc-00-tools' 
+INFO[0001] Creating node 'k3d-bootstrap-local-cc-00-server-0' 
+INFO[0001] Creating LoadBalancer 'k3d-bootstrap-local-cc-00-serverlb' 
+INFO[0001] Using the k3d-tools node to gather environment information 
+INFO[0001] HostIP: using network gateway 172.18.0.1 address 
+INFO[0001] Starting cluster 'bootstrap-local-cc-00'     
+INFO[0001] Starting servers...                          
+INFO[0001] Starting node 'k3d-bootstrap-local-cc-00-server-0' 
+INFO[0005] All agents already running.                  
+INFO[0005] Starting helpers...                          
+INFO[0005] Starting node 'k3d-bootstrap-local-cc-00-serverlb' 
+INFO[0013] Injecting records for hostAliases (incl. host.k3d.internal) and for 2 network members into CoreDNS configmap... 
+INFO[0015] Cluster 'bootstrap-local-cc-00' created successfully! 
+INFO[0015] You can now use it like this:                
+kubectl cluster-info
+Adding Managed Identity to VM...
+[bootstrap-local-cc-00] Creating Labels...
+node/k3d-bootstrap-local-cc-00-server-0 labeled
+[bootstrap-local-cc-00] Creating argo-operator-system namespace...
+namespace/argo-operator-system created
+[bootstrap-local-cc-00] Creating platform-system namespace...
+namespace/platform-system created
+[bootstrap-local-cc-00] Creating platform-management-system namespace...
+namespace/platform-management-system created
+[Adding Helm Repositories...]
+"aurora" has been added to your repositories
+[bootstrap-local-cc-00] Installing Argo CD Operator in argo-operator-system...
+Release "argo-operator" does not exist. Installing it now.
+NAME: argo-operator
+LAST DEPLOYED: Sun May  4 20:53:04 2025
+NAMESPACE: argo-operator-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+
+**********************
+** CONGRATULATIONS! **
+**********************
+
+The ArgoCD Operator has been installed.
+[bootstrap-local-cc-00] Installing Argo CD instance in platform-management-system...
+Release "argocd-instance" does not exist. Installing it now.
+NAME: argocd-instance
+LAST DEPLOYED: Sun May  4 20:53:11 2025
+NAMESPACE: platform-management-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+[bootstrap-local-cc-00] Installing Aurora platform in platform-management-system...
+Release "aurora-platform" does not exist. Installing it now.
+NAME: aurora-platform
+LAST DEPLOYED: Sun May  4 20:53:12 2025
+NAMESPACE: platform-management-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+[bootstrap-local-cc-00] Installing Image Pull Secret...
+[bootstrap-local-cc-00] Adding Image Pull Secret to Service Accounts for Argo CD...
+
+==================================
+
+Argo CD: https://VM.local:30027
+  Username: admin
+  Password: password
