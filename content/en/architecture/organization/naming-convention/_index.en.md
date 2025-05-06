@@ -9,6 +9,10 @@ date: 2024-10-21
 showToc: true
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 The name of a cloud resource is crucial for effective identification. Establishing a consistent naming convention across cloud providers enhances clarity and resource management.
 
 The Aurora team follows a naming convention with these key goals:

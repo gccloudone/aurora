@@ -7,14 +7,6 @@ showToc: true
 translationKey: "proposal"
 ---
 
-## Presentation
-
-To support this strategic proposal, please review the accompanying powerPoint presentation for a high-level overview of the key elements and objectives.
-
-The presentation aims to complement the detailed strategies outlined in the subsequent sections.
-
-- <gcds-link href="https://gccloudone.blob.core.windows.net/aurora/AUR-002 - Aurora.pptx" download="AUR-001 - Aurora.pptx" type="application/pdf">AUR-001 - Aurora (PPTX, 1.5MB)</gcds-link>
-
 ## Project overview
 
 Aurora represents the possible future state of a unified application hosting platform for the Government of Canada (GC). The platform integrates open-source Kubernetes (OSS) offerings on managed cloud services and proprietary (in some aspects) Kubernetes offerings delivered as platform-as-a-service (PaaS), providing a standardized, scalable, and secure hosting solution. Aurora's goal is to eliminate the fragmentation that arises from each department managing its own platform, ensuring that the Government of Canada operates with consistency in compliance, security, and operational efficiency.

@@ -9,6 +9,10 @@ showToc: true
 date: 2025-01-01
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 *Welcome!* In this guide, we’ll explore the **Aurora Platform** on Azure from four different views. Each view offers a perspective on how the system is structured. We’ll use simple language and analogies to make things clear. You should have a good understanding of Aurora’s cloud architecture. Let’s dive in!
 
 ## Repositories that Power Aurora

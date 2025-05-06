@@ -19,15 +19,26 @@ weight = 5
   weight = 1
 
   [[main]]
-  name = "Composants"
+  name = "Vision"
   parent = "Plate-forme"
-  url = "/fr/components"
-  weight = 5
+  url = "/fr/vision"
+  weight = 3
+
+[[main]]
+name = "Équipe"
+url = "/fr/equipe"
+weight = 10
+
+  [[main]]
+  name = "Procédures Standardisées d'Opération"
+  parent = "Équipe"
+  url = "/fr/equipe/pso"
+  weight = 1
 
 [[main]]
 name = "Communauté"
 url = "/fr/communaute"
-weight = 10
+weight = 15
 
   [[main]]
   name = "Participez"

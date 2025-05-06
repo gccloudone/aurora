@@ -30,12 +30,6 @@ weight = 5
   url = "/architecture"
   weight = 5
 
-  [[main]]
-  name = "Components"
-  parent = "Platform"
-  url = "/components"
-  weight = 5
-
 [[main]]
 name = "Team"
 url = "/team"
@@ -44,7 +38,7 @@ weight = 10
   [[main]]
   name = "Standard Operating Procedures"
   parent = "Team"
-  url = "/team/standard-operating-procedures"
+  url = "/team/sop"
   weight = 1
 
 [[main]]

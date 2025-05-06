@@ -8,6 +8,10 @@ lang: "en"
 date: 2024-10-21
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 The Aurora Platform (AUR) represents a strategic evolution of the Cloud Native Platform (CNP), originally developed at Statistics Canada to provide a unified application hosting platform. Recognizing its broader potential, Shared Services Canada (SSC) is leading efforts to expand its adoption across the Government of Canada.
 
 To unlock Aurora’s full potential, active collaboration from multiple departments is crucial. By working together, departments can contribute to refining and advancing the platform, ensuring it remains scalable, adaptable, and responsive to a wide range of needs.

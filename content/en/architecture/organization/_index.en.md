@@ -8,6 +8,10 @@ lang: "en"
 date: 2024-10-21
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 Aurora is designed to operate seamlessly across both on-premises and managed cloud providers' Kubernetes offerings. It can incorporate a range of resources, such as Kubernetes clusters, storage solutions, key management services, and networking components. Efficient resource management is crucial due to the scale of the Aurora project across the Government of Canada landscape.
 
 To achieve this goal, we can make use of the following strategies:

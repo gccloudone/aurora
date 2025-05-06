@@ -1,5 +1,5 @@
 ---
-title: "Aurora Architecture and Vision"
+title: "Architecture and Vision"
 date: 2025-02-05
 draft: false
 sidebar: false

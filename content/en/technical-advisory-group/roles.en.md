@@ -9,6 +9,10 @@ lang: "en"
 date: 2025-01-01
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 For the Aurora TAG (Technical Architecture Group) to operate effectively within the Government of Canada (GoC) and Shared Services Canada (SSC) context, it is essential to clearly define roles and responsibilities. This guide maps GoC job classifications to key roles within Aurora TAG, ensuring that each participant understands their duties, expected contributions, and decision-making authority.
 
 Having well-defined roles ensures that:

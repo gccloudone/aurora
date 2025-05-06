@@ -9,6 +9,10 @@ date: 2024-10-25
 showToc: true
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 A multi-tenant Kubernetes cluster allows multiple applications or workloads, typically managed by different teams, to coexist within the same cluster. This approach can significantly reduce infrastructure costs and simplify cluster administration by centralizing resource management. However, multi-tenancy introduces complex challenges, particularly around security and resource fairness.
 
 From a security perspective, strong tenant isolation is critical. Each tenant must be logically and functionally isolated to prevent unauthorized access or interference from other tenants. Techniques such as network policies, role-based access control (RBAC), and namespaces are often used to enforce this isolation. However, stronger isolation mechanisms, such as strict pod security policies and dedicated node pools, can increase operational complexity and overhead.

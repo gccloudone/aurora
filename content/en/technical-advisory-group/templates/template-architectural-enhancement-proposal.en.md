@@ -8,6 +8,10 @@ lang: "en"
 date: 2025-01-01
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 For any significant changes to Aurora’s architecture, a structured and transparent decision-making process is essential. The Architectural Enhancement Proposal (AEP) framework provides a consistent approach to documenting, evaluating, and approving architectural changes, ensuring that all decisions are well-informed, traceable, and aligned with organizational goals.
 
 The AEP model draws inspiration from industry best practices, including the Kubernetes Enhancement Proposal (KEP) and the Cloud Native Platform Enhancement (CNPE) process used in CNCF communities. These frameworks have proven to be effective in managing large-scale architectural decisions and fostering collaboration among stakeholders.
