@@ -12,7 +12,7 @@ date: 2025-05-29
 <gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
 </gcds-alert>
 
-Aurora platform components that communicate over Azure may have associated [Microsoft Entra workload identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview) such as applications, service principals, and managed identities. Permissions, such as available APIs and tokens, are assigned to each individual identity according to the minimum requirement for the functionality of the component.
+Aurora platform components that communicate over Azure may have associated [Microsoft Entra workload identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview). Permissions, such as for available APIs and tokens, are assigned to each individual identity according to the minimum requirement for the functionality of the component.
 
 Azure access control for Aurora's human users is implemented in the following ways:
 
@@ -31,14 +31,6 @@ This custom role has the following permissions:
 | All                         | Read              | Gather information for troubleshooting             | 
 | Virtual Routers             | Learned Routes    | Get learned BGP routes from Azure route servers    | 
 | Virtual Routers             | Advertised Routes | Get advertised BGP routes from Azure route servers | 
-| Virtual Machines            | Start             | Start virtual machines (VMs)                       | 
-| "                           | Power-Off         | Temporarily shut down VMs                          | 
-| "                           | Deallocate        | Shut down and pause billing for VMs                | 
-| "                           | Restart           | Reboot virtual machines                            | 
-| Virtual Machine Scale Sets  | Start             | Start Virtual Machine Scale Set (VMSS) instances   | 
-| "                           | Power-Off         | Temporarily shut down VMSS instances               | 
-| "                           | Deallocate        | Shut down and pause billing for VMSS instances     | 
-| "                           | Restart           | Reboot VMSS instances                              | 
 | Managed Clusters            | Abort             | Cancel the last operation on AKS clusters          | 
 | Managed Cluster Agent Pools | Abort             | Cancel the last operation on AKS node pools        | 
 
