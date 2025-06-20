@@ -1,8 +1,8 @@
 ---
-title: "Access Control Definitions"
+title: "Access Control"
 linkTitle: "Access Control"
 type: "architecture"
-weight: 20
+weight: 10
 draft: false
 lang: "en"
 date: 2025-05-29
@@ -48,7 +48,6 @@ This role is invoked in order to:
 This role can only be activated by a group of designated personnel through privilege escalation procedures such as [Microsoft Entra Privileged Identity Management](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure). Activation requires submitting a justification, a time duration (after which the role is automatically revoked), and a reference to a support, maintenance, or incident ticket. All members of this group are notified when such an activation occurs, and activation records are available for audit.
 
 Platform Administrators correspond to the [default User-facing Kubernetes role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) `cluster-admin` and to similar CSP roles within environments corresponding to the Aurora platform.
-
 
 ## Platform Developer
 Platform Developers design, develop, and validate functionality as well as configuration changes for one or more areas of the Aurora platform. To facilitate rapid iteration, Platform Developers have the same privileges as a Platform Administrator without the activation process or time limit. However, the Platform Developer role only exists in specific Aurora platform development environments designated for this purpose. No Solution Builder workloads run on those environments, and no Solution Builders access them.
