@@ -18,7 +18,7 @@ Aurora platform components that access or provide data are identified through no
 
 Kubernetes offers [Roles and ClusterRoles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole) which define access and [RoleBindings and ClusterRoleBindings](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding) which bind Roles and ClusterRoles to an identity. This identity can be an individual user or user group from an integrated identity provider (which would be associated with the cluster at the CSP-level) or a Kubernetes Service Account.
 
-Microsoft Entra ID is the centralized identity provider, with one account per human user. Through membership in one or more [Microsoft Entra groups](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups), each account has access to one or more user roles that align with the following high-level definitions:
+Microsoft Entra ID is the centralized identity provider for human users. Each Microsoft Entra ID account used to access Aurora is a member of one or more [Microsoft Entra groups](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups) that grant a user role among the following high-level definitions:
 
 ## Solution Builder
 Solution Builders design, develop, deploy, and operate solutions that run on Aurora. They require access to Kubernetes Resources and CustomResources.
