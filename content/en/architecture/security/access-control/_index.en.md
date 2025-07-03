@@ -30,7 +30,7 @@ A RoleBinding in each Solution Builder Namespace binds this ClusterRole to the M
 Solution Builders may also require access to CSP resources such as managed databases and storage accounts. This is outside the scope of Aurora's access control and is established according to the processes of the corresponding Infrastructure-as-a-Service service lines.
 
 ## Platform Operator
-Platform Operators ensure the continual operation of one or more areas of the Aurora platform. This requires read access to most platform resources, excluding confidential information such as Secrets. This also requires write access for common and low-impact remediation activities. 
+Platform Operators ensure the continual operation of one or more areas of the Aurora platform. This requires read access to most platform resources, excluding confidential information such as Secrets. This also requires write access for common and low-impact remediation activities.
 
 Two custom ClusterRoles are defined for Platform Operators: [`platform-operator-view`](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/platform-operator-view.yaml) for read access and [`platform-operator-maintenance'](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/platform-operator-maintenance.yaml) for write access. ClusterRole aggregation to these roles further defines read and write access to specific platform components.
 
@@ -51,3 +51,6 @@ Platform Administrators correspond to the [default User-facing Kubernetes role](
 
 ## Platform Developer
 Platform Developers design, develop, and validate functionality as well as configuration changes for one or more areas of the Aurora platform. To facilitate rapid iteration, Platform Developers have the same privileges as a Platform Administrator without the activation process or time limit. However, the Platform Developer role only exists in specific Aurora platform development environments designated for this purpose. No Solution Builder workloads run on those environments, and no Solution Builders access them.
+
+## Security Operations
+Groups of designated Security Operations personnel are also granted access to the Platform Operator, Platform Administrator (via privilege escalation), and Platform Developer (in platform development environments) user roles across the Aurora platform. This access permits them to develop, support, and maintain platform security components, as well as to investigate and resolve potential security incidents.
