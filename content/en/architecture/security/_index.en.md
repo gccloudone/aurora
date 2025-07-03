@@ -1,11 +1,11 @@
 ---
-title: "Introduction"
-linkTitle: "Introduction"
+title: "Security"
+linkTitle: "Security"
 type: "architecture"
 weight: 80
 draft: false
 lang: "en"
-date: 2025-01-01
+date: 2025-05-29
 ---
 
 <gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
