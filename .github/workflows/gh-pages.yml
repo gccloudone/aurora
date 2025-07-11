@@ -11,6 +11,7 @@ jobs:
       contents: write
 
     runs-on: ubuntu-22.04
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -28,7 +29,7 @@ jobs:
         with:
           node-version: "18.x"
 
-      - name: Cache dependencies
+      - name: Cache NPM dependencies
         uses: actions/cache@v3
         with:
           path: ~/.npm
@@ -36,10 +37,24 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm install
+      - name: Install Newsletter Dependencies
+        run: |
+          cd newsletter
+          npm install
 
-      - name: Build
+      - name: Build Newsletter (Email HTML)
+        run: |
+          cd newsletter
+          npm run build:email
+
+      - name: Build Hugo Site
         run: hugo --minify
+
+      - name: Copy Newsletter HTML to Hugo Public Folder
+        run: |
+          mkdir -p public/newsletter
+          cp newsletter/*.html public/newsletter/
+          cp -r newsletter/assets public/newsletter/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

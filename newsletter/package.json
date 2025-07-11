@@ -1,0 +1,28 @@
+{
+  "name": "aurora-newsletter",
+  "version": "1.0.0",
+  "description": "Aurora Newsletter Template System",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:current": "node build.js content/2025-06-gc-artifacts.json",
+    "build:email": "node build.js content/2025-06-gc-artifacts.json --email",
+    "serve": "python3 -m http.server 8000",
+    "dev": "npm run build:current && npm run serve"
+  },
+  "keywords": [
+    "newsletter",
+    "aurora",
+    "template",
+    "government",
+    "canada"
+  ],
+  "author": "Aurora Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "juice": "^10.0.0"
+  }
+}

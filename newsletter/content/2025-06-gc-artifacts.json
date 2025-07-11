@@ -1,0 +1,484 @@
+{
+  "meta": {
+    "edition": "2025-06-gc-artifacts",
+    "title": "Aurora Newsletter - GC Secure Artifacts",
+    "date": "2025-06-26",
+    "generated": "{{GENERATED_DATE}}"
+  },
+  "assets": {
+    "background_image": "background.jpeg",
+    "ssc_logo_path": "ssc-text.svg",
+    "ssc_logo_alt": "Shared Services Canada / Services partagés Canada",
+    "canada_logo_path": "canada-logo.svg",
+    "canada_logo_alt": "Canada"
+  },
+  "header": {
+    "main_title": "Aurora Newsletter",
+    "sub_title": "GC Secure Artifacts",
+    "subtitle": "Strengthening GC's Software Supply Chain"
+  },
+  "hero": {
+    "title": "Secure • Scalable • Centralized",
+    "description": "Government of Canada Artifact Management Platform"
+  },
+  "footer": {
+    "project_name": "Aurora Project | Projet Aurore",
+    "organization": "Shared Services Canada | Services partagés Canada",
+    "contact_email": "aurora-aurore@ssc-spc.gc.ca",
+    "website_url": "https://aurora.gccloudone.ca",
+    "website_text": "aurora.gccloudone.ca",
+    "tagline": "Let's Deliver for Canadians! | Offrons des résultats aux Canadiens!"
+  },
+  "english": {
+    "sections": [
+      {
+        "type": "main_announcement",
+        "title": "Major Milestone: GC Secure Artifacts Platform Launch",
+        "content": "Shared Services Canada is pleased to announce the successful launch of <strong>GC Secure Artifacts</strong>, now operational for unclassified workloads across all federal departments and agencies. This initiative represents a significant advancement in the Government of Canada's digital transformation and cybersecurity strategy.",
+        "highlight_box": {
+          "title": "Strategic Platform Benefits",
+          "items": [
+            "<strong>Centralized Security Management:</strong> Unified artifact repository with enterprise grade security controls",
+            "<strong>Zero Vulnerability Container Images:</strong> Chainguard's security first approach to base images",
+            "<strong>Cost Optimization:</strong> Shared infrastructure reducing departmental procurement overhead",
+            "<strong>Compliance Framework:</strong> Built in audit trails and security scanning capabilities",
+            "<strong>Supply Chain Protection:</strong> End to end visibility and vulnerability management"
+          ]
+        },
+        "stats": {
+          "title": "Platform Performance Metrics",
+          "items": [
+            {"number": "100+", "label": "Active Users"},
+            {"number": "0", "label": "Known CVEs in Base Images"},
+            {"number": "24/7", "label": "Security Monitoring"},
+            {"number": "99.9%", "label": "Platform Availability"}
+          ]
+        }
+      },
+      {
+        "type": "technology_stack",
+        "title": "Enterprise Technology Stack",
+        "subsections": [
+          {
+            "title": "JFrog Enterprise+ Platform",
+            "content": "The Government of Canada has successfully procured and deployed the <strong>JFrog Platform (Enterprise Plus)</strong>, providing comprehensive DevSecOps capabilities:",
+            "feature_cards": [
+              {
+                "title": "Universal Artifact Repository",
+                "content": "Centralized storage and management for Docker containers, Maven artifacts, NPM packages, NuGet packages, Helm charts, and additional package formats."
+              },
+              {
+                "title": "Advanced Security Scanning",
+                "content": "Integrated JFrog Xray vulnerability detection with automated policy enforcement and continuous security monitoring."
+              },
+              {
+                "title": "Enterprise Access Controls",
+                "content": "Role based permissions, repository segmentation, and fine grained access management aligned with government security requirements."
+              },
+              {
+                "title": "Compliance and Audit",
+                "content": "Complete audit trails, build information tracking, and compliance reporting capabilities for regulatory requirements."
+              }
+            ]
+          },
+          {
+            "title": "Chainguard Secure Container Images",
+            "content": "Our strategic partnership with Chainguard delivers the industry's most secure container base images:",
+            "feature_cards": [
+              {
+                "title": "Zero-CVE Architecture",
+                "content": "No known security vulnerabilities in our curated container image collection, providing a secure foundation for application development."
+              },
+              {
+                "title": "Distroless Implementation",
+                "content": "Minimal attack surface achieved by including only essential runtime components, reducing potential security exposure."
+              },
+              {
+                "title": "Cryptographic Signatures",
+                "content": "All images are cryptographically signed with comprehensive Software Bill of Materials (SBOM) for supply chain transparency."
+              },
+              {
+                "title": "Continuous Updates",
+                "content": "Automated security patches and updates ensure images remain current with the latest security improvements."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "container_images",
+        "title": "Available Container Images",
+        "content": "The following secure, zero-CVE container images are available through the centralized registry:",
+        "code_block": [
+          "<strong>Python Runtime:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/python:3.13.3",
+          "<strong>Java Development Kit:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/jdk:openjdk-21",
+          "<strong>Java Runtime Environment:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/jre:openjdk-21",
+          "<strong>Node.js Runtime:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/node:24.1.0",
+          "<strong>.NET Software Development Kit:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/dotnet-sdk",
+          "<strong>PowerShell Core:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/powershell"
+        ]
+      },
+      {
+        "type": "implementation",
+        "title": "Implementation and Onboarding",
+        "content": "Federal departments and agencies can start using GC Secure Artifacts through this structured onboarding process:",
+        "phases": [
+          {
+            "title": "Phase 1: Access Request and Authentication",
+            "content": "Submit access request through the official Government of Canada onboarding form and configure Single Sign-On (SSO) authentication through the 163ENT Entra ID tenant."
+          },
+          {
+            "title": "Phase 2: Development Environment Integration",
+            "content": "Update existing Dockerfiles to reference secure Chainguard base images and integrate JFrog CLI tools into continuous integration pipelines."
+          },
+          {
+            "title": "Phase 3: Security Configuration",
+            "content": "Implement automated dependency scanning, container vulnerability assessment, and policy-based security controls within development workflows."
+          },
+          {
+            "title": "Phase 4: Production Deployment",
+            "content": "Deploy applications using verified artifacts with continuous monitoring, automated compliance reporting, and incident response procedures."
+          }
+        ]
+      },
+      {
+        "type": "support",
+        "title": "Training and Support Resources",
+        "content": "Comprehensive training and support resources are available to ensure successful platform adoption:",
+        "list_items": [
+          "<strong>JFrog Academy Training:</strong> Self paced and instructor led courses for administrators, developers, and DevSecOps teams",
+          "<strong>Technical Documentation:</strong> Complete implementation guides, API references, and best practices documentation",
+          "<strong>Configuration as Code:</strong> Standardized templates and automation scripts for rapid deployment",
+          "<strong>Support Services:</strong> Dedicated technical support and escalation procedures for operational issues"
+        ],
+        "contact": {
+          "text": "For questions or support regarding the GC Secure Artifacts platform, please reach out to",
+          "email": "devops.artifacts-artefacts.devops@ssc-spc.gc.ca"
+        }
+      },
+      {
+        "type": "cta",
+        "title": "Begin Your Secure Development Journey",
+        "content": "Get started with the GC Secure Artifacts platform and explore our comprehensive documentation",
+        "buttons": [
+          {
+            "text": "Access Platform",
+            "url": "https://artifacts-artefacts.devops.cloud-nuage.canada.ca"
+          },
+          {
+            "text": "Technical Documentation",
+            "url": "https://github.com/gccloudone/artifacts-artefacts"
+          }
+        ]
+      },
+      {
+        "type": "ml_capabilities",
+        "title": "GC Secure Artifacts: Introduction to JFrog's Machine Learning (ML) Capabilities",
+        "content": "We're excited to share with you a recent session we had with JFrog, where they went deep into their ML offering. You can access the recording and presentation materials below:",
+        "recording_links": [
+          {
+            "text": "Watch the recording (MP4)",
+            "url": "#",
+            "title": "AUR-COM-009 - Intro to JFrog ML.mp4 (GCXChange Aurora)"
+          },
+          {
+            "text": "View the presentation (PPTX)",
+            "url": "#",
+            "title": "AUR-COM-009 - Intro to JFrog ML.pdf (GCXChange Aurora)"
+          }
+        ],
+        "features": {
+          "intro": "During the session, JFrog highlighted the key features of their ML platform, which enables organizations to deploy models to on-premises infrastructure with options for CPU or GPU-based compute. They also showcased advanced features that support the entire ML lifecycle, including:",
+          "items": [
+            "Model drift monitoring to ensure models stay accurate over time",
+            "Experiment tracking to optimize model performance",
+            "Feature stores to manage and reuse features across models"
+          ]
+        },
+        "additional_content": [
+          "Additionally, JFrog is developing an ML Catalog product, which will allow for curation and secure access to open-source models. This will greatly facilitate the discovery and reuse of existing models, reducing the need for duplication of effort and accelerating the development of new models.",
+          "With respect to GC Secure Artifacts, we're really interested in exploring how JFrog's ML capabilities can support potential ML initiatives. However, we need departmental interest and help to move this forward. We believe that JFrog's ML platform has the potential to greatly enhance AI / ML workflows, but we require buy-in and collaboration in order to make this happen."
+        ],
+        "resources": {
+          "title": "Additional Resources",
+          "intro": "For those interested in learning more, we've compiled additional resources to explore:",
+          "links": [
+            {
+              "text": "Hugging Face Model Security Partnership",
+              "url": "https://huggingface.co/blog/jfrog"
+            },
+            {
+              "text": "JFrog ML 2 Pager",
+              "url": "https://media.jfrog.com/wp-content/uploads/2025/03/11221648/ML-SOlution-Sheet-1.pdf"
+            },
+            {
+              "text": "NVIDIA | JFrog Partner to Accelerate Agentic AI",
+              "url": "https://jfrog.com/press-room/jfrog-joins-nvidias-enterprise-ai-factory-design-to-accelerate-agentic-ai/"
+            },
+            {
+              "text": "JFrog ML Security Research",
+              "url": "https://research.jfrog.com/model-threats/"
+            },
+            {
+              "text": "JFrog ML Webinar - Uniting AI ML and Traditional Software Supply Chain",
+              "url": "https://jfrog.com/webinar/mlops-masterclass-uniting-aiml-and-traditional-software-supply-chains/"
+            }
+          ]
+        }
+      },
+      {
+        "type": "aurora",
+        "title": "About Aurora",
+        "content": "Aurora is a cloud native platform built to support collaboration and innovation across government teams. The infrastructure is open, and you're welcome to explore our code and tools on the [Aurora GitHub](https://github.com/gccloudone). For updates and resources, visit the [Aurora Portal](https://aurora.gccloudone.ca).",
+        "involvement": {
+          "title": "How You Can Get Involved",
+          "items": [
+            "<strong>Join our meetups</strong> to connect with others, share ideas, and learn about cloud native technologies.",
+            "<strong>Contribute to open source</strong> by improving documentation, suggesting new features, or sharing feedback.",
+            "<strong>Participate in a Technical Advisory Group (TAG)</strong> focused on: <strong>Architecture</strong> (platform design, scalability, best practices), <strong>Security</strong> (zero trust, defense in depth, compliance), or <strong>Networking</strong> (service mesh, eBPF, multi cluster networking)"
+          ]
+        },
+        "community": "Stay in the loop by following the <strong>GCXchange Aurora Community</strong> for news, events, and conversations. If you haven't received an invite yet, reply to this message or email us at [aurora-aurore@ssc-spc.gc.ca](mailto:aurora-aurore@ssc-spc.gc.ca) and we'll make sure you're added.",
+        "feedback": {
+          "text": "We'd love your feedback: Please take a minute to fill out this short survey. It helps us understand your team's needs and shape future meetups and support.",
+          "buttons": [
+            {
+              "text": "Take Survey",
+              "url": "https://forms.office.com/r/9gCu6ddw7g"
+            },
+            {
+              "text": "Visit Aurora Portal",
+              "url": "https://aurora.gccloudone.ca"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "french": {
+    "sections": [
+      {
+        "type": "main_announcement",
+        "title": "Étape Importante : Lancement de la Plateforme d'Artefacts Sécurisés GC",
+        "content": "Services partagés Canada est heureux d'annoncer le lancement réussi des <strong>Artefacts Sécurisés GC</strong>, maintenant opérationnels pour les charges de travail non classifiées dans tous les ministères et organismes fédéraux. Cette initiative représente une avancée significative dans la transformation numérique et la stratégie de cybersécurité du Gouvernement du Canada.",
+        "highlight_box": {
+          "title": "Avantages Stratégiques de la Plateforme",
+          "items": [
+            "<strong>Gestion Centralisée de la Sécurité :</strong> Référentiel d'artefacts unifié avec contrôles de sécurité de niveau entreprise",
+            "<strong>Images de Conteneurs Sans Vulnérabilité :</strong> Approche sécuritaire de Chainguard pour les images de base",
+            "<strong>Optimisation des Coûts :</strong> Infrastructure partagée réduisant les coûts d'approvisionnement ministériels",
+            "<strong>Cadre de Conformité :</strong> Pistes d'audit intégrées et capacités d'analyse de sécurité",
+            "<strong>Protection de la Chaîne d'Approvisionnement :</strong> Visibilité de bout en bout et gestion des vulnérabilités"
+          ]
+        },
+        "stats": {
+          "title": "Métriques de Performance de la Plateforme",
+          "items": [
+            {"number": "100+", "label": "Utilisateurs Actifs"},
+            {"number": "0", "label": "CVE Connus dans les Images de Base"},
+            {"number": "24/7", "label": "Surveillance de Sécurité"},
+            {"number": "99.9%", "label": "Disponibilité de la Plateforme"}
+          ]
+        }
+      },
+      {
+        "type": "technology_stack",
+        "title": "Pile Technologique d'Entreprise",
+        "subsections": [
+          {
+            "title": "Plateforme JFrog Enterprise+",
+            "content": "Le Gouvernement du Canada a réussi à acquérir et déployer la <strong>Plateforme JFrog (Enterprise Plus)</strong>, fournissant des capacités DevSecOps complètes :",
+            "feature_cards": [
+              {
+                "title": "Référentiel d'Artefacts Universel",
+                "content": "Stockage et gestion centralisés pour les conteneurs Docker, artefacts Maven, packages NPM, packages NuGet, graphiques Helm et formats de packages supplémentaires."
+              },
+              {
+                "title": "Analyse de Sécurité Avancée",
+                "content": "Détection de vulnérabilités JFrog Xray intégrée avec application automatisée de politiques et surveillance continue de la sécurité."
+              },
+              {
+                "title": "Contrôles d'Accès d'Entreprise",
+                "content": "Permissions basées sur les rôles, segmentation de référentiels et gestion d'accès granulaire alignée avec les exigences de sécurité gouvernementales."
+              },
+              {
+                "title": "Conformité et Audit",
+                "content": "Pistes d'audit complètes, suivi d'informations de construction et capacités de rapport de conformité pour les exigences réglementaires."
+              }
+            ]
+          },
+          {
+            "title": "Images de Conteneurs Sécurisées Chainguard",
+            "content": "Notre partenariat stratégique avec Chainguard fournit les images de base de conteneurs les plus sécurisées de l'industrie :",
+            "feature_cards": [
+              {
+                "title": "Architecture Zero-CVE",
+                "content": "Aucune vulnérabilité de sécurité connue dans notre collection d'images de conteneurs curées, fournissant une base sécurisée pour le développement d'applications."
+              },
+              {
+                "title": "Implémentation Distroless",
+                "content": "Surface d'attaque minimale obtenue en incluant uniquement les composants d'exécution essentiels, réduisant l'exposition potentielle à la sécurité."
+              },
+              {
+                "title": "Signatures Cryptographiques",
+                "content": "Toutes les images sont signées cryptographiquement avec une Nomenclature Logicielle (SBOM) complète pour la transparence de la chaîne d'approvisionnement."
+              },
+              {
+                "title": "Mises à Jour Continues",
+                "content": "Les correctifs de sécurité automatisés et les mises à jour garantissent que les images restent à jour avec les dernières améliorations de sécurité."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "container_images",
+        "title": "Images de Conteneurs Disponibles",
+        "content": "Les images de conteneurs sécurisées suivantes, sans CVE, sont disponibles via le registre centralisé :",
+        "code_block": [
+          "<strong>Runtime Python :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/python:3.13.3",
+          "<strong>Kit de Développement Java :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/jdk:openjdk-21",
+          "<strong>Environnement d'Exécution Java :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/jre:openjdk-21",
+          "<strong>Runtime Node.js :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/node:24.1.0",
+          "<strong>Kit de Développement Logiciel .NET :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/dotnet-sdk",
+          "<strong>PowerShell Core :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/powershell"
+        ]
+      },
+      {
+        "type": "implementation",
+        "title": "Implémentation et Intégration",
+        "content": "Les ministères et organismes fédéraux peuvent commencer à utiliser les Artefacts Sécurisés GC grâce à ce processus d'intégration structuré :",
+        "phases": [
+          {
+            "title": "Phase 1 : Demande d'Accès et Authentification",
+            "content": "Soumettre une demande d'accès via le formulaire officiel d'intégration du Gouvernement du Canada et configurer l'authentification unique (SSO) via le locataire 163ENT Entra ID."
+          },
+          {
+            "title": "Phase 2 : Intégration de l'Environnement de Développement",
+            "content": "Mettre à jour les Dockerfiles existants pour référencer les images de base sécurisées Chainguard et intégrer les outils CLI JFrog dans les pipelines d'intégration continue."
+          },
+          {
+            "title": "Phase 3 : Configuration de Sécurité",
+            "content": "Implémenter l'analyse automatisée des dépendances, l'évaluation des vulnérabilités des conteneurs et les contrôles de sécurité basés sur les politiques dans les flux de travail de développement."
+          },
+          {
+            "title": "Phase 4 : Déploiement en Production",
+            "content": "Déployer des applications utilisant des artefacts vérifiés avec surveillance continue, rapports de conformité automatisés et procédures de réponse aux incidents."
+          }
+        ]
+      },
+      {
+        "type": "support",
+        "title": "Ressources de Formation et de Support",
+        "content": "Des ressources complètes de formation et de support sont disponibles pour assurer une adoption réussie de la plateforme :",
+        "list_items": [
+          "<strong>Formation JFrog Academy :</strong> Cours auto-rythmés et dirigés par un instructeur pour les administrateurs, développeurs et équipes DevSecOps",
+          "<strong>Documentation Technique :</strong> Guides d'implémentation complets, références API et documentation des meilleures pratiques",
+          "<strong>Configuration en tant que Code :</strong> Modèles standardisés et scripts d'automatisation pour un déploiement rapide",
+          "<strong>Services de Support :</strong> Support technique dédié et procédures d'escalade pour les problèmes opérationnels"
+        ],
+        "contact": {
+          "text": "Pour des questions ou du support concernant la plateforme d'Artefacts Sécurisés GC, veuillez contacter",
+          "email": "devops.artifacts-artefacts.devops@ssc-spc.gc.ca"
+        }
+      },
+      {
+        "type": "cta",
+        "title": "Commencez Votre Parcours de Développement Sécurisé",
+        "content": "Commencez avec la plateforme d'Artefacts Sécurisés GC et explorez notre documentation complète",
+        "buttons": [
+          {
+            "text": "Accéder à la Plateforme",
+            "url": "https://artifacts-artefacts.devops.cloud-nuage.canada.ca"
+          },
+          {
+            "text": "Documentation Technique",
+            "url": "https://github.com/gccloudone/artifacts-artefacts"
+          }
+        ]
+      },
+      {
+        "type": "ml_capabilities",
+        "title": "Les artefacts sécurisés de GC : Introduction aux capacités d'apprentissage automatique (ML) de JFrog",
+        "content": "Nous sommes ravis de partager avec vous une récente séance que nous avons eue avec JFrog, où ils ont approfondi leur offre d'apprentissage automatique. Vous pouvez accéder au enregistrement et aux matériels de présentation ci-dessous :",
+        "recording_links": [
+          {
+            "text": "Regardez l'enregistrement (MP4)",
+            "url": "#",
+            "title": "AUR-COM-009 - Intro to JFrog ML.mp4 (GCXChange Aurore)"
+          },
+          {
+            "text": "Consultez la présentation (PPTX)",
+            "url": "#",
+            "title": "AUR-COM-009 - Intro to JFrog ML.pdf (GCXChange Aurore)"
+          }
+        ],
+        "features": {
+          "intro": "Lors de la session, JFrog a mis en avant les caractéristiques clés de leur plateforme d'apprentissage automatique, qui permet aux organisations de déployer des modèles sur des infrastructures en place avec des options pour le traitement par CPU ou par carte graphique. Ils ont également démontré des fonctionnalités avançées qui soutiennent tout le cycle de vie de l'apprentissage automatique, y compris :",
+          "items": [
+            "Surveillance du dérive de modèle pour s'assurer que les modèles restent précis au fil du temps",
+            "Suivi des expériences pour optimiser les performances des modèles",
+            "Magasins de fonctionnalités pour gérer et réutiliser des fonctionnalités à travers les modèles"
+          ]
+        },
+        "additional_content": [
+          "De plus, JFrog développe un produit de catalogage d'apprentissage automatique, qui permettra de curer et d'accéder de manière sécurisée aux modèles open-source. Cela facilitera grandement la découverte et la réutilisation de modèles existants, réduisant la nécessité de duplication d'efforts et accélérant le développement de nouveaux modèles.",
+          "En ce qui concerne les artefacts sécurisés de GC, nous sommes vraiment intéressés à explorer comment les capacités d'apprentissage automatique de JFrog peuvent soutenir les initiatives ML potentielles. Cependant, nous avons besoin de l'intérêt et de l'aide du ministère pour faire progresser cela. Nous pensons que la plateforme d'apprentissage automatique de JFrog a le potentiel de grandement améliorer les workflows AI / ML, mais nous avons besoin d'adhésion et de collaboration pour faire cela."
+        ],
+        "resources": {
+          "title": "Ressources supplémentaires",
+          "intro": "Pour ceux qui sont intéressés d'en apprendre plus, nous avons compilé des ressources supplémentaires pour explorer :",
+          "links": [
+            {
+              "text": "Partenariat de sécurité des modèles Hugging Face",
+              "url": "https://huggingface.co/blog/jfrog"
+            },
+            {
+              "text": "Fiche technique de 2 pages de JFrog ML",
+              "url": "https://media.jfrog.com/wp-content/uploads/2025/03/11221648/ML-Solution-Sheet-1.pdf"
+            },
+            {
+              "text": "Partenariat NVIDIA | JFrog pour accélérer l'IA agentique",
+              "url": "https://jfrog.com/press-room/jfrog-joins-nvidias-enterprise-ai-factory-design-to-accelerate-agentic-ai/"
+            },
+            {
+              "text": "Recherche de sécurité de JFrog ML",
+              "url": "https://research.jfrog.com/model-threats/"
+            },
+            {
+              "text": "Webinaire de JFrog ML - Unification de l'IA, de l'apprentissage automatique et de la chaîne d'approvisionnement logicielle traditionnelle",
+              "url": "https://jfrog.com/webinar/mlops-masterclass-uniting-aiml-and-traditional-software-supply-chains/"
+            }
+          ]
+        }
+      },
+      {
+        "type": "aurora",
+        "title": "À Propos d'Aurore",
+        "content": "Aurore est une plateforme native cloud construite pour soutenir la collaboration et l'innovation entre les équipes gouvernementales. L'infrastructure est ouverte, et vous êtes invités à explorer notre code et nos outils sur [GitHub Aurore](https://github.com/gccloudone). Pour les mises à jour et ressources, visitez le [Portail Aurore](https://aurora.gccloudone.ca).",
+        "involvement": {
+          "title": "Comment Vous Pouvez Vous Impliquer",
+          "items": [
+            "<strong>Rejoignez nos rencontres</strong> pour vous connecter avec d'autres, partager des idées et apprendre sur les technologies natives cloud.",
+            "<strong>Contribuez à l'open source</strong> en améliorant la documentation, suggérant de nouvelles fonctionnalités ou partageant des commentaires.",
+            "<strong>Participez à un Groupe Consultatif Technique (TAG)</strong> axé sur : <strong>Architecture</strong> (conception de plateforme, évolutivité, meilleures pratiques), <strong>Sécurité</strong> (confiance zéro, défense en profondeur, conformité), ou <strong>Réseautage</strong> (maillage de services, eBPF, réseautage multi-cluster)"
+          ]
+        },
+        "community": "Restez informé en suivant la <strong>Communauté Aurore GCXchange</strong> pour les nouvelles, événements et conversations. Si vous n'avez pas encore reçu d'invitation, répondez à ce message ou envoyez-nous un courriel à [aurora-aurore@ssc-spc.gc.ca](mailto:aurora-aurore@ssc-spc.gc.ca) et nous nous assurerons que vous soyez ajouté.",
+        "feedback": {
+          "text": "Nous aimerions avoir vos commentaires : Veuillez prendre une minute pour remplir ce court sondage. Cela nous aide à comprendre les besoins de votre équipe et à façonner les futures rencontres et le support.",
+          "buttons": [
+            {
+              "text": "Répondre au Sondage",
+              "url": "https://forms.office.com/r/9gCu6ddw7g"
+            },
+            {
+              "text": "Visiter le Portail Aurore",
+              "url": "https://aurora.gccloudone.ca"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

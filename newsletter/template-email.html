@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <style>
+        /* Base styles for email */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #2A283C;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .title-main {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .title-sub {
+            font-size: 28px;
+        }
+        .subtitle {
+            font-size: 18px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content-section h2 {
+            color: #C91CB3;
+            font-size: 22px;
+            border-bottom: 2px solid #C91CB3;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .footer {
+            background-color: #2A283C;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #C91CB3;
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td align="center">
+                <table role="presentation" class="container" width="800" cellspacing="0" cellpadding="0" border="0">
+                    <!-- HEADER -->
+                    <tr>
+                        <td class="header">
+                            <h1 class="title-main">Aurora Newsletter</h1>
+                            <h2 class="title-sub">{{SUBTITLE}}</h2>
+                            <p class="subtitle">{{TAGLINE}}</p>
+                        </td>
+                    </tr>
+                    <!-- CONTENT -->
+                    <tr>
+                        <td class="content">
+                            <!-- ENGLISH CONTENT -->
+                            <div class="content-section">
+                                {{ENGLISH_CONTENT}}
+                            </div>
+                            <!-- FRENCH CONTENT -->
+                            <div class="content-section">
+                                <h2>Version Française</h2>
+                                {{FRENCH_CONTENT}}
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- FOOTER -->
+                    <tr>
+                        <td class="footer">
+                            <p><strong>Aurora Project | Projet Aurore</strong></p>
+                            <p>Shared Services Canada | Services partagés Canada</p>
+                            <p>Contact: <a href="mailto:aurora-aurore@ssc-spc.gc.ca">aurora-aurore@ssc-spc.gc.ca</a></p>
+                            <p>Website: <a href="https://aurora.gccloudone.ca">aurora.gccloudone.ca</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
