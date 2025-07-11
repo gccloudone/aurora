@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <style>
+        /* Reset and base styles for email clients */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url('assets/background.jpeg');
+            background-size: 970px auto;
+            background-position: center top;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: transparent;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, rgba(42, 40, 60, 0.9) 0%, rgba(69, 48, 168, 0.9) 50%, rgba(201, 28, 179, 0.9) 100%);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gc-branding {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gc-logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+            font-weight: normal;
+            gap: 12px;
+        }
+
+        .gc-text {
+            line-height: 1.2;
+        }
+
+        .gc-text-french {
+            font-size: 14px;
+            margin-top: 4px;
+            line-height: 1.2;
+        }
+
+        .canada-flag {
+            margin-right: 8px;
+        }
+
+        .ssc-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .canada-logo {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .title-section {
+            position: relative;
+            z-index: 2;
+        }
+
+        .title-main {
+            font-family: Arial, sans-serif;
+            color: white;
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title-sub {
+            font-family: Arial, sans-serif;
+            color: white;
+            font-size: 58px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .title-description {
+            font-family: Arial, sans-serif;
+            color: rgba(69, 48, 168, 0.9);
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-family: Arial, sans-serif;
+            color: white;
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        /* Hero Image Section */
+        .hero-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(69, 48, 168, 0.8) 0%, rgba(201, 28, 179, 0.8) 50%, rgba(201, 28, 179, 0.6) 100%);
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .hero-overlay h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero-overlay p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Content Section */
+        .content {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            line-height: 1.7;
+        }
+
+        .language-toggle {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .lang-button {
+            display: inline-block;
+            padding: 14px 28px;
+            margin: 0 8px;
+            background: rgba(42, 40, 60, 0.9);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .lang-button:hover {
+            background: rgba(81, 80, 104, 0.9);
+            text-decoration: none;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .lang-button.active {
+            background: linear-gradient(135deg, #C91CB3 0%, #B017A8 100%);
+            box-shadow: 0 4px 16px rgba(201, 28, 179, 0.3);
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .content-section h2 {
+            color: #C91CB3;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #C91CB3;
+            padding-bottom: 8px;
+        }
+
+        .content-section h3 {
+            color: #4530A8;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .content-section h4 {
+            color: #2A283C;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .content-section p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .content-section ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        .content-section li {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #C91CB3, #4530A8);
+            color: white;
+            padding: 32px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 8px 32px rgba(201, 28, 179, 0.2), 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .highlight-box li {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 28px;
+            border-radius: 16px;
+            border-left: 4px solid #C91CB3;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .feature-card h4 {
+            color: #2A283C;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .code-block {
+            background: rgba(248, 249, 250, 0.9);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .code-block p {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #2A283C;
+            margin-bottom: 10px;
+            word-break: break-all;
+            line-height: 1.5;
+        }
+
+        .code-block strong {
+            color: #C91CB3;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2A283C 0%, #1f1e2e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 8px 32px rgba(42, 40, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #C91CB3 0%, #B017A8 100%);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 17px;
+            margin: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(201, 28, 179, 0.3), 0 1px 4px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(201, 28, 179, 0.4), 0 2px 8px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: white;
+        }
+
+        .cta-button:hover::before {
+            opacity: 1;
+        }
+
+        .footer {
+            background-color: rgba(42, 40, 60, 0.9);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #C91CB3;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Language sections */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        .stats-section {
+            background: rgba(248, 249, 250, 0.9);
+            padding: 32px;
+            border-radius: 16px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #C91CB3;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: normal;
+        }
+
+        /* Aurora Section Styles */
+        .aurora-section {
+            background: linear-gradient(135deg, #2A283C 0%, #4530A8 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aurora-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6C63FF, #C91CB3, #6C63FF);
+        }
+
+        .aurora-section h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 12px;
+        }
+
+        .aurora-section h3 {
+            color: #6C63FF;
+            font-size: 20px;
+            margin: 25px 0 15px 0;
+        }
+
+        .aurora-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .aurora-section ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .aurora-section li {
+            color: rgba(255,255,255,0.9);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .aurora-section li::marker {
+            color: #6C63FF;
+        }
+
+        .aurora-section a {
+            color: #6C63FF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .aurora-section a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .aurora-cta {
+            background: rgba(255,255,255,0.08);
+            padding: 32px;
+            border-radius: 16px;
+            margin-top: 36px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .aurora-cta p {
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .aurora-cta a {
+            display: inline-block;
+            background: linear-gradient(135deg, #6C63FF 0%, #5A52E5 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .aurora-cta a:hover {
+            background: linear-gradient(135deg, #5A52E5 0%, #2A283C 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(108, 99, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .title-main {
+                font-size: 48px;
+            }
+
+            .title-sub {
+                font-size: 36px;
+            }
+
+            .title-description {
+                font-size: 28px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .content-section {
+                margin-bottom: 35px;
+            }
+
+            .content-section h2 {
+                font-size: 22px;
+            }
+
+            .content-section h3 {
+                font-size: 19px;
+                margin-top: 20px;
+            }
+
+            .gc-branding {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-button {
+                display: block;
+                margin: 8px 0;
+                padding: 12px 24px;
+            }
+
+            .feature-card {
+                padding: 24px;
+            }
+
+            .highlight-box {
+                padding: 28px;
+                border-radius: 16px;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+
+            .aurora-section {
+                padding: 25px;
+                margin: 25px 0;
+            }
+
+            .aurora-section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER START -->
+        <div class="header">
+            <div class="gc-branding">
+                <div class="gc-logo">
+                    <div class="ssc-text">
+                        <img src="assets/ssc-text.svg" alt="Shared Services Canada / Services partagés Canada" style="height: 25px; width: auto;">
+                    </div>
+                </div>
+                <div class="canada-logo">
+                    <img src="assets/canada-logo.svg" alt="Canada" style="height: 35px; width: auto;">
+                </div>
+            </div>
+            <div class="title-section">
+                <h1 class="title-main">Aurora Newsletter</h1>
+                <h2 class="title-sub">{{SUBTITLE}}</h2>
+                <p class="subtitle">{{TAGLINE}}</p>
+            </div>
+        </div>
+        <!-- HEADER END -->
+
+        <!-- HERO START -->
+        <div class="hero-image">
+            <div class="hero-overlay">
+                <h3>{{HERO_TITLE}}</h3>
+                <p>{{HERO_DESCRIPTION}}</p>
+            </div>
+        </div>
+        <!-- HERO END -->
+
+        <!-- CONTENT START -->
+        <div class="content">
+            <!-- Language Toggle -->
+            <div class="language-toggle">
+                <button class="lang-button active" onclick="showLanguage('en')">English</button>
+                <button class="lang-button" onclick="showLanguage('fr')">Français</button>
+            </div>
+
+            <!-- ENGLISH CONTENT START -->
+            <div id="en-content" class="lang-content active">
+                {{ENGLISH_CONTENT}}
+            </div>
+            <!-- ENGLISH CONTENT END -->
+
+            <!-- FRENCH CONTENT START -->
+            <div id="fr-content" class="lang-content">
+                {{FRENCH_CONTENT}}
+            </div>
+            <!-- FRENCH CONTENT END -->
+        </div>
+        <!-- CONTENT END -->
+
+        <!-- FOOTER START -->
+        <div class="footer">
+            <p><strong>Aurora Project | Projet Aurore</strong></p>
+            <p>Shared Services Canada | Services partagés Canada</p>
+            <p>Contact: <a href="mailto:aurora-aurore@ssc-spc.gc.ca">aurora-aurore@ssc-spc.gc.ca</a></p>
+            <p>Website: <a href="https://aurora.gccloudone.ca">aurora.gccloudone.ca</a></p>
+            <p style="margin-top: 20px; font-size: 14px; color: #ccc;">
+                Let's Deliver for Canadians! | Offrons des résultats aux Canadiens!
+            </p>
+        </div>
+        <!-- FOOTER END -->
+    </div>
+
+    <script>
+        function showLanguage(lang) {
+            document.getElementById('en-content').classList.remove('active');
+            document.getElementById('fr-content').classList.remove('active');
+
+            document.querySelectorAll('.lang-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById(lang + '-content').classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

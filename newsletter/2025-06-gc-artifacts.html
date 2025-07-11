@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Newsletter - GC Secure Artifacts</title>
+    <style>
+        /* Reset and base styles for email clients */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url('assets/background.jpeg');
+            background-size: 970px auto;
+            background-position: center top;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: transparent;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, rgba(42, 40, 60, 0.9) 0%, rgba(69, 48, 168, 0.9) 50%, rgba(201, 28, 179, 0.9) 100%);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gc-branding {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gc-logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+            font-weight: normal;
+            gap: 12px;
+        }
+
+        .gc-text {
+            line-height: 1.2;
+        }
+
+        .gc-text-french {
+            font-size: 14px;
+            margin-top: 4px;
+            line-height: 1.2;
+        }
+
+        .canada-flag {
+            margin-right: 8px;
+        }
+
+        .ssc-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .canada-logo {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .title-section {
+            position: relative;
+            z-index: 2;
+        }
+
+        .title-main {
+            font-family: Arial, sans-serif;
+            color: white;
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title-sub {
+            font-family: Arial, sans-serif;
+            color: white;
+            font-size: 58px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .title-description {
+            font-family: Arial, sans-serif;
+            color: rgba(69, 48, 168, 0.9);
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-family: Arial, sans-serif;
+            color: white;
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        /* Hero Image Section */
+        .hero-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(69, 48, 168, 0.8) 0%, rgba(201, 28, 179, 0.8) 50%, rgba(201, 28, 179, 0.6) 100%);
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .hero-overlay h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero-overlay p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Content Section */
+        .content {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            line-height: 1.7;
+        }
+
+        .language-toggle {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .lang-button {
+            display: inline-block;
+            padding: 14px 28px;
+            margin: 0 8px;
+            background: rgba(42, 40, 60, 0.9);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .lang-button:hover {
+            background: rgba(81, 80, 104, 0.9);
+            text-decoration: none;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .lang-button.active {
+            background: linear-gradient(135deg, #C91CB3 0%, #B017A8 100%);
+            box-shadow: 0 4px 16px rgba(201, 28, 179, 0.3);
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .content-section h2 {
+            color: #C91CB3;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #C91CB3;
+            padding-bottom: 8px;
+        }
+
+        .content-section h3 {
+            color: #4530A8;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .content-section h4 {
+            color: #2A283C;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .content-section p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .content-section ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        .content-section li {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #C91CB3, #4530A8);
+            color: white;
+            padding: 32px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 8px 32px rgba(201, 28, 179, 0.2), 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .highlight-box li {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 28px;
+            border-radius: 16px;
+            border-left: 4px solid #C91CB3;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .feature-card h4 {
+            color: #2A283C;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .code-block {
+            background: rgba(248, 249, 250, 0.9);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .code-block p {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #2A283C;
+            margin-bottom: 10px;
+            word-break: break-all;
+            line-height: 1.5;
+        }
+
+        .code-block strong {
+            color: #C91CB3;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2A283C 0%, #1f1e2e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 8px 32px rgba(42, 40, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #C91CB3 0%, #B017A8 100%);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 17px;
+            margin: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(201, 28, 179, 0.3), 0 1px 4px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(201, 28, 179, 0.4), 0 2px 8px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: white;
+        }
+
+        .cta-button:hover::before {
+            opacity: 1;
+        }
+
+        .footer {
+            background-color: rgba(42, 40, 60, 0.9);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #C91CB3;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Language sections */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        .stats-section {
+            background: rgba(248, 249, 250, 0.9);
+            padding: 32px;
+            border-radius: 16px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #C91CB3;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: normal;
+        }
+
+        /* Aurora Section Styles */
+        .aurora-section {
+            background: linear-gradient(135deg, #2A283C 0%, #4530A8 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aurora-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6C63FF, #C91CB3, #6C63FF);
+        }
+
+        .aurora-section h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 12px;
+        }
+
+        .aurora-section h3 {
+            color: #6C63FF;
+            font-size: 20px;
+            margin: 25px 0 15px 0;
+        }
+
+        .aurora-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .aurora-section ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .aurora-section li {
+            color: rgba(255,255,255,0.9);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .aurora-section li::marker {
+            color: #6C63FF;
+        }
+
+        .aurora-section a {
+            color: #6C63FF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .aurora-section a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .aurora-cta {
+            background: rgba(255,255,255,0.08);
+            padding: 32px;
+            border-radius: 16px;
+            margin-top: 36px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .aurora-cta p {
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .aurora-cta a {
+            display: inline-block;
+            background: linear-gradient(135deg, #6C63FF 0%, #5A52E5 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .aurora-cta a:hover {
+            background: linear-gradient(135deg, #5A52E5 0%, #2A283C 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(108, 99, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .title-main {
+                font-size: 48px;
+            }
+
+            .title-sub {
+                font-size: 36px;
+            }
+
+            .title-description {
+                font-size: 28px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .content-section {
+                margin-bottom: 35px;
+            }
+
+            .content-section h2 {
+                font-size: 22px;
+            }
+
+            .content-section h3 {
+                font-size: 19px;
+                margin-top: 20px;
+            }
+
+            .gc-branding {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-button {
+                display: block;
+                margin: 8px 0;
+                padding: 12px 24px;
+            }
+
+            .feature-card {
+                padding: 24px;
+            }
+
+            .highlight-box {
+                padding: 28px;
+                border-radius: 16px;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+
+            .aurora-section {
+                padding: 25px;
+                margin: 25px 0;
+            }
+
+            .aurora-section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER START -->
+        <div class="header">
+            <div class="gc-branding">
+                <div class="gc-logo">
+                    <div class="ssc-text">
+                        <img src="assets/ssc-text.svg" alt="Shared Services Canada / Services partagés Canada" style="height: 25px; width: auto;">
+                    </div>
+                </div>
+                <div class="canada-logo">
+                    <img src="assets/canada-logo.svg" alt="Canada" style="height: 35px; width: auto;">
+                </div>
+            </div>
+            <div class="title-section">
+                <h1 class="title-main">Aurora Newsletter</h1>
+                <h2 class="title-sub">GC Secure Artifacts</h2>
+                <p class="subtitle">Strengthening GC's Software Supply Chain</p>
+            </div>
+        </div>
+        <!-- HEADER END -->
+
+        <!-- HERO START -->
+        <div class="hero-image">
+            <div class="hero-overlay">
+                <h3>Secure • Scalable • Centralized</h3>
+                <p>Government of Canada Artifact Management Platform</p>
+            </div>
+        </div>
+        <!-- HERO END -->
+
+        <!-- CONTENT START -->
+        <div class="content">
+            <!-- Language Toggle -->
+            <div class="language-toggle">
+                <button class="lang-button active" onclick="showLanguage('en')">English</button>
+                <button class="lang-button" onclick="showLanguage('fr')">Français</button>
+            </div>
+
+            <!-- ENGLISH CONTENT START -->
+            <div id="en-content" class="lang-content active">
+                <div class="content-section">
+    <h2>Major Milestone: GC Secure Artifacts Platform Launch</h2>
+    <p>Shared Services Canada is pleased to announce the successful launch of <strong>GC Secure Artifacts</strong>, now operational for unclassified workloads across all federal departments and agencies. This initiative represents a significant advancement in the Government of Canada's digital transformation and cybersecurity strategy.</p>
+
+    <div class="highlight-box">
+        <h3>Strategic Platform Benefits</h3>
+        <ul>
+            <li><strong>Centralized Security Management:</strong> Unified artifact repository with enterprise grade security controls</li>
+            <li><strong>Zero Vulnerability Container Images:</strong> Chainguard's security first approach to base images</li>
+            <li><strong>Cost Optimization:</strong> Shared infrastructure reducing departmental procurement overhead</li>
+            <li><strong>Compliance Framework:</strong> Built in audit trails and security scanning capabilities</li>
+            <li><strong>Supply Chain Protection:</strong> End to end visibility and vulnerability management</li>
+        </ul>
+    </div>
+
+    <div class="stats-section">
+        <h3>Platform Performance Metrics</h3>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Active Users</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Known CVEs in Base Images</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Security Monitoring</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Platform Availability</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>Enterprise Technology Stack</h2>
+
+    <h3>JFrog Enterprise+ Platform</h3>
+    <p>The Government of Canada has successfully procured and deployed the <strong>JFrog Platform (Enterprise Plus)</strong>, providing comprehensive DevSecOps capabilities:</p>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>Universal Artifact Repository</h4>
+            <p>Centralized storage and management for Docker containers, Maven artifacts, NPM packages, NuGet packages, Helm charts, and additional package formats.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Advanced Security Scanning</h4>
+            <p>Integrated JFrog Xray vulnerability detection with automated policy enforcement and continuous security monitoring.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Enterprise Access Controls</h4>
+            <p>Role based permissions, repository segmentation, and fine grained access management aligned with government security requirements.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Compliance and Audit</h4>
+            <p>Complete audit trails, build information tracking, and compliance reporting capabilities for regulatory requirements.</p>
+        </div>
+    </div>
+
+    <h3>Chainguard Secure Container Images</h3>
+    <p>Our strategic partnership with Chainguard delivers the industry's most secure container base images:</p>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>Zero-CVE Architecture</h4>
+            <p>No known security vulnerabilities in our curated container image collection, providing a secure foundation for application development.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Distroless Implementation</h4>
+            <p>Minimal attack surface achieved by including only essential runtime components, reducing potential security exposure.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Cryptographic Signatures</h4>
+            <p>All images are cryptographically signed with comprehensive Software Bill of Materials (SBOM) for supply chain transparency.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Continuous Updates</h4>
+            <p>Automated security patches and updates ensure images remain current with the latest security improvements.</p>
+        </div>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>Available Container Images</h2>
+    <p>The following secure, zero-CVE container images are available through the centralized registry:</p>
+
+    <div class="code-block">
+        <p><strong>Python Runtime:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/python:3.13.3</p>
+        <p><strong>Java Development Kit:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/jdk:openjdk-21</p>
+        <p><strong>Java Runtime Environment:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/jre:openjdk-21</p>
+        <p><strong>Node.js Runtime:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/node:24.1.0</p>
+        <p><strong>.NET Software Development Kit:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/dotnet-sdk</p>
+        <p><strong>PowerShell Core:</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/powershell</p>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>Implementation and Onboarding</h2>
+    <p>Federal departments and agencies can start using GC Secure Artifacts through this structured onboarding process:</p>
+
+    <h4>Phase 1: Access Request and Authentication</h4>
+    <p>Submit access request through the official Government of Canada onboarding form and configure Single Sign-On (SSO) authentication through the 163ENT Entra ID tenant.</p>
+
+    <h4>Phase 2: Development Environment Integration</h4>
+    <p>Update existing Dockerfiles to reference secure Chainguard base images and integrate JFrog CLI tools into continuous integration pipelines.</p>
+
+    <h4>Phase 3: Security Configuration</h4>
+    <p>Implement automated dependency scanning, container vulnerability assessment, and policy-based security controls within development workflows.</p>
+
+    <h4>Phase 4: Production Deployment</h4>
+    <p>Deploy applications using verified artifacts with continuous monitoring, automated compliance reporting, and incident response procedures.</p>
+</div>
+
+<div class="content-section">
+    <h2>Training and Support Resources</h2>
+    <p>Comprehensive training and support resources are available to ensure successful platform adoption:</p>
+
+    <ul>
+        <li><strong>JFrog Academy Training:</strong> Self paced and instructor led courses for administrators, developers, and DevSecOps teams</li>
+        <li><strong>Technical Documentation:</strong> Complete implementation guides, API references, and best practices documentation</li>
+        <li><strong>Configuration as Code:</strong> Standardized templates and automation scripts for rapid deployment</li>
+        <li><strong>Support Services:</strong> Dedicated technical support and escalation procedures for operational issues</li>
+    </ul>
+
+    <p><strong>Contact:</strong> For questions or support regarding the GC Secure Artifacts platform, please reach out to <a href="mailto:devops.artifacts-artefacts.devops@ssc-spc.gc.ca">devops.artifacts-artefacts.devops@ssc-spc.gc.ca</a></p>
+</div>
+
+<div class="cta-section">
+    <h3>Begin Your Secure Development Journey</h3>
+    <p>Get started with the GC Secure Artifacts platform and explore our comprehensive documentation</p>
+    <a href="https://artifacts-artefacts.devops.cloud-nuage.canada.ca" class="cta-button">Access Platform</a>
+    <a href="https://github.com/gccloudone/artifacts-artefacts" class="cta-button">Technical Documentation</a>
+</div>
+
+<div class="content-section">
+    <h2>GC Secure Artifacts: Introduction to JFrog's Machine Learning (ML) Capabilities</h2>
+    <p>We're excited to share with you a recent session we had with JFrog, where they went deep into their ML offering. You can access the recording and presentation materials below:</p>
+    <ul>
+        <li><strong>Watch the recording (MP4):</strong> <a href="#" target="_blank">AUR-COM-009 - Intro to JFrog ML.mp4 (GCXChange Aurora)</a></li>
+        <li><strong>View the presentation (PPTX):</strong> <a href="#" target="_blank">AUR-COM-009 - Intro to JFrog ML.pdf (GCXChange Aurora)</a></li>
+    </ul>
+    <p>During the session, JFrog highlighted the key features of their ML platform, which enables organizations to deploy models to on-premises infrastructure with options for CPU or GPU-based compute. They also showcased advanced features that support the entire ML lifecycle, including:</p>
+    <ul>
+        <li>Model drift monitoring to ensure models stay accurate over time</li>
+        <li>Experiment tracking to optimize model performance</li>
+        <li>Feature stores to manage and reuse features across models</li>
+    </ul>
+    <p>Additionally, JFrog is developing an ML Catalog product, which will allow for curation and secure access to open-source models. This will greatly facilitate the discovery and reuse of existing models, reducing the need for duplication of effort and accelerating the development of new models.</p>
+    <p>With respect to GC Secure Artifacts, we're really interested in exploring how JFrog's ML capabilities can support potential ML initiatives. However, we need departmental interest and help to move this forward. We believe that JFrog's ML platform has the potential to greatly enhance AI / ML workflows, but we require buy-in and collaboration in order to make this happen.</p>
+    <h3>Additional Resources</h3>
+    <p>For those interested in learning more, we've compiled additional resources to explore:</p>
+    <ul>
+        <li><a href="https://huggingface.co/blog/jfrog" target="_blank">Hugging Face Model Security Partnership</a></li>
+        <li><a href="https://media.jfrog.com/wp-content/uploads/2025/03/11221648/ML-SOlution-Sheet-1.pdf" target="_blank">JFrog ML 2 Pager</a></li>
+        <li><a href="https://jfrog.com/press-room/jfrog-joins-nvidias-enterprise-ai-factory-design-to-accelerate-agentic-ai/" target="_blank">NVIDIA | JFrog Partner to Accelerate Agentic AI</a></li>
+        <li><a href="https://research.jfrog.com/model-threats/" target="_blank">JFrog ML Security Research</a></li>
+        <li><a href="https://jfrog.com/webinar/mlops-masterclass-uniting-aiml-and-traditional-software-supply-chains/" target="_blank">JFrog ML Webinar - Uniting AI ML and Traditional Software Supply Chain</a></li>
+    </ul>
+</div>
+
+<!-- Aurora Section -->
+<div class="aurora-section">
+    <h2>About Aurora</h2>
+    <p>Aurora is a cloud native platform built to support collaboration and innovation across government teams. The infrastructure is open, and you're welcome to explore our code and tools on the <a href="https://github.com/gccloudone">Aurora GitHub</a>. For updates and resources, visit the <a href="https://aurora.gccloudone.ca">Aurora Portal</a>.</p>
+    
+    <h3>How You Can Get Involved</h3>
+    <ul>
+        <li><strong>Join our meetups</strong> to connect with others, share ideas, and learn about cloud native technologies.</li>
+        <li><strong>Contribute to open source</strong> by improving documentation, suggesting new features, or sharing feedback.</li>
+        <li><strong>Participate in a Technical Advisory Group (TAG)</strong> focused on: <strong>Architecture</strong> (platform design, scalability, best practices), <strong>Security</strong> (zero trust, defense in depth, compliance), or <strong>Networking</strong> (service mesh, eBPF, multi cluster networking)</li>
+    </ul>
+    
+    <p>Stay in the loop by following the <strong>GCXchange Aurora Community</strong> for news, events, and conversations. If you haven't received an invite yet, reply to this message or email us at <a href="mailto:aurora-aurore@ssc-spc.gc.ca">aurora-aurore@ssc-spc.gc.ca</a> and we'll make sure you're added.</p>
+    
+    <div class="aurora-cta">
+        <p><strong>We'd love your feedback: Please take a minute to fill out this short survey. It helps us understand your team's needs and shape future meetups and support.</strong></p>
+        <a href="https://forms.office.com/r/9gCu6ddw7g" target="_blank">Take Survey</a>
+        <a href="https://aurora.gccloudone.ca" target="_blank">Visit Aurora Portal</a>
+    </div>
+</div>
+            </div>
+            <!-- ENGLISH CONTENT END -->
+
+            <!-- FRENCH CONTENT START -->
+            <div id="fr-content" class="lang-content">
+                <div class="content-section">
+    <h2>Étape Importante : Lancement de la Plateforme d'Artefacts Sécurisés GC</h2>
+    <p>Services partagés Canada est heureux d'annoncer le lancement réussi des <strong>Artefacts Sécurisés GC</strong>, maintenant opérationnels pour les charges de travail non classifiées dans tous les ministères et organismes fédéraux. Cette initiative représente une avancée significative dans la transformation numérique et la stratégie de cybersécurité du Gouvernement du Canada.</p>
+
+    <div class="highlight-box">
+        <h3>Avantages Stratégiques de la Plateforme</h3>
+        <ul>
+            <li><strong>Gestion Centralisée de la Sécurité :</strong> Référentiel d'artefacts unifié avec contrôles de sécurité de niveau entreprise</li>
+            <li><strong>Images de Conteneurs Sans Vulnérabilité :</strong> Approche sécuritaire de Chainguard pour les images de base</li>
+            <li><strong>Optimisation des Coûts :</strong> Infrastructure partagée réduisant les coûts d'approvisionnement ministériels</li>
+            <li><strong>Cadre de Conformité :</strong> Pistes d'audit intégrées et capacités d'analyse de sécurité</li>
+            <li><strong>Protection de la Chaîne d'Approvisionnement :</strong> Visibilité de bout en bout et gestion des vulnérabilités</li>
+        </ul>
+    </div>
+
+    <div class="stats-section">
+        <h3>Métriques de Performance de la Plateforme</h3>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Utilisateurs Actifs</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">0</span>
+                <span class="stat-label">CVE Connus dans les Images de Base</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Surveillance de Sécurité</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Disponibilité de la Plateforme</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>Pile Technologique d'Entreprise</h2>
+
+    <h3>Plateforme JFrog Enterprise+</h3>
+    <p>Le Gouvernement du Canada a réussi à acquérir et déployer la <strong>Plateforme JFrog (Enterprise Plus)</strong>, fournissant des capacités DevSecOps complètes :</p>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>Référentiel d'Artefacts Universel</h4>
+            <p>Stockage et gestion centralisés pour les conteneurs Docker, artefacts Maven, packages NPM, packages NuGet, graphiques Helm et formats de packages supplémentaires.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Analyse de Sécurité Avancée</h4>
+            <p>Détection de vulnérabilités JFrog Xray intégrée avec application automatisée de politiques et surveillance continue de la sécurité.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Contrôles d'Accès d'Entreprise</h4>
+            <p>Permissions basées sur les rôles, segmentation de référentiels et gestion d'accès granulaire alignée avec les exigences de sécurité gouvernementales.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Conformité et Audit</h4>
+            <p>Pistes d'audit complètes, suivi d'informations de construction et capacités de rapport de conformité pour les exigences réglementaires.</p>
+        </div>
+    </div>
+
+    <h3>Images de Conteneurs Sécurisées Chainguard</h3>
+    <p>Notre partenariat stratégique avec Chainguard fournit les images de base de conteneurs les plus sécurisées de l'industrie :</p>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>Architecture Zero-CVE</h4>
+            <p>Aucune vulnérabilité de sécurité connue dans notre collection d'images de conteneurs curées, fournissant une base sécurisée pour le développement d'applications.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Implémentation Distroless</h4>
+            <p>Surface d'attaque minimale obtenue en incluant uniquement les composants d'exécution essentiels, réduisant l'exposition potentielle à la sécurité.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Signatures Cryptographiques</h4>
+            <p>Toutes les images sont signées cryptographiquement avec une Nomenclature Logicielle (SBOM) complète pour la transparence de la chaîne d'approvisionnement.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Mises à Jour Continues</h4>
+            <p>Les correctifs de sécurité automatisés et les mises à jour garantissent que les images restent à jour avec les dernières améliorations de sécurité.</p>
+        </div>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>Images de Conteneurs Disponibles</h2>
+    <p>Les images de conteneurs sécurisées suivantes, sans CVE, sont disponibles via le registre centralisé :</p>
+
+    <div class="code-block">
+        <p><strong>Runtime Python :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/python:3.13.3</p>
+        <p><strong>Kit de Développement Java :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/jdk:openjdk-21</p>
+        <p><strong>Environnement d'Exécution Java :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/jre:openjdk-21</p>
+        <p><strong>Runtime Node.js :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/node:24.1.0</p>
+        <p><strong>Kit de Développement Logiciel .NET :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/dotnet-sdk</p>
+        <p><strong>PowerShell Core :</strong><br>artifacts-artefacts.devops.cloud-nuage.canada.ca/docker-chainguard-remote/ssc-spc.gc.ca/powershell</p>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>Implémentation et Intégration</h2>
+    <p>Les ministères et organismes fédéraux peuvent commencer à utiliser les Artefacts Sécurisés GC grâce à ce processus d'intégration structuré :</p>
+
+    <h4>Phase 1 : Demande d'Accès et Authentification</h4>
+    <p>Soumettre une demande d'accès via le formulaire officiel d'intégration du Gouvernement du Canada et configurer l'authentification unique (SSO) via le locataire 163ENT Entra ID.</p>
+
+    <h4>Phase 2 : Intégration de l'Environnement de Développement</h4>
+    <p>Mettre à jour les Dockerfiles existants pour référencer les images de base sécurisées Chainguard et intégrer les outils CLI JFrog dans les pipelines d'intégration continue.</p>
+
+    <h4>Phase 3 : Configuration de Sécurité</h4>
+    <p>Implémenter l'analyse automatisée des dépendances, l'évaluation des vulnérabilités des conteneurs et les contrôles de sécurité basés sur les politiques dans les flux de travail de développement.</p>
+
+    <h4>Phase 4 : Déploiement en Production</h4>
+    <p>Déployer des applications utilisant des artefacts vérifiés avec surveillance continue, rapports de conformité automatisés et procédures de réponse aux incidents.</p>
+</div>
+
+<div class="content-section">
+    <h2>Ressources de Formation et de Support</h2>
+    <p>Des ressources complètes de formation et de support sont disponibles pour assurer une adoption réussie de la plateforme :</p>
+
+    <ul>
+        <li><strong>Formation JFrog Academy :</strong> Cours auto-rythmés et dirigés par un instructeur pour les administrateurs, développeurs et équipes DevSecOps</li>
+        <li><strong>Documentation Technique :</strong> Guides d'implémentation complets, références API et documentation des meilleures pratiques</li>
+        <li><strong>Configuration en tant que Code :</strong> Modèles standardisés et scripts d'automatisation pour un déploiement rapide</li>
+        <li><strong>Services de Support :</strong> Support technique dédié et procédures d'escalade pour les problèmes opérationnels</li>
+    </ul>
+
+    <p><strong>Contact:</strong> Pour des questions ou du support concernant la plateforme d'Artefacts Sécurisés GC, veuillez contacter <a href="mailto:devops.artifacts-artefacts.devops@ssc-spc.gc.ca">devops.artifacts-artefacts.devops@ssc-spc.gc.ca</a></p>
+</div>
+
+<div class="cta-section">
+    <h3>Commencez Votre Parcours de Développement Sécurisé</h3>
+    <p>Commencez avec la plateforme d'Artefacts Sécurisés GC et explorez notre documentation complète</p>
+    <a href="https://artifacts-artefacts.devops.cloud-nuage.canada.ca" class="cta-button">Accéder à la Plateforme</a>
+    <a href="https://github.com/gccloudone/artifacts-artefacts" class="cta-button">Documentation Technique</a>
+</div>
+
+<div class="content-section">
+    <h2>Les artefacts sécurisés de GC : Introduction aux capacités d'apprentissage automatique (ML) de JFrog</h2>
+    <p>Nous sommes ravis de partager avec vous une récente séance que nous avons eue avec JFrog, où ils ont approfondi leur offre d'apprentissage automatique. Vous pouvez accéder au enregistrement et aux matériels de présentation ci-dessous :</p>
+    <ul>
+        <li><strong>Regardez l'enregistrement (MP4):</strong> <a href="#" target="_blank">AUR-COM-009 - Intro to JFrog ML.mp4 (GCXChange Aurore)</a></li>
+        <li><strong>Consultez la présentation (PPTX):</strong> <a href="#" target="_blank">AUR-COM-009 - Intro to JFrog ML.pdf (GCXChange Aurore)</a></li>
+    </ul>
+    <p>Lors de la session, JFrog a mis en avant les caractéristiques clés de leur plateforme d'apprentissage automatique, qui permet aux organisations de déployer des modèles sur des infrastructures en place avec des options pour le traitement par CPU ou par carte graphique. Ils ont également démontré des fonctionnalités avançées qui soutiennent tout le cycle de vie de l'apprentissage automatique, y compris :</p>
+    <ul>
+        <li>Surveillance du dérive de modèle pour s'assurer que les modèles restent précis au fil du temps</li>
+        <li>Suivi des expériences pour optimiser les performances des modèles</li>
+        <li>Magasins de fonctionnalités pour gérer et réutiliser des fonctionnalités à travers les modèles</li>
+    </ul>
+    <p>De plus, JFrog développe un produit de catalogage d'apprentissage automatique, qui permettra de curer et d'accéder de manière sécurisée aux modèles open-source. Cela facilitera grandement la découverte et la réutilisation de modèles existants, réduisant la nécessité de duplication d'efforts et accélérant le développement de nouveaux modèles.</p>
+    <p>En ce qui concerne les artefacts sécurisés de GC, nous sommes vraiment intéressés à explorer comment les capacités d'apprentissage automatique de JFrog peuvent soutenir les initiatives ML potentielles. Cependant, nous avons besoin de l'intérêt et de l'aide du ministère pour faire progresser cela. Nous pensons que la plateforme d'apprentissage automatique de JFrog a le potentiel de grandement améliorer les workflows AI / ML, mais nous avons besoin d'adhésion et de collaboration pour faire cela.</p>
+    <h3>Ressources supplémentaires</h3>
+    <p>Pour ceux qui sont intéressés d'en apprendre plus, nous avons compilé des ressources supplémentaires pour explorer :</p>
+    <ul>
+        <li><a href="https://huggingface.co/blog/jfrog" target="_blank">Partenariat de sécurité des modèles Hugging Face</a></li>
+        <li><a href="https://media.jfrog.com/wp-content/uploads/2025/03/11221648/ML-Solution-Sheet-1.pdf" target="_blank">Fiche technique de 2 pages de JFrog ML</a></li>
+        <li><a href="https://jfrog.com/press-room/jfrog-joins-nvidias-enterprise-ai-factory-design-to-accelerate-agentic-ai/" target="_blank">Partenariat NVIDIA | JFrog pour accélérer l'IA agentique</a></li>
+        <li><a href="https://research.jfrog.com/model-threats/" target="_blank">Recherche de sécurité de JFrog ML</a></li>
+        <li><a href="https://jfrog.com/webinar/mlops-masterclass-uniting-aiml-and-traditional-software-supply-chains/" target="_blank">Webinaire de JFrog ML - Unification de l'IA, de l'apprentissage automatique et de la chaîne d'approvisionnement logicielle traditionnelle</a></li>
+    </ul>
+</div>
+
+<!-- Aurora Section -->
+<div class="aurora-section">
+    <h2>À Propos d'Aurore</h2>
+    <p>Aurore est une plateforme native cloud construite pour soutenir la collaboration et l'innovation entre les équipes gouvernementales. L'infrastructure est ouverte, et vous êtes invités à explorer notre code et nos outils sur <a href="https://github.com/gccloudone">GitHub Aurore</a>. Pour les mises à jour et ressources, visitez le <a href="https://aurora.gccloudone.ca">Portail Aurore</a>.</p>
+    
+    <h3>Comment Vous Pouvez Vous Impliquer</h3>
+    <ul>
+        <li><strong>Rejoignez nos rencontres</strong> pour vous connecter avec d'autres, partager des idées et apprendre sur les technologies natives cloud.</li>
+        <li><strong>Contribuez à l'open source</strong> en améliorant la documentation, suggérant de nouvelles fonctionnalités ou partageant des commentaires.</li>
+        <li><strong>Participez à un Groupe Consultatif Technique (TAG)</strong> axé sur : <strong>Architecture</strong> (conception de plateforme, évolutivité, meilleures pratiques), <strong>Sécurité</strong> (confiance zéro, défense en profondeur, conformité), ou <strong>Réseautage</strong> (maillage de services, eBPF, réseautage multi-cluster)</li>
+    </ul>
+    
+    <p>Restez informé en suivant la <strong>Communauté Aurore GCXchange</strong> pour les nouvelles, événements et conversations. Si vous n'avez pas encore reçu d'invitation, répondez à ce message ou envoyez-nous un courriel à <a href="mailto:aurora-aurore@ssc-spc.gc.ca">aurora-aurore@ssc-spc.gc.ca</a> et nous nous assurerons que vous soyez ajouté.</p>
+    
+    <div class="aurora-cta">
+        <p><strong>Nous aimerions avoir vos commentaires : Veuillez prendre une minute pour remplir ce court sondage. Cela nous aide à comprendre les besoins de votre équipe et à façonner les futures rencontres et le support.</strong></p>
+        <a href="https://forms.office.com/r/9gCu6ddw7g" target="_blank">Répondre au Sondage</a>
+        <a href="https://aurora.gccloudone.ca" target="_blank">Visiter le Portail Aurore</a>
+    </div>
+</div>
+            </div>
+            <!-- FRENCH CONTENT END -->
+        </div>
+        <!-- CONTENT END -->
+
+        <!-- FOOTER START -->
+        <div class="footer">
+            <p><strong>Aurora Project | Projet Aurore</strong></p>
+            <p>Shared Services Canada | Services partagés Canada</p>
+            <p>Contact: <a href="mailto:aurora-aurore@ssc-spc.gc.ca">aurora-aurore@ssc-spc.gc.ca</a></p>
+            <p>Website: <a href="https://aurora.gccloudone.ca">aurora.gccloudone.ca</a></p>
+            <p style="margin-top: 20px; font-size: 14px; color: #ccc;">
+                Let's Deliver for Canadians! | Offrons des résultats aux Canadiens!
+            </p>
+        </div>
+        <!-- FOOTER END -->
+    </div>
+
+    <script>
+        function showLanguage(lang) {
+            document.getElementById('en-content').classList.remove('active');
+            document.getElementById('fr-content').classList.remove('active');
+
+            document.querySelectorAll('.lang-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById(lang + '-content').classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
