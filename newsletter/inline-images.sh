@@ -3,7 +3,7 @@
 set -e
 
 # Input and output
-input_file="2025-06-gc-artifacts.html"
+input_file="2025-07-gc-artifacts.html"
 output_file="newsletter-inlined.html"
 
 # Confirm required files exist

@@ -5,8 +5,8 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "build:current": "node build.js content/2025-06-gc-artifacts.json",
-    "build:email": "node build.js content/2025-06-gc-artifacts.json --email",
+    "build:current": "node build.js content/2025-07-gc-artifacts.json",
+    "build:email": "node build.js content/2025-07-gc-artifacts.json --email",
     "serve": "python3 -m http.server 8000",
     "dev": "npm run build:current && npm run serve"
   },

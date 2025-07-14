@@ -12,7 +12,7 @@ This system addresses the challenge of maintaining consistent newsletter formatt
 aurora-newsletter/
 ├── template.html                  # Master HTML template with placeholders
 ├── content/                       # Newsletter content as JSON files
-│   └── 2025-06-gc-artifacts.json # Current edition content
+│   └── 2025-07-gc-artifacts.json # Current edition content
 ├── build.js                       # Build script (Node.js)
 ├── package.json                   # Project dependencies and scripts
 ├── assets/                        # Organized asset files
@@ -20,7 +20,7 @@ aurora-newsletter/
 │   ├── canada-logo.svg          # Canada wordmark
 │   ├── ssc-logo.svg             # SSC logo (deprecated)
 │   └── ssc-text.svg             # SSC text logo
-├── 2025-06-gc-artifacts.html     # Current generated newsletter
+├── 2025-07-gc-artifacts.html     # Current generated newsletter
 └── inline-images.sh              # Image processing utility
 ```
 
@@ -51,14 +51,14 @@ The generated HTML appears in the root directory and can be viewed at `http://lo
 # Start local server only
 npm run serve
 
-# Then navigate to http://localhost:8000/2025-06-gc-artifacts.html
+# Then navigate to http://localhost:8000/2025-07-gc-artifacts.html
 ```
 
 ## Creating New Editions
 
 1. **Copy existing content file**:
    ```bash
-   cp content/2025-06-gc-artifacts.json content/2025-07-cloud-security.json
+   cp content/2025-07-gc-artifacts.json content/2025-07-cloud-security.json
    ```
 
 2. **Update the content**:

@@ -5,10 +5,10 @@ const juice = require('juice');
 
 /**
  * Aurora Newsletter Template Builder
- * 
+ *
  * Builds newsletter HTML from template and content JSON
  * Usage: node build.js [content-file] [output-file]
- * 
+ *
  * Example: node build.js content/2024-12-gc-artifacts.json output/newsletter.html
  */
 
@@ -79,7 +79,7 @@ class NewsletterBuilder {
             html += `
 <div class="content-section">
     <p style="text-align: center;">
-        <a href="https://simardeep1792.github.io/aurora-newsletter/2025-06-gc-artifacts.html">Read the full version of the newsletter</a>
+        <a href="https://aurora.gccloudone.ca/newsletter/2025-07-gc-artifacts.html">Read the full version of the newsletter</a>
     </p>
 </div>`;
         }
@@ -108,7 +108,7 @@ class NewsletterBuilder {
             html += `\n\n    <div class="stats-section">
         <h3>${section.stats.title}</h3>
         <div class="stats-grid">
-            ${section.stats.items.map(stat => 
+            ${section.stats.items.map(stat =>
                 `<div class="stat-item">
                 <span class="stat-number">${stat.number}</span>
                 <span class="stat-label">${stat.label}</span>
@@ -134,7 +134,7 @@ class NewsletterBuilder {
     <p>${subsection.content}</p>
 
     <div class="feature-grid">
-        ${subsection.feature_cards.map(card => 
+        ${subsection.feature_cards.map(card =>
             `<div class="feature-card">
             <h4>${card.title}</h4>
             <p>${card.content}</p>
@@ -205,7 +205,7 @@ class NewsletterBuilder {
         return `<div class="cta-section">
     <h3>${section.title}</h3>
     <p>${section.content}</p>
-    ${section.buttons.map(button => 
+    ${section.buttons.map(button =>
         `<a href="${button.url}" class="cta-button">${button.text}</a>`
     ).join('\n    ')}
 </div>`;
@@ -219,17 +219,17 @@ class NewsletterBuilder {
 <div class="aurora-section">
     <h2>${section.title}</h2>
     <p>${this.processMarkdownLinks(section.content)}</p>
-    
+
     <h3>${section.involvement.title}</h3>
     <ul>
         ${section.involvement.items.map(item => `<li>${item}</li>`).join('\n        ')}
     </ul>
-    
+
     <p>${this.processMarkdownLinks(section.community)}</p>
-    
+
     <div class="aurora-cta">
         <p><strong>${section.feedback.text}</strong></p>
-        ${section.feedback.buttons.map(button => 
+        ${section.feedback.buttons.map(button =>
             `<a href="${button.url}" target="_blank">${button.text}</a>`
         ).join('\n        ')}
     </div>
@@ -247,7 +247,7 @@ class NewsletterBuilder {
 
         if (section.recording_links) {
             html += `\n    <ul>
-        ${section.recording_links.map(link => 
+        ${section.recording_links.map(link =>
             `<li><strong>${link.text}:</strong> <a href="${link.url}" target="_blank">${link.title}</a></li>`
         ).join('\n        ')}
     </ul>`;
@@ -270,7 +270,7 @@ class NewsletterBuilder {
             html += `\n    <h3>${section.resources.title}</h3>
     <p>${section.resources.intro}</p>
     <ul>
-        ${section.resources.links.map(link => 
+        ${section.resources.links.map(link =>
             `<li><a href="${link.url}" target="_blank">${link.text}</a></li>`
         ).join('\n        ')}
     </ul>`;
@@ -344,26 +344,26 @@ class NewsletterBuilder {
      */
     build(contentPath, outputPath) {
         console.log(`🚀 Building Aurora Newsletter... (Email: ${this.isEmail})`);
-        
+
         // Load content and template
         const data = this.loadContent(contentPath);
         const template = this.loadTemplate();
-        
+
         console.log(`📄 Loaded content: ${data.meta.edition}`);
-        
+
         // Generate newsletter
         let newsletter = this.replacePlaceholders(template, data);
 
         if (this.isEmail) {
             newsletter = this.inlineCss(newsletter);
         }
-        
+
         // Write output to root directory to maintain asset paths
         const finalOutputPath = outputPath || `${data.meta.edition}${this.isEmail ? '-email' : ''}.html`;
         fs.writeFileSync(finalOutputPath, newsletter);
-        
+
         console.log(`✅ Newsletter built successfully: ${finalOutputPath}`);
-        
+
         // Generate summary
         const stats = {
             'Edition': data.meta.edition,
@@ -373,7 +373,7 @@ class NewsletterBuilder {
             'Output Size': `${Math.round(newsletter.length / 1024)}KB`,
             'Email Version': this.isEmail
         };
-        
+
         console.log('\n📊 Build Summary:');
         Object.entries(stats).forEach(([key, value]) => {
             console.log(`   ${key}: ${value}`);
@@ -385,7 +385,7 @@ class NewsletterBuilder {
 if (require.main === module) {
     const args = process.argv.slice(2);
     const isEmail = args.includes('--email');
-    
+
     if (args.length === 0 || args.includes('--help') || args.includes('-h')) {
         console.log(`
 Aurora Newsletter Builder
@@ -395,8 +395,8 @@ Usage:
   node build.js --help
 
 Examples:
-  node build.js content/2025-06-gc-artifacts.json
-  node build.js content/2025-06-gc-artifacts.json --email
+  node build.js content/2025-07-gc-artifacts.json
+  node build.js content/2025-07-gc-artifacts.json --email
 
 Options:
   --help, -h    Show this help message
@@ -404,15 +404,15 @@ Options:
 `);
         process.exit(0);
     }
-    
+
     const contentPath = args[0];
     const outputPath = args[1] && !args[1].startsWith('--') ? args[1] : null;
-    
+
     if (!fs.existsSync(contentPath)) {
         console.error(`❌ Content file not found: ${contentPath}`);
         process.exit(1);
     }
-    
+
     const builder = new NewsletterBuilder(isEmail);
     builder.build(contentPath, outputPath);
 }

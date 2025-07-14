@@ -1,6 +1,6 @@
 {
   "meta": {
-    "edition": "2025-06-gc-artifacts",
+    "edition": "2025-07-gc-artifacts",
     "title": "Aurora Newsletter - GC Secure Artifacts",
     "date": "2025-07-14",
     "generated": "{{GENERATED_DATE}}"
