@@ -2,7 +2,7 @@
   "meta": {
     "edition": "2025-06-gc-artifacts",
     "title": "Aurora Newsletter - GC Secure Artifacts",
-    "date": "2025-06-26",
+    "date": "2025-07-14",
     "generated": "{{GENERATED_DATE}}"
   },
   "assets": {
@@ -48,9 +48,9 @@
         "stats": {
           "title": "Platform Performance Metrics",
           "items": [
-            {"number": "100+", "label": "Active Users"},
+            {"number": "150+", "label": "Active Users"},
+            {"number": "30+", "label": "Departments Onboarded"},
             {"number": "0", "label": "Known CVEs in Base Images"},
-            {"number": "24/7", "label": "Security Monitoring"},
             {"number": "99.9%", "label": "Platform Availability"}
           ]
         }
@@ -275,8 +275,8 @@
           "title": "Métriques de Performance de la Plateforme",
           "items": [
             {"number": "100+", "label": "Utilisateurs Actifs"},
+            {"number": "30+", "label": "Ministères embarqués"},
             {"number": "0", "label": "CVE Connus dans les Images de Base"},
-            {"number": "24/7", "label": "Surveillance de Sécurité"},
             {"number": "99.9%", "label": "Disponibilité de la Plateforme"}
           ]
         }
