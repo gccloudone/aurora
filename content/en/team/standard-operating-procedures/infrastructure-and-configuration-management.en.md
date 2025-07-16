@@ -10,18 +10,20 @@ date: 2025-07-08
 <gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
 </gcds-alert>
 
-Infrastructure-as-Code (via Terraform) and Configuration-as-Code (via ArgoCD, Helm, and/or Kustomize) repositories are the source of truth for the intended state of the Aurora platform. Changes outside of these repositories are only permitted:
-- Inside Aurora platform development environments inaccessible to end-users
-- For complex after-hours maintenance, such as Kubernetes cluster upgrades with breaking changes
-- During incidents where the repositories and/or relevant automation systems are either inaccessible or unacceptably slow
+## Source Control
 
-In all such cases, the repositories are updated as soon as possible to reflect all changes that are intended to be kept.
+Infrastructure-as-Code (via Terraform) and Configuration-as-Code (via ArgoCD, Helm, and/or Kustomize) repositories are the source of truth for the intended state of the Aurora platform. Access to make changes outside of these repositories is only granted to designated [Platform Administrators and Platform Developers]({{< relref "architecture/security/access-control#platform-administrator" >}}):
+- Inside Aurora platform development environments inaccessible to end-users (Platform Developers)
+- For complex after-hours maintenance, such as Kubernetes cluster upgrades with breaking changes (Platform Administrators)
+- During incidents where the repositories and/or relevant automation systems are either inaccessible or unacceptably slow (Platform Administrators)
 
-Helm chart and Terraform module versions are incremented using [Semantic Versioning](https://semver.org/).
+In all such cases, the repositories are updated as soon as possible to reflect all manual changes that are intended to be kept. Otherwise, further repository updates, as well as automated reconciliation such as ArgoCD Sync, will overwrite them. 
 
-Commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format and are squashed into a pull request, which is labeled according to the [Issue Naming](../issue-naming) SOP. For live environments, the pull request is approved by at least one other Aurora team member before merging.
+Helm chart and Terraform module versions, CI/CD pipeline versions, and the image versions of any custom-built components are incremented using [Semantic Versioning](https://semver.org/). When such a change is merged into a git repository, the repository is also tagged with that version. To facilitate staged testing and rollback, all references to other repositories are version pinned.
 
+Commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format and are squashed into a pull request, which is labeled according to the [Issue Naming](../issue-naming) SOP. The pull request can only be merged by somebody granted write permissions to that repository, and must first be reviewed and approved by at least one other person. 
 
+Aurora Kubernetes clusters have, at minimum, a development and a production instance, with the possibility of other instances such as testing in between. In all cases, infrastructure and configuration changes are deployed and validated in the development instance first, and rolled out to the production instance last.
 
 ## Infrastructure
 
