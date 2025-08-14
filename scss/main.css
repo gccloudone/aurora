@@ -27,8 +27,7 @@
   color: var(--gcds-color-blue-800); }
 
 .hero {
-  margin: calc(-1 * var(--gcds-spacing-200));
-  background: url(/images/home-hero.jpg) top center no-repeat;
+  background: url(../images/home-hero.jpg) top center no-repeat;
   background-size: cover; }
 
 .hero:before {
