@@ -5,8 +5,6 @@ baseURL = "/"
 title = "Aurora"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 timeZone = "America/New_York"
-# post pagination
-paginate = 5 # see https://gohugo.io/extras/pagination/
 # post excerpt
 summaryLength = 10 # see https://gohugo.io/content-management/excerpts/
 # disable language
@@ -49,6 +47,10 @@ target = '(css|styles|scss|sass)'
 [[build.cachebusters]]
 source = 'assets/.*\.(.*)$'
 target = '$1'
+
+############################# Pagination ############################
+[pagination]
+pagerSize = 5
 
 ############################# Outputs ############################
 [outputs]

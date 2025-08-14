@@ -6,6 +6,8 @@ name = "GC Cloud One: Aurora"
 url = "/"
 weight = 1
 identifier = "home"
+  [main.params]
+  slot = "home"
 
 [[main]]
 name = "Platform"
@@ -73,3 +75,18 @@ weight = 20
 name = "GC Cloud One"
 url = "https://gccloudone.ca"
 weight = 1
+
+[[contextual]]
+name = "Contact us"
+url = "/contact"
+weight = 10
+
+[[contextual]]
+name = "Report an issue"
+url = "https://github.com/gccloudone/aurora/issues/new/choose"
+weight = 20
+
+[[contextual]]
+name = "About us"
+url = "/about"
+weight = 30

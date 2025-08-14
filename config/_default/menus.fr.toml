@@ -6,6 +6,8 @@ name = "Service infonuagique unifié du GC: Aurore"
 url = "/fr"
 weight = 1
 identifier = "acceuil"
+  [main.params]
+  slot = "home"
 
 [[main]]
 name = "Plate-forme"
@@ -61,3 +63,19 @@ weight = 15
 name = "Service infonuagique unifié du GC"
 url = "https://gccloudone.ca"
 weight = 1
+
+
+[[contextual]]
+name = "Nous contacter"
+url = "/fr/contact"
+weight = 10
+
+[[contextual]]
+name = "Signaler un problème"
+url = "https://github.com/gccloudone/aurora/issues/new/choose"
+weight = 20
+
+[[contextual]]
+name = "À propos"
+url = "/fr/apropos"
+weight = 30
