@@ -8,7 +8,7 @@ draft: false
 ---
 # Disaster Recovery Testing Procedure
 
-The following document describes how Aurora administrators shall perform disaster recovery testing to verify if velero backups are being restored correctly.
+The following document describes how Aurora administrators shall perform disaster recovery testing to verify if Velero backups are being restored correctly.
 
 ## Context
 
