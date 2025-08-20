@@ -47,7 +47,11 @@ This test must be performed **monthly** for all Aurora clusters.
 
 1. Create a backup:
    ```bash
-   velero backup create backuptest-YYYY-MM-DD      --include-namespaces <test-namespace>      --volume-snapshot-location <volume-snapshot-location-name>      --backup-storage-location <backup-storage-location-name>      -n velero-system
+   velero backup create backuptest-YYYY-MM-DD \
+     --include-namespaces <test-namespace> \
+     --volume-snapshot-location <volume-snapshot-location-name> \
+     --backup-storage-location <backup-storage-location-name>  \
+     -n velero-system
    ```
 
 2. Delete the test namespace:
