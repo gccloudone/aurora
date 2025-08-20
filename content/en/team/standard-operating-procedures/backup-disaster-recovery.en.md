@@ -27,7 +27,8 @@ Before testing, ensure the following:
 
 1. Shell into the BusyBox container:
    ```bash
-   kubectl exec -it <pod-name> --container <busybox-container-name> -n <test-namespace> -- /bin/bash
+   kubectl exec -it <pod-name> --container <busybox-container-name> \
+                               -n <test-namespace> -- /bin/bash
    ```
 
 2. Write a test file to the mounted path:
