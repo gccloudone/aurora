@@ -13,6 +13,7 @@ The following document describes how Aurora administrators shall perform disaste
 ## Context
 
 The Aurora clusters use [Velero](https://velero.io/docs/v1.16/) to back up and restore the Kubernetes cluster resources and persistent volumes. 
+
 ## Setup
 
 Ensure that you have the Velero command line tool installed. Prior to testing, the cluster shall have a test namespace. This namespace shall include a busybox deployment and a persistent volume claim that the busybox deployment will use. The Aurora admin shall shell into the busybox container and write a file to the path that is being mounted. For example:
