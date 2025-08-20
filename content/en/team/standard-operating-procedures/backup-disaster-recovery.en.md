@@ -28,9 +28,9 @@ Ensure that you have the Velero command line tool installed. Prior to testing, t
 This test shall be performed **monthly** for all Aurora clusters.  First ensure that the test namespace exists and that the `testfile` described in the setup section exists. Then execute the following actions:
 
 
-1. `kubectl delete namespace -n <test-namespace>`
+1. ```velero backup create backuptest-yyyy-mm-dd --include-namespaces <test-namespace> –-volume-snapshot-location <volume-snapshot-location-name> --backup-storage-location <backup-storage-location-name> -n velero-system```
 
-2.  ```velero backup create backuptest-yyyy-mm-dd --include-namespaces <test-namespace> –-volume-snapshot-location <volume-snapshot-location-name> --backup-storage-location <backup-storage-location-name> -n velero-system```
+2.  `kubectl delete namespace -n <test-namespace>`
 
 3.  Wait for backup to be completed. This can be checked by performing:
 
