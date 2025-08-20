@@ -1,6 +1,6 @@
 ---
-title: "Backup Disaster Recovery Testing Procedure"
-linkTitle: "Backup Disaster Recovery Testing Procedure"
+title: "Backup Disaster Recovery Testing"
+linkTitle: "Backup Disaster Recovery Testing"
 weight: 5
 aliases: ["/team/sop/backup-disaster-recovery"]
 date: 2025-08-19
@@ -11,7 +11,8 @@ This document outlines the steps Aurora administrators must follow to test disas
 
 ## Context
 
-Aurora clusters use [Velero](https://velero.io/docs/v1.16/) to back up and restore Kubernetes cluster resources and persistent volumes.  
+Aurora clusters use [Velero](https://velero.io/docs/v1.16/) to back up and restore Kubernetes cluster resources and persistent volumes.
+
 This procedure verifies the reliability of those backups.
 
 ## Setup
@@ -62,22 +63,27 @@ This test must be performed **monthly** for all Aurora clusters.
 
 3. Confirm the backup completed:
    ```bash
-   velero backup describe backuptest-YYYY-MM-DD --details -n velero-system
+   velero backup describe backuptest-YYYY-MM-DD \
+     --details -n velero-system
    ```
 
 4. Restore from the backup:
    ```bash
-   velero restore create restoretest-YYYY-MM-DD --from-backup backuptest-YYYY-MM-DD
+   velero restore create restoretest-YYYY-MM-DD \
+     --from-backup backuptest-YYYY-MM-DD
    ```
 
 5. Confirm the restore completed:
    ```bash
-   velero restore describe restoretest-YYYY-MM-DD --details -n velero-system
+   velero restore describe restoretest-YYYY-MM-DD \
+     --details -n velero-system
    ```
 
 6. Shell into the restored BusyBox pod:
    ```bash
-   kubectl exec -it <pod-name> --container busybox -n <test-namespace> -- /bin/bash
+   kubectl exec -it <pod-name> \
+     --container busybox \
+     -n <test-namespace> -- /bin/bash
    ```
 
 7. Verify the restored file:
