@@ -7,8 +7,6 @@ date: 2025-08-19
 draft: false
 ---
 
-# Disaster Recovery Testing Procedure
-
 This document outlines the steps Aurora administrators must follow to test disaster recovery, ensuring that Velero backups are restored correctly.
 
 ## Context
