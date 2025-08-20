@@ -6,13 +6,14 @@ aliases: ["/team/sop/backup-disaster-recovery"]
 date: 2025-08-19
 draft: false
 ---
+
 # Disaster Recovery Testing Procedure
 
-The following document describes how Aurora administrators shall perform disaster recovery testing to verify if Velero backups are being restored correctly.
+This document outlines the steps Aurora administrators must follow to perform disaster recovery testing, ensuring that Velero backups are being restored correctly.
 
 ## Context
 
-The Aurora clusters use [Velero](https://velero.io/docs/v1.16/) to back up and restore the Kubernetes cluster resources and persistent volumes. 
+Aurora clusters use [Velero](https://velero.io/docs/v1.16/) to back up and restore Kubernetes cluster resources and persistent volumes. This procedure is designed to verify the reliability of these backups.
 
 ## Setup
 
