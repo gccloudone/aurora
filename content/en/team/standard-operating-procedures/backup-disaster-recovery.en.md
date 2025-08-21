@@ -59,15 +59,15 @@ Before testing, ensure the following:
      -n velero-system
    ```
 
-2. Delete the test namespace:
-   ```sh
-   kubectl delete namespace <test-namespace>
-   ```
-
-3. Confirm the backup completed:
+2. Confirm the backup completed:
    ```sh
    velero backup describe backuptest-YYYY-MM-DD \
      --details -n velero-system
+   ```
+
+3. Delete the test namespace:
+   ```sh
+   kubectl delete namespace <test-namespace>
    ```
 
 4. Restore from the backup:
@@ -91,6 +91,6 @@ Before testing, ensure the following:
 
 7. Verify the restored file:
    ```sh
-   cat /data/testfile
+   cat <mountPath>/testfile
    ```
    - Output must be: `test`
