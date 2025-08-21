@@ -91,6 +91,6 @@ Before testing, ensure the following:
 
 7. Verify the restored file:
    ```sh
-   cat /data/testfile
+   cat <mountPath>/testfile
    ```
    - Output must be: `test`
