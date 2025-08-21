@@ -33,7 +33,7 @@ Here are the current procedures in place:
   </gcds-card>
   <gcds-card
     card-title="Bootstrap Cluster"
-    href="/team/standard-operating-procedures/bootstrap-cluster"
+    href="/team/standard-operating-procedures/bootstrap-cluster/"
     badge="Platform Setup"
     description="Steps for using a bootstrap cluster before transferring control to a remote cluster."
   >
@@ -47,7 +47,7 @@ Here are the current procedures in place:
   </gcds-card>
   <gcds-card
     card-title="Infrastructure and Configuration Management"
-    href="/team/standard-operating-procedures/infrastructure-configuration-management"
+    href="/team/standard-operating-procedures/infrastructure-and-configuration-management/"
     badge="Operations"
     description="Guidance on managing infrastructure and configuration consistently on the Aurora platform."
   >
