@@ -1,4 +1,6 @@
 github.com/gccloudone/gcds-hugo v0.1.1 h1:G6v+TtTkwalOo1bUjSdoJwhCV2RSMyp+eWzaB3srKsY=
 github.com/gccloudone/gcds-hugo v0.1.1/go.mod h1:ZKSalX9lxQXc2rxQK0Tkicgsd06ooS742KPpdS+Pxuc=
+github.com/gccloudone/gcds-hugo v0.2.0 h1:hFYPTlcx7VOiEdYakygopKA9fJ4Cch8UnSDDyH3cxDo=
+github.com/gccloudone/gcds-hugo v0.2.0/go.mod h1:ZKSalX9lxQXc2rxQK0Tkicgsd06ooS742KPpdS+Pxuc=
 github.com/gethugothemes/hugo-modules/pwa v0.0.0-20250306074534-f5c3a047e69c h1:4KRNS7Ha9awHY7guL2x0Dxcb+U3pel9MGo31vhKUTck=
 github.com/gethugothemes/hugo-modules/pwa v0.0.0-20250306074534-f5c3a047e69c/go.mod h1:TRv7iszdfo37O1PbBEE+S8X/enAdpRIxK5DGrp13Qbo=

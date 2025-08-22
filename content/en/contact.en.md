@@ -3,6 +3,7 @@ title: "Contact us"
 date: 2024-10-21
 draft: false
 sidebar: false
+disableCharacterlimit: true
 ---
 
 ## How to get involved with our community
