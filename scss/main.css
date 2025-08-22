@@ -75,3 +75,9 @@ gcds-container ul {
   padding-inline-start: 40px; }
   gcds-container ul li {
     margin-top: 0.5em; }
+
+.character-limit gcds-container li, .character-limit gcds-container dt, .character-limit gcds-container dd {
+  max-width: var(--gcds-text-character-limit); }
+
+pre {
+  padding: 1em; }
