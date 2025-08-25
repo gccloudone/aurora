@@ -37,7 +37,7 @@ The following must be in place before you begin the onboarding steps:
   - Verify **jq** is installed and working (`apt install jq -y` or equivalent)
 - Any previous kubeconfig context cleared or unset (to avoid conflicts)
 - Access to **Azure Key Vault** secrets through a **Managed Service Identity (MSI)** with reader/appropriate permissions
-- The Aurora repository cloned locally with the following prepared:
+- The Aurora [bootstrap-cluster](https://github.com/gccloudone-aurora/bootstrap-cluster) repository cloned locally with the following prepared:
   - `.env` file based on `.env.example`
   - `base/argocd-instance.yaml` configured for your environment
 
@@ -45,7 +45,7 @@ The following must be in place before you begin the onboarding steps:
 
 ## 1. Configuration of the .env file
 
-Create a `.env` file alongside the bootstrap scripts.
+Create a `.env` file alongside the bootstrap scripts by copying the .env.example file and configuring it.
 
 For users with appropriate RBAC the MSI can be added via the script:
 
@@ -93,7 +93,7 @@ Continue only if you see the bootstrap cluster nodes listed.
 
 ## 4. Custom Certificate Authority (CA)
 
-If your environment requires a Custom Certificate Authority (CA) and you must apply it to the bootstrap cluster so Argo CD and related components can establish TLS connections.
+If your environment requires a Custom Certificate Authority (CA) you must ensure it is applied to the bootstrap cluster so Argo CD and related components can establish TLS connections.
 
 ```sh
 kubectl apply -f certs.yaml
@@ -117,8 +117,8 @@ data:
 
 ## 5. Update Argo CD Configuration
 
-At this stage, Argo CD must be updated to point to the correct repository and configuration.
+At this stage, Argo CD must be updated to point to the correct repository and project configuration and you can consult the comments for additional information.
 
-* Update the repo specification in [argocd-instance.yaml](https://github.com/gccloudone-aurora/bootstrap-cluster/blob/main/base/argocd-instance.yaml) so that Argo CD syncs from the correct Aurora repo.
-* Switch to the aurora-svc service account and grant a Personal Access Token (PAT) with access to the new repo. This ensures Argo CD can authenticate and pull manifests.
-* Approve the gccloudone-aurora request under pending repository access requests in your GitHub organization, so Argo CD has full read permissions.
+* Update the repo specification in [argocd-instance.yaml](https://github.com/gccloudone-aurora/bootstrap-cluster/blob/main/base/argocd-instance.yaml) so that Argo CD syncs from the correct Aurora repo
+* Switch to the aurora-svc service account and grant a Personal Access Token (PAT) with access to the new repo. This ensures Argo CD can authenticate and pull manifests
+* Approve the gccloudone-aurora request under pending repository access requests in your GitHub organization, so Argo CD has full read permissions
