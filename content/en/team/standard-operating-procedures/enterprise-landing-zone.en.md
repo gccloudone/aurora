@@ -5,7 +5,6 @@ weight: 5
 aliases: ["/team/sop/eslz"]
 date: 2025-08-19
 draft: false
-showTOC: true
 ---
 
 <gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
