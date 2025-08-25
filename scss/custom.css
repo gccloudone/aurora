@@ -22,3 +22,8 @@ code[class^="language-"] {
   padding: 1.25em;
   margin-bottom: 1.0em;
   display: block; }
+
+pre, pre code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word; }
