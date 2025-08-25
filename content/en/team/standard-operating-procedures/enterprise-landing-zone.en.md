@@ -39,3 +39,42 @@ The following must be in place before you begin the onboarding steps:
 - The L0/L1 pipelines have already run successfully, establishing baseline networking, NSGs, DNS zones, and policies
 
 > If any of these are missing, contact the Azure Cloud Team before proceeding.
+
+## 1. Landing Zone Repository Setup
+
+Begin with the landing zone repository structure provided by the Azure Cloud Team. This ensures your environment remains aligned with ESLZ (Enterprise-Scale Landing Zone) standards.
+
+```txt
+landing_zones_XXXXXX-P6/dev/L2_blueprint_aurora
+landing_zones_XXXXXX-P6/modules/L2_blueprint_aurora
+```
+
+Update the configuration files for your environment:
+
+* `landing_zones_XXXXXX-P6/dev/L2_blueprint_aurora/config/aurora.tfvars`
+* `landing_zones_XXXXXX-P6/dev/L2_blueprint_aurora/envvars.sh`
+
+These define project-specific variables such as subscription IDs, resource group names, and environment settings.
+
+## 2. Privileged Identity Management (PIM)
+
+Escalate into the App Reader role at directory scope using Azure AD Privileged Identity Management (PIM).
+
+This role is required to view applications and groups in Entra ID, which will be necessary for validation and secret binding in later steps.
+
+## 3. Azure Feature Registration
+
+Enable and confirm the EncryptionAtHost feature for your subscription:
+
+```sh
+az feature register --namespace Microsoft.Compute --name EncryptionAtHost
+az feature show --namespace "Microsoft.Compute" --name "EncryptionAtHost"
+```
+
+Wait until the state is Registered. If needed, refresh the provider:
+
+```sh
+az provider register --namespace Microsoft.Compute
+```
+
+> This registration only needs to be done once per subscription. Propagation can take up to 15 minutes.
