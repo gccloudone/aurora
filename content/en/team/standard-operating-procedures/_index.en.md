@@ -34,7 +34,7 @@ Here are the current procedures in place:
   <gcds-card
     card-title="Bootstrap Cluster"
     href="/team/standard-operating-procedures/bootstrap-cluster/"
-    badge="Platform Setup"
+    badge="Onboarding"
     description="Steps for using a bootstrap cluster before transferring control to a remote cluster."
   >
   </gcds-card>
