@@ -53,7 +53,7 @@ At this point the Azure Cloud Team will get back to you with:
 - Associated runners/agents which have configured for executing pipelines
 - The L0 / L1 pipelines which have already been run once successfully, establishing baseline networking, NSGs, DNS zones, and policies
 
-> If any of these are missing, contact the Azure Cloud Team before proceeding.
+> Just for some explanation of the second /23. While it's not connected to the Azure network today, it will be in the future, which is why it needs to be unique and reserved in IPAM. We plan to connect that into the Azure network through Router Servers (aka. BGP) to remove the requirement for NAT, so that's why it needs to be reserved but not attached to the Vnet.
 
 ## 2. Landing Zone Repository Setup
 
