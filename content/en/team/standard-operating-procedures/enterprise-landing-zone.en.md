@@ -33,13 +33,29 @@ This guide does not cover ongoing operations, platform deployment, or day-to-day
 
 The following must be in place before you begin the onboarding steps:
 
-- The Azure DevOps repository provided by the Azure Cloud Team is available
-- Associated runners/agents are configured for executing pipelines
-- The L0/L1 pipelines have already run successfully, establishing baseline networking, NSGs, DNS zones, and policies
+- A Linux / WSL environment with bash, on a VM with inherent connectivity to the ESLZ
+- Required CLI tools installed and accessible: **azure-cli**, **kubectl**, **jq**, **git**, and **terragrunt**
+
+> If any of these prerequisites are missing, resolve them before requesting an ESLZ.
+
+## 1. Request an ESLZ
+
+Normally this is done through creating an email to the Azure Cloud Team where you will provide both the CBR and the VNET space that needs to be allocated.
+
+Usually we ask for a reserved CIDR size of /22 which is broken up into:
+
+- /23 for the Virtual Network
+- /23 for the POD CIDR
+
+At this point the Azure Cloud Team will get back to you with:
+
+- The Azure DevOps repository that was created
+- Associated runners/agents which have configured for executing pipelines
+- The L0 / L1 pipelines which have already been run once successfully, establishing baseline networking, NSGs, DNS zones, and policies
 
 > If any of these are missing, contact the Azure Cloud Team before proceeding.
 
-## 1. Landing Zone Repository Setup
+## 2. Landing Zone Repository Setup
 
 Begin with the landing zone repository structure provided by the Azure Cloud Team. This ensures your environment remains aligned with ESLZ (Enterprise-Scale Landing Zone) standards.
 
@@ -68,13 +84,13 @@ Update the configuration files for your environment:
 
 These define project-specific variables such as subscription IDs, resource group names, and environment settings.
 
-## 2. Privileged Identity Management (PIM)
+## 3. Privileged Identity Management (PIM)
 
 Escalate into the App Reader role at directory scope using Azure AD Privileged Identity Management (PIM).
 
 This role is required to view applications and groups in Entra ID, which will be necessary for validation and secret binding in later steps.
 
-## 3. Azure Feature Registration
+## 4. Azure Feature Registration
 
 Enable and confirm the EncryptionAtHost feature for your subscription:
 
@@ -91,7 +107,7 @@ az provider register --namespace Microsoft.Compute
 
 > This registration only needs to be done once per subscription. Propagation can take up to 15 minutes.
 
-## 4. Deploy Infrastructure for Aurora Platform
+## 5. Deploy Infrastructure for Aurora Platform
 
 Once the landing zone repository has been prepared, authenticate and run Terragrunt to both plan and deploy the infrastructure for the Aurora platform.
 
@@ -102,7 +118,7 @@ terragrunt plan
 terragrunt apply
 ```
 
-## 5. Retrieve AKS Credentials
+## 6. Retrieve AKS Credentials
 
 Retrieve the kubeconfig credentials for your newly deployed AKS cluster.
 
@@ -112,7 +128,7 @@ az aks get-credentials --resource-group <resource-group> --name <cluster-name>
 
 > Note: This command merges the AKS cluster context into your local kubeconfig.
 
-## 6. Service Principal Permissions for Argo CD
+## 7. Service Principal Permissions for Argo CD
 
 Ensure the newly created Service Principal (SPN) for Argo CD has the necessary permissions to function correctly.
 
@@ -122,7 +138,7 @@ At minimum, the Microsoft Graph API permissions should include:
 
 You must also **grant admin consent** for these permissions in Entra ID so Argo CD can authenticate and retrieve the resources it manages.
 
-## 7. Bootstrap Cluster
+## 8. Bootstrap Cluster
 
 At this point all of the Aurora infrastructure is fully deployed onto the Enterprise-Scale Landing Zone (ESLZ).
 

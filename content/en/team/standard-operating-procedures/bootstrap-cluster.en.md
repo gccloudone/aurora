@@ -33,8 +33,7 @@ This guide does not cover provisioning of landing zones, subscription-level conf
 The following must be in place before you begin the onboarding steps:
 
 - A Linux / WSL environment with bash, on a VM capable of mounting a  **Managed Service Identity (MSI)**
-- Required CLI tools installed and accessible: **kubectl**, **k3d** (for local k3s), **jq**, **helm**, **git**, **Azure CLI**
-  - Verify **jq** is installed and working (`apt install jq -y` or equivalent)
+- Required CLI tools installed and accessible: **azure-cli**, **kubectl**, **k3d** (for local k3s), **jq**, **helm**, and **git**
 - Any previous kubeconfig context cleared or unset (to avoid conflicts)
 - The Aurora [bootstrap-cluster](https://github.com/gccloudone-aurora/bootstrap-cluster) repository cloned locally with the following prepared:
   - `.env` file based on `.env.example`
