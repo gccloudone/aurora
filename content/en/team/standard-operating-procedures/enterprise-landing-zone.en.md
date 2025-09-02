@@ -142,7 +142,58 @@ At minimum, the Microsoft Graph API permissions should include:
 
 You must also **grant admin consent** for these permissions in Entra ID so Argo CD can authenticate and retrieve the resources it manages.
 
-## 8. Bootstrap Cluster
+## 7. Assign the AKS Cluster User Role to the DevOps Service Principal
+
+The service principal XXXX_XXX_XXXXX_devops_sp that has been created by the Azure Cloud Team must have the **Azure Kubernetes Service Cluster User Role** assigned at the AKS cluster scope. This role is required for the service principal to interact with the Kubernetes API (e.g., running kubectl, provisioning workloads during bootstrap, or managing RBAC bindings).
+
+## 8. Cilium policies for API server and Konnectivity host access
+
+Until AKS VNet integration for the control plane is GA in your environment, the API server PrivateLink endpoint may live in a different subnet than your cluster nodes. If your default egress policy is restrictive, platform/system workloads may be unable to reach the API server, and Konnectivity may fail when it needs to talk to node/host IPs.
+
+```yaml
+  apiVersion: cilium.io/v2
+  kind: CiliumClusterwideNetworkPolicy
+  metadata:
+    name: allow-egress-to-apiserver-from-platform-temp
+  spec:
+    egress:
+    - toCIDRSet:
+      - cidr: XX.XXX.XXX.XXX/32
+      toPorts:
+      - ports:
+        - port: "443"
+    endpointSelector:
+      matchExpressions:
+      - key: io.cilium.k8s.namespace.labels.namespace.ssc-spc.gc.ca/purpose
+        operator: In
+        values:
+        - platform
+        - system
+  ---
+  apiVersion: cilium.io/v2
+  kind: CiliumClusterwideNetworkPolicy
+  metadata:
+    name: allow-egress-to-hosts-from-konnectivity
+  spec:
+    description: |
+      This rule allows Konnectivity to connect to hosts.
+    egress:
+    - toEntities:
+      - remote-node
+      - host
+    endpointSelector:
+      matchExpressions:
+      - key: io.kubernetes.pod.namespace
+        operator: In
+        values:
+        - kube-system
+      - key: app
+        operator: In
+        values:
+          - konnectivity-agent
+```
+
+## 9. Bootstrap Cluster
 
 At this point all of the Aurora infrastructure is fully deployed onto the Enterprise-Scale Landing Zone (ESLZ).
 
