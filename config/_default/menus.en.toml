@@ -43,6 +43,12 @@ weight = 10
   url = "/team/sop"
   weight = 1
 
+  [[main]]
+  name = "Monitoring"
+  parent = "Team"
+  url = "/team/monitoring-surveillance/"
+  weight = 2
+
 [[main]]
 name = "Community"
 url = "/community"

@@ -64,8 +64,7 @@ Alternatively, the desired Prometheus instance (whether it is the one installed 
     severity: high
   annotations:
     message: 'The {{ $labels.target }} probe is failing. Port-forward into 9115 on the blackbox pod in your namespace for {{ $labels.instance }} debug information. Scroll to the bottom for older failures.'
-    runbook: https://cloudnative.pages.cloud.statcan.ca/en/documentation/prometheus/cluster-alert-runbooks/probe-failure/
-
+    runbook: https://aurora.gccloudone.alpha.canada.ca/team/monitoring-surveillance/prometheus/cluster-alert-runbooks/probe-failure/
 ```
 
 `probe_success` can also be specified to one or more targets, `e.g. sum by (target, instance) (probe_success{target="<target name, e.g. example.com>"}) != 1` or `sum by (target, instance) (probe_success{target=~"example.com|example.org|mytargetprefix.*"}) != 1` if you want to set up different alert criteria/labels for different targets.

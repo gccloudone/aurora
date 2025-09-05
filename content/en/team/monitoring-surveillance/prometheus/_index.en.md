@@ -11,7 +11,7 @@ Prometheus is an open-source systems monitoring and alerting toolkit originally 
 
 Prometheus collects and stores its metrics as time series data, i.e. metrics information is stored with the timestamp at which it was recorded, alongside optional key-value pairs called labels.
 
-![Monitoring Diagram](/images/cloudnative/monitoring-diagram.jpg "Monitoring Diagram")
+![Monitoring Diagram](/images/architecture/diagrams/monitoring-diagram.jpg "Monitoring Diagram")
 
 ### Main features
 - a multi-dimensional data model with time series data identified by metric name and key/value pairs

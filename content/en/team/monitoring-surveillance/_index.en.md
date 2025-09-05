@@ -4,11 +4,14 @@ linkTitle: "Monitoring"
 weight: 40
 type: "landing"
 draft: false
-lang: "en"
+translationKey: "monitoring-and-alerting"
 ---
 
-{{% alert title="Work In Progress" color="warning" %}}
-This page is currently a work in progress. Please check back in the future for more information regarding Monitoring!
-{{% /alert %}}
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
 
-The information found within this section and its subsections is focused on how they are (to be) implemented on the Cloud Native Platform. Where applicable, we will refer to upstream documentation to reference general information, guidelines, standards and etc.
+This section provides an overview of observability components such as Prometheus and Alertmanager as well as Alert Runbooks to resolve alerts. 
+
+Aurora defines a set of **Alert Runbooks**, which provides step-by-step instructions for troubleshooting and resolving alerts. They explain what the alert means, why it occured, and how to fix the issue, ensuring faster and more consistent incident response. 
+

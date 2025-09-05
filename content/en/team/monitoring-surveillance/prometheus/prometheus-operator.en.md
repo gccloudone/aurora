@@ -9,8 +9,6 @@ lang: "en"
 
 The Prometheus Operator for Kubernetes provides easy monitoring definitions for Kubernetes services and deployment and management of Prometheus instances.
 
-All CNP clusters have this operator installed onto them and a globally configured instance. This is done through the [Kube-Prometheus-Stack Terraform module](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack), which comprises the [Kube-Prometheus-Stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack), optional [Istio DestinationRules](https://istio.io/latest/docs/reference/config/networking/destination-rule/), and the optional set of default alerting rules described in [Cluster Alert Runbooks]({{< ref "team/monitoring-surveillance/prometheus/cluster-alert-runbooks" >}}) and [Namespace Alert Runbooks]({{< ref "team/monitoring-surveillance/prometheus/namespace-alert-runbooks" >}}).
-
 ### Main features
 
 - **Create/Destroy**: Use custom resources to facilitate launching and managing Prometheus and Alertmanager instances of various scopes and locations.
@@ -19,10 +17,6 @@ All CNP clusters have this operator installed onto them and a globally configure
 
 ### Resources
 
-- The [Kube-Prometheus-Stack Terraform module](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack) can can be used for those managing their own cluster(s).
-- The [Alerting chart](https://gitlab.k8s.cloud.statcan.ca/cloudnative/k8s/charts/-/tree/master/stable/alerting) can be used on a cluster running the Prometheus Operator to set up metrics and alerts for one or more namespaces. Metrics can be read from a cluster's global Prometheus instance and/or individually configured exporters.
-  - Note that this chart is still in early development. Support is not guaranteed and features may change drastically.
-- Dashboards for CNP clusters can be accessed at [Grafana](https://grafana.cloud.statcan.ca)
   - A [Grafana Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/grafana) is available to set up dashboards custom to individual solutions
 
 ### Official Documentation
