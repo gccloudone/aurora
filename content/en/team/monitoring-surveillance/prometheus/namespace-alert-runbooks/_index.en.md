@@ -11,20 +11,20 @@ lang: "en"
 This page is currently a work in progress. Check back periodically for more information around Namespace Alert Runbooks.
 {{% /alert %}}
 
-This page describes alerts presently defined at the namespace level. They are routed to the notification channels of the Cloud Native Solutions team only when they occur in namespaces relevant to the core functionality of the Cloud Native Platform.
+This page describes alerts presently defined at the namespace level. They are routed to the notification channels of the Aurora team only when they occur in namespaces relevant to the core functionality of the Aurora platform.
 
 ### Runbooks
 
 Prometheus Alerts support any amount of arbitrary annotations. One standard practice is to define a link to a runbook documenting how to investigate or resolve the Alert.
 
-Subpages within this section describe Runbooks for Prometheus Alerts experienced at the namespace scope within the Cloud Native Platform.
+Subpages within this section describe Runbooks for Prometheus Alerts experienced at the namespace scope within the Aurora platform.
 
 ### Alerts
 
-Alerts are defined below their respective header. They are also featured in the default rule values of the experimental [Alerting chart](https://gitlab.k8s.cloud.statcan.ca/cloudnative/k8s/charts/-/tree/master/stable/alerting).
+Alerts are defined below their respective header. 
 
 #### Containers
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack/-/tree/master/prometheus_rules/container_alerts/container_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/container_alerts).
 
 - [**ContainerLowCPU**]({{< ref "container-low-cpu" >}}) : Container CPU usage is over 85% for more than 5 minutes.
 - [**ContainerLowMemory**]({{< ref "container-low-memory" >}}) : Container memory usage is over 80% for more than 2 minutes.
@@ -33,12 +33,12 @@ These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/
 - [**CompletedJobsNotCleared**]({{< ref "completed-jobs-not-cleared" >}}) : More than *20* completed jobs within a particular namespace are older than 24 hours.
 
 #### Pods
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack/-/tree/master/prometheus_rules/pod_alerts/pod_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pod_alerts).
 
 - [**PodNotReady**]({{< ref "pod-not-ready" >}}): A pod has been in a non-ready state for more than 15 minutes.
 
 #### Jobs
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack/-/tree/master/prometheus_rules/job_alerts/job_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/job_alerts).
 
 - **CompletedJobsNotCleared**: There are more than 20 complete jobs over 24 hours old in a single namespace.
 - [**JobFailed**]({{< ref "job-failed" >}}): A job has failed.
@@ -46,7 +46,7 @@ These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/
 - [**GitlabBackupIncomplete**]({{< ref "job-incomplete#gitlabbackupincomplete" >}}): A GitLab backup running for more than 24 hours.
 
 ### Persistent Volumes & Claims
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack/-/tree/master/prometheus_rules/pvc_alerts/pvc_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pvc_alerts).
 
 - [**PVCStorageRemainingLow**]({{< ref "persistent-volume-claims#PVCStorageRemainingLow" >}}) : The persistent volume claim has less than 15% storage remaining
 - [**PVCStorageRemainingNone**]({{< ref "persistent-volume-claims#PVCStorageRemainingNone" >}}) : The persistent volume claim has less than 1% storage remaining.

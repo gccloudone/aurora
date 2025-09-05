@@ -47,7 +47,7 @@ The following steps can be used to determine the root cause as well as establish
 - Depending on the situation, you may or may not have access to *Pod* logs related to the Job. You will see these Pods available while the Job is running. However, once a Job has failed its Pods will disappear.
     - You may be able to catch the pods at the right time, to analyze pod logs, or to shell into the containers for further troubleshooting. However, this should not be the priority during the above Resolution Process
 
-- Most Kubernetes Jobs within the CNP are usually controlled by a simiarily named *CronJob* resource. Additional troubleshooting can be done using the CronJob resource:
+- Most Kubernetes Jobs within Aurora are usually controlled by a simiarily named *CronJob* resource. Additional troubleshooting can be done using the CronJob resource:
     - Inspect the resource using Lens or kubectl:  `kubectl -n <namespace> describe CronJob <CronJobName>`
         - You can view information such as the *schedule*, *lastSuccesfulTime*, *lastScheduledTime*, the *backoffLimit* value, as well as the *successfulJobsHistoryLimit* and *failedJobsHistoryLimit* values.
 

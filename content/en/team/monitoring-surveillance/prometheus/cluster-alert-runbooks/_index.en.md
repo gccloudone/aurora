@@ -17,10 +17,10 @@ This page describes alerts presently defined at the cluster scope, meaning eithe
 
 Prometheus alerts support any amount of arbitrary annotations. A standard practice is to define a link to a Runbook documenting how to investigate or resolve the alert.
 
-Subpages within this section describe Runbooks for Prometheus Alerts experienced at the cluster scope within the Cloud Native Platform.
+Subpages within this section describe Runbooks for Prometheus Alerts experienced at the cluster scope within the Aurora platform.
 
 #### Blackbox Exporter
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack/-/tree/master/prometheus_rules/certificate_alerts/certificate_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/blackbox_exporter).
 
 Based on metrics collected by the Blackbox Exporter.
 
@@ -28,7 +28,7 @@ Based on metrics collected by the Blackbox Exporter.
 - [**SSLCertExpiringSoon**]({{< ref "ssl-cert-expiring-soon" >}}): The SSL Certificate of the target will expire within the next 20 days.
 
 #### cert-manager
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-cert-manager/-/blob/master/prometheus_rules/cert_manager_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/cert_manager).
 
 Refer to the [general Runbook for investigating cert-manager alerts]({{< ref "cert-manager" >}}).
 
@@ -39,20 +39,20 @@ Refer to the [general Runbook for investigating cert-manager alerts]({{< ref "ce
 - **certManagerHittingRateLimits**: cert-manager is hitting LetsEncrypt rate limits, which may prevent certificate generation for up to a week.
 
 #### Miscellaneous
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack/-/tree/master/prometheus_rules/prometheus_alerts/prometheus_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack).
 
 - **BackupJobFailed**: Management cluster only. A job with backup in the name has failed. Currently captures GitLab and Jenkins backups.
 - [**PrometheusStorageLow**]({{< ref "prometheus-storage-low" >}}): Prometheus disk usage is over 85%.
 - [**PrometheusDiskMayFillIn60Hours**]({{< ref "prometheus-storage-low#alert-prometheusdiskmayfillin60hours" >}}): Prometheus remaining disk capacity is predicted to go under 10% within 60 hours. A Prometheus instance whose disk capacity is exhausted will cease generating alerts.
 
 #### Nodepools
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack/-/tree/master/prometheus_rules/nodepool_alerts/nodepool_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/nodepool_alerts).
 
 - [**NodepoolReachingPodCapacity**]({{< ref "node-pool-pod-capacity#alert-nodepoolreachingpodcapacity" >}}): Nodepool non-terminated pod count is over 80% of capacity.
 - [**NodepoolPodsFull**]({{< ref "node-pool-pod-capacity#alert-nodepoolpodsfull" >}}): Nodepool non-terminated pod count is over 95% of capacity.
 
 #### Node Health
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack/-/tree/master/prometheus_rules/node_alerts/node_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/node_alerts).
 
 - [**NodeDiskPressure**]({{< ref "node-pressure-eviction#alert-nodediskpressure" >}}): Disk usage has reached eviction thresholds.
 - **NodeDiskMayFillIn60Hours**: Node disk is being written to at a rate that may trigger Disk Pressure in the near future.
@@ -64,7 +64,7 @@ These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/
 - **NodeReadinessFlapping**: The node is going in and out of a ready state.
 
 #### Node Debug
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-kube-prometheus-stack/-/tree/master/prometheus_rules/node_alerts/node_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/node_alerts).
 
 The following alerts do not transmit notifications as they do not necessarily indicate an error state. They can be browsed in the Prometheus or Alertmanager UI for additional information during troubleshooting.
 
@@ -75,7 +75,7 @@ The following alerts do not transmit notifications as they do not necessarily in
 - **NodePodsFull**: Node pod capacity is exhausted.
 
 #### Velero
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-velero/-/tree/master/prometheus_rules/velero_rules.yaml).
+These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/velero).
 
 Refer to the [general Runbook for investigating Velero alerts]({{< ref "velero" >}}).
 
@@ -86,15 +86,3 @@ Refer to the [general Runbook for investigating Velero alerts]({{< ref "velero" 
 - **VeleroBackupContinuousFailure**: Velero backups are failing while constantly being recreated.
 - **VeleroBackupContinuousPartialFailure**: Valero backups are partially failing while constantly being recreated.
 - **VeleroBackupTakingLongTime**: A scheduled Velero backup is taking long than 2 hours and 30 minutes.
-
-#### Nginx
-These alerts are defined [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/terraform/modules/terraform-kubernetes-ingress/-/blob/main/prometheus_rules/nginx_rules.yaml)
-
-Refer to the [general Runbook for investigating Nginx alerts]({{< ref "nginx-alerts" >}}):
-
-- **HTTPRequestCountSpike**: The rate of HTTP requests is significantly higher than predicted
-- **HTTPRequestCountDrop**: The rate of HTTP requests is significantly lower than predicted
-- **NginxIngressDown**: Nginx Ingress controller is unavailable
-- **UnsuccessfulNginxReload**: Nginx is failing to reload the new configuration
-- **NginxConnectionsHigh**: Total nginx connections exceed 50% of the maximum amount of connections
-- **NginxConnectionsVeryHigh**: Total nginx connections exceed 85% of the maximum amount of connections
