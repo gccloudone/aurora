@@ -44,7 +44,7 @@ A Pod falls in a CreateContainerConfigError status when Kubernetes tries to crea
 - **Secret is missing** — a Secret is used to store sensitive information such as credentials. You must identify the missing Secret and create it in the namespace, or mount another, existing Secret.
 
 ##### CreateContainerError
-This issue occurs when Kubernetes tries to create a container but fails. It implies some sort of issue with the container runtime, but can also indicate a problem starting up the container, such as the command not existing. This symptom can also lead to [CrashLoopBackOff]({{< ref "/en/team/monitoring-surveillance/prometheus/namespace-alert-runbooks/many-container-restarts" >}}) errors.
+This issue occurs when Kubernetes tries to create a container but fails. It implies some sort of issue with the container runtime, but can also indicate a problem starting up the container, such as the command not existing. This symptom can also lead to [CrashLoopBackOff]({{< ref "team/monitoring-surveillance/prometheus/namespace-alert-runbooks/many-container-restarts" >}}) errors.
 
 Examine the Events in the pod:
 ```kubectl describe pod <podName> -n <namespace>```

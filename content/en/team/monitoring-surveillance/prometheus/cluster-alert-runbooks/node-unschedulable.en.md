@@ -29,7 +29,7 @@ The resolution process will be different depending on the root cause of the Unsc
 
     - If the status of the node is anything else:
 
-        - Determine if any other Alerts are being triggered by the node. Cross reference Alerts with existing [Cluster Alert Runbooks]({{< ref "/en/team/monitoring-surveillance/prometheus/cluster-alert-runbooks/" >}}) to resolve issues accordingly.
+        - Determine if any other Alerts are being triggered by the node. Cross reference Alerts with existing [Cluster Alert Runbooks]({{< ref "team/monitoring-surveillance/prometheus/cluster-alert-runbooks" >}}) to resolve issues accordingly.
 
 2. After resolving the underlying issue, verify that the node is now schedulable. The node should be in the *Ready* state:
 
