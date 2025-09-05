@@ -11,7 +11,7 @@ translationKey: "team-guide"
 <gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
 </gcds-alert>
 
-This section provides a collection of resources, operating procedures, and shared practices to help platform team members, contributors, and partner departments work together effectively.
+This section provides a collection of resources, operating procedures, alert runbooks, and shared practices to help platform team members, contributors, and partner departments work together effectively.
 
 You'll find guidance on naming conventions, workflows, operating procedures, and other internal standards that support consistent delivery, governance, and collaboration.
 
