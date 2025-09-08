@@ -199,7 +199,54 @@ kubectl patch deployment argocd-repo-server \
 
 > Note: This step will no longer be required once the Argo CD operator natively supports workload identity.
 
-## 12. Destroy the Bootstrap Cluster
+## 12. Cilium policies for API server and Konnectivity host access
+
+Until the AKS VNet integration for the control plane is GA in your environment, the API server Private Link endpoint is created in the same subnet as the default node pool rather then then the API server subnet. Additionally traffic from the API server is routed to the cluster via Konnectivity instead of direct into into the Virtual Network. If your default egress policy is restrictive, platform/system workloads may be unable to reach the API server, and Konnectivity may fail when it needs to talk to node/host IPs.
+ 
+```yaml
+  apiVersion: cilium.io/v2
+  kind: CiliumClusterwideNetworkPolicy
+  metadata:
+    name: allow-egress-to-apiserver-from-platform-temp
+  spec:
+    egress:
+    - toCIDRSet:
+      - cidr: XX.XXX.XXX.XXX/32
+      toPorts:
+      - ports:
+        - port: "443"
+    endpointSelector:
+      matchExpressions:
+      - key: io.cilium.k8s.namespace.labels.namespace.ssc-spc.gc.ca/purpose
+        operator: In
+        values:
+        - platform
+        - system
+  ---
+  apiVersion: cilium.io/v2
+  kind: CiliumClusterwideNetworkPolicy
+  metadata:
+    name: allow-egress-to-hosts-from-konnectivity
+  spec:
+    description: |
+      This rule allows Konnectivity to connect to hosts.
+    egress:
+    - toEntities:
+      - remote-node
+      - host
+    endpointSelector:
+      matchExpressions:
+      - key: io.kubernetes.pod.namespace
+        operator: In
+        values:
+        - kube-system
+      - key: app
+        operator: In
+        values:
+          - konnectivity-agent
+```
+
+## 13. Destroy the Bootstrap Cluster
 
 Once the complete Aurora platform is deployed onto the target cluster, and you can log in to the target's Argo CD instance to confirm that all applications are synced, you may safely remove the bootstrap cluster:
 

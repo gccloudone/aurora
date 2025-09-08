@@ -47,11 +47,14 @@ Usually we ask for a reserved CIDR size of /22 which is broken up into:
 - /23 for the Virtual Network
 - /23 for the POD CIDR
 
+Once the CIDRs haveen given it is important to then request that the associated firewall rules are setup as well.
+
 At this point the Azure Cloud Team will get back to you with:
 
 - The Azure DevOps repository that was created
 - Associated runners/agents which have configured for executing pipelines
 - The L0 / L1 pipelines which have already been run once successfully, establishing baseline networking, NSGs, DNS zones, and policies
+- Usually a screenshot of the Firewall Rules that were set up in the firewall
 
 Finally don't forget to add the designated user as a member of the owner group for the new subscription.
 
@@ -116,11 +119,14 @@ az provider register --namespace Microsoft.Compute
 Once the landing zone repository has been prepared, authenticate and run Terragrunt to both plan and deploy the infrastructure for the Aurora platform.
 
 ```sh
+source .envvars
 az login --use-device-code
 terragrunt init -upgrade
 terragrunt plan
 terragrunt apply
 ```
+
+> Note: Reminder to source the *.envvars folder and ensure using the correct service principal XXXX_XXX_XXXXX_devops_sp is being used.
 
 ## 6. Retrieve AKS Credentials
 
@@ -138,7 +144,8 @@ Ensure the newly created Service Principal (SPN) for Argo CD has the necessary p
 
 At minimum, the Microsoft Graph API permissions should include:
 
-- Group.Read.All
+- User.Read
+- User.Read.All
 
 You must also **grant admin consent** for these permissions in Entra ID so Argo CD can authenticate and retrieve the resources it manages.
 
@@ -146,54 +153,7 @@ You must also **grant admin consent** for these permissions in Entra ID so Argo 
 
 The service principal XXXX_XXX_XXXXX_devops_sp that has been created by the Azure Cloud Team must have the **Azure Kubernetes Service Cluster User Role** assigned at the AKS cluster scope. This role is required for the service principal to interact with the Kubernetes API (e.g., running kubectl, provisioning workloads during bootstrap, or managing RBAC bindings).
 
-## 8. Cilium policies for API server and Konnectivity host access
-
-Until AKS VNet integration for the control plane is GA in your environment, the API server PrivateLink endpoint may live in a different subnet than your cluster nodes. If your default egress policy is restrictive, platform/system workloads may be unable to reach the API server, and Konnectivity may fail when it needs to talk to node/host IPs.
-
-```yaml
-  apiVersion: cilium.io/v2
-  kind: CiliumClusterwideNetworkPolicy
-  metadata:
-    name: allow-egress-to-apiserver-from-platform-temp
-  spec:
-    egress:
-    - toCIDRSet:
-      - cidr: XX.XXX.XXX.XXX/32
-      toPorts:
-      - ports:
-        - port: "443"
-    endpointSelector:
-      matchExpressions:
-      - key: io.cilium.k8s.namespace.labels.namespace.ssc-spc.gc.ca/purpose
-        operator: In
-        values:
-        - platform
-        - system
-  ---
-  apiVersion: cilium.io/v2
-  kind: CiliumClusterwideNetworkPolicy
-  metadata:
-    name: allow-egress-to-hosts-from-konnectivity
-  spec:
-    description: |
-      This rule allows Konnectivity to connect to hosts.
-    egress:
-    - toEntities:
-      - remote-node
-      - host
-    endpointSelector:
-      matchExpressions:
-      - key: io.kubernetes.pod.namespace
-        operator: In
-        values:
-        - kube-system
-      - key: app
-        operator: In
-        values:
-          - konnectivity-agent
-```
-
-## 9. Bootstrap Cluster
+## 8. Bootstrap Cluster
 
 At this point all of the Aurora infrastructure is fully deployed onto the Enterprise-Scale Landing Zone (ESLZ).
 
