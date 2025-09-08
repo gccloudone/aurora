@@ -73,7 +73,48 @@
 <gcds-text character-limit=true>Because the Argo CD operator does not yet expose workload identity settings, you must manually patch the repo-server deployment to set the identity binding:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>kubectl patch deployment argocd-repo-server <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -n platform-management-system <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -p <span style=color:#e6db74>&#39;{&#34;spec&#34;:{&#34;template&#34;:{&#34;metadata&#34;:{&#34;labels&#34;:{&#34;aadpodidbinding&#34;:&#34;argocd-vault-plugin&#34;}}}}}&#39;</span>
-</span></span></code></pre></div><blockquote><gcds-text character-limit=true>Note: This step will no longer be required once the Argo CD operator natively supports workload identity.</gcds-text></blockquote><gcds-heading tag=h2 id=12-destroy-the-bootstrap-cluster character-limit=true>12. Destroy the Bootstrap Cluster</gcds-heading>
+</span></span></code></pre></div><blockquote><gcds-text character-limit=true>Note: This step will no longer be required once the Argo CD operator natively supports workload identity.</gcds-text></blockquote><gcds-heading tag=h2 id=12-cilium-policies-for-api-server-and-konnectivity-host-access character-limit=true>12. Cilium policies for API server and Konnectivity host access</gcds-heading>
+<gcds-text character-limit=true>Until the AKS VNet integration for the control plane is GA in your environment, the API server Private Link endpoint is created in the same subnet as the default node pool rather then then the API server subnet. Additionally traffic from the API server is routed to the cluster via Konnectivity instead of direct into into the Virtual Network. If your default egress policy is restrictive, platform/system workloads may be unable to reach the API server, and Konnectivity may fail when it needs to talk to node/host IPs.</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>  <span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>cilium.io/v2</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>kind</span>: <span style=color:#ae81ff>CiliumClusterwideNetworkPolicy</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>allow-egress-to-apiserver-from-platform-temp</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>egress</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>toCIDRSet</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>cidr</span>: <span style=color:#ae81ff>XX.XXX.XXX.XXX/32</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>toPorts</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>port</span>: <span style=color:#e6db74>&#34;443&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>endpointSelector</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>matchExpressions</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>key</span>: <span style=color:#ae81ff>io.cilium.k8s.namespace.labels.namespace.ssc-spc.gc.ca/purpose</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>operator</span>: <span style=color:#ae81ff>In</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>values</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#ae81ff>platform</span>
+</span></span><span style=display:flex><span>        - <span style=color:#ae81ff>system</span>
+</span></span><span style=display:flex><span>  ---
+</span></span><span style=display:flex><span>  <span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>cilium.io/v2</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>kind</span>: <span style=color:#ae81ff>CiliumClusterwideNetworkPolicy</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>allow-egress-to-hosts-from-konnectivity</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>description</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      This rule allows Konnectivity to connect to hosts.</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>egress</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>toEntities</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>remote-node</span>
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>host</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>endpointSelector</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>matchExpressions</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>key</span>: <span style=color:#ae81ff>io.kubernetes.pod.namespace</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>operator</span>: <span style=color:#ae81ff>In</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>values</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#ae81ff>kube-system</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>key</span>: <span style=color:#ae81ff>app</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>operator</span>: <span style=color:#ae81ff>In</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>values</span>:
+</span></span><span style=display:flex><span>          - <span style=color:#ae81ff>konnectivity-agent</span>
+</span></span></code></pre></div><gcds-heading tag=h2 id=13-destroy-the-bootstrap-cluster character-limit=true>13. Destroy the Bootstrap Cluster</gcds-heading>
 <gcds-text character-limit=true>Once the complete Aurora platform is deployed onto the target cluster, and you can log in to the target&rsquo;s Argo CD instance to confirm that all applications are synced, you may safely remove the bootstrap cluster:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>./cleanup.sh
 </span></span></code></pre></div><blockquote><gcds-text character-limit=true>Note: Do not remove the bootstrap cluster until you have verified that the Aurora platform is fully deployed and synchronized on the target cluster, and that you can log in to the target Argo CD instance using OIDC.</gcds-text></blockquote><gcds-date-modified lang=en>2025-08-19</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/contact","Report an issue": "https://github.com/gccloudone/aurora/issues/new/choose","About us": "/about" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
     .glightbox-container.glightbox-custom-white-bg img {
