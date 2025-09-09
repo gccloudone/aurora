@@ -81,3 +81,10 @@ gcds-container ul {
 
 pre {
   padding: 1em; }
+
+blockquote {
+  background-color: var(--gcds-alert-info-background);
+  border-left: 0.375rem solid var(--gcds-alert-info-icon);
+  color: var(--gcds-alert-info-text);
+  margin: var(--gcds-spacing-100) 0;
+  padding: var(--gcds-spacing-200) var(--gcds-spacing-300); }
