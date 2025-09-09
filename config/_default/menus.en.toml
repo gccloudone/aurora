@@ -46,7 +46,7 @@ weight = 10
   [[main]]
   name = "Monitoring"
   parent = "Team"
-  url = "/team/monitoring-surveillance/"
+  url = "/team/monitoring-alerts/"
   weight = 2
 
 [[main]]

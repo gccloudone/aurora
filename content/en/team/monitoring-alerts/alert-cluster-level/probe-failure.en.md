@@ -10,7 +10,7 @@ lang: "en"
 
 ## Probe Failure Alerts
 
-These alert occur at the cluster-level and depend on the configuration of [Blackbox Exporter]({{< ref "team/monitoring-surveillance/prometheus/blackbox-exporter" >}}) probes. Unlike most cluster-level alerts, these alerts do not pertain to the cluster they originate from, but rather to what the alert labels identify as the `target` cluster. That is because these probes are used for uptime and health monitoring. Since a cluster experiencing such issues may not be capable of transmitting the relevant alerts, clusters are configured to probe other clusters. For example, presently the Management cluster probes the SDLC and Ingress clusters, while the Production cluster in turn probes Management.
+These alert occur at the cluster-level and depend on the configuration of [Blackbox Exporter]({{< ref "team/monitoring-alerts/blackbox-exporter" >}}) probes. Unlike most cluster-level alerts, these alerts do not pertain to the cluster they originate from, but rather to what the alert labels identify as the `target` cluster. That is because these probes are used for uptime and health monitoring. Since a cluster experiencing such issues may not be capable of transmitting the relevant alerts, clusters are configured to probe other clusters. For example, presently the Management cluster probes the SDLC and Ingress clusters, while the Production cluster in turn probes Management.
 
 There are presently two types of Probe Failure alerts: **IstioIngressGatewayProbeFailure** and **ControlPlaneProbeFailure**.
 

@@ -11,7 +11,7 @@ lang: "en"
 
 This alert occurs at the cluster level. It triggers when the SSL certificate at a given target expires in fewer than 20 days. This alert can indicate that the certificate has failed to automatically renew or that the target's pod has failed to pick up a renewed certificate.
 
-On each cluster, the wildcard SSL certificate for the Ingress Gateway is checked by probing that cluster's instance of Grafana using the [Blackbox Exporter]({{< ref "team/monitoring-surveillance/prometheus/blackbox-exporter" >}}). The probe returns a metric for SSL certificate expiry. Grafana is chosen arbitrarily as the wildcard certificate is used for all `*.cloud.statcan.ca` subdomains.
+On each cluster, the wildcard SSL certificate for the Ingress Gateway is checked by probing that cluster's instance of Grafana using the [Blackbox Exporter]({{< ref "team/monitoring-alerts/blackbox-exporter" >}}). The probe returns a metric for SSL certificate expiry. Grafana is chosen arbitrarily as the wildcard certificate is used for all `*.cloud.statcan.ca` subdomains.
 
 Furthermore, on the Management cluster, Artifactory is probed separately since it is acting as a separate Ingress Gateway into the cluster.
 

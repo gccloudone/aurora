@@ -1,6 +1,6 @@
 ---
-title: "cert-manager"
-linkTitle: "cert-manager"
+title: "Cert Manager"
+linkTitle: "Cert Manager"
 weight: 10
 type: "docs"
 draft: false

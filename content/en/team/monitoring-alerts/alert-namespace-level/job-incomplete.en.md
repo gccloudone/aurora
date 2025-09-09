@@ -71,7 +71,7 @@ If remediation was successful, the Job should run to completion and finish its t
 
 If remediation was not successful, the Job may fail again. You may experience more instances of the *JobIncomplete* Alert if the root cause has not been fixed. Alternatively, different Alerts may fire based on the existence of any new errors or events.
 - If you are still encountering the JobIncomplete error, simply re-iterate through the resolution process again to try and identify a new root cause, or to re-evaluate your previous attempt.
-- If new Alerts are being fired on the Job resource, you will need to refer to the Cluster or Namespace Alert's [Prometheus Runbook documentation]({{< ref "team/monitoring-surveillance/prometheus" >}} "Prometheus Documentation") to determine the appropriate resolution process.
+- If new Alerts are being fired on the Job resource, you will need to refer to the Cluster or Namespace Alert's [Prometheus Runbook documentation]({{< ref "team/monitoring-alerts/prometheus" >}} "Prometheus Documentation") to determine the appropriate resolution process.
 
 ## GitlabBackupIncomplete
 

@@ -1,7 +1,7 @@
 ---
-title: "Uptime monitoring with Blackbox Exporter"
-linkTitle: "Uptime monitoring with Blackbox Exporter"
-weight: 90
+title: "Blackbox Exporter"
+linkTitle: "Blackbox Exporter"
+weight: 20
 type: "docs"
 draft: false
 lang: "en"
@@ -20,7 +20,7 @@ In this context:
     - Probe traces are listed in historical order with a limited total number saved. However, to facilitate debugging, failed traces are saved seperately (by default, the last 100) at the bottom of blackbox UI.
 1. One or more Prometheus Rules can be written to alert for failed probes or any metrics within them.
 
-### Defining blackbox modules
+## Defining blackbox modules
 
 A common use case for the blackbox exporter is the uptime monitoring of http endpoints, for which the default module [http_2xx](https://github.com/prometheus-community/helm-charts/blob/prometheus-blackbox-exporter-5.6.0/charts/prometheus-blackbox-exporter/values.yaml#L112-L120) is typically sufficient.
 
@@ -64,7 +64,7 @@ Alternatively, the desired Prometheus instance (whether it is the one installed 
     severity: high
   annotations:
     message: 'The {{ $labels.target }} probe is failing. Port-forward into 9115 on the blackbox pod in your namespace for {{ $labels.instance }} debug information. Scroll to the bottom for older failures.'
-    runbook: https://aurora.gccloudone.alpha.canada.ca/team/monitoring-surveillance/prometheus/cluster-alert-runbooks/probe-failure/
+    runbook: https://aurora.gccloudone.alpha.canada.ca/team/monitoring-alerts/alert-cluster-level/probe-failure/
 ```
 
 `probe_success` can also be specified to one or more targets, `e.g. sum by (target, instance) (probe_success{target="<target name, e.g. example.com>"}) != 1` or `sum by (target, instance) (probe_success{target=~"example.com|example.org|mytargetprefix.*"}) != 1` if you want to set up different alert criteria/labels for different targets.

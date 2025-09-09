@@ -1,6 +1,6 @@
 ---
 title: "Monitoring and Alerting"
-linkTitle: "Monitoring"
+linkTitle: "Monitoring and Alerting"
 weight: 40
 type: "landing"
 draft: false
@@ -14,4 +14,3 @@ translationKey: "monitoring-and-alerting"
 This section provides an overview of observability components such as Prometheus and Alertmanager as well as Alert Runbooks to resolve alerts. 
 
 Aurora defines a set of **Alert Runbooks**, which provides step-by-step instructions for troubleshooting and resolving alerts. They explain what the alert means, why it occured, and how to fix the issue, ensuring faster and more consistent incident response. 
-

@@ -1,6 +1,6 @@
 ---
-title: "Cluster Alerts"
-linkTitle: "Cluster Alerts"
+title: "Cluster Level Alerts"
+linkTitle: "Cluster Level Alerts"
 weight: 50
 type: "docs"
 draft: false

@@ -1,6 +1,6 @@
 ---
-title: "Namespace Alerts"
-linkTitle: "Namespace Alerts"
+title: "Namespace Level Alerts"
+linkTitle: "Namespace Level Alerts"
 weight: 60
 type: "docs"
 draft: false
