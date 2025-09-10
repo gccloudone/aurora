@@ -1,7 +1,7 @@
 ---
 title: "Monitoring and Alerting"
 linkTitle: "Monitoring and Alerting"
-weight: 40
+weight: 5
 type: "landing"
 draft: false
 translationKey: "monitoring-and-alerting"
