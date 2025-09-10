@@ -11,6 +11,6 @@ translationKey: "monitoring-and-alerting"
 <gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
 </gcds-alert>
 
-This section provides an overview of observability components such as Prometheus and Alertmanager as well as Alert Runbooks to resolve alerts. 
+This section provides an overview of observability components, including tools such as Prometheus and Alertmanager, as well as Alert Runbooks used to resolve alerts.
 
-Aurora defines a set of **Alert Runbooks**, which provides step-by-step instructions for troubleshooting and resolving alerts. They explain what the alert means, why it occured, and how to fix the issue, ensuring faster and more consistent incident response. 
+Aurora defines a comprehensive set of Alert Runbooks that provide step-by-step instructions for troubleshooting and resolving alerts. These runbooks explain the meaning of the alert, the root cause of the issue, and the actions required to address it. By standardizing incident response, the runbooks help ensure faster resolution times and greater consistency across teams.
