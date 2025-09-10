@@ -49,6 +49,12 @@ weight = 10
   url = "/team/monitoring-alerts/"
   weight = 2
 
+  [[main]]
+  name = "Appendix"
+  parent = "Team"
+  url = "/team/appendix"
+  weight = 3
+
 [[main]]
 name = "Community"
 url = "/community"
@@ -79,7 +85,7 @@ weight = 20
 
 [[breadcrumb]]
 name = "GC Cloud One"
-url = "https://gccloudone.ca"
+url = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US"
 weight = 1
 
 [[contextual]]

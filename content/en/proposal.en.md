@@ -5,6 +5,7 @@ draft: false
 sidebar: false
 showToc: true
 translationKey: "proposal"
+disableCharacterlimit: true
 ---
 
 ## Project overview

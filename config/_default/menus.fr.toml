@@ -61,9 +61,8 @@ weight = 15
 
 [[breadcrumb]]
 name = "Service infonuagique unifié du GC"
-url = "https://gccloudone.ca"
+url = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=fr"
 weight = 1
-
 
 [[contextual]]
 name = "Nous contacter"

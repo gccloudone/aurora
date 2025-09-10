@@ -1,0 +1,16 @@
+<!-- GLightbox -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const style = document.createElement('style');
+  style.innerHTML = `
+    .glightbox-container.glightbox-custom-white-bg img {
+      background: white !important;
+    }
+  `;
+  document.head.appendChild(style);
+  const lightbox = GLightbox({
+    openEffect: 'zoom',
+    closeEffect: 'fade',
+    skin: 'custom-white-bg'
+  });
+</script>

@@ -4,6 +4,7 @@ date: 2024-10-21
 draft: false
 sidebar: false
 translationKey: "get-involved"
+disableCharacterlimit: true
 ---
 
 At **GC Cloud One: Aurora**, we’re building a collaborative community around cloud-native technologies, and we encourage everyone to get involved! Whether you’re a seasoned Kubernetes expert or new to the platform, there are multiple ways to contribute, learn, and grow together. Here’s how you can get started:

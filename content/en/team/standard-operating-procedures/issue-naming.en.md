@@ -1,9 +1,9 @@
 ---
-title: "Issue & PR Naming Conventions"
-linkTitle: "Issue & PR Naming Conventions"
+title: "Issue and PR Naming Conventions"
+linkTitle: "Issue and PR Naming Conventions"
 weight: 5
 aliases: ["/team/sop/issue-naming"]
-date: 2025-01-01
+date: 2025-08-19
 draft: false
 ---
 
