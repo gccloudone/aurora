@@ -1,10 +1,9 @@
 ---
-title: "PVCStorageRemaining"
-linkTitle: "PVCStorageRemaining"
-weight: 10
-type: "docs"
+title: "Persistent Volume Claim Alerts"
+linkTitle: "Persistent Volume Claim Alerts"
+weight: 5
+aliases: ["/team/monitoring/namespacealerts/pvc"]
 draft: false
-lang: "en"
 ---
 
 ## Alert: PVCStorageRemainingLow

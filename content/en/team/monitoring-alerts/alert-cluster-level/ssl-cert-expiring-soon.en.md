@@ -1,10 +1,9 @@
 ---
-title: "SSLCertExpiringSoon"
-linkTitle: "SSLCertExpiringSoon"
-weight: 10
-type: "docs"
+title: "SSL Certificate Alerts"
+linkTitle: "SSL Certificate Alerts"
+weight: 5
+aliases: ["/team/monitoring/clusteralerts/sslcert"]
 draft: false
-lang: "en"
 ---
 
 ## Alert: SSLCertExpiringSoon
@@ -15,11 +14,11 @@ On each cluster, the wildcard SSL certificate for the Ingress Gateway is checked
 
 Furthermore, on the Management cluster, Artifactory is probed separately since it is acting as a separate Ingress Gateway into the cluster.
 
-### Resolution Process
+## Resolution Process
 
 First confirm whether the alert is firing only for Artifactory.
 
-#### Firing on Artifactory only
+### Firing on Artifactory only
 
 This case is most likely to be a known issue where Artifactory's nginx pod fails to pick up a new certificate. To confirm this, check if the certificate is still valid:
 
@@ -31,7 +30,7 @@ If the certificate is valid, restart the nginx pod:
 
 Otherwise, refer to the following section on troubleshooting cert-manager, noting that the certificate for Artifactory is `wildcard` in `istio-system`.
 
-#### Firing on Grafana
+### Firing on Grafana
 
 1. If the issue has occurred recently, check if there are any pertinent error logs in the cert-manger pod in the cert-manager namespace.
 
@@ -39,9 +38,9 @@ Otherwise, refer to the following section on troubleshooting cert-manager, notin
 
     `kubectl -n ingress-general-system describe cert general-istio-ingress-gateway`
 
-3. Restart the cert-manager with kubectl. This can be found in the **cert-manager**, or **cert-manager-system** namespace:
+3. Restart the cert-manager with kubectl. This can be found in the **cert-manager-system** namespace:
 
-    `kubectl -n cert-manager rollout restart deploy cert-manager`
+    `kubectl -n cert-manager-system rollout restart deploy cert-manager`
 
 Cert-manager only authenticates once per hour. The wildcard certificate must be replaced to force cert-manager to re-authenticate immediately. This can be done by obtaining the YAML for the wildcard certificate, removing instance specific fields, deleting the certificate, and then re-applying the certificate.
 
@@ -52,7 +51,7 @@ This process is highlighted in the remaining steps below.
     `kubectl -n ingress-general-system describe cert general-istio-ingress-gateway -o=yaml > general-istio-ingress-gateway-cert.yaml`
 
 5. Remove instance specific fields (manual):
-    - Open the file in an editor, and remove instance specific fields such as:
+    - Open the file in an editor, and remove instance specific fields / managed fields such as:
         - metadata.uid
         - metadata.resourceVersion
         - metadata.creationTimestamp

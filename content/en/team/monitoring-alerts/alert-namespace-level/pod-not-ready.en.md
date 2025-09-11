@@ -1,10 +1,9 @@
 ---
-title: "PodNotReady"
-linkTitle: "PodNotReady"
-weight: 10
-type: "docs"
+title: "Pod Alerts"
+linkTitle: "Pod Alerts"
+weight: 5
+aliases: ["/team/monitoring/namespacealerts/pod"]
 draft: false
-lang: "en"
 ---
 
 ## Alert: PodNotReady
@@ -45,10 +44,10 @@ To resolve this alert, teams can investigate the Pod in question to address the 
 
 ### Additional Troubleshooting
 
-##### Pending State
+#### Pending State
 Oftentimes, when a Pod is created, the Pod stays in the _Pending_ state. Assuming that the cluster scheduler is running fine, here are some potential causes:
 - The current Namespace has a ResourceQuota object and creating the Pod will make the Namespace go over the quota.
 - The Pod is bound to a Pending PersistentVolumeClaim.
 
-##### Unknown State
+#### Unknown State
 If the container cannot start for some reason, and the state of the Pod cannot be obtained, the Pod falls in an _Unknown_ state. This typically occurs due to an error in communicating with the node where the Pod should be running.

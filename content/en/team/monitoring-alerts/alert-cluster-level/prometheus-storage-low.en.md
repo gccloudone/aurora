@@ -1,17 +1,14 @@
 ---
-title: "PrometheusStorageLow"
-linkTitle: "PrometheusStorageLow"
-weight: 10
-type: "docs"
+title: "Prometheus Storage Alerts"
+linkTitle: "Prometheus Storage Alerts"
+weight: 5
+aliases: ["/team/monitoring/clusteralerts/prometheusstorage"]
 draft: false
-lang: "en"
 ---
 
 ## Alert: PrometheusStorageLow
 
 PrometheusStorageLow alerts are configured to occur at the cluster level. It triggers when Prometheus disk usage is over 85% in the specified environment. This alert indicates that the storage needs to be increased for that environment.
-
-On each cluster, Prometheus has a PVC with storage for monitoring.
 
 ## Alert: PrometheusDiskMayFillIn60Hours
 
@@ -19,7 +16,7 @@ PrometheusDiskMayFillIn60Hours alerts are configured to occur at the cluster lev
 
 ## Resolution Process
 
-The resolution process is shared for both alerts. Please note PrometheusDiskMayFill is "rate based", please check the Grafana dashboard for the Prometheus disk. If it is a gradual increase (with a bit of see-saw for compression), which is typically the case, proceed to the rest of the resolution process – the disk simply requires more storage. In the event there is a sudden "cliff" then it is worth checking if there have been any recent changes (new recording rules, new metrics, new data sources) that may be writing an abnormal amount of data to Prometheus.
+The resolution process is shared for both alerts. Please note PrometheusDiskMayFill is "rate based", please check the Grafana dashboard for the Prometheus disk. If it is a gradual increase (with a bit of see-saw for compression), which is typically the case, proceed to the rest of the resolution process – the disk simply requires more storage. In the event there is a sudden "cliff" then it is worth checking if there have been any recent changes (new recording rules, new metrics, new data sources) that may be writing an abnormal amount of data to Prometheus' disk.
 
 ### Storage analysis
 

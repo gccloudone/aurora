@@ -1,10 +1,9 @@
 ---
 title: "Prometheus Operator"
 linkTitle: "Prometheus Operator"
-weight: 15
-type: "docs"
+weight: 5
+aliases: ["/team/monitoring/prometheus-operator"]
 draft: false
-lang: "en"
 ---
 
 The Prometheus Operator for Kubernetes simplifies the deployment, management, and configuration of Prometheus instances, as well as monitoring definitions for Kubernetes services.  

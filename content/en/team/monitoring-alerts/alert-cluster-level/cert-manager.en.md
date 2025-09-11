@@ -1,10 +1,9 @@
 ---
-title: "Cert Manager"
-linkTitle: "Cert Manager"
-weight: 10
-type: "docs"
+title: "Cert Manager Alerts"
+linkTitle: "Cert Manager Alerts"
+weight: 5
+aliases: ["/team/monitoring/clusteralerts/certmanager"]
 draft: false
-lang: "en"
 ---
 
 ## Alert: certManagerCertFailingToRenew

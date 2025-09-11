@@ -2,7 +2,7 @@
 title: "Monitoring and Alerting"
 linkTitle: "Monitoring and Alerting"
 weight: 5
-type: "landing"
+aliases: ["/team/monitoring/"]
 draft: false
 translationKey: "monitoring-and-alerting"
 ---

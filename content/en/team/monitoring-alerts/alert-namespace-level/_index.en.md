@@ -1,10 +1,9 @@
 ---
 title: "Namespace Level Alerts"
 linkTitle: "Namespace Level Alerts"
-weight: 60
-type: "docs"
+weight: 70
+aliases: ["/team/monitoring/namespacealerts/"]
 draft: false
-lang: "en"
 ---
 
 {{% alert title="Work In Progress" color="warning" %}}
@@ -26,11 +25,11 @@ Alerts are defined below their respective header.
 #### Containers
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/container_alerts).
 
-- [**ContainerLowCPU**]({{< ref "container-low-cpu" >}}) : Container CPU usage is over 85% for more than 5 minutes.
-- [**ContainerLowMemory**]({{< ref "container-low-memory" >}}) : Container memory usage is over 80% for more than 2 minutes.
-- [**ContainerWaiting**]({{< ref "container-waiting" >}}) : A container is waiting for more than 15 minutes for any reason other than CrashLoopBackoff (which is captured separately by ManyContainerRestarts).
-- [**ManyContainerRestarts**]({{< ref "many-container-restarts" >}}) : A container has restarted more than 10 times in the last 8 hours.
-- [**CompletedJobsNotCleared**]({{< ref "completed-jobs-not-cleared" >}}) : More than *20* completed jobs within a particular namespace are older than 24 hours.
+- [**ContainerLowCPU**]({{< ref "container#container-low-cpu" >}}) : Container CPU usage is over 85% for more than 5 minutes.
+- [**ContainerLowMemory**]({{< ref "container#container-low-memory" >}}) : Container memory usage is over 80% for more than 2 minutes.
+- [**ContainerWaiting**]({{< ref "container#container-waiting" >}}) : A container is waiting for more than 15 minutes for any reason other than CrashLoopBackoff (which is captured separately by ManyContainerRestarts).
+- [**ManyContainerRestarts**]({{< ref "container#" >}}) : A container has restarted more than 10 times in the last 8 hours.
+- [**CompletedJobsNotCleared**]({{< ref "container#completed-jobs-not-cleared" >}}) : More than *20* completed jobs within a particular namespace are older than 24 hours.
 
 #### Pods
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pod_alerts).
@@ -41,9 +40,9 @@ These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-plat
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/job_alerts).
 
 - **CompletedJobsNotCleared**: There are more than 20 complete jobs over 24 hours old in a single namespace.
-- [**JobFailed**]({{< ref "job-failed" >}}): A job has failed.
-- [**JobIncomplete**]({{< ref "job-incomplete" >}}): A job is not complete after running for more than 12 hours.
-- [**GitlabBackupIncomplete**]({{< ref "job-incomplete#gitlabbackupincomplete" >}}): A GitLab backup running for more than 24 hours.
+- [**JobFailed**]({{< ref "job#job-failed" >}}): A job has failed.
+- [**JobIncomplete**]({{< ref "job#job-incomplete" >}}): A job is not complete after running for more than 12 hours.
+- [**GitlabBackupIncomplete**]({{< ref "job#job-incomplete#gitlabbackupincomplete" >}}): A GitLab backup running for more than 24 hours.
 
 ### Persistent Volumes & Claims
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pvc_alerts).

@@ -1,13 +1,10 @@
 ---
-title: "NodePoolPodCapacity"
-linkTitle: "NodePoolPodCapacity"
-weight: 10
-type: "docs"
+title: "Node Pool Capacity Alerts"
+linkTitle: "Node Pool Capacity Alerts"
+weight: 5
+aliases: ["/team/monitoring/clusteralerts/nodepool"]
 draft: false
-lang: "en"
 ---
-
-## Node Pool Pod Capacity Alerts
 
 Node pool pod capacity alerts are configured to occur at the cluster level. As defined in the [official Kubernetes documentation](https://kubernetes.io/docs/concepts/architecture/nodes/), Kubernetes runs workloads by placing containers into pods to run on nodes. Each node is managed by the control plane and contains the services necessary to run pods. [Kubernetes is designed to accommodate](https://kubernetes.io/docs/setup/best-practices/cluster-large/) no more than 110 pods per node. However, when nodes are created `max-pods` is set to a hard limit of 90 pods per node. When a particular node reaches a certain threshold, the following alerts are triggered:
 
@@ -16,13 +13,13 @@ Node pool pod capacity alerts are configured to occur at the cluster level. As d
 
 Terminated (Succeeded or Failed) pods are not counted for these alerts because they do not prevent the scheduling of other pods onto the nodes.
 
-### Alert: NodepoolReachingPodCapacity
+## Alert: NodepoolReachingPodCapacity 
 
 This alert is triggered when the available pod capacity in the node pool has met or exceeded an 80% usage threshold. This alert is considered to have a *Minor* severity because issues are not expected as long as some pod capacity remains available. However, it serves as a warning that the nodepool may be in need of scaling soon, or that one or more workloads may be bursting to an unexpected extent.
 
 When [assigning pods to nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/), pods can be constrained so that they are restricted to run on a particular node(s), or to prefer to run on particular nodes. In general, the scheduler will automatically do a reasonable placement based on unused resources. However, there are some circumstances where pods control which node pools they constrain their deployments to via a label selector, `nodeSelector` or `NodeAffinity`.
 
-### Alert: NodepoolPodsFull
+## Alert: NodepoolPodsFull {#a}
 
 A more severe version of the _NodepoolReachingPodCapacity_ alert, this alert has a *Critical severity* and is triggered when the available pod capacity in the node pool has met or exceeded a 95% usage threshold. When no more pods may be deployed to a node pool, pods may fail to be scheduled. Running pods can also begin to misbehave when there is no remaining pod capacity.
 
@@ -52,4 +49,4 @@ As the pod capacity limits become low or full, the following are some checks to 
 
     `kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=<node name here>`
 
-- Due to an increasing number of deployments or to run a larger workload, you may want to [scale](https://docs.microsoft.com/en-us/azure/aks/scale-cluster?tabs=azure-cli#scale-the-cluster-nodes) the node pool.
+- Autoscaling is configured for the nodepools so new nodes should come in (up to a configured maximum) to accomodate the increased number of workloads. 

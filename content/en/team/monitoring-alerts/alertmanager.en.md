@@ -1,10 +1,18 @@
 ---
 title: "Alertmanager"
 linkTitle: "Alertmanager"
-weight: 30
-type: "docs"
+weight: 5
+aliases: ["/team/monitoring/alertmanager"]
 draft: false
-lang: "en"
+---
+
+---
+title: "Backup and Disaster Recovery"
+linkTitle: "Backup and Disaster Recovery"
+weight: 5
+aliases: ["/team/sop/backup-disaster-recovery"]
+date: 2025-08-19
+draft: false
 ---
 
 [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) is used by Prometheus to deduplicate, route, group, silence, and inhibit [alerts](()).
