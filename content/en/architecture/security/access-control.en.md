@@ -16,9 +16,7 @@ Access control is implemented according to the principle of least privilege. The
 
 Aurora platform components that access or provide data are identified through non-human accounts: [Kubernetes Service Accounts](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/), which are often associated with one or more workload identities on each Cloud Service Provider (CSP) (for example, [Microsoft Entra workload identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview)). These accounts are granted the minimum necessary sets of permissions for each component's intended function.
 
-Kubernetes offers [Roles and ClusterRoles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole) which define access and [RoleBindings and ClusterRoleBindings](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding) which bind Roles and ClusterRoles to an identity. This identity can be an individual user or user group from an integrated identity provider (which would be associated with the cluster at the CSP-level) or a Kubernetes Service Account.
-
-Microsoft Entra ID is the centralized identity provider for human users. Each Microsoft Entra ID account used to access Aurora is a member of one or more [Microsoft Entra groups](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups) that grant a user role among the following high-level definitions:
+Kubernetes offers [Roles and ClusterRoles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole) which define access and [RoleBindings and ClusterRoleBindings](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding) which bind Roles and ClusterRoles to an identity. This identity can be an individual user or user group from an integrated identity provider (which would be associated with the cluster at the CSP-level) or a Kubernetes Service Account. Membership to these groups grant a user role among the following high-level definitions:
 
 ## Solution Builder
 Solution Builders design, develop, deploy, and operate solutions that run on Aurora. They require access to Kubernetes Resources and CustomResources.
@@ -54,3 +52,17 @@ Platform Developers design, develop, and validate functionality as well as confi
 
 ## Security Operations
 Groups of designated Security Operations personnel are also granted access to the Platform Operator, Platform Administrator (via privilege escalation), and Platform Developer (in platform development environments) user roles across the Aurora platform. This access permits them to develop, support, and maintain platform security components, as well as to investigate and resolve potential security incidents.
+
+## Access Policy for Aurora AKS Clusters
+
+Azure Entra ID is the centralized identity provider for human users accessing Aurora AKS clusters.  
+
+Access is granted through membership in the `AURORA-GENERAL-CLUSTER-USER` Entra ID group. This group is assigned the **Azure Kubernetes Service Cluster User Role** at the cluster scope, which authorizes members to retrieve cluster credentials and access the cluster.  
+
+Membership in this group is strictly controlled by Aurora administrators and is subject to the following policy:  
+
+-  Membership is granted only after clients complete the intake process and are approved for onboarding.  
+-  Membership is revoked when teams formally offboard from Aurora or no longer require cluster access.  
+- Membership is reviewed on an annual basis to verify that only active, authorized users retain access.  
+
+This policy ensures that access to Aurora AKS clusters is consistently managed, compliant with security requirements, and limited to users with a valid business need.  
