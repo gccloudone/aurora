@@ -48,7 +48,7 @@ By 2028, Aurora will be the cornerstone of application hosting for Canada’s fe
 
 ### Needs
 
-There are five key benefits of using Auror.pilcrow
+There are five key benefits of using Auror.a
 
 1. **Self-service solutions**
 Enable solution builders to have more autonomy over their solutions and enforce the self-serve model with appropriate guardrails.

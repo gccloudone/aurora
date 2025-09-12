@@ -75,7 +75,7 @@ You will first want to ensure the following adjustments have been made inside th
 
 > Note: Request the Azure Cloud Team to merge the M.R. at the L1 level and with these adjustments before going forward.
 
-Next you will want to create the folders for L2_blueprint_auror.pilcrow
+Next you will want to create the folders for L2_blueprint_auror.a
 
 ```txt
 landing_zones_XXXXXX-P6/dev/L2_blueprint_aurora
