@@ -21,6 +21,10 @@ Before we dive into the views of Aurora’s architecture, it’s helpful to know
 
 - **[`gccloudone`](https://github.com/gccloudone):** This is home to Aurora’s public-facing content, including documentation, diagrams, and our [Hugo-based website](https://aurora.gccloudone.ca).
 - **[`gccloudone-aurora`](https://github.com/gccloudone-aurora):** The main source of Aurora’s tooling — including Kubernetes manifests, controllers, policies, and other GitOps-configured components that define the platform.
+  - [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts): Deploys all of the Kubernetes related components for the entire platform
+  - [aurora-project-template](https://github.com/gccloudone-aurora/aurora-project-template): Creates and manages the Aurora Platform
+  - [bird-bgp-daemon](https://github.com/gccloudone-aurora/bird-bgp-daemon): Reads all virtual networks in the subscription and automatically configures BGP
+  - [cidr-allocator](https://github.com/gccloudone-aurora/cidr-allocator): The CIDR-Allocator is a Kubernetes Operator that helps to implement dynamic IPAM irrespective of the CNI used
 - **[`gccloudone-aurora-iac`](https://github.com/gccloudone-aurora-iac):** This organization contains all Infrastructure as Code used to deploy Aurora environments. Currently, it includes our full Terraform implementation for Azure.
 
 These repositories represent the foundation of Aurora — they encode how we build, secure, and scale the platform. Everything described in the views below is defined and managed through these open source assets.
