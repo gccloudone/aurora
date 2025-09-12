@@ -29,6 +29,8 @@ Before we dive into the views of Aurora’s architecture, it’s helpful to know
 
 These repositories represent the foundation of Aurora — they encode how we build, secure, and scale the platform. Everything described in the views below is defined and managed through these open source assets.
 
+> **Note**: We will gladly share our High-Level Design (HLD) and Concept of Operations (ConOps) documents with any department that requests them to help inform their own platform planning and adoption efforts.
+
 ## Single Cluster Instance View
 
 ![Single Cluster Instance View](/images/architecture/diagrams/single-cluster-instance-view.svg)
