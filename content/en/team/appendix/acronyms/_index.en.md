@@ -32,4 +32,4 @@ The Appendix section provides supplemental information to support the main conte
 
 **OCI:** [Open Container Initiative](https://opencontainers.org/)
 
-**SA&a** Security Assessment and Authorization
+**SA&.pilcrow** Security Assessment and Authorization
