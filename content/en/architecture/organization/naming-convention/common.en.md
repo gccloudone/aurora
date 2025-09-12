@@ -26,7 +26,7 @@ To clarify, the Aurora Platform consists of two primary environment types:
 - **Solution Builder**: Solution Builders need Software Development Life Cycle (SDLC) environments to thoroughly test applications and Kubernetes configurations before deploying to production. As outlined in the subscription section, separate Kubernetes clusters are designated for development, testing, quality assurance, user acceptance testing, and production, organized across two subscriptions: one for non-production clusters and one for production clusters.
 - **Platform Operator**: For Platform Operators, the clusters used by Solution Builders are considered production environments. Platform Operators require SDLC environments specifically for the Aurora Platform itself, which include both development and production environments.
 
-In addition, several types of Kubernetes clusters are used in Auror.pilcrow
+In addition, several types of Kubernetes clusters are used in Aurora:
 
 - **SDLC**: Separate SDLC clusters exist for both Solution Builders and Platform Operators.
 - **Ingress & Management**: The Ingress and Management clusters support the SDLC clusters, with one instance of each type for each Platform Operator environment.
