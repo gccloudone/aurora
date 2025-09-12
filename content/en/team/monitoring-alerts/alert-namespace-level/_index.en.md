@@ -25,11 +25,10 @@ Alerts are defined below their respective header.
 #### Containers
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/container_alerts).
 
-- [**ContainerLowCPU**]({{< ref "container#container-low-cpu" >}}) : Container CPU usage is over 85% for more than 5 minutes.
-- [**ContainerLowMemory**]({{< ref "container#container-low-memory" >}}) : Container memory usage is over 80% for more than 2 minutes.
-- [**ContainerWaiting**]({{< ref "container#container-waiting" >}}) : A container is waiting for more than 15 minutes for any reason other than CrashLoopBackoff (which is captured separately by ManyContainerRestarts).
-- [**ManyContainerRestarts**]({{< ref "container#" >}}) : A container has restarted more than 10 times in the last 8 hours.
-- [**CompletedJobsNotCleared**]({{< ref "container#completed-jobs-not-cleared" >}}) : More than *20* completed jobs within a particular namespace are older than 24 hours.
+- [**ContainerLowCPU**]({{< ref "container#alert-containerlowcpu" >}}) : Container CPU usage is over 85% for more than 5 minutes.
+- [**ContainerLowMemory**]({{< ref "container#alert-containerlowmemory" >}}) : Container memory usage is over 80% for more than 2 minutes.
+- [**ContainerWaiting**]({{< ref "container#alert-containerwaiting" >}}) : A container is waiting for more than 15 minutes for any reason other than CrashLoopBackoff (which is captured separately by ManyContainerRestarts).
+- [**ManyContainerRestarts**]({{< ref "container#alert-manycontainerrestarts" >}}) : A container has restarted more than 10 times in the last 8 hours.
 
 #### Pods
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pod_alerts).
@@ -39,15 +38,15 @@ These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-plat
 #### Jobs
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/job_alerts).
 
-- **CompletedJobsNotCleared**: There are more than 20 complete jobs over 24 hours old in a single namespace.
+- [**CompletedJobsNotCleared**]({{< ref "job#alert-completedjobsnotcleared" >}}) : More than *20* completed jobs within a particular namespace are older than 24 hours.
 - [**JobFailed**]({{< ref "job#job-failed" >}}): A job has failed.
-- [**JobIncomplete**]({{< ref "job#job-incomplete" >}}): A job is not complete after running for more than 12 hours.
-- [**GitlabBackupIncomplete**]({{< ref "job#job-incomplete#gitlabbackupincomplete" >}}): A GitLab backup running for more than 24 hours.
+- [**JobIncomplete**]({{< ref "job#alert-jobincomplete" >}}): A job is not complete after running for more than 12 hours.
+- [**GitlabBackupIncomplete**]({{< ref "job#alert-gitlabbackupincomplete" >}}): A GitLab backup running for more than 24 hours.
 
 ### Persistent Volumes & Claims
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pvc_alerts).
 
-- [**PVCStorageRemainingLow**]({{< ref "persistent-volume-claims#PVCStorageRemainingLow" >}}) : The persistent volume claim has less than 15% storage remaining
-- [**PVCStorageRemainingNone**]({{< ref "persistent-volume-claims#PVCStorageRemainingNone" >}}) : The persistent volume claim has less than 1% storage remaining.
+- [**PVCStorageRemainingLow**]({{< ref "persistent-volume-claims#alert-pvcstorageremaininglow" >}}) : The persistent volume claim has less than 15% storage remaining
+- [**PVCStorageRemainingNone**]({{< ref "persistent-volume-claims#alert-pvcstorageremainingnone" >}}) : The persistent volume claim has less than 1% storage remaining.
 - [**KubePersistentVolumeStatusFailed**](https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepersistentvolumeerrors/) : The persistent volume has status failed.
 - [**KubePersistentVolumeStatusPending**](https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepersistentvolumeerrors/) : The persistent volume has status pending.

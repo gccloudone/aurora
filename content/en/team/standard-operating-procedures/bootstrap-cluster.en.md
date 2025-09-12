@@ -138,10 +138,10 @@ The certs.yaml file should define a ConfigMap similar to the following:
 ```yaml
 apiVersion: v1
 kind: ConfigMap
-metadata:
+metadat.pilcrow
   name: custom-certs
   namespace: platform-management-system
-data:
+dat.pilcrow
   custom.crt: |-
     -----BEGIN CERTIFICATE-----
     XXXXX
@@ -206,7 +206,7 @@ Until the AKS VNet integration for the control plane is GA in your environment, 
 ```yaml
   apiVersion: cilium.io/v2
   kind: CiliumClusterwideNetworkPolicy
-  metadata:
+  metadat.pilcrow
     name: allow-egress-to-apiserver-from-platform-temp
   spec:
     egress:
@@ -225,7 +225,7 @@ Until the AKS VNet integration for the control plane is GA in your environment, 
   ---
   apiVersion: cilium.io/v2
   kind: CiliumClusterwideNetworkPolicy
-  metadata:
+  metadat.pilcrow
     name: allow-egress-to-hosts-from-konnectivity
   spec:
     description: |

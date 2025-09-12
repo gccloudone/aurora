@@ -19,7 +19,7 @@ This alert is triggered when the available pod capacity in the node pool has met
 
 When [assigning pods to nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/), pods can be constrained so that they are restricted to run on a particular node(s), or to prefer to run on particular nodes. In general, the scheduler will automatically do a reasonable placement based on unused resources. However, there are some circumstances where pods control which node pools they constrain their deployments to via a label selector, `nodeSelector` or `NodeAffinity`.
 
-## Alert: NodepoolPodsFull {#a}
+## Alert: NodepoolPodsFull
 
 A more severe version of the _NodepoolReachingPodCapacity_ alert, this alert has a *Critical severity* and is triggered when the available pod capacity in the node pool has met or exceeded a 95% usage threshold. When no more pods may be deployed to a node pool, pods may fail to be scheduled. Running pods can also begin to misbehave when there is no remaining pod capacity.
 

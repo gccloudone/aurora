@@ -42,13 +42,13 @@ These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-plat
 
 - **BackupJobFailed**: A job with backup in the name has failed. 
 - [**PrometheusStorageLow**]({{< ref "prometheus-storage-low" >}}): Prometheus disk usage is over 85%.
-- [**PrometheusDiskMayFillIn60Hours**]({{< ref "prometheus-storage-low.en.md#alert-prometheusdiskmayfillin60hours" >}}): Prometheus remaining disk capacity is predicted to go under 10% within 60 hours. A Prometheus instance whose disk capacity is exhausted will cease generating alerts.
+- [**PrometheusDiskMayFillIn60Hours**]({{< ref "prometheus-storage-low#alert-prometheusdiskmayfillin60hours" >}}): Prometheus remaining disk capacity is predicted to go under 10% within 60 hours. A Prometheus instance whose disk capacity is exhausted will cease generating alerts.
 
 ### Nodepools
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/nodepool_alerts).
 
 - [**NodepoolReachingPodCapacity**]({{< ref "node-pool-pod-capacity#alert-nodepoolreachingpodcapacity" >}}): Nodepool non-terminated pod count is over 80% of capacity.
-- [**NodepoolPodsFull**]({{< ref "node-pool-pod-capacity#a" >}}): Nodepool non-terminated pod count is over 95% of capacity.
+- [**NodepoolPodsFull**]({{< ref "node-pool-pod-capacity#alert-nodepoolpodsfull" >}}): Nodepool non-terminated pod count is over 95% of capacity.
 
 ### Node Health
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/node_alerts).
@@ -59,7 +59,7 @@ These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-plat
 - [**NodePIDPressure**]({{< ref "node#alert-nodepidpressure" >}}): Process count has reached eviction thresholds.
 - **NodeNetworkUnavailable**: Network is unavailable.
 - **NodeNotReady**: Node is not in Ready state but did not trip another pressure or network condition.
-- [**NodeUnscheduleable**]({{< ref "node#node-unschedulable" >}}): Node is Ready yet cannot be scheduled on for over an hour. A common cause is when a node is left cordoned.
+- [**NodeUnscheduleable**]({{< ref "node#alert-nodeunschedulable" >}}): Node is Ready yet cannot be scheduled on for over an hour. A common cause is when a node is left cordoned.
 - **NodeReadinessFlapping**: The node is going in and out of a ready state.
 
 ### Node Usage

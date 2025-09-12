@@ -23,8 +23,8 @@ ssc64=$(cat assets/ssc-text.svg | base64 | tr -d '\n')
 cp "$input_file" "$output_file"
 
 # Inline replacements
-sed -i '' "s|url('background.jpeg')|url(\"data:image/jpeg;base64,$bg64\")|g" "$output_file"
-sed -i '' "s|src=\"canada-logo.svg\"|src=\"data:image/svg+xml;base64,$canada64\"|g" "$output_file"
-sed -i '' "s|src=\"ssc-text.svg\"|src=\"data:image/svg+xml;base64,$ssc64\"|g" "$output_file"
+sed -i '' "s|url('background.jpeg')|url(\"dat.pilcrowimage/jpeg;base64,$bg64\")|g" "$output_file"
+sed -i '' "s|src=\"canada-logo.svg\"|src=\"dat.pilcrowimage/svg+xml;base64,$canada64\"|g" "$output_file"
+sed -i '' "s|src=\"ssc-text.svg\"|src=\"dat.pilcrowimage/svg+xml;base64,$ssc64\"|g" "$output_file"
 
 echo "✅ Fully inlined newsletter written to $output_file"

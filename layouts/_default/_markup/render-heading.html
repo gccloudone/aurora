@@ -1,0 +1,17 @@
+<h{{ .Level }} id="{{ .Anchor }}" class="md-header">
+  {{ .Text }}
+  <a href="#{{ .Anchor }}" class="pilcrow">¶</a>
+</h{{ .Level }}>
+
+<style>
+.pilcrow{
+  opacity: 0;               
+  transition: opacity 0.2s;
+  text-decoration: none;
+  color: #26374a;
+}
+
+.md-header:hover .pilcrow {
+  opacity: 1;
+}
+</style>

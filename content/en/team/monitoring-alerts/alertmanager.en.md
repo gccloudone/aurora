@@ -5,16 +5,6 @@ weight: 5
 aliases: ["/team/monitoring/alertmanager"]
 draft: false
 ---
-
----
-title: "Backup and Disaster Recovery"
-linkTitle: "Backup and Disaster Recovery"
-weight: 5
-aliases: ["/team/sop/backup-disaster-recovery"]
-date: 2025-08-19
-draft: false
----
-
 [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) is used by Prometheus to deduplicate, route, group, silence, and inhibit [alerts](()).
 
 A single instance of Alertmanager can receive and manage alerts from multiple different instances of Prometheus. When doing so, it is best to configure the Prometheus instances to add a label to the alerts that they transmit, such as `cluster: foo` or `prometheus: bar`, so that the alerts could be differentiated within Alertmanager and its notifications.
