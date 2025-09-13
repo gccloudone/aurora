@@ -25,6 +25,7 @@ The resolution process is shared for both alerts. Please note PrometheusDiskMayF
 ### Storage analysis
 
 The resolution will be the same on each environment: increase the Prometheus's storage capacity. Due to different volumes of workloads in each environment, the required changes will vary. For example:
+
 - example 1: an alert for the production cluster has been received; it was previously discussed that the retention period of the prometheus logs should be increased to 30d from 10d. In this case, the storage was quadrupled to account for tripling the retention period. This accounted for the 3x longer retention period and a 1/3 extra overheard.
 - example 2: an alert for the development cluster was received; as development is constantly expanding with new projects and storage is not overly expensive, it was decided to double the storage size
 

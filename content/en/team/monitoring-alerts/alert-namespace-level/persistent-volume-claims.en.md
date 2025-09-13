@@ -20,7 +20,7 @@ This alert fires when the persistent volume claim has less than 1% storage remai
 
 ### Resolution Process
 
-It is first important to determine if it's expected for the PVC to be nearly full or if it's erroneous behaviour. If it is expected behaviour then check section [Mitigation](#Mitigation). In either case, follow the steps below to determine if the behaviour is erroneous or not.
+It is first important to determine if it's expected for the PVC to be nearly full or if it's erroneous behaviour. If it is expected behaviour then check section [Mitigation](#mitigation). In either case, follow the steps below to determine if the behaviour is erroneous or not.
 
 1. Query the prometheus server of the revelant cluster to see a historic timeline of available PV storage using the query below. Click on Graph > Press on the + button to increase the range of the timeline.
 
@@ -34,7 +34,7 @@ It is first important to determine if it's expected for the PVC to be nearly ful
 
     `kubectl describe pvc <pvcname> -n <namespace>`
 
-4. If nothing stands out, it may be that the application requires increased storage demands. In which case, follow the steps outlined in [Mitigation](#Mitigation).
+4. If nothing stands out, it may be that the application requires increased storage demands. In which case, follow the steps outlined in [Mitigation](#mitigation).
 
 ### Mitigation
 

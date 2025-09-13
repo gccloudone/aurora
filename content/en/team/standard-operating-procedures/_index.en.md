@@ -22,6 +22,8 @@ SOPs ensure that everyone, from platform engineers to partner departments, can w
 
 Here are the current procedures in place:
 
+<!-- markdownlint-disable MD033 -->
+
 <div class="mb-400">
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
   <gcds-card
@@ -61,5 +63,7 @@ Here are the current procedures in place:
   </gcds-card>
 </gcds-grid>
 </div>
+
+<!-- markdownlint-enable MD033 -->
 
 > SOPs are living documents. If you spot something that needs updating or expanding, please open an issue or contact us at: <gcds-link href="mailto:aurora-aurore@ssc-spc.gc.ca">Email</gcds-link>.

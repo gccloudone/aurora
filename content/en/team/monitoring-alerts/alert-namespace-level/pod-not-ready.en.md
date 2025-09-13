@@ -30,21 +30,21 @@ To resolve this alert, teams can investigate the Pod in question to address the 
 
 1. If you are unable to see the logs because your container is restarting too quickly, you can print the error messages from the previous container:
 
-    ``` kubectl logs <pod-name> --previous -n <namespace>```
+    ```kubectl logs <pod-name> --previous -n <namespace>```
 
 1. Retrieve a list of events associated with the Pod to inspect and analyze any errors:
 
-    ``` kubectl describe pod <pod name> -n <namespace>```
+    ```kubectl describe pod <pod name> -n <namespace>```
 
 1. If a Pod is Running but not Ready it means that the Readiness probe is failing. When the Readiness probe is failing, the Pod is not attached to the Service, and no traffic is forwarded to that instance. A failing Readiness probe is an application-specific error, so you should inspect the Events section in kubectl describe to identify the error.
 
 1. Extract the YAML definition of the Pod as stored in Kubernetes:
 
-    ``` kubectl get pod <pod name> -n <namespace>```
+    ```kubectl get pod <pod name> -n <namespace>```
 
 1. Run an interactive command within one of the containers of the Pod:
 
-    ``` kubectl exec -ti <pod name> -- bash-n <namespace>```
+    ```kubectl exec -ti <pod name> -- bash-n <namespace>```
 
 ### Additional Troubleshooting
 

@@ -50,11 +50,11 @@ Cert-manager only authenticates once per hour. The wildcard certificate must be 
 
 This process is highlighted in the remaining steps below.
 
-4. Get the wildcard cert yaml, and save as general-istio-ingress-gateway-cert.yaml:
+1. Get the wildcard cert yaml, and save as general-istio-ingress-gateway-cert.yaml:
 
     `kubectl -n ingress-general-system describe cert general-istio-ingress-gateway -o=yaml > general-istio-ingress-gateway-cert.yaml`
 
-5. Remove instance specific fields (manual):
+2. Remove instance specific fields (manual):
     - Open the file in an editor, and remove instance specific fields / managed fields such as:
         - metadata.uid
         - metadata.resourceVersion
@@ -62,10 +62,10 @@ This process is highlighted in the remaining steps below.
         - metadata.managedFields
         - metadata.selflink
 
-6. Delete the certificate:
+3. Delete the certificate:
 
     `kubectl -n ingress-general-system delete cert general-istio-ingress-gateway`
 
-7. Finally, re-apply the certificate:
+4. Finally, re-apply the certificate:
 
     `kubectl -n ingress-general-system apply -f general-istio-ingress-gateway-cert.yaml`

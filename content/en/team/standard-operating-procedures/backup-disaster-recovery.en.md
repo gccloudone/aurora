@@ -31,6 +31,7 @@ Before testing, ensure the following:
 ### Preparing the Test File
 
 1. Shell into the BusyBox container:
+
    ```bash
    kubectl exec -it <pod-name> \
      --container <busybox-container-name> \
@@ -38,19 +39,23 @@ Before testing, ensure the following:
    ```
 
 2. Write a test file to the mounted path:
+
    ```bash
    echo "test" > <mountPath>/testfile
    ```
 
 3. Verify the file contents:
+
    ```bash
    cat <mountPath>/testfile
    ```
+
    - Output must be: `test`
 
 ## Procedure
 
 1. Create a backup:
+
    ```sh
    velero backup create backuptest-YYYY-MM-DD \
      --include-namespaces <test-namespace> \
@@ -60,29 +65,34 @@ Before testing, ensure the following:
    ```
 
 2. Confirm the backup completed:
+
    ```sh
    velero backup describe backuptest-YYYY-MM-DD \
      --details -n velero-system
    ```
 
 3. Delete the test namespace:
+
    ```sh
    kubectl delete namespace <test-namespace>
    ```
 
 4. Restore from the backup:
+
    ```sh
    velero restore create restoretest-YYYY-MM-DD \
      --from-backup backuptest-YYYY-MM-DD
    ```
 
 5. Confirm the restore completed:
+
    ```sh
    velero restore describe restoretest-YYYY-MM-DD \
      --details -n velero-system
    ```
 
 6. Shell into the restored BusyBox pod:
+
    ```sh
    kubectl exec -it <pod-name> \
      --container busybox \
@@ -90,7 +100,9 @@ Before testing, ensure the following:
    ```
 
 7. Verify the restored file:
+
    ```sh
    cat <mountPath>/testfile
    ```
+
    - Output must be: `test`

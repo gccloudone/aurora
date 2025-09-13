@@ -1,0 +1,40 @@
+name: Markdown Lint
+
+on:
+  pull_request:
+    paths:
+      - "**/*.md"
+      - ".markdownlint-cli2.json"
+      - ".markdownlint-cli2.jsonc"
+      - "markdownlint-cli2.config.js"
+  push:
+    branches: [ main, master ]
+    paths:
+      - "**/*.md"
+      - ".markdownlint-cli2.json"
+      - ".markdownlint-cli2.jsonc"
+      - "markdownlint-cli2.config.js"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install deps
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm i --no-fund --no-audit; fi
+
+      # Runs markdownlint-cli2 using your repo config.
+      # We do NOT --fix in CI (so it doesn't silently change code);
+      # run `npm run lint:md:fix` locally to autofix.
+      - name: Lint Markdown
+        run: npx markdownlint-cli2

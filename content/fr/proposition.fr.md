@@ -25,13 +25,13 @@ Alors que les technologies natives du cloud deviennent de plus en plus courantes
 
 Certains des ministères qui ont leurs propres environnements Kubernetes (au moins dans une certaine mesure) incluent :
 
-* Statistique Canada
-* Agence de la santé publique du Canada
-* Agence du revenu du Canada
-* Emploi et Développement social Canada
-* Ministère de la Défense nationale
-* Ministère des Pêches et des Océans
-* Et beaucoup d'autres...
+- Statistique Canada
+- Agence de la santé publique du Canada
+- Agence du revenu du Canada
+- Emploi et Développement social Canada
+- Ministère de la Défense nationale
+- Ministère des Pêches et des Océans
+- Et beaucoup d'autres...
 
 Pendant plus de deux décennies, les organisations logicielles ont été confrontées au défi de gérer l'infrastructure partagée, le code et les outils à travers plusieurs équipes. Des équipes centralisées ont souvent été créées pour gérer ces demandes partagées, mais elles ont fréquemment rencontré des problèmes tels que le déphasage par rapport aux besoins de leurs utilisateurs, le développement de solutions trop complexes ou instables, ou le manque de flexibilité. D'un autre côté, la décentralisation complète et directe des outils de cloud et du logiciel open source a exposé ceux-ci à une complexité opérationnelle, conduisant à des inefficacités et à la nécessité d'ingénieurs de fiabilité ou de spécialistes DevOps coûteux.
 
@@ -75,19 +75,19 @@ Avec son fondation sécurisée et conforme - incluant la sécurité intégrée z
 
 L'un des défis clés dans la construction et l'exploitation d'une plateforme comme Aurora est d'équilibrer la flexibilité avec la gouvernance. Ci-dessous sont présentés certains des risques identifiés ainsi que certaines mitigations proposées :
 
-**Équipes de plateforme sans le pouvoir de dire "non"**
+### Équipes de plateforme sans le pouvoir de dire non
 
 Risque : Lorsque les équipes de plateforme n'ont pas l'autorité pour prendre des décisions critiques, notamment la capacité de dire "non", cela peut conduire à une complexité accrue, un élargissement du périmètre et des inefficacités. Sans cette autorité, la plateforme risque de devenir trop personnalisée, encombrée ou mal alignée sur ses objectifs principaux, ralentissant ainsi le développement et augmentant le fardeau à la fois sur l'équipe de la plateforme et ses utilisateurs.
 
 Atténuation : Les équipes de plateforme doivent avoir le pouvoir politique de définir leurs utilisateurs idéaux et de prendre des décisions sur la meilleure façon de résoudre leurs problèmes. Cela inclut la capacité de minimiser le choix si nécessaire pour simplifier la plateforme, réduire la charge cognitive et accélérer le développement. Donner le pouvoir à ces équipes de se concentrer sur les fonctionnalités principales assurera la durabilité et l'efficacité à long terme.
 
-**Besoins des clients partenaires pour un contrôle centralisé**
+### Besoins des clients partenaires pour un contrôle centralisé
 
 Risque : Les clients partenaires, tels que les équipes de cybersécurité ou même de FinOps, nécessitent un contrôle et un reporting centralisés pour assurer la conformité, la sécurité et l'efficacité financière. Un échec à répondre à ces besoins pourrait conduit à la fragmentation, aux inefficacités, et à un manque de confiance en la gouvernance de la plateforme.
 
 Atténuation : Aurora doit fournir des outils standardisés et des processus à travers les ministères pour répondre aux besoins de contrôle centralisé. En s'assurant que toutes les équipes utilisent les mêmes services de plateforme de base, Aurora peut simplifier le reporting, la conformité, et la gestion de la sécurité.
 
-**Manque de maturité opérationnelle en ingénierie de plateforme**
+### Manque de maturité opérationnelle en ingénierie de plateforme
 
 Risque : L'ingénierie de plateforme est intrinsèquement difficile, et sans une maturité organisationnelle appropriée, les équipes risquent de construire des solutions qui manquent de valeur à long terme, de durabilité et de préparation opérationnelle.
 
@@ -107,6 +107,6 @@ L'ingénierie de plateforme est un domaine complexe et en constante évolution. 
 
 **Pourquoi notre adoption récente de [cloud public/SRE/expérience développeur] n'a-t-elle pas résolu cela ?**
 
-L'adoption d'outils et de méthodologies comme le cloud public, le SRE, ou l'amélioration de l'expérience développeur peut résoudre des points de douleur spécifiques mais ne sont pas des solutions miracles. 
+L'adoption d'outils et de méthodologies comme le cloud public, le SRE, ou l'amélioration de l'expérience développeur peut résoudre des points de douleur spécifiques mais ne sont pas des solutions miracles.
 
 L'ingénierie de plateforme va au-delà des outils ; elle consiste en un alignement organisationnel, une standardisation, et la création d'un environnement sécurisé, flexible et interopérable pour tous les clients partenaires/départements. L'accent d'Aurora est mis sur l'intégration de ces éléments dans une plate-forme cohérente qui soutient l'innovation et répond aux besoins uniques du gouvernement du Canada.

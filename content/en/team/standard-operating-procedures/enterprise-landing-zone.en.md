@@ -58,7 +58,7 @@ At this point the Azure Cloud Team will get back to you with:
 
 Finally don't forget to add the designated user as a member of the owner group for the new subscription.
 
--  XXXX-XXX-XXXXX-Owners
+- XXXX-XXX-XXXXX-Owners
 
 > Just for some explanation of the second /23. While it's not connected to the Azure network today, it will be in the future, which is why it needs to be unique and reserved in IPAM. We plan to connect that into the Azure network through Router Servers (aka. BGP) to remove the requirement for NAT, so that's why it needs to be reserved but not attached to the Vnet.
 
