@@ -57,7 +57,7 @@ Groups of designated Security Operations personnel are also granted access to th
 
 Azure Entra ID is the centralized identity provider for human users accessing Aurora AKS clusters.  
 
-Access is granted through membership in the `AURORA-GENERAL-CLUSTER-USER` Entra ID group. This group is assigned the **Azure Kubernetes Service Cluster User Role** at the cluster scope, which authorizes members to retrieve cluster credentials and access the cluster.  
+Access is granted through membership in the `AURORA-GENERAL-CLUSTER-USER` Entra ID group. This group is assigned the **Azure Kubernetes Service Cluster User Role** at the cluster scope, which authorizes members to retrieve cluster user credentials and access the cluster.  
 
 Membership in this group is strictly controlled by Aurora administrators and is subject to the following policy:  
 
