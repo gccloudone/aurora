@@ -21,6 +21,8 @@ Fairness in resource allocation is another key concern. To ensure equitable reso
 
 There are three common multi-tenancy patterns in Kubernetes:
 
+<!-- markdownlint-disable MD033 -->
+
 <div class="mb-400">
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
 <gcds-card
@@ -47,11 +49,15 @@ There are three common multi-tenancy patterns in Kubernetes:
 </gcds-grid>
 </div>
 
+<!-- markdownlint-enable MD033 -->
+
 At the moment Aurora adheres to the Enterprise multi-tenancy pattern, where users (solution builders) must engage with the Aurora Solutions team, acting as cluster administrators, to onboard onto the platform. To initiate this process, users are required to submit a completed onboarding form, which then provisions a dedicated namespace for the solution. Resource consumption within each namespace is tracked and charged back to the namespace owner (solution owner). This cost attribution is facilitated by the Workload Identifier (WID) label, which is assigned to each namespace. The WID allows the finance team to accurately allocate and charge costs incurred by the workloads within that namespace to the appropriate team, ensuring transparent and efficient cost management across the platform.
 
 ## Enterprise Pattern
 
 The main roles involved in the enterprise multi-tenancy pattern are as follows:
+
+<!-- markdownlint-disable MD033 -->
 
 <div>
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
@@ -78,6 +84,8 @@ The main roles involved in the enterprise multi-tenancy pattern are as follows:
 </gcds-card>
 </gcds-grid>
 </div>
+
+<!-- markdownlint-enable MD033 -->
 
 ## Isolation
 

@@ -99,8 +99,6 @@ Here are the patterns that were identified given these constraints:
 | Boilerplate Fields First & Resource Type Last                | {project}-{environment}-{region}-{instance}-{userDefined}-{resourceType} |
 | Boilerplate Fields First & Two Most Identifiable Fields Last | {project}-{environment}-{region}-{instance}-{resourceType}-{userDefined} |
 
-<div class="mb-400"></div>
-
 After carefully considering the advantages and disadvantages, it has been decided that the **Boilerplate Fields First & Two Most Identifiable Fields Last** method will be used.
 
 ## Character Length Limitations
@@ -110,8 +108,6 @@ The maximum character length of each field within the Common Naming Convention s
 | Project | Environment | Region | Instance | Resource Type | User Defined |
 |:-------:|:-----------:|:------:|:--------:|:-------------:|:------------:|
 |    7    |      6      |   2    |    2     |       4       |      14      |
-
-<div class="mb-400"></div>
 
 Consult the following for an illustrative example:
 

@@ -48,8 +48,6 @@ As the pod capacity limits become low or full, the following are some checks to 
     k8s-master-12348451-0                 90            90                14
     ```
 
-    > get_pods_per_node.sh script can be found [here](https://gitlab.k8s.cloud.statcan.ca/cloudnative/k8s/utilities/get-pods-per-node).
-
 - Take a look at the pods running in a specific nodepool to see if there are any pods that are not scheduling due to a bad image name or Jobs from a CronJob that are not completing:
 
     `kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=<node name here>`

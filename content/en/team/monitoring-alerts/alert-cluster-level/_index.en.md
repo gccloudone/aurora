@@ -20,7 +20,7 @@ Subpages within this section describe Runbooks for Prometheus Alerts experienced
 
 ### Blackbox Exporter
 
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/blackbox_exporter).
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/blackbox_exporter).
 
 Based on metrics collected by the Blackbox Exporter.
 
@@ -29,7 +29,7 @@ Based on metrics collected by the Blackbox Exporter.
 
 ### Cert Manager
 
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/cert_manager).
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/cert_manager).
 
 Refer to the [general Runbook for investigating cert-manager alerts]({{< ref "cert-manager" >}}).
 
@@ -41,7 +41,7 @@ Refer to the [general Runbook for investigating cert-manager alerts]({{< ref "ce
 
 ### Miscellaneous
 
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack).
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack).
 
 - **BackupJobFailed**: A job with backup in the name has failed.
 - [**PrometheusStorageLow**]({{< ref "prometheus-storage-low" >}}): Prometheus disk usage is over 85%.
@@ -49,14 +49,14 @@ These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-plat
 
 ### Nodepools
 
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/nodepool_alerts).
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/nodepool_alerts).
 
 - [**NodepoolReachingPodCapacity**]({{< ref "node-pool-pod-capacity#alert-nodepoolreachingpodcapacity" >}}): Nodepool non-terminated pod count is over 80% of capacity.
 - [**NodepoolPodsFull**]({{< ref "node-pool-pod-capacity#alert-nodepoolpodsfull" >}}): Nodepool non-terminated pod count is over 95% of capacity.
 
 ### Node Health
 
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/node_alerts).
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/node_alerts).
 
 - [**NodeDiskPressure**]({{< ref "node#alert-nodediskpressure" >}}): Disk usage has reached eviction thresholds.
 - **NodeDiskMayFillIn60Hours**: Node disk is being written to at a rate that may trigger Disk Pressure in the near future.
@@ -69,7 +69,7 @@ These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-plat
 
 ### Node Usage
 
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/node_alerts).
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/node_alerts).
 
 The following alerts do not transmit notifications as they do not necessarily indicate an error state. They can be browsed in the Prometheus or Alertmanager UI for additional information during troubleshooting.
 
@@ -81,7 +81,7 @@ The following alerts do not transmit notifications as they do not necessarily in
 
 ### Velero
 
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/velero).
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/velero).
 
 Refer to the [general Runbook for investigating Velero alerts]({{< ref "velero" >}}).
 
