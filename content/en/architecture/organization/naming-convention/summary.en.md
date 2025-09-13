@@ -17,11 +17,9 @@ In summary, all of the naming conventions devised for resources are outlined in 
 
 | Naming Convention  | Pattern                                                                  | Comments                                                                                                                                                                                                                                                                                                                                                                |
 |:------------------:|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       Common       | {project}-{environment}-{region}-{instance}-{resourceType}-{userDefined} | - The userDefined field is optional<br>- The project field can be either ingress, mgmt, gen, or cns for AUR related resources<br>- The meaning of each field is defined in the Fields section<br>- The order of each field is defined within the Field Ordering section<br>- The max character count per field is defined within the Character Count per Field section. |
+|       Common       | {project}-{environment}-{region}-{instance}-{resourceType}-{userDefined} | - The userDefined field is optional\- The project field can be either ingress, mgmt, gen, or cns for AUR related resources\- The meaning of each field is defined in the Fields section\- The order of each field is defined within the Field Ordering section\- The max character count per field is defined within the Character Count per Field section. |
 | Resource Attribute | {userDefined}                                                            | - Refer to the Resource Attribute Naming Convention section for more details                                                                                                                                                                                                                                                                                            |
-|       Global       | {resourceType}{randomCharacters}{userDefined}                            | - For use when the common naming convention can't be used & the other conventions don't apply<br>- Reasoning for using this convention may include character count restrictions or naming conflict concerns                                                                                                                                                             |
-
-<div class="mb-400"></div>
+|       Global       | {resourceType}{randomCharacters}{userDefined}                            | - For use when the common naming convention can't be used & the other conventions don't apply\- Reasoning for using this convention may include character count restrictions or naming conflict concerns                                                                                                                                                             |
 
 Across all naming conventions, all names must be lowercase alphanumeric characters and follow character limits given by the respective cloud service provider.
 
@@ -46,8 +44,6 @@ The example column assumes the resource is associated with the Development SDLC 
 |      Route Server       | resource group |       80       |      Common       | gen-dev-cc-00-rs            |
 |    Public IP Address    | resource group |       80       |      Common       | gen-dev-cc-00-pip-rs        |
 
-<div class="mb-400"></div>
-
 The following table maps resource types not covered within the above table to the naming convention they should use.
 
 |            Resource            |     Scope      | Max Characters | Naming Convention | Example                       |
@@ -60,8 +56,6 @@ The following table maps resource types not covered within the above table to th
 |       PostgreSQL Server        |     global     |       63       |      Global       | gen-dev-cc-00-psql-jfrog      |
 |    Kubernetes Service    | resource group |       63       |      Common       | gen-dev-cc-00-ks             |
 | User-Assigned Managed Identity | resource group |      128       |      Common       | gen-dev-cc-00-msi-ks-kubelet |
-
-<div class="mb-400"></div>
 
 ## Illustrative Example
 

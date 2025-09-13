@@ -110,7 +110,7 @@ These characteristics will be implicitly inherited because the goal is to have r
 
 ### Resource Group
 
-When naming resources within a resource group, use the fields outlined in the [fields](#fields) section, including key fields where child resources should explicitly inherit these fields from their resource group:
+When naming resources within a resource group, use the fields outlined in the Fields section, including key fields where child resources should explicitly inherit these fields from their resource group:
 
 - userDefined/purpose
 - project

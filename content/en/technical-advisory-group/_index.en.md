@@ -326,7 +326,7 @@ These resources include industry-leading open-source governance models, Governme
 
 ---
 
-### Additional Industry and Community References:
+### Additional Industry and Community References
 
 - AWS Cloud Architecture Best Practices:
 

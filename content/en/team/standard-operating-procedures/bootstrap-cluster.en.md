@@ -202,7 +202,7 @@ kubectl patch deployment argocd-repo-server \
 ## 12. Cilium policies for API server and Konnectivity host access
 
 Until the AKS VNet integration for the control plane is GA in your environment, the API server Private Link endpoint is created in the same subnet as the default node pool rather then then the API server subnet. Additionally traffic from the API server is routed to the cluster via Konnectivity instead of direct into into the Virtual Network. If your default egress policy is restrictive, platform/system workloads may be unable to reach the API server, and Konnectivity may fail when it needs to talk to node/host IPs.
- 
+
 ```yaml
   apiVersion: cilium.io/v2
   kind: CiliumClusterwideNetworkPolicy

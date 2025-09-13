@@ -84,8 +84,6 @@ The maximum character length of each field within the Restricted Naming Conventi
 |:-------------:|:-----------------:|:------------:|
 |       2       |         6         |      16      |
 
-<div class="mb-400"></div>
-
 The field character count calculation & reasoning are the following:
 
 - **Resource Type**: 2 (ex: sa)

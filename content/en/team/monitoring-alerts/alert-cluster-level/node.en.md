@@ -15,6 +15,7 @@ draft: false
 Node pressure eviction alerts are configured to occur at the cluster level. As defined in the [official Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/), "node-pressure eviction is the process by which the kubelet proactively terminates pods to reclaim resources on nodes". When a particular node resource such as the memory or disk space reaches a certain threshold, the kubelet can terminate one or more of the pods on the node to reclaim resources and prevent starvation.
 
 The kubelet has the following default hard eviction thresholds:
+
 - memory.available<100Mi
 - nodefs.available<10%
 - imagefs.available<15%

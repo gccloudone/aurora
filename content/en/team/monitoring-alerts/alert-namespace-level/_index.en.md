@@ -23,7 +23,8 @@ Subpages within this section describe Runbooks for Prometheus Alerts experienced
 Alerts are defined below their respective header.
 
 #### Containers
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/container_alerts).
+
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/container_alerts).
 
 - [**ContainerLowCPU**]({{< ref "container#alert-containerlowcpu" >}}) : Container CPU usage is over 85% for more than 5 minutes.
 - [**ContainerLowMemory**]({{< ref "container#alert-containerlowmemory" >}}) : Container memory usage is over 80% for more than 2 minutes.
@@ -31,12 +32,14 @@ These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-plat
 - [**ManyContainerRestarts**]({{< ref "container#alert-manycontainerrestarts" >}}) : A container has restarted more than 10 times in the last 8 hours.
 
 #### Pods
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pod_alerts).
+
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pod_alerts).
 
 - [**PodNotReady**]({{< ref "pod-not-ready" >}}): A pod has been in a non-ready state for more than 15 minutes.
 
 #### Jobs
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/job_alerts).
+
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/job_alerts).
 
 - [**CompletedJobsNotCleared**]({{< ref "job#alert-completedjobsnotcleared" >}}) : More than *20* completed jobs within a particular namespace are older than 24 hours.
 - [**JobFailed**]({{< ref "job#job-failed" >}}): A job has failed.
@@ -44,7 +47,8 @@ These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-plat
 - [**GitlabBackupIncomplete**]({{< ref "job#alert-gitlabbackupincomplete" >}}): A GitLab backup running for more than 24 hours.
 
 ### Persistent Volumes & Claims
-These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pvc_alerts).
+
+These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/pvc_alerts).
 
 - [**PVCStorageRemainingLow**]({{< ref "persistent-volume-claims#alert-pvcstorageremaininglow" >}}) : The persistent volume claim has less than 15% storage remaining
 - [**PVCStorageRemainingNone**]({{< ref "persistent-volume-claims#alert-pvcstorageremainingnone" >}}) : The persistent volume claim has less than 1% storage remaining.

@@ -19,6 +19,7 @@ Aurora platform components that access or provide data are identified through no
 Kubernetes offers [Roles and ClusterRoles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole) which define access and [RoleBindings and ClusterRoleBindings](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding) which bind Roles and ClusterRoles to an identity. This identity can be an individual user or user group from an integrated identity provider (which would be associated with the cluster at the CSP-level) or a Kubernetes Service Account. Membership to these groups grant a user role among the following high-level definitions:
 
 ## Solution Builder
+
 Solution Builders design, develop, deploy, and operate solutions that run on Aurora. They require access to Kubernetes Resources and CustomResources.
 
 A custom [`solution-builder` ClusterRole](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/solution-builder.yaml) defines the minimum permissions necessary for application development and operation on Kubernetes. The label `rbac.ssc-spc.gc.ca/aggregate-to-solution-builder: "true"` permits component-specific Solution Builder ClusterRoles to be defined separately and [aggregated](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) into this role. [(Example)](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/prometheus/rbac.yaml)
@@ -28,6 +29,7 @@ A RoleBinding in each Solution Builder Namespace binds this ClusterRole to the M
 Solution Builders may also require access to CSP resources such as managed databases and storage accounts. This is outside the scope of Aurora's access control and is established according to the processes of the corresponding Infrastructure-as-a-Service service lines.
 
 ## Platform Operator
+
 Platform Operators ensure the continual operation of one or more areas of the Aurora platform. This requires read access to most platform resources, excluding confidential information such as Secrets. This also requires write access for common and low-impact remediation activities.
 
 Two custom ClusterRoles are defined for Platform Operators: [`platform-operator-view`](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/platform-operator-view.yaml) for read access and [`platform-operator-maintenance'](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/platform-operator-maintenance.yaml) for write access. ClusterRole aggregation to these roles further defines read and write access to specific platform components.
@@ -37,9 +39,11 @@ A ClusterRoleBinding binds these ClusterRoles to the Microsoft Entra group desig
 Whenever possible, changes to Aurora CSP resources are effected via Infrastructure/Configuration-as-Code and corresponding automated CI/CD processes. Platform Operator write access to CSP resources is limited to cancelling such operations. Higher impact manual remediation requires escalation to the Platform Administrator role.
 
 ## Platform Administrator
+
 Platform Administrators have full access to the Kubernetes clusters and other CSP resources comprising one or more areas of the Aurora platform.
 
 This role is invoked in order to:
+
 - Perform planned maintenance that requires major manual changes. These changes must first be verified using the Platform Developer role in the appropriate testing environment.
 - Resolve urgent security and/or operational incidents, including on an on-call basis.
 
@@ -48,9 +52,11 @@ This role can only be activated by a group of designated personnel through privi
 Platform Administrators correspond to the [default User-facing Kubernetes role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) `cluster-admin` and to similar CSP roles within environments corresponding to the Aurora platform.
 
 ## Platform Developer
+
 Platform Developers design, develop, and validate functionality as well as configuration changes for one or more areas of the Aurora platform. To facilitate rapid iteration, Platform Developers have the same privileges as a Platform Administrator without the activation process or time limit. However, the Platform Developer role only exists in specific Aurora platform development environments designated for this purpose. No Solution Builder workloads run on those environments, and no Solution Builders access them.
 
 ## Security Operations
+
 Groups of designated Security Operations personnel are also granted access to the Platform Operator, Platform Administrator (via privilege escalation), and Platform Developer (in platform development environments) user roles across the Aurora platform. This access permits them to develop, support, and maintain platform security components, as well as to investigate and resolve potential security incidents.
 
 ## Access Policy for Aurora AKS Clusters
@@ -61,8 +67,8 @@ Access is granted through membership in the `AURORA-GENERAL-CLUSTER-USER` Entra 
 
 Membership in this group is strictly controlled by Aurora administrators and is subject to the following policy:  
 
--  Membership is granted only after clients complete the intake process and are approved for onboarding.  
--  Membership is revoked when teams formally offboard from Aurora or no longer require cluster access.  
+- Membership is granted only after clients complete the intake process and are approved for onboarding.  
+- Membership is revoked when teams formally offboard from Aurora or no longer require cluster access.  
 - Membership is reviewed on an annual basis to verify that only active, authorized users retain access.  
 
 This policy ensures that access to Aurora AKS clusters is consistently managed, compliant with security requirements, and limited to users with a valid business need.  

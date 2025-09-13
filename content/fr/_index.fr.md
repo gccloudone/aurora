@@ -7,6 +7,8 @@ draft: false
 
 ## Commencez à évaluer la plateforme
 
+<!-- markdownlint-disable MD033 -->
+
 <article class="py-500 bg-primary text-light bg-full-width">
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" gap="450" class="hydrated">
     <li class="list-none md:mb-0 mb-500">
@@ -64,6 +66,8 @@ draft: false
     </li>
   </gcds-grid>
 </article>
+
+<!-- markdownlint-enable MD033 -->
 
 {{< components >}}
 

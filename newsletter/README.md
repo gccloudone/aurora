@@ -8,7 +8,7 @@ This system addresses the challenge of maintaining consistent newsletter formatt
 
 ## Project Structure
 
-```
+```txt
 aurora-newsletter/
 ├── template.html                  # Master HTML template with placeholders
 ├── content/                       # Newsletter content as JSON files
@@ -27,6 +27,7 @@ aurora-newsletter/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 14 or higher
 - Python 3 (for local server)
 
@@ -57,6 +58,7 @@ npm run serve
 ## Creating New Editions
 
 1. **Copy existing content file**:
+
    ```bash
    cp content/2025-07-gc-artifacts.json content/2025-07-cloud-security.json
    ```
@@ -68,11 +70,13 @@ npm run serve
    - Modify sections for new theme while keeping Aurora branding consistent
 
 3. **Build the edition**:
+
    ```bash
    node build.js content/2025-07-cloud-security.json
    ```
 
 4. **Test locally**:
+
    ```bash
    npm run serve
    # Navigate to http://localhost:8000/2025-07-cloud-security.html
@@ -150,6 +154,7 @@ The template maintains Aurora platform identity within Government of Canada visu
 
 1. Add the section to your content JSON
 2. Implement a generator method in `build.js`:
+
    ```javascript
    generateCustomSection(section) {
        return `<div class="content-section">
@@ -158,6 +163,7 @@ The template maintains Aurora platform identity within Government of Canada visu
        </div>`;
    }
    ```
+
 3. Add the case to the switch statement in `generateContentSections()`
 
 Example: The `ml_capabilities` section includes recording links, feature lists, additional content paragraphs, and resource links with automatic `target="_blank"` for external URLs.
@@ -175,7 +181,6 @@ node build.js --help
 # Build with custom output path
 node build.js content/file.json custom-name.html
 ```
-
 
 ## File Naming Conventions
 
@@ -198,5 +203,5 @@ When adding content or modifying the system:
 ## Support
 
 - Technical issues: Create repository issue
-- Content guidance: aurora-aurore@ssc-spc.gc.ca
-- Aurora project: https://aurora.gccloudone.ca
+- Content guidance: <aurora-aurore@ssc-spc.gc.ca>
+- Aurora project: <https://aurora.gccloudone.ca>

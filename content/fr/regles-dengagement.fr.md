@@ -15,8 +15,8 @@ L'initiative Aurora est un effort collaboratif qui rassemble divers intervenants
 
 Aurora adhère aux deux codes d'éthique suivants :
 
-* [Code de conduite de la CNCF](https://github.com/cncf/foundation/blob/main/code-of-conduct-languages/fr.md)
-* [Code de valeurs et d'éthique de la fonction publique canadienne](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=25049)
+- [Code de conduite de la CNCF](https://github.com/cncf/foundation/blob/main/code-of-conduct-languages/fr.md)
+- [Code de valeurs et d'éthique de la fonction publique canadienne](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=25049)
 
 Ces cadres mettent l'accent sur l'inclusivité, le respect, la collaboration et l'intégrité. En participant à la communauté Aurora, vous acceptez de respecter ces principes dans toutes vos interactions, qu'elles soient en ligne ou en personne.
 
@@ -34,5 +34,5 @@ Si vous êtes témoin ou victime d'un comportement qui enfreint ces principes, v
 
 ## Pour en savoir plus
 
-* Pour consulter le Code de conduite de la CNCF, visitez [Code de conduite de la CNCF](https://github.com/cncf/foundation/blob/main/code-of-conduct-languages/fr.md)
-* Pour consulter le Code de valeurs et d'éthique de la fonction publique canadienne, visitez [Code de valeurs et d'éthique](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=25049)
+- Pour consulter le Code de conduite de la CNCF, visitez [Code de conduite de la CNCF](https://github.com/cncf/foundation/blob/main/code-of-conduct-languages/fr.md)
+- Pour consulter le Code de valeurs et d'éthique de la fonction publique canadienne, visitez [Code de valeurs et d'éthique](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=25049)

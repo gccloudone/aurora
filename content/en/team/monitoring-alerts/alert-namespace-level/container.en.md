@@ -44,9 +44,9 @@ To resolve this alert, teams can investigate the container in question to addres
 
 ### Additional Troubleshooting
 
-* Avoid over-provisioning since you could be using a lot more resources than your workload might need. If you are using a production and development namespace, avoid defining quotas on the production namespace and define strict quotas on the development namespace. This will help you to avoid your production containers being throttled because your development environment required more resources.
+- Avoid over-provisioning since you could be using a lot more resources than your workload might need. If you are using a production and development namespace, avoid defining quotas on the production namespace and define strict quotas on the development namespace. This will help you to avoid your production containers being throttled because your development environment required more resources.
 
-* Take this opportunity to reflect on your application architecture and application scalability. The platform enables users to horizontally scale the total containers used based on their application requirements, which may change over time. This can be done with the help of a [_Horizontal Pod Autoscaler_](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/). The use of a HorizontalPodAutoscaler can increase capacity and reduce overall load. It is a useful tool for dealing with resource issues or bursting of workloads since it can also act upon CPU usage.
+- Take this opportunity to reflect on your application architecture and application scalability. The platform enables users to horizontally scale the total containers used based on their application requirements, which may change over time. This can be done with the help of a [_Horizontal Pod Autoscaler_](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/). The use of a HorizontalPodAutoscaler can increase capacity and reduce overall load. It is a useful tool for dealing with resource issues or bursting of workloads since it can also act upon CPU usage.
 
 ## Alert: ContainerLowMemory
 
@@ -79,17 +79,15 @@ To resolve this alert, teams must debug the container in question to resolve the
 
 6. Ideally, teams should always [set limits and resources](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) for their pods. However, at the namespace level, [ResourceQuotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) and [LimitRanges](https://kubernetes.io/docs/concepts/policy/limit-range/) are oftentimes defined.
 
-
 7. Check to see if the pod has multiple restarts. Oftentimes, containers that reach their memory limits get OOMKilled and trigger a restart.
 
     ```kubectl get pods -n <namespace> --sort-by='.status.containerStatuses[0].restartCount'```
 
 ### Additional Troubleshooting
 
-* Avoid over-provisioning since you could be using a lot more resources than your workload might need. If you are using a production and development namespace, avoid defining quotas on the production namespace and define strict quotas on the development namespace. This will help you to avoid your production containers being evicted because your development environment required more resources.
+- Avoid over-provisioning since you could be using a lot more resources than your workload might need. If you are using a production and development namespace, avoid defining quotas on the production namespace and define strict quotas on the development namespace. This will help you to avoid your production containers being evicted because your development environment required more resources.
 
-* Take this opportunity to reflect on your application architecture and application scalability. The platform enables users to horizontally scale the total containers used based on their application requirements, which may change over time. This can be done with the help of a [_Horizontal Pod Autoscaler_](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/). The use of a HorizontalPodAutoscaler can increase capacity and reduce overall load. It is a useful tool for dealing with resource issues or bursting of workloads since it can also act upon memory usage.
-
+- Take this opportunity to reflect on your application architecture and application scalability. The platform enables users to horizontally scale the total containers used based on their application requirements, which may change over time. This can be done with the help of a [_Horizontal Pod Autoscaler_](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/). The use of a HorizontalPodAutoscaler can increase capacity and reduce overall load. It is a useful tool for dealing with resource issues or bursting of workloads since it can also act upon memory usage.
 
 ## Alert: ContainerWaiting
 
@@ -116,17 +114,22 @@ According to Kubernetes [Pod Lifecycle](https://kubernetes.io/docs/concepts/work
 Pods can have multiple statuses causing them to be in the non ready state. The list below covers the most common statuses:
 
 #### ContainerCreating
+
 ContainerCreating implies that kube-scheduler has assigned a worker node for the container and has instructed the container runtime to kick-off the workload. However, note that the network is not provisioned at this stage — i.e, the workload does not have an IP address. Common reasons why your Pod might get stuck in the ContainerCreating stage:
+
 1. Failure in IP address allocation
 1. Failure to mount ConfigMaps
 1. Failure to claim Persistent Volumes
 
 #### CreateContainerConfigError
+
 A Pod falls in a CreateContainerConfigError status when Kubernetes tries to create a container in a pod, but fails before the container enters the Running state. Some common causes of this error are as follows:
+
 - **ConfigMap is missing** — a ConfigMap stores configuration data such as key-value pairs. You must identify the missing ConfigMap and create it in the namespace, or mount another, existing ConfigMap.
 - **Secret is missing** — a Secret is used to store sensitive information such as credentials. You must identify the missing Secret and create it in the namespace, or mount another, existing Secret.
 
 #### CreateContainerError
+
 This issue occurs when Kubernetes tries to create a container but fails. It implies some sort of issue with the container runtime, but can also indicate a problem starting up the container, such as the command not existing. This symptom can also lead to [CrashLoopBackOff]({{< ref "#many-container-restarts" >}}) errors.
 
 Examine the Events in the pod:
@@ -140,25 +143,32 @@ Examine the Events in the pod:
 Check any secrets and/or configmaps in the pod are available to your pods in your namespace.
 
 #### ErrImagePull
+
 The image could not be pulled from the repository.
+
 1. Verify that the image repository exists.
 1. Verify that you have correct access to the repository.
 1. Verify that the repository and image names are spelled correctly.
 
 #### ImagePullBackOff
+
 This error appears when Kubernetes is not able to retrieve the image for one of the containers of the Pod.
 There are three common culprits:
-1.	The image name is invalid — for example, the image name was misspelt, or the image does not exist.
-1.	A non-existing tag was specified for the image.
-1.	The Artifactory credentials (managed by the Cloud Native Solutions team) stored in the artifactory-prod secret does not have access to the specified image.
+
+1. The image name is invalid — for example, the image name was misspelt, or the image does not exist.
+1. A non-existing tag was specified for the image.
+1. The Artifactory credentials (managed by the Cloud Native Solutions team) stored in the artifactory-prod secret does not have access to the specified image.
 
 #### InvalidImageName
+
 The container cannot pull the image due to an invalid image name. The image name cannot be found in the local or remote Artifactory repositories:
+
 - Verify that the correct image name (registry and image) is being used:
     ```kubectl describe pod <podName> -n <namespace>```
 - Verify in the source code
 
 ## Alert: ManyContainerRestarts
+
 This alert occurs at the Namespace-level within a cluster. This alert will be triggered when a container is subject to frequent restarts within a specified time period. (10 restarts in the last 8 hours) This alert is often triggered by a Pod that is stuck in the CrashLoopBackoff state, where a container may see many restarts in a small time window (minutes).
 
 To resolve this alert, users must properly debug the flagged container to remediate the frequent restarts.

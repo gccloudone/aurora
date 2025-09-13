@@ -95,19 +95,19 @@ This single cluster view basically shows an Aurora AKS cluster in its own secure
 
 ### Overview
 
-This view zooms out from a single cluster to show how Aurora manages multiple clusters across the SDLC lifecycle (i.e., Dev, NonProd, Prod, and Management). 
+This view zooms out from a single cluster to show how Aurora manages multiple clusters across the SDLC lifecycle (i.e., Dev, NonProd, Prod, and Management).
 
-Each environment is logically separated using its own Azure subscription / virtual network, providing isolation and governance boundaries. 
+Each environment is logically separated using its own Azure subscription / virtual network, providing isolation and governance boundaries.
 
 Clusters are named consistently and grouped by environment to support development pipelines, testing, production workloads, and shared services.
 
-The Enterprise hub-and-spoke design allows environments to communicate securely when needed while still enforcing strict separation where appropriate. 
+The Enterprise hub-and-spoke design allows environments to communicate securely when needed while still enforcing strict separation where appropriate.
 
-This design also allows environments to communicate securely when needed (i.e., ArgoCD in Management deploying to Dev), while still enforcing strict separation where appropriate (i.e., Dev cannot reach Prod). 
+This design also allows environments to communicate securely when needed (i.e., ArgoCD in Management deploying to Dev), while still enforcing strict separation where appropriate (i.e., Dev cannot reach Prod).
 
 NSGs and route-sharing policies ensure that traffic is tightly controlled, enabling secure inter-cluster operations without increasing complexity.
 
-The result is a scalable, secure architecture where multiple clusters operate independently but are managed as a unified platform. 
+The result is a scalable, secure architecture where multiple clusters operate independently but are managed as a unified platform.
 
 ### Breakdown
 
@@ -159,7 +159,7 @@ So, the multi-cluster view essentially shows multiple clusters, divided by purpo
 
 ### Overview
 
-This view zooms into the internal architecture of an Aurora cluster to show the curated platform components that are automatically deployed with every instance. 
+This view zooms into the internal architecture of an Aurora cluster to show the curated platform components that are automatically deployed with every instance.
 
 Rather than starting from a blank Kubernetes cluster, Aurora equips each environment with production-grade tooling out-of-the-box. Key components include Cilium for hardened networking, Istio for ingress and service mesh, Prometheus and Fluent Bit for monitoring and logging, cert-manager for TLS automation, and Gatekeeper (OPA) for policy enforcement. These tools run in dedicated system namespaces and are managed by Aurora with strict RBAC—keeping platform and application concerns cleanly separated.
 
@@ -167,7 +167,7 @@ Argo CD powers the GitOps delivery model behind the scenes, ensuring all platfor
 
 Services like Velero (for backup), Workload Identity (for Managed Identity integration), and OpenCost (for cost visibility) round out a complete developer-ready foundation.
 
-For application teams, this means less operational overhead and faster onboarding. 
+For application teams, this means less operational overhead and faster onboarding.
 
 Developers can focus on shipping code, while Aurora enforces security, handles connectivity, and provides the observability, governance, and automation needed to run workloads reliably.
 
@@ -209,9 +209,9 @@ In summary, the Platform View is like looking under the hood of a high-end car: 
 
 ### Overview
 
-This view illustrates how Aurora is architected around Infrastructure as Code (Terraform) and GitOps (Argo CD). Terraform provisions the foundational cloud infrastructure — including networking, Kubernetes clusters, and route reflectors — while Argo CD continuously applies platform components (such as Cilium, Cert Manager, and OPA) as code directly from Git repositories. 
+This view illustrates how Aurora is architected around Infrastructure as Code (Terraform) and GitOps (Argo CD). Terraform provisions the foundational cloud infrastructure — including networking, Kubernetes clusters, and route reflectors — while Argo CD continuously applies platform components (such as Cilium, Cert Manager, and OPA) as code directly from Git repositories.
 
-Aurora’s high-level architecture embraces a cloud-agnostic design, enabling deployment on Azure AKS, Amazon EKS, and Google GKE using equivalent Terraform modules and shared platform manifests. We interface directly with each Cloud Service Provider’s team at SSC to ensure seamless integration, secure configuration, and proactive alignment with each C.S.P’s best practices. 
+Aurora’s high-level architecture embraces a cloud-agnostic design, enabling deployment on Azure AKS, Amazon EKS, and Google GKE using equivalent Terraform modules and shared platform manifests. We interface directly with each Cloud Service Provider’s team at SSC to ensure seamless integration, secure configuration, and proactive alignment with each C.S.P’s best practices.
 
 This approach provides a uniform developer experience across C.S.P’s, reducing complexity, and achieving some level of shared governance.
 

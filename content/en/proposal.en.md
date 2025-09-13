@@ -22,13 +22,13 @@ As cloud-native technologies become more prevalent within the Government of Cana
 
 Some of the departments with their own Kubernetes environments (at least in some fashion) include:
 
-* Statistics Canada
-* Public Health Agency of Canada
-* Canada Revenue Agency
-* Employment and Social Development Canada
-* Department of National Defence
-* Department of Fisheries and Oceans
-* And many others...
+- Statistics Canada
+- Public Health Agency of Canada
+- Canada Revenue Agency
+- Employment and Social Development Canada
+- Department of National Defence
+- Department of Fisheries and Oceans
+- And many others...
 
 For over two decades, software organizations have faced the challenge of managing shared infrastructure, code, and tools across multiple teams. Centralized teams were often formed to handle these shared demands, but they frequently encountered issues such as being disconnected from their users' needs, developing overly complex or unstable solutions, or lacking flexibility. On the other hand, decentralizing entirely and giving application teams direct access to cloud tools and open-source software has exposed them to operational complexity, leading to inefficiencies and the need for costly site reliability engineers (SREs) or DevOps specialists.
 
@@ -72,19 +72,19 @@ With its secure and compliant foundation—including integrated zero trust secur
 
 One of the key challenges in building and operating a platform like Aurora is balancing flexibility with governance. Below are some of the identified risks along with some proposed mitigations:
 
-**Platform teams without the power to say "no"**
+### Platform teams without the power to say No
 
 Risk: When platform teams lack the authority to make critical decisions including the ability to say "no" it can lead to increased complexity, scope creep, and inefficiencies. Without this authority, the platform risks becoming overly customized, bloated, or misaligned with its core objectives, slowing down development and increasing the burden on both the platform team and its users.
 
 Mitigation: Platform teams must have the political power to define their ideal users and make decisions on how best to solve their problems. This includes the ability to minimize choice where necessary to streamline the platform, reduce cognitive load, and accelerate development. Empowering these teams to focus on core functionalities will ensure long-term sustainability and efficiency.
 
-**Partner clients needs for centralized control**
+### Partner clients needs for centralized control
 
 Risk: Partner clients, such as cyber security or even FinOps teams, require centralized reporting and control to ensure compliance, security, and financial efficiency. A failure to meet these needs could lead to fragmentation, inefficiencies, and a lack of trust in the platform’s governance.
 
 Mitigation: Aurora must provide standardized tools and processes across departments to satisfy the needs for centralized control. By ensuring all teams use the same core platform services, Aurora can streamline reporting, compliance, and security management.
 
-**Lack of operational maturity in platform engineering**
+### Lack of operational maturity in platform engineering
 
 Risk: Platform engineering is inherently difficult, and without proper organizational maturity, teams risk building solutions that lack long-term value, sustainability, and operational readiness.
 

@@ -1,0 +1,59 @@
+{
+  // -------------------------------------------------------------------
+  // Files to lint
+  // -------------------------------------------------------------------
+  "globs": [
+    "**/*.md"
+  ],
+
+  // -------------------------------------------------------------------
+  // Files/folders to always skip (Hugo specific)
+  // -------------------------------------------------------------------
+  "ignores": [
+    "**/node_modules/**",      // all dependencies
+    "public/**",               // Hugo build output
+    "resources/**",            // Hugo asset pipeline
+    "themes/**/exampleSite/**",// example content in themes
+    "**/.hugo_build.lock",     // Hugo lockfile
+    "**/.cache/**",
+    "**/dist/**"
+  ],
+
+  // -------------------------------------------------------------------
+  // Rule configuration
+  // -------------------------------------------------------------------
+  "config": {
+    // Disable line length checking for now
+    "MD013": false,
+
+    // Unordered list markers – Hugo docs often prefer dash
+    "MD004": { "style": "dash" },
+
+    // Multiple headings with the same content
+    "MD024": {
+      "siblings_only": true            // Only compare headings that share the same parent
+    },
+
+    // Allow inline HTML and Hugo shortcodes / custom elements
+    // Add any GC Design System components or shortcodes you use
+    "MD033": {
+      "allowed_elements": [
+        "details",
+        "summary",
+        "gcds-alert",
+        "gcds-grid",
+        "gcds-link",
+        "gcds-top-nav",
+        "gcds-nav-link",
+        "gcds-footer",
+        "gcds-text"
+      ]
+    },
+
+    // Front matter – disable heading-before-front-matter requirement
+    "MD041": false,
+
+    // Allow missing top-level heading (common for content pages)
+    "MD043": false
+  }
+}

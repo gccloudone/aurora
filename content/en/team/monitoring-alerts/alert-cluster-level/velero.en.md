@@ -10,7 +10,6 @@ draft: false
 <gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
 </gcds-alert>
 
-
 Velero is an open source tool used to safely backup and restore, perform disaster recovery, and migrate Kubernetes cluster resources and persistent volumes. A velero alerts occurs when a Velero backup isn't functioning as intended. Currently there are three kinds of Velero alerts:
 
 - Backup failure
@@ -30,17 +29,17 @@ velero client config set namespace=velero-system
 
 > **_NOTE:_**  By default, the velero CLI assumes that velero is installed in the `velero` namespace unless otherwise specified using the above command or by passing in the `--namespace` global flag.
 
-2. Describe the backup to view a summary of the backup details.
+1. Describe the backup to view a summary of the backup details.
 `
 velero backup describe <BACKUP NAME> --details | grep error
 `
 
-3. Output the Velero backup logs. This is useful for viewing failures and warnings, including resources that could not not be backed up.
+1. Output the Velero backup logs. This is useful for viewing failures and warnings, including resources that could not not be backed up.
 `
 velero backup logs <BACKUP NAME>
 `
 
-4. View the logs on the Velero server pod.
+1. View the logs on the Velero server pod.
 `
 kubectl logs deployment/velero  -n <NAMESPACE>
 `
