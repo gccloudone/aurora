@@ -44,10 +44,16 @@ weight = 10
   weight = 1
 
   [[main]]
+  name = "Monitoring"
+  parent = "Team"
+  url = "/team/monitoring-alerts/"
+  weight = 2
+
+  [[main]]
   name = "Appendix"
   parent = "Team"
   url = "/team/appendix"
-  weight = 2
+  weight = 3
 
 [[main]]
 name = "Community"
