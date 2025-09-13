@@ -6,6 +6,10 @@ aliases: ["/team/monitoring/namespacealerts/pod"]
 draft: false
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 ## Alert: PodNotReady
 
 This alert occurs at the namespace-level within a cluster. This alert will be triggered by default when a Pod is in a non-ready state for longer than **fifteen** minutes.
@@ -45,9 +49,12 @@ To resolve this alert, teams can investigate the Pod in question to address the 
 ### Additional Troubleshooting
 
 #### Pending State
+
 Oftentimes, when a Pod is created, the Pod stays in the _Pending_ state. Assuming that the cluster scheduler is running fine, here are some potential causes:
+
 - The current Namespace has a ResourceQuota object and creating the Pod will make the Namespace go over the quota.
 - The Pod is bound to a Pending PersistentVolumeClaim.
 
 #### Unknown State
+
 If the container cannot start for some reason, and the state of the Pod cannot be obtained, the Pod falls in an _Unknown_ state. This typically occurs due to an error in communicating with the node where the Pod should be running.

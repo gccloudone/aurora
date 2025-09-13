@@ -6,6 +6,10 @@ aliases: ["/team/monitoring/clusteralerts/sslcert"]
 draft: false
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 ## Alert: SSLCertExpiringSoon
 
 This alert occurs at the cluster level. It triggers when the SSL certificate at a given target expires in fewer than 20 days. This alert can indicate that the certificate has failed to automatically renew or that the target's pod has failed to pick up a renewed certificate.

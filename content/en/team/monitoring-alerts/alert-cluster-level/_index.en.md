@@ -6,9 +6,9 @@ aliases: ["/team/monitoring/clusteralerts"]
 draft: false
 ---
 
-{{% alert title="Work In Progress" color="warning" %}}
-This page is currently a work in progress. Check back periodically for more information around Cluster Alert Runbooks.
-{{% /alert %}}
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
 
 This page describes alerts presently defined at the cluster scope, meaning either that they do not concern namespaced resources or that they are relevant no matter which namespace they occur in.
 
@@ -40,7 +40,7 @@ Refer to the [general Runbook for investigating cert-manager alerts]({{< ref "ce
 ### Miscellaneous
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack).
 
-- **BackupJobFailed**: A job with backup in the name has failed. 
+- **BackupJobFailed**: A job with backup in the name has failed.
 - [**PrometheusStorageLow**]({{< ref "prometheus-storage-low" >}}): Prometheus disk usage is over 85%.
 - [**PrometheusDiskMayFillIn60Hours**]({{< ref "prometheus-storage-low#alert-prometheusdiskmayfillin60hours" >}}): Prometheus remaining disk capacity is predicted to go under 10% within 60 hours. A Prometheus instance whose disk capacity is exhausted will cease generating alerts.
 

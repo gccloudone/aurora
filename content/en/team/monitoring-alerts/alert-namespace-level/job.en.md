@@ -6,6 +6,10 @@ aliases: ["/team/monitoring/namespacealerts/job"]
 draft: false
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 ## Alert: CompletedJobsNotCleared
 
 This alert occurs at the namespace-level within a cluster and will be triggered when more than *20* completed jobs within a particular namespace are older than 24 hours. This alert indicates that certain completed jobs may need to be cleaned up or that there is an issue preventing jobs from completing successfully.

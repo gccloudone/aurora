@@ -6,9 +6,9 @@ aliases: ["/team/monitoring/namespacealerts/"]
 draft: false
 ---
 
-{{% alert title="Work In Progress" color="warning" %}}
-This page is currently a work in progress. Check back periodically for more information around Namespace Alert Runbooks.
-{{% /alert %}}
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
 
 This page describes alerts presently defined at the namespace level. They are routed to the notification channels of the Aurora team only when they occur in namespaces relevant to the core functionality of the Aurora platform.
 
@@ -20,7 +20,7 @@ Subpages within this section describe Runbooks for Prometheus Alerts experienced
 
 ### Alerts
 
-Alerts are defined below their respective header. 
+Alerts are defined below their respective header.
 
 #### Containers
 These alerts are defined [here](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/container_alerts).

@@ -6,10 +6,16 @@ aliases: ["/team/monitoring/namespacealerts/pvc"]
 draft: false
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 ## Alert: PVCStorageRemainingLow
+
  This alert fires when the persistent volume claim has less than 15% storage remaining.
 
 ## Alert: PVCStorageRemainingNone
+
 This alert fires when the persistent volume claim has less than 1% storage remaining.
 
 ### Resolution Process
@@ -27,7 +33,6 @@ It is first important to determine if it's expected for the PVC to be nearly ful
 3. Investigate any unusual events for the persistent volume claim:
 
     `kubectl describe pvc <pvcname> -n <namespace>`
-
 
 4. If nothing stands out, it may be that the application requires increased storage demands. In which case, follow the steps outlined in [Mitigation](#Mitigation).
 

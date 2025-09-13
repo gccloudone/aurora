@@ -6,6 +6,10 @@ aliases: ["/team/monitoring/clusteralerts/nodepool"]
 draft: false
 ---
 
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 Node pool pod capacity alerts are configured to occur at the cluster level. As defined in the [official Kubernetes documentation](https://kubernetes.io/docs/concepts/architecture/nodes/), Kubernetes runs workloads by placing containers into pods to run on nodes. Each node is managed by the control plane and contains the services necessary to run pods. [Kubernetes is designed to accommodate](https://kubernetes.io/docs/setup/best-practices/cluster-large/) no more than 110 pods per node. However, when nodes are created `max-pods` is set to a hard limit of 90 pods per node. When a particular node reaches a certain threshold, the following alerts are triggered:
 
 - **NodepoolReachingPodCapacity**: Nodepool pod capacity is over 80% used.
@@ -13,7 +17,7 @@ Node pool pod capacity alerts are configured to occur at the cluster level. As d
 
 Terminated (Succeeded or Failed) pods are not counted for these alerts because they do not prevent the scheduling of other pods onto the nodes.
 
-## Alert: NodepoolReachingPodCapacity 
+## Alert: NodepoolReachingPodCapacity
 
 This alert is triggered when the available pod capacity in the node pool has met or exceeded an 80% usage threshold. This alert is considered to have a *Minor* severity because issues are not expected as long as some pod capacity remains available. However, it serves as a warning that the nodepool may be in need of scaling soon, or that one or more workloads may be bursting to an unexpected extent.
 
@@ -49,4 +53,4 @@ As the pod capacity limits become low or full, the following are some checks to 
 
     `kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=<node name here>`
 
-- Autoscaling is configured for the nodepools so new nodes should come in (up to a configured maximum) to accomodate the increased number of workloads. 
+- Autoscaling is configured for the nodepools so new nodes should come in (up to a configured maximum) to accomodate the increased number of workloads.

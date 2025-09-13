@@ -1,10 +1,15 @@
 ---
 title: "Alertmanager"
 linkTitle: "Alertmanager"
-weight: 5
+weight: 10
 aliases: ["/team/monitoring/alertmanager"]
 draft: false
 ---
+
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
+
 [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) is used by Prometheus to deduplicate, route, group, silence, and inhibit [alerts](()).
 
 A single instance of Alertmanager can receive and manage alerts from multiple different instances of Prometheus. When doing so, it is best to configure the Prometheus instances to add a label to the alerts that they transmit, such as `cluster: foo` or `prometheus: bar`, so that the alerts could be differentiated within Alertmanager and its notifications.

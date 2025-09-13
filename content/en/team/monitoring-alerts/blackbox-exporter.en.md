@@ -1,10 +1,14 @@
 ---
 title: "Blackbox Exporter"
 linkTitle: "Blackbox Exporter"
-weight: 5
+weight: 10
 aliases: ["/team/monitoring/blackbox-exporter"]
 draft: false
 ---
+
+<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert>
 
 The Prometheus [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) enables the monitoring of endpoints using protocols such as HTTP, HTTPS, DNS, TCP, ICMP, and gRPC. It supports "blackbox monitoring," which focuses on evaluating the external behavior and availability of a system without requiring access to its internal state.
 
@@ -28,7 +32,7 @@ A common use case for the Blackbox Exporter is monitoring the uptime of HTTP end
 
 However, the Blackbox Exporter supports a wide range of fine-grained configuration options for custom modules. For example, modules can be configured to fail if:
 
-- An SSL/TLS connection cannot be established, or  
+- An SSL/TLS connection cannot be established, or
 - The number of redirects exceeds a specific threshold.
 
 To explore the full range of customization options, refer to the [Blackbox Exporter Configuration Documentation](https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md). Custom modules can be defined in your Helm chart's `values.yaml` file under the default `http_2xx` module, which can also be redefined if necessary.
