@@ -1,0 +1,95 @@
+<!doctype html><html dir=ltr lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"><title>Blackbox Exporter | Aurora
+</title><link rel=icon href=/favicon.ico type=image/x-icon><link rel=preload href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css as=style crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-utility@1.10.0/dist/gcds-utility.min.css><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.css><script async type=module src=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.esm.js></script><link rel=stylesheet href=/scss/main.css><link rel=stylesheet href=/scss/custom.css><style>html{font-size:16px}body{font-size:var(--gcds-font-sizes-text);line-height:var(--gcds-line-heights-text);color:var(--gcds-color-grayscale-1000);font-family:var(--gcds-font-families-body),sans-serif;margin:0;animation:fade .05s forwards ease-in-out}</style><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css></head><body style=margin:0 class=character-limit><main><gcds-container centered size=md><gcds-text size=caption style="text-align: center;"><strong>Alpha</strong>&nbsp;&nbsp;This is an experimental service.</gcds-text>
+</gcds-container><gcds-header lang=en lang-href signature-variant=colour skip-to-href=#><gcds-search lang=en slot=search action=/sr/srb.html placeholder=Aurora></gcds-search><gcds-top-nav slot=menu label="Top navigation" alignment=right><gcds-nav-link href=/ slot=home>GC Cloud One: Aurora
+</gcds-nav-link><gcds-nav-group open-trigger=Platform menu-label=Platform><gcds-nav-link href=/proposal>Proposal
+</gcds-nav-link><gcds-nav-link href=/vision>Vision
+</gcds-nav-link><gcds-nav-link href=/architecture>Architecture
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Team menu-label=Team><gcds-nav-link href=/team/sop>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/>Monitoring
+</gcds-nav-link><gcds-nav-link href=/team/appendix>Appendix
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Community menu-label=Community><gcds-nav-link href=/get-involved>Get involved
+</gcds-nav-link><gcds-nav-link href=/rules-of-engagement>Rules of Engagement
+</gcds-nav-link><gcds-nav-link href=/technical-advisory-group>Technical Advisory Group
+</gcds-nav-link></gcds-nav-group><gcds-nav-link href=/contact slot>Contact us
+</gcds-nav-link></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href="https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US">GC Cloud One</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/>Aurora</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/team/>Team Guide</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/team/monitoring-alerts/>Monitoring and Alerting</gcds-breadcrumbs-item>
+</gcds-breadcrumbs></gcds-header><gcds-container size=xl main-container centered tag=main><gcds-grid tag=section columns=1fr columns-desktop="
+        1fr 3fr
+      " align-items=start class=hydrated><aside role=complementary><gcds-side-nav label="Team Guide"><gcds-nav-link href=/team/>Team Guide
+</gcds-nav-link><gcds-nav-group open-trigger="Standard Operating Procedures" menu-label="Standard Operating Procedures"><gcds-nav-link href=/team/standard-operating-procedures/>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/backup-disaster-recovery/>Backup and Disaster Recovery
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/bootstrap-cluster/>Bootstrap Cluster
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/infrastructure-and-configuration-management/>Infrastructure and Configuration Management
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/issue-naming/>Issue and PR Naming Conventions
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/enterprise-landing-zone/>Onboarding process for the Enterprise Landing Zone
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Monitoring and Alerting" menu-label="Monitoring and Alerting" open><gcds-nav-link href=/team/monitoring-alerts/>Monitoring and Alerting
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/prometheus/>Prometheus
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/prometheus-operator/>Prometheus Operator
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alertmanager/>Alertmanager
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/blackbox-exporter/ current=true>Blackbox Exporter
+</gcds-nav-link><gcds-nav-group open-trigger="Cluster Level Alerts" menu-label="Cluster Level Alerts"><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/>Cluster Level Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/cert-manager/>Cert Manager Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/node/>Node Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/>Node Pool Capacity Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/probe-failure/>Probe Failure Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/prometheus-storage-low/>Prometheus Storage Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/>SSL Certificate Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/velero/>Velero Alerts
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Namespace Level Alerts" menu-label="Namespace Level Alerts"><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/>Namespace Level Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/container/>Container Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/job/>Job Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/persistent-volume-claims/>Persistent Volume Claim Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/pod-not-ready/>Pod Alerts
+</gcds-nav-link></gcds-nav-group></gcds-nav-group><gcds-nav-group open-trigger=Appendix menu-label=Appendix><gcds-nav-link href=/team/appendix/>Appendix
+</gcds-nav-link><gcds-nav-link href=/team/appendix/acronyms/>Acronyms
+</gcds-nav-link><gcds-nav-link href=/team/appendix/lexicon/>Lexicon</gcds-nav-link></gcds-nav-group></gcds-side-nav></aside><section class=mb-400><gcds-heading tag=h1>Blackbox Exporter</gcds-heading>
+<gcds-alert alert-role=danger container=full heading="Avis de traduction" hide-close-btn=true hide-role-icon=false is-fixed=false class="hydrated mb-400"><gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert><gcds-text character-limit=true>The Prometheus
+<gcds-link href=https://github.com/prometheus/blackbox_exporter>Blackbox Exporter</gcds-link> enables the monitoring of endpoints using protocols such as HTTP, HTTPS, DNS, TCP, ICMP, and gRPC. It supports &ldquo;blackbox monitoring,&rdquo; which focuses on evaluating the external behavior and availability of a system without requiring access to its internal state.</gcds-text>
+<gcds-text character-limit=true>The Blackbox Exporter is also available as a
+<gcds-link href=https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-blackbox-exporter>Helm chart</gcds-link>, making it easy to deploy in Kubernetes environments.</gcds-text>
+<gcds-heading tag=h2 id=key-considerations character-limit=true>Key Considerations</gcds-heading><ul><li>A Blackbox Exporter running in a given cluster can only probe endpoints that are accessible from that cluster.</li><li>There are various ways to set up and use the Blackbox Exporter. This guide focuses on installing it through its Helm chart and using it in the context of the Prometheus Operator, a common approach for Kubernetes observability.</li></ul><gcds-heading tag=h2 id=core-concepts character-limit=true>Core Concepts</gcds-heading><ul><li><strong>Modules for Probes</strong>: The Blackbox Exporter is configured with modules, which define the success criteria for probes. For example, a module might specify expected HTTP response codes, connection timeouts, or DNS query results.</li><li><strong>Target Configuration</strong>: The endpoints (or targets) to be probed are defined in a ServiceMonitor, which also specifies which module each target will use.</li><li><strong>User Interface for Debugging</strong>: You can access the Blackbox Exporter’s user interface by port-forwarding to its pod (default port: <code>9115</code>). The UI provides detailed traces of each probe to aid in debugging. Probe traces are displayed in historical order, but only a limited number is retained. By default, failed traces are stored separately (up to the last 100) and are listed at the bottom of the UI for easier troubleshooting.</li><li><strong>Prometheus Rules and Alerts</strong>: You can use Prometheus Rules to create alerts based on probe results or metrics. For instance, you can set up alerts for repeated probe failures or unusual response patterns.</li></ul><gcds-heading tag=h2 id=defining-blackbox-modules character-limit=true>Defining Blackbox Modules</gcds-heading>
+<gcds-text character-limit=true>A common use case for the Blackbox Exporter is monitoring the uptime of HTTP endpoints. For such cases, the default module,
+<gcds-link href=https://github.com/prometheus-community/helm-charts/blob/prometheus-blackbox-exporter-5.6.0/charts/prometheus-blackbox-exporter/values.yaml#L112-L120>http_2xx</gcds-link>, is typically sufficient. This module is configured to verify that the HTTP response falls within the <code>2xx</code> range, indicating success.</gcds-text>
+<gcds-text character-limit=true>However, the Blackbox Exporter supports a wide range of fine-grained configuration options for custom modules. For example, modules can be configured to fail if:</gcds-text><ul><li>An SSL/TLS connection cannot be established, or</li><li>The number of redirects exceeds a specific threshold.</li></ul><gcds-text character-limit=true>To explore the full range of customization options, refer to the
+<gcds-link href=https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md>Blackbox Exporter Configuration Documentation</gcds-link>. Custom modules can be defined in your Helm chart&rsquo;s <code>values.yaml</code> file under the default <code>http_2xx</code> module, which can also be redefined if necessary.</gcds-text>
+<gcds-heading tag=h2 id=example-configurations character-limit=true>Example Configurations</gcds-heading>
+<gcds-heading tag=h3 id=servicemonitor-configuration character-limit=true>ServiceMonitor configuration</gcds-heading>
+<gcds-text character-limit=true>The following configuration would be specified in the <code>values.yaml</code> file of the Blackbox Exporter Helm chart:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>  <span style=color:#f92672>serviceMonitor</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>enabled</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>defaults</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>app</span>: <span style=color:#ae81ff>blackbox-exporter</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>release</span>: <span style=color:#ae81ff>kube-prometheus-stack</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>targets</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>example.com</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>url</span>: <span style=color:#ae81ff>https://www.example.com</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>interval</span>: <span style=color:#ae81ff>60s</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>scrapeTimeout</span>: <span style=color:#ae81ff>60s</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>module</span>: <span style=color:#ae81ff>http_2xx</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>example.org</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>url</span>: <span style=color:#ae81ff>https://www.example.org</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>interval</span>: <span style=color:#ae81ff>60s</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>scrapeTimeout</span>: <span style=color:#ae81ff>60s</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>module</span>: <span style=color:#ae81ff>http_2xx</span>
+</span></span></code></pre></div><gcds-text character-limit=true>Please note that the label <code>release: kube-prometheus-stack</code> assumes the default Prometheus instance from the default installation of the Kube-Prometheus-Stack Helm chart. If this chart was installed using a custom Helm release name, that custom release name will need to be specified as the value.</gcds-text>
+<gcds-text character-limit=true>Alternatively, the desired Prometheus instance (whether installed via kube-prometheus-stack or otherwise) can be configured to discover ServiceMonitor resources based on different labels or namespace restrictions, depending on your setup.</gcds-text>
+<gcds-heading tag=h3 id=prometheus-alert-rule character-limit=true>Prometheus Alert Rule</gcds-heading>
+<gcds-text character-limit=true>To monitor the success of probes run by the Blackbox Exporter, you can define Prometheus alerting rules. The following example demonstrates how to create an alert to detect probe failures:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>alert</span>: <span style=color:#ae81ff>ProbeFailure</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>expr</span>: <span style=color:#ae81ff>sum by (target, instance) (probe_success) != 1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>for</span>: <span style=color:#ae81ff>15s</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>severity</span>: <span style=color:#ae81ff>high</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>annotations</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>message</span>: <span style=color:#e6db74>&#39;The {{ $labels.target }} probe is failing. Port-forward into 9115 on the blackbox pod in your namespace for {{ $labels.instance }} debug information. Scroll to the bottom for older failures.&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runbook</span>: <span style=color:#ae81ff>https://aurora.gccloudone.alpha.canada.ca/team/monitoring-alerts/alert-cluster-level/probe-failure/</span>
+</span></span></code></pre></div><gcds-text character-limit=true>This rule uses the <code>probe_success</code> metric to detect failed probes. It checks if the probe_success value grouped by target and instance is not equal to 1 for 15 seconds, triggering an alert when that condition is met.</gcds-text>
+<gcds-text character-limit=true>To monitor a specific target:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-promql data-lang=promql><span style=display:flex><span><span style=color:#66d9ef>sum</span> <span style=color:#66d9ef>by</span> <span style=color:#f92672>(</span>target, instance<span style=color:#f92672>)</span> <span style=color:#f92672>(</span>probe_success{target<span style=color:#f92672>=</span>&#34;<span style=color:#e6db74>&lt;target name, e.g. example.com&gt;</span>&#34;}<span style=color:#f92672>)</span> <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span>
+</span></span></code></pre></div><gcds-text character-limit=true>To monitor multiple targets using a regex pattern:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-promql data-lang=promql><span style=display:flex><span><span style=color:#66d9ef>sum</span> <span style=color:#66d9ef>by</span> <span style=color:#f92672>(</span>target, instance<span style=color:#f92672>)</span> <span style=color:#f92672>(</span>probe_success{target<span style=color:#f92672>=~</span>&#34;<span style=color:#e6db74>example.com|example.org|mytargetprefix.*</span>&#34;}<span style=color:#f92672>)</span> <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span>
+</span></span></code></pre></div><gcds-date-modified lang=en>0001-01-01</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/contact","Report an issue": "https://github.com/gccloudone/aurora/issues/new/choose","About us": "/about" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+    .glightbox-container.glightbox-custom-white-bg img {
+      background: white !important;
+    }
+  `,document.head.appendChild(style);const lightbox=GLightbox({openEffect:"zoom",closeEffect:"fade",skin:"custom-white-bg"})</script></body></html>
