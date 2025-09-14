@@ -88,3 +88,13 @@ blockquote {
   color: var(--gcds-alert-info-text);
   margin: var(--gcds-spacing-100) 0;
   padding: var(--gcds-spacing-200) var(--gcds-spacing-300); }
+
+.pilcrow {
+  opacity: 0;
+  transition: opacity 0.2s;
+  text-decoration: none;
+  color: #26374a;
+  margin-left: 0.25em; }
+
+gcds-heading:hover .pilcrow {
+  opacity: 1; }

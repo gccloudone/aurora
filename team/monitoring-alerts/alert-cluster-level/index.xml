@@ -2,12 +2,12 @@
 &lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
 &lt;/gcds-alert>
 
-&lt;gcds-heading tag="h2" id="alert-certmanagercertfailingtorenew" character-limit="true">Alert: certManagerCertFailingToRenew&lt;/gcds-heading>
+&lt;gcds-heading tag="h2" id="alert-certmanagercertfailingtorenew" character-limit="true">Alert: certManagerCertFailingToRenew&lt;gcds-link href="#alert-certmanagercertfailingtorenew" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
 &lt;p>This alert fires when the cert-manager certificate fails to renew when it should have at the designated renewal time.&lt;/p></description></item><item><title>Node Alerts</title><link>/team/monitoring-alerts/alert-cluster-level/node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/team/monitoring-alerts/alert-cluster-level/node/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 &lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
 &lt;/gcds-alert>
 
-&lt;gcds-heading tag="h2" id="node-pressure-eviction-alerts" character-limit="true">Node Pressure Eviction Alerts&lt;/gcds-heading>
+&lt;gcds-heading tag="h2" id="node-pressure-eviction-alerts" character-limit="true">Node Pressure Eviction Alerts&lt;gcds-link href="#node-pressure-eviction-alerts" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
 &lt;p>Node pressure eviction alerts are configured to occur at the cluster level. As defined in the 
 &lt;gcds-link
  href="https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/">official Kubernetes documentation&lt;/gcds-link>, &amp;ldquo;node-pressure eviction is the process by which the kubelet proactively terminates pods to reclaim resources on nodes&amp;rdquo;. When a particular node resource such as the memory or disk space reaches a certain threshold, the kubelet can terminate one or more of the pods on the node to reclaim resources and prevent starvation.&lt;/p></description></item><item><title>Node Pool Capacity Alerts</title><link>/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
@@ -26,12 +26,12 @@
 &lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
 &lt;/gcds-alert>
 
-&lt;gcds-heading tag="h2" id="alert-prometheusstoragelow" character-limit="true">Alert: PrometheusStorageLow&lt;/gcds-heading>
+&lt;gcds-heading tag="h2" id="alert-prometheusstoragelow" character-limit="true">Alert: PrometheusStorageLow&lt;gcds-link href="#alert-prometheusstoragelow" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
 &lt;p>PrometheusStorageLow alerts are configured to occur at the cluster level. It triggers when Prometheus disk usage is over 85% in the specified environment. This alert indicates that the storage needs to be increased for that environment.&lt;/p></description></item><item><title>SSL Certificate Alerts</title><link>/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 &lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
 &lt;/gcds-alert>
 
-&lt;gcds-heading tag="h2" id="alert-sslcertexpiringsoon" character-limit="true">Alert: SSLCertExpiringSoon&lt;/gcds-heading>
+&lt;gcds-heading tag="h2" id="alert-sslcertexpiringsoon" character-limit="true">Alert: SSLCertExpiringSoon&lt;gcds-link href="#alert-sslcertexpiringsoon" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
 &lt;p>This alert occurs at the cluster level. It triggers when the SSL certificate at a given target expires in fewer than 20 days. This alert can indicate that the certificate has failed to automatically renew or that the target&amp;rsquo;s pod has failed to pick up a renewed certificate.&lt;/p></description></item><item><title>Velero Alerts</title><link>/team/monitoring-alerts/alert-cluster-level/velero/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/team/monitoring-alerts/alert-cluster-level/velero/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 &lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
 &lt;/gcds-alert>

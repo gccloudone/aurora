@@ -47,18 +47,18 @@
 </gcds-nav-link><gcds-nav-link href=/team/appendix/acronyms/>Acronyms
 </gcds-nav-link><gcds-nav-link href=/team/appendix/lexicon/>Lexicon</gcds-nav-link></gcds-nav-group></gcds-side-nav></aside><section class=mb-400><gcds-heading tag=h1>Cert Manager Alerts</gcds-heading>
 <gcds-alert alert-role=danger container=full heading="Avis de traduction" hide-close-btn=true hide-role-icon=false is-fixed=false class="hydrated mb-400"><gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert><gcds-heading tag=h2 id=alert-certmanagercertfailingtorenew character-limit=true>Alert: certManagerCertFailingToRenew</gcds-heading>
+</gcds-alert><gcds-heading tag=h2 id=alert-certmanagercertfailingtorenew character-limit=true>Alert: certManagerCertFailingToRenew<gcds-link href=#alert-certmanagercertfailingtorenew class=pilcrow>¶</gcds-link></gcds-heading>
 <gcds-text character-limit=true>This alert fires when the cert-manager certificate fails to renew when it should have at the designated renewal time.</gcds-text>
-<gcds-heading tag=h2 id=alert-certmanagercertfailure character-limit=true>Alert: certManagerCertFailure</gcds-heading>
+<gcds-heading tag=h2 id=alert-certmanagercertfailure character-limit=true>Alert: certManagerCertFailure<gcds-link href=#alert-certmanagercertfailure class=pilcrow>¶</gcds-link></gcds-heading>
 <gcds-text character-limit=true>This alert fires when the cert-manager certificate is not in a ready state, but is not in need of renewal. There is still some time left before its renewal time.</gcds-text>
-<gcds-heading tag=h2 id=alert-certmanagercertexpired character-limit=true>Alert: certManagerCertExpired</gcds-heading>
+<gcds-heading tag=h2 id=alert-certmanagercertexpired character-limit=true>Alert: certManagerCertExpired<gcds-link href=#alert-certmanagercertexpired class=pilcrow>¶</gcds-link></gcds-heading>
 <gcds-text character-limit=true>This alert fires when the cert-manager certificate has expired. The expiry date of the certificate has passed.</gcds-text>
-<gcds-heading tag=h2 id=troubleshooting character-limit=true>Troubleshooting</gcds-heading>
+<gcds-heading tag=h2 id=troubleshooting character-limit=true>Troubleshooting<gcds-link href=#troubleshooting class=pilcrow>¶</gcds-link></gcds-heading>
 <gcds-text character-limit=true>For the above three alerts refer to the
 <gcds-link href=https://cert-manager.io/docs/troubleshooting/acme/>official documentation</gcds-link> for the troubleshooting process.</gcds-text>
-<gcds-heading tag=h2 id=alert-certmanagerabsent character-limit=true>Alert: certManagerAbsent</gcds-heading>
+<gcds-heading tag=h2 id=alert-certmanagerabsent character-limit=true>Alert: certManagerAbsent<gcds-link href=#alert-certmanagerabsent class=pilcrow>¶</gcds-link></gcds-heading>
 <gcds-text character-limit=true>This alert fires when there is no cert-manager endpoint discovered by Prometheus. Causes could be a few things.</gcds-text><ul><li>Ensure cert-manager is up and running.</li><li>Ensure service discovery is configured correctly for cert-manager.</li></ul><gcds-text character-limit=true><gcds-link href=https://gitlab.com/uneeq-oss/cert-manager-mixin/-/blob/master/RUNBOOK.md>Reference</gcds-link></gcds-text>
-<gcds-heading tag=h2 id=alert-certmanagerhittingratelimits character-limit=true>Alert: certManagerHittingRateLimits</gcds-heading>
+<gcds-heading tag=h2 id=alert-certmanagerhittingratelimits character-limit=true>Alert: certManagerHittingRateLimits<gcds-link href=#alert-certmanagerhittingratelimits class=pilcrow>¶</gcds-link></gcds-heading>
 <gcds-text character-limit=true>Cert-manager is being rate-limited by the ACME provider. Let&rsquo;s Encrypt rate limits can last for up to a week. There could be up to a weeks delay in provisioning or renewing certificates, depending on the action that&rsquo;s being rate limited.</gcds-text>
 <gcds-text character-limit=true>Let&rsquo;s Encrypt suggest the application process for extending rate limits can take a week. Other ACME providers could likely have different rate limits.</gcds-text>
 <gcds-text character-limit=true><gcds-link href=https://letsencrypt.org/docs/rate-limits/>Let&rsquo;s Encrypt Rate Limits</gcds-link></gcds-text>

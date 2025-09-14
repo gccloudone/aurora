@@ -2,7 +2,7 @@
 &lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
 &lt;/gcds-alert>
 
-&lt;gcds-heading tag="h2" id="what-is-prometheus" character-limit="true">What is Prometheus?&lt;/gcds-heading>
+&lt;gcds-heading tag="h2" id="what-is-prometheus" character-limit="true">What is Prometheus?&lt;gcds-link href="#what-is-prometheus" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
 &lt;p>Prometheus is an open-source monitoring and alerting toolkit initially developed by SoundCloud in 2012. Widely adopted by companies and organizations, Prometheus is supported by an active developer and user community. Now an independent, standalone open-source project, it joined the Cloud Native Computing Foundation (CNCF) in 2016 as its second hosted project, after Kubernetes, highlighting its importance and transparent governance.&lt;/p></description></item><item><title>Prometheus Operator</title><link>/team/monitoring-alerts/prometheus-operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/team/monitoring-alerts/prometheus-operator/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 &lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
 &lt;/gcds-alert>
