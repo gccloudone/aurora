@@ -13,6 +13,7 @@ date: 2025-09-16
 </gcds-alert>
 
 ## Context
+
 The following page discusses what Aurora does for its contingency planning in anticipation of system failures. You will also find information on this page relating to Aurora's resolution times, its priorities, and where you can find help / submit an issue.
 
 ## Contingency Overview
