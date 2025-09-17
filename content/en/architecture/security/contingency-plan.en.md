@@ -33,7 +33,6 @@ This plan helps Aurora meet the targets for the target resolution times, as list
 
 ### Target Resolution Times
 
-
 | **Severity Level** | Description                                         | **Target Resolution Time (90% of the time)** |
 |--------------------|-----------------------------------------------------|----------------------------------------------|
 | Critical           | Critical issue currently affecting all users, including system unavailability and major data integrity or security issues.                                                     | 4 hours                                      |
@@ -41,11 +40,9 @@ This plan helps Aurora meet the targets for the target resolution times, as list
 | Medium             | Significant & persistent performance issues or some bug affecting some but not all users.                                                    | 2 business days                              |
 | Low                | Minor issues with minimal impact on system functionality or user workloads.                                                    | 6 business days                              |
 
-
 > The **Target Resolution Time** is the average time taken to restore a service if an incident occurs. When a situation cannot be resolved within the target time, notifications will be provided to the IT partners.
 
 Priority is given to issues based on severity level & if the application affected is in the CBAS. 
-
 
 ## Where to get help
 
