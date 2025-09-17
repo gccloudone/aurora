@@ -23,13 +23,12 @@ Aurora achieves this objective without having to compromise or deteriorate Auror
 
 - **Architectural resiliency**: Core components of the Aurora platform are deployed in high availability (HA) configurations to ensure system uptime and fault tolerance.
 - **Client support**: Dedicated support is available during **business hours** to assist clients with issues related to their workloads.
-
 - **Operational readiness**: A comprehensive set of <gcds-link href="{{< relref "/team/standard-operating-procedures" >}}">Standard Operating Procedures (SOPs)</gcds-link> and alert
-<gcds-link href="{{< relref "/team/monitoring-alerts/" >}}">runbooks</gcds-link> is maintained to enable quick incident troubleshooting & resolution by the Aurora team. 
+<gcds-link href="{{< relref "/team/monitoring-alerts/" >}}">runbooks</gcds-link> is maintained to enable quick incident troubleshooting & resolution by the Aurora team.
 
-> Business hours is defined as 9:00 AM - 5:00 PM EST, Monday to Friday. 
+>Business hours is defined as 9:00 AM - 5:00 PM EST, Monday to Friday.
 
-This plan helps Aurora meet the targets for the target resolution times, as listed below. 
+This plan helps Aurora meet the targets for the target resolution times, as listed below.
 
 ### Target Resolution Times
 
@@ -42,7 +41,7 @@ This plan helps Aurora meet the targets for the target resolution times, as list
 
 > The **Target Resolution Time** is the average time taken to restore a service if an incident occurs. When a situation cannot be resolved within the target time, notifications will be provided to the IT partners.
 
-Priority is given to issues based on severity level & if the application affected is in the CBAS. 
+Priority is given to issues based on severity level & if the application affected is in the CBAS.
 
 ## Where to get help
 
