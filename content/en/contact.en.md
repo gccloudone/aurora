@@ -12,7 +12,7 @@ Report incidents/issues through the SSC ITSM Tool, [Onyx](https://dwp.prod.globa
 
 | **Role**                               | **Name**         | **Responsibilities**                                                                   | **Contact Information**      |
 |----------------------------            |------------------|--------------------------------------------------------------------------------------- |------------------------------|
-|Aurora technical & senior advisor       | William Hearn     | Assist clients with issues with **critical** and **high** severities.     | [wh@ssc-spc.gc.ca]           |
+|Aurora technical & senior advisor       | William Hearn     | Assist clients with issues with **critical** and **high** severities.     | [aurora-aurore@ssc-spc.gc.ca]           |
 
 ## How to get involved with our community
 
