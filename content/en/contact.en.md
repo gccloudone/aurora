@@ -8,7 +8,7 @@ disableCharacterlimit: true
 
 ## Reporting an incident?
 
-Report incidents/issues through the SSC ITSM Tool, [Onyx](https://dwp.prod.global.gc.ca/dwp/app/#/catalog) by selecting the **Arora Resolver Group**. We **strongly encourage** clients to report incidents through Onyx. You can also reach out to the persons listed below directly for help. Direct client support is available everday Monday to Friday from 9:00 AM to 5:00 PM EST.
+Report incidents/issues through the SSC ITSM Tool, [Onyx](https://dwp.prod.global.gc.ca/dwp/app/#/catalog) by selecting the **Arora Resolver Group**. We **strongly encourage** clients to report incidents through Onyx. You can also reach out to the persons listed below directly for help. Direct client support is available everyday Monday to Friday from 9:00 AM to 5:00 PM EST.
 
 
 | **Role**                               | **Name**         | **Responsibilities**                                                                   | **Contact Information**      |
