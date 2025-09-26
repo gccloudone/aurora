@@ -14,11 +14,11 @@ date: 2025-09-16
 
 ## Context
 
-The following page discusses what Aurora does for its contingency planning in anticipation of system failures. You will also find information on this page relating to Aurora's resolution times and its priorities for resolving incidents & issues. 
+The following page discusses what Aurora does for its contingency planning in anticipation of system failures. You will also find information on this page relating to Aurora's resolution times and its priorities for resolving incidents & issues.
 
 ## Contingency Overview
 
-The primary objective of Aurora's contingency plan is to ensure the **continuous 24/7 operation of the Aurora platform**, even during maintenance windows. Aurora is committed to maintaining uninterrupted service ensuring clients can rely on the platform for consistent availability. Aurora is **not** responsible for the 100% uptime of client workloads and it is the responsibility of clients to follow Kubernetes best pratices such as using Pod Disruption Budgets to improve the availability of their workload. 
+The primary objective of Aurora's contingency plan is to ensure the **continuous 24/7 operation of the Aurora platform**, even during maintenance windows. Aurora is committed to maintaining uninterrupted service ensuring clients can rely on the platform for consistent availability. Aurora is **not** responsible for the 100% uptime of client workloads and it is the responsibility of clients to follow Kubernetes best pratices such as using Pod Disruption Budgets to improve the availability of their workload.
 
 Aurora achieves this objective without having to compromise or deteriorate Aurora's security & safeguards through the following ways:
 
