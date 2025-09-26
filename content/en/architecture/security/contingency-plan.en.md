@@ -14,11 +14,11 @@ date: 2025-09-16
 
 ## Context
 
-The following page discusses what Aurora does for its contingency planning in anticipation of system failures. You will also find information on this page relating to Aurora's resolution times, its priorities, and where you can find help / submit an issue.
+The following page discusses what Aurora does for its contingency planning in anticipation of system failures. You will also find information on this page relating to Aurora's resolution times and its priorities for resolving incidents & issues. 
 
 ## Contingency Overview
 
-The primary objective of Aurora's contingency plan is to ensure the **continuous 24/7 operation of the Aurora platform**, while minimizing any disruption to client workloads. Aurora is committed to maintaining uninterrupted service outside of scheduled maintenance windows, ensuring clients can rely on the platform for consistent availability.
+The primary objective of Aurora's contingency plan is to ensure the **continuous 24/7 operation of the Aurora platform**, even during maintenance windows. Aurora is committed to maintaining uninterrupted service ensuring clients can rely on the platform for consistent availability. Aurora is **not** responsible for the 100% uptime of client workloads and it is the responsibility of clients to follow Kubernetes best pratices such as using Pod Disruption Budgets to improve the availability of their workload. 
 
 Aurora achieves this objective without having to compromise or deteriorate Aurora's security & safeguards through the following ways:
 
@@ -42,8 +42,4 @@ This plan helps Aurora meet the targets for the target resolution times, as list
 
 > The **Target Resolution Time** is the average time taken to restore a service if an incident occurs. When a situation cannot be resolved within the target time, notifications will be provided to the IT partners.
 
-Priority is given to issues based on severity level & if the application affected is in the CBAS.
-
-## Where to get help
-
-See <gcds-link href="{{< relref "/contact#reporting-an-incident" >}}">this page for more information on where to get help.</gcds-link>
+Priority is given first to platform issues and then to client issues based on severity level & if the application affected is in the CBAS.

@@ -8,11 +8,7 @@ disableCharacterlimit: true
 
 ## Reporting an incident?
 
-Report incidents/issues through the SSC ITSM Tool, [Onyx](https://dwp.prod.global.gc.ca/dwp/app/#/catalog) by selecting the **Arora Resolver Group**. We **strongly encourage** clients to report incidents through Onyx. You can also reach out below by e-mail directly for help. Direct client support is available everyday Monday to Friday from 9:00 AM to 5:00 PM EST.
-
-| **Name**    | **Responsibilities**                                                       | **Contact Information**        |  
-|-------------|----------------------------------------------------------------------------|--------------------------------|
-| Aurora Team | Help clients troubleshoot & resolve issues related to the Aurora platform. | [aurora-aurore@ssc-spc.gc.ca]  |
+Report incidents/issues through the SSC ITSM Tool, [Remedy](https://smartit.prod.global.gc.ca/smartit/app/#/create/incident) by setting the support group to **20814 GCCO Aurora/Aurore SIUGC**. We **strongly encourage** clients to report incidents through Remedy. Direct client support is available everyday Monday to Friday from 9:00 AM to 5:00 PM EST.
 
 ## How to get involved with our community
 
