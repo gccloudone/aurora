@@ -6,6 +6,10 @@ sidebar: false
 disableCharacterlimit: true
 ---
 
+## Reporting an incident?
+
+Report incidents/issues through the SSC ITSM Tool, [Remedy](https://smartit.prod.global.gc.ca/smartit/app/#/create/incident) by setting the support group to **20814 GCCO Aurora/Aurore SIUGC**. We **strongly encourage** clients to report incidents through Remedy. Direct client support is available everyday Monday to Friday from 9:00 AM to 5:00 PM EST.
+
 ## How to get involved with our community
 
 Join our growing <gcds-link href="{{< relref "/get-involved" >}}">community</gcds-link> to collaborate with like-minded professionals, and help shape the platform.
