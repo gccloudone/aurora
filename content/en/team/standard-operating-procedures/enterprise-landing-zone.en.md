@@ -43,6 +43,8 @@ The following must be in place before you begin the onboarding steps:
 Request an ESLZ from the Azure Cloud team using the following e-mail template:
 
 ``` plaintext
+Hello, I would like to request a new ESLZ and setup a new AKS cluster.
+Listed below are the details necessary for this request:
 Name: SSC-AuroraSDLC
 CBR: 21ZN
 IP Range:
