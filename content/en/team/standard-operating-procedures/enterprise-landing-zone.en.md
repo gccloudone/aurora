@@ -40,14 +40,27 @@ The following must be in place before you begin the onboarding steps:
 
 ## 1. Request an ESLZ
 
-Normally this is done through creating an email to the Azure Cloud Team where you will provide both the CBR and the VNET space that needs to be allocated.
+This is done through sending an email to the Azure Cloud Team. Use the following template for your email:
+
+```
+Name: SSC-AuroraSDLC
+CBR: 21ZN
+IP Range:
+  /22 Reserved
+    /23 for the Virtual Network
+    /23 for the POD CIDR
+Profile: 6
+Env: <Env>
+Notes:
+  If can base the L0 / L1 on what is here: https://dev.azure.com/SSC-Aurora/ESLZ/_git/SSC-AuroraMGMT-iac
+```
 
 Usually we ask for a reserved CIDR size of /22 which is broken up into:
 
 - /23 for the Virtual Network
 - /23 for the POD CIDR
 
-Once the CIDRs haveen given it is important to then request that the associated firewall rules are setup as well.
+Once the CIDRs have been given it is important to then request that the associated firewall rules are setup as well.
 
 At this point the Azure Cloud Team will get back to you with:
 
