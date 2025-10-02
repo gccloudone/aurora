@@ -40,9 +40,9 @@ The following must be in place before you begin the onboarding steps:
 
 ## 1. Request an ESLZ
 
-This is done through sending an email to the Azure Cloud Team. Use the following template for your email:
+Request an ESLZ from the Azure Cloud team using the following e-mail template:
 
-```
+``` plaintext
 Name: SSC-AuroraSDLC
 CBR: 21ZN
 IP Range:
