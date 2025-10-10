@@ -23,8 +23,8 @@ If you are unfamiliar with how ArgoCD deploys Helm charts, review the [ArgoCD He
 
 Before adding any third-party helm charts to the Aurora platform do the following:
 
-* Test the Helm chart in a local cluster and validate the rendered YAML manifests.
-* Confirm that the Helm repository URL matches the official vendor repository URL.
+- Test the Helm chart in a local cluster and validate the rendered YAML manifests.
+- Confirm that the Helm repository URL matches the official vendor repository URL.
 
 ## Procedure
 
@@ -40,11 +40,11 @@ Within the appropriate folder (`aurora-app` or `aurora-core`), create a new subf
 
 Create the `<component-name>.yaml` file in the folder that was just created & add templating for the following fields:
 
-* tolerations
-* image
-* priorityClassName
-* affinity
-* nodeSelector
+- tolerations
+- image
+- priorityClassName
+- affinity
+- nodeSelector
 
 Add templating for any other fields you think should be configurable for the component.
 
@@ -74,7 +74,7 @@ For the `_helpers.tpl`, create a helper template for all image fields referenced
 
 ### 7. Update the `values.yaml` file
 
-Add the default values to the `values.yaml` file for your component under the `aurora-core` or `aurora-app` folder. Ensure defaults for the fields specified in section [Create the YAML file for the component](#create-the-yaml-file-for-the-component) are provided.
+Add the default values to the `values.yaml` file for your component under the `aurora-core` or `aurora-app` folder. Ensure defaults for the fields specified in section [Create the YAML file for the component](#3-create-the-yaml-file-for-the-component) are provided.
 
 [Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/values.yaml#L342)
 
