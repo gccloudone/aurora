@@ -27,6 +27,13 @@ Here are the current procedures in place:
 <div class="mb-400">
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
   <gcds-card
+    card-title="Adding Components to Aurora Platform Charts"
+    href="/team/standard-operating-procedures/adding-components-aurora-platform-chart"
+    badge="Operations"
+    description="Procedure & guidelines for adding new components to the aurora-platform-charts."
+  >
+  </gcds-card>
+  <gcds-card
     card-title="Backup and Disaster Recovery"
     href="/team/standard-operating-procedures/backup-disaster-recovery"
     badge="Reliability"
