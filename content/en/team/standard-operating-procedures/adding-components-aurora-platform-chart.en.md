@@ -72,7 +72,7 @@ For the `netpol.yaml`, create any Network Policies exempting flows the component
 
 ### 6. Create the `_helpers.tpl` file
 
-For the `_helpers.tpl`, create a helper template for all image fields referenced in the component's YAML file that you created. The template should allow users the flexibility to pull the image from a third-party registry or from a custom registry. 
+For the `_helpers.tpl`, create a helper template for all image fields referenced in the component's YAML file that you created. The template should allow users the flexibility to pull the image from a third-party registry or from a custom registry.
 
 [Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflow/_helpers.tpl)
 
