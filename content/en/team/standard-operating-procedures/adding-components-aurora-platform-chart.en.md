@@ -25,7 +25,7 @@ Before adding any third-party helm charts to the Aurora platform do the followin
 
 - Render the helm templates and verify that the rendered manifests are what we expect (e.g. there are no additional resources that are being created that we don't expect)
 
-   ```helm template <name> ./path/to/chart --values=<example values.yaml>```
+   `helm template <name> ./path/to/chart --values=<example values.yaml>`
 - Confirm that the Helm repository URL matches the official vendor repository URL.
 
 ## Procedure
@@ -72,7 +72,9 @@ For the `netpol.yaml`, create any Network Policies exempting flows the component
 
 ### 6. Create the `_helpers.tpl` file
 
-For the `_helpers.tpl`, create a helper template for all image fields referenced in the component's YAML file that you created. The template should allow users the flexibility to pull the image from a third-party registry or from a custom registry. [Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflow/_helpers.tpl).
+For the `_helpers.tpl`, create a helper template for all image fields referenced in the component's YAML file that you created. The template should allow users the flexibility to pull the image from a third-party registry or from a custom registry. 
+
+[Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflow/_helpers.tpl)
 
 ### 7. Update the `values.yaml` file
 
@@ -90,6 +92,6 @@ Bump the version number specified in the `Chart.yaml` file located under `aurora
 
 Once you've pushed up your branch with all the changes, create a pull request and request a review from the team.
 
-### 9. Deploy & test
+### 10. Deploy & test
 
 Once your pull request is approved, merge in your pull request. You can patch the `version` field in the `config.yaml` to the new version of the aurora-platform chart. Once completed, the new `Applications` should be visible in the ArgoCD instance from where you can manually sync the application & have the resources deployed onto the cluster. Test the component and validate it functions as expected.
