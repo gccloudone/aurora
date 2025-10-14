@@ -1,0 +1,94 @@
+<!doctype html><html dir=ltr lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"><title>Adding components to Aurora Platform Charts | Aurora
+</title><link rel=icon href=/favicon.ico type=image/x-icon><link rel=preload href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css as=style crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-utility@1.10.0/dist/gcds-utility.min.css><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.css><script async type=module src=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.esm.js></script><link rel=stylesheet href=/scss/main.css><link rel=stylesheet href=/scss/custom.css><style>html{font-size:16px}body{font-size:var(--gcds-font-sizes-text);line-height:var(--gcds-line-heights-text);color:var(--gcds-color-grayscale-1000);font-family:var(--gcds-font-families-body),sans-serif;margin:0;animation:fade .05s forwards ease-in-out}</style><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css></head><body style=margin:0 class=character-limit><main><gcds-container centered size=md><gcds-text size=caption style="text-align: center;"><strong>Alpha</strong>&nbsp;&nbsp;This is an experimental service.</gcds-text>
+</gcds-container><gcds-header lang=en lang-href signature-variant=colour skip-to-href=#><gcds-search lang=en slot=search action=/sr/srb.html placeholder=Aurora></gcds-search><gcds-top-nav slot=menu label="Top navigation" alignment=right><gcds-nav-link href=/ slot=home>GC Cloud One: Aurora
+</gcds-nav-link><gcds-nav-group open-trigger=Platform menu-label=Platform><gcds-nav-link href=/proposal>Proposal
+</gcds-nav-link><gcds-nav-link href=/vision>Vision
+</gcds-nav-link><gcds-nav-link href=/architecture>Architecture
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Team menu-label=Team><gcds-nav-link href=/team/sop>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/>Monitoring
+</gcds-nav-link><gcds-nav-link href=/team/appendix>Appendix
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Community menu-label=Community><gcds-nav-link href=/get-involved>Get involved
+</gcds-nav-link><gcds-nav-link href=/rules-of-engagement>Rules of Engagement
+</gcds-nav-link><gcds-nav-link href=/technical-advisory-group>Technical Advisory Group
+</gcds-nav-link></gcds-nav-group><gcds-nav-link href=/contact slot>Contact us
+</gcds-nav-link></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href="https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US">GC Cloud One</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/>Aurora</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/team/>Team Guide</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/team/standard-operating-procedures/>Standard Operating Procedures</gcds-breadcrumbs-item>
+</gcds-breadcrumbs></gcds-header><gcds-container size=xl main-container centered tag=main><gcds-grid tag=section columns=1fr columns-desktop="
+        1fr 3fr
+      " align-items=start class=hydrated><aside role=complementary><gcds-side-nav label="Team Guide"><gcds-nav-link href=/team/>Team Guide
+</gcds-nav-link><gcds-nav-group open-trigger="Standard Operating Procedures" menu-label="Standard Operating Procedures" open><gcds-nav-link href=/team/standard-operating-procedures/>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/adding-components-aurora-platform-chart/ current=true>Adding components to Aurora Platform Charts
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/backup-disaster-recovery/>Backup and Disaster Recovery
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/bootstrap-cluster/>Bootstrap Cluster
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/infrastructure-and-configuration-management/>Infrastructure and Configuration Management
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/issue-naming/>Issue and PR Naming Conventions
+</gcds-nav-link><gcds-nav-link href=/team/standard-operating-procedures/enterprise-landing-zone/>Onboarding process for the Enterprise Landing Zone
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Monitoring and Alerting" menu-label="Monitoring and Alerting"><gcds-nav-link href=/team/monitoring-alerts/>Monitoring and Alerting
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/prometheus/>Prometheus
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/prometheus-operator/>Prometheus Operator
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alertmanager/>Alertmanager
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/blackbox-exporter/>Blackbox Exporter
+</gcds-nav-link><gcds-nav-group open-trigger="Cluster Level Alerts" menu-label="Cluster Level Alerts"><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/>Cluster Level Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/cert-manager/>Cert Manager Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/node/>Node Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/>Node Pool Capacity Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/probe-failure/>Probe Failure Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/prometheus-storage-low/>Prometheus Storage Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/>SSL Certificate Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-cluster-level/velero/>Velero Alerts
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Namespace Level Alerts" menu-label="Namespace Level Alerts"><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/>Namespace Level Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/container/>Container Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/job/>Job Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/persistent-volume-claims/>Persistent Volume Claim Alerts
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/alert-namespace-level/pod-not-ready/>Pod Alerts
+</gcds-nav-link></gcds-nav-group></gcds-nav-group><gcds-nav-group open-trigger=Appendix menu-label=Appendix><gcds-nav-link href=/team/appendix/>Appendix
+</gcds-nav-link><gcds-nav-link href=/team/appendix/acronyms/>Acronyms
+</gcds-nav-link><gcds-nav-link href=/team/appendix/lexicon/>Lexicon</gcds-nav-link></gcds-nav-group></gcds-side-nav></aside><section class=mb-400><gcds-heading tag=h1>Adding components to Aurora Platform Charts</gcds-heading>
+<gcds-alert alert-role=danger container=full heading="Avis de traduction" hide-close-btn=true hide-role-icon=false is-fixed=false class="hydrated mb-400"><gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert><gcds-text character-limit=true>This document outlines the process for adding a new component to the
+<gcds-link href=https://github.com/gccloudone-aurora/aurora-platform-charts>aurora-platform-charts repository</gcds-link>.</gcds-text>
+<gcds-heading tag=h2 id=context character-limit=true>Context<gcds-link href=#context class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Aurora uses ArgoCD to deploy Helm charts through the <code>Application</code> resource.</gcds-text>
+<gcds-text character-limit=true>If you are unfamiliar with how ArgoCD deploys Helm charts, review the
+<gcds-link href=https://argo-cd.readthedocs.io/en/stable/user-guide/helm/>ArgoCD Helm documentation</gcds-link> and examples in the aurora-platform-charts repository before proceeding.</gcds-text>
+<gcds-heading tag=h3 id=pre-requisites character-limit=true>Pre-requisites<gcds-link href=#pre-requisites class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Before adding any third-party helm charts to the Aurora platform do the following:</gcds-text><ul><li><gcds-text character-limit=true>Render the helm templates and verify that the rendered manifests are what we expect (e.g. there are no additional resources that are being created that we don&rsquo;t expect)</gcds-text>
+<gcds-text character-limit=true><code>helm template &lt;name> ./path/to/chart --values=&lt;example values.yaml></code></gcds-text></li><li><gcds-text character-limit=true>Confirm that the Helm repository URL matches the official vendor repository URL.</gcds-text></li></ul><gcds-heading tag=h2 id=procedure character-limit=true>Procedure<gcds-link href=#procedure class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-heading tag=h3 id=1-decide-which-folder-the-component-should-go-under character-limit=true>1. Decide which folder the component should go under<gcds-link href=#1-decide-which-folder-the-component-should-go-under class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Determine if the component should go under <code>aurora-app</code> or <code>aurora-core</code>. <code>aurora-app</code> are for components that enhance the functionality of the Aurora platform and <code>aurora-core</code> are for components that are critical for Aurora&rsquo;s operation.</gcds-text>
+<gcds-heading tag=h3 id=2-create-a-subfolder-for-the-component character-limit=true>2. Create a subfolder for the component<gcds-link href=#2-create-a-subfolder-for-the-component class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Within the appropriate folder (<code>aurora-app</code> or <code>aurora-core</code>), create a new subfolder under <code>templates</code> named after the component.</gcds-text>
+<gcds-heading tag=h3 id=3-create-the-yaml-file-for-the-component character-limit=true>3. Create the YAML file for the component<gcds-link href=#3-create-the-yaml-file-for-the-component class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Create the <code>&lt;component-name>.yaml</code> file in the folder that was just created & add templating for the following fields:</gcds-text><ul><li>tolerations</li><li>image</li><li>priorityClassName</li><li>affinity</li><li>nodeSelector</li></ul><gcds-text character-limit=true>Add templating for any other fields you think should be configurable for the component.</gcds-text>
+<gcds-text character-limit=true>The templating for the component should allow configurability for other Cloud Service Providers if applicable.</gcds-text>
+<gcds-text character-limit=true><gcds-link href=https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/cert-manager.yaml>Example</gcds-link></gcds-text>
+<gcds-text character-limit=true>If applicable, create a separate .yaml file for anything that may also need to be deployed for the component to work, such as Custom Resources.</gcds-text>
+<gcds-text character-limit=true><gcds-link href=https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/issuers.yaml>Example</gcds-link></gcds-text>
+<gcds-heading tag=h3 id=4-create-the-namespaceyaml-file character-limit=true>4. Create the <code>namespace.yaml</code> file<gcds-link href=#4-create-the-namespaceyaml-file class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>For the <code>namespace.yaml</code>, fill in the appropriate values according to the values for the aurora-solution chart
+<gcds-link href=https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-solution/values.yaml>available here</gcds-link>. The <code>information</code> field should remain the same as other components.</gcds-text>
+<gcds-text character-limit=true><gcds-link href=https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflow/namespace.yaml>Example</gcds-link></gcds-text>
+<gcds-heading tag=h3 id=5-create-the-netpolyaml-file character-limit=true>5. Create the <code>netpol.yaml</code> file<gcds-link href=#5-create-the-netpolyaml-file class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>For the <code>netpol.yaml</code>, create any Network Policies exempting flows the component may need. By default, all flows are denied unless explicitly granted through the <code>NetworkPolicy</code> or through the <code>CiliumClusterwideNetworkPolicy</code>.</gcds-text>
+<gcds-text character-limit=true><gcds-link href=https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/falco/netpol.yaml>Example</gcds-link></gcds-text>
+<gcds-heading tag=h3 id=6-create-the-_helperstpl-file character-limit=true>6. Create the <code>_helpers.tpl</code> file<gcds-link href=#6-create-the-_helperstpl-file class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>For the <code>_helpers.tpl</code>, create a helper template for all image fields referenced in the component&rsquo;s YAML file that you created. The template should allow users the flexibility to pull the image from a third-party registry or from a custom registry.
+<gcds-link href=https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflow/_helpers.tpl>Example</gcds-link>.</gcds-text>
+<gcds-heading tag=h3 id=7-update-the-valuesyaml-file character-limit=true>7. Update the <code>values.yaml</code> file<gcds-link href=#7-update-the-valuesyaml-file class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Add the default values to the <code>values.yaml</code> file for your component under the <code>aurora-core</code> or <code>aurora-app</code> folder. Ensure defaults for the fields specified in section
+<gcds-link href=#3-create-the-yaml-file-for-the-component>Create the YAML file for the component</gcds-link> are provided.</gcds-text>
+<gcds-text character-limit=true><gcds-link href=https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/values.yaml#L342>Example</gcds-link></gcds-text>
+<gcds-text character-limit=true>Also add your component under either the <code>core</code> or <code>app</code> field as <code># component: {}</code> in the <code>values.yaml</code> file located under <code>aurora-platform</code>.</gcds-text>
+<gcds-heading tag=h3 id=8-update-the-chartyaml character-limit=true>8. Update the <code>Chart.yaml</code><gcds-link href=#8-update-the-chartyaml class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Bump the version number specified in the <code>Chart.yaml</code> file located under <code>aurora-platform</code>.</gcds-text>
+<gcds-heading tag=h3 id=9-create-a-pull-request character-limit=true>9. Create a pull request<gcds-link href=#9-create-a-pull-request class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Once you&rsquo;ve pushed up your branch with all the changes, create a pull request and request a review from the team.</gcds-text>
+<gcds-heading tag=h3 id=9-deploy--test character-limit=true>9. Deploy & test<gcds-link href=#9-deploy--test class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Once your pull request is approved, merge in your pull request. You can patch the <code>version</code> field in the <code>config.yaml</code> to the new version of the aurora-platform chart. Once completed, the new <code>Applications</code> should be visible in the ArgoCD instance from where you can manually sync the application & have the resources deployed onto the cluster. Test the component and validate it functions as expected.</gcds-text>
+<gcds-date-modified lang=en>2025-10-09</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/contact","Report an issue": "https://github.com/gccloudone/aurora/issues/new/choose","About us": "/about" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+    .glightbox-container.glightbox-custom-white-bg img {
+      background: white !important;
+    }
+  `,document.head.appendChild(style);const lightbox=GLightbox({openEffect:"zoom",closeEffect:"fade",skin:"custom-white-bg"})</script></body></html>
