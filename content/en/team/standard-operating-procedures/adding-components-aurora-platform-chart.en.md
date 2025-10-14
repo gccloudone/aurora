@@ -23,7 +23,9 @@ If you are unfamiliar with how ArgoCD deploys Helm charts, review the [ArgoCD He
 
 Before adding any third-party helm charts to the Aurora platform do the following:
 
-- Test the Helm chart in a local cluster and validate the rendered YAML manifests.
+- Render the helm templates and verify that the rendered manifests are what we expect (e.g. there are no additional resources that are being created that we don't expect)
+
+   ```helm template <name> ./path/to/chart --values=<example values.yaml> ```
 - Confirm that the Helm repository URL matches the official vendor repository URL.
 
 ## Procedure
@@ -84,6 +86,10 @@ Also add your component under either the `core` or `app` field as `# component: 
 
 Bump the version number specified in the `Chart.yaml` file located under `aurora-platform`.
 
+### 9. Create a pull request
+
+Once you've pushed up your branch with all the changes, create a pull request and request a review from the team.
+
 ### 9. Deploy & test
 
-Once your pull request is merged, you can patch the `version` field in the `config.yaml` to the new version of the aurora-platform chart. Once completed, the new `Applications` should be visible in the ArgoCD instance from where you can manually sync the application & have the resources deployed onto the cluster. Test the component and validate it functions as expected.
+Once your pull request is approved, merge in your pull request. You can patch the `version` field in the `config.yaml` to the new version of the aurora-platform chart. Once completed, the new `Applications` should be visible in the ArgoCD instance from where you can manually sync the application & have the resources deployed onto the cluster. Test the component and validate it functions as expected.
