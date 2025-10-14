@@ -25,7 +25,7 @@ Before adding any third-party helm charts to the Aurora platform do the followin
 
 - Render the helm templates and verify that the rendered manifests are what we expect (e.g. there are no additional resources that are being created that we don't expect)
 
-   ```helm template <name> ./path/to/chart --values=<example values.yaml> ```
+   ```helm template <name> ./path/to/chart --values=<example values.yaml>```
 - Confirm that the Helm repository URL matches the official vendor repository URL.
 
 ## Procedure
