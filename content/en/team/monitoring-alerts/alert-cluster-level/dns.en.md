@@ -14,18 +14,16 @@ draft: false
 
 DNS-related issues can occur at two levels:
 
-- Cloud Service Provider (CSP) networking layer 
+- Cloud Service Provider (CSP) networking layer
 - Kubernetes level (usually an issue with coreDNS).
 
-
-If the application logs show DNS lookup errors for trying to resolve something like `google.com` the issue most likely stems from the DNS servers configured from the CSP. Collect all relevant information such as the environment, the SourceIP of the Pod & the host that is not resolving correctly and present them to the point-of-contact responsible for managing the CSP infrastructure for Aurora. 
+If the application logs show DNS lookup errors for trying to resolve something like `google.com` the issue most likely stems from the DNS servers configured from the CSP. Collect all relevant information such as the environment, the SourceIP of the Pod & the host that is not resolving correctly and present them to the point-of-contact responsible for managing the CSP infrastructure for Aurora.
 
 If application logs include logs similar to:
 
 ```Could not resolve host: someservice.namespace.svc.cluster.local```
 
 This indicates that coreDNS is failing to resolve a Service. Refer to the information below to investigate & resolve the issue.
-
 
 ## Alert: CoreDNSDown
 
