@@ -114,7 +114,13 @@ This role is required to view applications and groups in Entra ID, which will be
 
 ## 4. Azure Feature Registration
 
-Enable and confirm the EncryptionAtHost feature for your subscription:
+First you need to ensure that the account performing the operations below is added to:
+
+* XXXX-XXX-XXXXX-Operations (This group has owner on the subscription)
+
+> You might need to log out and log back in in order for this to take effect.
+
+Now you can enable and confirm the EncryptionAtHost feature for your subscription:
 
 ```sh
 az feature register --namespace Microsoft.Compute --name EncryptionAtHost
