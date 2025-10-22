@@ -116,7 +116,7 @@ This role is required to view applications and groups in Entra ID, which will be
 
 First you need to ensure that the account performing the operations below is added to:
 
-* XXXX-XXX-XXXXX-Operations (This group has owner on the subscription)
+- XXXX-XXX-XXXXX-Operations (This group has owner on the subscription)
 
 > You might need to log out and log back in in order for this to take effect.
 
