@@ -27,6 +27,9 @@ Before adding any third-party helm charts to the Aurora platform do the followin
 
    `helm template <name> ./path/to/chart --values=<example values.yaml>`
 - Confirm that the Helm repository URL matches the official vendor repository URL.
+- Perform a vulnerability scan on each referenced image with Trivy:
+`trivy image <container-image>`
+  - Investigate any critical vulnerabilities and if they are applicable.
 
 ## Procedure
 
