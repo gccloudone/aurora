@@ -3,7 +3,12 @@
 &lt;/gcds-alert>
 
 &lt;gcds-heading tag="h2" id="alert-certmanagercertfailingtorenew" character-limit="true">Alert: certManagerCertFailingToRenew&lt;gcds-link href="#alert-certmanagercertfailingtorenew" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This alert fires when the cert-manager certificate fails to renew when it should have at the designated renewal time.&lt;/p></description></item><item><title>Node Alerts</title><link>/team/monitoring-alerts/alert-cluster-level/node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/team/monitoring-alerts/alert-cluster-level/node/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+&lt;p>This alert fires when the cert-manager certificate fails to renew when it should have at the designated renewal time.&lt;/p></description></item><item><title>DNS Alerts</title><link>/team/monitoring-alerts/alert-cluster-level/dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/team/monitoring-alerts/alert-cluster-level/dns/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+&lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
+&lt;/gcds-alert>
+
+&lt;gcds-heading tag="h2" id="overview" character-limit="true">Overview&lt;gcds-link href="#overview" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
+&lt;p>DNS-related issues can occur at two levels:&lt;/p></description></item><item><title>Node Alerts</title><link>/team/monitoring-alerts/alert-cluster-level/node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/team/monitoring-alerts/alert-cluster-level/node/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 &lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
 &lt;/gcds-alert>
 
