@@ -39,6 +39,12 @@ Refer to the [general Runbook for investigating cert-manager alerts]({{< ref "ce
 - **certManagerAbsent**: cert-manager is down or not reachable by Prometheus.
 - **certManagerHittingRateLimits**: cert-manager is hitting LetsEncrypt rate limits, which may prevent certificate generation for up to a week.
 
+### DNS
+
+coreDNS alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack/coredns_alerts)
+
+Refer to the [general Runbook for investigating DNS-related alerts]({{< ref "dns" >}}).
+
 ### Miscellaneous
 
 These alerts are defined in our [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/conf/prometheus_rules/kube_prometheus_stack).
