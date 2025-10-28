@@ -28,25 +28,27 @@ Before testing, ensure the following:
   - A **BusyBox deployment**
   - A **PersistentVolumeClaim (PVC)** mounted into the BusyBox container
 
+> **_NOTE_**: Ensure the version for your Velero CLI matches the version of the Velero container image.
+
 ### Preparing the Test File
 
 1. Shell into the BusyBox container:
 
-   ```bash
+   ```sh
    kubectl exec -it <pod-name> \
      --container <busybox-container-name> \
-     -n <test-namespace> -- /bin/bash
+     -n <test-namespace> -- /bin/sh
    ```
 
 2. Write a test file to the mounted path:
 
-   ```bash
+   ```sh
    echo "test" > <mountPath>/testfile
    ```
 
 3. Verify the file contents:
 
-   ```bash
+   ```sh
    cat <mountPath>/testfile
    ```
 
@@ -59,8 +61,8 @@ Before testing, ensure the following:
    ```sh
    velero backup create backuptest-YYYY-MM-DD \
      --include-namespaces <test-namespace> \
-     --volume-snapshot-location <volume-snapshot-location-name> \
-     --backup-storage-location <backup-storage-location-name>  \
+     --volume-snapshot-locations <volume-snapshot-location-name> \
+     --storage-location <backup-storage-location-name>  \
      -n velero-system
    ```
 
@@ -81,7 +83,8 @@ Before testing, ensure the following:
 
    ```sh
    velero restore create restoretest-YYYY-MM-DD \
-     --from-backup backuptest-YYYY-MM-DD
+     --from-backup backuptest-YYYY-MM-DD \
+     -n velero-system
    ```
 
 5. Confirm the restore completed:
@@ -96,7 +99,7 @@ Before testing, ensure the following:
    ```sh
    kubectl exec -it <pod-name> \
      --container busybox \
-     -n <test-namespace> -- /bin/bash
+     -n <test-namespace> -- /bin/sh
    ```
 
 7. Verify the restored file:
