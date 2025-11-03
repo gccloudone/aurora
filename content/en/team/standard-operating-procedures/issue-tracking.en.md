@@ -93,6 +93,11 @@ Helix is the **official IT Service Management (ITSM)** system used across SSC an
 - **STC Helix:** Used by Statistics Canada for internal Cloud Native Platform (CNP) support.
 - Other departments may operate their own Helix instance but follow similar ITSM processes.
 
+> **Note:**
+> The alignment between SSC’s Helix and departmental Helix implementations is still being refined.
+> Aurora follows SSC’s IT Service Lifecycle Management (ITSLM) standards; however, how client-facing requests and platform-level incidents flow between SSC and departmental instances is still under review.
+> Additional guidance will be published once a unified model for Helix integration and escalation is finalized.
+
 ---
 
 ## 5. Summary
