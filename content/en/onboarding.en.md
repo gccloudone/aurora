@@ -106,7 +106,9 @@ Each Aurora management cluster (non-prod and prod) contains **two ArgoCD instanc
 
 Both ArgoCD instances reference your department’s private GitOps repository, following the Aurora naming convention:
 
+```bash
 - `https://github.com/gccloudone-aurora/project-<INSERT_DEPARTMENT>`
+```
 
 ### Platform Management Instance
 
@@ -114,8 +116,10 @@ The Platform Management Instance is responsible for installing and maintaining t
 
 This includes the core Kubernetes add-ons, horizontal services, controllers, networking configuration, security posture, and other foundational components.
 
+```bash
 - https://aur.aurora.<INSERT_MGMT_DEV_PLATFORM_ARGOCD> (Development)
 - https://aur.aurora.<INSERT_MGMT_PROD_PLATFORM_ARGOCD> (Production)
+```
 
 Platform configuration is sourced from the following private repository:
 
@@ -135,8 +139,10 @@ The Solution Builder Instance is dedicated to department-specific workloads.
 
 This is where Solution Builders deploy and manage the components required inside their Aurora-hosted AKS clusters.
 
+```bash
 - https://sol.aurora.<INSERT_MGMT_DEV_SOLUTION_ARGOCD> (Development)
 - https://sol.aurora.<INSERT_MGMT_PROD_SOLUTION_ARGOCD> (Production)
+```
 
 Solution configuration is sourced from the following private repository:
 
@@ -164,8 +170,7 @@ For general questions or onboarding support, contact the GC Cloud One Aurora tea
 
 You can also reach us through our Microsoft Teams support channel:
 
-- **Aurora Support Channel on Microsoft Teams**
-  https://teams.microsoft.com/l/channel/19%3AXLC7f7eMIGf8yEe8JqJ5q_j-G-0Rr-MjJTjsoCtOTWs1%40thread.tacv2/Support?groupId=856cec3e-dac1-473a-abe8-0a810d2a5e0a&tenantId=d05bc
+- [**Aurora Support Channel on Microsoft Teams**](https://teams.microsoft.com/l/channel/19%3AXLC7f7eMIGf8yEe8JqJ5q_j-G-0Rr-MjJTjsoCtOTWs1%40thread.tacv2/Support?groupId=856cec3e-dac1-473a-abe8-0a810d2a5e0a&tenantId=d05bc)
 
 ### Incident and Issue Reporting
 
