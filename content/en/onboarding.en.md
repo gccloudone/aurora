@@ -107,7 +107,7 @@ Each Aurora management cluster (non-prod and prod) contains **two ArgoCD instanc
 Both ArgoCD instances reference your department’s private GitOps repository, following the Aurora naming convention:
 
 ```bash
-- `https://github.com/gccloudone-aurora/project-<INSERT_DEPARTMENT>`
+- `https://github.com/gccloudone-aurora/project-<INSERT_PROJECT>`
 ```
 
 ### Platform Management Instance
