@@ -26,6 +26,9 @@
     // Disable line length checking for now
     "MD013": false,
 
+    // Disable bare url checking for now
+    "MD034": false,
+
     // Unordered list markers – Hugo docs often prefer dash
     "MD004": { "style": "dash" },
 
