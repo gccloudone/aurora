@@ -2,7 +2,6 @@
 title: "Onboarding"
 date: 2025-11-15
 draft: false
-sidebar: false
 showToc: true
 translationKey: "onboarding"
 disableCharacterlimit: true

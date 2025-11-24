@@ -15,12 +15,6 @@ url = "/platform"
 weight = 5
 
   [[main]]
-  name = "Onboarding"
-  parent = "Platform"
-  url = "/onboarding"
-  weight = 1
-
-  [[main]]
   name = "Proposal"
   parent = "Platform"
   url = "/proposal"
@@ -39,9 +33,20 @@ weight = 5
   weight = 7
 
 [[main]]
+name = "User Guides"
+url = "/user-guides"
+weight = 10
+
+  [[main]]
+  name = "Onboarding"
+  parent = "User Guides"
+  url = "/user-guides/onboarding"
+  weight = 1
+
+[[main]]
 name = "Team"
 url = "/team"
-weight = 10
+weight = 15
 
   [[main]]
   name = "Standard Operating Procedures"
@@ -64,7 +69,7 @@ weight = 10
 [[main]]
 name = "Community"
 url = "/community"
-weight = 15
+weight = 20
 
   [[main]]
   name = "Get involved"
@@ -83,11 +88,6 @@ weight = 15
   parent = "Community"
   url = "/technical-advisory-group"
   weight = 1
-
-[[main]]
-name = "Contact us"
-url = "/contact"
-weight = 20
 
 [[breadcrumb]]
 name = "GC Cloud One"
