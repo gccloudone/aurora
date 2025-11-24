@@ -27,9 +27,20 @@ weight = 5
   weight = 3
 
 [[main]]
+name = "Guides d’utilisation"
+url = "/fr/user-guides"
+weight = 10
+
+  [[main]]
+  name = "Guides d’utilisation"
+  parent = "Guides d’utilisation"
+  url = "/fr/guides-utilisation/onboarding"
+  weight = 1
+
+[[main]]
 name = "Équipe"
 url = "/fr/equipe"
-weight = 10
+weight = 15
 
   [[main]]
   name = "Procédures Standardisées d'Opération"
@@ -40,7 +51,7 @@ weight = 10
 [[main]]
 name = "Communauté"
 url = "/fr/communaute"
-weight = 15
+weight = 20
 
   [[main]]
   name = "Participez"
@@ -53,11 +64,6 @@ weight = 15
   parent = "Communauté"
   url = "/fr/regles-dengagement"
   weight = 1
-
-[[main]]
-name = "Contactez-nous"
-url = "/fr/contact"
-weight = 15
 
 [[breadcrumb]]
 name = "Service infonuagique unifié du GC"
