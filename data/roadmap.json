@@ -3,7 +3,7 @@
     "title": "[SERVICE:GCSA] Establish curated artifact service across SSC + GoC",
     "summary": "Stand up GC Secure Artifacts (GCSA) as the government-wide trusted binary and container image repository, providing a single, curated source for secure, approved software components across all departments.",
     "category": "GC Secure Artifacts",
-    "client": "SSC-Aurora",
+    "client": "Aurora",
     "status": "Todo",
     "priority": "Medium",
     "quarter": "Q1 2026",
@@ -13,9 +13,9 @@
     "title": "[AUR:COMPONENT] Upgrade Istio to v1.24 and Transition to Ambient Mesh",
     "summary": "We need to upgrade Istio from 1.16.x to an Ambient Mesh–capable release (≥ 1.24.x) to modernize Aurora’s service mesh architecture.",
     "category": "Platform Components",
-    "client": "SSC-Aurora",
+    "client": "Aurora",
     "status": "Todo",
-    "priority": "High",
+    "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/33"
   },
@@ -25,7 +25,7 @@
     "category": "Clients",
     "client": "STC",
     "status": "Todo",
-    "priority": "High",
+    "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/3"
   },
@@ -35,7 +35,7 @@
     "category": "Clients",
     "client": "STC",
     "status": "Todo",
-    "priority": "High",
+    "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/13"
   },
@@ -43,29 +43,19 @@
     "title": "[CSP:PC] Onboard Aurora onto GC Private Cloud",
     "summary": "Extend Aurora’s footprint to the GC Private Cloud (OpenStack) by integrating with the work done in Rancher which provisions clusters on the fly using OpenTofu.",
     "category": "Clients",
-    "client": "SSC-Aurora",
+    "client": "Aurora",
     "status": "Todo",
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
   },
   {
-    "title": "[SERVICE:GCSA] Ensure All Aurora Platform Charts and Images Are Proxied",
-    "summary": "The Aurora Platform Charts currently support proxying through GC Secure Artifacts (GCSA) but default to using public OSS sources for Helm charts and container images.",
-    "category": "GC Secure Artifacts",
-    "client": "SSC-Aurora",
-    "status": "Todo",
-    "priority": "High",
-    "quarter": "Q1 2026",
-    "url": "https://github.com/gccloudone-aurora/roadmap/issues/19"
-  },
-  {
     "title": "[AUR:COMPONENT] Switch from AAD Pod Identity to Workload Identity",
     "summary": "Migrate existing AKS configurations from legacy AAD Pod Identity to the modern Azure Workload Identity model.\nAAD Pod Identity is deprecated and will be retired in the near future. ",
     "category": "Platform Components",
-    "client": "SSC-Aurora",
+    "client": "Aurora",
     "status": "Todo",
-    "priority": "High",
+    "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/35"
   },
@@ -73,9 +63,9 @@
     "title": "[CLIENT:STC] Evaluate Migration of ingress-paz to CNP 2.0",
     "summary": "The current ingress-paz service is already deployed on AKS but operates outside of the CNP 2.0 (precursor to Aurora) cluster configuration and governance model.\nThis issue tracks an assessment to determine whether the benefits of migrating ingress-paz into the standardized CNP 2.0 AKS environment justify the required effort and disruption.",
     "category": "Clients",
-    "client": "SSC-Aurora",
+    "client": "Aurora",
     "status": "Todo",
-    "priority": "High",
+    "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/20"
   },
@@ -85,7 +75,7 @@
     "category": "Clients",
     "client": "DND",
     "status": "Todo",
-    "priority": "High",
+    "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/21"
   },
@@ -95,7 +85,7 @@
     "category": "Clients",
     "client": "DND",
     "status": "Todo",
-    "priority": "High",
+    "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/22"
   },
@@ -103,9 +93,9 @@
     "title": "[AUR:DOCS] Aurora Platform Documentation",
     "summary": "Track the creation and maintenance of high-level Aurora documentation and reference materials. This includes architectural overviews, diagrams, and explanatory content that describe key concepts such as multi-tenancy, Namespace-as-a-Service (NaaS), security boundaries, and traffic isolation within the Aurora platform.",
     "category": "Documentation",
-    "client": "SSC-Aurora",
+    "client": "Aurora",
     "status": "Todo",
-    "priority": "High",
+    "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/23"
   }
