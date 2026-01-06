@@ -28,6 +28,8 @@ Each quarter reflects a concentration of effort rather than a fixed commitment t
 
 {{< roadmap >}}
 
+For a complete and up-to-date view of all roadmap items, including detailed discussion and history, please request access to the [Aurora GitHub Project](https://github.com/orgs/gccloudone-aurora/projects/1).
+
 ## Change is expected
 
 Aurora is a living platform shaped by departmental demand, security requirements, operational maturity, and lessons learned through real-world adoption.
