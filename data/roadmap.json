@@ -31,7 +31,7 @@
   },
   {
     "title": "[CLIENT:STC] Update all Horizontal Services",
-    "summary": "#3 ",
+    "summary": "All horizontal services should be reviewed, modernized, and kept in sync with current approved versions.\nThis includes ensuring consistent patching, configuration alignment, and version parity across management and client environments.",
     "category": "Clients",
     "client": "STC",
     "status": "Todo",
