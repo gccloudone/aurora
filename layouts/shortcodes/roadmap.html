@@ -1,0 +1,65 @@
+<section class="mb-400">
+
+  {{ $items := site.Data.roadmap }}
+
+  {{/* Initialize groups */}}
+  {{ $.Scratch.Delete "groups" }}
+  {{ $.Scratch.Set "groups" (dict) }}
+
+  {{/* Build groups safely (NO append) */}}
+  {{ range $items }}
+    {{ $cat := .category | default "Other" }}
+    {{ $groups := $.Scratch.Get "groups" }}
+
+    {{ if not (isset $groups $cat) }}
+      {{ $.Scratch.SetInMap "groups" $cat (slice .) }}
+    {{ else }}
+      {{ $existing := index $groups $cat }}
+
+      {{/* Rebuild slice explicitly */}}
+      {{ $new := slice }}
+      {{ range $existing }}
+        {{ $new = $new | append . }}
+      {{ end }}
+      {{ $new = $new | append . }}
+
+      {{ $.Scratch.SetInMap "groups" $cat $new }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Render */}}
+  {{ $groups := $.Scratch.Get "groups" }}
+
+  {{ range $cat, $list := $groups }}
+    <gcds-details details-title="{{ $cat }}">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Epic</th>
+            <th scope="col">Client / Partner</th>
+            <th scope="col">Status</th>
+            <th scope="col">Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $list }}
+          <tr>
+            <td>
+              <strong>
+                <a href="{{ .url }}" target="_blank" rel="noopener">
+                  {{ .title }}
+                </a>
+              </strong><br>
+              <span class="text-sm">{{ .summary }}</span>
+            </td>
+            <td>{{ .client }}</td>
+            <td>{{ .status }}</td>
+            <td>{{ .priority }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </gcds-details>
+  {{ end }}
+
+</section>
