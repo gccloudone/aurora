@@ -168,5 +168,15 @@
     "priority": "High",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/29"
+  },
+  {
+    "title": "[CLIENT:SSC:MySSC] Onboard the MySSC Team to NaaS",
+    "summary": "Leverage the MySSC team's onboarding to validate Aurora's integration workflows, processes, and platform experience with the NaaS. This initiative serves as the first Proof-of-Concept (PoC) test of Aurora's platform, ensuring seamless client onboarding while identifying operational improvements.",
+    "category": "Clients",
+    "client": "SSC",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/30"
   }
 ]
