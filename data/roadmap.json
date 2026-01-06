@@ -108,5 +108,15 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/90"
+  },
+  {
+    "title": "[CLIENT:DND] Support for DND // Phase 2",
+    "summary": "Provide dedicated support and collaboration to the Department of National Defence (DND) and the Canadian Armed Forces (CAF) to port the validated Aurora + Kubeflow baseline from the SSC enterprise tenant into DND’s cloud tenant, fully aligned with DND’s landing zone architecture, network controls, and security governance.",
+    "category": "Clients",
+    "client": "DND",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/27"
   }
 ]
