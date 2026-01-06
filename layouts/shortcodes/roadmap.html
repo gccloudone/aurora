@@ -1,0 +1,237 @@
+<section class="mb-400">
+
+  {{ $items := site.Data.roadmap }}
+
+  {{/* Icons */}}
+  {{ $priorityIcons := dict
+    "Low"    "🟢"
+    "Medium" "🟡"
+    "High"   "🔴"
+  }}
+
+  {{ $statusIcons := dict
+    "Todo" "📝"
+    "In Progress" "🔄"
+    "Blocked" "⛔"
+    "In Review" "👀"
+    "Done" "✅"
+  }}
+
+  {{/* Quarter order */}}
+  {{ $quarters := slice "Q1 2026" "Q2 2026" "Q3 2026" "Q4 2026" }}
+
+  {{ $quarterLabels := dict
+    "Q1 2026" "Quarter 1: January 2026 – March 2026"
+    "Q2 2026" "Quarter 2: April 2026 – June 2026"
+    "Q3 2026" "Quarter 3: July 2026 – September 2026"
+    "Q4 2026" "Quarter 4: October 2026 – December 2026"
+  }}
+
+  {{/* Group items by quarter */}}
+  {{ $.Scratch.Set "byQuarter" (dict) }}
+
+  {{ range $items }}
+    {{ $q := .quarter | default "Unscheduled" }}
+    {{ $qs := $.Scratch.Get "byQuarter" }}
+
+    {{ if not (isset $qs $q) }}
+      {{ $.Scratch.SetInMap "byQuarter" $q (slice .) }}
+    {{ else }}
+      {{ $existing := index $qs $q }}
+      {{ $new := slice }}
+      {{ range $existing }}{{ $new = $new | append . }}{{ end }}
+      {{ $new = $new | append . }}
+      {{ $.Scratch.SetInMap "byQuarter" $q $new }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Render quarters */}}
+  {{ range $quarters }}
+    {{ $q := . }}
+    {{ $quarterItems := index ($.Scratch.Get "byQuarter") $q }}
+
+    {{ if $quarterItems }}
+    <gcds-details details-title="{{ index $quarterLabels $q }}">
+
+      {{/* ---------------- AURORA (TOP) ---------------- */}}
+      {{ $.Scratch.Set "aurora" (slice) }}
+
+      {{ range $quarterItems }}
+        {{ if and (ne .category "Clients") (ne .category "GC Secure Artifacts") }}
+          {{ $aur := $.Scratch.Get "aurora" }}
+          {{ $aur = $aur | append . }}
+          {{ $.Scratch.Set "aurora" $aur }}
+        {{ end }}
+      {{ end }}
+
+      {{ $auroraItems := $.Scratch.Get "aurora" }}
+      {{ if $auroraItems }}
+
+      <gcds-details details-title="Aurora">
+
+        {{/* Group Aurora by category */}}
+        {{ $.Scratch.Set "byAuroraCat" (dict) }}
+
+        {{ range $auroraItems }}
+          {{ $cat := .category | default "Other" }}
+          {{ $ac := $.Scratch.Get "byAuroraCat" }}
+
+          {{ if not (isset $ac $cat) }}
+            {{ $.Scratch.SetInMap "byAuroraCat" $cat (slice .) }}
+          {{ else }}
+            {{ $existing := index $ac $cat }}
+            {{ $new := slice }}
+            {{ range $existing }}{{ $new = $new | append . }}{{ end }}
+            {{ $new = $new | append . }}
+            {{ $.Scratch.SetInMap "byAuroraCat" $cat $new }}
+          {{ end }}
+        {{ end }}
+
+        {{ range $cat, $list := ($.Scratch.Get "byAuroraCat") }}
+
+        <h4 class="mt-300 mb-200">{{ $cat }}</h4>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Epic</th>
+              <th scope="col">Client / Partner</th>
+              <th scope="col">Status</th>
+              <th scope="col">Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range $list }}
+            <tr>
+              <td>
+                <strong>
+                  <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
+                </strong><br>
+                <span class="text-sm">{{ .summary }}</span>
+              </td>
+              <td>{{ .client }}</td>
+              <td>{{ index $statusIcons .status | default "📝" }} {{ .status }}</td>
+              <td>{{ index $priorityIcons .priority | default "⚪" }} {{ .priority }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+
+        {{ end }}
+
+      </gcds-details>
+      {{ end }}
+
+      {{/* ---------------- CLIENTS (UNCHANGED) ---------------- */}}
+      {{ $.Scratch.Set "clients" (slice) }}
+      {{ range $quarterItems }}
+        {{ if eq .category "Clients" }}
+          {{ $c := $.Scratch.Get "clients" }}
+          {{ $c = $c | append . }}
+          {{ $.Scratch.Set "clients" $c }}
+        {{ end }}
+      {{ end }}
+
+      {{ $clientItems := $.Scratch.Get "clients" }}
+      {{ if $clientItems }}
+
+      <gcds-details details-title="Clients">
+
+        {{ $.Scratch.Set "byDept" (dict) }}
+
+        {{ range $clientItems }}
+          {{ $dept := .client | default "Other" }}
+          {{ $deps := $.Scratch.Get "byDept" }}
+
+          {{ if not (isset $deps $dept) }}
+            {{ $.Scratch.SetInMap "byDept" $dept (slice .) }}
+          {{ else }}
+            {{ $existing := index $deps $dept }}
+            {{ $new := slice }}
+            {{ range $existing }}{{ $new = $new | append . }}{{ end }}
+            {{ $new = $new | append . }}
+            {{ $.Scratch.SetInMap "byDept" $dept $new }}
+          {{ end }}
+        {{ end }}
+
+        {{ range $dept, $deptItems := ($.Scratch.Get "byDept") }}
+
+        <h4 class="mt-300 mb-200">{{ $dept }}</h4>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Epic</th>
+              <th scope="col">Status</th>
+              <th scope="col">Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range $deptItems }}
+            <tr>
+              <td>
+                <strong>
+                  <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
+                </strong><br>
+                <span class="text-sm">{{ .summary }}</span>
+              </td>
+              <td>{{ index $statusIcons .status | default "📝" }} {{ .status }}</td>
+              <td>{{ index $priorityIcons .priority | default "⚪" }} {{ .priority }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+
+        {{ end }}
+
+      </gcds-details>
+      {{ end }}
+
+      {{/* ---------------- GC SECURE ARTIFACTS (UNCHANGED) ---------------- */}}
+      {{ $.Scratch.Set "gcsa" (slice) }}
+      {{ range $quarterItems }}
+        {{ if eq .category "GC Secure Artifacts" }}
+          {{ $g := $.Scratch.Get "gcsa" }}
+          {{ $g = $g | append . }}
+          {{ $.Scratch.Set "gcsa" $g }}
+        {{ end }}
+      {{ end }}
+
+      {{ $gcsaItems := $.Scratch.Get "gcsa" }}
+      {{ if $gcsaItems }}
+
+      <gcds-details details-title="GC Secure Artifacts">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Epic</th>
+              <th scope="col">Client / Partner</th>
+              <th scope="col">Status</th>
+              <th scope="col">Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range $gcsaItems }}
+            <tr>
+              <td>
+                <strong>
+                  <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
+                </strong><br>
+                <span class="text-sm">{{ .summary }}</span>
+              </td>
+              <td>{{ .client }}</td>
+              <td>{{ index $statusIcons .status | default "📝" }} {{ .status }}</td>
+              <td>{{ index $priorityIcons .priority | default "⚪" }} {{ .priority }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </gcds-details>
+      {{ end }}
+
+    </gcds-details>
+    {{ end }}
+
+  {{ end }}
+
+</section>

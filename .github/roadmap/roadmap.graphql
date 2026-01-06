@@ -1,0 +1,45 @@
+query AuroraRoadmap {
+  organization(login: "gccloudone-aurora") {
+    projectV2(number: 1) {
+      items(first: 100) {
+        nodes {
+          content {
+            __typename
+            ... on Issue {
+              title
+              body
+              url
+              issueType { name }
+            }
+            ... on DraftIssue {
+              title
+              body
+            }
+          }
+          fieldValues(first: 20) {
+            nodes {
+              ... on ProjectV2ItemFieldSingleSelectValue {
+                name
+                field {
+                  ... on ProjectV2FieldCommon { name }
+                }
+              }
+              ... on ProjectV2ItemFieldTextValue {
+                text
+                field {
+                  ... on ProjectV2FieldCommon { name }
+                }
+              }
+              ... on ProjectV2ItemFieldIterationValue {
+                title
+                field {
+                  ... on ProjectV2FieldCommon { name }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+name: Update Roadmap
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-roadmap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch roadmap from GitHub GraphQL
+        env:
+          GITHUB_TOKEN: ${{ secrets.ROADMAP_TOKEN }}
+        run: |
+          jq -Rs '{query: .}' .github/roadmap/roadmap.graphql \
+            | curl -s https://api.github.com/graphql \
+              -H "Authorization: Bearer $GITHUB_TOKEN" \
+              -H "Content-Type: application/json" \
+              -d @- \
+            > raw.json
+
+      - name: Generate roadmap.json
+        run: |
+          jq -f .github/roadmap/roadmap.jq raw.json > data/roadmap.json
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git config user.name "aurora-bot"
+          git config user.email "aurora-bot@users.noreply.github.com"
+          git add data/roadmap.json
+          git commit -m "chore: update roadmap"
+          git push
