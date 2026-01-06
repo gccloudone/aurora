@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-roadmap:
@@ -31,15 +32,38 @@ jobs:
         run: |
           jq -f .github/roadmap/roadmap.jq raw.json > data/roadmap.json
 
-      - name: Commit changes
+      - name: Commit changes to a new branch
         run: |
           if git diff --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-
           git config user.name "aurora-bot"
           git config user.email "aurora-bot@users.noreply.github.com"
+          BRANCH_NAME="roadmap-update-$(date +'%Y-%m-%d')"
+          git checkout -b $BRANCH_NAME
           git add data/roadmap.json
           git commit -m "chore: update roadmap"
-          git push
+          git push origin $BRANCH_NAME
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create a pull request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH_NAME="roadmap-update-$(date +'%Y-%m-%d')"
+          BASE_BRANCH="main"
+          PR_TITLE="Automated Update to Roadmap"
+          PR_BODY="This is an automated update to the roadmap file."
+
+          curl -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -d "$(jq -n \
+              --arg title "$PR_TITLE" \
+              --arg head "$BRANCH_NAME" \
+              --arg base "$BASE_BRANCH" \
+              --arg body "$PR_BODY" \
+              '{title: $title, head: $head, base: $base, body: $body}')" \
+            https://api.github.com/repos/${{ github.repository }}/pulls
