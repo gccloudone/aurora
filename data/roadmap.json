@@ -128,5 +128,15 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/28"
+  },
+  {
+    "title": "[AUR:SECURITY] SIA for Aurora on Azure",
+    "summary": "The purpose of this epic is to identify, gather, and provide the necessary evidence to demonstrate compliance with security controls for Aurora operating on Azure. This includes ensuring that all control requirements are reviewed, evidence is captured systematically, and submitted for verification in alignment with organizational policies.",
+    "category": "Security",
+    "client": "SSC",
+    "status": "In Progress",
+    "priority": "High",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/29"
   }
 ]
