@@ -10,11 +10,15 @@ disableCharacterlimit: false
 
 ## Themes for 2025 / 2026
 
+<!-- markdownlint-disable MD033 -->
+
 <ol class="list-disc ps-400 mb-300">
   <li>Deliver a unified, secure application hosting platform across public and private clouds</li>
   <li>Reduce duplication by centralizing common platform capabilities and horizontal services</li>
   <li>Support departments through a community-driven, open, and standards-based approach</li>
 </ol>
+
+<!-- markdownlint-enable MD033 -->
 
 The roadmap below highlights **major epics and strategic initiatives** currently tracked for Aurora.
 Items are grouped by theme rather than fixed delivery dates to reflect the evolving nature of platform work.
