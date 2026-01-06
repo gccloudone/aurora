@@ -72,7 +72,7 @@
   {
     "title": "[CSP:PC] Onboard Aurora onto GC Private Cloud",
     "summary": "Extend Aurora’s footprint to the GC Private Cloud (OpenStack) by integrating with the work done in Rancher which provisions clusters on the fly using OpenTofu.",
-    "category": "Clients",
+    "category": "Partners",
     "client": "SSC",
     "status": "In Progress",
     "priority": "Medium",
