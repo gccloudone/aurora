@@ -184,9 +184,19 @@
     "summary": "Facilitate the organization, coordination, and delivery of Aurora community meetups to promote collaboration, knowledge sharing, and meaningful engagement among stakeholders. This includes the logistical planning, communication strategies, and content development needed to provide a welcoming, inclusive, and impactful experience for all participants.",
     "category": "Community",
     "client": "SSC",
+    "status": "In Progress",
+    "priority": "High",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/31"
+  },
+  {
+    "title": "[AUR:NETWORKING] Resolves issues around Cilium BYOCNI and VNET Integration",
+    "summary": "Since we are using Cilium as our CNI via BYOCNI on AKS (not Azure CNI), enabling VNet integration modifies the underlying Azure networking by introducing requirements for routing, which conflicts with Cilium's networking model. Without proper configuration, this disrupts connectivity, as Azure assumes default VNet routing. To resolve this, ensure that Cilium's Azure-specific configurations (e.g., IPAM mode) are properly set up, verify that the necessary Azure route tables align with Cilium's routing, adjust NSGs if needed, and use a route server to publish routes dynamically (e.g., via BGP) between the AKS subnet and the VNet to re-establish seamless connectivity.",
+    "category": "Networking",
+    "client": "Aurora",
     "status": "Todo",
     "priority": "Medium",
     "quarter": "Q1 2026",
-    "url": "https://github.com/gccloudone-aurora/roadmap/issues/31"
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/32"
   }
 ]
