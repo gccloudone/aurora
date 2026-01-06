@@ -198,5 +198,15 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/32"
+  },
+  {
+    "title": "[CSP:AZURE] Enhance ESLZ integration with further automation",
+    "summary": "We need to further optimize and automate the integration of Aurora with Azure's Enterprise-Scale Landing Zone (ESLZ). The goal is to streamline and further automate all processes governed by our existing SOPs, significantly reducing ESLZ deployment and AKS cluster creation times to under one hour. This will improve operational efficiency, scalability, and consistency in Azure deployments while aligning with Aurora’s standards for automation, security, and GitOps.",
+    "category": "Partners",
+    "client": "SSC",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/33"
   }
 ]
