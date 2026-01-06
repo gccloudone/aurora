@@ -98,5 +98,15 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/23"
+  },
+  {
+    "title": "[SERVICE:GCSA] Ensure All Aurora Platform Charts and Images Are Proxied",
+    "summary": "The Aurora Platform Charts currently support proxying through GC Secure Artifacts (GCSA) but default to using public OSS sources for Helm charts and container images.",
+    "category": "GC Secure Artifacts",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/90"
   }
 ]
