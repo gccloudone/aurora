@@ -40,6 +40,16 @@
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/3"
   },
   {
+    "title": "[CLIENT:STC] Migrate GitLab and Infrastructure Runners to MGMT PROD",
+    "summary": "The GitLab instance and infrastructure runners are the last workloads which remain in CNP 1.0. Due to this we can't yet delete the k8s-cancentral-01-mgmt resource group which is all that remains. This issue tracks the migration of these workloads to the mgmt-prod-cc-00 AKS cluster.",
+    "category": "Clients",
+    "client": "STC",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/7"
+  },
+  {
     "title": "[CLIENT:STC] Update all Horizontal Services",
     "summary": "All horizontal services should be reviewed, modernized, and kept in sync with current approved versions.\nThis includes ensuring consistent patching, configuration alignment, and version parity across management and client environments.",
     "category": "Clients",
@@ -48,6 +58,16 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/13"
+  },
+  {
+    "title": "[CLIENT:STC] Migrate AAW (Dev/Prod) to CNP 2.0 Terraform",
+    "summary": "The AAW (Analytics as a Workspace) environments for Dev and Prod currently run on older CNP infrastructure definitions. To improve maintainability, consistency, and security alignment, these environments must be migrated to the CNP 2.0 Terraform modules, which serve as the current baseline for management and client clusters.",
+    "category": "Clients",
+    "client": "STC",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/17"
   },
   {
     "title": "[CSP:PC] Onboard Aurora onto GC Private Cloud",
