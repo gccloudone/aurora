@@ -84,7 +84,7 @@
     "summary": "This epic tracks the alignment, validation, and adaptation of Kubeflow Manifests for DND under the Defence Analytics, Trust, and Unified Mission-Insight (DATUM) initiative. ",
     "category": "Clients",
     "client": "DND",
-    "status": "Todo",
+    "status": "Done",
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/22"
