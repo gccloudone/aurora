@@ -1,5 +1,15 @@
 [
   {
+    "title": "[AUR:COMPONENT] Add Backstage (Goose) to Aurora",
+    "summary": "We need to ensure the Backstage instance (being developed by the Platform Architecture team) is added under Aurora Platform Charts to serve as the main Front Door to the Aurora platform. This deployment must align with Azure Enterprise Landing Zone (ESLZ) standards, providing comprehensive support for both NaaS onboarding and Cluster Creation workflows as per the Azure team’s requirements for the initial landing zone specifications.",
+    "category": "Platform Components",
+    "client": "SSC",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/22"
+  },
+  {
     "title": "[SERVICE:GCSA] Establish curated artifact service across SSC + GoC",
     "summary": "Stand up GC Secure Artifacts (GCSA) as the government-wide trusted binary and container image repository, providing a single, curated source for secure, approved software components across all departments.",
     "category": "GC Secure Artifacts",
@@ -43,7 +53,7 @@
     "title": "[CSP:PC] Onboard Aurora onto GC Private Cloud",
     "summary": "Extend Aurora’s footprint to the GC Private Cloud (OpenStack) by integrating with the work done in Rancher which provisions clusters on the fly using OpenTofu.",
     "category": "Clients",
-    "client": "GC Private Cloud",
+    "client": "SSC",
     "status": "In Progress",
     "priority": "Medium",
     "quarter": "Q1 2026",
