@@ -4,7 +4,7 @@
     "summary": "Stand up GC Secure Artifacts (GCSA) as the government-wide trusted binary and container image repository, providing a single, curated source for secure, approved software components across all departments.",
     "category": "GC Secure Artifacts",
     "client": "Aurora",
-    "status": "Todo",
+    "status": "In Progress",
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone/artifacts-artefacts/issues/27"
@@ -24,7 +24,7 @@
     "summary": "Provide ongoing operational support to Statistics Canada (STC) as they continue operating and maintaining the Cloud Native Platform (CNP) — Aurora’s precursor — within the broader GC Cloud One governance model. This epic focuses on coordination, technical support, and transition planning between the Aurora and STC teams, ensuring CNP’s continued stability, extending automation, and preparing for a phased transition to Aurora.",
     "category": "Clients",
     "client": "STC",
-    "status": "Todo",
+    "status": "In Progress",
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/3"
@@ -44,7 +44,7 @@
     "summary": "Extend Aurora’s footprint to the GC Private Cloud (OpenStack) by integrating with the work done in Rancher which provisions clusters on the fly using OpenTofu.",
     "category": "Clients",
     "client": "GC Private Cloud",
-    "status": "Todo",
+    "status": "In Progress",
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
@@ -54,7 +54,7 @@
     "summary": "Migrate existing AKS configurations from legacy AAD Pod Identity to the modern Azure Workload Identity model.\nAAD Pod Identity is deprecated and will be retired in the near future. ",
     "category": "Platform Components",
     "client": "Aurora",
-    "status": "Todo",
+    "status": "In Progress",
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/35"
@@ -74,8 +74,8 @@
     "summary": "Provide dedicated support and collaboration to the Department of National Defence (DND) and the Canadian Armed Forces (CAF) in standing up a sovereign, defence-grade data analytics platform built on Aurora and Kubeflow.",
     "category": "Clients",
     "client": "DND",
-    "status": "Todo",
-    "priority": "Medium",
+    "status": "In Progress",
+    "priority": "High",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/21"
   },
