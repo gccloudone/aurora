@@ -208,5 +208,15 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/33"
+  },
+  {
+    "title": "[CLIENT:FIN] Provision AKS Cluster and Deploy SAS Viya",
+    "summary": "The Department of Finance has submitted their CBR ID (2288) for the SAS Viya configured Kubernetes environment on Aurora. We are still waiting for a Cloud Request against the CBR as the last step before handing off to SSC.",
+    "category": "Clients",
+    "client": "FIN",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/34"
   }
 ]
