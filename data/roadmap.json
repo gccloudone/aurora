@@ -30,7 +30,7 @@
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/23"
   },
   {
-    "title": "[CSP:Azure] Aurora Platform Charts and Images Are Proxied",
+    "title": "[CSP:AZURE] Aurora Platform Charts and Images Are Proxied",
     "summary": "The Aurora Platform Charts currently support proxying Helm charts and container images through GC Secure Artifacts (GCSA), but default to consuming public open source repositories directly. While this is suitable for development and experimentation, it does not satisfy enterprise compliance, security, or software supply-chain requirements for production deployments.",
     "category": "GC Secure Artifacts",
     "client": "Aurora",
@@ -50,7 +50,7 @@
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/31"
   },
   {
-    "title": "[CSP:Azure] Cilium BYOCNI and VNET Integration",
+    "title": "[CSP:AZURE] Cilium BYOCNI and VNET Integration",
     "summary": "Because the cluster uses Cilium as the CNI via BYOCNI on AKS rather than Azure CNI, enabling VNet integration changes Azure’s routing assumptions. Azure applies default VNet routing that conflicts with Cilium’s eBPF-based networking model, which can disrupt connectivity if not explicitly accounted for.",
     "category": "Networking",
     "client": "Aurora",
