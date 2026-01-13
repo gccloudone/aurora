@@ -1,5 +1,45 @@
 [
   {
+    "title": "[SERVICE:GCSA] Establish curated artifact service across SSC + GoC",
+    "summary": "Stand up GC Secure Artifacts (GCSA) as the government-wide trusted repository for binaries, container images, and related software artifacts, providing a single, curated source of secure and approved components for all departments. GCSA will centralize artifact storage, provenance, and policy enforcement, reducing duplication across departments and ensuring consistent application of security and compliance controls.",
+    "category": "GC Secure Artifacts",
+    "client": "Aurora",
+    "status": "In Progress",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone/artifacts-artefacts/issues/27"
+  },
+  {
+    "title": "[CSP:PC] Onboard Aurora onto GC Private Cloud",
+    "summary": "Extend Aurora to the GC Private Cloud (OpenStack) by integrating with the Rancher workflow that provisions RKE2 Kubernetes clusters on demand using OpenTofu, aiming where possible to align with the Azure implementation to minimize context switching. Azure-native services used in Azure, such as Azure Key Vault, will be replaced with Vault in the private cloud.",
+    "category": "Partners",
+    "client": "Aurora",
+    "status": "In Progress",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
+  },
+  {
+    "title": "[AUR:DOCS] Aurora Platform Documentation",
+    "summary": "Track the creation and maintenance of high-level Aurora documentation and reference materials. This includes architectural overviews, diagrams, and explanatory content that describe key concepts such as multi-tenancy, Namespace-as-a-Service (NaaS), security boundaries, and traffic isolation within the Aurora platform.",
+    "category": "Documentation",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/23"
+  },
+  {
+    "title": "[CSP:AZURE] Aurora Platform Charts and Images Are Proxied",
+    "summary": "The Aurora Platform Charts currently support proxying Helm charts and container images through GC Secure Artifacts (GCSA), but default to consuming public open source repositories directly. While this is suitable for development and experimentation, it does not satisfy enterprise compliance, security, or software supply-chain requirements for production deployments.",
+    "category": "GC Secure Artifacts",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/36"
+  },
+  {
     "title": "[AUR:COMMUNITY] Planning and Execution of Aurora Community Meetups",
     "summary": "Facilitate the organization, coordination, and delivery of Aurora community meetups to promote collaboration, knowledge sharing, and meaningful engagement among stakeholders. This includes the logistical planning, communication strategies, and content development needed to provide a welcoming, inclusive, and impactful experience for all participants.",
     "category": "Community",
@@ -8,5 +48,25 @@
     "priority": "High",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/31"
+  },
+  {
+    "title": "[CSP:AZURE] Cilium BYOCNI and VNET Integration",
+    "summary": "Because the cluster uses Cilium as the CNI via BYOCNI on AKS rather than Azure CNI, enabling VNet integration changes Azure’s routing assumptions. Azure applies default VNet routing that conflicts with Cilium’s eBPF-based networking model, which can disrupt connectivity if not explicitly accounted for.",
+    "category": "Networking",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/32"
+  },
+  {
+    "title": "[CSP:AZURE] Enhance ESLZ integration with further automation",
+    "summary": "While much of the process is already automated and both Aurora and the Azure team operate under established SOPs, there are still integration gaps that require tighter coordination. For example, Backstage must reliably capture and validate the input values required by the Azure team, trigger the appropriate requests, and ensure downstream automation, such as repository creation via API, is executed end to end.",
+    "category": "Partners",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/33"
   }
 ]
