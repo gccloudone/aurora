@@ -1,5 +1,15 @@
 [
   {
+    "title": "[AUR:COMPONENT] Add Backstage (Goose) to Aurora",
+    "summary": "The Backstage instance developed by the Platform Architecture team must be deployed as part of the Aurora Platform Charts and serve as the primary front door to the Aurora platform. Aurora must support both a community open source Backstage distribution and a GC Cloud One tailored Backstage, with differences implemented through configuration, plugins, and build parameters rather than separate architectures.",
+    "category": "Platform Components",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/22"
+  },
+  {
     "title": "[SERVICE:GCSA] Establish curated artifact service across SSC + GoC",
     "summary": "Stand up GC Secure Artifacts (GCSA) as the government-wide trusted repository for binaries, container images, and related software artifacts, providing a single, curated source of secure and approved components for all departments. GCSA will centralize artifact storage, provenance, and policy enforcement, reducing duplication across departments and ensuring consistent application of security and compliance controls.",
     "category": "GC Secure Artifacts",
@@ -10,6 +20,16 @@
     "url": "https://github.com/gccloudone/artifacts-artefacts/issues/27"
   },
   {
+    "title": "[AUR:COMPONENT] Upgrade Istio and Transition to Ambient Mesh",
+    "summary": "We need to upgrade Istio from version 1.16.x to an Ambient Mesh capable release at version 1.24.x or higher in order to modernize Aurora’s service mesh architecture. The current sidecar based model introduces operational complexity, higher resource overhead, and upgrade risk at scale. Moving to a supported Ambient Mesh release positions Aurora on a forward looking Istio architecture that is actively developed, better aligned with upstream direction, and suitable for long term multi cloud operations.",
+    "category": "Platform Components",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/33"
+  },
+  {
     "title": "[CSP:PC] Onboard Aurora onto GC Private Cloud",
     "summary": "Extend Aurora to the GC Private Cloud (OpenStack) by integrating with the Rancher workflow that provisions RKE2 Kubernetes clusters on demand using OpenTofu, aiming where possible to align with the Azure implementation to minimize context switching. Azure-native services used in Azure, such as Azure Key Vault, will be replaced with Vault in the private cloud.",
     "category": "Partners",
@@ -18,6 +38,16 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
+  },
+  {
+    "title": "[AUR:COMPONENT] AAD Pod Identity to Workload Identity",
+    "summary": "Migrate existing AKS configurations from the legacy Azure AD Pod Identity mechanism to the modern Azure Workload Identity model. Azure AD Pod Identity is deprecated and approaching retirement, and continued reliance on it introduces operational risk, limits future platform upgrades, and creates unnecessary complexity in identity management across clusters.",
+    "category": "Platform Components",
+    "client": "Aurora",
+    "status": "In Progress",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/35"
   },
   {
     "title": "[AUR:DOCS] Aurora Platform Documentation",
