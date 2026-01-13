@@ -28,7 +28,15 @@ Each quarter reflects a concentration of effort rather than a fixed commitment t
 
 {{< roadmap >}}
 
-For a complete and up-to-date view of all roadmap items, including detailed discussion and history, please request access to the [Aurora GitHub Project](https://github.com/orgs/gccloudone-aurora/projects/1).
+For a complete and up-to-date view of all roadmap items, including detailed discussion and history, please request access to:
+
+- [Aurora GitHub Project](https://github.com/orgs/gccloudone-aurora/projects/1)
+
+In addition to this public view, a more detailed internal roadmap is maintained for Shared Services Canada. This internal view includes additional initiatives, sequencing details, and items that cannot be shared publicly due to security considerations, client specificity, or operational sensitivity. Access to this roadmap is restricted to SSC teams and partners with a need to know and is available at:
+
+- [Private Roadmap](https://aurora.cloud-nuage.canada.ca)
+
+While the internal roadmap contains more detailed planning and delivery information, it is informed by the same platform themes and priorities reflected in the public roadmap. Feedback and collaboration from the broader community continue to influence both views as the platform evolves.
 
 ## Change is expected
 
