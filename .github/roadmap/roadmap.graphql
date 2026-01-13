@@ -10,6 +10,11 @@ query AuroraRoadmap {
               body
               url
               issueType { name }
+              labels(first: 20) {
+                nodes {
+                  name
+                }
+              }
             }
             ... on DraftIssue {
               title

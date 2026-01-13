@@ -2,6 +2,10 @@
   .data.organization.projectV2.items.nodes[]
   | select(.content != null)
   | select(.content.issueType.name == "Epic")
+  | select(
+      any(.content.labels.nodes[]?.name;
+          ascii_downcase == "public")
+    )
   | {
       title: .content.title,
       summary: (
