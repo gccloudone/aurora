@@ -21,16 +21,22 @@ weight = 5
   weight = 3
 
   [[main]]
+  name = "Roadmap"
+  parent = "Platform"
+  url = "/roadmap"
+  weight = 5
+
+  [[main]]
   name = "Vision"
   parent = "Platform"
   url = "/vision"
-  weight = 5
+  weight = 7
 
   [[main]]
   name = "Architecture"
   parent = "Platform"
   url = "/architecture"
-  weight = 7
+  weight = 9
 
 [[main]]
 name = "User Guides"
