@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  hugo:
+  - apiVersion: v2
+    appVersion: main
+    created: "2026-01-14T14:52:45.283931229Z"
+    description: A Helm chart for Kubernetes
+    digest: 6e0a8a4e2d2d59057666bc1d7b1a7726441114f811d81ca873aae6b93df11565
+    name: hugo
+    type: application
+    urls:
+    - https://github.com/gccloudone/aurora/releases/download/hugo-0.1.1/hugo-0.1.1.tgz
+    version: 0.1.1
+generated: "2026-01-14T14:52:45.283938243Z"
