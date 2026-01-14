@@ -1,5 +1,5 @@
-# Use Chainguard Go as the base image
-FROM cgr.dev/chainguard/go:latest
+# Use Chainguard Go development image (includes apk)
+FROM cgr.dev/chainguard/go:latest-dev
 
 # Install Hugo Extended binary
 # Replace 0.145.0 with the needed version of Hugo.
