@@ -1,9 +1,8 @@
-# Use Chainguard Go development image (includes apk)
+# Use Chainguard Go development image
 FROM cgr.dev/chainguard/go:latest-dev
 
-# Install Hugo Extended binary
-# Replace 0.145.0 with the needed version of Hugo.
-RUN apk add --no-cache git && \
+# Install tzdata for timezone support
+RUN apk add --no-cache tzdata git wget tar && \
     wget https://github.com/gohugoio/hugo/releases/download/v0.145.0/hugo_extended_0.145.0_Linux-64bit.tar.gz && \
     tar -zxvf hugo_extended_0.145.0_Linux-64bit.tar.gz -C /usr/local/bin && \
     chmod +x /usr/local/bin/hugo && \
