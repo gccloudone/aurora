@@ -19,7 +19,7 @@ RUN chown -R 1000:1000 /src
 COPY . .
 
 # Build the Hugo site
-RUN hugo --minify
+RUN hugo --minify --noBuildLock
 
 # Expose the Hugo default server port (1313)
 EXPOSE 1313
