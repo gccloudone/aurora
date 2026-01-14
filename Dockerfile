@@ -28,4 +28,4 @@ EXPOSE 1313
 ENTRYPOINT ["/usr/local/bin/hugo"]
 
 # Define default CMD arguments for Hugo (these will be passed to ENTRYPOINT)
-CMD ["server", "--bind", "0.0.0.0", "--port", "1313", "--baseURL", "http://localhost", "--watch=false"]
+CMD ["server", "--bind", "0.0.0.0", "--port", "1313", "--baseURL", "http://localhost", "--watch=false", "--noBuildLock"]
