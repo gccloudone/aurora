@@ -37,7 +37,7 @@ target = "assets/watching/hugo_stats.json"
 noJSConfigInAssets = false
 useResourceCacheWhen = 'fallback'
 [build.buildStats]
-enable = true
+enable = false
 [[build.cachebusters]]
 source = 'assets/.*\.(js|ts|jsx|tsx)'
 target = '(js|scripts|javascript)'
