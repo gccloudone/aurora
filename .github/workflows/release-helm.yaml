@@ -1,0 +1,13 @@
+name: Release Helm Charts
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release-helm:
+    uses: gccloudone-aurora/.github/.github/workflows/release-helm.yaml@v1
