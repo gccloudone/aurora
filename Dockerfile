@@ -19,7 +19,7 @@ RUN chown -R 1000:1000 /src
 COPY . .
 
 # Build the Hugo site
-RUN hugo --minify --noBuildLock
+RUN hugo --minify
 
 # Expose the Hugo default server port (1313)
 EXPOSE 1313
@@ -28,4 +28,4 @@ EXPOSE 1313
 ENTRYPOINT ["/usr/local/bin/hugo"]
 
 # Define default CMD arguments for Hugo (these will be passed to ENTRYPOINT)
-CMD ["server", "--bind", "0.0.0.0", "--port", "1313", "--baseURL", "http://localhost", "--watch=false", "--noBuildLock"]
+CMD ["server", "--bind", "0.0.0.0", "--port", "1313", "--baseURL", "http://localhost", "--watch=false", "--noBuildLock", "--disableBuildStats"]
