@@ -1,7 +1,13 @@
-FROM klakegg/hugo:ext-alpine
+# Use Chainguard Go as the base image
+FROM cgr.dev/chainguard/go:latest
 
-RUN apk add git && \
-  git config --global --add safe.directory /src
+# Install Hugo Extended binary
+# Replace 0.145.0 with the needed version of Hugo.
+RUN apk add --no-cache git && \
+    wget https://github.com/gohugoio/hugo/releases/download/v0.145.0/hugo_extended_0.145.0_Linux-64bit.tar.gz && \
+    tar -zxvf hugo_extended_0.145.0_Linux-64bit.tar.gz -C /usr/local/bin && \
+    chmod +x /usr/local/bin/hugo && \
+    rm hugo_extended_0.145.0_Linux-64bit.tar.gz
 
 # Set the working directory inside the container
 WORKDIR /src
