@@ -12,6 +12,9 @@ RUN apk add --no-cache tzdata git && \
 # Set the working directory inside the container
 WORKDIR /src
 
+# Ensure write permissions for the non-root user to avoid permission issues
+RUN chown -R 1000:1000 /src
+
 # Copy the Hugo project files into the container
 COPY . .
 
