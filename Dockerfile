@@ -26,6 +26,13 @@ RUN mkdir -p /var/cache/nginx && \
     mkdir -p /var/cache/nginx/scgi_temp && \
     chown -R 101:101 /var/cache/nginx
 
+# Create a custom nginx.conf and configure the PID location here
+RUN echo 'pid /tmp/nginx.pid;\n\
+events { worker_connections 1024; }\n\
+http {\n\
+    include /etc/nginx/conf.d/*.conf;\n\
+}' > /etc/nginx/nginx.conf
+
 # Set the default NGINX user explicitly (user 101 is NGINX's default non-root user in this image)
 USER 101
 
