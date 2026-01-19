@@ -24,9 +24,7 @@ RUN mkdir -p /var/cache/nginx && \
     mkdir -p /var/cache/nginx/fastcgi_temp && \
     mkdir -p /var/cache/nginx/uwsgi_temp && \
     mkdir -p /var/cache/nginx/scgi_temp && \
-    mkdir -p /run/nginx && \
-    chown -R 101:101 /var/cache/nginx /run /etc/nginx && \
-    chmod -R 755 /run/nginx
+    chown -R 101:101 /var/cache/nginx
 
 # Set the default NGINX user explicitly (user 101 is NGINX's default non-root user in this image)
 USER 101
