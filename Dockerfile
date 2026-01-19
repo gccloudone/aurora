@@ -26,6 +26,12 @@ RUN mkdir -p /var/cache/nginx && \
     mkdir -p /var/cache/nginx/scgi_temp && \
     chown -R 101:101 /var/cache/nginx
 
+# Create the necessary directory for the nginx PID file and fix its permissions
+RUN mkdir -p /run && \
+    touch /run/nginx.pid && \
+    chown 101:101 /run/nginx.pid && \
+    chmod 644 /run/nginx.pid
+
 # Set the default NGINX user explicitly (user 101 is NGINX's default non-root user in this image)
 USER 101
 
