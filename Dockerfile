@@ -19,6 +19,7 @@ FROM nginx:alpine
 # Ensure required directories exist and fix permissions for non-root NGINX user
 RUN mkdir -p /var/cache/nginx/client_temp && \
     mkdir -p /var/cache/nginx/proxy_temp && \
+    mkdir -p /var/cache/nginx/fastcgi_temp && \
     chown -R 101:101 /var/cache/nginx
 
 # Copy NGINX configuration file
