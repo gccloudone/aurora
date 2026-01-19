@@ -16,6 +16,11 @@ RUN hugo --destination /site/public
 # Use the official NGINX image
 FROM nginx:alpine
 
+# Ensure required directories exist and fix permissions for non-root NGINX user
+RUN mkdir -p /var/cache/nginx/client_temp && \
+    mkdir -p /var/cache/nginx/proxy_temp && \
+    chown -R 101:101 /var/cache/nginx
+
 # Copy NGINX configuration file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
