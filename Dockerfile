@@ -48,4 +48,4 @@ WORKDIR /usr/share/nginx/html
 EXPOSE 8080
 
 # Start NGINX
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off; pid /tmp/nginx.pid;"]
