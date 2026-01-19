@@ -1,4 +1,4 @@
-FROM hugomods/hugo:0.145.0
+FROM hugomods/hugo:exts-0.145.0
 
 # Set the working directory
 WORKDIR /site
