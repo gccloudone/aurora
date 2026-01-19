@@ -29,7 +29,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=hugo-builder /site/public /usr/share/nginx/html
 
 # Expose port 80 for HTTP traffic
-EXPOSE 80
+EXPOSE 8080
 
 # Start NGINX
 CMD ["nginx", "-g", "daemon off;"]
