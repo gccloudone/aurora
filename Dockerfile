@@ -11,4 +11,4 @@ COPY . /site
 RUN chown -R 1000:1000 /site
 
 # Default command to run Hugo server
-CMD ["server", "--bind", "0.0.0.0"]
+CMD ["server", "--bind", "0.0.0.0", "--environment", "production"]
