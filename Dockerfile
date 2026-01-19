@@ -15,25 +15,7 @@ RUN chown -R 1000:1000 /site
 RUN hugo --destination /site/public
 
 # NGINX stage
-FROM nginx:alpine
-
-# Create necessary directories and ensure permissions for NGINX user (default user is "101")
-RUN mkdir -p /var/cache/nginx && \
-    mkdir -p /var/cache/nginx/client_temp && \
-    mkdir -p /var/cache/nginx/proxy_temp && \
-    mkdir -p /var/cache/nginx/fastcgi_temp && \
-    mkdir -p /var/cache/nginx/uwsgi_temp && \
-    mkdir -p /var/cache/nginx/scgi_temp && \
-    chown -R 101:101 /var/cache/nginx
-
-# Create the necessary directory for the nginx PID file and fix its permissions
-RUN mkdir -p /run && \
-    touch /run/nginx.pid && \
-    chown 101:101 /run/nginx.pid && \
-    chmod 644 /run/nginx.pid
-
-# Set the default NGINX user explicitly (user 101 is NGINX's default non-root user in this image)
-USER 101
+FROM nginxinc/nginx-unprivileged:stable
 
 # Copy NGINX configuration file (make sure the config does not specify privileged ports, like 80)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
@@ -48,4 +30,4 @@ WORKDIR /usr/share/nginx/html
 EXPOSE 8080
 
 # Start NGINX
-CMD ["nginx", "-g", "daemon off; pid /tmp/nginx.pid;"]
+CMD ["nginx", "-g", "daemon off;"]
