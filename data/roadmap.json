@@ -1,7 +1,7 @@
 [
   {
     "title": "[AUR:COMPONENT] Add Backstage (Goose) to Aurora",
-    "summary": "The Backstage instance developed by the Platform Architecture team must be deployed as part of the Aurora Platform Charts and serve as the primary front door to the Aurora platform. Aurora must support both a community open source Backstage distribution and a GC Cloud One tailored Backstage, with differences implemented through configuration, plugins, and build parameters rather than separate architectures.",
+    "summary": "The Backstage instance developed by the Platform Architecture team needs be deployed as part of the Aurora Platform Charts and serve as the primary front door to the Aurora platform. Aurora must support both a community open source Backstage distribution and a GC Cloud One tailored Backstage, with differences implemented through configuration, plugins, and build parameters rather than separate architectures.",
     "category": "Platform Components",
     "client": "Aurora",
     "status": "Todo",
