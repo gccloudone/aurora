@@ -10,6 +10,6 @@ permissions:
 
 jobs:
   release-helm:
-    uses: gccloudone-aurora/.github/.github/workflows/release-helm.yaml@v1
+    uses: gccloudone-aurora/.github/.github/workflows/release-helm.yaml@v3
     with:
       pages_branch: "gh-pages"
