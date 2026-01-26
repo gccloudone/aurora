@@ -31,7 +31,7 @@ Apply the below manifest to create the following Kubernetes resources:
 1. Namespace
 2. Deployment
 3. Service
-4. Ingress 
+4. Ingress
 5. Certificate
 
    ```sh
@@ -39,6 +39,7 @@ Apply the below manifest to create the following Kubernetes resources:
    ```
 
 Contents of the test-cert-issuance.yaml manifest
+
    ```sh
 ---
 # Create Namespace
