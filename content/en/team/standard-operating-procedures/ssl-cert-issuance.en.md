@@ -24,22 +24,22 @@ Before testing, ensure the following:
 - The **kubectl CLI** is installed.
 - Access to connect to the target Aurora cluster is granted.
 
-### Step2:  
+### Steps
 
-Apply the below manifest to create the following Kubernetes resources: 
+Apply the below manifest to create the following Kubernetes resources:
 
-1. Namespace 
-2. Deployment  
-3. Service 
+1. Namespace
+2. Deployment
+3. Service
 4. Ingress 
-5. Certificate 
+5. Certificate
 
-```
-Kubectl apply –f test-cert-issuance.yaml 
-```
+   ```sh
+   Kubectl apply –f test-cert-issuance.yaml 
+   ```
 
 Contents of the test-cert-issuance.yaml manifest
-```
+   ```sh
 ---
 # Create Namespace
 apiVersion: v1
@@ -130,13 +130,13 @@ spec:
     kind: ClusterIssuer
     name: letsencrypt
   secretName: test-cert-app-tls
-```
+   ```
 
 ### Step3: Validate the creation of resources
 
 Check whether all resources defined in the manifest have been created. The `Kind: Certificate` manifest further creates a CertificateRequest and Order to generate the SSL cert and stores in tls.crt and tls.key in a K8s secret.
 
-```
+   ```sh
 > kubens test-cert-issuance
 ✔ Active namespace is "test-cert-issuance"
 
@@ -168,4 +168,4 @@ test-cert-app-certificate-1   True                True    letsencrypt   system:s
 > k get order
 NAME                                    STATE   AGE
 test-cert-app-certificate-1-379287467   valid   86m
-```
+   ```
