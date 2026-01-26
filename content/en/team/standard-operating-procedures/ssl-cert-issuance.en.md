@@ -169,4 +169,3 @@ test-cert-app-certificate-1   True                True    letsencrypt   system:s
 NAME                                    STATE   AGE
 test-cert-app-certificate-1-379287467   valid   86m
 ```
-
