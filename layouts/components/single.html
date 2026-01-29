@@ -45,6 +45,7 @@
 
         {{ else }}
 
+          {{/* Title */}}
           <gcds-heading tag="h1">{{ $component.name }}</gcds-heading>
 
           {{ with $component.alias }}
@@ -53,10 +54,17 @@
             </gcds-text>
           {{ end }}
 
+          {{ with $component.relationships.parent }}
+            <gcds-text text-role="secondary" size="caption">
+              Part of <a href="/components/{{ . }}/">{{ . | title }}</a>
+            </gcds-text>
+          {{ end }}
+
           {{ with $component.descriptions.long }}
             <gcds-text class="my-400">{{ . }}</gcds-text>
           {{ end }}
 
+          {{/* Overview */}}
           <gcds-heading tag="h2">Overview</gcds-heading>
           <gcds-text>
             <strong>Category:</strong> {{ $component.category.hld }}<br>
@@ -65,6 +73,7 @@
             <strong>Version:</strong> {{ $component.deployment.version }}
           </gcds-text>
 
+          {{/* Capabilities */}}
           {{ with $component.capabilities }}
             <gcds-heading tag="h2">Capabilities</gcds-heading>
             <ul>
@@ -74,11 +83,13 @@
             </ul>
           {{ end }}
 
+          {{/* Architecture */}}
           {{ with $component.architecture.role }}
             <gcds-heading tag="h2">Architecture Role</gcds-heading>
             <gcds-text>{{ . }}</gcds-text>
           {{ end }}
 
+          {{/* Deployment */}}
           {{ with $component.deployment }}
             <gcds-heading tag="h2">Deployment</gcds-heading>
             <gcds-text>
@@ -88,6 +99,18 @@
             </gcds-text>
           {{ end }}
 
+          {{/* Implementation (GitHub only) */}}
+          {{ with $component.references.charts }}
+            <gcds-heading tag="h2">Implementation</gcds-heading>
+            <gcds-text>
+              <strong>GitHub:</strong>
+              <a href="{{ .repo }}/tree/main/{{ .path }}">
+                {{ .repo }}/{{ .path }}
+              </a>
+            </gcds-text>
+          {{ end }}
+
+          {{/* Project links */}}
           {{ with $component.project }}
             <gcds-heading tag="h2">Project</gcds-heading>
             <ul>
@@ -103,6 +126,7 @@
             </ul>
           {{ end }}
 
+          {{/* Operational references */}}
           {{ with $component.references }}
             <gcds-heading tag="h2">Operational References</gcds-heading>
             <ul>

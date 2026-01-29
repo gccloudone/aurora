@@ -1,0 +1,85 @@
+name: "Falco"
+slug: "falco"
+alias: "Runtime Security"
+
+category:
+  hld: "Security"
+  type: "Core"
+
+descriptions:
+  short: "Falco provides runtime threat detection for containers and Kubernetes workloads."
+  long: >-
+    Falco is used within Aurora to provide runtime security monitoring and threat
+    detection for Kubernetes workloads. It observes system calls and Kubernetes
+    events to detect abnormal or potentially malicious behavior, such as
+    privilege escalation, unexpected process execution, or suspicious network
+    activity. Falco enables real-time alerting and supports policy-driven runtime
+    enforcement aligned with zero-trust and defense-in-depth security models.
+
+capabilities:
+  - runtime-security
+  - threat-detection
+  - intrusion-detection
+  - kubernetes-security
+  - container-security
+  - observability
+
+project:
+  homepage: "https://falco.org/"
+  documentation: "https://falco.org/docs/"
+  cncf_landscape: "https://landscape.cncf.io/?item=runtime--falco"
+  license: "Apache-2.0"
+
+deployment:
+  status: "deployed"
+  version: "0.x"
+  deployed_in:
+    - "workload-clusters"
+  deployment_model: "Helm-managed Falco with kernel or eBPF driver"
+  ownership:
+    team: "SIG: Security"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Acts as the primary runtime threat detection engine for Kubernetes workloads
+    by monitoring system-level activity and evaluating it against security rules
+    to identify suspicious or non-compliant behavior.
+  control_plane_components:
+    - "falco"
+    - "falco-driver"
+    - "falcoctl"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Alerting systems (SIEM, SOC tooling)"
+    - "Logging and observability platforms"
+  optional_features:
+    - "Custom Falco rules"
+    - "eBPF driver"
+    - "Cloud-native alert outputs"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Kernel or eBPF support"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone/aurora-platform-charts"
+    path: "charts/falco"
+    release_name: "falco"
+  adr:
+    - "ADR-007: Falco as the standard runtime threat detection solution"
+  runbooks:
+    - "Runbook: Falco deployment and upgrade"
+    - "Runbook: Investigating Falco alerts"
+  dashboards:
+    - "Grafana: Falco alerts overview"
+
+metadata:
+  image: "/images/cncf/falco.svg"
+  sidebar: false

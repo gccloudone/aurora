@@ -1,0 +1,88 @@
+name: "Hubble"
+slug: "hubble"
+alias: "Network Flow Observability"
+
+category:
+  hld: "Observability"
+  type: "Core"
+
+descriptions:
+  short: "Hubble provides network flow observability for Kubernetes using eBPF."
+  long: >-
+    Hubble is the observability component of Cilium that provides deep visibility
+    into Kubernetes network traffic using eBPF. It captures network flows at the
+    kernel level and exposes them through APIs, CLI tools, and a web-based UI.
+    Within Aurora, Hubble enables platform operators and application teams to
+    understand service-to-service communication, troubleshoot connectivity
+    issues, and validate network policy behavior without packet capture or
+    intrusive instrumentation.
+
+capabilities:
+  - network-observability
+  - flow-visibility
+  - troubleshooting
+  - security-insight
+  - ebpf
+
+relationships:
+  parent: "cilium"
+  type: "subcomponent"
+
+project:
+  homepage: "https://cilium.io/hubble/"
+  documentation: "https://docs.cilium.io/en/stable/observability/hubble/"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability--hubble"
+  license: "Apache-2.0"
+
+deployment:
+  status: "deployed"
+  version: "1.x"
+  deployed_in:
+    - "workload-clusters"
+  deployment_model: "Enabled as part of the Cilium deployment"
+  ownership:
+    team: "SIG: Networking"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Provides real-time network flow observability by consuming eBPF events
+    emitted by the Cilium dataplane and exposing them through the Hubble API,
+    CLI, and UI.
+  control_plane_components:
+    - "hubble-relay"
+    - "hubble-ui"
+
+integrations:
+  integrates_with:
+    - "Cilium"
+    - "Kubernetes API Server"
+    - "Grafana (flow dashboards)"
+  optional_features:
+    - "Hubble UI"
+    - "Flow metrics"
+    - "RBAC-scoped visibility"
+
+dependencies:
+  requires:
+    - "Cilium"
+    - "Kubernetes"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone/aurora-platform-charts"
+    path: "charts/cilium"
+    release_name: "cilium"
+  adr:
+    - "ADR-009: Hubble as standard network observability layer"
+  runbooks:
+    - "Runbook: Hubble enablement and scaling"
+    - "Runbook: Investigating network flows with Hubble"
+  dashboards:
+    - "Grafana: Hubble network flows overview"
+
+metadata:
+  image: "/images/cncf/hubble.svg"
+  sidebar: false

@@ -1,0 +1,85 @@
+name: "OpenCost"
+slug: "opencost"
+alias: "Kubernetes Cost Monitoring"
+
+category:
+  hld: "Platform Management"
+  type: "Core"
+
+descriptions:
+  short: "OpenCost provides real-time cost allocation and visibility for Kubernetes workloads."
+  long: >-
+    OpenCost is used within Aurora to provide transparent, real-time visibility
+    into the cost of running Kubernetes workloads. It allocates infrastructure
+    and cloud resource costs to namespaces, workloads, and labels, enabling
+    platform operators and client teams to understand consumption patterns,
+    support chargeback or showback models, and make informed decisions about
+    resource usage. OpenCost promotes financial accountability while remaining
+    vendor-neutral and aligned with open-source cost management practices.
+
+capabilities:
+  - cost-visibility
+  - cost-allocation
+  - showback
+  - chargeback
+  - resource-optimization
+  - finops
+
+project:
+  homepage: "https://www.opencost.io/"
+  documentation: "https://www.opencost.io/docs/"
+  cncf_landscape: "https://landscape.cncf.io/?item=finops--opencost"
+  license: "Apache-2.0"
+
+deployment:
+  status: "deployed"
+  version: "1.x"
+  deployed_in:
+    - "management-clusters"
+  deployment_model: "Helm-managed OpenCost deployment"
+  ownership:
+    team: "SIG: Architecture"
+    steward: "Aurora Platform Team"
+  criticality: "medium"
+
+architecture:
+  role: >-
+    Acts as the Kubernetes cost allocation and reporting layer, collecting
+    resource usage metrics and cloud pricing data to attribute costs to
+    workloads, namespaces, and organizational units.
+  control_plane_components:
+    - "opencost"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Metrics providers (Prometheus)"
+    - "Cloud provider pricing APIs"
+    - "Dashboards and reporting tools"
+  optional_features:
+    - "Namespace-level cost allocation"
+    - "Label-based cost attribution"
+    - "Historical cost reporting"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Metrics backend (Prometheus-compatible)"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone/aurora-platform-charts"
+    path: "charts/opencost"
+    release_name: "opencost"
+  adr:
+    - "ADR-013: OpenCost as the standard Kubernetes cost visibility solution"
+  runbooks:
+    - "Runbook: OpenCost deployment and upgrade"
+    - "Runbook: Interpreting cost allocation data"
+  dashboards:
+    - "Grafana: Kubernetes cost overview"
+
+metadata:
+  image: "/images/cncf/opencost.svg"
+  sidebar: false

@@ -1,0 +1,83 @@
+name: "Fluent Bit"
+slug: "fluent-bit"
+alias: "Log Forwarder"
+
+category:
+  hld: "Observability"
+  type: "Core"
+
+descriptions:
+  short: "Fluent Bit is a lightweight log processor and forwarder for Kubernetes and cloud-native environments."
+  long: >-
+    Fluent Bit is used within Aurora as the primary log collection and forwarding
+    agent for Kubernetes clusters. It runs as a DaemonSet on worker nodes,
+    collecting container and system logs, enriching them with Kubernetes
+    metadata, and forwarding them to centralized logging backends. Fluent Bit
+    provides a lightweight, high-performance logging pipeline that supports
+    multi-tenant environments and standardized observability practices across
+    the platform.
+
+capabilities:
+  - logging
+  - log-collection
+  - log-forwarding
+  - observability
+  - kubernetes-metadata
+  - multi-tenant
+
+project:
+  homepage: "https://fluentbit.io/"
+  documentation: "https://docs.fluentbit.io/"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability--fluent-bit"
+  license: "Apache-2.0"
+
+deployment:
+  status: "deployed"
+  version: "2.x"
+  deployed_in:
+    - "workload-clusters"
+  deployment_model: "Helm-managed Fluent Bit DaemonSet"
+  ownership:
+    team: "SIG: Observability"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Acts as the node-level log collection and processing layer for Kubernetes
+    workloads, responsible for reliably shipping logs from containers and system
+    components to centralized observability backends.
+  control_plane_components:
+    - "fluent-bit"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Centralized logging platforms"
+    - "SIEM and security analytics tools"
+  optional_features:
+    - "Log filtering and transformation"
+    - "Multi-destination outputs"
+    - "TLS-secured log transport"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone/aurora-platform-charts"
+    path: "charts/fluent-bit"
+    release_name: "fluent-bit"
+  adr:
+    - "ADR-008: Fluent Bit as standard log forwarding agent"
+  runbooks:
+    - "Runbook: Fluent Bit deployment and upgrade"
+    - "Runbook: Troubleshooting log ingestion issues"
+  dashboards:
+    - "Grafana: Log ingestion and throughput overview"
+
+metadata:
+  image: "/images/cncf/fluentbit.svg"
+  sidebar: false
