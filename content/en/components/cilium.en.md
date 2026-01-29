@@ -1,8 +1,9 @@
 ---
 title: "Cilium"
-alias: "eBPF"
-type: "Core"
-description: "Cilium is a networking, observability, and security solution with an eBPF-based dataplane."
-image: "/images/cncf/cilium.svg"
+slug: "cilium"
+layout: "components/single"
 sidebar: false
+_build:
+  render: always
+  list: never
 ---

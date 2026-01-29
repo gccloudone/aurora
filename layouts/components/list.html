@@ -1,0 +1,89 @@
+{{ define "main" }}
+  {{ $showSidebar := .Site.Params.sidebar }}
+  {{ if isset .Params "sidebar" }}
+    {{ $showSidebar = .Params.sidebar }}
+  {{ end }}
+
+  {{ partial "verify" . }}
+  {{ partial "header" . }}
+
+  <gcds-container size="xl" main-container centered tag="main">
+    <gcds-grid
+      tag="section"
+      columns="1fr"
+      columns-desktop="{{ if $showSidebar }}1fr 3fr{{ else }}1fr{{ end }}"
+      align-items="start"
+      class="hydrated">
+
+      {{ if $showSidebar }}
+        <aside role="complementary">
+          {{ partial "side-navigation" . }}
+        </aside>
+      {{ end }}
+
+      <section class="mb-400">
+        {{ partial "heading" . }}
+
+        {{ $content := .Content | replaceRE `(?s:<p>(.*?)</p>)`
+          (printf "<gcds-text character-limit=\"%v\">$1</gcds-text>"
+          (not (.Page.Params.disableCharacterLimit | default .Site.Params.disableCharacterLimit))) }}
+        {{ $content | safeHTML }}
+
+        <gcds-heading tag="h2">
+          {{ i18n "components_browse" | default "Browse Components" }}
+        </gcds-heading>
+
+        <div class="my-500">
+          <gcds-grid
+            tag="ul"
+            columns="1fr"
+            columns-tablet="1fr 1fr"
+            columns-desktop="1fr 1fr 1fr"
+            gap="400"
+            class="hydrated">
+
+            {{- $components := .Site.Data.catalog -}}
+
+            {{- /*
+                 Use sort for maps; Hugo sorts by the field on the value.
+                 Remove shuffle if you want stable ordering.
+               */ -}}
+            {{- range sort $components "name" -}}
+              {{- $c := . -}}
+
+              <gcds-card
+                card-title="{{ $c.name }}"
+                href="{{ printf "/components/%s/" ($c.slug | default (urlize $c.name)) }}"
+                card-title-tag="h3"
+                badge="{{ $c.category.type }}"
+                img-src="{{ $c.metadata.image }}"
+                img-alt=""
+                role="listitem"
+                class="hydrated">
+
+                {{ with $c.descriptions.short }}
+                  <gcds-text class="hydrated">{{ . }}</gcds-text>
+                {{ end }}
+
+                <gcds-text
+                  text-role="secondary"
+                  size="caption"
+                  margin-bottom="0"
+                  class="hydrated">
+                  {{ with $c.alias }}
+                    <em>Other names: {{ . }}</em>
+                  {{ end }}
+                </gcds-text>
+
+              </gcds-card>
+            {{- end -}}
+
+          </gcds-grid>
+        </div>
+
+        {{ partial "date-modified" . }}
+      </section>
+
+    </gcds-grid>
+  </gcds-container>
+{{ end }}

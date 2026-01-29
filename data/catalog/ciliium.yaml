@@ -1,0 +1,89 @@
+name: "Cilium"
+slug: "cilium"
+alias: "eBPF"
+
+category:
+  hld: "Networking"
+  type: "Core"
+
+descriptions:
+  short: "Cilium provides Kubernetes networking and NetworkPolicy enforcement using an eBPF dataplane."
+  long: >-
+    Cilium is Aurora’s primary Container Network Interface (CNI) and dataplane for
+    Kubernetes workload clusters. It leverages eBPF to deliver high-performance
+    pod networking, fine-grained network policy enforcement, and deep traffic
+    observability through Hubble. Cilium enables advanced networking patterns,
+    including ClusterwideNetworkPolicy and optional BGP-based route advertisement
+    to integrate pod and service networking with enterprise firewalls.
+
+capabilities:
+  - networking
+  - cni
+  - network-policy
+  - microsegmentation
+  - ebpf
+  - observability
+  - bgp
+
+project:
+  homepage: "https://cilium.io/"
+  documentation: "https://docs.cilium.io/"
+  cncf_landscape: "https://landscape.cncf.io/?item=networking--cloud-native-network--cilium"
+  license: "Apache-2.0"
+
+deployment:
+  status: "deployed"
+  version: "1.x"
+  deployed_in:
+    - "workload-clusters"
+  deployment_model: "Helm-managed Cilium with operator"
+  ownership:
+    team: "SIG: Networking"
+    steward: "Aurora Platform Team"
+  criticality: "critical"
+
+architecture:
+  role: >-
+    Provides the primary Kubernetes dataplane responsible for pod networking,
+    service connectivity, and network policy enforcement across Aurora clusters.
+  data_plane: "eBPF"
+  control_plane_components:
+    - "cilium-agent"
+    - "cilium-operator"
+    - "hubble-relay"
+    - "hubble-ui"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Cloud Load Balancers"
+    - "Istio"
+    - "Enterprise firewalls (BGP)"
+  optional_features:
+    - "Hubble UI"
+    - "BGP Control Plane"
+    - "ClusterwideNetworkPolicy"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone/aurora-platform-charts"
+    path: "charts/cilium"
+    release_name: "cilium"
+  adr:
+    - "ADR-001: Cilium as primary CNI"
+    - "ADR-004: BGP-based route propagation"
+  runbooks:
+    - "Runbook: Cilium upgrade procedure"
+    - "Runbook: Hubble troubleshooting"
+  dashboards:
+    - "Grafana: Cilium Overview"
+    - "Grafana: Hubble Flows"
+
+metadata:
+  image: "/images/cncf/cilium.svg"
+  sidebar: false
