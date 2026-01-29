@@ -28,7 +28,7 @@ capabilities:
 project:
   homepage: "https://fluentbit.io/"
   documentation: "https://docs.fluentbit.io/"
-  cncf_landscape: "https://landscape.cncf.io/?item=observability--fluent-bit"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability-and-analysis--observability--fluentd"
   license: "Apache-2.0"
 
 deployment:

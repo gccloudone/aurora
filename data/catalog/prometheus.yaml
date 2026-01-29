@@ -28,7 +28,7 @@ capabilities:
 project:
   homepage: "https://prometheus.io/"
   documentation: "https://prometheus.io/docs/"
-  cncf_landscape: "https://landscape.cncf.io/?item=observability--prometheus"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability-and-analysis--observability--prometheus"
   license: "Apache-2.0"
 
 deployment:

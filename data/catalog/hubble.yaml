@@ -31,7 +31,7 @@ relationships:
 project:
   homepage: "https://cilium.io/hubble/"
   documentation: "https://docs.cilium.io/en/stable/observability/hubble/"
-  cncf_landscape: "https://landscape.cncf.io/?item=observability--hubble"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability-and-analysis--observability--hubble"
   license: "Apache-2.0"
 
 deployment:

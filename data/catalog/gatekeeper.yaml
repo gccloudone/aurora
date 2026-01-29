@@ -28,7 +28,7 @@ capabilities:
 project:
   homepage: "https://open-policy-agent.github.io/gatekeeper/"
   documentation: "https://open-policy-agent.github.io/gatekeeper/website/docs/"
-  cncf_landscape: "https://landscape.cncf.io/?item=security--opa--gatekeeper"
+  cncf_landscape: "https://landscape.cncf.io/?item=cnai--governance-policy-security--opa-gatekeeper"
   license: "Apache-2.0"
 
 deployment:

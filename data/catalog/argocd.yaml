@@ -28,7 +28,7 @@ capabilities:
 project:
   homepage: "https://argo-cd.readthedocs.io/"
   documentation: "https://argo-cd.readthedocs.io/en/stable/"
-  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--continuous-delivery--argo"
+  cncf_landscape: "https://landscape.cncf.io/?item=app-definition-and-development--continuous-integration-delivery--argo"
   license: "Apache-2.0"
 
 deployment:

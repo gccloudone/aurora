@@ -28,7 +28,7 @@ capabilities:
 project:
   homepage: "https://www.opencost.io/"
   documentation: "https://www.opencost.io/docs/"
-  cncf_landscape: "https://landscape.cncf.io/?item=finops--opencost"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability-and-analysis--continuous-optimization--opencost"
   license: "Apache-2.0"
 
 deployment:

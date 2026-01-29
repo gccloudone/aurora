@@ -27,7 +27,7 @@ capabilities:
 project:
   homepage: "https://falco.org/"
   documentation: "https://falco.org/docs/"
-  cncf_landscape: "https://landscape.cncf.io/?item=runtime--falco"
+  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--security-compliance--falco"
   license: "Apache-2.0"
 
 deployment:

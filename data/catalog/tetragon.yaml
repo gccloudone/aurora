@@ -32,7 +32,7 @@ relationships:
 project:
   homepage: "https://tetragon.io/"
   documentation: "https://docs.cilium.io/en/stable/observability/tetragon/"
-  cncf_landscape: "https://landscape.cncf.io/?item=runtime--tetragon"
+  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--security-compliance--tetragon"
   license: "Apache-2.0"
 
 deployment:

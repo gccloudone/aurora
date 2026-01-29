@@ -28,7 +28,7 @@ capabilities:
 project:
   homepage: "https://grafana.com/oss/loki/"
   documentation: "https://grafana.com/docs/loki/"
-  cncf_landscape: "https://landscape.cncf.io/?item=observability--logging--loki"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability-and-analysis--observability--grafana-loki"
   license: "Apache-2.0"
 
 deployment:

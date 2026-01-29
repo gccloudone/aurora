@@ -28,7 +28,7 @@ capabilities:
 project:
   homepage: "https://istio.io/"
   documentation: "https://istio.io/latest/docs/"
-  cncf_landscape: "https://landscape.cncf.io/?item=service-mesh--istio"
+  cncf_landscape: "https://landscape.cncf.io/?item=orchestration-management--service-mesh--istio"
   license: "Apache-2.0"
 
 deployment:

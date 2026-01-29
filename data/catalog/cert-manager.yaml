@@ -27,7 +27,7 @@ capabilities:
 project:
   homepage: "https://cert-manager.io/"
   documentation: "https://cert-manager.io/docs/"
-  cncf_landscape: "https://landscape.cncf.io/?item=security--cert-manager"
+  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--security-compliance--cert-manager"
   license: "Apache-2.0"
 
 deployment:

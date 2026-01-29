@@ -31,7 +31,7 @@ relationships:
 project:
   homepage: "https://cert-manager.io/docs/projects/trust-manager/"
   documentation: "https://cert-manager.io/docs/projects/trust-manager/"
-  cncf_landscape: "https://landscape.cncf.io/?item=security--key-management--trust-manager"
+  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--security-compliance--cert-manager"
   license: "Apache-2.0"
 
 deployment:

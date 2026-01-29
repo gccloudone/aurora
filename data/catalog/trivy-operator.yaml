@@ -29,7 +29,7 @@ capabilities:
 project:
   homepage: "https://aquasecurity.github.io/trivy-operator/"
   documentation: "https://aquasecurity.github.io/trivy-operator/"
-  cncf_landscape: "https://landscape.cncf.io/?item=security--container-security--trivy"
+  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--security-compliance--trivy"
   license: "Apache-2.0"
 
 deployment:

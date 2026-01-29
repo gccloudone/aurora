@@ -28,7 +28,7 @@ capabilities:
 project:
   homepage: "https://cilium.io/"
   documentation: "https://docs.cilium.io/"
-  cncf_landscape: "https://landscape.cncf.io/?item=networking--cloud-native-network--cilium"
+  cncf_landscape: "https://landscape.cncf.io/?item=runtime--cloud-native-network--cilium"
   license: "Apache-2.0"
 
 deployment:
