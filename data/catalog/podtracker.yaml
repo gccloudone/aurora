@@ -1,0 +1,90 @@
+name: "PodTracker"
+slug: "podtracker"
+alias: "Pod Metadata Tracking"
+
+category:
+  hld: "Platform Observability"
+  type: "Core"
+
+descriptions:
+  short: "PodTracker records and exposes Kubernetes pod metadata for platform-level visibility and automation."
+  long: >-
+    PodTracker is a custom Aurora platform component that observes Kubernetes
+    pod lifecycle events and records authoritative metadata about running
+    workloads. It provides a reliable source of truth for pod identity,
+    ownership, namespace context, and runtime attributes. PodTracker enables
+    downstream automation and integration use cases, including networking,
+    security, observability, and audit workflows, by making pod-level metadata
+    consistently available outside the cluster.
+
+capabilities:
+  - pod-metadata-tracking
+  - workload-identity
+  - lifecycle-observability
+  - platform-integration
+  - audit-support
+  - automation-enablement
+
+project:
+  homepage: "https://github.com/gccloudone-aurora/podtracker"
+  documentation: "https://github.com/gccloudone-aurora/podtracker"
+  cncf_landscape: ""
+  license: "Apache-2.0"
+
+deployment:
+  status: "deployed"
+  version: "1.x"
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Controller-based service"
+  ownership:
+    team: "SIG: Architecture"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Acts as a Kubernetes-native controller that watches pod lifecycle events
+    and extracts metadata from the Kubernetes API. PodTracker normalizes and
+    persists pod information and exposes it to other platform services and
+    automation pipelines, enabling consistent cross-cutting concerns such as
+    networking policy enforcement, observability correlation, and security
+    analysis.
+  control_plane_components:
+    - "podtracker-controller"
+    - "podtracker-api"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Cilium"
+    - "Observability pipelines"
+    - "Security tooling"
+  optional_features:
+    - "Pod lifecycle event streaming"
+    - "Metadata enrichment"
+    - "External system integration"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Persistent storage"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/podtracker"
+    path: "deploy"
+    release_name: "podtracker"
+  adr:
+    - "ADR-021: Centralized pod metadata tracking for platform automation"
+  runbooks:
+    - "Runbook: PodTracker operational overview"
+    - "Runbook: Troubleshooting missing or inconsistent pod metadata"
+  dashboards:
+    - "Grafana: PodTracker ingestion and processing status"
+
+metadata:
+  image: "/images/aurora/logo.svg"
+  sidebar: false

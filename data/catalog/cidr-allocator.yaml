@@ -1,0 +1,88 @@
+name: "CIDR Allocator"
+slug: "cidr-allocator"
+alias: "Cluster CIDR Management"
+
+category:
+  hld: "Platform Networking"
+  type: "Core"
+
+descriptions:
+  short: "CIDR Allocator manages and assigns non-overlapping network CIDRs to Kubernetes clusters."
+  long: >-
+    CIDR Allocator is a custom Aurora platform component responsible for
+    allocating, tracking, and managing IP address ranges for Kubernetes
+    clusters and networking domains. It ensures that cluster, pod, and
+    service CIDRs are assigned deterministically and without overlap across
+    environments. CIDR Allocator enables scalable multi-cluster networking,
+    simplifies routing and firewall integration, and supports Aurora’s
+    zero-trust and multi-cloud networking architecture.
+
+capabilities:
+  - cidr-management
+  - ip-address-allocation
+  - multi-cluster-networking
+  - deterministic-networking
+  - routing-integration
+  - conflict-prevention
+
+project:
+  homepage: "https://github.com/gccloudone-aurora/cidr-allocator"
+  documentation: "https://github.com/gccloudone-aurora/cidr-allocator"
+  cncf_landscape: ""
+  license: "Apache-2.0"
+
+deployment:
+  status: "deployed"
+  version: "1.x"
+  deployed_in:
+    - "management-clusters"
+  deployment_model: "Controller-based service"
+  ownership:
+    team: "SIG: Networking"
+    steward: "Aurora Platform Team"
+  criticality: "critical"
+
+architecture:
+  role: >-
+    Acts as a centralized control-plane service that allocates CIDR blocks
+    from predefined address pools and records assignments for Kubernetes
+    clusters. CIDR Allocator integrates with cluster provisioning workflows
+    and downstream networking components to ensure consistent IP addressing
+    across clusters, clouds, and connectivity boundaries.
+  control_plane_components:
+    - "cidr-allocator-controller"
+    - "cidr-allocator-api"
+
+integrations:
+  integrates_with:
+    - "Kubernetes cluster provisioning"
+    - "Cilium"
+    - "BGP routing infrastructure"
+    - "Firewall automation"
+  optional_features:
+    - "Predefined CIDR pools"
+    - "Environment-based allocation policies"
+    - "Audit logging of CIDR assignments"
+
+dependencies:
+  requires:
+    - "Persistent storage"
+    - "Cluster provisioning pipeline"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/cidr-allocator"
+    path: "deploy"
+    release_name: "cidr-allocator"
+  adr:
+    - "ADR-020: Centralized CIDR allocation for multi-cluster networking"
+  runbooks:
+    - "Runbook: Allocating and releasing cluster CIDRs"
+    - "Runbook: Troubleshooting CIDR allocation conflicts"
+  dashboards:
+    - "Grafana: CIDR allocation status and utilization"
+
+metadata:
+  image: "/images/aurora/logo.svg"
+  sidebar: false
