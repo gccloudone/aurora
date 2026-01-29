@@ -70,8 +70,8 @@ dependencies:
 
 references:
   charts:
-    repo: "https://github.com/gccloudone/aurora-platform-charts"
-    path: "charts/cert-manager"
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/cert-manager"
     release_name: "cert-manager"
   adr:
     - "ADR-006: cert-manager as standard certificate automation solution"

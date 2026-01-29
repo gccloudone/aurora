@@ -74,8 +74,8 @@ dependencies:
 
 references:
   charts:
-    repo: "https://github.com/gccloudone/aurora-platform-charts"
-    path: "charts/tetragon"
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/tetragon"
     release_name: "tetragon"
   adr:
     - "ADR-015: Tetragon as standard runtime enforcement and tracing solution"

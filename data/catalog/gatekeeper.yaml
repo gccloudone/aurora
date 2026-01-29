@@ -69,8 +69,8 @@ dependencies:
 
 references:
   charts:
-    repo: "https://github.com/gccloudone/aurora-platform-charts"
-    path: "charts/gatekeeper"
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/gatekeeper"
     release_name: "gatekeeper"
   adr:
     - "ADR-012: Gatekeeper as the standard admission policy enforcement solution"

@@ -99,7 +99,7 @@
             </gcds-text>
           {{ end }}
 
-          {{/* Implementation (GitHub only) */}}
+          {{/* Implementation (GitHub + explicit Argo linkage) */}}
           {{ with $component.references.charts }}
             <gcds-heading tag="h2">Implementation</gcds-heading>
             <gcds-text>
@@ -107,6 +107,10 @@
               <a href="{{ .repo }}/tree/main/{{ .path }}">
                 {{ .repo }}/{{ .path }}
               </a>
+            </gcds-text>
+            <gcds-text text-role="secondary" size="caption">
+              This repository is consumed by Argo CD to deploy and manage the
+              {{ $component.name }} platform component in Aurora.
             </gcds-text>
           {{ end }}
 

@@ -73,8 +73,8 @@ dependencies:
 
 references:
   charts:
-    repo: "https://github.com/gccloudone/aurora-platform-charts"
-    path: "charts/argo-cd"
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/argo-cd"
     release_name: "argo-cd"
   adr:
     - "ADR-002: GitOps as the deployment model"
