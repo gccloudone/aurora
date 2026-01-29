@@ -1,0 +1,91 @@
+name: "Trust Manager"
+slug: "trust-manager"
+alias: "Certificate Trust Distribution"
+
+category:
+  hld: "Platform Security"
+  type: "Core"
+
+descriptions:
+  short: "Trust Manager distributes and manages trusted CA bundles across Kubernetes workloads."
+  long: >-
+    Trust Manager is used by Aurora to centrally manage and distribute trusted
+    certificate authority (CA) bundles across Kubernetes clusters and workloads.
+    It enables consistent trust configuration for platform and application
+    components by synchronizing CA certificates into Kubernetes-native resources.
+    Trust Manager reduces configuration drift, simplifies certificate trust
+    management, and supports secure service-to-service communication in
+    zero-trust and enterprise environments.
+
+capabilities:
+  - certificate-trust
+  - ca-bundle-distribution
+  - zero-trust-enablement
+  - configuration-consistency
+  - secure-communication
+
+relationships:
+  parent: "cert-manager"
+  type: "subcomponent"
+
+project:
+  homepage: "https://cert-manager.io/docs/projects/trust-manager/"
+  documentation: "https://cert-manager.io/docs/projects/trust-manager/"
+  cncf_landscape: "https://landscape.cncf.io/?item=security--key-management--trust-manager"
+  license: "Apache-2.0"
+
+deployment:
+  status: "deployed"
+  version: "0.x"
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm-managed Trust Manager"
+  ownership:
+    team: "SIG: Security"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Acts as a cluster-level controller that reconciles trusted certificate
+    sources into Kubernetes resources such as ConfigMaps and Secrets. Trust
+    Manager integrates with cert-manager and other certificate authorities to
+    ensure workloads have access to up-to-date trust bundles required for secure
+    communication.
+  control_plane_components:
+    - "trust-manager"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "cert-manager"
+    - "Certificate Authorities"
+    - "Service Mesh (Istio)"
+  optional_features:
+    - "Multiple trust sources"
+    - "Namespace-scoped trust bundles"
+    - "Automated trust rotation"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "cert-manager"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/trust-manager"
+    release_name: "trust-manager"
+  adr:
+    - "ADR-011: Centralized trust bundle management with Trust Manager"
+  runbooks:
+    - "Runbook: Managing trusted CA bundles"
+    - "Runbook: Troubleshooting certificate trust issues"
+  dashboards:
+    - "Grafana: Trust Manager reconciliation status"
+
+metadata:
+  image: "/images/cncf/cert-manager.svg"
+  sidebar: false

@@ -1,0 +1,90 @@
+name: "Loki"
+slug: "loki"
+alias: "Log Aggregation System"
+
+category:
+  hld: "Platform Observability"
+  type: "Core"
+
+descriptions:
+  short: "Loki is a horizontally scalable, highly available log aggregation system."
+  long: >-
+    Loki is used by Aurora as the centralized log aggregation and storage system
+    for platform and application logs generated across Kubernetes clusters.
+    Designed to be cost-effective and tightly integrated with Kubernetes,
+    Loki indexes metadata rather than full log contents, enabling efficient
+    querying and correlation of logs with metrics and traces. Loki supports
+    operational troubleshooting, security investigations, and audit use cases
+    across the Aurora platform.
+
+capabilities:
+  - log-aggregation
+  - centralized-logging
+  - metadata-indexing
+  - kubernetes-integration
+  - scalable-storage
+  - audit-support
+
+project:
+  homepage: "https://grafana.com/oss/loki/"
+  documentation: "https://grafana.com/docs/loki/"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability--logging--loki"
+  license: "Apache-2.0"
+
+deployment:
+  status: "deployed"
+  version: "2.x"
+  deployed_in:
+    - "management-clusters"
+  deployment_model: "Helm-managed Loki"
+  ownership:
+    team: "SIG: Observability"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Acts as the centralized log storage and query backend for Aurora.
+    Loki receives logs from node- and workload-level agents and exposes
+    a query API that integrates with visualization and alerting systems.
+    It is optimized for Kubernetes environments by leveraging labels
+    for log correlation rather than full-text indexing.
+  control_plane_components:
+    - "loki-distributor"
+    - "loki-ingester"
+    - "loki-querier"
+    - "loki-query-frontend"
+
+integrations:
+  integrates_with:
+    - "Fluent Bit"
+    - "Grafana"
+    - "Kubernetes API Server"
+    - "Object Storage (S3-compatible)"
+  optional_features:
+    - "Log retention policies"
+    - "Multi-tenant log isolation"
+    - "Alerting based on log queries"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Object storage backend"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/loki"
+    release_name: "loki"
+  adr:
+    - "ADR-012: Centralized logging with Grafana Loki"
+  runbooks:
+    - "Runbook: Loki operational management"
+    - "Runbook: Troubleshooting log ingestion and queries"
+  dashboards:
+    - "Grafana: Loki ingestion and query health"
+
+metadata:
+  image: "/images/cncf/loki.svg"
+  sidebar: false
