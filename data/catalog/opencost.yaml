@@ -70,7 +70,7 @@ dependencies:
 references:
   charts:
     repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
-    path: "stable/aurora-platform/charts/aurora-core/templates/opencost"
+    path: "stable/aurora-platform/charts/aurora-core/templates/kubecost"
     release_name: "opencost"
   adr:
     - "ADR-013: OpenCost as the standard Kubernetes cost visibility solution"

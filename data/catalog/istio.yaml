@@ -76,7 +76,7 @@ dependencies:
 references:
   charts:
     repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
-    path: "stable/aurora-platform/charts/aurora-core/templates/istio"
+    path: "stable/aurora-platform/charts/aurora-app/templates/istio"
     release_name: "istio"
   adr:
     - "ADR-010: Istio as the standard service mesh"

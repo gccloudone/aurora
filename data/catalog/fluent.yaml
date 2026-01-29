@@ -68,7 +68,7 @@ dependencies:
 references:
   charts:
     repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
-    path: "stable/aurora-platform/charts/aurora-core/templates/fluent-bit"
+    path: "stable/aurora-platform/charts/aurora-core/templates/fluent-operator"
     release_name: "fluent-bit"
   adr:
     - "ADR-008: Fluent Bit as standard log forwarding agent"
