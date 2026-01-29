@@ -1,0 +1,31 @@
+<article class="py-450">
+  <h2 class="mb-400">{{ i18n "components_heading" | default "Featured component" }}</h2>
+
+  {{- $components := .Site.Data.catalog -}}
+  {{- $featured := index (shuffle (sort $components "name")) 0 -}}
+
+  {{- if $featured -}}
+    <article class="component-item">
+      <h3 class="mb-400">{{ $featured.name }}</h3>
+
+      {{ with $featured.descriptions.short }}
+        <p class="mb-450">{{ . }}</p>
+      {{ else }}
+        <p class="mb-450">{{ i18n "components_no_description" | default "No description available." }}</p>
+      {{ end }}
+
+      {{ with $featured.metadata.image }}
+        <img
+          class="d-block mb-450"
+          src="{{ . }}"
+          width="200"
+          height="200"
+          alt="{{ $featured.name }} logo" />
+      {{ end }}
+
+      <gcds-link href="/components/{{ $featured.slug }}/" class="hydrated">
+        {{ i18n "components_read_more" | default "Read more about" }} {{ $featured.name }}
+      </gcds-link>
+    </article>
+  {{- end -}}
+</article>

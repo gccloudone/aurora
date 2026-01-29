@@ -18,13 +18,13 @@ weight = 5
   name = "Proposition"
   parent = "Plate-forme"
   url = "/fr/proposition"
-  weight = 1
+  weight = 7
 
   [[main]]
   name = "Vision"
   parent = "Plate-forme"
   url = "/fr/vision"
-  weight = 3
+  weight = 9
 
 [[main]]
 name = "Guides d’utilisation"
