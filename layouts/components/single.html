@@ -45,103 +45,128 @@
 
         {{ else }}
 
-          {{/* Title */}}
-          <gcds-heading tag="h1">{{ $component.name }}</gcds-heading>
+          <!-- MAIN CONTENT + IMAGE GRID -->
+          <gcds-grid
+            columns="1fr"
+            columns-desktop="3fr 1fr"
+            gap="500"
+            align-items="start"
+            class="hydrated">
 
-          {{ with $component.alias }}
-            <gcds-text text-role="secondary" size="caption">
-              Also known as: {{ . }}
-            </gcds-text>
-          {{ end }}
+            <!-- LEFT COLUMN: CONTENT -->
+            <div>
 
-          {{ with $component.relationships.parent }}
-            <gcds-text text-role="secondary" size="caption">
-              Part of <a href="/components/{{ . }}/">{{ . | title }}</a>
-            </gcds-text>
-          {{ end }}
+              <gcds-heading tag="h1">{{ $component.name }}</gcds-heading>
 
-          {{ with $component.descriptions.long }}
-            <gcds-text class="my-400">{{ . }}</gcds-text>
-          {{ end }}
-
-          {{/* Overview */}}
-          <gcds-heading tag="h2">Overview</gcds-heading>
-          <gcds-text>
-            <strong>Category:</strong> {{ $component.category.hld }}<br>
-            <strong>Type:</strong> {{ $component.category.type }}<br>
-            <strong>Status:</strong> {{ $component.deployment.status }}<br>
-            <strong>Version:</strong> {{ $component.deployment.version }}
-          </gcds-text>
-
-          {{/* Capabilities */}}
-          {{ with $component.capabilities }}
-            <gcds-heading tag="h2">Capabilities</gcds-heading>
-            <ul>
-              {{ range . }}
-                <li>{{ . }}</li>
+              {{ with $component.alias }}
+                <gcds-text text-role="secondary" size="caption">
+                  Also known as: {{ . }}
+                </gcds-text>
               {{ end }}
-            </ul>
-          {{ end }}
 
-          {{/* Architecture */}}
-          {{ with $component.architecture.role }}
-            <gcds-heading tag="h2">Architecture Role</gcds-heading>
-            <gcds-text>{{ . }}</gcds-text>
-          {{ end }}
+              {{ with $component.relationships.parent }}
+                <gcds-text text-role="secondary" size="caption">
+                  Part of <a href="/components/{{ . }}/">{{ . | title }}</a>
+                </gcds-text>
+              {{ end }}
 
-          {{/* Deployment */}}
-          {{ with $component.deployment }}
-            <gcds-heading tag="h2">Deployment</gcds-heading>
-            <gcds-text>
-              <strong>Deployed in:</strong> {{ delimit .deployed_in ", " }}<br>
-              <strong>Deployment model:</strong> {{ .deployment_model }}<br>
-              <strong>Owner:</strong> {{ .ownership.team }}
-            </gcds-text>
-          {{ end }}
+              {{ with $component.descriptions.long }}
+                <gcds-text class="my-400">{{ . }}</gcds-text>
+              {{ end }}
 
-          {{/* Implementation (GitHub + explicit Argo linkage) */}}
-          {{ with $component.references.charts }}
-            <gcds-heading tag="h2">Implementation</gcds-heading>
-            <gcds-text>
-              <strong>GitHub:</strong>
-              <a href="{{ .repo }}/tree/main/{{ .path }}">
-                {{ .repo }}/{{ .path }}
-              </a>
-            </gcds-text>
-            <gcds-text text-role="secondary" size="caption">
-              This repository is consumed by Argo CD to deploy and manage the
-              {{ $component.name }} platform component in Aurora.
-            </gcds-text>
-          {{ end }}
+              <!-- Overview -->
+              <gcds-heading tag="h2">Overview</gcds-heading>
+              <gcds-text>
+                <strong>Category:</strong> {{ $component.category.hld }}<br>
+                <strong>Type:</strong> {{ $component.category.type }}<br>
+                <strong>Status:</strong> {{ $component.deployment.status }}<br>
+                <strong>Version:</strong> {{ $component.deployment.version }}
+              </gcds-text>
 
-          {{/* Project links */}}
-          {{ with $component.project }}
-            <gcds-heading tag="h2">Project</gcds-heading>
-            <ul>
-              {{ with .homepage }}
-                <li><a href="{{ . }}">Project homepage</a></li>
+              <!-- Capabilities -->
+              {{ with $component.capabilities }}
+                <gcds-heading tag="h2">Capabilities</gcds-heading>
+                <ul>
+                  {{ range . }}
+                    <li>{{ . }}</li>
+                  {{ end }}
+                </ul>
               {{ end }}
-              {{ with .documentation }}
-                <li><a href="{{ . }}">Documentation</a></li>
-              {{ end }}
-              {{ with .cncf_landscape }}
-                <li><a href="{{ . }}">CNCF Landscape</a></li>
-              {{ end }}
-            </ul>
-          {{ end }}
 
-          {{/* Operational references */}}
-          {{ with $component.references }}
-            <gcds-heading tag="h2">Operational References</gcds-heading>
-            <ul>
-              {{ range .adr }}
-                <li>{{ . }}</li>
+              <!-- Architecture -->
+              {{ with $component.architecture.role }}
+                <gcds-heading tag="h2">Architecture Role</gcds-heading>
+                <gcds-text>{{ . }}</gcds-text>
               {{ end }}
-              {{ range .runbooks }}
-                <li>{{ . }}</li>
+
+              <!-- Deployment -->
+              {{ with $component.deployment }}
+                <gcds-heading tag="h2">Deployment</gcds-heading>
+                <gcds-text>
+                  <strong>Deployed in:</strong> {{ delimit .deployed_in ", " }}<br>
+                  <strong>Deployment model:</strong> {{ .deployment_model }}<br>
+                  <strong>Owner:</strong> {{ .ownership.team }}
+                </gcds-text>
               {{ end }}
-            </ul>
-          {{ end }}
+
+              <!-- Implementation -->
+              {{ with $component.references.charts }}
+                <gcds-heading tag="h2">Implementation</gcds-heading>
+                <gcds-text>
+                  <strong>GitHub:</strong>
+                  <a href="{{ .repo }}/tree/main/{{ .path }}">
+                    {{ .repo }}/{{ .path }}
+                  </a>
+                </gcds-text>
+                <gcds-text text-role="secondary" size="caption">
+                  This repository is consumed by Argo CD to deploy and manage the
+                  {{ $component.name }} platform component in Aurora.
+                </gcds-text>
+              {{ end }}
+
+              <!-- Project -->
+              {{ with $component.project }}
+                <gcds-heading tag="h2">Project</gcds-heading>
+                <ul>
+                  {{ with .homepage }}
+                    <li><a href="{{ . }}">Project homepage</a></li>
+                  {{ end }}
+                  {{ with .documentation }}
+                    <li><a href="{{ . }}">Documentation</a></li>
+                  {{ end }}
+                  {{ with .cncf_landscape }}
+                    <li><a href="{{ . }}">CNCF Landscape</a></li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+
+              <!-- Operational References -->
+              {{ with $component.references }}
+                <gcds-heading tag="h2">Operational References</gcds-heading>
+                <ul>
+                  {{ range .adr }}
+                    <li>{{ . }}</li>
+                  {{ end }}
+                  {{ range .runbooks }}
+                    <li>{{ . }}</li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+
+            </div>
+
+            <!-- RIGHT COLUMN: IMAGE -->
+            {{ with $component.metadata.image }}
+              <aside aria-label="Component visual">
+                <img
+                  src="{{ . }}"
+                  alt="{{ $component.name }} logo"
+                  style="max-width: 160px; height: auto; margin-left: auto;"
+                />
+              </aside>
+            {{ end }}
+
+          </gcds-grid>
 
         {{ end }}
 
