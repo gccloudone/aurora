@@ -1,5 +1,5 @@
 ---
-title: "Architecture and Vision"
+title: "Vision"
 date: 2025-02-05
 draft: false
 sidebar: false
@@ -8,81 +8,106 @@ translationKey: "vision"
 disableCharacterlimit: true
 ---
 
+<gcds-notice type="info" notice-title-tag="h2" notice-title="A universal platform for modern application hosting">
+  <gcds-text>Aurora is a secure, self service application hosting platform that enables solution builders to rapidly develop and deploy cloud native solutions.</gcds-text>
+</gcds-notice>
+
 ## Vision
 
-Aurora aims to unify the best of both worlds open-source and proprietary Kubernetes environments, offering a standardized, scalable, and secure hosting solution.
+Aurora aims to unify open source and proprietary Kubernetes environments, offering a standardized and scalable platform across public and private clouds while enabling workload mobility without requiring architectural changes, and serving as a common foundation for a wide range of Government of Canada digital services.
+
+<br />
+
+![Strategic Vision](/images/vision/vision.svg "Strategic Vision")
 
 ## Overview
 
-One of the goals of the Aurora team is to design and build a cloud agnostic platform that supports teams looking to take advantage of "cloud-first" designs.
+Aurora is designed as a cloud agnostic platform that supports teams looking to adopt cloud first design patterns across diverse environments.
 
-To achieve this, the Aurora team provides a service offering known as the Aurora Application Hosting Platform (AUR).
+This capability is delivered through a service offering referred to as the Aurora Application Hosting Platform (AUR), which provides a consistent foundation for hosting and operating solutions.
 
-To highlight the benefits, goals and purpose of Aurora the Aurora team has created a product vision board.
+To articulate the benefits, goals, and intended outcomes of Aurora, a product vision board has been developed.
 
-![Aurora Product Vision](/images/aurora/product-vision.png "Aurora Product Vision")
-
-**Figure 1** - The Aurora Product Vision Board
-
-The product vision board is used to provide a common understanding of the direction to move towards and it guides and informs decisions regarding Aurora.
-
-> The production vision board guides the Aurora team in the overal direction of where we are going, and at times might not necessarily reflect what is available today
+> The product vision board provides a shared understanding of the intended direction of Aurora and helps guide decision making.
 
 ## Anatomy of the Product Vision Board
 
+![Product Vision](/images/vision/product-vision.png "Product Vision")
+
 The product vision board consists of five sections.
 
-1. **Vision:** the goal we want to achieve
-1. **Target Group:** the group most likely to benefit from the using the product
-1. **Needs:** the provided benefit of using the product
-1. **Product:** key features of the product
+1. **Vision:** the goal to be achieved
+1. **Target Group:** the group most likely to benefit from using the product
+1. **Needs:** the benefits provided by the product
+1. **Product:** the key features of the product
 1. **Business Goals:** benefits to the organisation
 
 ### Goals
 
-By 2028, Aurora will be the cornerstone of application hosting for Canada’s federal government, uniting departments under a secure, cloud-agnostic platform designed for innovation and operational excellence. It will streamline the onboarding process with intuitive self-service capabilities, ensure consistent governance across diverse environments, and empower a community of certified architects and solution builders to drive digital transformation. By prioritizing scalability, security, and interoperability, Aurora will redefine how government solutions are developed, deployed, and managed, fostering collaboration and setting a new benchmark for modern public-sector technology platforms.
+By 2028, Aurora will be the cornerstone of application hosting for Canada’s federal government, supporting departments through a secure, cloud agnostic platform designed for innovation and operational excellence. It will streamline onboarding through self service capabilities, ensure consistent governance across diverse environments, and support a community of certified architects and solution builders. By enabling workloads to move between environments without redesign, Aurora allows departments to operate solutions where it makes the most technical, financial, or operational sense while avoiding unnecessary duplication and cost.
 
 ### Target Group
 
-"Solution builders" is the umbrella term that encompasses both traditional Information Technology (IT) users, such as application developers as well as non-traditional IT users, such as data scientists and data analysts. The term "solution" is used instead "app" or "system" to better reflect the range of solutions that could be available on Aurora. For example, this can include large-scale solutions for corporate initiatives as well as smaller solutions that may be standalone and serve very specific purposes.
+"Solution builders" is an umbrella term that includes traditional Information Technology (IT) users, such as application developers, as well as non traditional IT users, such as data scientists and data analysts.
+
+The term "solution" is used instead of "app" or "system" to reflect the range of solutions supported by Aurora. This includes large scale solutions for corporate initiatives as well as smaller, standalone solutions serving specific purposes.
 
 ### Needs
 
-There are five key benefits of using Aurora:
+There are six key benefits of using Aurora.
 
-1. **Self-service solutions**
-Enable solution builders to have more autonomy over their solutions and enforce the self-serve model with appropriate guardrails.
+1. **Self service solutions**
+Enable solution builders to manage their solutions independently while operating within defined guardrails.
+
+1. **Platform handled cross cutting concerns**
+Reduce the responsibility placed on application teams by handling common concerns at the platform level, including transport security and application authentication.
+
 1. **Consistent infrastructure configuration**
-Reduce ambiguity and confusion with infrastructure configuration across environments.
-1. **Reduce manual intervention**
-A benefit of consistent infrastructure configurations is the reduction in manual intervention during deployments.
+Reduce ambiguity and confusion through consistent infrastructure configuration across environments.
+
+1. **Reduced manual intervention**
+Consistent infrastructure configuration minimizes the need for manual intervention during deployments.
+
 1. **Rapid and consistent deployments**
-With consistent infrastructure and reduced manual interventions, deployments can be automated and performed quickly and consistently.
-1. **Package documention with the solution**
-Provide tooling that packages the documentation with the solution ensures this vital information is not decoupled.
+Automation enables deployments to be performed quickly and consistently.
+
+1. **Packaged documentation with the solution**
+Provide tooling that ensures documentation is delivered alongside the solution and remains current.
 
 ### Product
 
-There are five key features of the Aurora Platform:
+There are five key features of the Aurora Platform.
 
-1. **Built-in security**: Security features such as disaster recovery, data security, integration with the corporate security information and event management tools and networking security policies.
+1. **Built in security**
+Security features such as platform managed TLS, application authentication, disaster recovery, data protection, integration with enterprise security tooling, and network security policies.
 
-1. **Cloud Native Computing Foundation (CNCF) services and technology**: The Aurora Platform is proponent of modern, cloud agnostic infrastructure systems powered by cloud-first designs and open source software. The majority of the components on the Aurora Platform are technologies promoted by the CNCF.
+1. **Cloud Native Computing Foundation (CNCF) services and technology**
+Aurora promotes cloud agnostic infrastructure built on cloud first designs and open source technologies. The majority of platform components align with CNCF projects.
 
-1. **Scalable and resilient services**: Services and components on the platform that can scale to the demands of solutions it hosts.
+1. **Scalable and resilient services**
+Platform services are designed to scale based on the demands of the solutions they host.
 
-1. **Inherent observability**: Enables a better understanding and insight into why something went wrong.
+1. **Inherent observability**
+Provides insight into platform and solution behaviour to support troubleshooting and operational awareness.
 
-1. **On-demand infrastructure provisioning**: Through the promotion of Infrastructure as Code (IaC) infrastructure can be provisioned consistently and in accordance with compute, network, and storage needs.
+1. **On demand infrastructure provisioning**
+Infrastructure is provisioned using Infrastructure as Code (IaC) to ensure consistency across compute, network, and storage resources.
 
 ### Business Goals
 
-The benefits of the Aurura Platform to Shared Services Canada include:
+The benefits of the Aurora Platform to Shared Services Canada include the following.
 
-1. **IT spending targeted to needs**: Rather than pay for infrastructure that may sit dormant, it can be targeted when needed.
+1. **IT spending targeted to needs**
+Infrastructure resources are provisioned based on demand rather than maintained in advance.
 
-1. **Increased visibility into IT consumption costs**: Available tooling that provides more insight into a solution's consumption costs including how efficient a solution is utilizing its resources.
+1. **Cost optimization through workload mobility**
+Solutions can move between cloud and on premise environments without architectural change, allowing departments to optimize for cost, performance, and operational requirements.
 
-1. **Reduce lead-time for development to deployment**: Promote the concept of "fail fast" so that solutions can be deployed on Day 0 to enable early realization of success or failure and allowing solution builders teams to pivot in the right direction.
+1. **Increased visibility into IT consumption costs**
+Tooling provides insight into resource usage and cost efficiency at the solution level.
 
-1. **Empower the cultural shift to open source and DevSecOps**: Align with the [Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) and break the silos within IT (dev and operations).
+1. **Reduced lead time from development to deployment**
+Supports early deployment and iterative delivery, enabling teams to validate direction quickly.
+
+1. **Support for open source and DevSecOps practices**
+Aligns with the Government of Canada Digital Standards and supports closer collaboration between development and operations teams.
