@@ -1,0 +1,84 @@
+name: "Velero"
+slug: "velero"
+alias: "Kubernetes Backup and Restore"
+
+category:
+  hld: "Platform Resilience"
+  type: "Core"
+
+descriptions:
+  short: "Velero provides backup, restore, and disaster recovery for Kubernetes resources."
+  long: >-
+    Velero is used by Aurora to provide backup and restore capabilities for
+    Kubernetes clusters and their associated resources. It enables disaster
+    recovery, cluster migration, and operational resilience by capturing the
+    state of Kubernetes objects and, where supported, persistent volume data.
+    Velero supports scheduled and on-demand backups and integrates with
+    cloud object storage to retain backups outside the cluster lifecycle.
+
+capabilities:
+  - backup
+  - restore
+  - disaster-recovery
+  - cluster-migration
+  - scheduled-backups
+  - on-demand-backups
+
+project:
+  homepage: "https://velero.io/"
+  documentation: "https://velero.io/docs/"
+  cncf_landscape: "https://landscape.cncf.io/?item=runtime--cloud-native-storage--velero"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Architecture"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Provides cluster-level backup and restore functionality by interacting with
+    the Kubernetes API server to capture and rehydrate resource state. Velero
+    coordinates backup operations and stores backup metadata and artifacts in
+    external object storage, enabling recovery even in the event of complete
+    cluster loss.
+  control_plane_components:
+    - "velero"
+    - "node-agent"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Object Storage (S3-compatible)"
+    - "Cloud provider snapshot APIs"
+  optional_features:
+    - "Persistent volume snapshots"
+    - "Backup hooks"
+    - "Cross-cluster restore"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Object storage backend"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/velero"
+    release_name: "velero"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks:
+    - "Runbook: Disaster recovery using Velero"
+  dashboards:
+    - "Grafana: Velero backup and restore status"
+
+metadata:
+  image: "/images/cncf/velero.svg"
+  sidebar: false

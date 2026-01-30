@@ -1,0 +1,84 @@
+name: "kube-bench"
+slug: "kube-bench"
+alias: "Kubernetes CIS Benchmark"
+
+category:
+  hld: "Platform Security"
+  type: "Core"
+
+descriptions:
+  short: "kube-bench checks Kubernetes clusters against CIS security benchmarks."
+  long: >-
+    kube-bench is used by Aurora to assess Kubernetes clusters against
+    the Center for Internet Security (CIS) Kubernetes Benchmarks. It
+    evaluates cluster configuration, control plane components, and
+    node-level settings to identify deviations from recommended security
+    baselines. kube-bench supports compliance reporting, security posture
+    assessments, and continuous improvement of cluster hardening across
+    Aurora-managed environments.
+
+capabilities:
+  - cis-benchmarking
+  - security-hardening-assessment
+  - compliance-reporting
+  - configuration-auditing
+  - cluster-security-visibility
+
+project:
+  homepage: "https://github.com/aquasecurity/kube-bench"
+  documentation: "https://github.com/aquasecurity/kube-bench"
+  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--security-compliance--kube-bench"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Security"
+    steward: "Aurora Platform Team"
+  criticality: "medium"
+
+architecture:
+  role: >-
+    Executes benchmark checks against Kubernetes control plane and node
+    components by inspecting configuration files, command-line flags,
+    and runtime settings. kube-bench runs periodically or on demand and
+    produces machine-readable reports that can be consumed by security
+    dashboards and compliance workflows.
+  control_plane_components:
+    - "kube-bench"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Node operating system"
+    - "CI/CD Pipelines"
+    - "Security reporting tools"
+  optional_features:
+    - "Automated CIS benchmark scans"
+    - "Custom benchmark profiles"
+    - "Cluster hardening reports"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Node access (read-only)"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/kube-bench"
+    release_name: "kube-bench"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks:
+    - "Runbook: Interpreting CIS benchmark results"
+  dashboards:
+    - "Grafana: Kubernetes CIS compliance overview"
+
+metadata:
+  image: "/images/cncf/kube-bench.svg"
+  sidebar: false

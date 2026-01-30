@@ -15,22 +15,28 @@ url = "/platform"
 weight = 5
 
   [[main]]
-  name = "Proposal"
-  parent = "Platform"
-  url = "/proposal"
-  weight = 3
-
-  [[main]]
   name = "Roadmap"
   parent = "Platform"
   url = "/roadmap"
+  weight = 3
+
+  [[main]]
+  name = "Components"
+  parent = "Platform"
+  url = "/components"
   weight = 5
+
+  [[main]]
+  name = "Proposal"
+  parent = "Platform"
+  url = "/proposal"
+  weight = 7
 
   [[main]]
   name = "Vision"
   parent = "Platform"
   url = "/vision"
-  weight = 7
+  weight = 9
 
   [[main]]
   name = "Architecture"

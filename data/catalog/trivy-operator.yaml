@@ -1,0 +1,88 @@
+name: "Trivy Operator"
+slug: "trivy-operator"
+alias: "Kubernetes Security Scanning"
+
+category:
+  hld: "Platform Security"
+  type: "Core"
+
+descriptions:
+  short: "Trivy Operator provides continuous security scanning for Kubernetes workloads and cluster resources."
+  long: >-
+    Trivy Operator is used by Aurora to perform continuous, automated security
+    scanning of Kubernetes workloads, container images, and cluster
+    configurations. It integrates Trivy’s vulnerability, misconfiguration,
+    and compliance scanning capabilities directly into the Kubernetes control
+    plane by producing Kubernetes-native custom resources. Trivy Operator
+    enables proactive risk identification, supports supply chain security
+    objectives, and provides visibility into security posture across
+    Aurora-managed clusters.
+
+capabilities:
+  - vulnerability-scanning
+  - configuration-scanning
+  - compliance-reporting
+  - supply-chain-security
+  - kubernetes-native-security
+  - continuous-assessment
+
+project:
+  homepage: "https://aquasecurity.github.io/trivy-operator/"
+  documentation: "https://aquasecurity.github.io/trivy-operator/"
+  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--security-compliance--trivy"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Security"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Runs as a Kubernetes operator that continuously scans cluster resources
+    and workloads for security issues. Trivy Operator executes scans using
+    Trivy scanners and records findings as Kubernetes custom resources,
+    enabling integration with policy engines, dashboards, and security
+    workflows without blocking cluster operation.
+  control_plane_components:
+    - "trivy-operator"
+    - "trivy-operator-node-collector"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Trivy Scanner"
+    - "Policy Engines (OPA / Gatekeeper)"
+    - "CI/CD Pipelines"
+  optional_features:
+    - "Image vulnerability scanning"
+    - "Kubernetes CIS benchmark reporting"
+    - "Misconfiguration scanning"
+    - "Compliance reporting"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Container image registry"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/trivy-operator"
+    release_name: "trivy-operator"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks:
+    - "Runbook: Managing vulnerability scan performance"
+  dashboards:
+    - "Grafana: Trivy Operator security posture overview"
+
+metadata:
+  image: "/images/cncf/trivy-operator.svg"
+  sidebar: false

@@ -1,0 +1,103 @@
+{{ define "main" }}
+  {{ $showSidebar := .Site.Params.sidebar }}
+  {{ if isset .Params "sidebar" }}
+    {{ $showSidebar = .Params.sidebar }}
+  {{ end }}
+
+  {{ partial "verify" . }}
+  {{ partial "header" . }}
+
+  {{ $catalog := .Site.Data.catalog }}
+  {{ $versions := $catalog.versions }}
+
+  <gcds-container size="xl" main-container centered tag="main">
+    <gcds-grid
+      tag="section"
+      columns="1fr"
+      columns-desktop="{{ if $showSidebar }}1fr 3fr{{ else }}1fr{{ end }}"
+      align-items="start"
+      class="hydrated">
+
+      {{ if $showSidebar }}
+        <aside role="complementary">
+          {{ partial "side-navigation" . }}
+        </aside>
+      {{ end }}
+
+      <section class="mb-400">
+        {{ partial "heading" . }}
+
+        {{ $content := .Content | replaceRE `(?s:<p>(.*?)</p>)`
+          (printf "<gcds-text character-limit=\"%v\">$1</gcds-text>"
+          (not (.Page.Params.disableCharacterLimit | default .Site.Params.disableCharacterLimit))) }}
+        {{ $content | safeHTML }}
+
+        <gcds-heading tag="h2">
+          {{ i18n "components_browse" | default "Browse Components" }}
+        </gcds-heading>
+
+        <div class="my-500">
+          <gcds-grid
+            tag="ul"
+            columns="1fr"
+            columns-tablet="1fr 1fr"
+            columns-desktop="1fr 1fr 1fr"
+            gap="400"
+            class="hydrated">
+
+            {{ range $key, $c := $catalog }}
+              {{ if eq $key "versions" }}{{ continue }}{{ end }}
+
+              {{ $slug := $c.slug | default (urlize $c.name) }}
+              {{ $scratch := newScratch }}
+
+              {{/* 1. Try direct section lookup */}}
+              {{ range $sectionName, $sectionMap := $versions }}
+                {{ if index $sectionMap $slug }}
+                  {{ $scratch.Set "section" $sectionName }}
+                {{ end }}
+              {{ end }}
+
+              {{/* 2. Fallback to parent section */}}
+              {{ if and (not ($scratch.Get "section")) $c.relationships.parent }}
+                {{ $parent := $c.relationships.parent }}
+                {{ range $sectionName, $sectionMap := $versions }}
+                  {{ if index $sectionMap $parent }}
+                    {{ $scratch.Set "section" $sectionName }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+
+              {{ $section := $scratch.Get "section" | default "unknown" }}
+
+              <gcds-card
+                card-title="{{ $c.name }}"
+                href="{{ printf "/components/%s/" $slug }}"
+                card-title-tag="h3"
+                badge="{{ $section }}"
+                img-src="{{ $c.metadata.image }}"
+                img-alt=""
+                role="listitem"
+                class="hydrated">
+
+                {{ with $c.descriptions.short }}
+                  <gcds-text>{{ . }}</gcds-text>
+                {{ end }}
+
+                {{ with $c.alias }}
+                  <gcds-text text-role="secondary" size="caption">
+                    <em>Other names: {{ . }}</em>
+                  </gcds-text>
+                {{ end }}
+
+              </gcds-card>
+            {{ end }}
+
+          </gcds-grid>
+        </div>
+
+        {{ partial "date-modified" . }}
+      </section>
+    </gcds-grid>
+  </gcds-container>
+{{ end }}

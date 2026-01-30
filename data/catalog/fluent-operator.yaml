@@ -1,0 +1,86 @@
+name: "Fluent Operator"
+slug: "fluent-operator"
+alias: "Fluent Bit Operator"
+
+category:
+  hld: "Observability"
+  type: "Core"
+
+descriptions:
+  short: "Fluent Operator is a Kubernetes operator that manages Fluent Bit deployments for log collection and forwarding."
+  long: >-
+    Fluent Operator is used within Aurora as the control plane for Kubernetes
+    logging. It manages the lifecycle, configuration, and rollout of Fluent Bit
+    instances across clusters using Kubernetes custom resources. By separating
+    log pipeline configuration from node-level agents, Fluent Operator enables
+    consistent, declarative, and multi-tenant logging practices while reducing
+    operational complexity for platform and application teams.
+
+capabilities:
+  - logging
+  - log-collection
+  - log-forwarding
+  - observability
+  - configuration-management
+  - kubernetes-operator
+  - multi-tenant
+
+project:
+  homepage: "https://github.com/fluent/fluent-operator"
+  documentation: "https://github.com/fluent/fluent-operator/blob/master/docs/README.md"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability-and-analysis--observability--fluentd"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Observability"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Acts as the logging control plane for Kubernetes clusters. Fluent Operator
+    reconciles custom resources that define log sources, filters, and outputs,
+    and ensures Fluent Bit DaemonSets are deployed and configured consistently
+    across nodes and namespaces.
+  control_plane_components:
+    - "fluent-operator-controller"
+  data_plane_components:
+    - "fluent-bit"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Centralized logging platforms"
+    - "SIEM and security analytics tools"
+  optional_features:
+    - "Log filtering and transformation"
+    - "Multi-destination outputs"
+    - "TLS-secured log transport"
+    - "Namespace-scoped log pipelines"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "CustomResourceDefinitions (FluentBit, ClusterFluentBit, FluentOutput)"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/fluent-operator"
+    release_name: "fluent-operator"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks:
+    - "Runbook: Troubleshooting log ingestion issues"
+  dashboards:
+    - "Grafana: Log ingestion and throughput overview"
+
+metadata:
+  image: "/images/cncf/fluentbit.svg"
+  sidebar: false

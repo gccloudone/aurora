@@ -1,0 +1,89 @@
+name: "Istio"
+slug: "istio"
+alias: "Service Mesh"
+
+category:
+  hld: "Networking"
+  type: "App"
+
+descriptions:
+  short: "Istio provides service mesh capabilities for traffic management, security, and observability in Kubernetes."
+  long: >-
+    Istio is used within Aurora to provide service mesh capabilities for
+    Kubernetes workloads, including traffic management, mutual TLS, identity-
+    aware authorization, and service-to-service observability. It enables
+    fine-grained control over east-west traffic and supports zero-trust
+    networking patterns by enforcing strong identity and policy at the
+    application layer, complementing lower-level network controls provided by
+    the CNI.
+
+capabilities:
+  - service-mesh
+  - traffic-management
+  - mtls
+  - zero-trust
+  - authorization
+  - observability
+
+project:
+  homepage: "https://istio.io/"
+  documentation: "https://istio.io/latest/docs/"
+  cncf_landscape: "https://landscape.cncf.io/?item=orchestration-management--service-mesh--istio"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Networking"
+    steward: "Aurora Platform Team"
+  criticality: "critical"
+
+architecture:
+  role: >-
+    Acts as the application-layer traffic management and security control plane
+    for Kubernetes workloads. Istio provides identity, encryption, routing, and
+    policy enforcement for service-to-service communication within and across
+    namespaces.
+  control_plane_components:
+    - "istiod"
+    - "ztunnel"
+    - "ingress-gateway"
+    - "egress-gateway"
+
+integrations:
+  integrates_with:
+    - "Cilium (CNI and dataplane)"
+    - "cert-manager (certificate issuance)"
+    - "Ingress Controllers / Gateways"
+    - "Identity Provider (OIDC)"
+    - "Observability stack (metrics and tracing)"
+  optional_features:
+    - "Ambient mesh"
+    - "Sidecar-based data plane"
+    - "AuthorizationPolicy"
+    - "Traffic shifting and retries"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "CNI (Cilium)"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-app/templates/istio"
+    release_name: "istio"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks:
+    - "Runbook: Debugging service-to-service traffic"
+  dashboards:
+    - "Grafana: Istio service mesh overview"
+
+metadata:
+  image: "/images/cncf/istio.svg"
+  sidebar: false

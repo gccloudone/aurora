@@ -1,0 +1,83 @@
+name: "cert-manager"
+slug: "cert-manager"
+alias: "Kubernetes Certificate Controller"
+
+category:
+  hld: "Security"
+  type: "Core"
+
+descriptions:
+  short: "cert-manager automates the management and renewal of TLS certificates in Kubernetes."
+  long: >-
+    cert-manager is used within Aurora to automate the issuance, renewal, and
+    lifecycle management of TLS certificates for Kubernetes workloads and
+    platform services. It integrates with external certificate authorities and
+    internal PKI systems to ensure secure, policy-compliant encryption for
+    ingress, service-to-service communication, and platform endpoints, reducing
+    operational risk and manual certificate handling.
+
+capabilities:
+  - certificates
+  - tls
+  - pki
+  - automation
+  - security
+  - ingress
+
+project:
+  homepage: "https://cert-manager.io/"
+  documentation: "https://cert-manager.io/docs/"
+  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--security-compliance--cert-manager"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Security"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Acts as the Kubernetes-native certificate control plane, responsible for
+    issuing and renewing X.509 certificates used by ingress controllers,
+    service meshes, and platform components.
+  control_plane_components:
+    - "cert-manager"
+    - "cert-manager-webhook"
+    - "cert-manager-cainjector"
+
+integrations:
+  integrates_with:
+    - "Ingress Controllers"
+    - "Service Mesh (Istio)"
+    - "External Certificate Authorities"
+    - "Internal PKI"
+  optional_features:
+    - "ACME (Let's Encrypt)"
+    - "CA Issuers"
+    - "Vault Issuer"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/cert-manager"
+    release_name: "cert-manager"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks:
+    - "Runbook: Certificate issuance and renewal troubleshooting"
+  dashboards:
+    - "Grafana: cert-manager health overview"
+
+metadata:
+  image: "/images/cncf/cert-manager.svg"
+  sidebar: false

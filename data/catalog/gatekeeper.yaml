@@ -1,0 +1,82 @@
+name: "Gatekeeper"
+slug: "gatekeeper"
+alias: "OPA Admission Controller"
+
+category:
+  hld: "Security"
+  type: "Core"
+
+descriptions:
+  short: "Gatekeeper enforces policy and governance controls in Kubernetes using OPA."
+  long: >-
+    Gatekeeper is used within Aurora as the Kubernetes admission controller for
+    enforcing policy and governance controls at resource creation and update
+    time. Built on Open Policy Agent (OPA), Gatekeeper enables policy-as-code
+    enforcement for security, compliance, and platform guardrails, ensuring that
+    Kubernetes resources adhere to approved standards before they are admitted
+    into the cluster. This approach reduces operational risk and supports
+    consistent enforcement of enterprise and regulatory requirements.
+
+capabilities:
+  - policy-enforcement
+  - admission-control
+  - governance
+  - compliance
+  - policy-as-code
+  - kubernetes-security
+
+project:
+  homepage: "https://open-policy-agent.github.io/gatekeeper/"
+  documentation: "https://open-policy-agent.github.io/gatekeeper/website/docs/"
+  cncf_landscape: "https://landscape.cncf.io/?item=cnai--governance-policy-security--opa-gatekeeper"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Security"
+    steward: "Aurora Platform Team"
+  criticality: "critical"
+
+architecture:
+  role: >-
+    Acts as the admission-time policy enforcement layer for Kubernetes,
+    intercepting API requests and evaluating them against OPA-based constraint
+    templates and policies before resources are persisted.
+  control_plane_components:
+    - "gatekeeper-controller-manager"
+    - "gatekeeper-audit"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "GitOps workflows (Argo CD)"
+    - "CI/CD policy validation"
+  optional_features:
+    - "ConstraintTemplates"
+    - "Audit and reporting"
+    - "Dry-run and warn modes"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/gatekeeper"
+    release_name: "gatekeeper"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks:
+    - "Runbook: Gatekeeper installation and upgrade"
+  dashboards:
+    - "Grafana: Gatekeeper policy compliance overview"
+
+metadata:
+  image: "/images/cncf/gatekeeper.svg"
+  sidebar: false

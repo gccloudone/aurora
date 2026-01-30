@@ -1,0 +1,190 @@
+{{ define "main" }}
+  {{ $showSidebar := .Site.Params.sidebar }}
+  {{ if isset .Params "sidebar" }}
+    {{ $showSidebar = .Params.sidebar }}
+  {{ end }}
+
+  {{ partial "verify" . }}
+  {{ partial "header" . }}
+
+  {{/* Resolve component from catalog using slug */}}
+  {{ $slug := .Params.slug | default (urlize .Title) }}
+  {{ $scratch := newScratch }}
+
+  {{ range $key, $c := .Site.Data.catalog }}
+    {{ if and (ne $key "versions") (eq ($c.slug | default (urlize $c.name)) $slug) }}
+      {{ $scratch.Set "component" $c }}
+    {{ end }}
+  {{ end }}
+
+  {{ $component := $scratch.Get "component" }}
+
+  {{/* Resolve section + version from versions.yaml */}}
+  {{ range $sectionName, $sectionMap := .Site.Data.catalog.versions }}
+    {{ with index $sectionMap $slug }}
+      {{ $scratch.Set "section" $sectionName }}
+      {{ $scratch.Set "version" .version }}
+    {{ end }}
+  {{ end }}
+
+  {{ $section := $scratch.Get "section" }}
+  {{ $version := $scratch.Get "version" }}
+
+  {{/* Inherit version from parent if none defined */}}
+  {{ if and (not $version) $component.relationships.parent }}
+    {{ $parent := $component.relationships.parent }}
+
+    {{ range $sectionName, $sectionMap := .Site.Data.catalog.versions }}
+      {{ with index $sectionMap $parent }}
+        {{ $scratch.Set "version" .version }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $version := $scratch.Get "version" }}
+
+  <gcds-container size="xl" main-container centered tag="main">
+    <gcds-grid
+      tag="section"
+      columns="1fr"
+      columns-desktop="{{ if $showSidebar }}1fr 3fr{{ else }}1fr{{ end }}"
+      align-items="start"
+      class="hydrated">
+
+      {{ if $showSidebar }}
+        <aside role="complementary">
+          {{ partial "side-navigation" . }}
+        </aside>
+      {{ end }}
+
+      <section class="mb-400">
+
+        {{ if not $component }}
+
+          {{ partial "heading" . }}
+          <gcds-text>
+            This component exists as a page, but no matching definition was found
+            in the Aurora component catalog.
+          </gcds-text>
+
+        {{ else }}
+
+          <!-- MAIN CONTENT + IMAGE GRID -->
+          <gcds-grid
+            columns="1fr"
+            columns-desktop="3fr 1fr"
+            gap="500"
+            align-items="start"
+            class="hydrated">
+
+            <!-- LEFT COLUMN: CONTENT -->
+            <div>
+
+              <gcds-heading tag="h1">{{ $component.name }}</gcds-heading>
+
+              {{ with $component.alias }}
+                <gcds-text text-role="secondary" size="caption">
+                  Also known as: {{ . }}
+                </gcds-text>
+              {{ end }}
+
+              {{ with $component.relationships.parent }}
+                <gcds-text text-role="secondary" size="caption">
+                  Part of <a href="/components/{{ . }}/">{{ . | title }}</a>
+                </gcds-text>
+              {{ end }}
+
+              {{ with $component.descriptions.long }}
+                <gcds-text class="my-400">{{ . }}</gcds-text>
+              {{ end }}
+
+              <!-- Overview -->
+              <gcds-heading tag="h2">Overview</gcds-heading>
+              <gcds-text>
+                <strong>Category:</strong> {{ $component.category.hld }}<br>
+                <strong>Type:</strong> {{ $component.category.type }}<br>
+                <strong>Version:</strong>
+                {{ if $version }}{{ $version }}{{ else }}{{ $component.deployment.version }}{{ end }}
+              </gcds-text>
+
+              <!-- Deployment -->
+              {{ with $component.deployment }}
+                <gcds-heading tag="h2">Deployment</gcds-heading>
+                <gcds-text>
+                  <strong>Deployed in:</strong> {{ delimit .deployed_in ", " }}<br>
+                  <strong>Deployment model:</strong> {{ .deployment_model }}<br>
+                  <strong>Owner:</strong> {{ .ownership.team }}
+                </gcds-text>
+              {{ end }}
+
+              <!-- Capabilities -->
+              {{ with $component.capabilities }}
+                <gcds-heading tag="h2">Capabilities</gcds-heading>
+                <ul>
+                  {{ range . }}
+                    <li>{{ . }}</li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+
+              <!-- Architecture -->
+              {{ with $component.architecture.role }}
+                <gcds-heading tag="h2">Architecture Role</gcds-heading>
+                <gcds-text>{{ . }}</gcds-text>
+              {{ end }}
+
+              <!-- Implementation -->
+              {{ with $component.references.charts }}
+                <gcds-heading tag="h2">Implementation</gcds-heading>
+                <gcds-text>
+                  <strong>GitHub:</strong>
+                  <a href="{{ .repo }}/tree/main/{{ .path }}">
+                    {{ .repo }}/{{ .path }}
+                  </a>
+                </gcds-text>
+                <gcds-text text-role="secondary" size="caption">
+                  This repository is consumed by Argo CD to deploy and manage the
+                  {{ $component.name }} platform component in Aurora.
+                </gcds-text>
+              {{ end }}
+
+              <!-- Project -->
+              {{ with $component.project }}
+                <gcds-heading tag="h2">Project</gcds-heading>
+                <ul>
+                  {{ with .homepage }}<li><a href="{{ . }}">Project homepage</a></li>{{ end }}
+                  {{ with .documentation }}<li><a href="{{ . }}">Documentation</a></li>{{ end }}
+                  {{ with .cncf_landscape }}<li><a href="{{ . }}">CNCF Landscape</a></li>{{ end }}
+                </ul>
+              {{ end }}
+
+              <!-- Operational References -->
+              {{ with $component.references }}
+                <gcds-heading tag="h2">Operational References</gcds-heading>
+                <ul>
+                  {{ range .adr }}<li>{{ . }}</li>{{ end }}
+                  {{ range .runbooks }}<li>{{ . }}</li>{{ end }}
+                </ul>
+              {{ end }}
+
+            </div>
+
+            <!-- RIGHT COLUMN: IMAGE -->
+            {{ with $component.metadata.image }}
+              <aside aria-label="Component visual">
+                <img
+                  src="{{ . }}"
+                  alt="{{ $component.name }} logo"
+                  style="max-width: 160px; height: auto; margin-left: auto;" />
+              </aside>
+            {{ end }}
+
+          </gcds-grid>
+
+        {{ end }}
+
+        {{ partial "date-modified" . }}
+
+      </section>
+    </gcds-grid>
+  </gcds-container>
+{{ end }}

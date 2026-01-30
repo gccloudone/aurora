@@ -1,0 +1,84 @@
+name: "Prometheus"
+slug: "prometheus"
+alias: "Metrics Collection"
+
+category:
+  hld: "Observability"
+  type: "Core"
+
+descriptions:
+  short: "Prometheus provides metrics collection, storage, and querying for Kubernetes and cloud-native systems."
+  long: >-
+    Prometheus is used within Aurora as the primary metrics collection and
+    querying system for Kubernetes clusters and platform services. It scrapes
+    metrics from workloads, infrastructure components, and platform services,
+    storing time-series data that enables monitoring, alerting, and performance
+    analysis. Prometheus forms the foundation of Aurora’s observability stack
+    and supports standardized metrics-based visibility across multi-tenant
+    environments.
+
+capabilities:
+  - metrics
+  - monitoring
+  - alerting
+  - observability
+  - time-series
+  - kubernetes-metrics
+
+project:
+  homepage: "https://prometheus.io/"
+  documentation: "https://prometheus.io/docs/"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability-and-analysis--observability--prometheus"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Observability"
+    steward: "Aurora Platform Team"
+  criticality: "critical"
+
+architecture:
+  role: >-
+    Acts as the core metrics ingestion and query layer for Aurora, collecting
+    time-series data from Kubernetes components, workloads, and platform services
+    to enable monitoring, alerting, and operational insight.
+  control_plane_components:
+    - "prometheus-server"
+    - "alertmanager"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Service discovery (Kubernetes)"
+    - "Grafana (visualization)"
+    - "Alerting systems (PagerDuty, email, etc.)"
+    - "OpenCost (cost allocation)"
+  optional_features:
+    - "Custom metrics and recording rules"
+    - "Horizontal Pod Autoscaler (HPA) metrics"
+    - "Federation"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/prometheus"
+    release_name: "prometheus"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks:
+    - "Runbook: Alert tuning and troubleshooting"
+  dashboards:
+    - "Grafana: Platform and workload metrics overview"
+
+metadata:
+  image: "/images/cncf/prometheus.svg"
+  sidebar: false

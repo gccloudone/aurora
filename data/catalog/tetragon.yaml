@@ -1,0 +1,88 @@
+name: "Tetragon"
+slug: "tetragon"
+alias: "eBPF Runtime Enforcement"
+
+category:
+  hld: "Security"
+  type: "Core"
+
+descriptions:
+  short: "Tetragon provides real-time runtime security enforcement and tracing for Kubernetes using eBPF."
+  long: >-
+    Tetragon is used within Aurora to provide real-time runtime security
+    enforcement and deep system observability for Kubernetes workloads using
+    eBPF. It enables policy-driven detection and prevention of undesired process,
+    file, and network activity at the kernel level, without requiring application
+    instrumentation. Tetragon complements admission-time controls and passive
+    detection by enabling active enforcement and fine-grained runtime policy
+    aligned with zero-trust and defense-in-depth security models.
+
+capabilities:
+  - runtime-security
+  - runtime-enforcement
+  - ebpf
+  - process-monitoring
+  - kernel-tracing
+  - zero-trust
+
+relationships:
+  parent: "cilium"
+  type: "subcomponent"
+
+project:
+  homepage: "https://tetragon.io/"
+  documentation: "https://docs.cilium.io/en/stable/observability/tetragon/"
+  cncf_landscape: "https://landscape.cncf.io/?item=provisioning--security-compliance--tetragon"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Security"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Acts as the runtime enforcement and tracing layer for Kubernetes workloads,
+    observing and optionally blocking process execution, file access, and
+    network activity using eBPF programs attached to kernel hooks.
+  control_plane_components:
+    - "tetragon-agent"
+    - "tetragon-operator"
+
+integrations:
+  integrates_with:
+    - "Cilium"
+    - "Kubernetes API Server"
+    - "Security monitoring and alerting systems"
+  optional_features:
+    - "Policy-based enforcement"
+    - "Process and syscall tracing"
+    - "Export of security events"
+
+dependencies:
+  requires:
+    - "Cilium"
+    - "Kubernetes"
+    - "Kernel with eBPF support"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/tetragon"
+    release_name: "tetragon"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks:
+    - "Runbook: Writing and tuning runtime enforcement policies"
+  dashboards:
+    - "Grafana: Runtime security and enforcement overview"
+
+metadata:
+  image: "/images/cncf/tetragon.svg"
+  sidebar: false

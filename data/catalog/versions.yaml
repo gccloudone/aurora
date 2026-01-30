@@ -1,0 +1,76 @@
+# Generated from Argo Application templates
+# Do not edit manually
+
+core:
+  argocd:
+    version: "v3.1.9"
+  aad-pod-identity:
+    version: "4.1.18"
+  aurora-controller:
+    version: "0.0.1"
+  aws-ebs-csi-driver:
+    version: "2.47.0"
+  aws-loadbalancer-controller:
+    version: "1.13.4"
+  cert-manager:
+    version: "v1.18.1"
+  cidr-allocator:
+    version: "0.0.1"
+  cilium:
+    version: "1.14.19"
+  falco:
+    version: "6.2.5"
+  fluent-operator:
+    version: "2.5.0"
+  gatekeeper:
+    version: "3.12.0"
+  kube-bench:
+    version: "v0.8.0"
+  opencost:
+    version: "1.106.0"
+  kubernetes-event-exporter:
+    version: "3.2.12"
+  podtracker:
+    version: "1.0.0"
+  prometheus:
+    version: "44.3.0"
+  secrets-store-csi-driver:
+    version: "1.5.4"
+  tetragon:
+    version: "1.4.0"
+  trivy-operator:
+    version: "0.31.0"
+  trust-manager:
+    version: "v0.19.0"
+  vault-agent:
+    version: "0.22.0"
+  velero:
+    version: "11.3.2"
+
+app:
+  argo-controller:
+    version: "0.0.3"
+  argo-workflow:
+    version: "0.42.1"
+  elastic:
+    version: "2.16.1"
+  istio:
+    version: "1.18.4"
+  kiali:
+    version: "1.62.0"
+  sidecar-terminator:
+    version: "0.0.1"
+  solr:
+    version: "0.5.1"
+
+mgmt:
+  argo-foundation:
+    version: "0.15.0"
+  argo-operator:
+    version: "0.0.12"
+  argo-solutions:
+    version: "0.15.0"
+  bill-of-landing:
+    version: "0.0.1"
+  loki:
+    version: "6.21.0"
