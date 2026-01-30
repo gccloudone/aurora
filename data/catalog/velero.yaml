@@ -70,7 +70,7 @@ dependencies:
 references:
   charts:
     repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
-    path: "stable/aurora-platform/charts/velero"
+    path: "stable/aurora-platform/charts/aurora-core/templates/velero"
     release_name: "velero"
   adr:
     - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"

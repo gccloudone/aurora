@@ -74,7 +74,7 @@ dependencies:
 references:
   charts:
     repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
-    path: "stable/aurora-platform/charts/trivy-operator"
+    path: "stable/aurora-platform/charts/aurora-core/templates/trivy-operator"
     release_name: "trivy-operator"
   adr:
     - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"

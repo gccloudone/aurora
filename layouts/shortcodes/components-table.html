@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Category</th>
+      <th>Owner</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $key, $c := site.Data.catalog }}
+      {{ if ne $key "versions" }}
+        <tr>
+          <td><a href="{{ $c.references.charts.repo }}/tree/main/{{ $c.references.charts.path }}">{{ $c.name }}</a></td>
+          <td>{{ $c.category.hld }}</td>
+          <td>{{ $c.deployment.ownership.team }}</td>
+          <td>
+            {{ $c.descriptions.long }}<br /><br />
+            {{ with $c.project.homepage }}
+              <a href="{{ . }}">{{ . }}</a>
+            {{ end }}
+          </td>
+        </tr>
+      {{ end }}
+    {{ end }}
+  </tbody>
+</table>

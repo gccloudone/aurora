@@ -70,7 +70,7 @@ dependencies:
 references:
   charts:
     repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
-    path: "stable/aurora-platform/charts/kube-bench"
+    path: "stable/aurora-platform/charts/aurora-core/templates/kube-bench"
     release_name: "kube-bench"
   adr:
     - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"

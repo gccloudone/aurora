@@ -71,8 +71,8 @@ dependencies:
 
 references:
   charts:
-    repo: "https://github.com/gccloudone-aurora/cidr-allocator"
-    path: "deploy"
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/cidr-allocator"
     release_name: "cidr-allocator"
   adr:
     - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
