@@ -1,87 +1,117 @@
 ---
-title: "Architecture et Vision"
+title: "Vision"
 date: 2025-02-05
 draft: false
 sidebar: false
 showToc: true
 translationKey: "vision"
+disableCharacterlimit: true
 ---
+
+<!-- markdownlint-disable MD033 -->
+
+<gcds-notice type="info" notice-title-tag="h2" notice-title="Une plateforme universelle pour l’hébergement d’applications modernes">
+  <gcds-text>
+    Aurora est une plateforme sécurisée d’hébergement d’applications en libre-service qui permet aux équipes de conception de solutions de développer et de déployer rapidement des solutions infonuagiques natives.
+  </gcds-text>
+</gcds-notice>
+
+<!-- markdownlint-enable MD033 -->
 
 ## Vision
 
-Aurora vise à unifier le meilleur des mondes open-source et propriétaires des environnements Kubernetes, en offrant une solution d'hébergement standardisée, évolutive et sécurisée.
+Aurora vise à unifier les environnements Kubernetes à code source ouvert et propriétaires, en offrant une plateforme normalisée et évolutive dans des environnements infonuagiques publics et privés, tout en permettant la mobilité des charges de travail sans nécessiter de modifications architecturales, et en servant de fondation commune pour un large éventail de services numériques du gouvernement du Canada.
+
+![Vision stratégique](/images/vision/vision.svg "Vision stratégique")
 
 ## Aperçu
 
-Un des objectifs de l'équipe Aurora est de concevoir et de réaliser une plateforme qui est agnostique du cloud, qui soutient les équipes cherchant à tirer parti des conceptions "cloud-first".
+Aurora est conçue comme une plateforme infonuagique agnostique qui soutient les équipes souhaitant adopter des modèles de conception infonuagiques dès le départ dans des environnements variés.
 
-Pour y parvenir, l'équipe Aurora propose une offre de service connue sous le nom de Plateforme d'Hébergement d'Applications Aurora (AUR).
+Cette capacité est offerte par l’intermédiaire d’un service appelé la Plateforme d’hébergement d’applications Aurora (AUR), qui fournit une fondation cohérente pour l’hébergement et l’exploitation des solutions.
 
-Pour souligner les avantages, les objectifs et le but de Aurora, l'équipe Aurora a créé un tableau de vision du produit.
+Afin de définir les avantages, les objectifs et les résultats attendus d’Aurora, un tableau de vision du produit a été élaboré.
 
-![Vision du Produit Aurora](/images/aurora/product-vision.png "Vision du Produit Aurora")
+> Le tableau de vision du produit fournit une compréhension commune de l’orientation visée d’Aurora et aide à orienter la prise de décisions.
 
-**Figure 1** - Le Tableau de Vision du Produit Aurora
+## Structure du tableau de vision du produit
 
-Le tableau de vision du produit est utilisé pour fournir une compréhension commune de la direction à suivre et il guide et informe les décisions concernant Aurora.
-
->Le tableau de vision de la production oriente l'équipe Aurora dans la direction générale où nous allons, et ne reflète pas nécessairement ce qui est disponible aujourd'hui.
-
-## Anatomie du Tableau de Vision du Produit
+![Vision du produit](/images/vision/product-vision.png "Vision du produit")
 
 Le tableau de vision du produit se compose de cinq sections.
 
-1. **Vision :** l'objectif que nous souhaitons atteindre
-1. **Groupe cible :** le groupe le plus susceptible de bénéficier de l'utilisation du produit
-1. **Besoins :** avantages procurés par l'utilisation du produit
-1. **Produit :** caractéristiques-clés du produit
-1. **Objectifs de l'entreprise :** bénéfices pour l'organisation
+1. **Vision :** l’objectif à atteindre
+1. **Groupe cible :** le groupe le plus susceptible de tirer profit de l’utilisation du produit
+1. **Besoins :** les avantages offerts par le produit
+1. **Produit :** les principales caractéristiques du produit
+1. **Objectifs opérationnels :** les avantages pour l’organisation
 
 ### Objectifs
 
-D'ici 2028, Aurora sera la clé de voûte de l'hébergement d'applications pour le gouvernement fédéral du Canada, unissant les départements sous une plateforme sécurisée et indépendante du cloud, conçue pour l'innovation et l'excellence opérationnelle. Elle rendra le processus d'intégration plus fluide grâce à des capacités d'auto-service intuitives, assurera une gouvernance cohérente sur des environnements divers, et renforcera une communauté d'architectes certifiés et de constructeurs de solutions pour piloter la transformation numérique. En donnant la priorité à la scalabilité, à la sécurité, et à l'interopérabilité, Aurora redéfinira la manière dont les solutions gouvernementales sont développées, déployées et gérées, favorisant la collaboration et établissant une nouvelle référence pour les plates-formes technologiques modernes du secteur public.
+D’ici 2028, Aurora deviendra la pierre angulaire de l’hébergement d’applications pour le gouvernement fédéral du Canada, en soutenant les ministères grâce à une plateforme sécurisée et infonuagique agnostique conçue pour favoriser l’innovation et l’excellence opérationnelle. Elle simplifiera l’intégration grâce à des capacités en libre-service, assurera une gouvernance uniforme dans des environnements variés et soutiendra une communauté d’architectes certifiés et de concepteurs de solutions. En permettant aux charges de travail de circuler entre les environnements sans refonte, Aurora permet aux ministères d’exploiter leurs solutions là où cela est le plus judicieux sur les plans technique, financier ou opérationnel, tout en évitant les duplications et les coûts inutiles.
 
 ### Groupe cible
 
-Les "constructeurs de solutions" est le terme générique qui englobe à la fois les utilisateurs traditionnels de la technologie de l'information (IT), tels que les développeurs d'applications, et les utilisateurs non traditionnels de l'IT, tels que les data scientists et les analystes de données. Le terme "solution" est utilisé au lieu de "app" ou "système" pour mieux refléter l'éventail des solutions qui pourraient être disponibles sur Aurora. Par exemple, cela peut inclure des solutions à grande échelle pour des initiatives d'entreprises ainsi que des solutions plus petites qui peuvent être autonomes et servir à des fins très spécifiques.
+Le terme « concepteurs de solutions » désigne un ensemble d’utilisateurs comprenant à la fois des utilisateurs traditionnels des technologies de l’information (TI), tels que les développeurs d’applications, et des utilisateurs non traditionnels, tels que les scientifiques et analystes de données.
+
+Le terme « solution » est utilisé plutôt que « application » ou « système » afin de refléter l’éventail des solutions prises en charge par Aurora. Cela comprend des solutions de grande envergure pour des initiatives organisationnelles ainsi que des solutions plus petites et autonomes répondant à des besoins précis.
 
 ### Besoins
 
-Il y a cinq avantages principaux à utiliser Aurora :
+Aurora offre six principaux avantages.
 
 1. **Solutions en libre-service**
-Permettre aux constructeurs de solutions d'avoir plus d'autonomie sur leurs solutions et de renforcer le modèle en libre-service avec des mesures de sauvegarde appropriées.
-1. **Configuration d'infrastructure cohérente**
-Réduire l'ambiguïté et la confusion avec la configuration de l'infrastructure à travers les environnements.
-1. **Réduire l'intervention manuelle**
-Un avantage des configurations d'infrastructure cohérentes est la réduction de l'intervention manuelle lors des déploiements.
+Permettre aux concepteurs de solutions de gérer leurs solutions de façon autonome tout en respectant des balises établies.
+
+1. **Prise en charge des préoccupations transversales par la plateforme**
+Réduire les responsabilités des équipes applicatives en prenant en charge, au niveau de la plateforme, des éléments communs tels que la sécurité des communications et l’authentification des applications.
+
+1. **Configuration uniforme de l’infrastructure**
+Réduire l’ambiguïté et la confusion grâce à une configuration cohérente de l’infrastructure dans tous les environnements.
+
+1. **Réduction des interventions manuelles**
+Une configuration uniforme de l’infrastructure minimise le besoin d’interventions manuelles lors des déploiements.
+
 1. **Déploiements rapides et cohérents**
-Avec une infrastructure cohérente et des interventions manuelles réduites, les déploiements peuvent être automatisés et réalisés rapidement et de manière cohérente.
-1. **Documentation des paquets avec la solution**
-Fournir des outils qui emballent la documentation avec la solution assure que cette information vitale n'est pas dissociée.
+L’automatisation permet des déploiements rapides et reproductibles.
+
+1. **Documentation intégrée à la solution**
+Fournir des outils qui assurent que la documentation est livrée avec la solution et maintenue à jour.
 
 ### Produit
 
-Il y a cinq caractéristiques clés de la plateforme Aurora :
+La plateforme Aurora offre cinq caractéristiques clés.
 
-1. **Sécurité intégrée** : Des fonctionnalités de sécurité telles que la récupération après sinistre, la sécurité des données, l'intégration avec les outils de gestion des informations et des événements de sécurité de l'entreprise, et les politiques de sécurité du réseau.
+1. **Sécurité intégrée**
+Des fonctionnalités de sécurité telles que la gestion des certificats TLS par la plateforme, l’authentification des applications, la reprise après sinistre, la protection des données, l’intégration avec les outils de sécurité d’entreprise et les politiques de sécurité réseau.
 
-1. **Services et technologie de la Cloud Native Computing Foundation (CNCF)** : La plateforme Aurora est un défenseur des systèmes d'infrastructure modernes, agnostiques du cloud, alimentés par des conceptions cloud-first et des logiciels open source. La majorité des composants sur la plateforme Aurora sont des technologies promues par le CNCF.
+1. **Services et technologies de la Cloud Native Computing Foundation (CNCF)**
+Aurora favorise une infrastructure infonuagique agnostique reposant sur des modèles de conception infonuagiques et des technologies à code source ouvert. La majorité des composants de la plateforme s’alignent sur les projets de la CNCF.
 
-1. **Services évolutifs et résilients** : Des services et des composants sur la plateforme qui peuvent évoluer pour répondre aux exigences des solutions qu'elle héberge.
+1. **Services évolutifs et résilients**
+Les services de la plateforme sont conçus pour évoluer en fonction des besoins des solutions qu’ils hébergent.
 
-1. **Observabilité inhérente** : Permet une meilleure compréhension et donne un meilleur aperçu de pourquoi quelque chose a mal tourné.
+1. **Observabilité intégrée**
+Fournir une visibilité sur le comportement de la plateforme et des solutions afin de soutenir le dépannage et la surveillance opérationnelle.
 
-1. **Provisionnement d'infrastructure à la demande** : Grâce à la promotion de l'Infrastructure as Code (IaC) l'infrastructure peut être provisionnée de manière cohérente et en accord avec les besoins en calcul, réseau et stockage.
+1. **Provisionnement d’infrastructure à la demande**
+L’infrastructure est provisionnée à l’aide de l’infrastructure en tant que code (IaC) afin d’assurer la cohérence des ressources de calcul, de réseau et de stockage.
 
-### Objectifs de l'entreprise
+### Objectifs opérationnels
 
-Les avantages de la plateforme Aurora pour Services Partagés Canada comprennent :
+Les avantages de la plateforme Aurora pour Services partagés Canada comprennent les éléments suivants.
 
-1. **Dépenses IT ciblées sur les besoins** : Plutôt que de payer pour une infrastructure qui peut rester inactive, elle peut être ciblée en cas de besoin.
+1. **Dépenses en TI adaptées aux besoins**
+Les ressources d’infrastructure sont provisionnées en fonction de la demande plutôt que maintenues à l’avance.
 
-1. **Visibilité accrue sur les coûts de consommation d'IT** : Des outils disponibles qui fournissent plus d'informations sur les coûts de consommation d'une solution, y compris l'efficacité avec laquelle une solution utilise ses ressources.
+1. **Optimisation des coûts grâce à la mobilité des charges de travail**
+Les solutions peuvent être déplacées entre des environnements infonuagiques et sur site sans modification architecturale, permettant aux ministères d’optimiser les coûts, le rendement et les exigences opérationnelles.
 
-1. **Réduire le délai entre le développement et le déploiement** : Promouvoir le concept d'"échec rapide" afin que les solutions puissent être déployées dès le jour 0 pour permettre une réalisation précoce du succès ou de l'échec, et permettre aux équipes de constructeurs de solutions de s'orienter dans la bonne direction.
+1. **Visibilité accrue des coûts de consommation des TI**
+Des outils fournissent une meilleure visibilité sur l’utilisation des ressources et l’efficacité des coûts au niveau des solutions.
 
-1. **Encourager le passage à l'open source et à DevSecOps** : S'aligner sur les [Normes Numériques du Gouvernement du Canada](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/normes-numeriques-gouvernement-canada.html) et briser les silos au sein de l'IT (développement et opérations).
+1. **Réduction du délai entre le développement et le déploiement**
+Favoriser un déploiement rapide et itératif afin de permettre aux équipes de valider rapidement l’orientation retenue.
+
+1. **Soutien aux pratiques à code source ouvert et DevSecOps**
+S’aligner sur les Normes numériques du gouvernement du Canada et favoriser une collaboration accrue entre les équipes de développement et d’exploitation.
