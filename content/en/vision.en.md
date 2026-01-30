@@ -61,7 +61,7 @@ There are six key benefits of using Aurora.
 1. **Self service solutions**
 Enable solution builders to manage their solutions independently while operating within defined guardrails.
 
-1. **Platform handled cross cutting concerns**
+1. **Platform handles cross cutting concerns**
 Reduce the responsibility placed on application teams by handling common concerns at the platform level, including transport security and application authentication.
 
 1. **Consistent infrastructure configuration**
