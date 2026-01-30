@@ -1,6 +1,6 @@
 ---
 title: "Aurore"
-description: "La prestation de services modernes pour tous les Canadiens."
+description: "Aurora est une plateforme sécurisée d’hébergement d’applications en libre-service qui permet aux équipes de conception de solutions de développer et de déployer rapidement des solutions infonuagiques natives."
 date: 2024-10-21
 draft: false
 ---

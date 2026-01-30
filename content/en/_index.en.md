@@ -1,7 +1,7 @@
 ---
 title: "Aurora"
-description: "Modern service delivery for all Canadians."
-date: 2024-10-21
+description: "Aurora is a secure, self service application hosting platform that enables solution builders to rapidly develop and deploy cloud native solutions."
+date: 2026-01-30
 draft: false
 ---
 
