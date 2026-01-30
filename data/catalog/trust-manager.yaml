@@ -35,12 +35,10 @@ project:
   license: "Apache-2.0"
 
 deployment:
-  status: "deployed"
-  version: "0.x"
   deployed_in:
     - "management-clusters"
     - "workload-clusters"
-  deployment_model: "Helm-managed Trust Manager"
+  deployment_model: "Helm"
   ownership:
     team: "SIG: Security"
     steward: "Aurora Platform Team"
@@ -79,9 +77,8 @@ references:
     path: "stable/aurora-platform/charts/trust-manager"
     release_name: "trust-manager"
   adr:
-    - "ADR-011: Centralized trust bundle management with Trust Manager"
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
   runbooks:
-    - "Runbook: Managing trusted CA bundles"
     - "Runbook: Troubleshooting certificate trust issues"
   dashboards:
     - "Grafana: Trust Manager reconciliation status"

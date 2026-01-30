@@ -4,7 +4,7 @@ alias: "Service Mesh"
 
 category:
   hld: "Networking"
-  type: "Core"
+  type: "App"
 
 descriptions:
   short: "Istio provides service mesh capabilities for traffic management, security, and observability in Kubernetes."
@@ -32,11 +32,10 @@ project:
   license: "Apache-2.0"
 
 deployment:
-  status: "deployed"
-  version: "1.x"
   deployed_in:
+    - "management-clusters"
     - "workload-clusters"
-  deployment_model: "Helm-managed Istio control plane with sidecar or ambient data plane"
+  deployment_model: "Helm"
   ownership:
     team: "SIG: Networking"
     steward: "Aurora Platform Team"
@@ -79,10 +78,8 @@ references:
     path: "stable/aurora-platform/charts/aurora-app/templates/istio"
     release_name: "istio"
   adr:
-    - "ADR-010: Istio as the standard service mesh"
-    - "ADR-011: Ambient mesh adoption strategy"
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
   runbooks:
-    - "Runbook: Istio installation and upgrade"
     - "Runbook: Debugging service-to-service traffic"
   dashboards:
     - "Grafana: Istio service mesh overview"

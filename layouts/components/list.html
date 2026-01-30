@@ -7,6 +7,9 @@
   {{ partial "verify" . }}
   {{ partial "header" . }}
 
+  {{ $catalog := .Site.Data.catalog }}
+  {{ $versions := $catalog.versions }}
+
   <gcds-container size="xl" main-container centered tag="main">
     <gcds-grid
       tag="section"
@@ -24,11 +27,6 @@
       <section class="mb-400">
         {{ partial "heading" . }}
 
-        {{ $content := .Content | replaceRE `(?s:<p>(.*?)</p>)`
-          (printf "<gcds-text character-limit=\"%v\">$1</gcds-text>"
-          (not (.Page.Params.disableCharacterLimit | default .Site.Params.disableCharacterLimit))) }}
-        {{ $content | safeHTML }}
-
         <gcds-heading tag="h2">
           {{ i18n "components_browse" | default "Browse Components" }}
         </gcds-heading>
@@ -42,48 +40,59 @@
             gap="400"
             class="hydrated">
 
-            {{- $components := .Site.Data.catalog -}}
+            {{ range $key, $c := $catalog }}
+              {{ if eq $key "versions" }}{{ continue }}{{ end }}
 
-            {{- /*
-                 Use sort for maps; Hugo sorts by the field on the value.
-                 Remove shuffle if you want stable ordering.
-               */ -}}
-            {{- range sort $components "name" -}}
-              {{- $c := . -}}
+              {{ $slug := $c.slug | default (urlize $c.name) }}
+              {{ $scratch := newScratch }}
+
+              {{/* 1. Try direct section lookup */}}
+              {{ range $sectionName, $sectionMap := $versions }}
+                {{ if index $sectionMap $slug }}
+                  {{ $scratch.Set "section" $sectionName }}
+                {{ end }}
+              {{ end }}
+
+              {{/* 2. Fallback to parent section */}}
+              {{ if and (not ($scratch.Get "section")) $c.relationships.parent }}
+                {{ $parent := $c.relationships.parent }}
+                {{ range $sectionName, $sectionMap := $versions }}
+                  {{ if index $sectionMap $parent }}
+                    {{ $scratch.Set "section" $sectionName }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+
+              {{ $section := $scratch.Get "section" | default "unknown" }}
 
               <gcds-card
                 card-title="{{ $c.name }}"
-                href="{{ printf "/components/%s/" ($c.slug | default (urlize $c.name)) }}"
+                href="{{ printf "/components/%s/" $slug }}"
                 card-title-tag="h3"
-                badge="{{ $c.category.type }}"
+                badge="{{ $section }}"
                 img-src="{{ $c.metadata.image }}"
                 img-alt=""
                 role="listitem"
                 class="hydrated">
 
                 {{ with $c.descriptions.short }}
-                  <gcds-text class="hydrated">{{ . }}</gcds-text>
+                  <gcds-text>{{ . }}</gcds-text>
                 {{ end }}
 
-                <gcds-text
-                  text-role="secondary"
-                  size="caption"
-                  margin-bottom="0"
-                  class="hydrated">
-                  {{ with $c.alias }}
+                {{ with $c.alias }}
+                  <gcds-text text-role="secondary" size="caption">
                     <em>Other names: {{ . }}</em>
-                  {{ end }}
-                </gcds-text>
+                  </gcds-text>
+                {{ end }}
 
               </gcds-card>
-            {{- end -}}
+            {{ end }}
 
           </gcds-grid>
         </div>
 
         {{ partial "date-modified" . }}
       </section>
-
     </gcds-grid>
   </gcds-container>
 {{ end }}

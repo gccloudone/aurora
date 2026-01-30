@@ -31,11 +31,10 @@ project:
   license: "Apache-2.0"
 
 deployment:
-  status: "deployed"
-  version: "0.x"
   deployed_in:
+    - "management-clusters"
     - "workload-clusters"
-  deployment_model: "Helm-managed Falco with kernel or eBPF driver"
+  deployment_model: "Helm"
   ownership:
     team: "SIG: Security"
     steward: "Aurora Platform Team"
@@ -73,9 +72,8 @@ references:
     path: "stable/aurora-platform/charts/aurora-core/templates/falco"
     release_name: "falco"
   adr:
-    - "ADR-007: Falco as the standard runtime threat detection solution"
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
   runbooks:
-    - "Runbook: Falco deployment and upgrade"
     - "Runbook: Investigating Falco alerts"
   dashboards:
     - "Grafana: Falco alerts overview"

@@ -32,11 +32,10 @@ project:
   license: "Apache-2.0"
 
 deployment:
-  status: "deployed"
-  version: "1.x"
   deployed_in:
+    - "management-clusters"
     - "workload-clusters"
-  deployment_model: "Helm-managed Cilium with operator"
+  deployment_model: "Helm"
   ownership:
     team: "SIG: Networking"
     steward: "Aurora Platform Team"
@@ -75,14 +74,11 @@ references:
     path: "stable/aurora-platform/charts/aurora-core/templates/cilium"
     release_name: "cilium"
   adr:
-    - "ADR-001: Cilium as primary CNI"
-    - "ADR-004: BGP-based route propagation"
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
   runbooks:
-    - "Runbook: Cilium upgrade procedure"
     - "Runbook: Hubble troubleshooting"
   dashboards:
     - "Grafana: Cilium Overview"
-    - "Grafana: Hubble Flows"
 
 metadata:
   image: "/images/cncf/cilium.svg"

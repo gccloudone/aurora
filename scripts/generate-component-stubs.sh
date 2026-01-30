@@ -10,16 +10,24 @@ mkdir -p "${CONTENT_DIR}"
 echo "Generating component stub pages from catalog…"
 
 for file in "${CATALOG_DIR}"/*.yaml; do
-  # Extract fields using yq (v4+)
-  slug=$(yq '.slug' "$file")
-  name=$(yq '.name' "$file")
+  filename="$(basename "$file")"
 
-  if [[ "$slug" == "null" || -z "$slug" ]]; then
+  # Skip versions.yaml explicitly
+  if [[ "$filename" == "versions.yaml" ]]; then
+    echo "↷ Skipping ${filename}"
+    continue
+  fi
+
+  # Extract fields using yq (v4+)
+  slug=$(yq '.slug // ""' "$file")
+  name=$(yq '.name // ""' "$file")
+
+  if [[ -z "$slug" ]]; then
     echo "❌ Missing slug in $file"
     exit 1
   fi
 
-  if [[ "$name" == "null" || -z "$name" ]]; then
+  if [[ -z "$name" ]]; then
     echo "❌ Missing name in $file"
     exit 1
   fi
