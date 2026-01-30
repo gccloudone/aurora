@@ -48,6 +48,20 @@ Here are the current procedures in place:
   >
   </gcds-card>
   <gcds-card
+    card-title="Issue Tracking"
+    href="/team/standard-operating-procedures/issue-tracking/"
+    badge="Governance"
+    description="Standards for issue tracking across Aurora."
+  >
+  </gcds-card>
+  <gcds-card
+    card-title="SSL Cert Issuance"
+    href="/team/standard-operating-procedures/ssl-cert-issuance/"
+    badge="Governance"
+    description="Procedure for validating the issuance of SSL certificates with Cert Manager."
+  >
+  </gcds-card>
+  <gcds-card
     card-title="Issue and PR Naming Conventions"
     href="/team/standard-operating-procedures/issue-naming/"
     badge="Governance"
