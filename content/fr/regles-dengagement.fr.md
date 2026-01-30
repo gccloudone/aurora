@@ -30,7 +30,7 @@ Ces cadres mettent l'accent sur l'inclusivité, le respect, la collaboration et 
 
 ## Signalement et soutien
 
-Si vous êtes témoin ou victime d'un comportement qui enfreint ces principes, veuillez le signaler à notre contact désigné à `aurora-aurore@ssc-spc.gc.ca`. Nous nous engageons à traiter toutes les préoccupations rapidement et à maintenir un environnement communautaire sûr.
+Si vous êtes témoin ou victime d'un comportement qui enfreint ces principes, veuillez le signaler à notre contact désigné à <gcds-link href="mailto:aurora-aurore@ssc-spc.gc.ca">Email</gcds-link>. Nous nous engageons à traiter toutes les préoccupations rapidement et à maintenir un environnement communautaire sûr.
 
 ## Pour en savoir plus
 

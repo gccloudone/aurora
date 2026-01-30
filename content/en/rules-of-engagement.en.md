@@ -30,7 +30,7 @@ These frameworks emphasize inclusivity, respect, collaboration, and integrity. B
 
 ## Reporting and Support
 
-If you experience or witness behavior that violates these principles, please report it to our designated contact at `aurora-aurore@ssc-spc.gc.ca`. We are committed to addressing all concerns promptly and maintaining a safe community environment.
+If you experience or witness behavior that violates these principles, please report it to our designated contact at <gcds-link href="mailto:aurora-aurore@ssc-spc.gc.ca">Email</gcds-link>. We are committed to addressing all concerns promptly and maintaining a safe community environment.
 
 ## Learn More
 
