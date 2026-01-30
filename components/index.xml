@@ -1,1 +1,267 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Components on Aurora</title><link>/components/</link><description>Recent content in Components on Aurora</description><generator>Hugo</generator><language>en-ca</language><atom:link href="/components/index.xml" rel="self" type="application/rss+xml"/><item><title>Argo CD</title><link>/components/argocd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/argocd/</guid><description/></item><item><title>Cert Manager</title><link>/components/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/cert-manager/</guid><description/></item><item><title>Cilium</title><link>/components/cilium/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/cilium/</guid><description/></item><item><title>Falco</title><link>/components/falco/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/falco/</guid><description/></item><item><title>FluentBit</title><link>/components/fluentbit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/fluentbit/</guid><description/></item><item><title>Hubble</title><link>/components/hubble/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/hubble/</guid><description/></item><item><title>Istio</title><link>/components/istio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/istio/</guid><description/></item><item><title>Open Policy Agent</title><link>/components/opa/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/opa/</guid><description/></item><item><title>OpenCost</title><link>/components/opencost/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/opencost/</guid><description/></item><item><title>Prometheus</title><link>/components/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/prometheus/</guid><description/></item><item><title>Tetragon</title><link>/components/tetragon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/tetragon/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Components on Aurora</title><link>/components/</link><description>Recent content in Components on Aurora</description><generator>Hugo</generator><language>en-ca</language><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/components/index.xml" rel="self" type="application/rss+xml"/><item><title>Aurora Platform Components (HLD Extract)</title><link>/components/table/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/table/</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Component&lt;/th>
+ &lt;th>Category&lt;/th>
+ &lt;th>Owner&lt;/th>
+ &lt;th>Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-mgmt/templates/argo-foundation">Argo CD&lt;/a>&lt;/td>
+ &lt;td>Platform Management&lt;/td>
+ &lt;td>SIG: Architecture&lt;/td>
+ &lt;td>
+ Argo CD is Aurora’s primary GitOps engine for deploying and managing platform and application components across Kubernetes clusters. It continuously reconciles the desired state defined in Git repositories with the live state of clusters, providing drift detection, automated synchronization, and auditable change history. Argo CD enables consistent, repeatable deployments while enforcing separation of concerns between platform teams and application teams.&lt;br />&lt;br />
+ 
+ &lt;a href="https://argo-cd.readthedocs.io/">https://argo-cd.readthedocs.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager">cert-manager&lt;/a>&lt;/td>
+ &lt;td>Security&lt;/td>
+ &lt;td>SIG: Security&lt;/td>
+ &lt;td>
+ cert-manager is used within Aurora to automate the issuance, renewal, and lifecycle management of TLS certificates for Kubernetes workloads and platform services. It integrates with external certificate authorities and internal PKI systems to ensure secure, policy-compliant encryption for ingress, service-to-service communication, and platform endpoints, reducing operational risk and manual certificate handling.&lt;br />&lt;br />
+ 
+ &lt;a href="https://cert-manager.io/">https://cert-manager.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cidr-allocator">CIDR Allocator&lt;/a>&lt;/td>
+ &lt;td>Platform Networking&lt;/td>
+ &lt;td>SIG: Networking&lt;/td>
+ &lt;td>
+ CIDR Allocator is a custom Aurora platform component responsible for allocating, tracking, and managing IP address ranges for Kubernetes clusters and networking domains. It ensures that cluster, pod, and service CIDRs are assigned deterministically and without overlap across environments. CIDR Allocator enables scalable multi-cluster networking, simplifies routing and firewall integration, and supports Aurora’s zero-trust and multi-cloud networking architecture.&lt;br />&lt;br />
+ 
+ &lt;a href="https://github.com/gccloudone-aurora/cidr-allocator">https://github.com/gccloudone-aurora/cidr-allocator&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cilium">Cilium&lt;/a>&lt;/td>
+ &lt;td>Networking&lt;/td>
+ &lt;td>SIG: Networking&lt;/td>
+ &lt;td>
+ Cilium is Aurora’s primary Container Network Interface (CNI) and dataplane for Kubernetes workload clusters. It leverages eBPF to deliver high-performance pod networking, fine-grained network policy enforcement, and deep traffic observability through Hubble. Cilium enables advanced networking patterns, including ClusterwideNetworkPolicy and optional BGP-based route advertisement to integrate pod and service networking with enterprise firewalls.&lt;br />&lt;br />
+ 
+ &lt;a href="https://cilium.io/">https://cilium.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/falco">Falco&lt;/a>&lt;/td>
+ &lt;td>Security&lt;/td>
+ &lt;td>SIG: Security&lt;/td>
+ &lt;td>
+ Falco is used within Aurora to provide runtime security monitoring and threat detection for Kubernetes workloads. It observes system calls and Kubernetes events to detect abnormal or potentially malicious behavior, such as privilege escalation, unexpected process execution, or suspicious network activity. Falco enables real-time alerting and supports policy-driven runtime enforcement aligned with zero-trust and defense-in-depth security models.&lt;br />&lt;br />
+ 
+ &lt;a href="https://falco.org/">https://falco.org/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/fluent-operator">Fluent Operator&lt;/a>&lt;/td>
+ &lt;td>Observability&lt;/td>
+ &lt;td>SIG: Observability&lt;/td>
+ &lt;td>
+ Fluent Operator is used within Aurora as the control plane for Kubernetes logging. It manages the lifecycle, configuration, and rollout of Fluent Bit instances across clusters using Kubernetes custom resources. By separating log pipeline configuration from node-level agents, Fluent Operator enables consistent, declarative, and multi-tenant logging practices while reducing operational complexity for platform and application teams.&lt;br />&lt;br />
+ 
+ &lt;a href="https://github.com/fluent/fluent-operator">https://github.com/fluent/fluent-operator&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/gatekeeper">Gatekeeper&lt;/a>&lt;/td>
+ &lt;td>Security&lt;/td>
+ &lt;td>SIG: Security&lt;/td>
+ &lt;td>
+ Gatekeeper is used within Aurora as the Kubernetes admission controller for enforcing policy and governance controls at resource creation and update time. Built on Open Policy Agent (OPA), Gatekeeper enables policy-as-code enforcement for security, compliance, and platform guardrails, ensuring that Kubernetes resources adhere to approved standards before they are admitted into the cluster. This approach reduces operational risk and supports consistent enforcement of enterprise and regulatory requirements.&lt;br />&lt;br />
+ 
+ &lt;a href="https://open-policy-agent.github.io/gatekeeper/">https://open-policy-agent.github.io/gatekeeper/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cilium">Hubble&lt;/a>&lt;/td>
+ &lt;td>Observability&lt;/td>
+ &lt;td>SIG: Networking&lt;/td>
+ &lt;td>
+ Hubble is the observability component of Cilium that provides deep visibility into Kubernetes network traffic using eBPF. It captures network flows at the kernel level and exposes them through APIs, CLI tools, and a web-based UI. Within Aurora, Hubble enables platform operators and application teams to understand service-to-service communication, troubleshoot connectivity issues, and validate network policy behavior without packet capture or intrusive instrumentation.&lt;br />&lt;br />
+ 
+ &lt;a href="https://cilium.io/hubble/">https://cilium.io/hubble/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/istio">Istio&lt;/a>&lt;/td>
+ &lt;td>Networking&lt;/td>
+ &lt;td>SIG: Networking&lt;/td>
+ &lt;td>
+ Istio is used within Aurora to provide service mesh capabilities for Kubernetes workloads, including traffic management, mutual TLS, identity- aware authorization, and service-to-service observability. It enables fine-grained control over east-west traffic and supports zero-trust networking patterns by enforcing strong identity and policy at the application layer, complementing lower-level network controls provided by the CNI.&lt;br />&lt;br />
+ 
+ &lt;a href="https://istio.io/">https://istio.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/kube-bench">kube-bench&lt;/a>&lt;/td>
+ &lt;td>Platform Security&lt;/td>
+ &lt;td>SIG: Security&lt;/td>
+ &lt;td>
+ kube-bench is used by Aurora to assess Kubernetes clusters against the Center for Internet Security (CIS) Kubernetes Benchmarks. It evaluates cluster configuration, control plane components, and node-level settings to identify deviations from recommended security baselines. kube-bench supports compliance reporting, security posture assessments, and continuous improvement of cluster hardening across Aurora-managed environments.&lt;br />&lt;br />
+ 
+ &lt;a href="https://github.com/aquasecurity/kube-bench">https://github.com/aquasecurity/kube-bench&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-mgmt/templates/loki">Loki&lt;/a>&lt;/td>
+ &lt;td>Platform Observability&lt;/td>
+ &lt;td>SIG: Observability&lt;/td>
+ &lt;td>
+ Loki is used by Aurora as the centralized log aggregation and storage system for platform and application logs generated across Kubernetes clusters. Designed to be cost-effective and tightly integrated with Kubernetes, Loki indexes metadata rather than full log contents, enabling efficient querying and correlation of logs with metrics and traces. Loki supports operational troubleshooting, security investigations, and audit use cases across the Aurora platform.&lt;br />&lt;br />
+ 
+ &lt;a href="https://grafana.com/oss/loki/">https://grafana.com/oss/loki/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/kubecost">OpenCost&lt;/a>&lt;/td>
+ &lt;td>Platform Management&lt;/td>
+ &lt;td>SIG: Architecture&lt;/td>
+ &lt;td>
+ OpenCost is used within Aurora to provide transparent, real-time visibility into the cost of running Kubernetes workloads. It allocates infrastructure and cloud resource costs to namespaces, workloads, and labels, enabling platform operators and client teams to understand consumption patterns, support chargeback or showback models, and make informed decisions about resource usage. OpenCost promotes financial accountability while remaining vendor-neutral and aligned with open-source cost management practices.&lt;br />&lt;br />
+ 
+ &lt;a href="https://www.opencost.io/">https://www.opencost.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/podtracker">PodTracker&lt;/a>&lt;/td>
+ &lt;td>Platform Observability&lt;/td>
+ &lt;td>SIG: Architecture&lt;/td>
+ &lt;td>
+ PodTracker is a custom Aurora platform component that observes Kubernetes pod lifecycle events and records authoritative metadata about running workloads. It provides a reliable source of truth for pod identity, ownership, namespace context, and runtime attributes. PodTracker enables downstream automation and integration use cases, including networking, security, observability, and audit workflows, by making pod-level metadata consistently available outside the cluster.&lt;br />&lt;br />
+ 
+ &lt;a href="https://github.com/gccloudone-aurora/podtracker">https://github.com/gccloudone-aurora/podtracker&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/prometheus">Prometheus&lt;/a>&lt;/td>
+ &lt;td>Observability&lt;/td>
+ &lt;td>SIG: Observability&lt;/td>
+ &lt;td>
+ Prometheus is used within Aurora as the primary metrics collection and querying system for Kubernetes clusters and platform services. It scrapes metrics from workloads, infrastructure components, and platform services, storing time-series data that enables monitoring, alerting, and performance analysis. Prometheus forms the foundation of Aurora’s observability stack and supports standardized metrics-based visibility across multi-tenant environments.&lt;br />&lt;br />
+ 
+ &lt;a href="https://prometheus.io/">https://prometheus.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/tetragon">Tetragon&lt;/a>&lt;/td>
+ &lt;td>Security&lt;/td>
+ &lt;td>SIG: Security&lt;/td>
+ &lt;td>
+ Tetragon is used within Aurora to provide real-time runtime security enforcement and deep system observability for Kubernetes workloads using eBPF. It enables policy-driven detection and prevention of undesired process, file, and network activity at the kernel level, without requiring application instrumentation. Tetragon complements admission-time controls and passive detection by enabling active enforcement and fine-grained runtime policy aligned with zero-trust and defense-in-depth security models.&lt;br />&lt;br />
+ 
+ &lt;a href="https://tetragon.io/">https://tetragon.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/trivy-operator">Trivy Operator&lt;/a>&lt;/td>
+ &lt;td>Platform Security&lt;/td>
+ &lt;td>SIG: Security&lt;/td>
+ &lt;td>
+ Trivy Operator is used by Aurora to perform continuous, automated security scanning of Kubernetes workloads, container images, and cluster configurations. It integrates Trivy’s vulnerability, misconfiguration, and compliance scanning capabilities directly into the Kubernetes control plane by producing Kubernetes-native custom resources. Trivy Operator enables proactive risk identification, supports supply chain security objectives, and provides visibility into security posture across Aurora-managed clusters.&lt;br />&lt;br />
+ 
+ &lt;a href="https://aquasecurity.github.io/trivy-operator/">https://aquasecurity.github.io/trivy-operator/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/trust-manager">Trust Manager&lt;/a>&lt;/td>
+ &lt;td>Platform Security&lt;/td>
+ &lt;td>SIG: Security&lt;/td>
+ &lt;td>
+ Trust Manager is used by Aurora to centrally manage and distribute trusted certificate authority (CA) bundles across Kubernetes clusters and workloads. It enables consistent trust configuration for platform and application components by synchronizing CA certificates into Kubernetes-native resources. Trust Manager reduces configuration drift, simplifies certificate trust management, and supports secure service-to-service communication in zero-trust and enterprise environments.&lt;br />&lt;br />
+ 
+ &lt;a href="https://cert-manager.io/docs/projects/trust-manager/">https://cert-manager.io/docs/projects/trust-manager/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/velero">Velero&lt;/a>&lt;/td>
+ &lt;td>Platform Resilience&lt;/td>
+ &lt;td>SIG: Architecture&lt;/td>
+ &lt;td>
+ Velero is used by Aurora to provide backup and restore capabilities for Kubernetes clusters and their associated resources. It enables disaster recovery, cluster migration, and operational resilience by capturing the state of Kubernetes objects and, where supported, persistent volume data. Velero supports scheduled and on-demand backups and integrates with cloud object storage to retain backups outside the cluster lifecycle.&lt;br />&lt;br />
+ 
+ &lt;a href="https://velero.io/">https://velero.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ 
+ &lt;/tbody>
+&lt;/table></description></item></channel></rss>

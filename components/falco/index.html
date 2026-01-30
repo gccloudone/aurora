@@ -1,10 +1,11 @@
 <!doctype html><html dir=ltr lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"><title>Falco | Aurora
 </title><link rel=icon href=/favicon.ico type=image/x-icon><link rel=preload href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css as=style crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-utility@1.10.0/dist/gcds-utility.min.css><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.css><script async type=module src=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.esm.js></script><link rel=stylesheet href=/scss/main.css><link rel=stylesheet href=/scss/custom.css><style>html{font-size:16px}body{font-size:var(--gcds-font-sizes-text);line-height:var(--gcds-line-heights-text);color:var(--gcds-color-grayscale-1000);font-family:var(--gcds-font-families-body),sans-serif;margin:0;animation:fade .05s forwards ease-in-out}</style><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css></head><body style=margin:0 class=character-limit><main><gcds-container centered size=md><gcds-text size=caption style="text-align: center;"><strong>Alpha</strong>&nbsp;&nbsp;This is an experimental service.</gcds-text>
 </gcds-container><gcds-header lang=en lang-href=/fr/components/falco/ signature-variant=colour skip-to-href=#><gcds-search lang=en slot=search action=/sr/srb.html placeholder=Aurora></gcds-search><gcds-top-nav slot=menu label="Top navigation" alignment=right><gcds-nav-link href=/ slot=home>GC Cloud One: Aurora
-</gcds-nav-link><gcds-nav-group open-trigger=Platform menu-label=Platform><gcds-nav-link href=/proposal>Proposal
-</gcds-nav-link><gcds-nav-link href=/roadmap>Roadmap
-</gcds-nav-link><gcds-nav-link href=/vision>Vision
+</gcds-nav-link><gcds-nav-group open-trigger=Platform menu-label=Platform><gcds-nav-link href=/roadmap>Roadmap
+</gcds-nav-link><gcds-nav-link href=/components>Components
+</gcds-nav-link><gcds-nav-link href=/proposal>Proposal
 </gcds-nav-link><gcds-nav-link href=/architecture>Architecture
+</gcds-nav-link><gcds-nav-link href=/vision>Vision
 </gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="User Guides" menu-label="User Guides"><gcds-nav-link href=/user-guides/onboarding>Onboarding
 </gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Team menu-label=Team><gcds-nav-link href=/team/sop>Standard Operating Procedures
 </gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/>Monitoring
@@ -15,10 +16,22 @@
 </gcds-nav-link></gcds-nav-group></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href="https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US">GC Cloud One</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/>Aurora</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/components/>Components</gcds-breadcrumbs-item>
-</gcds-breadcrumbs></gcds-header><gcds-container size=xl main-container centered tag=main><gcds-grid tag=section columns=1fr columns-desktop="
-        1fr
-      " align-items=start class=hydrated><section class=mb-400><gcds-heading tag=h1>Falco</gcds-heading>
-<gcds-date-modified lang=en>0001-01-01</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/contact","Report an issue": "https://github.com/gccloudone/aurora/issues/new/choose","About us": "/about" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+</gcds-breadcrumbs></gcds-header><gcds-container size=xl main-container centered tag=main><gcds-grid tag=section columns=1fr columns-desktop=1fr align-items=start class=hydrated><section class=mb-400><gcds-grid columns=1fr columns-desktop="3fr 1fr" gap=500 align-items=start class=hydrated><div><gcds-heading tag=h1>Falco</gcds-heading>
+<gcds-text text-role=secondary size=caption>Also known as: Runtime Security
+</gcds-text><gcds-text class=my-400>Falco is used within Aurora to provide runtime security monitoring and threat detection for Kubernetes workloads. It observes system calls and Kubernetes events to detect abnormal or potentially malicious behavior, such as privilege escalation, unexpected process execution, or suspicious network activity. Falco enables real-time alerting and supports policy-driven runtime enforcement aligned with zero-trust and defense-in-depth security models.</gcds-text>
+<gcds-heading tag=h2>Overview</gcds-heading>
+<gcds-text><strong>Category:</strong> Security<br><strong>Type:</strong> Core<br><strong>Version:</strong>
+6.2.5
+</gcds-text><gcds-heading tag=h2>Deployment</gcds-heading>
+<gcds-text><strong>Deployed in:</strong> management-clusters, workload-clusters<br><strong>Deployment model:</strong> Helm<br><strong>Owner:</strong> SIG: Security
+</gcds-text><gcds-heading tag=h2>Capabilities</gcds-heading><ul><li>runtime-security</li><li>threat-detection</li><li>intrusion-detection</li><li>kubernetes-security</li><li>container-security</li><li>observability</li></ul><gcds-heading tag=h2>Architecture Role</gcds-heading>
+<gcds-text>Acts as the primary runtime threat detection engine for Kubernetes workloads by monitoring system-level activity and evaluating it against security rules to identify suspicious or non-compliant behavior.</gcds-text>
+<gcds-heading tag=h2>Implementation</gcds-heading>
+<gcds-text><strong>GitHub:</strong>
+<a href=https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/falco>https://github.com/gccloudone-aurora/aurora-platform-charts/stable/aurora-platform/charts/aurora-core/templates/falco
+</a></gcds-text><gcds-text text-role=secondary size=caption>This repository is consumed by Argo CD to deploy and manage the
+Falco platform component in Aurora.
+</gcds-text><gcds-heading tag=h2>Project</gcds-heading><ul><li><a href=https://falco.org/>Project homepage</a></li><li><a href=https://falco.org/docs/>Documentation</a></li><li><a href="https://landscape.cncf.io/?item=provisioning--security-compliance--falco">CNCF Landscape</a></li></ul><gcds-heading tag=h2>Operational References</gcds-heading><ul><li>ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora</li><li>Runbook: Investigating Falco alerts</li></ul></div><aside aria-label="Component visual"><img src=/images/cncf/falco.svg alt="Falco logo" style=max-width:160px;height:auto;margin-left:auto></aside></gcds-grid><gcds-date-modified lang=en>0001-01-01</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/contact","Report an issue": "https://github.com/gccloudone/aurora/issues/new/choose","About us": "/about" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
     .glightbox-container.glightbox-custom-white-bg img {
       background: white !important;
     }

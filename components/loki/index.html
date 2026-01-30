@@ -1,0 +1,38 @@
+<!doctype html><html dir=ltr lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"><title>Loki | Aurora
+</title><link rel=icon href=/favicon.ico type=image/x-icon><link rel=preload href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css as=style crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-utility@1.10.0/dist/gcds-utility.min.css><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.css><script async type=module src=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.esm.js></script><link rel=stylesheet href=/scss/main.css><link rel=stylesheet href=/scss/custom.css><style>html{font-size:16px}body{font-size:var(--gcds-font-sizes-text);line-height:var(--gcds-line-heights-text);color:var(--gcds-color-grayscale-1000);font-family:var(--gcds-font-families-body),sans-serif;margin:0;animation:fade .05s forwards ease-in-out}</style><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css></head><body style=margin:0 class=character-limit><main><gcds-container centered size=md><gcds-text size=caption style="text-align: center;"><strong>Alpha</strong>&nbsp;&nbsp;This is an experimental service.</gcds-text>
+</gcds-container><gcds-header lang=en lang-href signature-variant=colour skip-to-href=#><gcds-search lang=en slot=search action=/sr/srb.html placeholder=Aurora></gcds-search><gcds-top-nav slot=menu label="Top navigation" alignment=right><gcds-nav-link href=/ slot=home>GC Cloud One: Aurora
+</gcds-nav-link><gcds-nav-group open-trigger=Platform menu-label=Platform><gcds-nav-link href=/roadmap>Roadmap
+</gcds-nav-link><gcds-nav-link href=/components>Components
+</gcds-nav-link><gcds-nav-link href=/proposal>Proposal
+</gcds-nav-link><gcds-nav-link href=/architecture>Architecture
+</gcds-nav-link><gcds-nav-link href=/vision>Vision
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="User Guides" menu-label="User Guides"><gcds-nav-link href=/user-guides/onboarding>Onboarding
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Team menu-label=Team><gcds-nav-link href=/team/sop>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/team/monitoring-alerts/>Monitoring
+</gcds-nav-link><gcds-nav-link href=/team/appendix>Appendix
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Community menu-label=Community><gcds-nav-link href=/get-involved>Get involved
+</gcds-nav-link><gcds-nav-link href=/rules-of-engagement>Rules of Engagement
+</gcds-nav-link><gcds-nav-link href=/technical-advisory-group>Technical Advisory Group
+</gcds-nav-link></gcds-nav-group></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href="https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US">GC Cloud One</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/>Aurora</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/components/>Components</gcds-breadcrumbs-item>
+</gcds-breadcrumbs></gcds-header><gcds-container size=xl main-container centered tag=main><gcds-grid tag=section columns=1fr columns-desktop=1fr align-items=start class=hydrated><section class=mb-400><gcds-grid columns=1fr columns-desktop="3fr 1fr" gap=500 align-items=start class=hydrated><div><gcds-heading tag=h1>Loki</gcds-heading>
+<gcds-text text-role=secondary size=caption>Also known as: Log Aggregation System
+</gcds-text><gcds-text class=my-400>Loki is used by Aurora as the centralized log aggregation and storage system for platform and application logs generated across Kubernetes clusters. Designed to be cost-effective and tightly integrated with Kubernetes, Loki indexes metadata rather than full log contents, enabling efficient querying and correlation of logs with metrics and traces. Loki supports operational troubleshooting, security investigations, and audit use cases across the Aurora platform.</gcds-text>
+<gcds-heading tag=h2>Overview</gcds-heading>
+<gcds-text><strong>Category:</strong> Platform Observability<br><strong>Type:</strong> Management<br><strong>Version:</strong>
+6.21.0
+</gcds-text><gcds-heading tag=h2>Deployment</gcds-heading>
+<gcds-text><strong>Deployed in:</strong> management-clusters<br><strong>Deployment model:</strong> Helm<br><strong>Owner:</strong> SIG: Observability
+</gcds-text><gcds-heading tag=h2>Capabilities</gcds-heading><ul><li>log-aggregation</li><li>centralized-logging</li><li>metadata-indexing</li><li>kubernetes-integration</li><li>scalable-storage</li><li>audit-support</li></ul><gcds-heading tag=h2>Architecture Role</gcds-heading>
+<gcds-text>Acts as the centralized log storage and query backend for Aurora. Loki receives logs from node- and workload-level agents and exposes a query API that integrates with visualization and alerting systems. It is optimized for Kubernetes environments by leveraging labels for log correlation rather than full-text indexing.</gcds-text>
+<gcds-heading tag=h2>Implementation</gcds-heading>
+<gcds-text><strong>GitHub:</strong>
+<a href=https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-mgmt/templates/loki>https://github.com/gccloudone-aurora/aurora-platform-charts/stable/aurora-platform/charts/aurora-mgmt/templates/loki
+</a></gcds-text><gcds-text text-role=secondary size=caption>This repository is consumed by Argo CD to deploy and manage the
+Loki platform component in Aurora.
+</gcds-text><gcds-heading tag=h2>Project</gcds-heading><ul><li><a href=https://grafana.com/oss/loki/>Project homepage</a></li><li><a href=https://grafana.com/docs/loki/>Documentation</a></li><li><a href="https://landscape.cncf.io/?item=observability-and-analysis--observability--grafana-loki">CNCF Landscape</a></li></ul><gcds-heading tag=h2>Operational References</gcds-heading><ul><li>ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora</li><li>Runbook: Troubleshooting log ingestion and queries</li></ul></div><aside aria-label="Component visual"><img src=/images/cncf/loki.svg alt="Loki logo" style=max-width:160px;height:auto;margin-left:auto></aside></gcds-grid><gcds-date-modified lang=en>0001-01-01</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/contact","Report an issue": "https://github.com/gccloudone/aurora/issues/new/choose","About us": "/about" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+    .glightbox-container.glightbox-custom-white-bg img {
+      background: white !important;
+    }
+  `,document.head.appendChild(style);const lightbox=GLightbox({openEffect:"zoom",closeEffect:"fade",skin:"custom-white-bg"})</script></body></html>
