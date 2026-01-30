@@ -8,17 +8,19 @@ translationKey: "vision"
 disableCharacterlimit: true
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 <gcds-notice type="info" notice-title-tag="h2" notice-title="Une plateforme universelle pour l’hébergement d’applications modernes">
   <gcds-text>
     Aurora est une plateforme sécurisée d’hébergement d’applications en libre-service qui permet aux équipes de conception de solutions de développer et de déployer rapidement des solutions infonuagiques natives.
   </gcds-text>
 </gcds-notice>
 
+<!-- markdownlint-enable MD033 -->
+
 ## Vision
 
 Aurora vise à unifier les environnements Kubernetes à code source ouvert et propriétaires, en offrant une plateforme normalisée et évolutive dans des environnements infonuagiques publics et privés, tout en permettant la mobilité des charges de travail sans nécessiter de modifications architecturales, et en servant de fondation commune pour un large éventail de services numériques du gouvernement du Canada.
-
-<br />
 
 ![Vision stratégique](/images/vision/vision.svg "Vision stratégique")
 

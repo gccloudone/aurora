@@ -8,15 +8,17 @@ translationKey: "vision"
 disableCharacterlimit: true
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 <gcds-notice type="info" notice-title-tag="h2" notice-title="A universal platform for modern application hosting">
   <gcds-text>Aurora is a secure, self service application hosting platform that enables solution builders to rapidly develop and deploy cloud native solutions.</gcds-text>
 </gcds-notice>
 
+<!-- markdownlint-enable MD033 -->
+
 ## Vision
 
 Aurora aims to unify open source and proprietary Kubernetes environments, offering a standardized and scalable platform across public and private clouds while enabling workload mobility without requiring architectural changes, and serving as a common foundation for a wide range of Government of Canada digital services.
-
-<br />
 
 ![Strategic Vision](/images/vision/vision.svg "Strategic Vision")
 
