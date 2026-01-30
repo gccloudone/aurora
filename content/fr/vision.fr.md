@@ -52,7 +52,7 @@ D’ici 2028, Aurora deviendra la pierre angulaire de l’hébergement d’appli
 
 ### Groupe cible
 
-Le terme « concepteurs de solutions » désigne un ensemble d’utilisateurs comprenant à la fois des utilisateurs traditionnels des technologies de l’information (TI), tels que les développeurs d’applications, et des utilisateurs non traditionnels, tels que les scientifiques et analystes de données.
+Le terme concepteurs de solutions désigne un ensemble d’utilisateurs comprenant à la fois des utilisateurs traditionnels des technologies de l’information (TI), tels que les développeurs d’applications, et des utilisateurs non traditionnels, tels que les scientifiques et analystes de données.
 
 Le terme « solution » est utilisé plutôt que « application » ou « système » afin de refléter l’éventail des solutions prises en charge par Aurora. Cela comprend des solutions de grande envergure pour des initiatives organisationnelles ainsi que des solutions plus petites et autonomes répondant à des besoins précis.
 
@@ -74,9 +74,6 @@ Une configuration uniforme de l’infrastructure minimise le besoin d’interven
 
 1. **Déploiements rapides et cohérents**
 L’automatisation permet des déploiements rapides et reproductibles.
-
-1. **Documentation intégrée à la solution**
-Fournir des outils qui assurent que la documentation est livrée avec la solution et maintenue à jour.
 
 ### Produit
 

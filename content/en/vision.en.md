@@ -50,7 +50,7 @@ By 2028, Aurora will be the cornerstone of application hosting for Canada’s fe
 
 ### Target Group
 
-"Solution builders" is an umbrella term that includes traditional Information Technology (IT) users, such as application developers, as well as non traditional IT users, such as data scientists and data analysts.
+Solution builders is an umbrella term that includes traditional Information Technology (IT) users, such as application developers, as well as non traditional IT users, such as data scientists and data analysts.
 
 The term "solution" is used instead of "app" or "system" to reflect the range of solutions supported by Aurora. This includes large scale solutions for corporate initiatives as well as smaller, standalone solutions serving specific purposes.
 
@@ -72,9 +72,6 @@ Consistent infrastructure configuration minimizes the need for manual interventi
 
 1. **Rapid and consistent deployments**
 Automation enables deployments to be performed quickly and consistently.
-
-1. **Packaged documentation with the solution**
-Provide tooling that ensures documentation is delivered alongside the solution and remains current.
 
 ### Product
 
