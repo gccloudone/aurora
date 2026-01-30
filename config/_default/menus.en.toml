@@ -26,11 +26,11 @@ weight = 5
   url = "/components"
   weight = 5
 
-  [[main]]
-  name = "Proposal"
-  parent = "Platform"
-  url = "/proposal"
-  weight = 7
+  # [[main]]
+  # name = "Proposal"
+  # parent = "Platform"
+  # url = "/proposal"
+  # weight = 7
 
   [[main]]
   name = "Vision"
@@ -42,7 +42,7 @@ weight = 5
   name = "Architecture"
   parent = "Platform"
   url = "/architecture"
-  weight = 9
+  weight = 11
 
 [[main]]
 name = "User Guides"

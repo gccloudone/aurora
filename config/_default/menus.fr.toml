@@ -14,11 +14,11 @@ name = "Plate-forme"
 url = "/fr/platform"
 weight = 5
 
-  [[main]]
-  name = "Proposition"
-  parent = "Plate-forme"
-  url = "/fr/proposition"
-  weight = 7
+  # [[main]]
+  # name = "Proposition"
+  # parent = "Plate-forme"
+  # url = "/fr/proposition"
+  # weight = 7
 
   [[main]]
   name = "Vision"
