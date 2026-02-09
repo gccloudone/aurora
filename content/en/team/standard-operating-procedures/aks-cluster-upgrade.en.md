@@ -34,6 +34,8 @@ This document outlines the process for upgrading an AKS cluster.
 - [ ] (Optional) **[asdf](https://asdf-vm.com/guide/getting-started.html)**  
   Used to upgrade multiple Kubernetes clusters that are more than 2 minor versions apart from each other. Manages multiple concurrent versions of kubectl.
 
+Ensure that your environment will not be automatically shutdown during the maintenance period. 
+
 ## Upgrading the cluster
 
 **Before following the procedure, ensure your environment is setup as described in [Preparing your environment](#preparing-your-environment) & read the [Troubleshooting](#troubleshooting) section prior to carrying out the upgrade procedure.**
