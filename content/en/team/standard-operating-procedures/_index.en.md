@@ -34,6 +34,13 @@ Here are the current procedures in place:
   >
   </gcds-card>
   <gcds-card
+    card-title="AKS Cluster Upgrade"
+    href="/team/standard-operating-procedures/aks-cluster-upgrade"
+    badge="Operations"
+    description="Procedure for upgrading an AKS cluster."
+  >
+  </gcds-card>
+  <gcds-card
     card-title="Backup and Disaster Recovery"
     href="/team/standard-operating-procedures/backup-disaster-recovery"
     badge="Reliability"
