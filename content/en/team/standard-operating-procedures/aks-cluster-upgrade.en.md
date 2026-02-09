@@ -151,7 +151,7 @@ Continuously check the status of the nodes to ensure they are being cordoned & d
 kubectl get nodes
 ```
 
-**Refer to [Nodepool stuck in Updating State / Node not being deleted](#nodepool-stuck-in-updating-state-node-not-being-deleted) if Nodes are stuck in `SchedulingDisabled` for longer than 10 minutes.**
+**Refer to [Nodepool stuck in Updating State and Node not being deleted](#nodepool-stuck-in-updating-state-and-node-not-being-deleted) if Nodes are stuck in `SchedulingDisabled` for longer than 10 minutes.**
 
 Continue to the next section once the ProvisioningState changes from `Updating` to `Succeeded` for all nodepools & reflect the new Kubernetes version.
 
@@ -169,7 +169,7 @@ Update the `kubernetes_version` variable in the terraform file instantiating the
 
 Check the `Activity Log` for `Create or Update Agent Pool` errors within the Azure portal, where details may be available in the `JSON` panel.
 
-### Nodepool stuck in Updating State / Node not being deleted
+### Nodepool stuck in Updating State and Node not being deleted
 
 Check if there is a PDB preventing a node from draining:
 
