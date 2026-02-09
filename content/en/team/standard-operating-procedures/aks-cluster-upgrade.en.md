@@ -161,7 +161,7 @@ Confirm that workloads are functioning. Re-run the commands described in [this s
 
 ### 7. Update the Infrastructure-as-Code
 
-Update the `kubernetes_version` variable in the terraform file instantiating the [terraform-aurora-azure-environment](#https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment) module.
+Update the `kubernetes_version` variable in the terraform file instantiating the [terraform-aurora-azure-environment](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment) module.
 
 ---
 
