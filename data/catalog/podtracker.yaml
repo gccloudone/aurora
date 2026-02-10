@@ -83,5 +83,5 @@ references:
     - "Grafana: PodTracker ingestion and processing status"
 
 metadata:
-  image: "/images/aurora/logo.svg"
+  image: "/images/aurora/aurora-logo.svg"
   sidebar: false

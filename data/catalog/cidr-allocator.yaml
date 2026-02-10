@@ -82,5 +82,5 @@ references:
     - "Grafana: CIDR allocation status and utilization"
 
 metadata:
-  image: "/images/aurora/logo.svg"
+  image: "/images/aurora/aurora-logo.svg"
   sidebar: false
