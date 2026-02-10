@@ -6,7 +6,7 @@
     "client": "Aurora",
     "status": "Todo",
     "priority": "Medium",
-    "quarter": "Q1 2026",
+    "quarter": "Q2 2026",
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/22"
   },
   {
@@ -15,7 +15,7 @@
     "category": "GC Secure Artifacts",
     "client": "Aurora",
     "status": "In Progress",
-    "priority": "Medium",
+    "priority": "High",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone/artifacts-artefacts/issues/27"
   },
@@ -86,7 +86,7 @@
     "client": "Aurora",
     "status": "Todo",
     "priority": "Medium",
-    "quarter": "Q3 2026",
+    "quarter": "Q2 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/32"
   },
   {
