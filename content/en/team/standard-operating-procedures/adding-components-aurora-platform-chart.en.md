@@ -7,15 +7,13 @@ date: 2025-10-09
 draft: false
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 This document outlines the process for adding a new component to the [aurora-platform-charts repository](https://github.com/gccloudone-aurora/aurora-platform-charts).
 
 ## Context
 
-Aurora uses ArgoCD to deploy Helm charts through the `Application` resource.  
+Aurora uses ArgoCD to deploy Helm charts through the `Application` resource.
 
 If you are unfamiliar with how ArgoCD deploys Helm charts, review the [ArgoCD Helm documentation](https://argo-cd.readthedocs.io/en/stable/user-guide/helm/) and examples in the aurora-platform-charts repository before proceeding.
 

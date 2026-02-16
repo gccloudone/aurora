@@ -8,9 +8,7 @@ lang: "en"
 date: 2025-05-29
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 Access control is implemented according to the principle of least privilege. These procedures are reviewed multiple times a year, whenever there are updates to the underlying APIs or organisational processes.
 
@@ -61,14 +59,14 @@ Groups of designated Security Operations personnel are also granted access to th
 
 ## Access Policy for Aurora AKS Clusters
 
-Azure Entra ID is the centralized identity provider for human users accessing Aurora AKS clusters.  
+Azure Entra ID is the centralized identity provider for human users accessing Aurora AKS clusters.
 
-Access is granted through membership in the `AURORA-GENERAL-CLUSTER-USER` Entra ID group. This group is assigned the **Azure Kubernetes Service Cluster User Role** at the cluster scope, which authorizes members to retrieve cluster user credentials and access the cluster.  
+Access is granted through membership in the `AURORA-GENERAL-CLUSTER-USER` Entra ID group. This group is assigned the **Azure Kubernetes Service Cluster User Role** at the cluster scope, which authorizes members to retrieve cluster user credentials and access the cluster.
 
-Membership in this group is strictly controlled by Aurora administrators and is subject to the following policy:  
+Membership in this group is strictly controlled by Aurora administrators and is subject to the following policy:
 
-- Membership is granted only after clients complete the intake process and are approved for onboarding.  
-- Membership is revoked when teams formally offboard from Aurora or no longer require cluster access.  
-- Membership is reviewed on an annual basis to verify that only active, authorized users retain access.  
+- Membership is granted only after clients complete the intake process and are approved for onboarding.
+- Membership is revoked when teams formally offboard from Aurora or no longer require cluster access.
+- Membership is reviewed on an annual basis to verify that only active, authorized users retain access.
 
-This policy ensures that access to Aurora AKS clusters is consistently managed, compliant with security requirements, and limited to users with a valid business need.  
+This policy ensures that access to Aurora AKS clusters is consistently managed, compliant with security requirements, and limited to users with a valid business need.

@@ -6,9 +6,7 @@ aliases: ["/team/monitoring/clusteralerts/nodepool"]
 draft: false
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 Node pool pod capacity alerts are configured to occur at the cluster level. As defined in the [official Kubernetes documentation](https://kubernetes.io/docs/concepts/architecture/nodes/), Kubernetes runs workloads by placing containers into pods to run on nodes. Each node is managed by the control plane and contains the services necessary to run pods. [Kubernetes is designed to accommodate](https://kubernetes.io/docs/setup/best-practices/cluster-large/) no more than 110 pods per node. However, when nodes are created `max-pods` is set to a hard limit of 90 pods per node. When a particular node reaches a certain threshold, the following alerts are triggered:
 

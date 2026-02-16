@@ -3,7 +3,7 @@
 # main menu
 [[main]]
 name = "Service infonuagique unifié du GC: Aurore"
-url = "/fr"
+pageRef = "/"
 weight = 1
 identifier = "acceuil"
   [main.params]
@@ -11,76 +11,76 @@ identifier = "acceuil"
 
 [[main]]
 name = "Plate-forme"
-url = "/fr/platform"
+pageRef = "/platform"
 weight = 5
 
   # [[main]]
   # name = "Proposition"
   # parent = "Plate-forme"
-  # url = "/fr/proposition"
+  # pageRef = "/fr/proposition"
   # weight = 7
 
   [[main]]
   name = "Vision"
   parent = "Plate-forme"
-  url = "/fr/vision"
+  pageRef = "/vision"
   weight = 9
 
 [[main]]
 name = "Guides d’utilisation"
-url = "/fr/user-guides"
+pageRef = "/user-guides"
 weight = 10
 
   [[main]]
   name = "Guides d’utilisation"
   parent = "Guides d’utilisation"
-  url = "/fr/guides-utilisation/onboarding"
+  pageRef = "/guides-utilisation/onboarding"
   weight = 1
 
 [[main]]
 name = "Équipe"
-url = "/fr/equipe"
+pageRef = "/equipe"
 weight = 15
 
   [[main]]
   name = "Procédures Standardisées d'Opération"
   parent = "Équipe"
-  url = "/fr/equipe/pso"
+  pageRef = "/equipe/procedures-standardisees-operation"
   weight = 1
 
 [[main]]
 name = "Communauté"
-url = "/fr/communaute"
+pageRef = "/communaute"
 weight = 20
 
   [[main]]
   name = "Participez"
-  url = "/fr/impliquez-vous"
+  pageRef = "/impliquez-vous"
   parent = "Communauté"
   weight = 1
 
   [[main]]
   name = "Règles d'engagement"
   parent = "Communauté"
-  url = "/fr/regles-dengagement"
+  pageRef = "/regles-dengagement"
   weight = 1
 
 [[breadcrumb]]
 name = "Service infonuagique unifié du GC"
-url = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=fr"
+pageRef = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=fr"
 weight = 1
 
 [[contextual]]
 name = "Nous contacter"
-url = "/fr/contact"
+pageRef = "/contact"
 weight = 10
 
 [[contextual]]
 name = "Signaler un problème"
-url = "https://github.com/gccloudone/aurora/issues/new/choose"
+pageRef = "https://github.com/gccloudone/aurora/issues/new/choose"
 weight = 20
 
 [[contextual]]
 name = "À propos"
-url = "/fr/apropos"
+pageRef = "/apropos"
 weight = 30

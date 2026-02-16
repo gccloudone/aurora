@@ -6,9 +6,7 @@ aliases: ["/team/monitoring/namespacealerts/"]
 draft: false
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 This page describes alerts presently defined at the namespace level. They are routed to the notification channels of the Aurora team only when they occur in namespaces relevant to the core functionality of the Aurora platform.
 

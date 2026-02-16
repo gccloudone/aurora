@@ -6,9 +6,7 @@ aliases: ["/team/monitoring/clusteralerts/probefailure"]
 draft: false
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 These alert occur at the cluster-level and depend on the configuration of [Blackbox Exporter]({{< ref "team/monitoring-alerts/blackbox-exporter" >}}) probes. Unlike most cluster-level alerts, these alerts do not pertain to the cluster they originate from, but rather to what the alert labels identify as the `target` cluster. That is because these probes are used for uptime and health monitoring. Since a cluster experiencing such issues may not be capable of transmitting the relevant alerts, clusters are configured to probe other clusters. For example, presently the Management cluster probes the SDLC and Ingress clusters, while the Production cluster in turn probes Management.
 

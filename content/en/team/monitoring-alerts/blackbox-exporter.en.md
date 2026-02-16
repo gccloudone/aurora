@@ -6,9 +6,7 @@ aliases: ["/team/monitoring/blackbox-exporter"]
 draft: false
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 The Prometheus [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) enables the monitoring of endpoints using protocols such as HTTP, HTTPS, DNS, TCP, ICMP, and gRPC. It supports "blackbox monitoring," which focuses on evaluating the external behavior and availability of a system without requiring access to its internal state.
 

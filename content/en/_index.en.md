@@ -3,6 +3,7 @@ title: "Aurora"
 description: "Aurora is a secure, self service application hosting platform that enables solution builders to rapidly develop and deploy cloud native solutions."
 date: 2026-01-30
 draft: false
+translationKey: homePage
 ---
 
 ## Start evaluating the platform

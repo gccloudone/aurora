@@ -3,7 +3,7 @@
 # main menu
 [[main]]
 name = "GC Cloud One: Aurora"
-url = "/"
+pageRef = "/"
 weight = 1
 identifier = "home"
   [main.params]
@@ -11,112 +11,112 @@ identifier = "home"
 
 [[main]]
 name = "Platform"
-url = "/platform"
+pageRef = "/platform"
 weight = 5
 
   [[main]]
   name = "Roadmap"
   parent = "Platform"
-  url = "/roadmap"
+  pageRef = "/roadmap"
   weight = 3
 
   [[main]]
   name = "Components"
   parent = "Platform"
-  url = "/components"
+  pageRef = "/components"
   weight = 5
 
   # [[main]]
   # name = "Proposal"
   # parent = "Platform"
-  # url = "/proposal"
+  # pageRef = "/proposal"
   # weight = 7
 
   [[main]]
   name = "Vision"
   parent = "Platform"
-  url = "/vision"
+  pageRef = "/vision"
   weight = 9
 
   [[main]]
   name = "Architecture"
   parent = "Platform"
-  url = "/architecture"
+  pageRef = "/architecture"
   weight = 11
 
 [[main]]
 name = "User Guides"
-url = "/user-guides"
+pageRef = "/user-guides"
 weight = 10
 
   [[main]]
   name = "Onboarding"
   parent = "User Guides"
-  url = "/user-guides/onboarding"
+  pageRef = "/user-guides/onboarding"
   weight = 1
 
 [[main]]
 name = "Team"
-url = "/team"
+pageRef = "/team"
 weight = 15
 
   [[main]]
   name = "Standard Operating Procedures"
   parent = "Team"
-  url = "/team/sop"
+  pageRef = "/team/standard-operating-procedures"
   weight = 1
 
   [[main]]
   name = "Monitoring"
   parent = "Team"
-  url = "/team/monitoring-alerts/"
+  pageRef = "/team/monitoring-alerts/"
   weight = 2
 
   [[main]]
   name = "Appendix"
   parent = "Team"
-  url = "/team/appendix"
+  pageRef = "/team/appendix"
   weight = 3
 
 [[main]]
 name = "Community"
-url = "/community"
+pageRef = "/community"
 weight = 20
 
   [[main]]
   name = "Get involved"
   parent = "Community"
-  url = "/get-involved"
+  pageRef = "/get-involved"
   weight = 1
 
   [[main]]
   name = "Rules of Engagement"
   parent = "Community"
-  url = "/rules-of-engagement"
+  pageRef = "/rules-of-engagement"
   weight = 1
 
   [[main]]
   name = "Technical Advisory Group"
   parent = "Community"
-  url = "/technical-advisory-group"
+  pageRef = "/technical-advisory-group"
   weight = 1
 
 [[breadcrumb]]
 name = "GC Cloud One"
-url = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US"
+pageRef = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US"
 weight = 1
 
 [[contextual]]
 name = "Contact us"
-url = "/contact"
+pageRef = "/contact"
 weight = 10
 
 [[contextual]]
 name = "Report an issue"
-url = "https://github.com/gccloudone/aurora/issues/new/choose"
+pageRef = "https://github.com/gccloudone/aurora/issues/new/choose"
 weight = 20
 
 [[contextual]]
 name = "About us"
-url = "/about"
+pageRef = "/about"
 weight = 30

@@ -9,9 +9,7 @@ showToc: true
 date: 2025-01-01
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 <gcds-alert alert-role="info" container="full" heading="A brief word of caution" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 <gcds-text>This initiative builds on the original platform developed at Statistics Canada, which was initially deployed on a single cloud service provider. While the platform was architected to be cloud-agnostic, each provider’s managed Kubernetes offering requires specific adjustments to ensure full compatibility. These adaptations are underway, as our goal is to support all major cloud environments across government. We appreciate your patience as we continue to open source Aurora’s architectural plan and share it here for community review and collaborative improvement.
