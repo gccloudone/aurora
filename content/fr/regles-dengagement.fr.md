@@ -5,6 +5,7 @@ draft: false
 sidebar: false
 showToc: true
 translationKey: "rules-of-engagement"
+disableCharacterlimit: true
 ---
 
 ## Objectif

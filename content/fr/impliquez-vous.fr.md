@@ -4,9 +4,10 @@ date: 2024-10-21
 draft: false
 sidebar: false
 translationKey: "get-involved"
+disableCharacterlimit: true
 ---
 
-Chez **Service infonuagique unifié du GC : Aurora**, nous bâtissons une communauté collaborative autour des technologies natif en nuage, et nous encourageons tout le monde à y participer ! Que vous soyez un expert chevronné en Kubernetes ou un nouveau venu sur la plate-forme, il y a plusieurs façons de contribuer, d’apprendre et de grandir ensemble. Voici comment vous pouvez commencer :
+Chez Service infonuagique unifié du GC : Aurora, nous bâtissons une communauté collaborative autour des technologies natif en nuage, et nous encourageons tout le monde à y participer ! Que vous soyez un expert chevronné en Kubernetes ou un nouveau venu sur la plate-forme, il y a plusieurs façons de contribuer, d’apprendre et de grandir ensemble. Voici comment vous pouvez commencer :
 
 ## Participez à nos rencontres
 
@@ -15,6 +16,24 @@ Nous organisons régulièrement des rencontres pour partager les meilleures prat
 - **À quoi s'attendre** : Mini-conférences, ateliers pratiques et sessions de questions-réponses sur des sujets comme le réseau Kubernetes, la sécurité (ex. : zero trust) et les déploiements multi-cloud.
 - **Comment participer** : Suivez notre <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412">communauté Aurora sur GCxchange</gcds-link> (réseau GC) pour trouver les prochaines rencontres et vous-y inscrire.
 - **Virtuel et en personne** : Nous offrons des rencontres virtuelles et en personne pour les rendre accessibles aux participants des différentes régions.
+
+Voici une sélection de sessions des rencontres précédentes d’Aurora. Les enregistrements et les documents sont disponibles sur le Réseau du GC via Aurora sur GCXChange.
+
+| Date       | Sujet                                                       | Intervenants                     | Format   | Enregistrement                                                                                                    | Présentations                                                                                                         |
+|------------|-------------------------------------------------------------|----------------------------------|----------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|  
+| 2025-02-10 | Dapr et Keda pour l’ingénierie de plateforme                | Yaron Schneider et Mark Fussell  | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQC5j3K8A51uR6ktynzHgiizAdxKcRVKJamPhvYp0IRlI0Q?e=iqqFVu) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQBNTa_ALOj2RqlkH0N1YrwzASxBZpXJwdObpPFdMVpqrWU?e=PHQndu) |
+| 2025-03-10 | Sécuriser la chaîne d’approvisionnement OSS avec Chainguard | Chris Carty                      | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQCbOLFrzQ-hQKT1JLUXr3sXAZkbSOcYtx5rO6PUo4cGV9Q?e=cJA72C) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQCWhKTx-81jQqYy5_LPR9lrAVzPGS-8MLOJyS1AkbsIWFM?e=Zt4iMK) |
+| 2025-06-04 | GC Artifacts sécurisés                                      | William Hearn                    | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQDpGVNfBEZlR4k2jP3zo9RYAaLMM_Mxw9sTsabwCxQKVWs?e=Z3zN1s) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQC68LZd8HY8S61klzyko3JSATl3-WhnYKtkUz7DixNF4nw?e=5Xzp7X) |
+| 2025-06-24 | Introduction à JFrog ML                                     | Bill Manning                     | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQDK73vOi_DwQIQeSJKydhWkASfGL9nS6ovSounKuSWgu1M?e=bL1IuT) | [Diapositives](https://gcxgce.sharepoint.com/:b:/t/10002412/IQCWdGS9mFJkSrjvwOOjM9uBAZ2wykBKeG5aQNg9u6vhMIE?e=BWATYH) |
+| 2025-10-30 | Attaque et défense avec Tetragon / État de Argo CD          | Glenn Yu et Nicholas Morey       | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQD_VsdXL5u3RIcvqf6GhDmMAeZ6H3t31yrlBAQczkm5lpE?e=2U2dXd) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQBn43u9sXbjT7N5vyUYeP37AdZCJAevaLJzC8i1ypnzirM?e=l1wiDA) |
+
+## Contribuez aux projets open source
+
+Aurora utilise des projets open source de l’écosystème Kubernetes et CNCF (Cloud Native Computing Foundation). Vous pouvez contribuer à ces projets ou même proposer des améliorations pour la plate-forme Aurora. Nous accueillons les contributions dans les domaines suivants :
+
+- **Documentation** : Aidez à améliorer les guides d'utilisateurs et les tutoriels de notre plate-forme.
+- **Contributions au code** : Travaillez sur des problèmes, proposez de nouvelles fonctionnalités ou corrigez des bogues dans notre organisation GitHub <gcds-link external href="https://github.com/gccloudone">Service infonuagique unifié du GC</gcds-link>.
+- **Commentaires sur la plate-forme** : Partagez vos idées et suggestions pour améliorer la plate-forme Aurora dans nos discussions publiques.
 
 ## Participez aux hackathons
 
@@ -25,17 +44,9 @@ Vous cherchez une expérience pratique ? Participez à nos hackathons, où vous 
 
 Consultez nos <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412/_layouts/15/Events.aspx">événements à venir</gcds-link> (réseau GC).
 
-## Contribuez aux projets open source
-
-Aurora utilise des projets open source de l’écosystème Kubernetes et CNCF (Cloud Native Computing Foundation). Vous pouvez contribuer à ces projets ou même proposer des améliorations pour la plate-forme Aurora. Nous accueillons les contributions dans les domaines suivants :
-
-- **Documentation** : Aidez à améliorer les guides d'utilisateurs et les tutoriels de notre plate-forme.
-- **Contributions au code** : Travaillez sur des problèmes, proposez de nouvelles fonctionnalités ou corrigez des bogues dans notre organisation GitHub <gcds-link external href="https://github.com/gccloudone">Service infonuagique unifié du GC</gcds-link>.
-- **Commentaires sur la plate-forme** : Partagez vos idées et suggestions pour améliorer la plate-forme Aurora dans nos discussions publiques.
-
 ## Participez aux SIG
 
-Rejoignez un de nos **Groupes d'Intérêt Spécial (GIS)** pour approfondir les domaines techniques spécifiques comme l’architecture, la sécurité et le réseau. Chaque GIS se réunit régulièrement pour collaborer sur des initiatives, établir des normes et résoudre les défis dans ces domaines.
+Rejoignez un de nos Groupes d'Intérêt Spécial (GIS) pour approfondir les domaines techniques spécifiques comme l’architecture, la sécurité et le réseau. Chaque GIS se réunit régulièrement pour collaborer sur des initiatives, établir des normes et résoudre les défis dans ces domaines.
 
 - **SIG : Architecture** : Focus sur la conception de la plate-forme, l'évolutivité et les meilleures pratiques natif en nuage.
 - **SIG : Sécurité** : Travail sur les politiques, la sécurité zero trust et les stratégies de défense en profondeur.
