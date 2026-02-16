@@ -1,0 +1,88 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"><title>Backup and Disaster Recovery | Aurora
+</title><link rel=icon href=/favicon.ico type=image/x-icon><link rel=preload href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css as=style crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@gcds-core/css-shortcuts@1.0.1/dist/gcds-css-shortcuts.min.css><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.css><script async type=module src=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.esm.js></script><link rel=stylesheet href=/scss/main.css><link rel=stylesheet href=/scss/custom.css><style>html{font-size:16px}body{font-size:var(--gcds-font-sizes-text);line-height:var(--gcds-line-heights-text);color:var(--gcds-color-grayscale-1000);font-family:var(--gcds-font-families-body),sans-serif;margin:0;animation:fade .05s forwards ease-in-out}</style><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css></head><body style=margin:0 class=character-limit><main><gcds-container centered size=md><gcds-text size=caption style="text-align: center;"><strong>Alpha</strong>&nbsp;&nbsp;This is an experimental service.</gcds-text>
+</gcds-container><gcds-header lang=en lang-href signature-variant=colour skip-to-href=#><gcds-search lang=en slot=search action=/sr/srb.html placeholder=Aurora></gcds-search><gcds-top-nav slot=menu label="Top navigation" alignment=right><gcds-nav-link href=/en/ slot=home>GC Cloud One: Aurora
+</gcds-nav-link><gcds-nav-group open-trigger=Platform menu-label=Platform><gcds-nav-link href=/en/roadmap/>Roadmap
+</gcds-nav-link><gcds-nav-link href=/en/components/>Components
+</gcds-nav-link><gcds-nav-link href=/en/vision/>Vision
+</gcds-nav-link><gcds-nav-link href=/en/architecture/>Architecture
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="User Guides" menu-label="User Guides"><gcds-nav-link href=/en/user-guides/onboarding/>Onboarding
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Team menu-label=Team><gcds-nav-link href=/en/team/standard-operating-procedures/>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/>Monitoring
+</gcds-nav-link><gcds-nav-link href=/en/team/appendix/>Appendix
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Community menu-label=Community><gcds-nav-link href=/en/get-involved/>Get involved
+</gcds-nav-link><gcds-nav-link href=/en/rules-of-engagement/>Rules of Engagement
+</gcds-nav-link><gcds-nav-link href=/en/technical-advisory-group/>Technical Advisory Group
+</gcds-nav-link></gcds-nav-group></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href>GC Cloud One</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/en/>Aurora</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/en/team/>Team Guide</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/en/team/standard-operating-procedures/>Standard Operating Procedures</gcds-breadcrumbs-item>
+</gcds-breadcrumbs></gcds-header><gcds-container size=xl main-container centered tag=main><gcds-grid tag=section columns=1fr columns-desktop="
+        1fr 3fr
+      " align-items=start class=hydrated><aside role=complementary><gcds-side-nav label="Team Guide"><gcds-nav-link href=/en/team/>Team Guide
+</gcds-nav-link><gcds-nav-group open-trigger="Standard Operating Procedures" menu-label="Standard Operating Procedures" open><gcds-nav-link href=/en/team/standard-operating-procedures/>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/aks-cluster-upgrade/>AKS Cluster Upgrade
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/ssl-cert-issuance/>SSL Cert Issuance
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/issue-tracking/>Issue Tracking
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/>Adding components to Aurora Platform Charts
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/backup-disaster-recovery/ current=true>Backup and Disaster Recovery
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/bootstrap-cluster/>Bootstrap Cluster
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/infrastructure-and-configuration-management/>Infrastructure and Configuration Management
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/issue-naming/>Issue and PR Naming Conventions
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/enterprise-landing-zone/>Onboarding process for the Enterprise Landing Zone
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Monitoring and Alerting" menu-label="Monitoring and Alerting"><gcds-nav-link href=/en/team/monitoring-alerts/>Monitoring and Alerting
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/prometheus/>Prometheus
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/prometheus-operator/>Prometheus Operator
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alertmanager/>Alertmanager
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/blackbox-exporter/>Blackbox Exporter
+</gcds-nav-link><gcds-nav-group open-trigger="Cluster Level Alerts" menu-label="Cluster Level Alerts"><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/>Cluster Level Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/cert-manager/>Cert Manager Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/dns/>DNS Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/node/>Node Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/>Node Pool Capacity Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/probe-failure/>Probe Failure Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/prometheus-storage-low/>Prometheus Storage Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/>SSL Certificate Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/velero/>Velero Alerts
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Namespace Level Alerts" menu-label="Namespace Level Alerts"><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/>Namespace Level Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/container/>Container Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/job/>Job Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/persistent-volume-claims/>Persistent Volume Claim Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/pod-not-ready/>Pod Alerts
+</gcds-nav-link></gcds-nav-group></gcds-nav-group><gcds-nav-group open-trigger=Appendix menu-label=Appendix><gcds-nav-link href=/en/team/appendix/>Appendix
+</gcds-nav-link><gcds-nav-link href=/en/team/appendix/acronyms/>Acronyms
+</gcds-nav-link><gcds-nav-link href=/en/team/appendix/lexicon/>Lexicon</gcds-nav-link></gcds-nav-group></gcds-side-nav></aside><section class=mb-400><gcds-heading tag=h1>Backup and Disaster Recovery</gcds-heading>
+<gcds-alert class=my-300 alert-role=danger heading="Avis de traduction" hide-close-btn=true><gcds-text character-limit=true>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions.
+Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
+</gcds-text></gcds-alert><gcds-text character-limit=true>This document outlines the steps Aurora administrators must follow in order to test disaster recovery, ensuring that Velero backups would be restored correctly.</gcds-text>
+<gcds-heading tag=h2 id=context character-limit=true>Context<gcds-link href=#context class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Aurora clusters use
+<gcds-link href=https://velero.io>Velero</gcds-link> to back up and restore Kubernetes cluster resources and persistent volumes.</gcds-text>
+<gcds-text character-limit=true>This procedure verifies the reliability of those backups.</gcds-text>
+<gcds-heading tag=h2 id=setup character-limit=true>Setup<gcds-link href=#setup class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>Before testing, ensure the following:</gcds-text><ul><li>The <strong>Velero CLI</strong> is installed.</li><li>A <strong>test namespace</strong> exists, containing:<ul><li>A <strong>BusyBox deployment</strong></li><li>A <strong>PersistentVolumeClaim (PVC)</strong> mounted into the BusyBox container</li></ul></li></ul><blockquote><gcds-text character-limit=true><strong><em>NOTE</em></strong>: Ensure the version for your Velero CLI matches the version of the Velero container image.</gcds-text></blockquote><gcds-heading tag=h3 id=preparing-the-test-file character-limit=true>Preparing the Test File<gcds-link href=#preparing-the-test-file class=pilcrow>¶</gcds-link></gcds-heading><ol><li><gcds-text character-limit=true>Shell into the BusyBox container:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>kubectl exec -it &lt;pod-name&gt; <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --container &lt;busybox-container-name&gt; <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -n &lt;test-namespace&gt; -- /bin/sh
+</span></span></code></pre></div></li><li><gcds-text character-limit=true>Write a test file to the mounted path:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>echo <span style=color:#e6db74>&#34;test&#34;</span> &gt; &lt;mountPath&gt;/testfile
+</span></span></code></pre></div></li><li><gcds-text character-limit=true>Verify the file contents:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>cat &lt;mountPath&gt;/testfile
+</span></span></code></pre></div><ul><li>Output must be: <code>test</code></li></ul></li></ol><gcds-heading tag=h2 id=procedure character-limit=true>Procedure<gcds-link href=#procedure class=pilcrow>¶</gcds-link></gcds-heading><ol><li><gcds-text character-limit=true>Create a backup:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>velero backup create backuptest-YYYY-MM-DD <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --include-namespaces &lt;test-namespace&gt; <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --volume-snapshot-locations &lt;volume-snapshot-location-name&gt; <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --storage-location &lt;backup-storage-location-name&gt;  <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -n velero-system
+</span></span></code></pre></div></li><li><gcds-text character-limit=true>Confirm the backup completed:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>velero backup describe backuptest-YYYY-MM-DD <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --details -n velero-system
+</span></span></code></pre></div></li><li><gcds-text character-limit=true>Delete the test namespace:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>kubectl delete namespace &lt;test-namespace&gt;
+</span></span></code></pre></div></li><li><gcds-text character-limit=true>Restore from the backup:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>velero restore create restoretest-YYYY-MM-DD <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --from-backup backuptest-YYYY-MM-DD <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -n velero-system
+</span></span></code></pre></div></li><li><gcds-text character-limit=true>Confirm the restore completed:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>velero restore describe restoretest-YYYY-MM-DD <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --details -n velero-system
+</span></span></code></pre></div></li><li><gcds-text character-limit=true>Shell into the restored BusyBox pod:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>kubectl exec -it &lt;pod-name&gt; <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --container busybox <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -n &lt;test-namespace&gt; -- /bin/sh
+</span></span></code></pre></div></li><li><gcds-text character-limit=true>Verify the restored file:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>cat &lt;mountPath&gt;/testfile
+</span></span></code></pre></div><ul><li>Output must be: <code>test</code></li></ul></li></ol><gcds-date-modified lang=en>2026-02-16</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "","About us": "/en/about/" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+    .glightbox-container.glightbox-custom-white-bg img {
+      background: white !important;
+    }
+  `,document.head.appendChild(style);const lightbox=GLightbox({openEffect:"zoom",closeEffect:"fade",skin:"custom-white-bg"})</script></body></html>
