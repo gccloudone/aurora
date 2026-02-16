@@ -4,6 +4,7 @@ date: 2024-10-21
 draft: false
 sidebar: false
 translationKey: "get-involved"
+disableCharacterlimit: true
 ---
 
 Chez **Service infonuagique unifié du GC : Aurora**, nous bâtissons une communauté collaborative autour des technologies natif en nuage, et nous encourageons tout le monde à y participer ! Que vous soyez un expert chevronné en Kubernetes ou un nouveau venu sur la plate-forme, il y a plusieurs façons de contribuer, d’apprendre et de grandir ensemble. Voici comment vous pouvez commencer :

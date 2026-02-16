@@ -4,6 +4,7 @@ date: 2025-01-01
 draft: false
 sidebar: false
 translationKey: "about"
+disableCharacterlimit: true
 ---
 
 Aurora est une plateforme d'hébergement d'applications sécurisée et native du cloud, construite par les départements pour les départements à travers le gouvernement du Canada.
