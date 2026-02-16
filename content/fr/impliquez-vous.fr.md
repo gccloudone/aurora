@@ -34,6 +34,7 @@ Aurora utilise des projets open source de l’écosystème Kubernetes et CNCF (C
 - **Documentation** : Aidez à améliorer les guides d'utilisateurs et les tutoriels de notre plate-forme.
 - **Contributions au code** : Travaillez sur des problèmes, proposez de nouvelles fonctionnalités ou corrigez des bogues dans notre organisation GitHub <gcds-link external href="https://github.com/gccloudone">Service infonuagique unifié du GC</gcds-link>.
 - **Commentaires sur la plate-forme** : Partagez vos idées et suggestions pour améliorer la plate-forme Aurora dans nos discussions publiques.
+
 ## Participez aux hackathons
 
 Vous cherchez une expérience pratique ? Participez à nos hackathons, où vous travaillerez sur des défis réels liés à Kubernetes et aux technologies natif en nuage. Ces événements réunissent des équipes de développeurs pour innover et créer des solutions qui profite directement notre plate-forme.
