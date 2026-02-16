@@ -40,7 +40,7 @@
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
   },
   {
-    "title": "[AUR:COMPONENT] AAD Pod Identity to Workload Identity",
+    "title": "[AUR:COMPONENT] Migrate AAD Pod Identity to Workload Identity",
     "summary": "Migrate existing AKS configurations from the legacy Azure AD Pod Identity mechanism to the modern Azure Workload Identity model. Azure AD Pod Identity is deprecated and approaching retirement, and continued reliance on it introduces operational risk, limits future platform upgrades, and creates unnecessary complexity in identity management across clusters.",
     "category": "Platform Components",
     "client": "Aurora",
@@ -80,13 +80,13 @@
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/31"
   },
   {
-    "title": "[CSP:AZURE] Cilium BYOCNI and VNET Integration",
-    "summary": "Because the cluster uses Cilium as the CNI via BYOCNI on AKS rather than Azure CNI, enabling VNet integration changes Azure’s routing assumptions. Azure applies default VNet routing that conflicts with Cilium’s eBPF-based networking model, which can disrupt connectivity if not explicitly accounted for.",
+    "title": "[CSP:AZURE] Enable native Cilium AKS and VNet Integration",
+    "summary": "AKS now supports Cilium as a first-class CNI integration. This removes the need for the previous BYOCNI routing model that required custom Azure route tables and an Azure Route Server to restore connectivity.",
     "category": "Networking",
     "client": "Aurora",
-    "status": "Todo",
+    "status": "In Progress",
     "priority": "Medium",
-    "quarter": "Q2 2026",
+    "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/32"
   },
   {
