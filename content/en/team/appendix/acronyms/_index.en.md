@@ -8,9 +8,7 @@ draft: false
 translationKey: "acronyms"
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 The Appendix section provides supplemental information to support the main content of the Aurora website and its related documentation. It includes definitions, acronyms, and references aimed at ensuring clarity and promoting a shared understanding of Aurora terminology across teams and departments.
 

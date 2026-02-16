@@ -4,6 +4,8 @@
     "tamasfe.even-better-toml",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "eliostruyf.vscode-front-matter",
+    "DavidAnson.vscode-markdownlint"
   ]
 }

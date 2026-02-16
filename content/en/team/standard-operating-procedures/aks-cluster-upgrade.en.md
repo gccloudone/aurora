@@ -7,9 +7,7 @@ date: 2026-02-06
 draft: false
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 This document outlines the process for upgrading an AKS cluster.
 
@@ -17,21 +15,21 @@ This document outlines the process for upgrading an AKS cluster.
 
  Ensure the following command line tools below are installed & are up-to-date.
 
-- [ ] **[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)**  
+- [ ] **[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)**
    Ensure `kubectl` is within 1 minor version of the new cluster version.
 
-- [ ] **[Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)**  
+- [ ] **[Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)**
 
-- [ ] **[velero](https://github.com/vmware-tanzu/velero/releases)**  
+- [ ] **[velero](https://github.com/vmware-tanzu/velero/releases)**
   The version of velero should match the version of velero used in the target cluster.
 
-- [ ] **[jq](https://jqlang.github.io/jq/download/)**  
+- [ ] **[jq](https://jqlang.github.io/jq/download/)**
   Used for exporting and processing pod information.
 
-- [ ] **[pluto](https://pluto.docs.fairwinds.com/installation/)**  
+- [ ] **[pluto](https://pluto.docs.fairwinds.com/installation/)**
   Detects deprecated and removed Kubernetes API versions.
 
-- [ ] (Optional) **[asdf](https://asdf-vm.com/guide/getting-started.html)**  
+- [ ] (Optional) **[asdf](https://asdf-vm.com/guide/getting-started.html)**
   Used to upgrade multiple Kubernetes clusters that are more than 2 minor versions apart from each other. Manages multiple concurrent versions of kubectl.
 
 Ensure that your environment will not be automatically shutdown during the maintenance period.

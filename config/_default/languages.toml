@@ -1,12 +1,18 @@
-################ English language ##################
-[en]
-languageName = "En"
-languageCode = "en-ca"
-contentDir = "content/en"
+################ Splash page #######################
+[splash]
+languageName = ""
+contentDir = "content/splash"
 weight = 1
 
+################ English language ##################
+[en]
+languageName = "English"
+languageCode = "en-CA"
+contentDir = "content/en"
+weight = 2
+
 [fr]
-languageName = "Fr"
-languageCode = "fr-ca"
+languageName = "Français"
+languageCode = "fr-CA"
 contentDir = "content/fr"
-weight = 1
+weight = 3

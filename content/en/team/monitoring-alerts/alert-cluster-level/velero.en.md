@@ -6,9 +6,7 @@ aliases: ["/team/monitoring/clusteralerts/velero"]
 draft: false
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 Velero is an open source tool used to safely backup and restore, perform disaster recovery, and migrate Kubernetes cluster resources and persistent volumes. A velero alerts occurs when a Velero backup isn't functioning as intended. Currently there are three kinds of Velero alerts:
 

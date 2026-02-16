@@ -7,6 +7,9 @@ WORKDIR /site
 # Copy the project files into the container
 COPY . /site
 
+# Mark the repo as safe for Git (required for enableGitInfo)
+RUN git config --global --add safe.directory /site
+
 # Ensure the proper ownership for the /site directory to avoid permission issues
 # Assuming the Hugo image uses user id 1000
 RUN chown -R 1000:1000 /site

@@ -8,9 +8,7 @@ draft: false
 translationKey: "lexicon"
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 To align vocabulary and ensure clarity and consistency in documents and discussions, this Lexicon has been developed for the Aurora Team and Technical Advisory Group(s). Where applicable, the Lexicon will align with broader organizational terminology standards to maintain consistency across the higher organizational structure. Its creation and coordination will support cohesive definitions of concepts used within GC Cloud One and related initiatives.
 
@@ -40,14 +38,14 @@ Shared, enterprise-ready services operated centrally within Aurora. These servic
 
 ### Citizen Developer
 
-The term Citizen Developer, originating from collaboration among Data Scientists, refers to individuals who create or customize software programs or applications to meet specific user needs and improve operational efficiency. These developers typically lack formal programming training but use accessible tools to build solutions quickly and help IT meet increasing demands with fewer resources. While their roles differ from traditional IT positions, they often work within IT departments, bridging the gap between technical teams and end users. Within Aurora, citizen developers are considered part of the broader category of Solution Builders and are frequently referenced during divisional meetings and activities.  
+The term Citizen Developer, originating from collaboration among Data Scientists, refers to individuals who create or customize software programs or applications to meet specific user needs and improve operational efficiency. These developers typically lack formal programming training but use accessible tools to build solutions quickly and help IT meet increasing demands with fewer resources. While their roles differ from traditional IT positions, they often work within IT departments, bridging the gap between technical teams and end users. Within Aurora, citizen developers are considered part of the broader category of Solution Builders and are frequently referenced during divisional meetings and activities.
 
-## Support  
+## Support
 
 ### Operational Support
 
-Operational support covers the day-to-day management and maintenance of the Aurora Platform. This includes tasks such as namespace creation, access control, node and platform troubleshooting, and routine platform maintenance. All operational and support requests are submitted through Helix.  
+Operational support covers the day-to-day management and maintenance of the Aurora Platform. This includes tasks such as namespace creation, access control, node and platform troubleshooting, and routine platform maintenance. All operational and support requests are submitted through Helix.
 
-### Application Support  
+### Application Support
 
 Application support focuses on assisting application teams with areas outside the core platform components. This includes support for CI/CD setup, Helm chart management, application architecture guidance, and related tasks. All application support requests are also submitted through Helix.

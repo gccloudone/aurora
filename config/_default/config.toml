@@ -12,15 +12,20 @@ disableLanguages = [
 ] # example: ["fr"] for disable french language. see https://gohugo.io/content-management/multilingual/
 hasCJKLanguage = false #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
 # default language
-defaultContentLanguage = 'en'
+defaultContentLanguage = 'splash'
 # defaultContentLanguageInSubdir need to be true if you want to use the language code as a subdirectory and language specific 404 page
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
+
+enableGitInfo = true
+enableEmoji = true
+disableHugoGeneratorInject = true
+
 # generate a robots.txt file
 enableRobotsTXT = true
 
 ########################## Permalinks ############################
 [permalinks.page]
-"pages" = "/:slugorfilename/"
+"pages" = "/:slugorcontentbasename/"
 
 ############################# Modules ############################
 [module]
@@ -77,6 +82,11 @@ maxAge = "720h"
 [markup]
 [markup.goldmark.renderer]
 unsafe = true
+
+# Enable Markdown Attributes for Block elements
+# https://gohugo.io/content-management/markdown-attributes/
+[markup.goldmark.parser.attribute]
+block = true
 
 [markup.highlight]
 style = 'monokai' # see https://xyproto.github.io/splash/docs/all.html

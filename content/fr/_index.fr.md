@@ -3,6 +3,7 @@ title: "Aurore"
 description: "Aurora est une plateforme sécurisée d’hébergement d’applications en libre-service qui permet aux équipes de conception de solutions de développer et de déployer rapidement des solutions infonuagiques natives."
 date: 2024-10-21
 draft: false
+translationKey: homePage
 ---
 
 ## Commencez à évaluer la plateforme

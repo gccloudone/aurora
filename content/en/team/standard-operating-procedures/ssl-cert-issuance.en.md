@@ -7,9 +7,7 @@ date: 2026-01-26
 draft: false
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 This document outlines the steps Aurora administrators must follow to deploy a sample Kubernetes application to validate the issuance of an SSL certificate using Cert Manager and Lets Encrypt on the Aurora clusters. The domain used in this example is for the Aurora management dev cluster.
 
@@ -35,7 +33,7 @@ Apply the below manifest to create the following Kubernetes resources:
 5. Certificate
 
    ```sh
-   Kubectl apply –f test-cert-issuance.yaml 
+   Kubectl apply –f test-cert-issuance.yaml
    ```
 
 Contents of the test-cert-issuance.yaml manifest
@@ -48,7 +46,7 @@ kind: Namespace
 metadata:
   name: test-cert-issuance
 ---
-# Create a Sample Deployment 
+# Create a Sample Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:

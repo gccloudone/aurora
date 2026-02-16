@@ -9,9 +9,7 @@ date: 2024-10-21
 showToc: true
 ---
 
-<gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
-</gcds-alert>
+{{< translation-note >}}
 
 Adopting a consistent naming convention across resource types is essential for maintaining a structured and understandable cloud environment. Consistent naming enables logical mapping and easy association of resources within and across components, supporting smooth interoperability and integration. It also enhances collaboration and communication among developers by providing a shared reference framework. Therefore, using a unified naming convention across as many resource types as possible is recommended.
 
