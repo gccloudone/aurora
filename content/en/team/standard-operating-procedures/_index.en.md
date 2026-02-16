@@ -26,63 +26,63 @@ Here are the current procedures in place:
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
   <gcds-card
     card-title="Adding Components to Aurora Platform Charts"
-    href="/team/standard-operating-procedures/adding-components-aurora-platform-chart"
+    href="/en/team/standard-operating-procedures/adding-components-aurora-platform-chart"
     badge="Operations"
     description="Procedure & guidelines for adding new components to the aurora-platform-charts."
   >
   </gcds-card>
   <gcds-card
     card-title="AKS Cluster Upgrade"
-    href="/team/standard-operating-procedures/aks-cluster-upgrade"
+    href="/en/team/standard-operating-procedures/aks-cluster-upgrade"
     badge="Operations"
     description="Procedure for upgrading an AKS cluster."
   >
   </gcds-card>
   <gcds-card
     card-title="Backup and Disaster Recovery"
-    href="/team/standard-operating-procedures/backup-disaster-recovery"
+    href="/en/team/standard-operating-procedures/backup-disaster-recovery"
     badge="Reliability"
     description="Procedure for validating that backups and restore processes work as expected."
   >
   </gcds-card>
   <gcds-card
     card-title="Bootstrap Cluster"
-    href="/team/standard-operating-procedures/bootstrap-cluster/"
+    href="/en/team/standard-operating-procedures/bootstrap-cluster/"
     badge="Onboarding"
     description="Steps for using a bootstrap cluster before transferring control to a remote cluster."
   >
   </gcds-card>
   <gcds-card
     card-title="Issue Tracking"
-    href="/team/standard-operating-procedures/issue-tracking/"
+    href="/en/team/standard-operating-procedures/issue-tracking/"
     badge="Governance"
     description="Standards for issue tracking across Aurora."
   >
   </gcds-card>
   <gcds-card
     card-title="SSL Cert Issuance"
-    href="/team/standard-operating-procedures/ssl-cert-issuance/"
+    href="/en/team/standard-operating-procedures/ssl-cert-issuance/"
     badge="Governance"
     description="Procedure for validating the issuance of SSL certificates with Cert Manager."
   >
   </gcds-card>
   <gcds-card
     card-title="Issue and PR Naming Conventions"
-    href="/team/standard-operating-procedures/issue-naming/"
+    href="/en/team/standard-operating-procedures/issue-naming/"
     badge="Governance"
     description="Standards for naming and labeling issues and pull requests across Aurora."
   >
   </gcds-card>
   <gcds-card
     card-title="Infrastructure and Configuration Management"
-    href="/team/standard-operating-procedures/infrastructure-and-configuration-management/"
+    href="/en/team/standard-operating-procedures/infrastructure-and-configuration-management/"
     badge="Operations"
     description="Guidance on managing infrastructure and configuration consistently on the Aurora platform."
   >
   </gcds-card>
   <gcds-card
     card-title="Onboarding process for the Enterprise Landing Zone"
-    href="/team/standard-operating-procedures/enterprise-landing-zone"
+    href="/en/team/standard-operating-procedures/enterprise-landing-zone"
     badge="Onboarding"
     description="Onboarding process for departments into the Enterprise Landing Zone for a chosen CSP."
   >
