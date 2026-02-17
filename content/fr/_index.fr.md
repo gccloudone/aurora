@@ -27,25 +27,25 @@ translationKey: homePage
 
 <article class="py-450">
   <h2 class="mb-400">Conçue pour répondre à vos besoins opérationnels.</h2>
-  <p class="mb-500">Explorez notre architecture proposée et <gcds-link href="/contact" class="hydrated">partagez vos commentaires</gcds-link>.</p>
+  <p class="mb-500">Explorez notre architecture proposée et <gcds-link href="/fr/contact" class="hydrated">partagez vos commentaires</gcds-link>.</p>
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr 1fr" gap="450" class="hydrated">
     <li class="list-none">
       <h3 class="mb-400">Composantes</h3>
       <p class="mb-400">Découvrez les composantes modulaires qui assurent les fonctionnalités de base de la plateforme.</p>
       <p class="mb-400">Outils CNCF comme Cilium pour la sécurité réseau avancée et l’observabilité, Argo CD pour la livraison continue basée sur GitOps, et CIDR Allocator pour la gestion efficace des adresses IP.</p>
-      <gcds-link href="/components/" class="hydrated">Voir les composantes</gcds-link>
+      <gcds-link href="/fr/components/" class="hydrated">Voir les composantes</gcds-link>
     </li>
     <li class="list-none">
       <h3 class="mb-400">Architecture</h3>
       <p class="mb-400">Consultez le plan architectural de la plateforme qui décrit les principes de conception, l’architecture système et les décisions encodées.</p>
       <p class="mb-400">Cela inclut la gestion de l’infrastructure, le modèle zéro confiance, l’isolation des charges de travail, le renforcement de la sécurité, la gestion multi-locataires et le DevSecOps.</p>
-      <gcds-link href="/architecture/introduction/azure/" class="hydrated">Voir le plan architectural</gcds-link>
+      <gcds-link href="/fr/architecture/introduction/azure/" class="hydrated">Voir le plan architectural</gcds-link>
     </li>
     <li class="list-none">
       <h3 class="mb-400">Conseil technique</h3>
       <p class="mb-400">Contribuez à l’avenir d’Aurora en vous joignant à notre groupe consultatif technique.</p>
       <p class="mb-400">Nous invitons les concepteurs de solutions et les architectes de plateformes à partager leurs idées et à contribuer à l’évolution de l’architecture, des outils et des services cloud-native d’Aurora.</p>
-      <gcds-link href="/technical-advisory-group/" class="hydrated">Voir la charte du groupe</gcds-link>
+      <gcds-link href="/fr/technical-advisory-group/" class="hydrated">Voir la charte du groupe</gcds-link>
     </li>
   </gcds-grid>
 </article>
@@ -55,7 +55,7 @@ translationKey: homePage
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" gap="450" class="hydrated">
     <li class="list-none bg-white p-450 b-radius-md">
       <h3 class="mb-400">
-        <gcds-link href="/get-involved" class="hydrated">Contribuez à l’avenir</gcds-link>
+        <gcds-link href="/fr/get-involved" class="hydrated">Contribuez à l’avenir</gcds-link>
       </h3>
       <p>Découvrez les travaux en cours et ajoutez votre expertise.</p>
     </li>

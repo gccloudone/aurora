@@ -27,25 +27,25 @@ translationKey: homePage
 
 <article class="py-450">
   <h2 class="mb-400">Purpose-built for your operational needs.</h2>
-  <p class="mb-500"> Explore our proposed architecture and <gcds-link href="/contact" class="hydrated">share your feedback</gcds-link>.</p>
+  <p class="mb-500"> Explore our proposed architecture and <gcds-link href="/en/contact" class="hydrated">share your feedback</gcds-link>.</p>
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr 1fr" gap="450" class="hydrated">
     <li class="list-none">
       <h3 class="mb-400">Components</h3>
       <p class="mb-400"> Learn about the pluggable components that comprise the platform's core functionality.</p>
       <p class="mb-400"> CNCF tooling such as Cilium for advanced network security and observability, Argo CD for GitOps-based continuous delivery, and CIDR Allocator for efficient IP address management.</p>
-      <gcds-link href="/components/" class="hydrated">View components</gcds-link>
+      <gcds-link href="/en/components/" class="hydrated">View components</gcds-link>
     </li>
     <li class="list-none">
       <h3 class="mb-400">Architecture</h3>
       <p class="mb-400">Read through the architectural plan for the platform which outlines the core design principles, system architecture, and encoded decisions.</p>
       <p class="mb-400">This includes infrastructure management, zero trust, workload isolation, security hardening, multi-tenant management, and DevSecOps.</P>
-      <gcds-link href="/architecture/introduction/azure/" class="hydrated">View Architectural Plan</gcds-link>
+      <gcds-link href="/en/architecture/introduction/azure/" class="hydrated">View Architectural Plan</gcds-link>
     </li>
     <li class="list-none">
       <h3 class="mb-400">Technical Advisory</h3>
       <p class="mb-400">Help guide the future of Aurora by joining our Tech Advisory Group and contributing your expertise.</p>
       <p class="mb-400">We’re inviting solution builders and platform architects from across government to share insights and help shape Aurora’s architecture, tooling, and cloud-native service design.</p>
-      <gcds-link href="/technical-advisory-group/" class="hydrated">View TAG Charter</gcds-link>
+      <gcds-link href="/en/technical-advisory-group/" class="hydrated">View TAG Charter</gcds-link>
     </li>
   </gcds-grid>
 </article>
@@ -55,7 +55,7 @@ translationKey: homePage
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" gap="450" class="hydrated">
     <li class="list-none bg-white p-450 b-radius-md">
       <h3 class="mb-400">
-        <gcds-link href="/get-involved" class="hydrated">Help shape the future</gcds-link>
+        <gcds-link href="/en/get-involved" class="hydrated">Help shape the future</gcds-link>
       </h3>
       <p>Explore ongoing work and add your expertise.</p>
     </li>
