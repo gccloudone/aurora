@@ -72,7 +72,7 @@
 
               <gcds-card
                 card-title="{{ $c.name }}"
-                href="{{ printf "/components/%s/" $slug }}"
+                href="{{ printf "/components/%s/" $slug | relLangURL }}"
                 card-title-tag="h3"
                 badge="{{ $section }}"
                 img-src="{{ $c.metadata.image }}"
