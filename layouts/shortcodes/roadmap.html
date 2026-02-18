@@ -91,9 +91,9 @@
 
         <h4 class="mt-300 mb-200">{{ $cat }}</h4>
 
-        <table class="table">
+        <table class="d-table bt-sm bx-sm mb-300">
           <thead>
-            <tr>
+            <tr class="d-table-row bg-light font-bold">
               <th scope="col">Epic</th>
               <th scope="col">Client / Partner</th>
               <th scope="col">Status</th>
@@ -102,16 +102,16 @@
           </thead>
           <tbody>
             {{ range $list }}
-            <tr>
-              <td>
+            <tr class="d-table-row">
+              <td class="d-table-cell bb-sm px-100">
                 <strong>
                   <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
                 </strong><br>
                 <span class="text-sm">{{ .summary }}</span>
               </td>
-              <td>{{ .client }}</td>
-              <td>{{ index $statusIcons .status | default "📝" }} {{ .status }}</td>
-              <td>{{ index $priorityIcons .priority | default "⚪" }} {{ .priority }}</td>
+              <td class="d-table-cell bb-sm px-100">{{ .client }}</td>
+              <td class="d-table-cell bb-sm px-100">{{ index $statusIcons .status | default "📝" }} {{ .status }}</td>
+              <td class="d-table-cell bb-sm px-100">{{ index $priorityIcons .priority | default "⚪" }} {{ .priority }}</td>
             </tr>
             {{ end }}
           </tbody>
@@ -158,8 +158,8 @@
 
         <h4 class="mt-300 mb-200">{{ $dept }}</h4>
 
-        <table class="table">
-          <thead>
+        <table class="d-table bt-sm bx-sm mb-300">
+          <tr class="d-table-row bg-light font-bold">
             <tr>
               <th scope="col">Epic</th>
               <th scope="col">Status</th>
@@ -168,15 +168,15 @@
           </thead>
           <tbody>
             {{ range $deptItems }}
-            <tr>
-              <td>
+            <tr class="d-table-row">
+              <td class="d-table-cell bb-sm px-100">
                 <strong>
                   <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
                 </strong><br>
                 <span class="text-sm">{{ .summary }}</span>
               </td>
-              <td>{{ index $statusIcons .status | default "📝" }} {{ .status }}</td>
-              <td>{{ index $priorityIcons .priority | default "⚪" }} {{ .priority }}</td>
+              <td class="d-table-cell bb-sm px-100">{{ index $statusIcons .status | default "📝" }} {{ .status }}</td>
+              <td class="d-table-cell bb-sm px-100">{{ index $priorityIcons .priority | default "⚪" }} {{ .priority }}</td>
             </tr>
             {{ end }}
           </tbody>
@@ -201,9 +201,9 @@
       {{ if $gcsaItems }}
 
       <gcds-details details-title="GC Secure Artifacts">
-        <table class="table">
+        <table class="d-table bt-sm bx-sm mb-300">
           <thead>
-            <tr>
+            <tr class="d-table-row bg-light font-bold">
               <th scope="col">Epic</th>
               <th scope="col">Client / Partner</th>
               <th scope="col">Status</th>
@@ -212,16 +212,16 @@
           </thead>
           <tbody>
             {{ range $gcsaItems }}
-            <tr>
-              <td>
+            <tr class="d-table-row">
+              <td class="d-table-cell bb-sm px-100">
                 <strong>
                   <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
                 </strong><br>
                 <span class="text-sm">{{ .summary }}</span>
               </td>
-              <td>{{ .client }}</td>
-              <td>{{ index $statusIcons .status | default "📝" }} {{ .status }}</td>
-              <td>{{ index $priorityIcons .priority | default "⚪" }} {{ .priority }}</td>
+              <td class="d-table-cell bb-sm px-100">{{ .client }}</td>
+              <td class="d-table-cell bb-sm px-100">{{ index $statusIcons .status | default "📝" }} {{ .status }}</td>
+              <td class="d-table-cell bb-sm px-100">{{ index $priorityIcons .priority | default "⚪" }} {{ .priority }}</td>
             </tr>
             {{ end }}
           </tbody>
