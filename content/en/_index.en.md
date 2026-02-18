@@ -76,5 +76,5 @@ translationKey: homePage
 heading="Help us improve"
 paragraph="Have questions, suggestions, or ideas for improvement? Share your feedback to help us refine Aurora and better meet your needs."
 buttonText="Give feedback"
-buttonLink="/contact"
+buttonLink="/en/contact"
 >}}

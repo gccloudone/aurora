@@ -35,7 +35,7 @@
       {{ end }}
 
       <gcds-link
-        href="/components/{{ $featured.slug }}/"
+        href="{{ printf "/components/%s/" $featured.slug | relLangURL }}"
         class="hydrated">
         {{ i18n "components_read_more" | default "Read more about" }}
         {{ $featured.name }}

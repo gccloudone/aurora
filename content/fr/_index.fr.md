@@ -76,5 +76,5 @@ translationKey: homePage
 heading="Aidez-nous à nous améliorer"
 paragraph="Avez-vous des questions, des suggestions ou des idées d'amélioration ? Partagez vos commentaires pour nous aider à raffiner Aurora et mieux répondre à vos besoins."
 buttonText="Donnez votre avis"
-buttonLink="/contact"
+buttonLink="/fr/contact"
 >}}
