@@ -23,13 +23,13 @@ The composite action lives in the (dot).github repository. There are 2 separate 
 
 The create-release action gets triggered when a PR is opened and has appropriate label applied. The check-pr-labels action gets triggered to verify the label applied. MAJOR, MINOR, PATCH and SKIP are the valid labels to create a major release version or minor release version or patch release version or skip the release respectively.
 
-# Authentication
+## Authentication
 
 The action automatically uses the built-in GITHUB_TOKEN and permissions are assigned within the workflow.
 
-# Usage
+## Usage
 
-To use this action, create a workflow file (e.g., .github/workflows/trigger_release.yml) in your repository and reference this action. 
+To use this action, create a workflow file (e.g., .github/workflows/trigger_release.yml) in your repository and reference this action.
 
    ```sh
 name: Check Label and Trigger Release
@@ -62,7 +62,3 @@ jobs:
           release_branch: "main"
 
    ```
-
-
-
-
