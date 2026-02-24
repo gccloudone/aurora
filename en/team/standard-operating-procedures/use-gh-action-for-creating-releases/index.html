@@ -1,4 +1,4 @@
-<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"><title>Monitoring and Alerting | Aurora
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"><title>GitHub Actions for Creating Releases | Aurora
 </title><link rel=icon href=/favicon.ico type=image/x-icon><link rel=preload href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css as=style crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@gcds-core/css-shortcuts@1.0.1/dist/gcds-css-shortcuts.min.css><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.css><script async type=module src=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.esm.js></script><link rel=stylesheet href=/scss/main.css><link rel=stylesheet href=/scss/custom.css><style>html{font-size:16px}body{font-size:var(--gcds-font-sizes-text);line-height:var(--gcds-line-heights-text);color:var(--gcds-color-grayscale-1000);font-family:var(--gcds-font-families-body),sans-serif;margin:0;animation:fade .05s forwards ease-in-out}</style><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css></head><body style=margin:0 class=character-limit><main><gcds-container centered size=md><gcds-text size=caption style="text-align: center;"><strong>Alpha</strong>&nbsp;&nbsp;This is an experimental service.</gcds-text>
 </gcds-container><gcds-header lang=en lang-href signature-variant=colour skip-to-href=#><gcds-search lang=en slot=search action=/sr/srb.html placeholder=Aurora></gcds-search><gcds-top-nav slot=menu label="Top navigation" alignment=right><gcds-nav-link href=/en/ slot=home>GC Cloud One: Aurora
 </gcds-nav-link><gcds-nav-group open-trigger=Platform menu-label=Platform><gcds-nav-link href=/en/roadmap/>Roadmap
@@ -7,7 +7,7 @@
 </gcds-nav-link><gcds-nav-link href=/en/architecture/>Architecture
 </gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="User Guides" menu-label="User Guides"><gcds-nav-link href=/en/user-guides/onboarding/>Onboarding
 </gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Team menu-label=Team><gcds-nav-link href=/en/team/standard-operating-procedures/>Standard Operating Procedures
-</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/ current>Monitoring
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/>Monitoring
 </gcds-nav-link><gcds-nav-link href=/en/team/appendix/>Appendix
 </gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Community menu-label=Community><gcds-nav-link href=/en/get-involved/>Get involved
 </gcds-nav-link><gcds-nav-link href=/en/rules-of-engagement/>Rules of Engagement
@@ -15,11 +15,12 @@
 </gcds-nav-link></gcds-nav-group></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href>GC Cloud One</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/en/>Aurora</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/en/team/>Team Guide</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/en/team/standard-operating-procedures/>Standard Operating Procedures</gcds-breadcrumbs-item>
 </gcds-breadcrumbs></gcds-header><gcds-container size=xl main-container centered tag=main><gcds-grid tag=section columns=1fr columns-desktop="
         1fr 3fr
       " align-items=start class=hydrated><aside role=complementary><gcds-side-nav label="Team Guide"><gcds-nav-link href=/en/team/>Team Guide
-</gcds-nav-link><gcds-nav-group open-trigger="Standard Operating Procedures" menu-label="Standard Operating Procedures"><gcds-nav-link href=/en/team/standard-operating-procedures/>Standard Operating Procedures
-</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/>GitHub Actions for Creating Releases
+</gcds-nav-link><gcds-nav-group open-trigger="Standard Operating Procedures" menu-label="Standard Operating Procedures" open><gcds-nav-link href=/en/team/standard-operating-procedures/>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/ current=true>GitHub Actions for Creating Releases
 </gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/aks-cluster-upgrade/>AKS Cluster Upgrade
 </gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/ssl-cert-issuance/>SSL Cert Issuance
 </gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/issue-tracking/>Issue Tracking
@@ -29,7 +30,7 @@
 </gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/infrastructure-and-configuration-management/>Infrastructure and Configuration Management
 </gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/issue-naming/>Issue and PR Naming Conventions
 </gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/enterprise-landing-zone/>Onboarding process for the Enterprise Landing Zone
-</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Monitoring and Alerting" menu-label="Monitoring and Alerting" open><gcds-nav-link href=/en/team/monitoring-alerts/ current=true>Monitoring and Alerting
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Monitoring and Alerting" menu-label="Monitoring and Alerting"><gcds-nav-link href=/en/team/monitoring-alerts/>Monitoring and Alerting
 </gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/prometheus/>Prometheus
 </gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/prometheus-operator/>Prometheus Operator
 </gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alertmanager/>Alertmanager
@@ -50,12 +51,46 @@
 </gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/pod-not-ready/>Pod Alerts
 </gcds-nav-link></gcds-nav-group></gcds-nav-group><gcds-nav-group open-trigger=Appendix menu-label=Appendix><gcds-nav-link href=/en/team/appendix/>Appendix
 </gcds-nav-link><gcds-nav-link href=/en/team/appendix/acronyms/>Acronyms
-</gcds-nav-link><gcds-nav-link href=/en/team/appendix/lexicon/>Lexicon</gcds-nav-link></gcds-nav-group></gcds-side-nav></aside><section class=mb-400><gcds-heading tag=h1>Monitoring and Alerting</gcds-heading>
-<gcds-alert class=my-300 alert-role=danger heading="Avis de traduction" hide-close-btn=true><gcds-text character-limit=true>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions.
-Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
-</gcds-text></gcds-alert><gcds-text character-limit=true>This section provides an overview of observability components, including tools such as Prometheus and Alertmanager, as well as Alert Runbooks used to resolve alerts.</gcds-text>
-<gcds-text character-limit=true>Aurora defines a comprehensive set of Alert Runbooks that provide step-by-step instructions for troubleshooting and resolving alerts. These runbooks explain the meaning of the alert, the root cause of the issue, and the actions required to address it. By standardizing incident response, the runbooks help ensure faster resolution times and greater consistency across teams.</gcds-text>
-<gcds-date-modified lang=en>2026-02-16</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "","About us": "/en/about/" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+</gcds-nav-link><gcds-nav-link href=/en/team/appendix/lexicon/>Lexicon</gcds-nav-link></gcds-nav-group></gcds-side-nav></aside><section class=mb-400><gcds-heading tag=h1>GitHub Actions for Creating Releases</gcds-heading>
+<gcds-alert alert-role=danger container=full heading="Avis de traduction" hide-close-btn=true hide-role-icon=false is-fixed=false class="hydrated mb-400"><gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.</gcds-text>
+</gcds-alert><gcds-text character-limit=true>This document is designed for the GitHub Action repository to help other developers implement release automation in their repositories.</gcds-text>
+<gcds-heading tag=h2 id=context character-limit=true>Context<gcds-link href=#context class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>This GitHub Composite Action simplifies and standardizes the process of creating GitHub releases. It ensures consistent release naming, tagging and notes generation across all repositories.</gcds-text>
+<gcds-heading tag=h2 id=setup character-limit=true>Setup<gcds-link href=#setup class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>The composite action lives in the (dot).github repository. There are 2 separate actions , one for checking PR labels and other for creating the releases. Both work in conjunction to simplify and automate the release creation process.</gcds-text>
+<gcds-text character-limit=true>The create-release action gets triggered when a PR is opened and has appropriate label applied. The check-pr-labels action gets triggered to verify the label applied. MAJOR, MINOR, PATCH and SKIP are the valid labels to create a major release version or minor release version or patch release version or skip the release respectively.</gcds-text>
+<gcds-heading tag=h2 id=authentication character-limit=true>Authentication<gcds-link href=#authentication class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>The action automatically uses the built-in GITHUB_TOKEN and permissions are assigned within the workflow.</gcds-text>
+<gcds-heading tag=h2 id=usage character-limit=true>Usage<gcds-link href=#usage class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>To use this action, create a workflow file (e.g., .github/workflows/trigger_release.yml) in your repository and reference this action.</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>name: Check Label and Trigger Release
+</span></span><span style=display:flex><span>run-name: <span style=color:#e6db74>&#34;PR #</span><span style=color:#e6db74>${</span>{ github.event.pull_request.number <span style=color:#e6db74>}</span><span style=color:#e6db74>} [</span><span style=color:#e6db74>${</span>{ github.event.action <span style=color:#e6db74>}</span><span style=color:#e6db74>}]: </span><span style=color:#e6db74>${</span>{ github.event.pull_request.title <span style=color:#e6db74>}</span><span style=color:#e6db74>}&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>on:
+</span></span><span style=display:flex><span>pull_request:
+</span></span><span style=display:flex><span> types: <span style=color:#f92672>[</span>opened, reopened, synchronize , labeled, unlabeled, closed<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> branches:
+</span></span><span style=display:flex><span>   - main
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>permissions:
+</span></span><span style=display:flex><span>contents: write
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>jobs:
+</span></span><span style=display:flex><span>publish_release:
+</span></span><span style=display:flex><span> name: Check Label and Trigger Release
+</span></span><span style=display:flex><span> runs-on: ubuntu-latest
+</span></span><span style=display:flex><span> steps:
+</span></span><span style=display:flex><span>   - name: Use Composite Check PR Labels Action
+</span></span><span style=display:flex><span>     id: label
+</span></span><span style=display:flex><span>     uses: gccloudone-aurora-iac/.github/.github/actions/check-pr-labels@main
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   - name: Use Composite Create Release Action
+</span></span><span style=display:flex><span>     <span style=color:#66d9ef>if</span>: github.event.pull_request.merged <span style=color:#f92672>==</span> true 
+</span></span><span style=display:flex><span>     uses: gccloudone-aurora-iac/.github/.github/actions/create-release@main
+</span></span><span style=display:flex><span>     with:
+</span></span><span style=display:flex><span>       release_type: <span style=color:#e6db74>${</span>{ steps.label.outputs.release_type <span style=color:#e6db74>}</span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>       github_token: <span style=color:#e6db74>${</span>{ secrets.GITHUB_TOKEN <span style=color:#e6db74>}</span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>       release_branch: <span style=color:#e6db74>&#34;main&#34;</span>
+</span></span></code></pre></div><gcds-date-modified lang=en>2026-02-24</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "","About us": "/en/about/" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
     .glightbox-container.glightbox-custom-white-bg img {
       background: white !important;
     }
