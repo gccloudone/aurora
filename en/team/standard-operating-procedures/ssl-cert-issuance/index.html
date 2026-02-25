@@ -60,97 +60,98 @@ Une fois terminé, il sera entièrement traduit en français et mis à dispositi
 <gcds-link href=https://cert-manager.io/>Cert Manager</gcds-link> to automate ssl cert issuance and renewal.</gcds-text>
 <gcds-heading tag=h2 id=setup character-limit=true>Setup<gcds-link href=#setup class=pilcrow>¶</gcds-link></gcds-heading>
 <gcds-text character-limit=true>Before testing, ensure the following:</gcds-text><ul><li>The <strong>kubectl CLI</strong> is installed.</li><li>Access to connect to the target Aurora cluster is granted.</li></ul><gcds-heading tag=h3 id=steps character-limit=true>Steps<gcds-link href=#steps class=pilcrow>¶</gcds-link></gcds-heading>
-<gcds-text character-limit=true>Apply the below manifest to create the following Kubernetes resources:</gcds-text><ol><li><gcds-text character-limit=true>Namespace</gcds-text></li><li><gcds-text character-limit=true>Deployment</gcds-text></li><li><gcds-text character-limit=true>Service</gcds-text></li><li><gcds-text character-limit=true>Ingress</gcds-text></li><li><gcds-text character-limit=true>Certificate</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>Kubectl apply –f test-cert-issuance.yaml
-</span></span></code></pre></div></li></ol><gcds-text character-limit=true>Contents of the test-cert-issuance.yaml manifest</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>---
+<gcds-text character-limit=true>Apply the below manifest to create the following Kubernetes resources:</gcds-text><blockquote><gcds-text character-limit=true>[!NOTE]
+Update the domain name in Ingress and Certificate manifest based on the target cluster.</gcds-text></blockquote><ol><li><gcds-text character-limit=true>Namespace</gcds-text></li><li><gcds-text character-limit=true>Deployment</gcds-text></li><li><gcds-text character-limit=true>Service</gcds-text></li><li><gcds-text character-limit=true>Ingress</gcds-text></li><li><gcds-text character-limit=true>Certificate</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>kubectl apply –f test-cert-issuance.yaml
+</span></span></code></pre></div></li></ol><gcds-text character-limit=true>Contents of the test-cert-issuance.yaml manifest</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>---
 </span></span><span style=display:flex><span><span style=color:#75715e># Create Namespace</span>
-</span></span><span style=display:flex><span>apiVersion: v1
-</span></span><span style=display:flex><span>kind: Namespace
-</span></span><span style=display:flex><span>metadata:
-</span></span><span style=display:flex><span>name: test-cert-issuance
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Namespace</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>test-cert-issuance</span>
 </span></span><span style=display:flex><span>---
 </span></span><span style=display:flex><span><span style=color:#75715e># Create a Sample Deployment</span>
-</span></span><span style=display:flex><span>apiVersion: apps/v1
-</span></span><span style=display:flex><span>kind: Deployment
-</span></span><span style=display:flex><span>metadata:
-</span></span><span style=display:flex><span>name: test-cert-app
-</span></span><span style=display:flex><span>namespace: test-cert-issuance
-</span></span><span style=display:flex><span>spec:
-</span></span><span style=display:flex><span>replicas: <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>selector:
-</span></span><span style=display:flex><span> matchLabels:
-</span></span><span style=display:flex><span>   app: nginx
-</span></span><span style=display:flex><span>template:
-</span></span><span style=display:flex><span> metadata:
-</span></span><span style=display:flex><span>   labels:
-</span></span><span style=display:flex><span>     app: nginx
-</span></span><span style=display:flex><span> spec:
-</span></span><span style=display:flex><span>   containers:
-</span></span><span style=display:flex><span>   - image: docker.io/nginx:latest
-</span></span><span style=display:flex><span>     imagePullPolicy: Always
-</span></span><span style=display:flex><span>     name: nginx
-</span></span><span style=display:flex><span>     ports:
-</span></span><span style=display:flex><span>     - containerPort: <span style=color:#ae81ff>80</span>
-</span></span><span style=display:flex><span>       protocol: TCP
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>apps/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Deployment</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>test-cert-app</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>test-cert-issuance</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span> <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>   <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nginx</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>template</span>:
+</span></span><span style=display:flex><span> <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>   <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>     <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nginx</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>   <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>   - <span style=color:#f92672>image</span>: <span style=color:#ae81ff>docker.io/nginx:latest</span>
+</span></span><span style=display:flex><span>     <span style=color:#f92672>imagePullPolicy</span>: <span style=color:#ae81ff>Always</span>
+</span></span><span style=display:flex><span>     <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nginx</span>
+</span></span><span style=display:flex><span>     <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>     - <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>80</span>
+</span></span><span style=display:flex><span>       <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
 </span></span><span style=display:flex><span>---
 </span></span><span style=display:flex><span><span style=color:#75715e># Create Service</span>
-</span></span><span style=display:flex><span>apiVersion: v1
-</span></span><span style=display:flex><span>kind: Service
-</span></span><span style=display:flex><span>metadata:
-</span></span><span style=display:flex><span>labels:
-</span></span><span style=display:flex><span> app: nginx
-</span></span><span style=display:flex><span>name: test-cert-app-svc
-</span></span><span style=display:flex><span>namespace: test-cert-issuance
-</span></span><span style=display:flex><span>spec:
-</span></span><span style=display:flex><span>ports:
-</span></span><span style=display:flex><span>- name: http
-</span></span><span style=display:flex><span> port: <span style=color:#ae81ff>80</span>
-</span></span><span style=display:flex><span> protocol: TCP
-</span></span><span style=display:flex><span> targetPort: <span style=color:#ae81ff>80</span>
-</span></span><span style=display:flex><span>selector:
-</span></span><span style=display:flex><span> app: nginx
-</span></span><span style=display:flex><span>sessionAffinity: None
-</span></span><span style=display:flex><span>type: ClusterIP
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Service</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span> <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nginx</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>test-cert-app-svc</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>test-cert-issuance</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>- <span style=color:#f92672>name</span>: <span style=color:#ae81ff>http</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>port</span>: <span style=color:#ae81ff>80</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>80</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span> <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nginx</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>sessionAffinity</span>: <span style=color:#ae81ff>None</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>type</span>: <span style=color:#ae81ff>ClusterIP</span>
 </span></span><span style=display:flex><span>---
 </span></span><span style=display:flex><span><span style=color:#75715e># Create Ingress</span>
-</span></span><span style=display:flex><span>apiVersion: networking.k8s.io/v1
-</span></span><span style=display:flex><span>kind: Ingress
-</span></span><span style=display:flex><span>metadata:
-</span></span><span style=display:flex><span>name: test-cert-app-ingress
-</span></span><span style=display:flex><span>namespace: test-cert-issuance
-</span></span><span style=display:flex><span>spec:
-</span></span><span style=display:flex><span>ingressClassName: ingress-istio-controller
-</span></span><span style=display:flex><span>rules:
-</span></span><span style=display:flex><span>- host: test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
-</span></span><span style=display:flex><span> http:
-</span></span><span style=display:flex><span>   paths:
-</span></span><span style=display:flex><span>   - backend:
-</span></span><span style=display:flex><span>       service:
-</span></span><span style=display:flex><span>         name: test-cert-app-svc
-</span></span><span style=display:flex><span>         port:
-</span></span><span style=display:flex><span>           name: http
-</span></span><span style=display:flex><span>     path: /
-</span></span><span style=display:flex><span>     pathType: Prefix
-</span></span><span style=display:flex><span>tls:
-</span></span><span style=display:flex><span>- hosts:
-</span></span><span style=display:flex><span> - test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
-</span></span><span style=display:flex><span> secretName: test-cert-app-tls
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>networking.k8s.io/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Ingress</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>test-cert-app-ingress</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>test-cert-issuance</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>ingressClassName</span>: <span style=color:#ae81ff>ingress-istio-controller</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>rules</span>:
+</span></span><span style=display:flex><span>- <span style=color:#f92672>host</span>: <span style=color:#ae81ff>test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>http</span>:
+</span></span><span style=display:flex><span>   <span style=color:#f92672>paths</span>:
+</span></span><span style=display:flex><span>   - <span style=color:#f92672>backend</span>:
+</span></span><span style=display:flex><span>       <span style=color:#f92672>service</span>:
+</span></span><span style=display:flex><span>         <span style=color:#f92672>name</span>: <span style=color:#ae81ff>test-cert-app-svc</span>
+</span></span><span style=display:flex><span>         <span style=color:#f92672>port</span>:
+</span></span><span style=display:flex><span>           <span style=color:#f92672>name</span>: <span style=color:#ae81ff>http</span>
+</span></span><span style=display:flex><span>     <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/</span>
+</span></span><span style=display:flex><span>     <span style=color:#f92672>pathType</span>: <span style=color:#ae81ff>Prefix</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>tls</span>:
+</span></span><span style=display:flex><span>- <span style=color:#f92672>hosts</span>:
+</span></span><span style=display:flex><span> - <span style=color:#ae81ff>test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>secretName</span>: <span style=color:#ae81ff>test-cert-app-tls</span>
 </span></span><span style=display:flex><span>---
 </span></span><span style=display:flex><span><span style=color:#75715e># Create Certificate - This will further create CertificateRequest and Order</span>
-</span></span><span style=display:flex><span>apiVersion: cert-manager.io/v1
-</span></span><span style=display:flex><span>kind: Certificate
-</span></span><span style=display:flex><span>metadata:
-</span></span><span style=display:flex><span>labels:
-</span></span><span style=display:flex><span> use-general-solver: <span style=color:#e6db74>&#34;true&#34;</span>
-</span></span><span style=display:flex><span>name: test-cert-app-certificate
-</span></span><span style=display:flex><span>namespace: test-cert-issuance
-</span></span><span style=display:flex><span>spec:
-</span></span><span style=display:flex><span>commonName: test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
-</span></span><span style=display:flex><span>dnsNames:
-</span></span><span style=display:flex><span>- test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
-</span></span><span style=display:flex><span>issuerRef:
-</span></span><span style=display:flex><span> kind: ClusterIssuer
-</span></span><span style=display:flex><span> name: letsencrypt
-</span></span><span style=display:flex><span>secretName: test-cert-app-tls
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>cert-manager.io/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Certificate</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span> <span style=color:#f92672>use-general-solver</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>test-cert-app-certificate</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>test-cert-issuance</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>commonName</span>: <span style=color:#ae81ff>test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>dnsNames</span>:
+</span></span><span style=display:flex><span>- <span style=color:#ae81ff>test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>issuerRef</span>:
+</span></span><span style=display:flex><span> <span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterIssuer</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>name</span>: <span style=color:#ae81ff>letsencrypt</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>secretName</span>: <span style=color:#ae81ff>test-cert-app-tls</span>
 </span></span></code></pre></div><gcds-heading tag=h3 id=step3-validate-the-creation-of-resources character-limit=true>Step3: Validate the creation of resources<gcds-link href=#step3-validate-the-creation-of-resources class=pilcrow>¶</gcds-link></gcds-heading>
 <gcds-text character-limit=true>Check whether all resources defined in the manifest have been created. The <code>Kind: Certificate</code> manifest further creates a CertificateRequest and Order to generate the SSL cert and stores in tls.crt and tls.key in a K8s secret.</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>&gt; kubens test-cert-issuance
 </span></span><span style=display:flex><span>✔ Active namespace is <span style=color:#e6db74>&#34;test-cert-issuance&#34;</span>
@@ -183,7 +184,7 @@ Une fois terminé, il sera entièrement traduit en français et mis à dispositi
 </span></span><span style=display:flex><span>&gt; k get order
 </span></span><span style=display:flex><span>NAME                                    STATE   AGE
 </span></span><span style=display:flex><span>test-cert-app-certificate-1-379287467   valid   86m
-</span></span></code></pre></div><gcds-date-modified lang=en>2026-02-16</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "","About us": "/en/about/" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+</span></span></code></pre></div><gcds-date-modified lang=en>2026-02-25</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "","About us": "/en/about/" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
     .glightbox-container.glightbox-custom-white-bg img {
       background: white !important;
     }
