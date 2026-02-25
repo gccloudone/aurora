@@ -26,6 +26,9 @@ Before testing, ensure the following:
 
 Apply the below manifest to create the following Kubernetes resources:
 
+> [!NOTE]
+> Update the domain name in Ingress and Certificate manifest based on the target cluster.
+
 1. Namespace
 2. Deployment
 3. Service
@@ -33,12 +36,12 @@ Apply the below manifest to create the following Kubernetes resources:
 5. Certificate
 
    ```sh
-   Kubectl apply –f test-cert-issuance.yaml
+   kubectl apply –f test-cert-issuance.yaml
    ```
 
 Contents of the test-cert-issuance.yaml manifest
 
-   ```sh
+   ```yaml
 ---
 # Create Namespace
 apiVersion: v1
