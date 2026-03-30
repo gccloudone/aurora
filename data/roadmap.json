@@ -1,5 +1,15 @@
 [
   {
+    "title": "[AUR:COMPONENT] Migrate AAD Pod Identity to Workload Identity",
+    "summary": "Migrate existing AKS configurations from the legacy Azure AD Pod Identity mechanism to the modern Azure Workload Identity model. Azure AD Pod Identity is deprecated and approaching retirement, and continued reliance on it introduces operational risk, limits future platform upgrades, and creates unnecessary complexity in identity management across clusters.",
+    "category": "Platform Components",
+    "client": "Aurora",
+    "status": "Done",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/35"
+  },
+  {
     "title": "[AUR:COMPONENT] Add Backstage (Goose) to Aurora",
     "summary": "The Backstage instance developed by the Platform Architecture team needs be deployed as part of the Aurora Platform Charts and serve as the primary front door to the Aurora platform. Aurora must support both a community open source Backstage distribution and a GC Cloud One tailored Backstage, with differences implemented through configuration, plugins, and build parameters rather than separate architectures.",
     "category": "Platform Components",
@@ -38,16 +48,6 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
-  },
-  {
-    "title": "[AUR:COMPONENT] Migrate AAD Pod Identity to Workload Identity",
-    "summary": "Migrate existing AKS configurations from the legacy Azure AD Pod Identity mechanism to the modern Azure Workload Identity model. Azure AD Pod Identity is deprecated and approaching retirement, and continued reliance on it introduces operational risk, limits future platform upgrades, and creates unnecessary complexity in identity management across clusters.",
-    "category": "Platform Components",
-    "client": "Aurora",
-    "status": "In Progress",
-    "priority": "Medium",
-    "quarter": "Q1 2026",
-    "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/35"
   },
   {
     "title": "[AUR:DOCS] Aurora Platform Documentation",
