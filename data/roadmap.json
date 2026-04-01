@@ -1,23 +1,23 @@
 [
   {
+    "title": "[AUR:COMPONENT] Migrate AAD Pod Identity to Workload Identity",
+    "summary": "Migrate existing AKS configurations from the legacy Azure AD Pod Identity mechanism to the modern Azure Workload Identity model. Azure AD Pod Identity is deprecated and approaching retirement, and continued reliance on it introduces operational risk, limits future platform upgrades, and creates unnecessary complexity in identity management across clusters.",
+    "category": "Platform Components",
+    "client": "Aurora",
+    "status": "Done",
+    "priority": "Medium",
+    "quarter": "Q1 2026",
+    "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/35"
+  },
+  {
     "title": "[AUR:COMPONENT] Add Backstage (Goose) to Aurora",
-    "summary": "The Backstage instance developed by the Platform Architecture team needs be deployed as part of the Aurora Platform Charts and serve as the primary front door to the Aurora platform. Aurora must support both a community open source Backstage distribution and a GC Cloud One tailored Backstage, with differences implemented through configuration, plugins, and build parameters rather than separate architectures.",
+    "summary": "The Backstage instance developed by the Platform Architecture team needs be deployed as part of the Aurora Platform Charts and serve as the primary front door to the Aurora platform into our Management Clusters. ",
     "category": "Platform Components",
     "client": "Aurora",
     "status": "Todo",
-    "priority": "Medium",
+    "priority": "High",
     "quarter": "Q2 2026",
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/22"
-  },
-  {
-    "title": "[SERVICE:GCSA] Establish curated artifact service across SSC + GoC",
-    "summary": "Stand up GC Secure Artifacts (GCSA) as the government-wide trusted repository for binaries, container images, and related software artifacts, providing a single, curated source of secure and approved components for all departments. GCSA will centralize artifact storage, provenance, and policy enforcement, reducing duplication across departments and ensuring consistent application of security and compliance controls.",
-    "category": "GC Secure Artifacts",
-    "client": "Aurora",
-    "status": "In Progress",
-    "priority": "High",
-    "quarter": "Q1 2026",
-    "url": "https://github.com/gccloudone/artifacts-artefacts/issues/27"
   },
   {
     "title": "[AUR:COMPONENT] Upgrade Istio and Transition to Ambient Mesh",
@@ -40,16 +40,6 @@
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
   },
   {
-    "title": "[AUR:COMPONENT] Migrate AAD Pod Identity to Workload Identity",
-    "summary": "Migrate existing AKS configurations from the legacy Azure AD Pod Identity mechanism to the modern Azure Workload Identity model. Azure AD Pod Identity is deprecated and approaching retirement, and continued reliance on it introduces operational risk, limits future platform upgrades, and creates unnecessary complexity in identity management across clusters.",
-    "category": "Platform Components",
-    "client": "Aurora",
-    "status": "In Progress",
-    "priority": "Medium",
-    "quarter": "Q1 2026",
-    "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/35"
-  },
-  {
     "title": "[AUR:DOCS] Aurora Platform Documentation",
     "summary": "Track the creation and maintenance of high-level Aurora documentation and reference materials. This includes architectural overviews, diagrams, and explanatory content that describe key concepts such as multi-tenancy, Namespace-as-a-Service (NaaS), security boundaries, and traffic isolation within the Aurora platform.",
     "category": "Documentation",
@@ -58,16 +48,6 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/23"
-  },
-  {
-    "title": "[CSP:AZURE] Aurora Platform Charts and Images Are Proxied",
-    "summary": "The Aurora Platform Charts currently support proxying Helm charts and container images through GC Secure Artifacts (GCSA), but default to consuming public open source repositories directly. While this is suitable for development and experimentation, it does not satisfy enterprise compliance, security, or software supply-chain requirements for production deployments.",
-    "category": "GC Secure Artifacts",
-    "client": "Aurora",
-    "status": "Todo",
-    "priority": "Medium",
-    "quarter": "Q1 2026",
-    "url": "https://github.com/gccloudone-aurora/roadmap/issues/36"
   },
   {
     "title": "[AUR:COMMUNITY] Planning and Execution of Aurora Community Meetups",
@@ -98,5 +78,15 @@
     "priority": "Medium",
     "quarter": "Q1 2026",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/33"
+  },
+  {
+    "title": "[CSP:AZURE] Aurora Platform Charts and Images Are Proxied",
+    "summary": "The Aurora Platform Charts currently support proxying Helm charts and container images through GC Secure Artifacts (GCSA), but default to consuming public open source repositories directly. While this is suitable for development and experimentation, it does not satisfy enterprise compliance, security, or software supply-chain requirements for production deployments.",
+    "category": "GC Secure Artifacts",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q2 2026",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/36"
   }
 ]
