@@ -9,15 +9,14 @@ draft: false
 
 {{< translation-note >}}
 
-This guide covers deploying the aurora-platform-charts onto the workload cluster from a management cluster through Argo CD. 
-
+This guide covers deploying the aurora-platform-charts onto the workload cluster from a management cluster through Argo CD.
 
 ## Scope & Assumptions
 
 This guide is written with the following context in mind:
 
-- A management cluster exists 
-- Firewall is not blocking flow from Management → Workload cluster. 
+- A management cluster exists
+- Firewall is not blocking flow from Management → Workload cluster.
 
 ## Prerequisites
 
@@ -79,16 +78,16 @@ Navigate to the public DNS zone for your cluster created in the Azure Enterprise
 
 The load balancer is exposed by the service in the `ingress-general-system` namespace.
 
-## 5. Create access policy within workload cluster's ArgoCD Keyvault 
+## 5. Create access policy within workload cluster's ArgoCD Keyvault
 
 Navigate to the workload cluster's key vault in the Azure portal. Create a new access policy with all secret permissions scoped to the management cluster's argocd service principal `<management-cluster-name>-ARGO-msi-argocd`.
 
 ## 6. Sync ArgoCD applications
 
-Navigate to the management cluster's Argo CD portal. 
+Navigate to the management cluster's Argo CD portal.
 
-Sync the management cluster's `platform-<magenement-cluster-name>` application, then the `<management-cluster-name>-argo-foundation-platform-project` application and also the `<management-cluster-name>-argo-foundation-argocd-instance`. You should see the platform application created for the new cluster which you can sync. 
+Sync the management cluster's `platform-<magenement-cluster-name>` application, then the `<management-cluster-name>-argo-foundation-platform-project` application and also the `<management-cluster-name>-argo-foundation-argocd-instance`. You should see the platform application created for the new cluster which you can sync.
 
-If there are any errors related to accessing the secrets in the keyvault, perform a hard refresh and try again. Ensure that the management cluster's ArgoCD service principal has access to the workload cluster's KV. 
+If there are any errors related to accessing the secrets in the keyvault, perform a hard refresh and try again. Ensure that the management cluster's ArgoCD service principal has access to the workload cluster's KV.
 
-Next, begin syncing the newly created applications. You may need to perform the sync operation multiple times. If there is an error due to a CRD not existing, skip that resource and come back to it later once the Kubernetes job installing that CRD is completed. 
+Next, begin syncing the newly created applications. You may need to perform the sync operation multiple times. If there is an error due to a CRD not existing, skip that resource and come back to it later once the Kubernetes job installing that CRD is completed.
