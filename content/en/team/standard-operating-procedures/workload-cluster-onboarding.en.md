@@ -23,8 +23,8 @@ This guide is written with the following context in mind:
 
 The following must be in place before you begin the onboarding steps:
 
-- A Linux / WSL environment with bash, on a VM capable of mounting a  **Managed Service Identity (MSI)**
-- Required CLI tools installed and accessible: **azure-cli**, **kubectl**, **k3d** (for local k3s), **jq**, **helm**, and **git**
+- A Linux / WSL environment with bash
+- Required CLI tools installed and accessible: **kubectl**, and **git**
 - Any previous kubeconfig context cleared or unset (to avoid conflicts)
 
 > If any of these prerequisites are missing, resolve them before proceeding with the bootstrap steps.
@@ -79,6 +79,18 @@ Navigate to the public DNS zone for your cluster created in the Azure Enterprise
 
 The load balancer is exposed by the service in the `ingress-general-system` namespace.
 
-## 5. Sync the new resources
+## 5. Create access policy within workload cluster's ArgoCD Keyvault 
 
-Navigate to the management's Argo CD portal and begin syncing the newly created applications. You may need to perform the sync operation multiple times. If there is an error due to a CRD not existing, skip that resource and come back to it later once the Kubernetes job installing that CRD is completed. 
+Navigate to the workload cluster's key vault in the Azure portal. Create a new access policy with all secret permissions scoped to the management cluster's argocd service principal `<management-cluster-name>-ARGO-msi-argocd`.
+
+## 6. Sync ArgoCD applications
+
+Navigate to the management cluster's Argo CD portal. 
+
+Sync the management cluster's `platform-<magenement-cluster-name>` application, then the `<management-cluster-name>-argo-foundation-platform-project` application and also the `<management-cluster-name>-argo-foundation-argocd-instance`. You should see the platform application created for the new cluster which you can sync. 
+
+If there are any errors related to accessing the secrets in the keyvault, perform a hard refresh and try again. Ensure that the management cluster's ArgoCD service principal has access to the workload cluster's KV. 
+
+If there is an error
+
+Next, begin syncing the newly created applications. You may need to perform the sync operation multiple times. If there is an error due to a CRD not existing, skip that resource and come back to it later once the Kubernetes job installing that CRD is completed. 
