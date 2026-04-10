@@ -87,6 +87,13 @@ Here are the current procedures in place:
     description="Onboarding process for departments into the Enterprise Landing Zone for a chosen CSP."
   >
   </gcds-card>
+  <gcds-card
+    card-title="Onboarding process for a workload cluster"
+    href="/en/team/standard-operating-procedures/workload-cluster-onboarding"
+    badge="Onboarding"
+    description="Onboarding process for setting up a newly created Kubernetes cluster."
+  >
+  </gcds-card>
 </gcds-grid>
 </div>
 

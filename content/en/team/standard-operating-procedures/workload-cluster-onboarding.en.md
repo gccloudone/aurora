@@ -91,6 +91,4 @@ Sync the management cluster's `platform-<magenement-cluster-name>` application, 
 
 If there are any errors related to accessing the secrets in the keyvault, perform a hard refresh and try again. Ensure that the management cluster's ArgoCD service principal has access to the workload cluster's KV. 
 
-If there is an error
-
 Next, begin syncing the newly created applications. You may need to perform the sync operation multiple times. If there is an error due to a CRD not existing, skip that resource and come back to it later once the Kubernetes job installing that CRD is completed. 
