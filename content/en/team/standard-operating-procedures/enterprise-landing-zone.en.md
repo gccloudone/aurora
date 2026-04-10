@@ -98,7 +98,6 @@ landing_zones_XXXXXX-P6/modules/L2_blueprint_aurora
 Update the configuration files for your environment:
 
 - `landing_zones_XXXXXX-P6/dev/L2_blueprint_aurora/config/aurora.tfvars`
-- `landing_zones_XXXXXX-P6/dev/L2_blueprint_aurora/envvars.sh`
 
 > TODO: The Azure Cloud team will need to generate a secret for the XXXX_XXX_XXXXX_devops_sp since it doesn't get stored as part of initial ESLZ L0 / L1 deployment.
 
@@ -135,17 +134,23 @@ az provider register --namespace Microsoft.Compute
 
 ## 5. Deploy Infrastructure for Aurora Platform
 
+Set the following environment variables:
+```sh
+ARM_CLIENT_ID
+ARM_CLIENT_SECRET
+ARM_TENANT_ID
+ARM_SUBSCRIPTION_ID
+```
+Request the Azure Cloud team to provide you these values obtained from the the XXXX_XXX_XXXXX_devops_sp service principal. Make sure to later commit these secrets in the Aurora.kdb, found in our Sharepoint under Aurora/KeePass.
+
 Once the landing zone repository has been prepared, increase the Standard DSv5 Family vCPUS quota to 64 for the target subscription. Then, authenticate and run Terragrunt to both plan and deploy the infrastructure for the Aurora platform.
 
 ```sh
-source .envvars
 az login --use-device-code
 terragrunt init -upgrade
 terragrunt plan
 terragrunt apply
 ```
-
-> Note: Reminder to source the *.envvars folder and ensure using the correct service principal XXXX_XXX_XXXXX_devops_sp is being used.
 
 ## 6. Retrieve AKS Credentials
 
