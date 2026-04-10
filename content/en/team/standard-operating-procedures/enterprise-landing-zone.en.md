@@ -147,7 +147,7 @@ terragrunt apply
 
 > Note: Reminder to source the *.envvars folder and ensure using the correct service principal XXXX_XXX_XXXXX_devops_sp is being used.
 
-## 7. Retrieve AKS Credentials
+## 6. Retrieve AKS Credentials
 
 Retrieve the kubeconfig credentials for your newly deployed AKS cluster.
 
@@ -157,7 +157,7 @@ az aks get-credentials --resource-group <resource-group> --name <cluster-name>
 
 > Note: This command merges the AKS cluster context into your local kubeconfig.
 
-## 8. Service Principal Permissions for Argo CD
+## 7. Service Principal Permissions for Argo CD
 
 Ensure the newly created Service Principal (SPN) for Argo CD has the necessary permissions to function correctly.
 
@@ -168,13 +168,15 @@ At minimum, the Microsoft Graph API permissions should include:
 
 You must also **grant admin consent** for these permissions in Entra ID so Argo CD can authenticate and retrieve the resources it manages.
 
-## 9. Assign the AKS Cluster User Role to the DevOps Service Principal
+## 8. Assign the AKS Cluster User Role to the DevOps Service Principal
 
 The service principal XXXX_XXX_XXXXX_devops_sp that has been created by the Azure Cloud Team must have the **Azure Kubernetes Service Cluster User Role** assigned at the AKS cluster scope. This role is required for the service principal to interact with the Kubernetes API (e.g., running kubectl, provisioning workloads during bootstrap, or managing RBAC bindings).
 
-## 10. Bootstrap Cluster
+## 9. Bootstrap Cluster
 
 At this point all of the Aurora infrastructure is fully deployed onto the Enterprise-Scale Landing Zone (ESLZ).
+
+If this cluster will be a _workload_ cluster as opposed to a _management_ cluster, see the <gcds-link href="{{< relref "/team/standard-operating-procedures/workload-cluster-onboarding/" >}}">workload cluster onboarding guide</gcds-link>.
 
 The bootstrap cluster is only required the **first time** to establish a management cluster. Once in place, that management cluster will perform the ongoing work of deploying and managing Aurora.
 
@@ -229,5 +231,7 @@ Next steps:
 If the request fails, this confirms a connectivity issue
 
 In this case, contact the SecOps team and provide the curl output for further investigation.
+
+See https://learn.microsoft.com/en-us/troubleshoot/azure/azure-kubernetes/create-upgrade-delete/error-code-outboundconnfailvmextensionerror for more information. 
 
 
