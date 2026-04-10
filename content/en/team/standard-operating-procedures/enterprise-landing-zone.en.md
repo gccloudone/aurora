@@ -99,9 +99,20 @@ Update the configuration files for your environment:
 
 - `landing_zones_XXXXXX-P6/dev/L2_blueprint_aurora/config/aurora.tfvars`
 
-> TODO: The Azure Cloud team will need to generate a secret for the XXXX_XXX_XXXXX_devops_sp since it doesn't get stored as part of initial ESLZ L0 / L1 deployment.
-
 These define project-specific variables such as subscription IDs, resource group names, and environment settings.
+
+Next set the following environment variables:
+
+```sh
+ARM_CLIENT_ID
+ARM_CLIENT_SECRET
+ARM_TENANT_ID
+ARM_SUBSCRIPTION_ID
+```
+
+Request the Azure Cloud team to provide you these values obtained from the the XXXX_XXX_XXXXX_devops_sp service principal. Make sure to later commit these secrets in the Aurora.kdb, found in our Sharepoint under Aurora/KeePass.
+
+> TODO: The Azure Cloud team will need to generate a secret for the XXXX_XXX_XXXXX_devops_sp since it doesn't get stored as part of initial ESLZ L0 / L1 deployment.
 
 ## 3. Privileged Identity Management (PIM)
 
@@ -133,15 +144,6 @@ az provider register --namespace Microsoft.Compute
 > This registration only needs to be done once per subscription. Propagation can take up to 15 minutes.
 
 ## 5. Deploy Infrastructure for Aurora Platform
-
-Set the following environment variables:
-```sh
-ARM_CLIENT_ID
-ARM_CLIENT_SECRET
-ARM_TENANT_ID
-ARM_SUBSCRIPTION_ID
-```
-Request the Azure Cloud team to provide you these values obtained from the the XXXX_XXX_XXXXX_devops_sp service principal. Make sure to later commit these secrets in the Aurora.kdb, found in our Sharepoint under Aurora/KeePass.
 
 Once the landing zone repository has been prepared, increase the Standard DSv5 Family vCPUS quota to 64 for the target subscription. Then, authenticate and run Terragrunt to both plan and deploy the infrastructure for the Aurora platform.
 
