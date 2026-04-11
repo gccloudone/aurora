@@ -20,6 +20,26 @@
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/22"
   },
   {
+    "title": "[CSP:PC] Onboard Aurora onto GC Private Cloud",
+    "summary": "Extend Aurora to the GC Private Cloud (OpenStack) by integrating with the Rancher workflow that provisions RKE2 Kubernetes clusters on demand using OpenTofu, aiming where possible to align with the Azure implementation to minimize context switching. Azure-native services used in Azure, such as Azure Key Vault, will be replaced with Vault in the private cloud.",
+    "category": "Partners",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "Medium",
+    "quarter": "Q1 FY2027",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
+  },
+  {
+    "title": "[AUR:COMMUNITY] Planning and Execution of Aurora Community Meetups",
+    "summary": "Facilitate the organization, coordination, and delivery of Aurora community meetups to promote collaboration, knowledge sharing, and meaningful engagement among stakeholders. This includes the logistical planning, communication strategies, and content development needed to provide a welcoming, inclusive, and impactful experience for all participants.",
+    "category": "Community",
+    "client": "Aurora",
+    "status": "Todo",
+    "priority": "High",
+    "quarter": "Q1 FY2027",
+    "url": "https://github.com/gccloudone-aurora/roadmap/issues/31"
+  },
+  {
     "title": "[AUR:COMPONENT] Upgrade Istio and Transition to Ambient Mesh",
     "summary": "We need to upgrade Istio from version 1.16.x to an Ambient Mesh capable release at version 1.24.x or higher in order to modernize Aurora’s service mesh architecture. The current sidecar based model introduces operational complexity, higher resource overhead, and upgrade risk at scale. Moving to a supported Ambient Mesh release positions Aurora on a forward looking Istio architecture that is actively developed, better aligned with upstream direction, and suitable for long term multi cloud operations.",
     "category": "Platform Components",
@@ -30,16 +50,6 @@
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/33"
   },
   {
-    "title": "[CSP:PC] Onboard Aurora onto GC Private Cloud",
-    "summary": "Extend Aurora to the GC Private Cloud (OpenStack) by integrating with the Rancher workflow that provisions RKE2 Kubernetes clusters on demand using OpenTofu, aiming where possible to align with the Azure implementation to minimize context switching. Azure-native services used in Azure, such as Azure Key Vault, will be replaced with Vault in the private cloud.",
-    "category": "Partners",
-    "client": "Aurora",
-    "status": "In Progress",
-    "priority": "Medium",
-    "quarter": "Q1 FY2027",
-    "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
-  },
-  {
     "title": "[AUR:DOCS] Aurora Platform Documentation",
     "summary": "Track the creation and maintenance of high-level Aurora documentation and reference materials. This includes architectural overviews, diagrams, and explanatory content that describe key concepts such as multi-tenancy, Namespace-as-a-Service (NaaS), security boundaries, and traffic isolation within the Aurora platform.",
     "category": "Documentation",
@@ -48,16 +58,6 @@
     "priority": "Medium",
     "quarter": "Q1 FY2027",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/23"
-  },
-  {
-    "title": "[AUR:COMMUNITY] Planning and Execution of Aurora Community Meetups",
-    "summary": "Facilitate the organization, coordination, and delivery of Aurora community meetups to promote collaboration, knowledge sharing, and meaningful engagement among stakeholders. This includes the logistical planning, communication strategies, and content development needed to provide a welcoming, inclusive, and impactful experience for all participants.",
-    "category": "Community",
-    "client": "Aurora",
-    "status": "In Progress",
-    "priority": "High",
-    "quarter": "Q1 FY2027",
-    "url": "https://github.com/gccloudone-aurora/roadmap/issues/31"
   },
   {
     "title": "[CSP:AZURE] Enable native Cilium AKS and VNet Integration",
