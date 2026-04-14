@@ -10,6 +10,7 @@
   }}
 
   {{ $statusIcons := dict
+    "Backlog" "📝"
     "Todo" "📝"
     "In Progress" "🔄"
     "Blocked" "⛔"
@@ -18,13 +19,13 @@
   }}
 
   {{/* Quarter order */}}
-  {{ $quarters := slice "Q1 2026" "Q2 2026" "Q3 2026" "Q4 2026" }}
+  {{ $quarters := slice "Q4 FY2026" "Q1 FY2027" "Q2 FY2027" "Q3 FY2027" }}
 
   {{ $quarterLabels := dict
-    "Q1 2026" "Quarter 1: January 2026 – March 2026"
-    "Q2 2026" "Quarter 2: April 2026 – June 2026"
-    "Q3 2026" "Quarter 3: July 2026 – September 2026"
-    "Q4 2026" "Quarter 4: October 2026 – December 2026"
+    "Q4 FY2026" "Quarter 4: January 2026 – March 2027"
+    "Q1 FY2027" "Quarter 1: April 2027 – June 2027"
+    "Q2 FY2027" "Quarter 2: July 2027 – September 2027"
+    "Q3 FY2027" "Quarter 3: October 2027 – December 2027"
   }}
 
   {{/* Group items by quarter */}}
