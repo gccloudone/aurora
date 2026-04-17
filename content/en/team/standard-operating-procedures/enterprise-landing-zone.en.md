@@ -98,11 +98,21 @@ landing_zones_XXXXXX-P6/modules/L2_blueprint_aurora
 Update the configuration files for your environment:
 
 - `landing_zones_XXXXXX-P6/dev/L2_blueprint_aurora/config/aurora.tfvars`
-- `landing_zones_XXXXXX-P6/dev/L2_blueprint_aurora/envvars.sh`
-
-> TODO: The Azure Cloud team will need to generate a secret for the XXXX_XXX_XXXXX_devops_sp since it doesn't get stored as part of initial ESLZ L0 / L1 deployment.
 
 These define project-specific variables such as subscription IDs, resource group names, and environment settings.
+
+Next set the following environment variables:
+
+```sh
+ARM_CLIENT_ID
+ARM_CLIENT_SECRET
+ARM_TENANT_ID
+ARM_SUBSCRIPTION_ID
+```
+
+Request the Azure Cloud team to provide you these values obtained from the the XXXX_XXX_XXXXX_devops_sp service principal. Make sure to later commit these secrets in the Aurora.kdb, found in our Sharepoint under Aurora/KeePass.
+
+> TODO: The Azure Cloud team will need to generate a secret for the XXXX_XXX_XXXXX_devops_sp since it doesn't get stored as part of initial ESLZ L0 / L1 deployment.
 
 ## 3. Privileged Identity Management (PIM)
 
@@ -135,17 +145,14 @@ az provider register --namespace Microsoft.Compute
 
 ## 5. Deploy Infrastructure for Aurora Platform
 
-Once the landing zone repository has been prepared, authenticate and run Terragrunt to both plan and deploy the infrastructure for the Aurora platform.
+Once the landing zone repository has been prepared, increase the Standard DSv5 Family vCPUS quota to 64 for the target subscription. Then, authenticate and run Terragrunt to both plan and deploy the infrastructure for the Aurora platform.
 
 ```sh
-source .envvars
 az login --use-device-code
 terragrunt init -upgrade
 terragrunt plan
 terragrunt apply
 ```
-
-> Note: Reminder to source the *.envvars folder and ensure using the correct service principal XXXX_XXX_XXXXX_devops_sp is being used.
 
 ## 6. Retrieve AKS Credentials
 
@@ -168,14 +175,69 @@ At minimum, the Microsoft Graph API permissions should include:
 
 You must also **grant admin consent** for these permissions in Entra ID so Argo CD can authenticate and retrieve the resources it manages.
 
-## 7. Assign the AKS Cluster User Role to the DevOps Service Principal
+## 8. Assign the AKS Cluster User Role to the DevOps Service Principal
 
 The service principal XXXX_XXX_XXXXX_devops_sp that has been created by the Azure Cloud Team must have the **Azure Kubernetes Service Cluster User Role** assigned at the AKS cluster scope. This role is required for the service principal to interact with the Kubernetes API (e.g., running kubectl, provisioning workloads during bootstrap, or managing RBAC bindings).
 
-## 8. Bootstrap Cluster
+## 9. Bootstrap Cluster
 
 At this point all of the Aurora infrastructure is fully deployed onto the Enterprise-Scale Landing Zone (ESLZ).
+
+If this cluster will be a _workload_ cluster as opposed to a _management_ cluster, see the <gcds-link href="{{< relref "/team/standard-operating-procedures/workload-cluster-onboarding/" >}}">workload cluster onboarding guide</gcds-link>.
 
 The bootstrap cluster is only required the **first time** to establish a management cluster. Once in place, that management cluster will perform the ongoing work of deploying and managing Aurora.
 
 You may now wish to consult the <gcds-link href="{{< relref "/team/standard-operating-procedures/bootstrap-cluster/" >}}">bootstrap cluster onboarding guide</gcds-link>.
+
+---
+
+## Troubleshooting
+
+### Error: Unable to create application
+
+```sh
+Error: creating application: unexpected status 403 (403 Forbidden) with error: Authorization_RequestDenied: Insufficient privileges to complete the operation.
+```
+
+This error typically occurs when the XXXX_XXX_XXXXX_devops_sp service principal is missing required Microsoft Graph API permissions, or when admin consent has not been granted.
+
+Contact the Azure DevOps team to ensure that
+
+- The necessary Microsoft Graph API permissions are assigned
+- **Grant admin consent** has been approved for those permissions
+
+### Error: tainted cluster_admins group
+
+```sh
+module.aurora.azuread_group.cluster_admins is tainted, so must be replaced
+```
+
+This issue usually indicates that the XXXX_XXX_XXXXX_devops_sp service principal is missing the GroupMember.ReadWrite.All Microsoft Graph API permission.
+
+- Assign the required API permission and grant admin consent
+**or**
+- Run terraform untaint <resource_address>, manually add the required group members, and then re-run terraform plan and terraform apply
+
+### Error: AKS cluster is stuck in `Updating` state
+
+During terragrunt apply, the deployment may timeout while updating the AKS cluster or creating a node pool.
+
+To troubleshoot:
+
+1. Check the associated Virtual Machine Scale Sets (VMSS)
+1. Identify any instance where the status is _not_ `Running`
+1. Select the affected instance → Status → Extension statuses
+1. Look for a ProvisioningState/failed status on the vmssCSE extension
+
+If this failure is present, it typically indicates a firewall or networking issue preventing node provisioning.
+
+Next steps:
+
+- SSH into the affected VM
+
+- Run: `curl -kv https://mcr.microsoft.com:443`
+If the request fails, this confirms a connectivity issue
+
+In this case, contact the SecOps team and provide the curl output for further investigation.
+
+See https://learn.microsoft.com/en-us/troubleshoot/azure/azure-kubernetes/create-upgrade-delete/error-code-outboundconnfailvmextensionerror for more information.
