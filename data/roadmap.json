@@ -5,7 +5,7 @@
     "category": "Platform Components",
     "client": "Aurora",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "P1",
     "quarter": "Q4 FY2026",
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/35"
   },
@@ -14,28 +14,18 @@
     "summary": "The Backstage instance developed by the Platform Architecture team needs be deployed as part of the Aurora Platform Charts and serve as the primary front door to the Aurora platform into our Management Clusters. ",
     "category": "Platform Components",
     "client": "Aurora",
-    "status": "Todo",
-    "priority": "High",
+    "status": "Backlog",
+    "priority": "P0",
     "quarter": "Q1 FY2027",
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/22"
-  },
-  {
-    "title": "[CSP:PC] Onboard Aurora onto GC Private Cloud",
-    "summary": "Extend Aurora to the GC Private Cloud (OpenStack) by integrating with the Rancher workflow that provisions RKE2 Kubernetes clusters on demand using OpenTofu, aiming where possible to align with the Azure implementation to minimize context switching. Azure-native services used in Azure, such as Azure Key Vault, will be replaced with Vault in the private cloud.",
-    "category": "Partners",
-    "client": "Aurora",
-    "status": "Todo",
-    "priority": "Medium",
-    "quarter": "Q1 FY2027",
-    "url": "https://github.com/gccloudone-aurora/roadmap/issues/18"
   },
   {
     "title": "[AUR:COMMUNITY] Planning and Execution of Aurora Community Meetups",
     "summary": "Facilitate the organization, coordination, and delivery of Aurora community meetups to promote collaboration, knowledge sharing, and meaningful engagement among stakeholders. This includes the logistical planning, communication strategies, and content development needed to provide a welcoming, inclusive, and impactful experience for all participants.",
     "category": "Community",
     "client": "Aurora",
-    "status": "Todo",
-    "priority": "High",
+    "status": "Backlog",
+    "priority": "P2",
     "quarter": "Q1 FY2027",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/31"
   },
@@ -44,8 +34,8 @@
     "summary": "We need to upgrade Istio from version 1.16.x to an Ambient Mesh capable release at version 1.24.x or higher in order to modernize Aurora’s service mesh architecture. The current sidecar based model introduces operational complexity, higher resource overhead, and upgrade risk at scale. Moving to a supported Ambient Mesh release positions Aurora on a forward looking Istio architecture that is actively developed, better aligned with upstream direction, and suitable for long term multi cloud operations.",
     "category": "Platform Components",
     "client": "Aurora",
-    "status": "Todo",
-    "priority": "Medium",
+    "status": "Backlog",
+    "priority": "P1",
     "quarter": "Q1 FY2027",
     "url": "https://github.com/gccloudone-aurora/aurora-platform-charts/issues/33"
   },
@@ -54,8 +44,8 @@
     "summary": "Track the creation and maintenance of high-level Aurora documentation and reference materials. This includes architectural overviews, diagrams, and explanatory content that describe key concepts such as multi-tenancy, Namespace-as-a-Service (NaaS), security boundaries, and traffic isolation within the Aurora platform.",
     "category": "Documentation",
     "client": "Aurora",
-    "status": "Todo",
-    "priority": "Medium",
+    "status": "Backlog",
+    "priority": "P1",
     "quarter": "Q1 FY2027",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/23"
   },
@@ -64,8 +54,8 @@
     "summary": "AKS now supports Cilium as a first-class CNI integration. This removes the need for the previous BYOCNI routing model that required custom Azure route tables and an Azure Route Server to restore connectivity.",
     "category": "Networking",
     "client": "Aurora",
-    "status": "In Progress",
-    "priority": "Medium",
+    "status": "Todo",
+    "priority": "P1",
     "quarter": "Q1 FY2027",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/32"
   },
@@ -74,19 +64,9 @@
     "summary": "While much of the process is already automated and both Aurora and the Azure team operate under established SOPs, there are still integration gaps that require tighter coordination. For example, Backstage must reliably capture and validate the input values required by the Azure team, trigger the appropriate requests, and ensure downstream automation, such as repository creation via API, is executed end to end.",
     "category": "Partners",
     "client": "Aurora",
-    "status": "Todo",
-    "priority": "Medium",
+    "status": "Backlog",
+    "priority": "P1",
     "quarter": "Q1 FY2027",
     "url": "https://github.com/gccloudone-aurora/roadmap/issues/33"
-  },
-  {
-    "title": "[CSP:AZURE] Aurora Platform Charts and Images Are Proxied",
-    "summary": "The Aurora Platform Charts currently support proxying Helm charts and container images through GC Secure Artifacts (GCSA), but default to consuming public open source repositories directly. While this is suitable for development and experimentation, it does not satisfy enterprise compliance, security, or software supply-chain requirements for production deployments.",
-    "category": "GC Secure Artifacts",
-    "client": "Aurora",
-    "status": "Todo",
-    "priority": "Medium",
-    "quarter": "Q1 FY2027",
-    "url": "https://github.com/gccloudone-aurora/roadmap/issues/36"
   }
 ]
