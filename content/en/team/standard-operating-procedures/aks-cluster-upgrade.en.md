@@ -204,3 +204,35 @@ In exceptional cases, nodeAffinity configurations can be applied directly onto P
 <gcds-alert alert-role="warning" container="full" heading="Warning" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 <gcds-text>Persistent Volume nodeAffinities are immutable. Ensure caution when setting them and set persistentVolumeReclaimPolicy to Retain if you need to delete and recreate the PV/PVC.</gcds-text>
 </gcds-alert>
+
+### Cluster shows zero nodes even though VMSS instance is running
+
+If `kubectl get nodes` returns:
+
+```bash
+No resources found
+```
+
+while the underlying VMSS instance is confirmed to be running, the node may have failed to register with the cluster.
+
+One possible cause is a failing admission webhook blocking API operations.
+
+Try running:
+
+```bash
+kubectl auth can-i list nodes
+```
+
+If it returns:
+
+```bash
+Error from server (InternalError): Internal error occurred: failed calling webhook "validation.gatekeeper.sh":
+failed to call webhook: Post "https://gatekeeper-webhook-service.gatekeeper-system.svc:443/v1/admit?timeout=3s":
+no endpoints available for service "gatekeeper-webhook-service"
+```
+
+Delete the Gatekeeper validating webhook configuration.
+
+```bash
+kubectl delete validatingwebhookconfiguration gatekeeper-validating-webhook-configuration
+```
