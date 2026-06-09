@@ -5,40 +5,45 @@ type: "architecture"
 weight: 10
 draft: false
 lang: "en"
-date: 2025-05-29
+date: 2026-06-08
 ---
 
 {{< translation-note >}}
 
-Access control is implemented according to the principle of least privilege. These procedures are reviewed multiple times a year, whenever there are updates to the underlying APIs or organisational processes.
+Access control is implemented according to the principle of least privilege.
 
-Aurora platform components that access or provide data are identified through non-human accounts: [Kubernetes Service Accounts](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/), which are often associated with one or more workload identities on each Cloud Service Provider (CSP) (for example, [Microsoft Entra workload identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview)). These accounts are granted the minimum necessary sets of permissions for each component's intended function.
+These procedures are reviewed multiple times a year, whenever there are updates to the underlying APIs or organizational processes.
 
-Kubernetes offers [Roles and ClusterRoles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole) which define access and [RoleBindings and ClusterRoleBindings](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding) which bind Roles and ClusterRoles to an identity. This identity can be an individual user or user group from an integrated identity provider (which would be associated with the cluster at the CSP-level) or a Kubernetes Service Account. Membership to these groups grant a user role among the following high-level definitions:
+## Kubernetes Access Control
 
-## Solution Builder
+Aurora platform components that access or provide data are identified through non-human accounts:
 
-Solution Builders design, develop, deploy, and operate solutions that run on Aurora. They require access to Kubernetes Resources and CustomResources.
+- **[Kubernetes Service Accounts](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/)**
+- These accounts are often associated with one or more workload identities on each Cloud Service Provider (CSP):
+  - **[Microsoft Entra workload identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview)**
+- These accounts are granted the minimum necessary sets of permissions for each component's intended function
 
-A custom [`solution-builder` ClusterRole](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/solution-builder.yaml) defines the minimum permissions necessary for application development and operation on Kubernetes. The label `rbac.ssc-spc.gc.ca/aggregate-to-solution-builder: "true"` permits component-specific Solution Builder ClusterRoles to be defined separately and [aggregated](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) into this role. [(Example)](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/prometheus/rbac.yaml)
+Kubernetes offers:
 
-A RoleBinding in each Solution Builder Namespace binds this ClusterRole to the Microsoft Entra group designated for the Kubernetes application developers/operators of that Solution Builder team.
+- **[Roles and ClusterRoles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole)** to define access.
+- **[RoleBindings and ClusterRoleBindings](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding)** to bind Roles and ClusterRoles to an identity.
 
-Solution Builders may also require access to CSP resources such as managed databases and storage accounts. This is outside the scope of Aurora's access control and is established according to the processes of the corresponding Infrastructure-as-a-Service service lines.
+The identity can be:
 
-## Platform Operator
+- An individual user or user group from an integrated identity provider (associated with the cluster at the CSP-level).
+- A Kubernetes Service Account.
 
-Platform Operators ensure the continual operation of one or more areas of the Aurora platform. This requires read access to most platform resources, excluding confidential information such as Secrets. This also requires write access for common and low-impact remediation activities.
+Membership to these groups grants a user role among the following high-level definitions:
 
-Two custom ClusterRoles are defined for Platform Operators: [`platform-operator-view`](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/platform-operator-view.yaml) for read access and [`platform-operator-maintenance'](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/platform-operator-maintenance.yaml) for write access. ClusterRole aggregation to these roles further defines read and write access to specific platform components.
+- Platform Administrator
+- Platform Developer
+- Platform Operator
+- Security Operations
+- Solution Builder
 
-A ClusterRoleBinding binds these ClusterRoles to the Microsoft Entra group designated for the day-to-day activities of the cluster's Platform Operators.
+### Platform Administrator
 
-Whenever possible, changes to Aurora CSP resources are effected via Infrastructure/Configuration-as-Code and corresponding automated CI/CD processes. Platform Operator write access to CSP resources is limited to cancelling such operations. Higher impact manual remediation requires escalation to the Platform Administrator role.
-
-## Platform Administrator
-
-Platform Administrators have full access to the Kubernetes clusters and other CSP resources comprising one or more areas of the Aurora platform.
+Platform Administrators have full access to the Kubernetes clusters (`cluster-admin`) along with other CSP resources comprising one or more areas of the Aurora platform.
 
 This role is invoked in order to:
 
@@ -49,19 +54,53 @@ This role can only be activated by a group of designated personnel through privi
 
 Platform Administrators correspond to the [default User-facing Kubernetes role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) `cluster-admin` and to similar CSP roles within environments corresponding to the Aurora platform.
 
-## Platform Developer
+### Platform Developer
 
-Platform Developers design, develop, and validate functionality as well as configuration changes for one or more areas of the Aurora platform. To facilitate rapid iteration, Platform Developers have the same privileges as a Platform Administrator without the activation process or time limit. However, the Platform Developer role only exists in specific Aurora platform development environments designated for this purpose. No Solution Builder workloads run on those environments, and no Solution Builders access them.
+Platform Developers design, develop, and validate functionality as well as configuration changes for one or more areas of the Aurora platform.
 
-## Security Operations
+To facilitate rapid iteration, Platform Developers have the same privileges as a Platform Administrator without the activation process or time limit.
 
-Groups of designated Security Operations personnel are also granted access to the Platform Operator, Platform Administrator (via privilege escalation), and Platform Developer (in platform development environments) user roles across the Aurora platform. This access permits them to develop, support, and maintain platform security components, as well as to investigate and resolve potential security incidents.
+However, the Platform Developer role only exists in specific Aurora development environments designated for this purpose.
 
-## Access Policy for Aurora AKS Clusters
+### Platform Operator
+
+Platform Operators ensure the continual operation of one or more areas of the Aurora platform.
+
+This requires read access to most platform resources and write access for common and low-impact remediation activities.
+
+Two custom ClusterRoles are defined for Platform Operators:
+
+- [`platform-operator-view`](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/platform-operator-view.yaml) for read access
+- [`platform-operator-maintenance'](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/platform-operator-maintenance.yaml) for write access.
+
+ClusterRole aggregation to these roles further defines read and write access to specific platform components.
+
+A ClusterRoleBinding binds these ClusterRoles to the Microsoft Entra group designated for the day-to-day activities of the cluster's Platform Operators.
+
+### Security Operations
+
+Designated Security Operations personnel are granted access to the following roles:
+
+- Platform Developer
+- Platform Operator
+
+These roles enable Security Operations teams to develop, support, and maintain platform security components, as well as to investigate and resolve potential security incidents effectively.
+
+### Solution Builder
+
+Solution Builders are responsible for designing, developing, deploying, and operating solutions that run on Aurora.
+
+A custom [`solution-builder` ClusterRole](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/rbac/solution-builder.yaml) defines the minimum set of permissions necessary for application development and operations within Kubernetes.
+
+The label `rbac.ssc-spc.gc.ca/aggregate-to-solution-builder: "true"` allows the creation of component-specific Solution Builder ClusterRoles, which can then be defined separately and [aggregated](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) into this role.
+
+- [(Example of Aggregated ClusterRoles)](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/prometheus/rbac.yaml)
+
+A RoleBinding in each Solution Builder namespace binds this ClusterRole to the Microsoft Entra group designated to the application developers/operators for that Solution Builder team.
+
+## Entra Access Control
 
 Azure Entra ID is the centralized identity provider for human users accessing Aurora AKS clusters.
-
-Access is granted through membership in the `AURORA-GENERAL-CLUSTER-USER` Entra ID group. This group is assigned the **Azure Kubernetes Service Cluster User Role** at the cluster scope, which authorizes members to retrieve cluster user credentials and access the cluster.
 
 Membership in this group is strictly controlled by Aurora administrators and is subject to the following policy:
 
@@ -69,4 +108,32 @@ Membership in this group is strictly controlled by Aurora administrators and is 
 - Membership is revoked when teams formally offboard from Aurora or no longer require cluster access.
 - Membership is reviewed on an annual basis to verify that only active, authorized users retain access.
 
-This policy ensures that access to Aurora AKS clusters is consistently managed, compliant with security requirements, and limited to users with a valid business need.
+### Groups
+
+Access to Aurora clusters is managed through predefined groups in Azure Entra ID.
+
+Each of these groups has specific roles and permissions tailored to the responsibility of its members:
+
+- **GcPc_RBAC_SSC-Aurora-Owners (Platform Administrator)**:
+  Grants full administrative control over all subscriptions and Kubernetes clusters, including `cluster-admin` permissions for managing all resources, configurations, and access policies across the platform.
+
+- **GcPc_RBAC_SSC-Aurora-Developers (Platform Developer)**:
+  Grants full administrative control over development subscriptions and Kubernetes clusters, including `cluster-admin` permissions for managing all resources, configurations, and access policies across the platform.
+
+- **GcPc_RBAC_SSC-Aurora-Operators (Platform Operator)**:
+  Designed for day-to-day operations personnel, this group grants predefined permissions across both Azure Entra and Kubernetes:
+  - **Entra Permissions**:
+    - `Reader` permissions within subscriptions, providing comprehensive visibility into all resources and configurations without allowing modifications.
+  - **Kubernetes Permissions**:
+    - Predefined operational and maintenance roles, enabling tasks such as:
+      - Scaling and restarting deployments or stateful sets
+      - Viewing logs and accessing cluster-level data for issue diagnosis
+      - Performing maintenance activities like creating one-off jobs for CronJobs
+      - Viewing secrets and monitoring resource statuses
+
+- **GcPc_RBAC_SSC-Aurora-GenClusterUsers (Solution Builder)**:
+  Enables users to securely connect to Kubernetes clusters:
+  - Grants the `Azure Kubernetes Service Cluster User Role` permission to generate and download the `kubeconfig` file required for connectivity.
+
+- **GcPc_RBAC_SSC-Aurora-WebTop**:
+  Reserved for users who need access to the default WebTop, a centralized user interface for interacting with private Kubernetes clusters.
