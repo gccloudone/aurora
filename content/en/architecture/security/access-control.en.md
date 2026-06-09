@@ -98,7 +98,7 @@ The label `rbac.ssc-spc.gc.ca/aggregate-to-solution-builder: "true"` allows the 
 
 A RoleBinding in each Solution Builder namespace binds this ClusterRole to the Microsoft Entra group designated to the application developers/operators for that Solution Builder team.
 
-# Entra Access Control
+## Entra Access Control
 
 Azure Entra ID is the centralized identity provider for human users accessing Aurora AKS clusters.
 
@@ -108,7 +108,7 @@ Membership in this group is strictly controlled by Aurora administrators and is 
 - Membership is revoked when teams formally offboard from Aurora or no longer require cluster access.
 - Membership is reviewed on an annual basis to verify that only active, authorized users retain access.
 
-## Groups
+### Groups
 
 Access to Aurora clusters is managed through predefined groups in Azure Entra ID.
 
