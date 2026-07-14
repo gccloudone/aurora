@@ -31,7 +31,7 @@ This guide does not cover provisioning of landing zones, subscription-level conf
 The following must be in place before you begin the onboarding steps:
 
 - A Linux / WSL environment with bash, on a VM capable of mounting a  **Managed Service Identity (MSI)**
-- Required CLI tools installed and accessible: **azure-cli**, **kubectl**, **k3d** (for local k3s), **jq**, **helm**, and **git**
+- Required CLI tools installed and accessible: **azure-cli**, **kubectl**, **docker**, **k3d** (for local k3s), **jq**, **helm**, and **git**
 - Any previous kubeconfig context cleared or unset (to avoid conflicts)
 - The Aurora [bootstrap-cluster](https://github.com/gccloudone-aurora/bootstrap-cluster) repository cloned locally with the following prepared:
   - `.env` file based on `.env.example`
@@ -56,6 +56,10 @@ MSI_RESOURCE_ID="/subscriptions/<SUB>/resourceGroups/<RG>/providers/Microsoft.Ma
 ```
 
 > TODO: The Azure Cloud team is developing a custom role to remove this manual step. Until then, the managed identity XXXX-XXXXX-ARGO-msi-argocd created during Enterprise Landing Zone (ESLZ) onboarding must be manually added to the jumpbox.
+
+## 2. Configuration of the common.sh file
+
+If the cluster was created with a custom CA then ensure that `/usr/local/share/ca-certificates/custom.crt` refers to that certificate.
 
 ## 2. Update Your Project-Level Configuration
 
@@ -90,7 +94,11 @@ At this stage, Argo CD in the bootstrap cluster must be updated so it can track 
 - **Grant authentication** by switching to the `aurora-svc` service account and providing a GitHub Personal Access Token (PAT) with access to the repo. This allows Argo CD to pull manifests.
 - **Approve access** by approving the `gccloudone-aurora` request under pending repository access requests in your GitHub organization.
 
-## 4. Create the Bootstrap Cluster
+## 4. Mount the MSI
+
+Find the name of the VM (example G3McSWJ-RDS01) in the Azure Portal, click on Security > Identity > User Assigned and add the XXX-argo-msi-argocd identity.
+
+## 5. Create the Bootstrap Cluster
 
 At this point you should be able to successfully run the setup script in the bootstrap cluster repository.
 
@@ -102,7 +110,7 @@ Once the script fully executes you will be given instructions on how to login to
 
 > TODO: You may need to manually delete an existing secret (`project-aurora-mgmt`) if it conflicts.
 
-## 5. Set your Kube Context
+## 6. Set your Kube Context
 
 Ensure kubectl is pointed at the bootstrap cluster.
 
@@ -122,7 +130,7 @@ kubectl get nodes
 
 Continue only if you see the bootstrap cluster nodes listed.
 
-## 6. Custom Certificate Authority (CA) for local Argo CD
+## 7. Custom Certificate Authority (CA) for local Argo CD
 
 If your environment requires a Custom Certificate Authority (CA) you must ensure it is applied to the bootstrap cluster so Argo CD and related components can establish TLS connections.
 
@@ -146,7 +154,7 @@ data:
     -----END CERTIFICATE-----
 ```
 
-## 7. Add Key Vault Secrets
+## 8. Add Key Vault Secrets
 
 At this stage, you must manually add the following secrets into Azure Key Vault so that Argo CD can fully authenticate with its resources and manage the Aurora platform:
 
@@ -156,7 +164,7 @@ At this stage, you must manually add the following secrets into Azure Key Vault 
 
 > TODO: This step is required until these values are provisioned automatically as part of the Enterprise Landing Zone (ESLZ) onboarding.
 
-## 8. Register Target Cluster & Transfer Control
+## 9. Register Target Cluster & Transfer Control
 
 Register the target cluster with Argo CD by running:
 
@@ -168,7 +176,7 @@ This script creates a cluster secret in Argo CD using the values from your .env 
 
 > TODO: Please watch out for the duplicate aks-aks problem as you may need to hard-set the context values in .env before running the script.
 
-## 9. Add DNS A Record
+## 10. Add DNS A Record
 
 Navigate to the public DNS zone for your cluster created in the Azure Enterprise Landing Zone (ESLZ) onboarding.
 
@@ -176,7 +184,7 @@ Navigate to the public DNS zone for your cluster created in the Azure Enterprise
 
 The load balancer is exposed by the service in the `ingress-general-system` namespace.
 
-## 10. Custom Certificate Authority (CA) for target Argo CD
+## 11. Custom Certificate Authority (CA) for target Argo CD
 
 If you applied a Custom Certificate Authority (CA) to the bootstrap cluster, you must also apply it to the **target cluster**. This ensures Argo CD and related components in the target environment can establish TLS connections.
 
@@ -185,19 +193,9 @@ kubectl apply -f certs.yaml
 kubectl rollout restart deploy -n platform-management-system
 ```
 
-## 11. Patch Argo CD Repo-Server for Workload Identity
-
-Because the Argo CD operator does not yet expose workload identity settings, you must manually patch the repo-server deployment to set the identity binding:
-
-```sh
-kubectl patch deployment argocd-repo-server \
-  -n platform-management-system \
-  -p '{"spec":{"template":{"metadata":{"labels":{"aadpodidbinding":"argocd-vault-plugin"}}}}}'
-```
-
-> Note: This step will no longer be required once the Argo CD operator natively supports workload identity.
-
 ## 12. Cilium policies for API server and Konnectivity host access
+
+> Note: You can skip this step if the cluster was creating with the Azure CNI
 
 Until the AKS VNet integration for the control plane is GA in your environment, the API server Private Link endpoint is created in the same subnet as the default node pool rather then then the API server subnet. Additionally traffic from the API server is routed to the cluster via Konnectivity instead of direct into into the Virtual Network. If your default egress policy is restrictive, platform/system workloads may be unable to reach the API server, and Konnectivity may fail when it needs to talk to node/host IPs.
 
