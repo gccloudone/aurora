@@ -199,11 +199,11 @@ You may now wish to consult the <gcds-link href="{{< relref "/team/standard-oper
 Error: creating application: unexpected status 403 (403 Forbidden) with error: Authorization_RequestDenied: Insufficient privileges to complete the operation.
 ```
 
-This error typically occurs when the XXXX_XXX_XXXXX_devops_sp service principal is missing required Microsoft Graph API permissions, or when admin consent has not been granted.
+This error typically occurs when the XXXX_XXX_XXXXX_devops_sp service principal or pipeline identity is missing required Microsoft Graph API permissions, or when admin consent has not been granted.
 
 Contact the Azure DevOps team to ensure that
 
-- The necessary Microsoft Graph API permissions are assigned
+- The necessary Microsoft Graph API permissions are assigned (Application.ReadWrite.All, Group.Read.All, Group.Create, User.Read.All, Application.Read.All)
 - **Grant admin consent** has been approved for those permissions
 
 ### Error: tainted cluster_admins group
