@@ -16,9 +16,9 @@ This document outlines the process for upgrading an AKS cluster.
 Ensure the following command line tools are installed and up to date:
 
 - **[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)**: must be within 1 minor version of the new cluster version.
-- **[Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)**: used to manage the AKS cluster.
+- **[Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)**: manages the AKS cluster.
 - **[velero](https://github.com/vmware-tanzu/velero/releases)**: must match the version of Velero used in the target cluster.
-- **[jq](https://jqlang.github.io/jq/download/)**: used for exporting and processing pod information.
+- **[jq](https://jqlang.github.io/jq/download/)**: exports and processes pod information.
 - **[pluto](https://pluto.docs.fairwinds.com/installation/)**: detects deprecated and removed Kubernetes API versions.
 - **[asdf](https://asdf-vm.com/guide/getting-started.html)** (optional): a version manager for switching between tool versions (such as kubectl), useful when stepping through multiple Kubernetes minor versions in one upgrade.
 
@@ -38,9 +38,9 @@ pluto detect-all-in-cluster k8s=new-cluster-version
 
 Record any deprecated or removed APIs on the Jira ticket. For each one, locate the manifests that still use the old `apiVersion` (for example, in the relevant Helm charts or Kubernetes manifests) and update them to the supported version before continuing. Do not proceed with the upgrade until pluto reports no deprecated APIs that would be removed in the target version.
 
-### 2. Export information of pods that are not Succeeded or Running
+### 2. Record pods that aren't Running or Succeeded
 
-Run the following two commands to export the information of Pods and containers that may be in a bad state:
+Run the following two commands to export the information of pods and containers that may be in a bad state:
 
 ```bash
 kubectl get pods -A -o json | jq '.items[] | select(.status.phase|test("Succeeded|Running")|not) | {namespace: .metadata.namespace, name: .metadata.name, phase: .status.phase}' | jq '{pods:[inputs]}'
@@ -130,15 +130,15 @@ az aks nodepool list -g $CLUSTER_RESOURCE_GROUP --cluster-name $CLUSTER_NAME -o 
 For each node pool, run the following using the same Kubernetes version as the control plane.
 
 <gcds-alert alert-role="danger" container="full" heading="Danger" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>DO NOT upgrade nodepools in different Availability Zones (AZs) at the same time. You may upgrade multiple nodepools within the same AZ together to speed up the process.</gcds-text>
+<gcds-text>DO NOT upgrade node pools in different Availability Zones (AZs) at the same time. You may upgrade multiple node pools within the same AZ together to speed up the process.</gcds-text>
 </gcds-alert>
 
-For example, if the cluster has two zones of nodepools:
+For example, if the cluster has two zones of node pools:
 
 - Zone 1: gateway1, system1, general1
 - Zone 2: gateway2, system2, general2
 
-Upgrade all three Zone 1 nodepools together, and only once they have finished, move on to the Zone 2 nodepools.
+Upgrade all three Zone 1 node pools together, and only once they have finished, move on to the Zone 2 node pools.
 
 ```bash
 az aks nodepool upgrade -g $CLUSTER_RESOURCE_GROUP --cluster-name $CLUSTER_NAME -k $KUBERNETES_VERSION --no-wait -n <Name of node pool>
@@ -156,33 +156,35 @@ Continuously check the status of the nodes to ensure they are being cordoned and
 kubectl get nodes
 ```
 
-If nodes are stuck in `SchedulingDisabled` for longer than 10 minutes, refer to [Nodepool stuck in Updating State and Node not being deleted](#nodepool-stuck-in-updating-state-and-node-not-being-deleted).
+If nodes are stuck in `SchedulingDisabled` for longer than 10 minutes, refer to [Node pool stuck in updating state and node not being deleted](#node-pool-stuck-in-updating-state-and-node-not-being-deleted).
 
-Continue to the next section once the ProvisioningState changes from `Updating` to `Succeeded` for all nodepools and they reflect the new Kubernetes version.
+Continue to the next section once the ProvisioningState changes from `Updating` to `Succeeded` for all node pools and they reflect the new Kubernetes version.
 
 ### 6. Ensure workloads are healthy
 
-Confirm that workloads are functioning. Re-run the commands described in [this section](#2-export-information-of-pods-that-are-not-succeeded-or-running), then compare the output before and after the upgrade to ensure that any workloads which were not broken beforehand remain healthy.
+With all node pools upgraded, confirm that nothing regressed. Re-run the commands from [Record pods that aren't Running or Succeeded](#2-record-pods-that-arent-running-or-succeeded), then compare the output before and after the upgrade to ensure that any workloads which were not broken beforehand remain healthy.
 
 ### 7. Update the Infrastructure-as-Code
 
-Update the `kubernetes_version` variable in the Terraform file instantiating the [terraform-aurora-azure-environment](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment) module.
+Finally, record the new version in code so the cluster's desired state stays in sync. Update the `kubernetes_version` variable in the Terraform file instantiating the [terraform-aurora-azure-environment](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment) module.
 
 ---
 
 ## Troubleshooting
 
-Check the Activity Log for "Create or Update Agent Pool" errors within the Azure portal, where details may be available in the JSON panel.
+As a general starting point, check the Activity Log in the Azure portal for "Create or Update Agent Pool" errors, where more details may be available in the JSON panel.
 
-### Nodepool stuck in Updating state and node not being deleted
+### Node pool stuck in updating state and node not being deleted
 
-Check if there is a PDB preventing a node from draining:
+Check if there is a `PodDisruptionBudget` (PDB) preventing a node from draining:
 
 ```bash
 kubectl get events -A --sort-by='.metadata.creationTimestamp' | grep pdb
 ```
 
-The drain process will respect any `PodDisruptionBudget` (PDB) in place. Respecting a PDB can take time in order to ensure that a sufficient number of replicas has been rescheduled before draining the node. This can result in the drain getting stuck if a PDB specifies a minimum number of replicas that is equal to or greater than the total number of replicas on the node, preventing any rescheduling.
+You can also look through the pods on any node that has been in `SchedulingDisabled` for an unusually long time to check for error events or stuck `PodDisruptionBudget` resources.
+
+The drain process will respect any PDB in place. This can take time, since enough replicas must reschedule before the node drains. The drain gets stuck when a PDB requires a minimum number of replicas that is equal to or greater than the total number on the node, leaving no room to reschedule.
 
 There are multiple options to address this:
 
@@ -190,13 +192,11 @@ There are multiple options to address this:
 - Edit the PDB to decrease the minimum number of pods that need to be available
 - If all else fails, or it is a Dev or NonProd environment, manually delete the stuck pod(s)
 
-- Look through the pods on any node that has been in `SchedulingDisabled` for an unusually long time to check for error events or stuck `PodDisruptionBudget` resources.
-
 Make a note of any misconfigured PDBs so that these issues can be addressed prior to further Kubernetes upgrades. For a long term solution, a Gatekeeper policy should be developed to prevent such misconfigured PDBs.
 
 ### Availability zone issues
 
-If you encounter Persistent Volume mounting errors reporting that the volume is in an incompatible Availability Zone, ensure that a [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) or [nodeAffinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity) configuration is in place on the relevant pod controller such that it will match the label key `topology.kubernetes.io/zone` with the value of the zone requested in the error message (provided that nodes with such an availability zone exist).
+If you encounter Persistent Volume mounting errors reporting that the volume is in an incompatible Availability Zone, add a [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) or [nodeAffinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity) configuration to the relevant pod controller. It should match the label key `topology.kubernetes.io/zone` against the zone requested in the error message, provided that nodes in that zone exist.
 
 For an immediate hotfix to move a pod into a different node in the same node pool:
 

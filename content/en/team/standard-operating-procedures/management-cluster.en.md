@@ -1,23 +1,27 @@
 ---
-title: "Bootstrap Cluster"
-linkTitle: "Bootstrap Cluster"
+title: "Bootstrap the Management Cluster"
+linkTitle: "Bootstrap the Management Cluster"
 weight: 5
-aliases: ["/team/sop/bootstrap-cluster"]
+aliases: ["/team/sop/management-cluster", "/team/sop/bootstrap-cluster", "/team/standard-operating-procedures/bootstrap-cluster"]
 date: 2026-08-11
 draft: false
 ---
 
 {{< translation-note >}}
 
-This document outlines the process for deploying the Aurora Platform onto an existing AKS cluster.
+This document outlines the process for bootstrapping the Aurora Platform onto a **management cluster**, the first cluster that stands up its own Argo CD and, from there, manages both itself and any workload clusters onboarded later. By the end of this procedure, the cluster will be running the full Aurora Platform and ready to onboard workload clusters.
 
 ## Context
 
-The AKS cluster is a hardened, PBMM-compliant platform with its own Authority to Operate. The Aurora Platform builds on that foundation with a curated set of hardened CNCF solutions managed through Argo CD, covering observability, runtime security, certificate management, and continuous delivery.
+The management cluster is a hardened, PBMM-compliant AKS cluster. The Aurora Platform builds on that foundation with a curated set of hardened CNCF solutions managed through Argo CD, covering observability, runtime security, certificate management, and continuous delivery.
 
 Deploying it is strongly recommended: it gives teams a complete DevOps platform instead of having to assemble and harden this tooling on their own.
 
-Previously this process relied on a temporary local k3s bootstrap cluster to work around the lack of networking on a freshly provisioned cluster. That workaround is no longer necessary. Because networking is now available on newly deployed clusters, the platform is deployed directly onto the target AKS cluster using the bootstrap Terraform repository.
+Both management and workload clusters run the same Aurora Platform, deployed as a Helm chart through Argo CD. The difference is the chart's `mgmt` component: it is disabled by default, but a management cluster's `config.yaml` enables it, adding the tooling the cluster needs to manage itself and onboard workload clusters.
+
+A management cluster is the first cluster stood up, so there is no existing Argo CD to deploy onto it. The [bootstrap-terraform](https://github.com/gccloudone-aurora/bootstrap-terraform) repository fills that gap: it installs Argo CD directly onto the cluster and creates the `aurora-platform` ApplicationSet, which syncs the platform chart from the cluster's configuration repository. A [workload cluster](../workload-cluster/), by contrast, keeps `mgmt` disabled and is onboarded into an existing management cluster's Argo CD instead of being bootstrapped.
+
+Previously, bootstrapping relied on a temporary local k3s cluster to work around the lack of networking on a freshly provisioned cluster. That workaround is no longer necessary: networking is now available on newly deployed clusters, so the platform is deployed directly onto the target cluster.
 
 ## Prerequisites
 
@@ -68,7 +72,7 @@ If the nodes are listed, authentication and RBAC are working correctly. If the c
 
 ### 3. Clone the bootstrap Terraform repository
 
-This repository deploys Argo CD into the cluster along with two ApplicationSets that manage the full Aurora Platform deployment.
+This repository installs Argo CD directly onto the cluster and creates the `aurora-platform` ApplicationSet, which syncs the Aurora Platform Helm chart from the cluster's configuration repository. With the `mgmt` component enabled in that configuration, the platform includes the tooling to manage this cluster and onboard workload clusters.
 
 ```sh
 git clone https://github.com/gccloudone-aurora/bootstrap-terraform
@@ -77,7 +81,7 @@ cd bootstrap-terraform
 
 ### 4. Prepare the project configuration repository
 
-The Aurora Platform is driven by a per-cluster configuration repository that Argo CD syncs from. Prepare this repository before deploying the platform components.
+The Aurora Platform is driven by a per-cluster configuration repository that Argo CD syncs from. Prepare this repository before continuing.
 
 Clone the Aurora project template:
 
@@ -92,13 +96,13 @@ platform/clusters/non-prod/<cluster-name>/config.yaml
 platform/clusters/prod/<cluster-name>/config.yaml
 ```
 
-Edit the `config.yaml` for your target cluster to match your environment. This file tells Argo CD what to deploy and how to manage the cluster, making it the central configuration for the Aurora Platform. In most environments you will need to update:
+Edit the `config.yaml` for your target cluster, filling in all the `<FILLIN_XYZ>` placeholder fields, to match your environment. This file tells Argo CD what to deploy and how to manage the cluster, making it the central configuration for the Aurora Platform. In most environments you will need to update:
 
 - App-of-apps configuration: which components are deployed and how they sync.
 - Networking and identity: API server CIDRs, ingress domain, subscription and tenant IDs, and Key Vault references.
 - Core components: toggles for services such as Cilium, cert-manager, and the CIDR allocator.
 
-Commit and push your changes to a new repository. We typically follow a naming convention such as `project-example`, where example is the name of the project or department.
+Commit and push your changes to a new repository, following a naming convention such as `project-example`, where example is the name of the project or department.
 
 ### 5. Configure the Terraform variables
 
@@ -135,7 +139,7 @@ terraform apply -target=helm_release.argocd_instance
 
 ### 9. Populate the required Key Vault secrets
 
-Some secrets cannot be inferred or automated, so they must be entered manually into the Argo CD Key Vault. Do this before deploying the remaining components in step 11, otherwise the ApplicationSets will fail to sync when they look for these values:
+Some secrets cannot be inferred or automated, so they must be entered manually into the Argo CD Key Vault before syncing the platform components, otherwise the applications will fail to sync when they look for these values:
 
 - `<prefix>-argo-kvs-github-username`: GitHub username that Argo CD uses to access the source repositories.
 - `<prefix>-argo-kvs-github-password`: corresponding GitHub password or personal access token.
@@ -146,16 +150,16 @@ Some secrets cannot be inferred or automated, so they must be entered manually i
 <!-- markdownlint-disable MD033 -->
 
 <gcds-alert alert-role="info" container="full" heading="Note" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>The prefix on these secret names changes per environment. Adjust the names to match your target Key Vault's naming convention.</gcds-text>
+<gcds-text>The prefix on these secret names changes per environment. Adjust the names to match your target Key Vault's naming convention. This step is required until these values are provisioned automatically as part of Enterprise Landing Zone (ESLZ) onboarding.</gcds-text>
 </gcds-alert>
 
 <!-- markdownlint-enable MD033 -->
 
 ### 10. Grant Argo CD access to the configuration repository
 
-Argo CD must be able to pull manifests from the configuration repository you prepared in step 4. Once the Argo CD instance is running and the Key Vault secrets are in place:
+Argo CD must be able to pull manifests from the configuration repository you prepared earlier. Once the Argo CD instance is running and the Key Vault secrets are in place:
 
-- Confirm the repository specification (set through your Terraform configuration) points Argo CD at the correct Aurora configuration repository.
+- Confirm the repository specification points Argo CD at the correct Aurora configuration repository.
 - Ensure authentication is provided through the `aurora-svc` service account, using the GitHub personal access token (PAT) from the Key Vault secrets in the previous step. The token must have access to the repository.
 - Approve the `gccloudone-aurora` request under pending repository access requests in your GitHub organization, so Argo CD can pull manifests.
 
@@ -199,7 +203,7 @@ If any application is stuck in `OutOfSync`, `Degraded`, or `Missing`, inspect it
 
 ### 14. Add a DNS A record
 
-Once the platform is deployed, its ingress controller provisions an external load balancer. To reach platform services (such as the Argo CD UI) by hostname instead of port-forwarding, point a wildcard DNS record at that load balancer in the public DNS zone created during Enterprise Landing Zone onboarding.
+Once the platform is deployed, its ingress controller provisions an external load balancer. To reach platform services by hostname, point a wildcard DNS record at that load balancer in the public DNS zone created during Enterprise Landing Zone onboarding.
 
 First, find the external IP address of the ingress load balancer, which is exposed by the service in the `ingress-general-system` namespace:
 

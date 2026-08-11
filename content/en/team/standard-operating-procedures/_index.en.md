@@ -10,9 +10,9 @@ translationKey: "standard-operating-procedures"
 
 {{< translation-note >}}
 
-The Aurora initiative spans multiple teams, environments, and responsibilities. To maintain clarity and consistency, we define a set of **Standard Operating Procedures (SOPs)** for common workflows, technical conventions, and collaboration practices.
+The Aurora initiative spans multiple teams, environments, and responsibilities. To keep our work consistent, we maintain a set of **Standard Operating Procedures (SOPs)** that cover common workflows, technical conventions, and collaboration practices.
 
-SOPs ensure that everyone, from platform engineers to partner departments, can work with a shared understanding of how we operate.
+These are our agreed ways of working, from platform engineers to partner departments, so everyone shares the same understanding of how we operate. Have a browse through the procedures below and pick the one that fits what you're working on.
 
 ---
 
@@ -25,10 +25,31 @@ Here are the current procedures in place:
 <div class="mb-400">
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
   <gcds-card
+    card-title="Onboarding Process for the Enterprise Landing Zone"
+    href="/en/team/standard-operating-procedures/enterprise-landing-zone/"
+    badge="Onboarding"
+    description="Prerequisite steps to prepare the Azure Enterprise Landing Zone and provision an AKS cluster ready for the Aurora Platform."
+  >
+  </gcds-card>
+  <gcds-card
+    card-title="Bootstrap the Management Cluster"
+    href="/en/team/standard-operating-procedures/management-cluster/"
+    badge="Onboarding"
+    description="Procedure for standing up a management cluster, using the bootstrap Terraform to install Argo CD and deploy the Aurora Platform with the mgmt component enabled."
+  >
+  </gcds-card>
+  <gcds-card
+    card-title="Deploy a Workload Cluster"
+    href="/en/team/standard-operating-procedures/workload-cluster/"
+    badge="Onboarding"
+    description="Procedure for onboarding a workload cluster, deploying the Aurora Platform onto it from an existing management cluster's Argo CD."
+  >
+  </gcds-card>
+  <gcds-card
     card-title="Adding Components to Aurora Platform Charts"
     href="/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/"
     badge="Operations"
-    description="Procedure & guidelines for adding new components to the aurora-platform-charts."
+    description="Guidelines for adding new components to the aurora-platform-charts."
   >
   </gcds-card>
   <gcds-card
@@ -39,31 +60,24 @@ Here are the current procedures in place:
   >
   </gcds-card>
   <gcds-card
-    card-title="Backup and Disaster Recovery"
-    href="/en/team/standard-operating-procedures/backup-disaster-recovery/"
-    badge="Reliability"
-    description="Procedure for validating that backups and restore processes work as expected."
-  >
-  </gcds-card>
-  <gcds-card
-    card-title="Bootstrap Cluster"
-    href="/en/team/standard-operating-procedures/bootstrap-cluster/"
-    badge="Onboarding"
-    description="Steps for deploying the Aurora Platform onto an existing AKS cluster using the bootstrap Terraform."
-  >
-  </gcds-card>
-  <gcds-card
-    card-title="Issue Tracking"
-    href="/en/team/standard-operating-procedures/issue-tracking/"
-    badge="Governance"
-    description="Standards for issue tracking across Aurora."
+    card-title="Infrastructure and Configuration Management"
+    href="/en/team/standard-operating-procedures/infrastructure-and-configuration-management/"
+    badge="Operations"
+    description="How Aurora manages infrastructure (Terraform) and configuration (Argo CD, Helm, Kustomize) as code, including source-of-truth repos, versioning, and promotion."
   >
   </gcds-card>
   <gcds-card
     card-title="SSL Cert Issuance"
     href="/en/team/standard-operating-procedures/ssl-cert-issuance/"
-    badge="Governance"
+    badge="Operations"
     description="Procedure for validating the issuance of SSL certificates with Cert Manager."
+  >
+  </gcds-card>
+  <gcds-card
+    card-title="Backup and Disaster Recovery"
+    href="/en/team/standard-operating-procedures/backup-disaster-recovery/"
+    badge="Reliability"
+    description="Procedure for validating that backups and restore processes work as expected."
   >
   </gcds-card>
   <gcds-card
@@ -74,24 +88,17 @@ Here are the current procedures in place:
   >
   </gcds-card>
   <gcds-card
-    card-title="Infrastructure and Configuration Management"
-    href="/en/team/standard-operating-procedures/infrastructure-and-configuration-management/"
+    card-title="Issue Tracking"
+    href="/en/team/standard-operating-procedures/issue-tracking/"
+    badge="Governance"
+    description="Standards for issue tracking across Aurora."
+  >
+  </gcds-card>
+  <gcds-card
+    card-title="GitHub Actions for Creating Releases"
+    href="/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/"
     badge="Operations"
-    description="Guidance on managing infrastructure and configuration consistently on the Aurora platform."
-  >
-  </gcds-card>
-  <gcds-card
-    card-title="Onboarding Process for the Enterprise Landing Zone"
-    href="/en/team/standard-operating-procedures/enterprise-landing-zone/"
-    badge="Onboarding"
-    description="Onboarding process for departments into the Enterprise Landing Zone for a chosen CSP."
-  >
-  </gcds-card>
-  <gcds-card
-    card-title="Onboarding Process for a Workload Cluster"
-    href="/en/team/standard-operating-procedures/workload-cluster-onboarding/"
-    badge="Onboarding"
-    description="Onboarding process for setting up a newly created Kubernetes cluster."
+    description="How to use the shared GitHub Composite Action to standardize release naming, tagging, and notes generation across repositories."
   >
   </gcds-card>
 </gcds-grid>
@@ -99,4 +106,4 @@ Here are the current procedures in place:
 
 <!-- markdownlint-enable MD033 -->
 
-> SOPs are living documents. If you spot something that needs updating or expanding, please open an issue or contact us at: <gcds-link href="mailto:aurora-aurore@ssc-spc.gc.ca">Email</gcds-link>.
+> SOPs are living documents. If you spot something that needs updating or expanding, please open an issue or <gcds-link href="mailto:aurora-aurore@ssc-spc.gc.ca">email us</gcds-link>.

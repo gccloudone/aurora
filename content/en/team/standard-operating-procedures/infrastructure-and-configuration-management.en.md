@@ -8,45 +8,100 @@ date: 2026-08-11
 
 {{< translation-note >}}
 
-Infrastructure as Code (via Terraform) and Configuration as Code (via ArgoCD, Helm, and / or Kustomize) repositories are the source of truth for the intended state of the Aurora platform.
+## Overview
 
-Access to make changes outside of these repositories is only granted to designated [Platform Administrators and Platform Developers]({{< relref "architecture/security/access-control#platform-administrator" >}}):
+The Aurora platform is managed entirely as code. Two types of repositories define its intended state and serve as the single source of truth:
 
-- Inside Aurora platform development environments inaccessible to end-users (Platform Developers)
-- For complex after-hours maintenance, such as Kubernetes cluster upgrades with breaking changes (Platform Administrators)
-- During incidents where the repositories and/or relevant automation systems are either inaccessible or unacceptably slow (Platform Administrators)
+- **Infrastructure as Code (IaC)** — the underlying cloud resources, managed with Terraform.
+- **Configuration as Code (CaC)** — the platform software running on top, managed with ArgoCD, Helm, and / or Kustomize.
 
-In all such cases, the repositories are updated as soon as possible to reflect all manual changes that are intended to be kept. Otherwise, further repository updates, as well as automated reconciliation such as ArgoCD Sync, will overwrite them.
+Changes are made by updating these repositories, not by editing live systems directly; automation then deploys them to the platform.
 
-Helm chart and Terraform module versions, CI/CD pipeline versions, and the image versions of any custom-built components are incremented using [Semantic Versioning](https://semver.org/). When such a change is merged into a git repository, the repository is also tagged with that version. To facilitate staged testing and rollback, all references to other repositories are version pinned.
+## Organization Overview
 
-Commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format and are squashed into a pull request, which is labeled according to the [Issue Naming](../issue-naming) SOP. The pull request can only be merged by somebody granted write permissions to that repository, and must first be reviewed and approved by at least one other person.
+Aurora's repositories are spread across three GitHub organizations:
 
-Aurora Kubernetes clusters have, at minimum, a development and a production instance, with the possibility of other instances such as testing in between. In all cases, infrastructure and configuration changes are deployed and validated in the development instance first, and rolled out to the production instance last.
+- **[github.com/gccloudone](https://github.com/gccloudone):** Public-facing content and documentation, including the Aurora documentation site.
+- **[github.com/gccloudone-aurora](https://github.com/gccloudone-aurora):** Platform tooling, Helm charts, Kubernetes manifests, custom controllers, and the `project-*` configuration repositories that drive GitOps reconciliation.
+- **[github.com/gccloudone-aurora-iac](https://github.com/gccloudone-aurora-iac):** Terraform Infrastructure-as-Code modules used to provision the Azure resources that Aurora depends on.
+
+## Making Manual Changes
+
+Changing the platform outside of the repositories is limited to designated [Platform Administrators and Platform Developers]({{< relref "architecture/security/access-control#platform-administrator" >}}), and only when:
+
+- **Platform Developers** work within development environments that are inaccessible to end-users.
+- **Platform Administrators** perform complex after-hours maintenance, such as cluster upgrades with breaking changes.
+- **Platform Administrators** respond to incidents where the repositories or automation systems are inaccessible or unacceptably slow.
+
+Any manual change that is meant to be kept must be written back to the repositories as soon as possible. Otherwise, later updates and automated reconciliation (such as ArgoCD Sync) will overwrite it.
+
+## Change Management Standards
+
+All changes follow a consistent set of standards:
+
+- **Versioning** — Helm charts, Terraform modules, CI/CD pipelines, and custom component images are versioned with [Semantic Versioning](https://semver.org/). Merged changes tag the repository with the new version, and all cross-repository references are version pinned to support staged testing and rollback.
+- **Commits and reviews** — Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) and are squashed into a single pull request, labeled per the [Issue Naming](../issue-naming) SOP. Merging requires write access and at least one other reviewer's approval.
+- **Promotion path** — Each Aurora cluster has at minimum a development and a production instance, with optional stages (such as testing) in between. Changes are always validated in development first and promoted to production last.
 
 ## Infrastructure
 
-Terraform modules for Aurora infrastructure are available as [open-source repositories](https://github.com/orgs/gccloudone-aurora-iac/repositories) within the GC Cloud One Aurora IaC GitHub organization. The module instantiated to deploy an Aurora cluster and its supporting infrastructure is nested in the following fashion (Azure example):
+Terraform modules for Aurora infrastructure are available as [open-source repositories](https://github.com/orgs/gccloudone-aurora-iac/repositories) within the GC Cloud One Aurora IaC GitHub organization.
 
-- [terraform-aurora-azure-environment](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment)
-  - [terraform-azure-service-principal](https://github.com/gccloudone-aurora-iac/terraform-azure-service-principal)
-  - [terraform-aurora-azure-environment-network](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment-network)
-    - [terraform-azure-route-server](https://github.com/gccloudone-aurora-iac/terraform-azure-route-server)
-    - [terraform-azure-virtual-network](https://github.com/gccloudone-aurora-iac/terraform-azure-virtual-network)
-  - [terraform-aurora-azure-environment-infrastructure](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment-infrastructure)
-    - [terraform-azure-kubernetes-cluster](https://github.com/gccloudone-aurora-iac/terraform-azure-kubernetes-cluster)
-    - [terraform-azure-key-vault](https://github.com/gccloudone-aurora-iac/terraform-azure-key-vault)
-    - [terraform-azure-kubernetes-cluster-nodepool](https://github.com/gccloudone-aurora-iac/terraform-azure-kubernetes-cluster-nodepool)
-  - [terraform-aurora-azure-environment-platform-infrastructure](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment-platform-infrastructure)
+To deploy a cluster and its supporting cloud infrastructure, a Terraform configuration instantiates a single root environment module (Azure example: [terraform-aurora-azure-environment](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment)), which composes the necessary networking, cluster, and platform infrastructure modules internally. A separate module (for example, [terraform-aurora-azure-environment-argo-secrets](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment-argo-secrets)) populates ArgoCD with Secrets shared across multiple clusters.
 
-To deploy and manage an Aurora Kubernetes cluster and its supporting cloud infrastructure, a Terraform configuration instantiates the root environment module (e.g. [terraform-aurora-azure-environment](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment)) alongside a separate module (e.g. [terraform-aurora-azure-environment-argo-secrets](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment-argo-secrets)) that populates ArgoCD with Secrets that are common across multiple clusters.
+Deployment runs in private DevOps platform repositories through pipelines that execute `terraform` across `lint`, `validate`, `plan`, and `apply` stages, plus optional jobs such as `import`. Additional supporting modules may be instantiated depending on the Cloud Service Provider.
 
-Deployment is carried out within private DevOps platform repositories using pipelines that run `terraform` commands, including `lint`, `validate`, `plan`, and `apply` stages as well as optional utility jobs such as `import`. Additional supporting infrastructure modules may be instantiated depending on the Cloud Service Provider.
+Aurora does not always own this provisioning. Where SSC's Enterprise Scale Landing Zone (ESLZ) governs the underlying cloud resources, infrastructure is deployed through SSC's own Azure DevOps (AZDO) processes rather than these modules. In those environments, the `infrastructure/` directory of the relevant `project-*` repository documents the intended state and links to the AZDO repository that performs the provisioning (see [Project Repositories](#project-repositories)).
 
 ## Configuration
 
-Aurora platform components are primarily configured within the open-source [aurora-platform-charts repository](https://github.com/gccloudone-aurora/aurora-platform-charts), containing nested Helm charts as well as ArgoCD Applications and ApplicationSets. Certain configuration values can be defined on a per-cluster basis inside of private DevOps platform repositories.
+Once a cluster is provisioned, declarative configuration turns it into a fully governed Aurora platform: `project-*` repositories describe each project, the platform charts package the platform stack, and ArgoCD reconciles it all onto clusters via GitOps.
 
-The version of each root chart is updated with any change to a nested component. ArgoCD instances synchronize platform chart updates to Aurora clusters. Platform development clusters receive such updates automatically, while other clusters must have the intended platform chart version explicitly set in the configuration that supplies their custom Helm values.
+### Project Repositories
 
-The GC Cloud One Aurora GitHub organization contains [additional open-source repositories](https://github.com/orgs/gccloudone-aurora/repositories), such as custom-built Aurora components as well as configurations in formats other than Helm charts (for example, the Kustomize-based [gatekeeper-policies](https://github.com/gccloudone-aurora/gatekeeper-policies)).
+Platform configuration lives in `project-*` repositories, each scaffolded from [project-aurora-template](https://github.com/gccloudone-aurora/project-aurora-template) for a consistent structure. Each repository declares the environments its project deploys into. Examples include [project-aurora-mgmt](https://github.com/gccloudone-aurora/project-aurora-mgmt), [project-aurora-sdlc](https://github.com/gccloudone-aurora/project-aurora-sdlc), and [project-cds](https://github.com/gccloudone-aurora/project-cds) (all private).
+
+These repositories:
+
+- Provide declarative configuration for every cluster, namespace, and solution in their environments.
+- Support hierarchical composition, where higher-level repositories define platform guardrails (for example, `project-aurora-mgmt` integrates with `project-aurora-sdlc`).
+- Separate platform logic from project-specific configuration, preventing drift and streamlining upgrades.
+
+The `infrastructure/` directory is not always where provisioning runs. Under ESLZ governance it holds placeholders that document the intended infrastructure and link to the AZDO repository performing it (see [Infrastructure](#infrastructure)).
+
+Each `project-*` repository follows this structure:
+
+```txt
+project-<name>/
+│
+├── infrastructure/                 # IaC, or ESLZ placeholders linking to the AZDO IaC repo
+│   ├── non-prod/
+│   └── prod/
+│
+└── platform/
+    ├── clusters/                   # Cluster-specific values rendered into aurora-platform-charts
+    │   └── <cluster>/
+    │       └── config.yaml
+    │
+    ├── namespaces/                 # Namespace definitions, onboarding metadata, RBAC, quotas
+    │   └── <namespace>/config.yaml
+    │
+    └── solutions/                  # Solution-level deployments managed by the Platform Team
+        └── <solution>/
+```
+
+### Aurora Platform Charts
+
+The open-source [aurora-platform-charts](https://github.com/gccloudone-aurora/aurora-platform-charts) repository is the centralized Helm library that installs the platform stack onto a cluster, turning raw Kubernetes into a governed, PBMM-compliant application hosting platform. It contains nested Helm charts alongside ArgoCD Applications and ApplicationSets, and:
+
+- Encodes Aurora's security, networking, and policy defaults centrally, so every cluster inherits a consistent, guardrailed baseline across the fleet.
+- Is rendered by ArgoCD using values from the `project-*` repositories, with secrets pulled from Azure Key Vault via the ArgoCD Vault Plugin.
+- Reconciles all platform components through GitOps, ensuring zero drift and reliable upgrades.
+- Is cloud-agnostic by design, for consistent behavior across supported Kubernetes providers (Azure today; other providers are future targets).
+
+Each root chart's version is bumped whenever a nested component changes, and ArgoCD synchronizes the update to Aurora clusters:
+
+- **Platform development clusters** receive updates automatically.
+- **All other clusters** must pin the intended chart version in the configuration that supplies their custom Helm values.
+
+The GC Cloud One Aurora GitHub organization also contains [additional open-source repositories](https://github.com/orgs/gccloudone-aurora/repositories), including custom-built components and non-Helm configurations (for example, the Kustomize-based [gatekeeper-policies](https://github.com/gccloudone-aurora/gatekeeper-policies) and [tetragon-policies](https://github.com/gccloudone-aurora/tetragon-policies)).

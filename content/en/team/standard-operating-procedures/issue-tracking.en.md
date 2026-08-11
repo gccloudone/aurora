@@ -50,9 +50,9 @@ Each repo links automatically to the Aurora organization-wide **Project Board** 
 
 Examples include:
 
-- [`gccloudone-aurora/aurora-platform-charts`](https://github.com/gccloudone-aurora/aurora-platform-charts) — Helm charts for deploying and maintaining Aurora platform components
-- [`gccloudone/artifacts-artefacts`](https://github.com/gccloudone/artifacts-artefacts) — GC Secure Artifacts documentation and guides
-- [`gccloudone/aurora`](https://github.com/gccloudone/aurora) — Aurora public documentation and website
+- [`gccloudone-aurora/aurora-platform-charts`](https://github.com/gccloudone-aurora/aurora-platform-charts): Helm charts for deploying and maintaining Aurora platform components
+- [`gccloudone/artifacts-artefacts`](https://github.com/gccloudone/artifacts-artefacts): GC Secure Artifacts documentation and guides
+- [`gccloudone/aurora`](https://github.com/gccloudone/aurora): Aurora public documentation and website
 
 Use GitHub to:
 

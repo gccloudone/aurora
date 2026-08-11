@@ -197,15 +197,13 @@ You must also grant admin consent for these permissions in Entra ID so Argo CD c
 
 The `XXXX_XXX_XXXXX_devops_sp` service principal created by the Azure Cloud Team must have the Azure Kubernetes Service Cluster User Role assigned at the AKS cluster scope. This role is required for the service principal to interact with the Kubernetes API, for example running kubectl, provisioning workloads during bootstrap, or managing RBAC bindings.
 
-### 9. Bootstrap cluster
+### 9. Bootstrap the management cluster
 
 At this point all of the Aurora infrastructure is fully deployed onto the Enterprise-Scale Landing Zone (ESLZ).
 
-If this cluster will be a workload cluster rather than a management cluster, see the <gcds-link href="{{< relref "/team/standard-operating-procedures/workload-cluster-onboarding/" >}}">workload cluster onboarding guide</gcds-link>.
+The next step is to bootstrap the Aurora Platform onto the cluster. This is only required the first time, to establish a management cluster; once in place, that management cluster performs the ongoing work of deploying and managing Aurora. To continue, follow the <gcds-link href="{{< relref "/team/standard-operating-procedures/management-cluster/" >}}">management cluster bootstrap guide</gcds-link>.
 
-The bootstrap process is only required the first time, to establish a management cluster. Once in place, that management cluster performs the ongoing work of deploying and managing Aurora.
-
-You may now wish to consult the <gcds-link href="{{< relref "/team/standard-operating-procedures/bootstrap-cluster/" >}}">bootstrap cluster onboarding guide</gcds-link>.
+If this cluster will instead be a workload cluster managed by an existing management cluster, see the <gcds-link href="{{< relref "/team/standard-operating-procedures/workload-cluster/" >}}">workload cluster onboarding guide</gcds-link>.
 
 ---
 

@@ -15,20 +15,16 @@ This document outlines the steps Aurora administrators must follow to test disas
 
 Aurora clusters use [Velero](https://velero.io) to back up and restore Kubernetes cluster resources and persistent volumes. A backup is only useful if it can actually be restored, so backups should be tested on a regular basis rather than assumed to work.
 
-This procedure verifies that reliability end to end: it writes known data to a persistent volume, backs it up, deletes the namespace to simulate data loss, restores it, and checks that the data comes back unchanged. Run it periodically and whenever the Velero configuration or version changes.
+This procedure verifies this reliability end to end: it writes known data to a persistent volume, backs it up, deletes the namespace to simulate data loss, restores it, and checks that the data comes back unchanged. Run it periodically and whenever the Velero configuration or version changes.
 
 ## Setup
 
 The test needs an isolated workload with a persistent volume so that restoring it does not affect real applications. Before testing, ensure the following are in place:
 
-- The Velero CLI is installed, so you can create and inspect backups and restores from your workstation.
+- The Velero CLI is installed, so you can create and inspect backups and restores from your workstation. Its version must match the version of the Velero container image running in the cluster.
 - A dedicated test namespace exists, containing:
   - A BusyBox deployment to act as a lightweight, disposable workload.
   - A `PersistentVolumeClaim` (PVC) mounted into the BusyBox container, which provides the persistent volume whose data the test will verify.
-
-<gcds-alert alert-role="info" container="full" heading="Note" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>Ensure the version of your Velero CLI matches the version of the Velero container image.</gcds-text>
-</gcds-alert>
 
 ### Preparing the test file
 
@@ -60,10 +56,12 @@ First, place a known piece of data on the persistent volume. This gives you some
 
 The test backs up the namespace, deletes it to simulate data loss, then restores it from the backup and confirms the test file survived intact.
 
+Backup and restore names must be unique, so the examples below append a timestamp (`YYYY-MM-DD-HHMM`). Replace it with the current date and time, and use the same value consistently within a single run.
+
 1. Create a backup of the test namespace, including its persistent volume snapshot:
 
    ```sh
-   velero backup create backuptest-YYYY-MM-DD \
+   velero backup create backuptest-YYYY-MM-DD-HHMM \
      --include-namespaces <test-namespace> \
      --volume-snapshot-locations <volume-snapshot-location-name> \
      --storage-location <backup-storage-location-name> \
@@ -73,7 +71,7 @@ The test backs up the namespace, deletes it to simulate data loss, then restores
 2. Confirm the backup completed. Check that the `Phase` field reads `Completed` before continuing; do not proceed if the backup failed or is still in progress:
 
    ```sh
-   velero backup describe backuptest-YYYY-MM-DD \
+   velero backup describe backuptest-YYYY-MM-DD-HHMM \
      --details -n velero-system
    ```
 
@@ -86,15 +84,15 @@ The test backs up the namespace, deletes it to simulate data loss, then restores
 4. Restore the namespace from the backup you just created:
 
    ```sh
-   velero restore create restoretest-YYYY-MM-DD \
-     --from-backup backuptest-YYYY-MM-DD \
+   velero restore create restoretest-YYYY-MM-DD-HHMM \
+     --from-backup backuptest-YYYY-MM-DD-HHMM \
      -n velero-system
    ```
 
 5. Confirm the restore completed. As with the backup, check that the `Phase` field reads `Completed`:
 
    ```sh
-   velero restore describe restoretest-YYYY-MM-DD \
+   velero restore describe restoretest-YYYY-MM-DD-HHMM \
      --details -n velero-system
    ```
 

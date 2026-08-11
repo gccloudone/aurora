@@ -1,6 +1,6 @@
 ---
-title: "Adding components to Platform Charts"
-linkTitle: "Adding components to Platform Charts"
+title: "Adding Components to Aurora Platform Charts"
+linkTitle: "Adding Components to Aurora Platform Charts"
 weight: 5
 aliases: ["/team/sop/aurora-platform-chart-add-component"]
 date: 2026-08-11
@@ -21,7 +21,7 @@ If you are unfamiliar with how ArgoCD deploys Helm charts, review the [ArgoCD He
 
 Before adding any third-party Helm charts to the Aurora platform, do the following:
 
-- Render the Helm templates and verify that the rendered manifests are what we expect (e.g. there are no additional resources that are being created that we don't expect):
+- Render the Helm templates and verify that the rendered manifests are what we expect (e.g. no unexpected resources are being created):
 
   ```sh
   helm template <name> ./path/to/chart --values=<example values.yaml>
@@ -34,7 +34,7 @@ Before adding any third-party Helm charts to the Aurora platform, do the followi
   trivy image <container-image>
   ```
 
-  - Investigate any critical vulnerabilities and if they are applicable.
+  - Investigate any critical vulnerabilities and determine whether they are applicable.
 
 ## Procedure
 
@@ -68,7 +68,7 @@ If applicable, create a separate YAML file for anything else the component needs
 
 ### 4. Create the `namespace.yaml` file
 
-Fill in the appropriate values according to the aurora-solution chart [available here](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-solution/values.yaml). The `information` field should remain the same as other components.
+Fill in the appropriate values according to the [aurora-solution chart values](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-solution/values.yaml). The `information` field should remain the same as other components.
 
 - [Example using Cert Manager Namespace](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/namespace.yaml)
 
@@ -76,13 +76,13 @@ Fill in the appropriate values according to the aurora-solution chart [available
 
 Create any Network Policies exempting flows the component may need. By default, all flows are denied unless explicitly granted through a `NetworkPolicy` or a `CiliumClusterwideNetworkPolicy`.
 
-- [Example using Cert Manager NetPol](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/netpol.yaml)
+- [Example Cert Manager NetworkPolicy](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/netpol.yaml)
 
 ### 6. Create the `_helpers.tpl` file
 
 Create a helper template for every image field referenced in the component's YAML file. The template should let users pull the image from either a third-party registry or a custom registry.
 
-- [Example using _helpers.tpl](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/_helpers.tpl)
+- [Example `_helpers.tpl`](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/_helpers.tpl)
 
 ### 7. Update the `values.yaml` file
 
