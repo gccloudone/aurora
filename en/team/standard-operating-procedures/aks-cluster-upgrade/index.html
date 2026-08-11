@@ -12,7 +12,7 @@
 </gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Community menu-label=Community><gcds-nav-link href=/en/get-involved/>Get involved
 </gcds-nav-link><gcds-nav-link href=/en/rules-of-engagement/>Rules of Engagement
 </gcds-nav-link><gcds-nav-link href=/en/technical-advisory-group/>Technical Advisory Group
-</gcds-nav-link></gcds-nav-group></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href>GC Cloud One</gcds-breadcrumbs-item>
+</gcds-nav-link></gcds-nav-group></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href="https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US">GC Cloud One</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/en/>Aurora</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/en/team/>Team Guide</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/en/team/standard-operating-procedures/>Standard Operating Procedures</gcds-breadcrumbs-item>
@@ -124,7 +124,7 @@ Une fois terminé, il sera entièrement traduit en français et mis à dispositi
 </span></span><span style=display:flex><span>failed to call webhook: Post &#34;https://gatekeeper-webhook-service.gatekeeper-system.svc:443/v1/admit?timeout=3s&#34;:
 </span></span><span style=display:flex><span>no endpoints available for service &#34;gatekeeper-webhook-service&#34;
 </span></span></code></pre></div><gcds-text character-limit=true>To unblock registration, delete the Gatekeeper validating webhook configuration. Gatekeeper will recreate it once its pods are healthy again:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>kubectl delete validatingwebhookconfiguration gatekeeper-validating-webhook-configuration
-</span></span></code></pre></div><gcds-date-modified lang=en>2026-08-11</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "","About us": "/en/about/" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+</span></span></code></pre></div><gcds-date-modified lang=en>2026-08-11</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "https://github.com/gccloudone/aurora/issues/new/choose","About us": "/en/about/" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
     .glightbox-container.glightbox-custom-white-bg img {
       background: white !important;
     }

@@ -12,7 +12,7 @@
 </gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Community menu-label=Community><gcds-nav-link href=/en/get-involved/>Get involved
 </gcds-nav-link><gcds-nav-link href=/en/rules-of-engagement/>Rules of Engagement
 </gcds-nav-link><gcds-nav-link href=/en/technical-advisory-group/>Technical Advisory Group
-</gcds-nav-link></gcds-nav-group></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href>GC Cloud One</gcds-breadcrumbs-item>
+</gcds-nav-link></gcds-nav-group></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href="https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US">GC Cloud One</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/en/>Aurora</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/en/team/>Team Guide</gcds-breadcrumbs-item>
 <gcds-breadcrumbs-item href=/en/team/monitoring-alerts/>Monitoring and Alerting</gcds-breadcrumbs-item>
@@ -62,7 +62,7 @@ Une fois terminé, il sera entièrement traduit en français et mis à dispositi
 <code>velero client config set namespace=velero-system</code></li></ol><blockquote><gcds-text character-limit=true><strong><em>NOTE:</em></strong> By default, the velero CLI assumes that velero is installed in the <code>velero</code> namespace unless otherwise specified using the above command or by passing in the <code>--namespace</code> global flag.</gcds-text></blockquote><ol><li><gcds-text character-limit=true>Describe the backup to view a summary of the backup details.
 <code>velero backup describe &lt;BACKUP NAME> --details | grep error</code></gcds-text></li><li><gcds-text character-limit=true>Output the Velero backup logs. This is useful for viewing failures and warnings, including resources that could not not be backed up.
 <code>velero backup logs &lt;BACKUP NAME></code></gcds-text></li><li><gcds-text character-limit=true>View the logs on the Velero server pod.
-<code>kubectl logs deployment/velero -n &lt;NAMESPACE></code></gcds-text></li></ol><gcds-date-modified lang=en>2026-02-16</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "","About us": "/en/about/" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+<code>kubectl logs deployment/velero -n &lt;NAMESPACE></code></gcds-text></li></ol><gcds-date-modified lang=en>2026-02-16</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "https://github.com/gccloudone/aurora/issues/new/choose","About us": "/en/about/" }'></gcds-footer><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
     .glightbox-container.glightbox-custom-white-bg img {
       background: white !important;
     }
