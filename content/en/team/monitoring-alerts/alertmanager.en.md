@@ -34,9 +34,13 @@ Routing is done through a series of matches which can be nested: there must be o
 
 The following example configuration defaults to sending all alerts to the empty default receiver `do_not_notify`. However, alerts with the labels `severity: medium` or `severity: high` instead go to the `ms_teams` receiver. Then, due to the property `continue: true`, those with the label `severity: high` are also sent to the `email` receiver.
 
+<!-- markdownlint-disable MD033 -->
+
 <gcds-alert alert-role="info" container="full" heading="Note" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 <gcds-text>If an alert matches a route without the <code>continue: true</code> property, it is consumed by that route (or that route's child routes). The alert will not be transmitted to sibling routes even if it matches their criteria.</gcds-text>
 </gcds-alert>
+
+<!-- markdownlint-enable MD033 -->
 
 ```yaml
 global:

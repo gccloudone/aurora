@@ -118,9 +118,13 @@ ARM_SUBSCRIPTION_ID
 
 Request that the Azure Cloud Team provide you these values, obtained from the `XXXX_XXX_XXXXX_devops_sp` service principal. Make sure to later commit these secrets in the Aurora.kdb, found in our SharePoint under Aurora/KeePass.
 
+<!-- markdownlint-disable MD033 -->
+
 <gcds-alert alert-role="info" container="full" heading="Note" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 <gcds-text>The Azure Cloud Team will need to generate a secret for the <code>XXXX_XXX_XXXXX_devops_sp</code> service principal, since it does not get stored as part of the initial ESLZ L0/L1 deployment.</gcds-text>
 </gcds-alert>
+
+<!-- markdownlint-enable MD033 -->
 
 ### 3. Privileged Identity Management (PIM)
 
@@ -151,9 +155,13 @@ Wait until the state is `Registered`. If needed, refresh the provider:
 az provider register --namespace Microsoft.Compute
 ```
 
+<!-- markdownlint-disable MD033 -->
+
 <gcds-alert alert-role="info" container="full" heading="Note" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 <gcds-text>This registration only needs to be done once per subscription. Propagation can take up to 15 minutes.</gcds-text>
 </gcds-alert>
+
+<!-- markdownlint-enable MD033 -->
 
 ### 5. Deploy infrastructure for the Aurora Platform
 
