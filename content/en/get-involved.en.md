@@ -13,9 +13,9 @@ At GC Cloud One: Aurora, we’re building a collaborative community around cloud
 
 We regularly host meetups focused on sharing best practices, discussing new features, and addressing real-world challenges. These meetups are a great way to meet fellow developers who are actively building and deploying on Aurora’s platform.
 
-- **What to Expect**: Lightning talks, hands-on workshops, and Q&A sessions on topics like Kubernetes networking, security (e.g., zero trust), and multi-cloud deployments.
-- **How to Join**: Follow our GCXChange <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412">Aurora community</gcds-link> (GC Network) to find upcoming meetups and register to attend.
-- **Virtual & In-Person**: We offer both virtual and in-person meetups to make it accessible to participants across various regions.
+- **What to expect**: Lightning talks, hands-on workshops, and Q&A sessions on topics like Kubernetes networking, security (e.g., zero trust), and multi-cloud deployments.
+- **How to join**: Follow our GCXChange <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412">Aurora community</gcds-link> (GC Network) to find upcoming meetups and register to attend.
+- **Virtual & in-person**: We offer both virtual and in-person meetups to make it accessible to participants across various regions.
 
 Below are selected sessions from previous Aurora meetups. Recordings and materials are available on the GC Network via the Aurora GCXChange.
 
@@ -32,24 +32,21 @@ Below are selected sessions from previous Aurora meetups. Recordings and materia
 Aurora leverages open-source projects from the Kubernetes and CNCF (Cloud Native Computing Foundation) ecosystems. You can contribute to these projects or even propose enhancements to the Aurora platform itself. We welcome contributions in areas such as:
 
 - **Documentation**: Help improve our platform’s user guides and tutorials.
-- **Code Contributions**: Work on issues, propose new features, or fix bugs in our GitHub <gcds-link external href="https://github.com/gccloudone">GC Cloud One</gcds-link> organization.
-- **Platform Feedback**: Share your insights and suggestions for improving the Aurora platform in our public discussions.
+- **Code contributions**: Work on issues, propose new features, or fix bugs in our GitHub <gcds-link external href="https://github.com/gccloudone">GC Cloud One</gcds-link> organization.
+- **Platform feedback**: Share your insights and suggestions for improving the Aurora platform in our public discussions.
 
 ## Attend hackathons
 
-Looking for hands-on experience? Participate in our hackathons, where you’ll work on real-world challenges related to Kubernetes, and cloud-native technologies. These events bring together teams of developers to innovate and build solutions that directly benefit our platform.
+Looking for hands-on experience? Participate in our hackathons, where you’ll work on real-world challenges related to Kubernetes and cloud-native technologies. These events bring together teams of developers to innovate and build solutions that directly benefit our platform.
 
-- **Focus Areas**: Automation, scaling workloads, security integration, and improving developer experience on Aurora.
-- **Who Should Attend**: Developers, DevOps engineers, and security professionals interested in learning by doing.
+- **Focus areas**: Automation, scaling workloads, security integration, and improving developer experience on Aurora.
+- **Who should attend**: Developers, DevOps engineers, and security professionals interested in learning by doing.
 
-Check out our upcoming events <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412/_layouts/15/Events.aspx">upcoming events</gcds-link> (GC Network).
+Check out our <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412/_layouts/15/Events.aspx">upcoming events</gcds-link> (GC Network).
 
-## Participate in SIGs
+## Stay connected
 
-Join one of our Special Interest Groups (SIGs) to dive deeper into specific technical areas like architecture, security, and networking. Each SIG meets regularly to collaborate on initiatives, set standards, and address ongoing challenges in these domains.
+Have a question, idea, or want to get more involved? We'd love to hear from you.
 
-- **SIG: Architecture**: Focus on platform design, scalability, and cloud-native best practices.
-- **SIG: Security**: Work on policies, zero trust security, and defense-in-depth strategies.
-- **SIG: Networking**: Dive into topics like service meshes, eBPF, and multi-cluster networking.
-
-Express your interest through our <gcds-link href="{{< relref "/contact" >}}">Contact us</gcds-link> page and participate in regular meetings.
+- **Reach out**: Get in touch through our <gcds-link href="{{< relref "/contact" >}}">Contact us</gcds-link> page to share feedback, request support, or express interest in the platform.
+- **Join the conversation**: Connect with the team and community through our <gcds-link external href="https://gcxgce.sharepoint.com/teams/10002412">Aurora community</gcds-link> (GC Network) and take part in our regular meetings and meetups.
