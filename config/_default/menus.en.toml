@@ -6,104 +6,104 @@ name = "GC Cloud One: Aurora"
 pageRef = "/"
 weight = 1
 identifier = "home"
-  [main.params]
-  slot = "home"
+[main.params]
+slot = "home"
 
 [[main]]
 name = "Platform"
 pageRef = "/platform"
 weight = 5
 
-  [[main]]
-  name = "Roadmap"
-  parent = "Platform"
-  pageRef = "/roadmap"
-  weight = 3
+[[main]]
+name = "Roadmap"
+parent = "Platform"
+pageRef = "/roadmap"
+weight = 3
 
-  [[main]]
-  name = "Components"
-  parent = "Platform"
-  pageRef = "/components"
-  weight = 5
+[[main]]
+name = "Components"
+parent = "Platform"
+pageRef = "/components"
+weight = 5
 
-  # [[main]]
-  # name = "Proposal"
-  # parent = "Platform"
-  # pageRef = "/proposal"
-  # weight = 7
+# [[main]]
+# name = "Proposal"
+# parent = "Platform"
+# pageRef = "/proposal"
+# weight = 7
 
-  [[main]]
-  name = "Vision"
-  parent = "Platform"
-  pageRef = "/vision"
-  weight = 9
+[[main]]
+name = "Vision"
+parent = "Platform"
+pageRef = "/vision"
+weight = 9
 
-  [[main]]
-  name = "Architecture"
-  parent = "Platform"
-  pageRef = "/architecture"
-  weight = 11
+[[main]]
+name = "Architecture"
+parent = "Platform"
+pageRef = "/architecture"
+weight = 11
 
 [[main]]
 name = "User Guides"
 pageRef = "/user-guides"
 weight = 10
 
-  [[main]]
-  name = "Onboarding"
-  parent = "User Guides"
-  pageRef = "/user-guides/onboarding"
-  weight = 1
+[[main]]
+name = "Onboarding"
+parent = "User Guides"
+pageRef = "/user-guides/onboarding"
+weight = 1
 
 [[main]]
 name = "Team"
 pageRef = "/team"
 weight = 15
 
-  [[main]]
-  name = "Standard Operating Procedures"
-  parent = "Team"
-  pageRef = "/team/standard-operating-procedures"
-  weight = 1
+[[main]]
+name = "Standard Operating Procedures"
+parent = "Team"
+pageRef = "/team/standard-operating-procedures"
+weight = 1
 
-  [[main]]
-  name = "Monitoring"
-  parent = "Team"
-  pageRef = "/team/monitoring-alerts/"
-  weight = 2
+[[main]]
+name = "Monitoring"
+parent = "Team"
+pageRef = "/team/monitoring-alerts/"
+weight = 2
 
-  [[main]]
-  name = "Appendix"
-  parent = "Team"
-  pageRef = "/team/appendix"
-  weight = 3
+[[main]]
+name = "Appendix"
+parent = "Team"
+pageRef = "/team/appendix"
+weight = 3
 
 [[main]]
 name = "Community"
 pageRef = "/community"
 weight = 20
 
-  [[main]]
-  name = "Get involved"
-  parent = "Community"
-  pageRef = "/get-involved"
-  weight = 1
+[[main]]
+name = "Get involved"
+parent = "Community"
+pageRef = "/get-involved"
+weight = 1
 
-  [[main]]
-  name = "Rules of Engagement"
-  parent = "Community"
-  pageRef = "/rules-of-engagement"
-  weight = 1
+[[main]]
+name = "Rules of Engagement"
+parent = "Community"
+pageRef = "/rules-of-engagement"
+weight = 1
 
-  [[main]]
-  name = "Technical Advisory Group"
-  parent = "Community"
-  pageRef = "/technical-advisory-group"
-  weight = 1
+[[main]]
+name = "Technical Advisory Group"
+parent = "Community"
+pageRef = "/technical-advisory-group"
+weight = 1
 
 [[breadcrumb]]
 name = "GC Cloud One"
-pageRef = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US"
+url = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US"
 weight = 1
 
 [[contextual]]
@@ -113,7 +113,7 @@ weight = 10
 
 [[contextual]]
 name = "Report an issue"
-pageRef = "https://github.com/gccloudone/aurora/issues/new/choose"
+url = "https://github.com/gccloudone/aurora/issues/new/choose"
 weight = 20
 
 [[contextual]]

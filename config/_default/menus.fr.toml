@@ -6,68 +6,68 @@ name = "Service infonuagique unifié du GC: Aurore"
 pageRef = "/"
 weight = 1
 identifier = "acceuil"
-  [main.params]
-  slot = "home"
+[main.params]
+slot = "home"
 
 [[main]]
 name = "Plate-forme"
 pageRef = "/platform"
 weight = 5
 
-  # [[main]]
-  # name = "Proposition"
-  # parent = "Plate-forme"
-  # pageRef = "/fr/proposition"
-  # weight = 7
+# [[main]]
+# name = "Proposition"
+# parent = "Plate-forme"
+# pageRef = "/fr/proposition"
+# weight = 7
 
-  [[main]]
-  name = "Vision"
-  parent = "Plate-forme"
-  pageRef = "/vision"
-  weight = 9
+[[main]]
+name = "Vision"
+parent = "Plate-forme"
+pageRef = "/vision"
+weight = 9
 
 [[main]]
 name = "Guides d’utilisation"
 pageRef = "/user-guides"
 weight = 10
 
-  [[main]]
-  name = "Guides d’utilisation"
-  parent = "Guides d’utilisation"
-  pageRef = "/guides-utilisation/onboarding"
-  weight = 1
+[[main]]
+name = "Guides d’utilisation"
+parent = "Guides d’utilisation"
+pageRef = "/guides-utilisation/onboarding"
+weight = 1
 
 [[main]]
 name = "Équipe"
 pageRef = "/equipe"
 weight = 15
 
-  [[main]]
-  name = "Procédures Standardisées d'Opération"
-  parent = "Équipe"
-  pageRef = "/equipe/procedures-standardisees-operation"
-  weight = 1
+[[main]]
+name = "Procédures Standardisées d'Opération"
+parent = "Équipe"
+pageRef = "/equipe/procedures-standardisees-operation"
+weight = 1
 
 [[main]]
 name = "Communauté"
 pageRef = "/communaute"
 weight = 20
 
-  [[main]]
-  name = "Participez"
-  pageRef = "/impliquez-vous"
-  parent = "Communauté"
-  weight = 1
+[[main]]
+name = "Participez"
+pageRef = "/impliquez-vous"
+parent = "Communauté"
+weight = 1
 
-  [[main]]
-  name = "Règles d'engagement"
-  parent = "Communauté"
-  pageRef = "/regles-dengagement"
-  weight = 1
+[[main]]
+name = "Règles d'engagement"
+parent = "Communauté"
+pageRef = "/regles-dengagement"
+weight = 1
 
 [[breadcrumb]]
 name = "Service infonuagique unifié du GC"
-pageRef = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=fr"
+url = "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=fr"
 weight = 1
 
 [[contextual]]
@@ -77,7 +77,7 @@ weight = 10
 
 [[contextual]]
 name = "Signaler un problème"
-pageRef = "https://github.com/gccloudone/aurora/issues/new/choose"
+url = "https://github.com/gccloudone/aurora/issues/new/choose"
 weight = 20
 
 [[contextual]]
