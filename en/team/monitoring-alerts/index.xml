@@ -20,9 +20,7 @@
 &lt;/gcds-alert>
 &lt;p>
 &lt;gcds-link
- href="https://prometheus.io/docs/alerting/latest/alertmanager/">Alertmanager&lt;/gcds-link> is used by Prometheus to deduplicate, route, group, silence, and inhibit 
-&lt;gcds-link
- href="%28%29">alerts&lt;/gcds-link>.&lt;/p></description></item><item><title>Blackbox Exporter</title><link>/en/team/monitoring-alerts/blackbox-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/blackbox-exporter/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
+ href="https://prometheus.io/docs/alerting/latest/alertmanager/">Alertmanager&lt;/gcds-link> is used by Prometheus to deduplicate, route, group, silence, and inhibit alerts.&lt;/p></description></item><item><title>Blackbox Exporter</title><link>/en/team/monitoring-alerts/blackbox-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/blackbox-exporter/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
  &lt;gcds-text character-limit="true">
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
