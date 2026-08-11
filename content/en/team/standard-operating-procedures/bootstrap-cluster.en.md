@@ -98,7 +98,7 @@ Edit the `config.yaml` for your target cluster to match your environment. This f
 - Networking and identity: API server CIDRs, ingress domain, subscription and tenant IDs, and Key Vault references.
 - Core components: toggles for services such as Cilium, cert-manager, and the CIDR allocator.
 
-Commit and push your changes to a new repository. We typically follow a naming convention such as `project-example-aur`, always suffixing the repository name with the `-aur` shortcode for client workloads.
+Commit and push your changes to a new repository. We typically follow a naming convention such as `project-example`, where example is the name of the project or department.
 
 ### 5. Configure the Terraform variables
 
@@ -143,9 +143,13 @@ Some secrets cannot be inferred or automated, so they must be entered manually i
 - `<prefix>-platform-kvs-argocd-oidc-sp-client-id`: client ID of the Argo CD OIDC service principal.
 - `<prefix>-platform-kvs-argocd-oidc-sp-client-secret`: client secret of the Argo CD OIDC service principal.
 
+<!-- markdownlint-disable MD033 -->
+
 <gcds-alert alert-role="info" container="full" heading="Note" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
 <gcds-text>The prefix on these secret names changes per environment. Adjust the names to match your target Key Vault's naming convention.</gcds-text>
 </gcds-alert>
+
+<!-- markdownlint-enable MD033 -->
 
 ### 10. Grant Argo CD access to the configuration repository
 

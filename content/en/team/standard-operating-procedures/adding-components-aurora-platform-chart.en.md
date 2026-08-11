@@ -60,35 +60,35 @@ Add templating for any other fields you think should be configurable for the com
 
 The templating for the component should allow configurability for other Cloud Service Providers if applicable.
 
-[Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/cert-manager.yaml)
+- [Example using Cert Manager](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/cert-manager.yaml)
 
 If applicable, create a separate YAML file for anything else the component needs in order to work, such as Custom Resources.
 
-[Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/issuers.yaml)
+- [Example using Cert Manager Issuers](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/issuers.yaml)
 
 ### 4. Create the `namespace.yaml` file
 
 Fill in the appropriate values according to the aurora-solution chart [available here](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-solution/values.yaml). The `information` field should remain the same as other components.
 
-[Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflow/namespace.yaml)
+- [Example using Cert Manager Namespace](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/namespace.yaml)
 
 ### 5. Create the `netpol.yaml` file
 
 Create any Network Policies exempting flows the component may need. By default, all flows are denied unless explicitly granted through a `NetworkPolicy` or a `CiliumClusterwideNetworkPolicy`.
 
-[Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/falco/netpol.yaml)
+- [Example using Cert Manager NetPol](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/netpol.yaml)
 
 ### 6. Create the `_helpers.tpl` file
 
 Create a helper template for every image field referenced in the component's YAML file. The template should let users pull the image from either a third-party registry or a custom registry.
 
-[Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflow/_helpers.tpl)
+- [Example using _helpers.tpl](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/_helpers.tpl)
 
 ### 7. Update the `values.yaml` file
 
 Add the default values for your component to the `values.yaml` file under the aurora-core or aurora-app folder. Be sure to provide defaults for the fields listed in [Create the YAML file for the component](#3-create-the-yaml-file-for-the-component).
 
-[Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/values.yaml#L342)
+- [Aurora Core values.yaml](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/values.yaml#L342)
 
 Also add your component under either the `core` or `app` field as `# component: {}` in the `values.yaml` file located under aurora-platform.
 
