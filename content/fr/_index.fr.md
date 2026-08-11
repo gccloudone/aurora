@@ -1,7 +1,7 @@
 ---
 title: "Aurore"
-description: "Aurora est une plateforme sécurisée d’hébergement d’applications en libre-service qui permet aux équipes de conception de solutions de développer et de déployer rapidement des solutions infonuagiques natives."
-date: 2024-10-21
+description: "Aurora est une plateforme d’hébergement d’applications sécurisée et en libre-service, propulsée par une sélection soignée de technologies de la Cloud Native Computing Foundation (CNCF), qui permet aux concepteurs de solutions de créer et de déployer rapidement des solutions natives du cloud dans un environnement cohérent et bien gouverné."
+date: 2026-08-11
 draft: false
 translationKey: homePage
 ---
@@ -13,14 +13,14 @@ translationKey: homePage
 <article class="py-500 bg-primary text-light bg-full-width">
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" gap="450" class="hydrated">
     <li class="list-none md:mb-0 mb-500">
-      <h3 class="mb-400">Intégration</h3>
-      <p class="mb-400">Commencez en explorant certaines des primitives clés qui constitueront la base du portail d’intégration d’Aurora.</p>
-      <gcds-link href="https://github.com/gccloudone/gcds-backstage" class="hydrated" variant="light">Voir le thème Backstage</gcds-link>
+      <h3 class="mb-400">Chartes de la plateforme</h3>
+      <p class="mb-400">Aurora est et restera toujours entièrement à code source ouvert. Explorez les chartes Helm qui définissent la plateforme, découvrez le code et contribuez à la façonner. Ces chartes gèrent l’état continu de la plateforme au moyen du GitOps.</p>
+      <gcds-link href="https://github.com/gccloudone-aurora/aurora-platform-charts" class="hydrated" variant="light">Voir les chartes de la plateforme</gcds-link>
     </li>
     <li class="list-none">
-      <h3 class="mb-400">Code source ouvert</h3>
-      <p class="mb-400">Aurora est et restera toujours entièrement ouvert. Découvrez le code et contribuez à façonner la plateforme.</p>
-      <gcds-link href="https://github.com/gccloudone-aurora/aurora-platform-charts" class="hydrated" variant="light">Voir la plateforme</gcds-link>
+      <h3 class="mb-400">Bootstrap Terraform</h3>
+      <p class="mb-400">Nécessaire uniquement en l’absence d’un cluster de gestion préexistant. Cette étape en amorce un, en installant Argo CD et en déployant la plateforme Aurora, après quoi les chartes de la plateforme prennent en charge le contrôle continu.</p>
+      <gcds-link href="https://github.com/gccloudone-aurora/bootstrap-terraform" class="hydrated" variant="light">Voir Bootstrap Terraform</gcds-link>
     </li>
   </gcds-grid>
 </article>
@@ -32,7 +32,7 @@ translationKey: homePage
     <li class="list-none">
       <h3 class="mb-400">Composantes</h3>
       <p class="mb-400">Découvrez les composantes modulaires qui assurent les fonctionnalités de base de la plateforme.</p>
-      <p class="mb-400">Outils CNCF comme Cilium pour la sécurité réseau avancée et l’observabilité, Argo CD pour la livraison continue basée sur GitOps, et CIDR Allocator pour la gestion efficace des adresses IP.</p>
+      <p class="mb-400">Outils CNCF comme Cilium pour la sécurité réseau avancée et l’observabilité, et Argo CD pour la livraison continue basée sur GitOps.</p>
       <gcds-link href="/fr/components/" class="hydrated">Voir les composantes</gcds-link>
     </li>
     <li class="list-none">
@@ -44,7 +44,7 @@ translationKey: homePage
     <li class="list-none">
       <h3 class="mb-400">Conseil technique</h3>
       <p class="mb-400">Contribuez à l’avenir d’Aurora en vous joignant à notre groupe consultatif technique.</p>
-      <p class="mb-400">Nous invitons les concepteurs de solutions et les architectes de plateformes à partager leurs idées et à contribuer à l’évolution de l’architecture, des outils et des services cloud-native d’Aurora.</p>
+      <p class="mb-400">Nous invitons les concepteurs de solutions et les architectes de plateformes à partager leurs idées et à contribuer à l’évolution de l’architecture, des outils et des services natifs du cloud d’Aurora.</p>
       <gcds-link href="/fr/technical-advisory-group/" class="hydrated">Voir la charte du groupe</gcds-link>
     </li>
   </gcds-grid>
@@ -55,7 +55,7 @@ translationKey: homePage
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" gap="450" class="hydrated">
     <li class="list-none bg-white p-450 b-radius-md">
       <h3 class="mb-400">
-        <gcds-link href="/fr/get-involved" class="hydrated">Contribuez à l’avenir</gcds-link>
+        <gcds-link href="/fr/impliquez-vous" class="hydrated">Contribuez à l’avenir</gcds-link>
       </h3>
       <p>Découvrez les travaux en cours et ajoutez votre expertise.</p>
     </li>

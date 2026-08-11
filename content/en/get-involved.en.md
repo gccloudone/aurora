@@ -1,6 +1,6 @@
 ---
 title: "Get involved"
-date: 2024-10-21
+date: 2026-08-11
 draft: false
 sidebar: false
 translationKey: "get-involved"

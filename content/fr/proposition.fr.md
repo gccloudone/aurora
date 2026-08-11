@@ -61,7 +61,7 @@ Avec son fondation sécurisée et conforme - incluant la sécurité intégrée z
 1. **Unifier les environnements open source et propriétaires** à travers les ministères du GC pour éliminer la fragmentation tout en fournissant des options d'hébergement flexibles et évolutives qui s'adaptent aux besoins spécifiques de chaque ministère.
 2. **Standardiser les processus d'intégration** en alignement avec le modèle d'exploitation GC Cloud One, assurant une intégration transparente et une adoption accélérée à travers les ministères, tout en améliorant la satisfaction des utilisateurs et l'efficacité opérationnelle.
 3. **Développer une architecture cloud-native orientée vers l'avenir** qui intègre la connectivité sur site (SCED), la sécurité zero trust et les modèles de défense en profondeur, assurant une durabilité à long terme, la conformité de sécurité et l'adaptabilité.
-4. **Construire une structure de support centralisée** avec une équipe unifiée dédiée à la fois aux plates-formes Kubernetes propriétaires et OSS, renforcée par des groupes d'intérêt spéciaux (SIG) dans des domaines clés comme l'architecture, le réseau, et la sécurité pour stimuler la collaboration et l'innovation à travers les ministères.
+4. **Construire une structure de support centralisée** avec une équipe unifiée dédiée à la fois aux plates-formes Kubernetes propriétaires et OSS, renforcée par des groupes consultatifs techniques (TAG) dans des domaines clés comme l'architecture, le réseau, et la sécurité pour stimuler la collaboration et l'innovation à travers les ministères.
 
 ## Contraintes stratégiques
 

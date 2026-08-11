@@ -1,7 +1,7 @@
 ---
 title: "Aurora"
-description: "Aurora is a secure, self service application hosting platform that enables solution builders to rapidly develop and deploy cloud native solutions."
-date: 2026-01-30
+description: "Aurora is a secure, self-service application hosting platform powered by a curated selection of Cloud Native Computing Foundation (CNCF) technologies that enables solution builders to quickly build and deploy cloud-native solutions in a consistent and well-governed environment."
+date: 2026-08-11
 draft: false
 translationKey: homePage
 ---
@@ -13,37 +13,37 @@ translationKey: homePage
 <article class="py-500 bg-primary text-light bg-full-width">
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" gap="450" class="hydrated">
     <li class="list-none md:mb-0 mb-500">
-      <h3 class="mb-400">Onboarding</h3>
-      <p class="mb-400">Get started by exploring some of the key primitives that will form the foundation of the Aurora onboarding portal.</p>
-      <gcds-link href="https://github.com/gccloudone/gcds-backstage" class="hydrated" variant="light">View Backstage Theme</gcds-link>
+      <h3 class="mb-400">Platform Charts</h3>
+      <p class="mb-400">Aurora is and always will be completely open source. Explore the Helm charts that define the platform, discover the code, and help shape it. These charts manage the platform's ongoing state through GitOps.</p>
+      <gcds-link href="https://github.com/gccloudone-aurora/aurora-platform-charts" class="hydrated" variant="light">View Platform Charts</gcds-link>
     </li>
     <li class="list-none">
-      <h3 class="mb-400">Open Source</h3>
-      <p class="mb-400">Aurora is and always will be completely open source. Discover the code and help shape the platform.</p>
-      <gcds-link href="https://github.com/gccloudone-aurora/aurora-platform-charts" class="hydrated" variant="light">View Platform</gcds-link>
+      <h3 class="mb-400">Bootstrap Terraform</h3>
+      <p class="mb-400">Only needed when there is no pre-existing management cluster. This bootstraps one, installing Argo CD and deploying the Aurora platform, after which the platform charts take over ongoing control.</p>
+      <gcds-link href="https://github.com/gccloudone-aurora/bootstrap-terraform" class="hydrated" variant="light">View Bootstrap Terraform</gcds-link>
     </li>
   </gcds-grid>
 </article>
 
 <article class="py-450">
   <h2 class="mb-400">Purpose-built for your operational needs.</h2>
-  <p class="mb-500"> Explore our proposed architecture and <gcds-link href="/en/contact" class="hydrated">share your feedback</gcds-link>.</p>
+  <p class="mb-500">Explore our proposed architecture and <gcds-link href="/en/contact" class="hydrated">share your feedback</gcds-link>.</p>
   <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr 1fr" gap="450" class="hydrated">
     <li class="list-none">
       <h3 class="mb-400">Components</h3>
-      <p class="mb-400"> Learn about the pluggable components that comprise the platform's core functionality.</p>
-      <p class="mb-400"> CNCF tooling such as Cilium for advanced network security and observability, Argo CD for GitOps-based continuous delivery, and CIDR Allocator for efficient IP address management.</p>
+      <p class="mb-400">Learn about the pluggable components that comprise the platform's core functionality.</p>
+      <p class="mb-400">CNCF tooling such as Cilium for advanced network security and observability, and Argo CD for GitOps-based continuous delivery.</p>
       <gcds-link href="/en/components/" class="hydrated">View components</gcds-link>
     </li>
     <li class="list-none">
       <h3 class="mb-400">Architecture</h3>
       <p class="mb-400">Read through the architectural plan for the platform which outlines the core design principles, system architecture, and encoded decisions.</p>
-      <p class="mb-400">This includes infrastructure management, zero trust, workload isolation, security hardening, multi-tenant management, and DevSecOps.</P>
+      <p class="mb-400">This includes infrastructure management, zero trust, workload isolation, security hardening, multi-tenant management, and DevSecOps.</p>
       <gcds-link href="/en/architecture/introduction/azure/" class="hydrated">View Architectural Plan</gcds-link>
     </li>
     <li class="list-none">
       <h3 class="mb-400">Technical Advisory</h3>
-      <p class="mb-400">Help guide the future of Aurora by joining our Tech Advisory Group and contributing your expertise.</p>
+      <p class="mb-400">Help guide the future of Aurora by joining our Technical Advisory Group and contributing your expertise.</p>
       <p class="mb-400">We’re inviting solution builders and platform architects from across government to share insights and help shape Aurora’s architecture, tooling, and cloud-native service design.</p>
       <gcds-link href="/en/technical-advisory-group/" class="hydrated">View TAG Charter</gcds-link>
     </li>

@@ -3,7 +3,6 @@ title: "Règles d'engagement"
 date: 2024-10-21
 draft: false
 sidebar: false
-showToc: true
 translationKey: "rules-of-engagement"
 disableCharacterlimit: true
 ---
@@ -31,9 +30,4 @@ Ces cadres mettent l'accent sur l'inclusivité, le respect, la collaboration et 
 
 ## Signalement et soutien
 
-Si vous êtes témoin ou victime d'un comportement qui enfreint ces principes, veuillez le signaler à notre contact désigné à <gcds-link href="mailto:aurora-aurore@ssc-spc.gc.ca">Email</gcds-link>. Nous nous engageons à traiter toutes les préoccupations rapidement et à maintenir un environnement communautaire sûr.
-
-## Pour en savoir plus
-
-- Pour consulter le Code de conduite de la CNCF, visitez [Code de conduite de la CNCF](https://github.com/cncf/foundation/blob/main/code-of-conduct-languages/fr.md)
-- Pour consulter le Code de valeurs et d'éthique de la fonction publique canadienne, visitez [Code de valeurs et d'éthique](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=25049)
+Si vous êtes témoin ou victime d'un comportement qui enfreint ces principes, veuillez le signaler à notre contact désigné par <gcds-link href="mailto:aurora-aurore@ssc-spc.gc.ca">courriel</gcds-link>. Nous nous engageons à traiter toutes les préoccupations rapidement et à maintenir un environnement communautaire sûr.

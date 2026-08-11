@@ -11,7 +11,7 @@ disableCharacterlimit: true
 <!-- markdownlint-disable MD033 -->
 
 <gcds-notice type="info" notice-title-tag="h2" notice-title="A universal platform for modern application hosting">
-  <gcds-text>Aurora is a secure, self service application hosting platform that enables solution builders to rapidly develop and deploy cloud native solutions.</gcds-text>
+  <gcds-text>Aurora is a secure, self-service application hosting platform powered by a curated selection of Cloud Native Computing Foundation (CNCF) technologies that enables solution builders to quickly build and deploy cloud-native solutions in a consistent and well-governed environment.</gcds-text>
 </gcds-notice>
 
 <!-- markdownlint-enable MD033 -->

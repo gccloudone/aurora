@@ -59,7 +59,7 @@ With its secure and compliant foundation—including integrated zero trust secur
 1. **Unify both open-source and proprietary environments** across GC departments to eliminate fragmentation while providing flexible, scalable hosting options that adapt to each department's specific needs.
 2. **Standardize onboarding processes** in alignment with the GC Cloud One operating model, ensuring seamless integration and accelerated adoption across departments, while enhancing user satisfaction and operational efficiency.
 3. **Develop a future-oriented cloud-native architecture** that incorporates on-premise connectivity (SCED), zero trust security, and defense-in-depth models, ensuring long-term sustainability, security compliance, and adaptability.
-4. **Build a centralized support structure** with a unified team dedicated to both proprietary and OSS Kubernetes platforms, reinforced by Special Interest Groups (SIGs) in key domains like architecture, networking, and security to drive cross-department collaboration and innovation.
+4. **Build a centralized support structure** with a unified team dedicated to both proprietary and OSS Kubernetes platforms, reinforced by Technical Advisory Groups (TAGs) in key domains like architecture, networking, and security to drive cross-department collaboration and innovation.
 
 ## Strategic constraints
 

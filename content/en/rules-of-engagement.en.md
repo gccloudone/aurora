@@ -13,7 +13,7 @@ The Aurora initiative is a collaborative effort that brings together diverse sta
 
 ## Our Commitment
 
-Aurora adheres to both of the following code of ethics:
+Aurora adheres to both of the following codes of ethics:
 
 - [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md)
 - [Canadian Public Service Values and Ethics Code](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=25049)
@@ -30,9 +30,4 @@ These frameworks emphasize inclusivity, respect, collaboration, and integrity. B
 
 ## Reporting and Support
 
-If you experience or witness behavior that violates these principles, please report it to our designated contact at <gcds-link href="mailto:aurora-aurore@ssc-spc.gc.ca">Email</gcds-link>. We are committed to addressing all concerns promptly and maintaining a safe community environment.
-
-## Learn More
-
-- To review the full CNCF Code of Conduct, visit [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md)
-- To review the Canadian Public Service Values and Ethics Code, visit [Public Service Values and Ethics Code](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=25049)
+If you experience or witness behavior that violates these principles, please report it to our designated contact by <gcds-link href="mailto:aurora-aurore@ssc-spc.gc.ca">email</gcds-link>. We are committed to addressing all concerns promptly and maintaining a safe community environment.

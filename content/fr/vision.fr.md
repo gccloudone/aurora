@@ -12,7 +12,7 @@ disableCharacterlimit: true
 
 <gcds-notice type="info" notice-title-tag="h2" notice-title="Une plateforme universelle pour l’hébergement d’applications modernes">
   <gcds-text>
-    Aurora est une plateforme sécurisée d’hébergement d’applications en libre-service qui permet aux équipes de conception de solutions de développer et de déployer rapidement des solutions infonuagiques natives.
+    Aurora est une plateforme d’hébergement d’applications sécurisée et en libre-service, propulsée par une sélection soignée de technologies de la Cloud Native Computing Foundation (CNCF), qui permet aux concepteurs de solutions de créer et de déployer rapidement des solutions natives du cloud dans un environnement cohérent et bien gouverné.
   </gcds-text>
 </gcds-notice>
 

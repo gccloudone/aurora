@@ -1,6 +1,6 @@
 ---
 title: "Impliquez-vous"
-date: 2024-10-21
+date: 2026-08-11
 draft: false
 sidebar: false
 translationKey: "get-involved"
@@ -19,13 +19,13 @@ Nous organisons régulièrement des rencontres pour partager les meilleures prat
 
 Voici une sélection de sessions des rencontres précédentes d’Aurora. Les enregistrements et les documents sont disponibles sur le Réseau du GC via Aurora sur GCXChange.
 
-| Date       | Sujet                                                       | Intervenants                     | Format   | Enregistrement                                                                                                    | Présentations                                                                                                         |
-|------------|-------------------------------------------------------------|----------------------------------|----------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|  
-| 2025-02-10 | Dapr et Keda pour l’ingénierie de plateforme                | Yaron Schneider et Mark Fussell  | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQC5j3K8A51uR6ktynzHgiizAdxKcRVKJamPhvYp0IRlI0Q?e=iqqFVu) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQBNTa_ALOj2RqlkH0N1YrwzASxBZpXJwdObpPFdMVpqrWU?e=PHQndu) |
-| 2025-03-10 | Sécuriser la chaîne d’approvisionnement OSS avec Chainguard | Chris Carty                      | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQCbOLFrzQ-hQKT1JLUXr3sXAZkbSOcYtx5rO6PUo4cGV9Q?e=cJA72C) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQCWhKTx-81jQqYy5_LPR9lrAVzPGS-8MLOJyS1AkbsIWFM?e=Zt4iMK) |
-| 2025-06-04 | GC Artifacts sécurisés                                      | William Hearn                    | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQDpGVNfBEZlR4k2jP3zo9RYAaLMM_Mxw9sTsabwCxQKVWs?e=Z3zN1s) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQC68LZd8HY8S61klzyko3JSATl3-WhnYKtkUz7DixNF4nw?e=5Xzp7X) |
-| 2025-06-24 | Introduction à JFrog ML                                     | Bill Manning                     | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQDK73vOi_DwQIQeSJKydhWkASfGL9nS6ovSounKuSWgu1M?e=bL1IuT) | [Diapositives](https://gcxgce.sharepoint.com/:b:/t/10002412/IQCWdGS9mFJkSrjvwOOjM9uBAZ2wykBKeG5aQNg9u6vhMIE?e=BWATYH) |
-| 2025-10-30 | Attaque et défense avec Tetragon / État de Argo CD          | Glenn Yu et Nicholas Morey       | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQD_VsdXL5u3RIcvqf6GhDmMAeZ6H3t31yrlBAQczkm5lpE?e=2U2dXd) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQBn43u9sXbjT7N5vyUYeP37AdZCJAevaLJzC8i1ypnzirM?e=l1wiDA) |
+| Date       | Sujet                                                       | Intervenants                    | Format   | Enregistrement                                                                                                    | Présentations                                                                                                         |
+|------------|-------------------------------------------------------------|---------------------------------|----------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2025-02-10 | Dapr et Keda pour l’ingénierie de plateforme                | Yaron Schneider et Mark Fussell | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQC5j3K8A51uR6ktynzHgiizAdxKcRVKJamPhvYp0IRlI0Q?e=iqqFVu) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQBNTa_ALOj2RqlkH0N1YrwzASxBZpXJwdObpPFdMVpqrWU?e=PHQndu) |
+| 2025-03-10 | Sécuriser la chaîne d’approvisionnement OSS avec Chainguard | Chris Carty                     | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQCbOLFrzQ-hQKT1JLUXr3sXAZkbSOcYtx5rO6PUo4cGV9Q?e=cJA72C) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQCWhKTx-81jQqYy5_LPR9lrAVzPGS-8MLOJyS1AkbsIWFM?e=Zt4iMK) |
+| 2025-06-04 | GC Artifacts sécurisés                                      | William Hearn                   | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQDpGVNfBEZlR4k2jP3zo9RYAaLMM_Mxw9sTsabwCxQKVWs?e=Z3zN1s) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQC68LZd8HY8S61klzyko3JSATl3-WhnYKtkUz7DixNF4nw?e=5Xzp7X) |
+| 2025-06-24 | Introduction à JFrog ML                                     | Bill Manning                    | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQDK73vOi_DwQIQeSJKydhWkASfGL9nS6ovSounKuSWgu1M?e=bL1IuT) | [Diapositives](https://gcxgce.sharepoint.com/:b:/t/10002412/IQCWdGS9mFJkSrjvwOOjM9uBAZ2wykBKeG5aQNg9u6vhMIE?e=BWATYH) |
+| 2025-10-30 | Attaque et défense avec Tetragon / État de Argo CD          | Glenn Yu et Nicholas Morey      | MS Teams | [Regarder](https://gcxgce.sharepoint.com/:v:/t/10002412/IQD_VsdXL5u3RIcvqf6GhDmMAeZ6H3t31yrlBAQczkm5lpE?e=2U2dXd) | [Diapositives](https://gcxgce.sharepoint.com/:p:/t/10002412/IQBn43u9sXbjT7N5vyUYeP37AdZCJAevaLJzC8i1ypnzirM?e=l1wiDA) |
 
 ## Contribuez aux projets open source
 

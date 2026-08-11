@@ -18,11 +18,7 @@ Some terms included in this Lexicon may be sourced from [Termium Plus](https://w
 
 ### Aurora
 
-Aurora is a carefully curated selection of key components from the Cloud Native Computing Foundation (CNCF), designed to run seamlessly on managed Kubernetes (K8s) offerings in public cloud environments as well as OpenStack in private cloud deployments. It also represents a strategic alignment between open-source and proprietary solutions, enabling flexibility and interoperability across cloud environments.ted by federal departments, providing a flexible foundation that supports diverse operational and organizational needs.
-
-#### Special Interest Groups (SIGs)
-
-Special Interest Groups (SIGs) are groups of developers who share a common interest, goal, and/or problem set within a larger community. In the context of the Aurora team, SIGs are comprised of experts who collaborate to develop and improve the Aurora Platform.
+Aurora is a secure, self-service application hosting platform powered by a curated selection of Cloud Native Computing Foundation (CNCF) technologies that enables solution builders to quickly build and deploy cloud-native solutions in a consistent and well-governed environment. It runs on managed Kubernetes (K8s) offerings in public cloud environments as well as GC Private Cloud. It also represents a strategic alignment between open-source and proprietary solutions, enabling flexibility and interoperability across cloud environments to support the diverse operational and organizational needs of federal departments.
 
 #### Technical Advisory Groups (TAGs)
 
