@@ -3,7 +3,7 @@ title: "Performing an AKS Cluster Upgrade"
 linkTitle: "AKS Cluster Upgrade"
 weight: 5
 aliases: ["/team/sop/aks-cluster-upgrade"]
-date: 2026-02-06
+date: 2026-08-11
 draft: false
 ---
 
@@ -13,42 +13,34 @@ This document outlines the process for upgrading an AKS cluster.
 
 ## Preparing your environment
 
- Ensure the following command line tools below are installed & are up-to-date.
+Ensure the following command line tools are installed and up to date:
 
-- [ ] **[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)**
-   Ensure `kubectl` is within 1 minor version of the new cluster version.
+- **[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)**: must be within 1 minor version of the new cluster version.
+- **[Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)**: used to manage the AKS cluster.
+- **[velero](https://github.com/vmware-tanzu/velero/releases)**: must match the version of Velero used in the target cluster.
+- **[jq](https://jqlang.github.io/jq/download/)**: used for exporting and processing pod information.
+- **[pluto](https://pluto.docs.fairwinds.com/installation/)**: detects deprecated and removed Kubernetes API versions.
+- **[asdf](https://asdf-vm.com/guide/getting-started.html)** (optional): a version manager for switching between tool versions (such as kubectl), useful when stepping through multiple Kubernetes minor versions in one upgrade.
 
-- [ ] **[Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)**
-
-- [ ] **[velero](https://github.com/vmware-tanzu/velero/releases)**
-  The version of velero should match the version of velero used in the target cluster.
-
-- [ ] **[jq](https://jqlang.github.io/jq/download/)**
-  Used for exporting and processing pod information.
-
-- [ ] **[pluto](https://pluto.docs.fairwinds.com/installation/)**
-  Detects deprecated and removed Kubernetes API versions.
-
-- [ ] (Optional) **[asdf](https://asdf-vm.com/guide/getting-started.html)**
-  Used to upgrade multiple Kubernetes clusters that are more than 2 minor versions apart from each other. Manages multiple concurrent versions of kubectl.
-
-Ensure that your environment will not be automatically shutdown during the maintenance period.
+Also ensure that your environment will not be automatically shut down during the maintenance period.
 
 ## Upgrading the cluster
 
-**Before following the procedure, ensure your environment is setup as described in [Preparing your environment](#preparing-your-environment) & read the [Troubleshooting](#troubleshooting) section prior to carrying out the upgrade procedure.**
+Before following the procedure, ensure your environment is set up as described in [Preparing your environment](#preparing-your-environment), and read the [Troubleshooting](#troubleshooting) section before carrying out the upgrade.
 
 ### 1. Verify deprecated APIs
 
-Use pluto to check if there are any deprecated APIs in the new cluster version.
+Use pluto to check whether there are any deprecated APIs in the new cluster version.
 
-`pluto detect-all-in-cluster k8s=new-cluster-version`
+```bash
+pluto detect-all-in-cluster k8s=new-cluster-version
+```
 
-Record any deprecated APIs on the JIRA ticket & make sure the manifest is using the new API version before continuing with the upgrade.
+Record any deprecated or removed APIs on the Jira ticket. For each one, locate the manifests that still use the old `apiVersion` (for example, in the relevant Helm charts or Kubernetes manifests) and update them to the supported version before continuing. Do not proceed with the upgrade until pluto reports no deprecated APIs that would be removed in the target version.
 
-### 2. Export information of Pods that are not **Succeeded or Running**
+### 2. Export information of pods that are not Succeeded or Running
 
-Run the following two commands to export the information of Pods & containers that may be in a bad state:
+Run the following two commands to export the information of Pods and containers that may be in a bad state:
 
 ```bash
 kubectl get pods -A -o json | jq '.items[] | select(.status.phase|test("Succeeded|Running")|not) | {namespace: .metadata.namespace, name: .metadata.name, phase: .status.phase}' | jq '{pods:[inputs]}'
@@ -56,25 +48,34 @@ kubectl get pods -A -o json | jq '.items[] | select(.status.phase|test("Succeede
 kubectl get po -A | grep -v Running | grep -v Completed
 ```
 
-Add the output of this command to the Jira ticket for this cluster upgrade, along with any easily available supporting information (such as error messages in the events of those pods).
+Add the output of these commands to the Jira ticket for this cluster upgrade, along with any easily available supporting information (such as error messages in the events of those pods).
 
-### 3. Back up the Cluster
+### 3. Back up the cluster
 
-To allow for restoration in the event of a catastrophic failure during the upgrade process,  take a full snapshot of the cluster (resources and disks) using Velero.
+To allow for restoration in the event of a catastrophic failure during the upgrade, take a full snapshot of the cluster (resources and disks) using Velero.
+
+First, find the snapshot location for the current cluster and store its name in a variable:
 
 ```bash
-# Get the name of the snapshot location for the current cluster
 velero -n velero-system snapshot-location get
-# Take a backup
-velero -n velero-system backup create backup-YYYYMMDDHHMM --include-cluster-resources --volume-snapshot-locations $SNAPSHOT_LOCATION_NAME --ttl 168h
+SNAPSHOT_LOCATION_NAME=<Name from the output above>
+```
 
-# Monitor the backup (watch the Phase indicator: Completed or PartiallyFailed [normal])
+Then create the backup. Replace `YYYYMMDDHHMM` with the current timestamp so the backup name is unique; `--ttl 168h` retains it for 7 days:
+
+```bash
+velero -n velero-system backup create backup-YYYYMMDDHHMM --include-cluster-resources --volume-snapshot-locations $SNAPSHOT_LOCATION_NAME --ttl 168h
+```
+
+Finally, monitor the backup until it completes. Watch the `Phase` indicator: `Completed` is expected, and `PartiallyFailed` is usually acceptable for a cluster upgrade:
+
+```bash
 velero -n velero-system backup describe backup-YYYYMMDDHHMM
 ```
 
-### 4. Upgrade Control Plane
+### 4. Upgrade the control plane
 
-Login through the `az` cli and set your subscription to the subscription the target cluster lives in.
+Log in with the Azure CLI and set your subscription to the one the target cluster lives in.
 
 ```bash
 az login
@@ -88,7 +89,7 @@ Then, get the available upgrade versions:
 az aks get-versions -l canadacentral -o table
 ```
 
-Set the below local variables that will be used throughout the upgrade:
+Set the following local variables, which are used throughout the upgrade:
 
 ```bash
 CLUSTER_RESOURCE_GROUP=<Name of cluster resource group>
@@ -96,7 +97,7 @@ CLUSTER_NAME=<Name of cluster>
 KUBERNETES_VERSION=<New kubernetes upgrade version>
 ```
 
-Finally, upgrade the control plane to the latest available patch version for the major version that you are upgrading to:
+Finally, upgrade the control plane to your target version (`$KUBERNETES_VERSION`). AKS upgrades one minor version at a time, so if you are more than one minor version behind, repeat this step for each successive version:
 
 ```bash
 az aks upgrade -g $CLUSTER_RESOURCE_GROUP -n $CLUSTER_NAME --control-plane-only -k $KUBERNETES_VERSION --no-wait
@@ -104,7 +105,7 @@ az aks upgrade -g $CLUSTER_RESOURCE_GROUP -n $CLUSTER_NAME --control-plane-only 
 
 At this point, as well as later when upgrading the data plane, there is occasionally a glitch where the following message is displayed:
 
-```bash
+```text
 The cluster is already on version <old kubernetes version> and is not in a failed state. No operations will occur when upgrading to the same version if the cluster is not in a failed state. (y/n)
 ```
 
@@ -116,9 +117,9 @@ Confirm that the control plane has been updated.
 kubectl version
 ```
 
-### 5. Upgrade Node Pools
+### 5. Upgrade the node pools
 
-> **Note**: The upgrade process will cause all workloads to be evicted from old nodes and rescheduled to newer nodes. This process will respect any `PodDisruptionBudgets` which target pods.
+Upgrading the node pools evicts all workloads from the old nodes and reschedules them onto new ones, respecting any `PodDisruptionBudgets` that target the affected pods.
 
 List the node pools:
 
@@ -126,14 +127,18 @@ List the node pools:
 az aks nodepool list -g $CLUSTER_RESOURCE_GROUP --cluster-name $CLUSTER_NAME -o table
 ```
 
-For each node pool run the following, using the same Kubernetes version as the control plane.
+For each node pool, run the following using the same Kubernetes version as the control plane.
 
 <gcds-alert alert-role="danger" container="full" heading="Danger" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>DO NOT upgrade nodepools in different Availability Zones (AZs) at the same time. </gcds-text>
+<gcds-text>DO NOT upgrade nodepools in different Availability Zones (AZs) at the same time. You may upgrade multiple nodepools within the same AZ together to speed up the process.</gcds-text>
 </gcds-alert>
 
-> **Note**: You may optionally decide to upgrade multiple nodepools **within the same AZ** at the same time to speed up the upgrade process.
-For example, if there is a gateway1, system1, general1 **AND** a gateway2, system2, and general2 nodepools, you can upgrade all the Zone 1 nodepools first at the same time (gateway1, system1, general1) before moving onto upgrading the Zone 2 nodepools that being gateway2, system2, and general2.
+For example, if the cluster has two zones of nodepools:
+
+- Zone 1: gateway1, system1, general1
+- Zone 2: gateway2, system2, general2
+
+Upgrade all three Zone 1 nodepools together, and only once they have finished, move on to the Zone 2 nodepools.
 
 ```bash
 az aks nodepool upgrade -g $CLUSTER_RESOURCE_GROUP --cluster-name $CLUSTER_NAME -k $KUBERNETES_VERSION --no-wait -n <Name of node pool>
@@ -145,31 +150,31 @@ Continue to check on the status of the upgrade by running:
 az aks nodepool list -g $CLUSTER_RESOURCE_GROUP --cluster-name $CLUSTER_NAME -o table
 ```
 
-Continuously check the status of the nodes to ensure they are being cordoned & drained. You should also be seeing new nodes come in with the new Kubernetes version.
+Continuously check the status of the nodes to ensure they are being cordoned and drained. You should also see new nodes come in with the new Kubernetes version.
 
 ```bash
 kubectl get nodes
 ```
 
-**Refer to [Nodepool stuck in Updating State and Node not being deleted](#nodepool-stuck-in-updating-state-and-node-not-being-deleted) if Nodes are stuck in `SchedulingDisabled` for longer than 10 minutes.**
+If nodes are stuck in `SchedulingDisabled` for longer than 10 minutes, refer to [Nodepool stuck in Updating State and Node not being deleted](#nodepool-stuck-in-updating-state-and-node-not-being-deleted).
 
-Continue to the next section once the ProvisioningState changes from `Updating` to `Succeeded` for all nodepools & reflect the new Kubernetes version.
+Continue to the next section once the ProvisioningState changes from `Updating` to `Succeeded` for all nodepools and they reflect the new Kubernetes version.
 
-### 6. Ensure Workloads are Healthy
+### 6. Ensure workloads are healthy
 
-Confirm that workloads are functioning. Re-run the commands described in [this section](#2-export-information-of-pods-that-are-not-succeeded-or-running). Compare the output of the commands before & after the upgrade & ensure that any workloads which were not broken before the update are fixed.
+Confirm that workloads are functioning. Re-run the commands described in [this section](#2-export-information-of-pods-that-are-not-succeeded-or-running), then compare the output before and after the upgrade to ensure that any workloads which were not broken beforehand remain healthy.
 
 ### 7. Update the Infrastructure-as-Code
 
-Update the `kubernetes_version` variable in the terraform file instantiating the [terraform-aurora-azure-environment](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment) module.
+Update the `kubernetes_version` variable in the Terraform file instantiating the [terraform-aurora-azure-environment](https://github.com/gccloudone-aurora-iac/terraform-aurora-azure-environment) module.
 
 ---
 
 ## Troubleshooting
 
-Check the `Activity Log` for `Create or Update Agent Pool` errors within the Azure portal, where details may be available in the `JSON` panel.
+Check the Activity Log for "Create or Update Agent Pool" errors within the Azure portal, where details may be available in the JSON panel.
 
-### Nodepool stuck in Updating State and Node not being deleted
+### Nodepool stuck in Updating state and node not being deleted
 
 Check if there is a PDB preventing a node from draining:
 
@@ -177,7 +182,7 @@ Check if there is a PDB preventing a node from draining:
 kubectl get events -A --sort-by='.metadata.creationTimestamp' | grep pdb
 ```
 
-The drain process will respect any PodDisruptionBudget (PDB) in place. Respecting a PDB can take time in order to ensure that a sufficient number of replicas has been rescheduled before draining the node. This can result in the drain getting stuck if a PDB specifies a minimum number of replicas that is equal to or greater than the total number of replicas on the node, preventing any rescheduling.
+The drain process will respect any `PodDisruptionBudget` (PDB) in place. Respecting a PDB can take time in order to ensure that a sufficient number of replicas has been rescheduled before draining the node. This can result in the drain getting stuck if a PDB specifies a minimum number of replicas that is equal to or greater than the total number of replicas on the node, preventing any rescheduling.
 
 There are multiple options to address this:
 
@@ -185,11 +190,11 @@ There are multiple options to address this:
 - Edit the PDB to decrease the minimum number of pods that need to be available
 - If all else fails, or it is a Dev or NonProd environment, manually delete the stuck pod(s)
 
-- Look through the pods on any node that has been in `SchedulingDisabled` for an unusually long time to check for error events or stuck PodDisruptionBudgets.
+- Look through the pods on any node that has been in `SchedulingDisabled` for an unusually long time to check for error events or stuck `PodDisruptionBudget` resources.
 
 Make a note of any misconfigured PDBs so that these issues can be addressed prior to further Kubernetes upgrades. For a long term solution, a Gatekeeper policy should be developed to prevent such misconfigured PDBs.
 
-### Availability Zone Issues
+### Availability zone issues
 
 If you encounter Persistent Volume mounting errors reporting that the volume is in an incompatible Availability Zone, ensure that a [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) or [nodeAffinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity) configuration is in place on the relevant pod controller such that it will match the label key `topology.kubernetes.io/zone` with the value of the zone requested in the error message (provided that nodes with such an availability zone exist).
 
@@ -209,29 +214,27 @@ In exceptional cases, nodeAffinity configurations can be applied directly onto P
 
 If `kubectl get nodes` returns:
 
-```bash
+```text
 No resources found
 ```
 
 while the underlying VMSS instance is confirmed to be running, the node may have failed to register with the cluster.
 
-One possible cause is a failing admission webhook blocking API operations.
-
-Try running:
+One possible cause is a failing admission webhook that blocks the API operations the node needs to register. To check whether a webhook is interfering, run a simple authorization check against the nodes API:
 
 ```bash
 kubectl auth can-i list nodes
 ```
 
-If it returns:
+If the command fails with an error like the following, the Gatekeeper webhook is unavailable and is blocking node registration:
 
-```bash
+```text
 Error from server (InternalError): Internal error occurred: failed calling webhook "validation.gatekeeper.sh":
 failed to call webhook: Post "https://gatekeeper-webhook-service.gatekeeper-system.svc:443/v1/admit?timeout=3s":
 no endpoints available for service "gatekeeper-webhook-service"
 ```
 
-Delete the Gatekeeper validating webhook configuration.
+To unblock registration, delete the Gatekeeper validating webhook configuration. Gatekeeper will recreate it once its pods are healthy again:
 
 ```bash
 kubectl delete validatingwebhookconfiguration gatekeeper-validating-webhook-configuration

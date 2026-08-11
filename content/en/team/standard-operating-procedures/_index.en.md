@@ -26,21 +26,21 @@ Here are the current procedures in place:
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
   <gcds-card
     card-title="Adding Components to Aurora Platform Charts"
-    href="/en/team/standard-operating-procedures/adding-components-aurora-platform-chart"
+    href="/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/"
     badge="Operations"
     description="Procedure & guidelines for adding new components to the aurora-platform-charts."
   >
   </gcds-card>
   <gcds-card
     card-title="AKS Cluster Upgrade"
-    href="/en/team/standard-operating-procedures/aks-cluster-upgrade"
+    href="/en/team/standard-operating-procedures/aks-cluster-upgrade/"
     badge="Operations"
     description="Procedure for upgrading an AKS cluster."
   >
   </gcds-card>
   <gcds-card
     card-title="Backup and Disaster Recovery"
-    href="/en/team/standard-operating-procedures/backup-disaster-recovery"
+    href="/en/team/standard-operating-procedures/backup-disaster-recovery/"
     badge="Reliability"
     description="Procedure for validating that backups and restore processes work as expected."
   >
@@ -49,7 +49,7 @@ Here are the current procedures in place:
     card-title="Bootstrap Cluster"
     href="/en/team/standard-operating-procedures/bootstrap-cluster/"
     badge="Onboarding"
-    description="Steps for using a bootstrap cluster before transferring control to a remote cluster."
+    description="Steps for deploying the Aurora Platform onto an existing AKS cluster using the bootstrap Terraform."
   >
   </gcds-card>
   <gcds-card
@@ -81,15 +81,15 @@ Here are the current procedures in place:
   >
   </gcds-card>
   <gcds-card
-    card-title="Onboarding process for the Enterprise Landing Zone"
-    href="/en/team/standard-operating-procedures/enterprise-landing-zone"
+    card-title="Onboarding Process for the Enterprise Landing Zone"
+    href="/en/team/standard-operating-procedures/enterprise-landing-zone/"
     badge="Onboarding"
     description="Onboarding process for departments into the Enterprise Landing Zone for a chosen CSP."
   >
   </gcds-card>
   <gcds-card
-    card-title="Onboarding process for a workload cluster"
-    href="/en/team/standard-operating-procedures/workload-cluster-onboarding"
+    card-title="Onboarding Process for a Workload Cluster"
+    href="/en/team/standard-operating-procedures/workload-cluster-onboarding/"
     badge="Onboarding"
     description="Onboarding process for setting up a newly created Kubernetes cluster."
   >

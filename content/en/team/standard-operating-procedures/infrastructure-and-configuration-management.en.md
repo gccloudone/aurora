@@ -3,7 +3,7 @@ title: "Infrastructure and Configuration Management"
 linkTitle: "Infrastructure and Configuration Management"
 weight: 5
 lang: "en"
-date: 2025-08-19
+date: 2026-08-11
 ---
 
 {{< translation-note >}}

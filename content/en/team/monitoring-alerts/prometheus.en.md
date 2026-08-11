@@ -16,7 +16,7 @@ Prometheus collects and stores metrics as time series data, where each data poin
 
 ![Monitoring Diagram](/images/architecture/diagrams/monitoring-diagram.jpg "Monitoring Diagram")
 
-## Main Features
+## Main features
 
 - **Multi-dimensional Data Model:** Time series data is identified by a metric name and key-value pairs (labels).
 - **Flexible Query Language:** PromQL, Prometheus's powerful query language, allows users to effectively leverage the multi-dimensional data model.
@@ -26,6 +26,6 @@ Prometheus collects and stores metrics as time series data, where each data poin
 - **Dynamic Target Discovery:** Targets can be discovered automatically using service discovery or configured manually with static settings.
 - **Graphing and Dashboarding:** Prometheus supports multiple modes of visualization, including graphs and dashboards.
 
-## Official Documentation
+## Official documentation
 
 For more information, visit the official [Prometheus Documentation](https://prometheus.io/docs/introduction/overview/) pages.

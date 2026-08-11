@@ -3,251 +3,208 @@ title: "Bootstrap Cluster"
 linkTitle: "Bootstrap Cluster"
 weight: 5
 aliases: ["/team/sop/bootstrap-cluster"]
-date: 2025-08-19
+date: 2026-08-11
 draft: false
 ---
 
 {{< translation-note >}}
 
-This guide covers creating a local k3s bootstrap cluster (also tested in Windows Subsystem for Linux / WSL), installing Argo CD, and transferring control to a remote Kubernetes cluster (the “target” cluster).
+This document outlines the process for deploying the Aurora Platform onto an existing AKS cluster.
 
-The bootstrap cluster solves the classic chicken-and-egg problem by allowing Argo CD to install baseline components (e.g., Cilium, namespaces, secrets, policies) on a cluster that initially lacks them.
+## Context
 
-> Once the target cluster is ready, Argo CD can deploy itself into that cluster and the bootstrap cluster can be discarded. The target cluster typically becomes the long-term management cluster, meaning bootstrapping is usually a one-time process.
+The AKS cluster is a hardened, PBMM-compliant platform with its own Authority to Operate. The Aurora Platform builds on that foundation with a curated set of hardened CNCF solutions managed through Argo CD, covering observability, runtime security, certificate management, and continuous delivery.
 
-## Scope & Assumptions
+Deploying it is strongly recommended: it gives teams a complete DevOps platform instead of having to assemble and harden this tooling on their own.
 
-This guide is written with the following context in mind:
-
-- The Aurora platform, configured via Argo CD, is first deployed into a temporary local k3s bootstrap cluster and then migrated to the target managed Kubernetes cluster
-- The target cluster starts without a CNI (e.g., Cilium); the bootstrap process installs networking and other baseline components
-- Sensitive values (credentials, tokens, etc.) are retrieved from Azure Key Vault through a Managed Service Identity (MSI)
-- Argo CD and its supporting resources run in the namespace platform-management-system
-
-This guide does not cover provisioning of landing zones, subscription-level configuration, or Argo CD operations
+Previously this process relied on a temporary local k3s bootstrap cluster to work around the lack of networking on a freshly provisioned cluster. That workaround is no longer necessary. Because networking is now available on newly deployed clusters, the platform is deployed directly onto the target AKS cluster using the bootstrap Terraform repository.
 
 ## Prerequisites
 
-The following must be in place before you begin the onboarding steps:
+Ensure the following are in place before you begin:
 
-- A Linux / WSL environment with bash, on a VM capable of mounting a  **Managed Service Identity (MSI)**
-- Required CLI tools installed and accessible: **azure-cli**, **kubectl**, **docker**, **k3d** (for local k3s), **jq**, **helm**, and **git**
-- Any previous kubeconfig context cleared or unset (to avoid conflicts)
-- The Aurora [bootstrap-cluster](https://github.com/gccloudone-aurora/bootstrap-cluster) repository cloned locally with the following prepared:
-  - `.env` file based on `.env.example`
-  - `base/argocd-instance.yaml` configured for your environment
+- An AKS cluster deployed through the cluster creation process.
+- Access to a jumpbox or workstation with network access to the cluster's API server.
+- The following CLI tools installed and available: Azure CLI, `kubelogin`, `kubectl`, Terraform, and Git.
+- An identity with the following roles scoped to the AKS cluster:
+  - Azure Kubernetes Service Cluster User Role
+  - Azure Kubernetes Service RBAC Cluster Admin
+- Access to the [bootstrap-terraform](https://github.com/gccloudone-aurora/bootstrap-terraform) repository.
 
-> If any of these prerequisites are missing, resolve them before proceeding with the bootstrap steps.
+## Steps
 
-## 1. Configuration of the .env file
+### 1. Authenticate to the AKS cluster
 
-Create a `.env` file alongside the bootstrap scripts by copying the .env.example file and configuring it.
-
-For users with appropriate RBAC the MSI can be added via the script:
-
-```dotenv
-MSI="00000000-0000-0000-0000-000000000000"   # If MSI already exists
-```
-
-For users without the appropriate RBAC the MSI can only be added in advance by the Azure Cloud Team.
-
-```dotenv
-MSI_RESOURCE_ID="/subscriptions/<SUB>/resourceGroups/<RG>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/XXXX-XXXXX-ARGO-msi-argocd"
-```
-
-> TODO: The Azure Cloud team is developing a custom role to remove this manual step. Until then, the managed identity XXXX-XXXXX-ARGO-msi-argocd created during Enterprise Landing Zone (ESLZ) onboarding must be manually added to the jumpbox.
-
-## 2. Configuration of the common.sh file
-
-If the cluster was created with a custom CA then ensure that `/usr/local/share/ca-certificates/custom.crt` refers to that certificate.
-
-## 2. Update Your Project-Level Configuration
-
-Start by cloning the Aurora project template:
-
-```bash
-git clone https://github.com/gccloudone-aurora/project-aurora-template.git
-```
-
-Each cluster will have its own `config.yaml` located under:
+Set the target subscription:
 
 ```sh
-platform/clusters/non-prod/<cluster-name>/config.yaml
-platform/clusters/prod/<cluster-name>/config.yaml
+az account set --subscription <SUBSCRIPTION_ID>
 ```
 
-Edit the `config.yaml` for your target cluster to match your environment. This file tells Argo CD what to deploy and how to manage the cluster, making it the central configuration for the Aurora platform.
-
-In most environments, you will need to update:
-
-- **App-of-apps configuration** – adjust which components are deployed and how they sync
-- **Networking and identity** – API server CIDRs, ingress domain, subscription/tenant IDs, Key Vault references
-- **Core components** – toggle services like Cilium, cert-manager, and CIDR allocator
-
-Finally, commit and push your changes to a repository. We typically use a naming convention such as project-example-aur, and for client workloads we always suffix the repository name with the -aur shortcode.
-
-## 3. Update Argo CD Configuration
-
-At this stage, Argo CD in the bootstrap cluster must be updated so it can track the repository you prepared in the previous step.
-
-- **Update the repository specification** in [`argocd-instance.yaml`](https://github.com/gccloudone-aurora/bootstrap-cluster/blob/main/base/argocd-instance.yaml) so Argo CD syncs from the correct Aurora repo.
-- **Grant authentication** by switching to the `aurora-svc` service account and providing a GitHub Personal Access Token (PAT) with access to the repo. This allows Argo CD to pull manifests.
-- **Approve access** by approving the `gccloudone-aurora` request under pending repository access requests in your GitHub organization.
-
-## 4. Mount the MSI
-
-Find the name of the VM (example G3McSWJ-RDS01) in the Azure Portal, click on Security > Identity > User Assigned and add the XXX-argo-msi-argocd identity.
-
-## 5. Create the Bootstrap Cluster
-
-At this point you should be able to successfully run the setup script in the bootstrap cluster repository.
+Retrieve the AKS cluster credentials and merge them into your kubeconfig:
 
 ```sh
-./setup.sh
+az aks get-credentials \
+  --name <CLUSTER_NAME> \
+  --resource-group <CLUSTER_RG> \
+  --overwrite-existing
 ```
 
-Once the script fully executes you will be given instructions on how to login to the Argo CD instance.
-
-> TODO: You may need to manually delete an existing secret (`project-aurora-mgmt`) if it conflicts.
-
-## 6. Set your Kube Context
-
-Ensure kubectl is pointed at the bootstrap cluster.
-
-By default, the setup script creates a local kubeconfig file named .kubeconfig.
-
-Export the kubeconfig for the current shell session:
+Convert the kubeconfig so that kubectl authenticates through Azure AD:
 
 ```sh
-export KUBECONFIG=.kubeconfig
+kubelogin convert-kubeconfig -l azurecli
 ```
 
-Verify you are connected to the bootstrap cluster:
+### 2. Verify cluster access
+
+Confirm that you can reach the cluster and that your identity is authorized before deploying anything:
 
 ```sh
 kubectl get nodes
 ```
 
-Continue only if you see the bootstrap cluster nodes listed.
+If the nodes are listed, authentication and RBAC are working correctly. If the command is rejected, resolve the missing role assignments before continuing.
 
-## 7. Custom Certificate Authority (CA) for local Argo CD
+### 3. Clone the bootstrap Terraform repository
 
-If your environment requires a Custom Certificate Authority (CA) you must ensure it is applied to the bootstrap cluster so Argo CD and related components can establish TLS connections.
-
-```sh
-kubectl apply -f certs.yaml
-kubectl rollout restart deploy -n platform-management-system
-```
-
-The certs.yaml file should define a ConfigMap similar to the following:
-
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: custom-certs
-  namespace: platform-management-system
-data:
-  custom.crt: |-
-    -----BEGIN CERTIFICATE-----
-    XXXXX
-    -----END CERTIFICATE-----
-```
-
-## 8. Add Key Vault Secrets
-
-At this stage, you must manually add the following secrets into Azure Key Vault so that Argo CD can fully authenticate with its resources and manage the Aurora platform:
-
-- `xxxx-xxxxx-argo-kvs-github-password`
-- `xxxx-xxxxx-argo-kvs-github-username`
-- `xxxx-xxxxx-argo-kvs-cluster-admins`
-
-> TODO: This step is required until these values are provisioned automatically as part of the Enterprise Landing Zone (ESLZ) onboarding.
-
-## 9. Register Target Cluster & Transfer Control
-
-Register the target cluster with Argo CD by running:
+This repository deploys Argo CD into the cluster along with two ApplicationSets that manage the full Aurora Platform deployment.
 
 ```sh
-./register.sh
+git clone https://github.com/gccloudone-aurora/bootstrap-terraform
+cd bootstrap-terraform
 ```
 
-This script creates a cluster secret in Argo CD using the values from your .env file and will begin the process of deploying the Aurora platform (with Argo CD itself) into the target cluster.
+### 4. Prepare the project configuration repository
 
-> TODO: Please watch out for the duplicate aks-aks problem as you may need to hard-set the context values in .env before running the script.
+The Aurora Platform is driven by a per-cluster configuration repository that Argo CD syncs from. Prepare this repository before deploying the platform components.
 
-## 10. Add DNS A Record
-
-Navigate to the public DNS zone for your cluster created in the Azure Enterprise Landing Zone (ESLZ) onboarding.
-
-- `*.aurora`: public DNS zone pointing to the load balancer
-
-The load balancer is exposed by the service in the `ingress-general-system` namespace.
-
-## 11. Custom Certificate Authority (CA) for target Argo CD
-
-If you applied a Custom Certificate Authority (CA) to the bootstrap cluster, you must also apply it to the **target cluster**. This ensures Argo CD and related components in the target environment can establish TLS connections.
+Clone the Aurora project template:
 
 ```sh
-kubectl apply -f certs.yaml
-kubectl rollout restart deploy -n platform-management-system
+git clone https://github.com/gccloudone-aurora/project-aurora-template.git
 ```
 
-## 12. Cilium policies for API server and Konnectivity host access
+Each cluster has its own `config.yaml`, located under one of the following paths:
 
-> Note: You can skip this step if the cluster was creating with the Azure CNI
-
-Until the AKS VNet integration for the control plane is GA in your environment, the API server Private Link endpoint is created in the same subnet as the default node pool rather then then the API server subnet. Additionally traffic from the API server is routed to the cluster via Konnectivity instead of direct into into the Virtual Network. If your default egress policy is restrictive, platform/system workloads may be unable to reach the API server, and Konnectivity may fail when it needs to talk to node/host IPs.
-
-```yaml
-  apiVersion: cilium.io/v2
-  kind: CiliumClusterwideNetworkPolicy
-  metadata:
-    name: allow-egress-to-apiserver-from-platform-temp
-  spec:
-    egress:
-    - toCIDRSet:
-      - cidr: XX.XXX.XXX.XXX/32
-      toPorts:
-      - ports:
-        - port: "443"
-    endpointSelector:
-      matchExpressions:
-      - key: io.cilium.k8s.namespace.labels.namespace.ssc-spc.gc.ca/purpose
-        operator: In
-        values:
-        - platform
-        - system
-  ---
-  apiVersion: cilium.io/v2
-  kind: CiliumClusterwideNetworkPolicy
-  metadata:
-    name: allow-egress-to-hosts-from-konnectivity
-  spec:
-    description: |
-      This rule allows Konnectivity to connect to hosts.
-    egress:
-    - toEntities:
-      - remote-node
-      - host
-    endpointSelector:
-      matchExpressions:
-      - key: io.kubernetes.pod.namespace
-        operator: In
-        values:
-        - kube-system
-      - key: app
-        operator: In
-        values:
-          - konnectivity-agent
+```text
+platform/clusters/non-prod/<cluster-name>/config.yaml
+platform/clusters/prod/<cluster-name>/config.yaml
 ```
 
-## 13. Destroy the Bootstrap Cluster
+Edit the `config.yaml` for your target cluster to match your environment. This file tells Argo CD what to deploy and how to manage the cluster, making it the central configuration for the Aurora Platform. In most environments you will need to update:
 
-Once the complete Aurora platform is deployed onto the target cluster, and you can log in to the target's Argo CD instance to confirm that all applications are synced, you may safely remove the bootstrap cluster:
+- App-of-apps configuration: which components are deployed and how they sync.
+- Networking and identity: API server CIDRs, ingress domain, subscription and tenant IDs, and Key Vault references.
+- Core components: toggles for services such as Cilium, cert-manager, and the CIDR allocator.
 
-```bash
-./cleanup.sh
+Commit and push your changes to a new repository. We typically follow a naming convention such as `project-example-aur`, always suffixing the repository name with the `-aur` shortcode for client workloads.
+
+### 5. Configure the Terraform variables
+
+Update the `terraform.tfvars` file with the values for your target cluster and environment. These values tell Terraform and Argo CD which cluster to target and how to configure the platform.
+
+```sh
+# Edit terraform.tfvars with the correct cluster-specific values
+vi terraform.tfvars
 ```
 
-> Note: Do not remove the bootstrap cluster until you have verified that the Aurora platform is fully deployed and synchronized on the target cluster, and that you can log in to the target Argo CD instance using OIDC.
+### 6. Initialize Terraform
+
+Initialize the working directory to download the required providers and modules:
+
+```sh
+terraform init
+```
+
+### 7. Deploy the Argo CD operator
+
+Apply the Argo CD operator Helm chart first, since the Argo CD instance in the next step depends on it:
+
+```sh
+terraform apply -target=helm_release.argo_operator
+```
+
+### 8. Deploy the Argo CD instance
+
+Apply the Argo CD instance Helm chart:
+
+```sh
+terraform apply -target=helm_release.argocd_instance
+```
+
+### 9. Populate the required Key Vault secrets
+
+Some secrets cannot be inferred or automated, so they must be entered manually into the Argo CD Key Vault. Do this before deploying the remaining components in step 11, otherwise the ApplicationSets will fail to sync when they look for these values:
+
+- `<prefix>-argo-kvs-github-username`: GitHub username that Argo CD uses to access the source repositories.
+- `<prefix>-argo-kvs-github-password`: corresponding GitHub password or personal access token.
+- `<prefix>-argo-kvs-cluster-admins`: the set of cluster administrators.
+- `<prefix>-platform-kvs-argocd-oidc-sp-client-id`: client ID of the Argo CD OIDC service principal.
+- `<prefix>-platform-kvs-argocd-oidc-sp-client-secret`: client secret of the Argo CD OIDC service principal.
+
+<gcds-alert alert-role="info" container="full" heading="Note" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>The prefix on these secret names changes per environment. Adjust the names to match your target Key Vault's naming convention.</gcds-text>
+</gcds-alert>
+
+### 10. Grant Argo CD access to the configuration repository
+
+Argo CD must be able to pull manifests from the configuration repository you prepared in step 4. Once the Argo CD instance is running and the Key Vault secrets are in place:
+
+- Confirm the repository specification (set through your Terraform configuration) points Argo CD at the correct Aurora configuration repository.
+- Ensure authentication is provided through the `aurora-svc` service account, using the GitHub personal access token (PAT) from the Key Vault secrets in the previous step. The token must have access to the repository.
+- Approve the `gccloudone-aurora` request under pending repository access requests in your GitHub organization, so Argo CD can pull manifests.
+
+### 11. Deploy the remaining Aurora Platform components
+
+Apply the rest of the Terraform configuration. This creates the ApplicationSets that deploy the full Aurora Platform through Argo CD:
+
+```sh
+terraform apply
+```
+
+Argo CD reconciles the ApplicationSets asynchronously, so the platform will take some time to converge after the apply completes. You can watch the progress in the Argo CD UI (see the next step).
+
+### 12. Access the Argo CD UI (optional)
+
+If no ingress has been configured yet, you can port-forward the Argo CD service to reach the UI from your workstation.
+
+Port-forward the Argo CD server:
+
+```sh
+kubectl port-forward svc/argocd-server -n platform-management-system 8080:80
+```
+
+Retrieve the temporary admin password:
+
+```sh
+kubectl get secret argocd-cluster -n platform-management-system -o go-template='{{index .data "admin.password" | base64decode}}'; echo
+```
+
+Open `https://localhost:8080` in your browser and log in with the username `admin` and the password returned by the command above.
+
+### 13. Verify the deployment
+
+Confirm that the platform has deployed successfully before considering the process complete. In the Argo CD UI (or with the Argo CD CLI), check that all applications and ApplicationSets report a status of `Synced` and `Healthy`:
+
+```sh
+kubectl get applications -n platform-management-system
+```
+
+If any application is stuck in `OutOfSync`, `Degraded`, or `Missing`, inspect it in the Argo CD UI for the underlying error. A common cause is a missing or misnamed Key Vault secret from step 9.
+
+### 14. Add a DNS A record
+
+Once the platform is deployed, its ingress controller provisions an external load balancer. To reach platform services (such as the Argo CD UI) by hostname instead of port-forwarding, point a wildcard DNS record at that load balancer in the public DNS zone created during Enterprise Landing Zone onboarding.
+
+First, find the external IP address of the ingress load balancer, which is exposed by the service in the `ingress-general-system` namespace:
+
+```sh
+kubectl get svc -n ingress-general-system
+```
+
+Then, in the public DNS zone for your cluster, create a wildcard A record that points at that address:
+
+- `*.aurora`: points to the external IP of the ingress load balancer.
+
+Once the record has propagated, platform services are reachable at their configured hostnames.

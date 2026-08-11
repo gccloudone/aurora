@@ -20,7 +20,7 @@ The Prometheus Operator for Kubernetes simplifies the deployment, management, an
 
 - A [Grafana Helm Chart](https://github.com/grafana/helm-charts/tree/main/charts/grafana) is available to deploy custom dashboards tailored to individual solutions.
 
-## Official Documentation
+## Official documentation
 
 For those managing their own clusters or seeking a deeper understanding of monitoring infrastructure, the following resources provide valuable guidance:
 

@@ -1,9 +1,9 @@
 ---
-title: "Adding components to Aurora Platform Charts"
-linkTitle: "Adding components to Aurora Platform Charts"
+title: "Adding components to Platform Charts"
+linkTitle: "Adding components to Platform Charts"
 weight: 5
 aliases: ["/team/sop/aurora-platform-chart-add-component"]
-date: 2025-10-09
+date: 2026-08-11
 draft: false
 ---
 
@@ -19,29 +19,36 @@ If you are unfamiliar with how ArgoCD deploys Helm charts, review the [ArgoCD He
 
 ### Pre-requisites
 
-Before adding any third-party helm charts to the Aurora platform do the following:
+Before adding any third-party Helm charts to the Aurora platform, do the following:
 
-- Render the helm templates and verify that the rendered manifests are what we expect (e.g. there are no additional resources that are being created that we don't expect)
+- Render the Helm templates and verify that the rendered manifests are what we expect (e.g. there are no additional resources that are being created that we don't expect):
 
-   `helm template <name> ./path/to/chart --values=<example values.yaml>`
+  ```sh
+  helm template <name> ./path/to/chart --values=<example values.yaml>
+  ```
+
 - Confirm that the Helm repository URL matches the official vendor repository URL.
 - Perform a vulnerability scan on each referenced image with Trivy:
-`trivy image <container-image>`
+
+  ```sh
+  trivy image <container-image>
+  ```
+
   - Investigate any critical vulnerabilities and if they are applicable.
 
 ## Procedure
 
 ### 1. Decide which folder the component should go under
 
-Determine if the component should go under `aurora-app` or `aurora-core`. `aurora-app` are for components that enhance the functionality of the Aurora platform and `aurora-core` are for components that are critical for Aurora's operation.
+Determine whether the component should go under aurora-app or aurora-core. Use aurora-app for components that enhance the functionality of the Aurora platform, and aurora-core for components that are critical to Aurora's operation.
 
 ### 2. Create a subfolder for the component
 
-Within the appropriate folder (`aurora-app` or `aurora-core`), create a new subfolder under `templates` named after the component.
+Within the appropriate folder (aurora-app or aurora-core), create a new subfolder under `templates` named after the component.
 
 ### 3. Create the YAML file for the component
 
-Create the `<component-name>.yaml` file in the folder that was just created & add templating for the following fields:
+In the folder you just created, add a `<component-name>.yaml` file with templating for the following fields:
 
 - tolerations
 - image
@@ -55,44 +62,44 @@ The templating for the component should allow configurability for other Cloud Se
 
 [Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/cert-manager.yaml)
 
-If applicable, create a separate .yaml file for anything that may also need to be deployed for the component to work, such as Custom Resources.
+If applicable, create a separate YAML file for anything else the component needs in order to work, such as Custom Resources.
 
 [Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager/issuers.yaml)
 
 ### 4. Create the `namespace.yaml` file
 
-For the `namespace.yaml`, fill in the appropriate values according to the values for the aurora-solution chart [available here](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-solution/values.yaml). The `information` field should remain the same as other components.
+Fill in the appropriate values according to the aurora-solution chart [available here](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-solution/values.yaml). The `information` field should remain the same as other components.
 
 [Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflow/namespace.yaml)
 
 ### 5. Create the `netpol.yaml` file
 
-For the `netpol.yaml`, create any Network Policies exempting flows the component may need. By default, all flows are denied unless explicitly granted through the `NetworkPolicy` or through the `CiliumClusterwideNetworkPolicy`.
+Create any Network Policies exempting flows the component may need. By default, all flows are denied unless explicitly granted through a `NetworkPolicy` or a `CiliumClusterwideNetworkPolicy`.
 
 [Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/templates/falco/netpol.yaml)
 
 ### 6. Create the `_helpers.tpl` file
 
-For the `_helpers.tpl`, create a helper template for all image fields referenced in the component's YAML file that you created. The template should allow users the flexibility to pull the image from a third-party registry or from a custom registry.
+Create a helper template for every image field referenced in the component's YAML file. The template should let users pull the image from either a third-party registry or a custom registry.
 
 [Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflow/_helpers.tpl)
 
 ### 7. Update the `values.yaml` file
 
-Add the default values to the `values.yaml` file for your component under the `aurora-core` or `aurora-app` folder. Ensure defaults for the fields specified in section [Create the YAML file for the component](#3-create-the-yaml-file-for-the-component) are provided.
+Add the default values for your component to the `values.yaml` file under the aurora-core or aurora-app folder. Be sure to provide defaults for the fields listed in [Create the YAML file for the component](#3-create-the-yaml-file-for-the-component).
 
 [Example](https://github.com/gccloudone-aurora/aurora-platform-charts/blob/main/stable/aurora-platform/charts/aurora-core/values.yaml#L342)
 
-Also add your component under either the `core` or `app` field as `# component: {}` in the `values.yaml` file located under `aurora-platform`.
+Also add your component under either the `core` or `app` field as `# component: {}` in the `values.yaml` file located under aurora-platform.
 
 ### 8. Update the `Chart.yaml`
 
-Bump the version number specified in the `Chart.yaml` file located under `aurora-platform`.
+Bump the version number specified in the `Chart.yaml` file located under aurora-platform.
 
 ### 9. Create a pull request
 
 Once you've pushed up your branch with all the changes, create a pull request and request a review from the team.
 
-### 10. Deploy & test
+### 10. Deploy and test
 
-Once your pull request is approved, merge in your pull request. You can patch the `version` field in the `config.yaml` to the new version of the aurora-platform chart. Once completed, the new `Applications` should be visible in the ArgoCD instance from where you can manually sync the application & have the resources deployed onto the cluster. Test the component and validate it functions as expected.
+Once your pull request is approved, merge it. Patch the `version` field in the `config.yaml` to the new version of the aurora-platform chart. The new `Applications` should then appear in the ArgoCD instance, where you can manually sync the application to deploy the resources onto the cluster. Finally, test the component and validate that it functions as expected.

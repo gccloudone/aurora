@@ -3,7 +3,7 @@ title: "Workload Cluster Onboarding"
 linkTitle: "Workload Cluster Onboarding"
 weight: 5
 aliases: ["/team/sop/workload-cluster-onboarding"]
-date: 2026-04-09
+date: 2026-08-11
 draft: false
 ---
 

@@ -3,7 +3,7 @@ title: "Issue Tracking"
 linkTitle: "Issue Tracking"
 weight: 5
 aliases: ["/team/sop/issue-tracking"]
-date: 2025-11-01
+date: 2026-08-11
 draft: false
 ---
 

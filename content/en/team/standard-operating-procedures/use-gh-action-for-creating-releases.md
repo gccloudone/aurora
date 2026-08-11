@@ -3,7 +3,7 @@ title: "GitHub Actions for Creating Releases"
 linkTitle: "GitHub Actions for Creating Releases"
 weight: 5
 aliases: ["/team/sop/gha-create-release"]
-date: 2026-02-13
+date: 2026-08-11
 draft: false
 ---
 
@@ -54,7 +54,7 @@ jobs:
         uses: gccloudone-aurora-iac/.github/.github/actions/check-pr-labels@main
 
       - name: Use Composite Create Release Action
-        if: github.event.pull_request.merged == true 
+        if: github.event.pull_request.merged == true
         uses: gccloudone-aurora-iac/.github/.github/actions/create-release@main
         with:
           release_type: ${{ steps.label.outputs.release_type }}
