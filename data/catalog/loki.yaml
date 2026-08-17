@@ -1,6 +1,7 @@
 name: "Loki"
 slug: "loki"
 alias: "Log Aggregation System"
+productVersion: "v3.7.6"
 
 category:
   hld: "Platform Observability"

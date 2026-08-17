@@ -1,6 +1,6 @@
 ---
-title: "Fluent Bit"
-slug: "fluent-bit"
+title: "Kiali"
+slug: "kiali"
 layout: "components/single"
 sidebar: false
 _build:

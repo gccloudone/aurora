@@ -1,6 +1,7 @@
 name: "Trust Manager"
 slug: "trust-manager"
 alias: "Certificate Trust Distribution"
+productVersion: "v0.24.0"
 
 category:
   hld: "Platform Security"

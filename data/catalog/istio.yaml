@@ -1,6 +1,7 @@
 name: "Istio"
 slug: "istio"
 alias: "Service Mesh"
+productVersion: "v1.29.1"
 
 category:
   hld: "Networking"

@@ -1,6 +1,7 @@
 name: "OpenCost"
 slug: "opencost"
 alias: "Kubernetes Cost Monitoring"
+productVersion: "v1.121.1"
 
 category:
   hld: "Platform Management"

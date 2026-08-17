@@ -1,0 +1,85 @@
+name: "Argo Workflows"
+slug: "argo-workflows"
+alias: "Workflow Engine"
+productVersion: "v4.1.1"
+
+category:
+  hld: "App Development"
+  type: "App"
+
+descriptions:
+  short: "Argo Workflows is a container-native workflow engine for orchestrating parallel jobs on Kubernetes."
+  long: >-
+    Argo Workflows is used within Aurora to define and execute multi-step
+    computational workflows as Kubernetes-native pipelines. It allows teams to
+    model complex processes as directed acyclic graphs (DAGs) of container steps,
+    enabling parallel execution, retries, and artifact passing between steps.
+    Argo Workflows provides a visual UI for monitoring workflow runs and supports
+    event-driven triggers through integrations with Argo Events and other
+    Kubernetes controllers.
+
+capabilities:
+  - workflow-orchestration
+  - pipeline-execution
+  - dag-execution
+  - container-native
+  - kubernetes-native
+  - event-driven
+
+project:
+  homepage: "https://argoproj.github.io/workflows/"
+  documentation: "https://argoproj.github.io/workflows/"
+  cncf_landscape: "https://landscape.cncf.io/?item=app-definition-and-development--continuous-integration-delivery--argo"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Architecture"
+    steward: "Aurora Platform Team"
+  criticality: "medium"
+
+architecture:
+  role: >-
+    Provides a container-native workflow orchestration engine for running
+    multi-step computational jobs and data pipelines on Kubernetes. Argo
+    Workflows manages workflow execution, state tracking, retries, and
+    artifact passing between workflow steps.
+  control_plane_components:
+    - "workflow-controller"
+    - "argo-server"
+    - "workflow-controller-observer"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Argo Events (triggers)"
+    - "Artifact repositories (S3, GCS)"
+    - "Git repositories"
+  optional_features:
+    - "Workflow templates"
+    - "CronWorkflow schedules"
+    - "Artifact passing"
+    - "Workflow UI"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Artifact storage (optional)"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-app/templates/argo-workflows"
+    release_name: "argo-workflows"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks: []
+  dashboards: []
+
+metadata:
+  image: "/images/cncf/argo-workflows.svg"
+  sidebar: false

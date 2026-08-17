@@ -1,6 +1,7 @@
 name: "Gatekeeper"
 slug: "gatekeeper"
 alias: "OPA Admission Controller"
+productVersion: "v3.23.0"
 
 category:
   hld: "Security"

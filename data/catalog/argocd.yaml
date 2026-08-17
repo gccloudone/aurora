@@ -1,6 +1,7 @@
 name: "Argo CD"
 slug: "argocd"
 alias: "GitOps Controller"
+productVersion: "v3.1.9"
 
 category:
   hld: "Platform Management"

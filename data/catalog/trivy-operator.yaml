@@ -1,6 +1,7 @@
 name: "Trivy Operator"
 slug: "trivy-operator"
 alias: "Kubernetes Security Scanning"
+productVersion: "v0.33.0"
 
 category:
   hld: "Platform Security"

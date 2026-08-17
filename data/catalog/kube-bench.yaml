@@ -1,6 +1,7 @@
 name: "kube-bench"
 slug: "kube-bench"
 alias: "Kubernetes CIS Benchmark"
+productVersion: "v0.16.0"
 
 category:
   hld: "Platform Security"

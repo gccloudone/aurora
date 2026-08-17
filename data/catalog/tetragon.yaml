@@ -1,6 +1,7 @@
 name: "Tetragon"
 slug: "tetragon"
 alias: "eBPF Runtime Enforcement"
+productVersion: "v1.7.0"
 
 category:
   hld: "Security"

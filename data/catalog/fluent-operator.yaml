@@ -1,6 +1,7 @@
 name: "Fluent Operator"
 slug: "fluent-operator"
 alias: "Fluent Bit Operator"
+productVersion: "v3.10.0"
 
 category:
   hld: "Observability"

@@ -1,0 +1,83 @@
+name: "Grafana Alloy"
+slug: "alloy"
+alias: "Alloy"
+productVersion: "v1.11.0"
+
+category:
+  hld: "Observability"
+  type: "Core"
+
+descriptions:
+  short: "Grafana Alloy is a vendor-neutral distribution of the OpenTelemetry Collector for collecting telemetry data."
+  long: >-
+    Grafana Alloy is a vendor-neutral, batteries-included telemetry collector
+    with configuration based on River. It is a distribution of the OpenTelemetry
+    Collector that combines the best parts of the Grafana Agent and the
+    OpenTelemetry Collector into a single binary. Within Aurora, Alloy is used
+    to collect metrics, logs, and traces from workloads and platform components,
+    providing a unified telemetry pipeline that can forward data to multiple
+    observability backends including Grafana, Prometheus, and Loki.
+
+capabilities:
+  - telemetry-collection
+  - metrics
+  - logs
+  - traces
+  - openTelemetry
+  - observability
+  - vendor-neutral
+
+project:
+  homepage: "https://grafana.com/docs/alloy/latest/"
+  documentation: "https://grafana.com/docs/alloy/latest/"
+  cncf_landscape: ""
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Observability"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Acts as a unified telemetry collection agent that gathers metrics, logs,
+    and traces from Kubernetes workloads and platform components. Alloy provides
+    a single pipeline configuration model for all telemetry signals, enabling
+    consistent collection and forwarding to observability backends.
+  control_plane_components:
+    - "alloy"
+
+integrations:
+  integrates_with:
+    - "Prometheus (metrics)"
+    - "Loki (logs)"
+    - "Tempo (traces)"
+    - "Grafana (visualization)"
+    - "Kubernetes API Server"
+  optional_features:
+    - "Discovery-based scraping"
+    - "Custom alloy configuration"
+    - "Multi-backend forwarding"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/alloy"
+    release_name: "alloy"
+  adr: []
+  runbooks: []
+  dashboards: []
+
+metadata:
+  image: "/images/cncf/alloy.svg"
+  sidebar: false

@@ -1,6 +1,7 @@
 name: "Cilium"
 slug: "cilium"
 alias: "eBPF"
+productVersion: "v1.20.0"
 
 category:
   hld: "Networking"

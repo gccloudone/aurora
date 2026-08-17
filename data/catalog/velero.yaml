@@ -1,6 +1,7 @@
 name: "Velero"
 slug: "velero"
 alias: "Kubernetes Backup and Restore"
+productVersion: "v1.18.2"
 
 category:
   hld: "Platform Resilience"

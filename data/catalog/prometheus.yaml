@@ -1,6 +1,7 @@
 name: "Prometheus"
 slug: "prometheus"
 alias: "Metrics Collection"
+productVersion: "v0.93.1"
 
 category:
   hld: "Observability"
