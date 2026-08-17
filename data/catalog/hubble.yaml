@@ -1,6 +1,7 @@
 name: "Hubble"
 slug: "hubble"
 alias: "Network Flow Observability"
+productVersion: "v1.17.3"
 
 category:
   hld: "Observability"

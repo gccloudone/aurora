@@ -1,6 +1,7 @@
 name: "PodTracker"
 slug: "podtracker"
 alias: "Pod Metadata Tracking"
+productVersion: "v1.0.0"
 
 category:
   hld: "Platform Observability"
