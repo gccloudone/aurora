@@ -9,7 +9,7 @@ category:
 
 descriptions:
   short: "Trust Manager distributes and manages trusted CA bundles across Kubernetes workloads."
-  short_fr: "Trust Manager distribue et gère les集合 de certificats CA de confiance pour les charges de travail Kubernetes."
+  short_fr: "Trust Manager distribue et gère les ensembles de certificats CA de confiance pour les charges de travail Kubernetes."
   long: >-
     Trust Manager is used by Aurora to centrally manage and distribute trusted
     certificate authority (CA) bundles across Kubernetes clusters and workloads.
