@@ -4,8 +4,8 @@ function normalizeCardImages() {
   document.querySelectorAll('gcds-card[role="listitem"]').forEach(card => {
     if (!card.shadowRoot) return;
     card.shadowRoot.querySelectorAll('img').forEach(img => {
-      img.style.height = '120px';
-      img.style.maxHeight = '120px';
+      img.style.height = '160px';
+      img.style.maxHeight = '160px';
       img.style.width = 'auto';
       img.style.maxWidth = '200px';
       img.style.objectFit = 'contain';

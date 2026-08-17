@@ -1,1 +1,61 @@
-/* Custom styles for Aurora */
+#cnt-splash {
+  background: url('/images/sp-bg-1.jpg') center/cover no-repeat;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#cnt-splash .gc-header {
+  margin-bottom: 2rem;
+}
+
+#cnt-splash .gc-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#cnt-splash gcds-button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+code[class^="language-"] {
+  padding: 1.25em;
+  margin-bottom: 1.0em;
+  display: block;
+}
+
+pre, pre code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
