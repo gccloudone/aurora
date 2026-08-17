@@ -29,16 +29,16 @@ comp_operational_references: Références opérationnelles
 
 comp_also_known_as: "Également connu sous le nom de :"
 comp_part_of: "Fait partie de"
-comp_category: « Category » :
-comp_type: « Type » :
-comp_version: « Version » :
-comp_deployed_in: « Deployed in » :
-comp_deployment_model: « Deployment model » :
-comp_owner: « Owner » :
-comp_project_homepage: Page d'accueil du projet
-comp_documentation: Documentation
-comp_cncf_landscape: Paysage CNCF
-comp_github: « GitHub » :
+comp_category: "Catégorie :"
+comp_type: "Type :"
+comp_version: "Version :"
+comp_deployed_in: "Déployé dans :"
+comp_deployment_model: "Modèle de déploiement :"
+comp_owner: "Propriétaire :"
+comp_project_homepage: "Page d'accueil du projet"
+comp_documentation: "Documentation"
+comp_cncf_landscape: "Paysage CNCF"
+comp_github: "GitHub :"
 comp_argo_note: "Ce dépôt est consommé par Argo CD pour déployer et gérer le composant de plateforme %s dans Aurora."
 
 alpha_message: Ceci est un service expérimental.

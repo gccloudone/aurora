@@ -3,7 +3,7 @@ title: "Argo Workflows"
 slug: "argo-workflows"
 layout: "components/single"
 sidebar: false
-_build:
+build:
   render: always
   list: never
 ---

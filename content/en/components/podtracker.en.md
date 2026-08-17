@@ -3,7 +3,7 @@ title: "PodTracker"
 slug: "podtracker"
 layout: "components/single"
 sidebar: false
-_build:
+build:
   render: always
   list: never
 ---

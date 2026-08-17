@@ -1,0 +1,8 @@
+<article class="mb-400">
+  <gcds-heading tag="h3">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </gcds-heading>
+  {{ with .Summary }}
+    <gcds-text>{{ . }}</gcds-text>
+  {{ end }}
+</article>

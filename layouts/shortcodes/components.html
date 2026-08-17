@@ -18,7 +18,7 @@
       <h3 class="mb-400">{{ $featured.name }}</h3>
 
       {{/* Use French description if available, fallback to English */}}
-      {{- if and (eq $.Language.Lang "fr") $featured.descriptions.short_fr -}}
+      {{- if and (eq $.Page.Language.Lang "fr") $featured.descriptions.short_fr -}}
         <p class="mb-450">{{ $featured.descriptions.short_fr }}</p>
       {{- else if $featured.descriptions.short -}}
         <p class="mb-450">{{ $featured.descriptions.short }}</p>

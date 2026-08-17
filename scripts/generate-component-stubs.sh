@@ -44,7 +44,7 @@ title: "${name}"
 slug: "${slug}"
 layout: "components/single"
 sidebar: false
-_build:
+build:
   render: always
   list: never
 ---

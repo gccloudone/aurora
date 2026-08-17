@@ -3,7 +3,7 @@ title: "Cilium"
 slug: "cilium"
 layout: "components/single"
 sidebar: false
-_build:
+build:
   render: always
   list: never
 ---

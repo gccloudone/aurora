@@ -3,7 +3,7 @@ title: "Istio"
 slug: "istio"
 layout: "components/single"
 sidebar: false
-_build:
+build:
   render: always
   list: never
 ---

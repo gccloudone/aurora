@@ -16,7 +16,7 @@
           <td>{{ $c.deployment.ownership.team }}</td>
           <td>
             {{/* Use French description if available, fallback to English */}}
-            {{- if and (eq $.Language.Lang "fr") $c.descriptions.long_fr -}}
+            {{- if and (eq $.Page.Language.Lang "fr") $c.descriptions.long_fr -}}
               {{ $c.descriptions.long_fr }}
             {{- else -}}
               {{ $c.descriptions.long }}
