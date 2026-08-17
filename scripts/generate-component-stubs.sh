@@ -38,10 +38,13 @@ for lang in "${LANGUAGES[@]}"; do
 
     target="${dir}/${slug}.${lang}.md"
 
+    today=$(date +%Y-%m-%d)
     cat <<EOF > "$target"
 ---
 title: "${name}"
 slug: "${slug}"
+date: "${today}"
+lastmod: "${today}"
 layout: "components/single"
 sidebar: false
 build:
