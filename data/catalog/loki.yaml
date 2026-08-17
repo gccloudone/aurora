@@ -9,6 +9,7 @@ category:
 
 descriptions:
   short: "Loki is a horizontally scalable, highly available log aggregation system."
+  short_fr: "Loki est un système d'agrégation de journaux horizontalement évolutif et hautement disponible."
   long: >-
     Loki is used by Aurora as the centralized log aggregation and storage system
     for platform and application logs generated across Kubernetes clusters.
@@ -17,6 +18,15 @@ descriptions:
     querying and correlation of logs with metrics and traces. Loki supports
     operational troubleshooting, security investigations, and audit use cases
     across the Aurora platform.
+  long_fr: >-
+    Loki est utilisé par Aurora comme système centralisé d'agrégation et de
+    stockage des journaux pour les journaux de plateforme et d'application
+    générés dans les clusters Kubernetes. Conçu pour être rentable et étroitement
+    intégré à Kubernetes, Loki indexe les métadonnées plutôt que le contenu
+    complet des journaux, permettant une requête efficace et une corrélation des
+    journaux avec les métriques et les traces. Loki prend en charge le
+    dépannage opérationnel, les enquêtes de sécurité et les cas d'utilisation
+    d'audit sur la plateforme Aurora.
 
 capabilities:
   - log-aggregation

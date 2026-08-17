@@ -9,6 +9,7 @@ category:
 
 descriptions:
   short: "Kiali provides observability and management capabilities for Istio service mesh."
+  short_fr: "Kiali fournit des capacités d'observabilité et de gestion pour le maillage de services Istio."
   long: >-
     Kiali is a management console for Istio service mesh that provides
     real-time visualization of the service mesh topology, health metrics,
@@ -18,6 +19,16 @@ descriptions:
     issues, and monitor the health of services within the mesh. It offers
     a visual topology map, traffic animation, and configuration auditing
     to support day-to-day operations.
+  long_fr: >-
+    Kiali est une console de gestion pour le maillage de services Istio qui
+    fournit une visualisation en temps réel de la topologie du maillage, des
+    métriques de santé et une validation de la configuration. Dans Aurora,
+    Kiali permet aux opérateurs de plateforme et aux équipes d'application de
+    comprendre les communications entre services, de valider les configurations
+    Istio, de résoudre les problèmes de connectivité et de surveiller la santé
+    des services dans le maillage. Il offre une carte topologique visuelle,
+    une animation du trafic et un audit de la configuration pour soutenir les
+    opérations quotidiennes.
 
 capabilities:
   - service-mesh-observability

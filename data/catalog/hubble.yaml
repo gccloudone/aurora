@@ -8,6 +8,7 @@ category:
 
 descriptions:
   short: "Hubble provides network flow observability for Kubernetes using eBPF."
+  short_fr: "Hubble fournit l'observabilité des flux réseau pour Kubernetes à l'aide d'eBPF."
   long: >-
     Hubble is the observability component of Cilium that provides deep visibility
     into Kubernetes network traffic using eBPF. It captures network flows at the
@@ -16,6 +17,15 @@ descriptions:
     understand service-to-service communication, troubleshoot connectivity
     issues, and validate network policy behavior without packet capture or
     intrusive instrumentation.
+  long_fr: >-
+    Hubble est le composant d'observabilité de Cilium qui offre une visibilité
+    approfondie sur le trafic réseau Kubernetes à l'aide d'eBPF. Il capture les
+    flux réseau au niveau du noyau et les expose via des API, des outils en
+    ligne de commande et une interface web. Dans Aurora, Hubble permet aux
+    opérateurs de plateforme et aux équipes d'application de comprendre les
+    communications entre services, de résoudre les problèmes de connectivité et
+    de valider le comportement des politiques réseau sans capture de paquets ni
+    instrumentation intrusive.
 
 capabilities:
   - network-observability

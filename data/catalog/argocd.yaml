@@ -9,14 +9,24 @@ category:
 
 descriptions:
   short: "Argo CD is a declarative GitOps continuous delivery tool for Kubernetes."
+  short_fr: "Argo CD est un outil de livraison continue déclaratif basé sur GitOps pour Kubernetes."
   long: >-
-    Argo CD is Aurora’s primary GitOps engine for deploying and managing platform
+    Argo CD is Aurora's primary GitOps engine for deploying and managing platform
     and application components across Kubernetes clusters. It continuously
     reconciles the desired state defined in Git repositories with the live state
     of clusters, providing drift detection, automated synchronization, and
     auditable change history. Argo CD enables consistent, repeatable deployments
     while enforcing separation of concerns between platform teams and application
     teams.
+  long_fr: >-
+    Argo CD est le moteur GitOps principal d'Aurora pour le déploiement et la
+    gestion des composants de plateforme et d'application dans les clusters
+    Kubernetes. Il réconcilie en continu l'état souhaité défini dans les
+    dépôts Git avec l'état réel des clusters, offrant la détection de dérive,
+    la synchronisation automatique et un historique des modifications auditable.
+    Argo CD permet des déploiements cohérents et répétables tout en imposant
+    la séparation des responsabilités entre les équipes de plateforme et les
+    équipes d'application.
 
 capabilities:
   - gitops

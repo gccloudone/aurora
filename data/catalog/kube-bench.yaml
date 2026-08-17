@@ -9,6 +9,7 @@ category:
 
 descriptions:
   short: "kube-bench checks Kubernetes clusters against CIS security benchmarks."
+  short_fr: "kube-bench vérifie les clusters Kubernetes par rapport aux benchmarks de sécurité CIS."
   long: >-
     kube-bench is used by Aurora to assess Kubernetes clusters against
     the Center for Internet Security (CIS) Kubernetes Benchmarks. It
@@ -17,6 +18,15 @@ descriptions:
     baselines. kube-bench supports compliance reporting, security posture
     assessments, and continuous improvement of cluster hardening across
     Aurora-managed environments.
+  long_fr: >-
+    kube-bench est utilisé par Aurora pour évaluer les clusters Kubernetes par
+    rapport aux benchmarks Kubernetes du Center for Internet Security (CIS). Il
+    évalue la configuration du cluster, les composants du plan de contrôle et
+    les paramètres au niveau des nœuds pour identifier les écarts par rapport
+    aux bases de sécurité recommandées. kube-bench soutient les rapports de
+    conformité, les évaluations de posture de sécurité et l'amélioration
+    continue du durcissement des clusters dans les environnements gérés par
+    Aurora.
 
 capabilities:
   - cis-benchmarking

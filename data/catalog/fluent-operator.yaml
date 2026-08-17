@@ -9,6 +9,7 @@ category:
 
 descriptions:
   short: "Fluent Operator is a Kubernetes operator that manages Fluent Bit deployments for log collection and forwarding."
+  short_fr: "Fluent Operator est un opérateur Kubernetes qui gère les déploiements Fluent Bit pour la collecte et la transmission de journaux."
   long: >-
     Fluent Operator is used within Aurora as the control plane for Kubernetes
     logging. It manages the lifecycle, configuration, and rollout of Fluent Bit
@@ -16,6 +17,15 @@ descriptions:
     log pipeline configuration from node-level agents, Fluent Operator enables
     consistent, declarative, and multi-tenant logging practices while reducing
     operational complexity for platform and application teams.
+  long_fr: >-
+    Fluent Operator est utilisé dans Aurora comme plan de contrôle pour la
+    journalisation Kubernetes. Il gère le cycle de vie, la configuration et le
+    déploiement des instances Fluent Bit dans les clusters à l'aide de
+    ressources personnalisées Kubernetes. En séparant la configuration du
+    pipeline de journaux des agents au niveau des nœuds, Fluent Operator permet
+    des pratiques de journalisation cohérentes, déclaratives et multi-locataires
+    tout en réduisant la complexité opérationnelle pour les équipes de
+    plateforme et d'application.
 
 capabilities:
   - logging

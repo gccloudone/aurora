@@ -9,6 +9,7 @@ category:
 
 descriptions:
   short: "Grafana Alloy is a vendor-neutral distribution of the OpenTelemetry Collector for collecting telemetry data."
+  short_fr: "Grafana Alloy est une distribution neutre du collecteur OpenTelemetry pour la collecte de données de télémétrie."
   long: >-
     Grafana Alloy is a vendor-neutral, batteries-included telemetry collector
     with configuration based on River. It is a distribution of the OpenTelemetry
@@ -17,6 +18,15 @@ descriptions:
     to collect metrics, logs, and traces from workloads and platform components,
     providing a unified telemetry pipeline that can forward data to multiple
     observability backends including Grafana, Prometheus, and Loki.
+  long_fr: >-
+    Grafana Alloy est un collecteur de télémétrie neutre et complet, configuré
+    au moyen de River. Il s'agit d'une distribution du collecteur OpenTelemetry
+    qui combine les meilleurs éléments du Grafana Agent et du collecteur
+    OpenTelemetry dans un seul binaire. Dans Aurora, Alloy est utilisé pour
+    collecter les métriques, les journaux et les traces des charges de travail
+    et des composants de plateforme, offrant un pipeline de télémétrie unifié
+    capable de transmettre les données à plusieurs systèmes d'observabilité,
+    dont Grafana, Prometheus et Loki.
 
 capabilities:
   - telemetry-collection

@@ -9,6 +9,7 @@ category:
 
 descriptions:
   short: "Grafana Operator manages Grafana instances, dashboards, and data sources as Kubernetes custom resources."
+  short_fr: "Grafana Operator gère les instances Grafana, les tableaux de bord et les sources de données en tant que ressources personnalisées Kubernetes."
   long: >-
     Grafana Operator is a Kubernetes operator that automates the lifecycle
     management of Grafana deployments, dashboards, and data sources. Within
@@ -17,6 +18,16 @@ descriptions:
     across clusters. The operator reconciles desired state from custom resources,
     providing automated updates, drift correction, and multi-tenant Grafana
     management without manual configuration.
+  long_fr: >-
+    Grafana Operator est un opérateur Kubernetes qui automatise la gestion du
+    cycle de vie des déploiements, des tableaux de bord et des sources de
+    données Grafana. Dans Aurora, il permet l'approvisionnement déclaratif et
+    piloté par GitOps des instances Grafana et garantit que les tableaux de
+    bord sont gérés et versionnés de manière cohérente dans les clusters.
+    L'opérateur réconcilie l'état souhaité à partir de ressources
+    personnalisées, offrant des mises à jour automatisées, la correction de
+    dérive et la gestion multi-locataires de Grafana sans configuration
+    manuelle.
 
 capabilities:
   - grafana-management

@@ -1,6 +1,6 @@
 ---
-title: "Prometheus"
-slug: "prometheus"
+title: "Hubble"
+slug: "hubble"
 layout: "components/single"
 sidebar: false
 _build:

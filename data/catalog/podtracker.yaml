@@ -8,6 +8,7 @@ category:
 
 descriptions:
   short: "PodTracker records and exposes Kubernetes pod metadata for platform-level visibility and automation."
+  short_fr: "PodTracker enregistre et expose les métadonnées des pods Kubernetes pour la visibilité et l'automatisation au niveau de la plateforme."
   long: >-
     PodTracker is a custom Aurora platform component that observes Kubernetes
     pod lifecycle events and records authoritative metadata about running
@@ -16,6 +17,16 @@ descriptions:
     downstream automation and integration use cases, including networking,
     security, observability, and audit workflows, by making pod-level metadata
     consistently available outside the cluster.
+  long_fr: >-
+    PodTracker est un composant de plateforme Aurora personnalisé qui observe
+    les événements du cycle de vie des pods Kubernetes et enregistre les
+    métadonnées faisant autorité sur les charges de travail en cours
+    d'exécution. Il fournit une source fiable pour l'identité du pod, la
+    propriété, le contexte de l'espace de noms et les attributs d'exécution.
+    PodTracker permet les cas d'utilisation d'automatisation et d'intégration en
+    aval, notamment le réseau, la sécurité, l'observabilité et les flux de
+    travail d'audit, en rendant les métadonnées au niveau du pod
+    systématiquement disponibles en dehors du cluster.
 
 capabilities:
   - pod-metadata-tracking

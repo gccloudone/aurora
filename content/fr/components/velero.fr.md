@@ -1,6 +1,6 @@
 ---
-title: "Prometheus"
-slug: "prometheus"
+title: "Velero"
+slug: "velero"
 layout: "components/single"
 sidebar: false
 _build:

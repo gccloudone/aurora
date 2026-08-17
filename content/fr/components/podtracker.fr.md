@@ -1,6 +1,6 @@
 ---
-title: "Prometheus"
-slug: "prometheus"
+title: "PodTracker"
+slug: "podtracker"
 layout: "components/single"
 sidebar: false
 _build:

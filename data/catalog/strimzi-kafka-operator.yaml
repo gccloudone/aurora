@@ -9,6 +9,7 @@ category:
 
 descriptions:
   short: "Strimzi Kafka Operator deploys and manages Apache Kafka clusters on Kubernetes."
+  short_fr: "Strimzi Kafka Operator déploie et gère les clusters Apache Kafka sur Kubernetes."
   long: >-
     Strimzi is an Apache Kubernetes operator that simplifies deploying and
     managing Apache Kafka on Kubernetes. Within Aurora, Strimzi enables teams
@@ -17,6 +18,16 @@ descriptions:
     configuration, scaling, and lifecycle management of Kafka brokers,
     ZooKeeper nodes, and Kafka Connect clusters, providing a declarative,
     Kubernetes-native approach to managing stateful streaming infrastructure.
+  long_fr: >-
+    Strimzi est un opérateur Kubernetes Apache qui simplifie le déploiement et
+    la gestion d'Apache Kafka sur Kubernetes. Dans Aurora, Strimzi permet aux
+    équipes de gérer des clusters Kafka prêts pour la production pour le
+    streaming d'événements, l'agrégation de messages et les charges de travail
+    de pipeline de données. L'opérateur automatise l'approvisionnement, la
+    configuration, la mise à l'échelle et la gestion du cycle de vie des
+    courtiers Kafka, des nœuds ZooKeeper et des clusters Kafka Connect,
+    offrant une approche déclarative et native de Kubernetes pour la gestion
+    des infrastructures de streaming à état.
 
 capabilities:
   - kafka-management

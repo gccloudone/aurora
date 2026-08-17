@@ -1,6 +1,6 @@
 ---
-title: "Prometheus"
-slug: "prometheus"
+title: "Grafana Operator"
+slug: "grafana-operator"
 layout: "components/single"
 sidebar: false
 _build:

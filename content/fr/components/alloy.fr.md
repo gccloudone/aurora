@@ -1,6 +1,6 @@
 ---
-title: "Prometheus"
-slug: "prometheus"
+title: "Grafana Alloy"
+slug: "alloy"
 layout: "components/single"
 sidebar: false
 _build:

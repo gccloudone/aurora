@@ -1,6 +1,6 @@
 ---
-title: "Prometheus"
-slug: "prometheus"
+title: "Tetragon"
+slug: "tetragon"
 layout: "components/single"
 sidebar: false
 _build:
