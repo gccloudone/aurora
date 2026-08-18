@@ -1,4 +1,4 @@
-name: "cert-manager"
+name: "Cert Manager"
 slug: "cert-manager"
 alias: "Kubernetes Certificate Controller"
 productVersion: "v1.20.3"
