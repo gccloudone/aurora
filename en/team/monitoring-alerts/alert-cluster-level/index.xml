@@ -6,7 +6,7 @@
 &lt;/gcds-alert>
 
 &lt;gcds-heading tag="h2" id="alert-certmanagercertfailingtorenew" character-limit="true">Alert: certManagerCertFailingToRenew&lt;gcds-link href="#alert-certmanagercertfailingtorenew" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This alert fires when the cert-manager certificate fails to renew when it should have at the designated renewal time.&lt;/p></description></item><item><title>DNS Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/dns/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
+&lt;p>This alert fires when the Cert Manager certificate fails to renew when it should have at the designated renewal time.&lt;/p></description></item><item><title>DNS Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/dns/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
  &lt;gcds-text character-limit="true">
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.

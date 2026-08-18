@@ -1,19 +1,17 @@
+/* Splash page */
 .splash-page {
-  background: url("../images/sp-bg-1.jpg") no-repeat center center fixed;
+  background: url("/images/sp-bg-1.jpg") no-repeat center center fixed;
   background-size: cover; }
   .splash-page h1::after {
     display: none; }
   .splash-page .light-bg {
     background: var(--gcds-bg-white);
     border-radius: 10px;
-    box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.5); }
+    box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.5); }
   .splash-page #cnt-splash {
     position: absolute;
     left: 50%;
     top: 45%;
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
   .splash-page .gc-header {
     padding: 1rem;
@@ -22,11 +20,12 @@
     background-color: #D9D9D9;
     padding: 1rem;
     border-radius: 0px 0px 10px 10px; }
-  .splash-page .gc-footer .terms {
-    width: 100%; }
-  .splash-page .gc-footer svg {
-    width: 80%; }
+    .splash-page .gc-footer .terms {
+      width: 100%; }
+    .splash-page .gc-footer svg {
+      width: 80%; }
 
+/* Code blocks */
 div.highlight pre {
   font-size: 80%;
   margin-bottom: 1em;
@@ -42,6 +41,7 @@ body.character-limit div.highlight {
   background-color: lightgrey;
   padding: 0 5px; }
 
+/* Tables */
 table.full-width {
   width: 100%; }
 

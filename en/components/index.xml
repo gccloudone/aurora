@@ -11,11 +11,39 @@
  
  
  &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/alloy">Grafana Alloy&lt;/a>&lt;/td>
+ &lt;td>Observability&lt;/td>
+ &lt;td>SIG: Observability&lt;/td>
+ &lt;td>
+ Grafana Alloy is a vendor-neutral, batteries-included telemetry collector with configuration based on River. It is a distribution of the OpenTelemetry Collector that combines the best parts of the Grafana Agent and the OpenTelemetry Collector into a single binary. Within Aurora, Alloy is used to collect metrics, logs, and traces from workloads and platform components, providing a unified telemetry pipeline that can forward data to multiple observability backends including Grafana, Prometheus, and Loki.&lt;br />&lt;br />
+ 
+ &lt;a href="https://grafana.com/docs/alloy/latest/">https://grafana.com/docs/alloy/latest/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflows">Argo Workflows&lt;/a>&lt;/td>
+ &lt;td>App Development&lt;/td>
+ &lt;td>SIG: Architecture&lt;/td>
+ &lt;td>
+ Argo Workflows is used within Aurora to define and execute multi-step computational workflows as Kubernetes-native pipelines. It allows teams to model complex processes as directed acyclic graphs (DAGs) of container steps, enabling parallel execution, retries, and artifact passing between steps. Argo Workflows provides a visual UI for monitoring workflow runs and supports event-driven triggers through integrations with Argo Events and other Kubernetes controllers.&lt;br />&lt;br />
+ 
+ &lt;a href="https://argoproj.github.io/workflows/">https://argoproj.github.io/workflows/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
  &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-mgmt/templates/argo-foundation">Argo CD&lt;/a>&lt;/td>
  &lt;td>Platform Management&lt;/td>
  &lt;td>SIG: Architecture&lt;/td>
  &lt;td>
- Argo CD is Aurora’s primary GitOps engine for deploying and managing platform and application components across Kubernetes clusters. It continuously reconciles the desired state defined in Git repositories with the live state of clusters, providing drift detection, automated synchronization, and auditable change history. Argo CD enables consistent, repeatable deployments while enforcing separation of concerns between platform teams and application teams.&lt;br />&lt;br />
+ Argo CD is Aurora&amp;#39;s primary GitOps engine for deploying and managing platform and application components across Kubernetes clusters. It continuously reconciles the desired state defined in Git repositories with the live state of clusters, providing drift detection, automated synchronization, and auditable change history. Argo CD enables consistent, repeatable deployments while enforcing separation of concerns between platform teams and application teams.&lt;br />&lt;br />
  
  &lt;a href="https://argo-cd.readthedocs.io/">https://argo-cd.readthedocs.io/&lt;/a>
  
@@ -25,27 +53,13 @@
  
  
  &lt;tr>
- &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager">cert-manager&lt;/a>&lt;/td>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager">Cert Manager&lt;/a>&lt;/td>
  &lt;td>Security&lt;/td>
  &lt;td>SIG: Security&lt;/td>
  &lt;td>
- cert-manager is used within Aurora to automate the issuance, renewal, and lifecycle management of TLS certificates for Kubernetes workloads and platform services. It integrates with external certificate authorities and internal PKI systems to ensure secure, policy-compliant encryption for ingress, service-to-service communication, and platform endpoints, reducing operational risk and manual certificate handling.&lt;br />&lt;br />
+ Cert Manager is used within Aurora to automate the issuance, renewal, and lifecycle management of TLS certificates for Kubernetes workloads and platform services. It integrates with external certificate authorities and internal PKI systems to ensure secure, policy-compliant encryption for ingress, service-to-service communication, and platform endpoints, reducing operational risk and manual certificate handling.&lt;br />&lt;br />
  
  &lt;a href="https://cert-manager.io/">https://cert-manager.io/&lt;/a>
- 
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr>
- &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cidr-allocator">CIDR Allocator&lt;/a>&lt;/td>
- &lt;td>Platform Networking&lt;/td>
- &lt;td>SIG: Networking&lt;/td>
- &lt;td>
- CIDR Allocator is a custom Aurora platform component responsible for allocating, tracking, and managing IP address ranges for Kubernetes clusters and networking domains. It ensures that cluster, pod, and service CIDRs are assigned deterministically and without overlap across environments. CIDR Allocator enables scalable multi-cluster networking, simplifies routing and firewall integration, and supports Aurora’s zero-trust and multi-cloud networking architecture.&lt;br />&lt;br />
- 
- &lt;a href="https://github.com/gccloudone-aurora/cidr-allocator">https://github.com/gccloudone-aurora/cidr-allocator&lt;/a>
  
  &lt;/td>
  &lt;/tr>
@@ -57,23 +71,9 @@
  &lt;td>Networking&lt;/td>
  &lt;td>SIG: Networking&lt;/td>
  &lt;td>
- Cilium is Aurora’s primary Container Network Interface (CNI) and dataplane for Kubernetes workload clusters. It leverages eBPF to deliver high-performance pod networking, fine-grained network policy enforcement, and deep traffic observability through Hubble. Cilium enables advanced networking patterns, including ClusterwideNetworkPolicy and optional BGP-based route advertisement to integrate pod and service networking with enterprise firewalls.&lt;br />&lt;br />
+ Cilium is Aurora&amp;#39;s primary Container Network Interface (CNI) and dataplane for Kubernetes workload clusters. It leverages eBPF to deliver high-performance pod networking, fine-grained network policy enforcement, and deep traffic observability through Hubble. Cilium enables advanced networking patterns, including ClusterwideNetworkPolicy and optional BGP-based route advertisement to integrate pod and service networking with enterprise firewalls.&lt;br />&lt;br />
  
  &lt;a href="https://cilium.io/">https://cilium.io/&lt;/a>
- 
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr>
- &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/falco">Falco&lt;/a>&lt;/td>
- &lt;td>Security&lt;/td>
- &lt;td>SIG: Security&lt;/td>
- &lt;td>
- Falco is used within Aurora to provide runtime security monitoring and threat detection for Kubernetes workloads. It observes system calls and Kubernetes events to detect abnormal or potentially malicious behavior, such as privilege escalation, unexpected process execution, or suspicious network activity. Falco enables real-time alerting and supports policy-driven runtime enforcement aligned with zero-trust and defense-in-depth security models.&lt;br />&lt;br />
- 
- &lt;a href="https://falco.org/">https://falco.org/&lt;/a>
  
  &lt;/td>
  &lt;/tr>
@@ -109,6 +109,20 @@
  
  
  &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/grafana-operator">Grafana Operator&lt;/a>&lt;/td>
+ &lt;td>Observability&lt;/td>
+ &lt;td>SIG: Observability&lt;/td>
+ &lt;td>
+ Grafana Operator is a Kubernetes operator that automates the lifecycle management of Grafana deployments, dashboards, and data sources. Within Aurora, it enables declarative, GitOps-driven provisioning of Grafana instances and ensures dashboards are consistently managed and versioned across clusters. The operator reconciles desired state from custom resources, providing automated updates, drift correction, and multi-tenant Grafana management without manual configuration.&lt;br />&lt;br />
+ 
+ &lt;a href="https://grafana.github.io/grafana-operator/">https://grafana.github.io/grafana-operator/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
  &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cilium">Hubble&lt;/a>&lt;/td>
  &lt;td>Observability&lt;/td>
  &lt;td>SIG: Networking&lt;/td>
@@ -137,11 +151,25 @@
  
  
  &lt;tr>
- &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/kube-bench">kube-bench&lt;/a>&lt;/td>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/kiali">Kiali&lt;/a>&lt;/td>
+ &lt;td>Observability&lt;/td>
+ &lt;td>SIG: Networking&lt;/td>
+ &lt;td>
+ Kiali is a management console for Istio service mesh that provides real-time visualization of the service mesh topology, health metrics, and configuration validation. Within Aurora, Kiali enables platform operators and application teams to understand service-to-service communication, validate Istio configurations, troubleshoot connectivity issues, and monitor the health of services within the mesh. It offers a visual topology map, traffic animation, and configuration auditing to support day-to-day operations.&lt;br />&lt;br />
+ 
+ &lt;a href="https://kiali.io/">https://kiali.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/kube-bench">Kube Bench&lt;/a>&lt;/td>
  &lt;td>Platform Security&lt;/td>
  &lt;td>SIG: Security&lt;/td>
  &lt;td>
- kube-bench is used by Aurora to assess Kubernetes clusters against the Center for Internet Security (CIS) Kubernetes Benchmarks. It evaluates cluster configuration, control plane components, and node-level settings to identify deviations from recommended security baselines. kube-bench supports compliance reporting, security posture assessments, and continuous improvement of cluster hardening across Aurora-managed environments.&lt;br />&lt;br />
+ Kube Bench is used by Aurora to assess Kubernetes clusters against the Center for Internet Security (CIS) Kubernetes Benchmarks. It evaluates cluster configuration, control plane components, and node-level settings to identify deviations from recommended security baselines. Kube Bench supports compliance reporting, security posture assessments, and continuous improvement of cluster hardening across Aurora-managed environments.&lt;br />&lt;br />
  
  &lt;a href="https://github.com/aquasecurity/kube-bench">https://github.com/aquasecurity/kube-bench&lt;/a>
  
@@ -197,9 +225,23 @@
  &lt;td>Observability&lt;/td>
  &lt;td>SIG: Observability&lt;/td>
  &lt;td>
- Prometheus is used within Aurora as the primary metrics collection and querying system for Kubernetes clusters and platform services. It scrapes metrics from workloads, infrastructure components, and platform services, storing time-series data that enables monitoring, alerting, and performance analysis. Prometheus forms the foundation of Aurora’s observability stack and supports standardized metrics-based visibility across multi-tenant environments.&lt;br />&lt;br />
+ Prometheus is used within Aurora as the primary metrics collection and querying system for Kubernetes clusters and platform services. It scrapes metrics from workloads, infrastructure components, and platform services, storing time-series data that enables monitoring, alerting, and performance analysis. Prometheus forms the foundation of Aurora&amp;#39;s observability stack and supports standardized metrics-based visibility across multi-tenant environments.&lt;br />&lt;br />
  
  &lt;a href="https://prometheus.io/">https://prometheus.io/&lt;/a>
+ 
+ &lt;/td>
+ &lt;/tr>
+ 
+ 
+ 
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/strimzi-kafka-operator">Strimzi Kafka Operator&lt;/a>&lt;/td>
+ &lt;td>App Development&lt;/td>
+ &lt;td>SIG: Architecture&lt;/td>
+ &lt;td>
+ Strimzi is an Apache Kubernetes operator that simplifies deploying and managing Apache Kafka on Kubernetes. Within Aurora, Strimzi enables teams to run production-ready Kafka clusters for event streaming, message brokering, and data pipeline workloads. The operator automates provisioning, configuration, scaling, and lifecycle management of Kafka brokers, ZooKeeper nodes, and Kafka Connect clusters, providing a declarative, Kubernetes-native approach to managing stateful streaming infrastructure.&lt;br />&lt;br />
+ 
+ &lt;a href="https://strimzi.io/">https://strimzi.io/&lt;/a>
  
  &lt;/td>
  &lt;/tr>
@@ -225,7 +267,7 @@
  &lt;td>Platform Security&lt;/td>
  &lt;td>SIG: Security&lt;/td>
  &lt;td>
- Trivy Operator is used by Aurora to perform continuous, automated security scanning of Kubernetes workloads, container images, and cluster configurations. It integrates Trivy’s vulnerability, misconfiguration, and compliance scanning capabilities directly into the Kubernetes control plane by producing Kubernetes-native custom resources. Trivy Operator enables proactive risk identification, supports supply chain security objectives, and provides visibility into security posture across Aurora-managed clusters.&lt;br />&lt;br />
+ Trivy Operator is used by Aurora to perform continuous, automated security scanning of Kubernetes workloads, container images, and cluster configurations. It integrates Trivy&amp;#39;s vulnerability, misconfiguration, and compliance scanning capabilities directly into the Kubernetes control plane by producing Kubernetes-native custom resources. Trivy Operator enables proactive risk identification, supports supply chain security objectives, and provides visibility into security posture across Aurora-managed clusters.&lt;br />&lt;br />
  
  &lt;a href="https://aquasecurity.github.io/trivy-operator/">https://aquasecurity.github.io/trivy-operator/&lt;/a>
  
