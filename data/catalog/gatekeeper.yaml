@@ -1,6 +1,7 @@
 name: "Gatekeeper"
 slug: "gatekeeper"
 alias: "OPA Admission Controller"
+productVersion: "v3.23.0"
 
 category:
   hld: "Security"
@@ -8,6 +9,7 @@ category:
 
 descriptions:
   short: "Gatekeeper enforces policy and governance controls in Kubernetes using OPA."
+  short_fr: "Gatekeeper impose des contrôles de politiques et de gouvernance dans Kubernetes à l'aide d'OPA."
   long: >-
     Gatekeeper is used within Aurora as the Kubernetes admission controller for
     enforcing policy and governance controls at resource creation and update
@@ -16,6 +18,16 @@ descriptions:
     Kubernetes resources adhere to approved standards before they are admitted
     into the cluster. This approach reduces operational risk and supports
     consistent enforcement of enterprise and regulatory requirements.
+  long_fr: >-
+    Gatekeeper est utilisé dans Aurora comme contrôleur d'admission Kubernetes
+    pour imposer des contrôles de politiques et de gouvernance lors de la
+    création et de la mise à jour des ressources. Construit sur Open Policy
+    Agent (OPA), Gatekeeper permet l'application des politiques sous forme de
+    code pour la sécurité, la conformité et les garde-fous de la plateforme,
+    garantissant que les ressources Kubernetes respectent les normes approuvées
+    avant d'être admises dans le cluster. Cette approche réduit les risques
+    opérationnels et favorise une application cohérente des exigences
+    d'entreprise et réglementaires.
 
 capabilities:
   - policy-enforcement

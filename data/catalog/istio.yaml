@@ -1,6 +1,7 @@
 name: "Istio"
 slug: "istio"
 alias: "Service Mesh"
+productVersion: "v1.29.1"
 
 category:
   hld: "Networking"
@@ -8,6 +9,7 @@ category:
 
 descriptions:
   short: "Istio provides service mesh capabilities for traffic management, security, and observability in Kubernetes."
+  short_fr: "Istio fournit des capacités de maillage de services pour la gestion du trafic, la sécurité et l'observabilité dans Kubernetes."
   long: >-
     Istio is used within Aurora to provide service mesh capabilities for
     Kubernetes workloads, including traffic management, mutual TLS, identity-
@@ -16,6 +18,15 @@ descriptions:
     networking patterns by enforcing strong identity and policy at the
     application layer, complementing lower-level network controls provided by
     the CNI.
+  long_fr: >-
+    Istio est utilisé dans Aurora pour fournir des capacités de maillage de
+    services pour les charges de travail Kubernetes, notamment la gestion du
+    trafic, le TLS mutuel, l'autorisation basée sur l'identité et
+    l'observabilité entre services. Il permet un contrôle fin du trafic
+    est-ouest et prend en charge les modèles de réseau à confiance zéro en
+    imposant une identité et une politique robustes au niveau de
+    l'application, complétant les contrôles réseau de plus bas niveau fournis
+    par le CNI.
 
 capabilities:
   - service-mesh

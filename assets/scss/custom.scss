@@ -1,0 +1,80 @@
+/* Splash page */
+.splash-page {
+  background: url("/images/sp-bg-1.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  h1::after {
+    display: none;
+  }
+
+  .light-bg {
+    background: var(--gcds-bg-white);
+    border-radius: 10px;
+    box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  #cnt-splash {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+  }
+
+  .gc-header {
+    padding: 1rem;
+    padding-bottom: 0px;
+  }
+
+  .gc-footer {
+    background-color: #D9D9D9;
+    padding: 1rem;
+    border-radius: 0px 0px 10px 10px;
+
+    .terms {
+      width: 100%;
+    }
+
+    svg {
+      width: 80%;
+    }
+  }
+}
+
+/* Code blocks */
+div.highlight pre {
+  font-size: 80%;
+  margin-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+
+  code span span {
+    line-height: 110%;
+  }
+}
+
+body.character-limit div.highlight {
+  width: var(--gcds-text-character-limit);
+}
+
+:not(pre) > code {
+  background-color: lightgrey;
+  padding: 0 5px;
+}
+
+/* Tables */
+table.full-width {
+  width: 100%;
+}
+
+body.character-limit table.full-width {
+  width: var(--gcds-text-character-limit);
+}
+
+.highlight pre {
+  margin-bottom: 15px;
+}
+
+.highlight pre code {
+  word-break: break-word;
+  white-space: pre-wrap;
+}

@@ -1,8 +1,11 @@
 ---
 title: "Istio"
-alias: "mTLS"
-type: "App"
-description: "Istio étend Kubernetes pour établir un réseau programmable et conscient des applications."
-image: "/images/cncf/istio.svg"
+slug: "istio"
+date: "2026-08-17"
+lastmod: "2026-08-17"
+layout: "components/single"
 sidebar: false
+build:
+  render: always
+  list: never
 ---

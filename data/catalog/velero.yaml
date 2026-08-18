@@ -1,6 +1,7 @@
 name: "Velero"
 slug: "velero"
 alias: "Kubernetes Backup and Restore"
+productVersion: "v1.18.2"
 
 category:
   hld: "Platform Resilience"
@@ -8,6 +9,7 @@ category:
 
 descriptions:
   short: "Velero provides backup, restore, and disaster recovery for Kubernetes resources."
+  short_fr: "Velero fournit la sauvegarde, la restauration et la reprise après sinistre pour les ressources Kubernetes."
   long: >-
     Velero is used by Aurora to provide backup and restore capabilities for
     Kubernetes clusters and their associated resources. It enables disaster
@@ -15,6 +17,14 @@ descriptions:
     state of Kubernetes objects and, where supported, persistent volume data.
     Velero supports scheduled and on-demand backups and integrates with
     cloud object storage to retain backups outside the cluster lifecycle.
+  long_fr: >-
+    Velero est utilisé par Aurora pour fournir des capacités de sauvegarde et
+    de restauration pour les clusters Kubernetes et leurs ressources associées.
+    Il permet la reprise après sinistre, la migration de cluster et la
+    résilience opérationnelle en capturant l'état des objets Kubernetes et, le
+    cas échéant, des données de volume persistant. Velero prend en charge les
+    sauvegardes programmées et à la demande et s'intègre au stockage d'objets
+    cloud pour conserver les sauvegardes en dehors du cycle de vie du cluster.
 
 capabilities:
   - backup

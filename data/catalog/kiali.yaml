@@ -1,0 +1,95 @@
+name: "Kiali"
+slug: "kiali"
+alias: "Service Mesh Observability"
+productVersion: "v2.30.0"
+
+category:
+  hld: "Observability"
+  type: "App"
+
+descriptions:
+  short: "Kiali provides observability and management capabilities for Istio service mesh."
+  short_fr: "Kiali fournit des capacités d'observabilité et de gestion pour le maillage de services Istio."
+  long: >-
+    Kiali is a management console for Istio service mesh that provides
+    real-time visualization of the service mesh topology, health metrics,
+    and configuration validation. Within Aurora, Kiali enables platform
+    operators and application teams to understand service-to-service
+    communication, validate Istio configurations, troubleshoot connectivity
+    issues, and monitor the health of services within the mesh. It offers
+    a visual topology map, traffic animation, and configuration auditing
+    to support day-to-day operations.
+  long_fr: >-
+    Kiali est une console de gestion pour le maillage de services Istio qui
+    fournit une visualisation en temps réel de la topologie du maillage, des
+    métriques de santé et une validation de la configuration. Dans Aurora,
+    Kiali permet aux opérateurs de plateforme et aux équipes d'application de
+    comprendre les communications entre services, de valider les configurations
+    Istio, de résoudre les problèmes de connectivité et de surveiller la santé
+    des services dans le maillage. Il offre une carte topologique visuelle,
+    une animation du trafic et un audit de la configuration pour soutenir les
+    opérations quotidiennes.
+
+capabilities:
+  - service-mesh-observability
+  - topology-visualization
+  - configuration-validation
+  - traffic-monitoring
+  - health-analysis
+  - istio-management
+
+project:
+  homepage: "https://kiali.io/"
+  documentation: "https://kiali.io/documentation/latest/"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability-and-analysis--observability--kiali"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Networking"
+    steward: "Aurora Platform Team"
+  criticality: "medium"
+
+architecture:
+  role: >-
+    Provides a visual management console and observability layer for the
+    Istio service mesh. Kiali queries the Istio control plane and Kubernetes
+    API to build a real-time topology view and validate mesh configurations.
+  control_plane_components:
+    - "kiali-server"
+
+integrations:
+  integrates_with:
+    - "Istio (service mesh)"
+    - "Prometheus (metrics)"
+    - "Grafana (dashboards)"
+    - "Kubernetes API Server"
+  optional_features:
+    - "Traffic animation"
+    - "Configuration validation"
+    - "Health dashboards"
+    - "Trace integration"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Istio"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-app/templates/kiali"
+    release_name: "kiali"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks: []
+  dashboards: []
+
+metadata:
+  image: "/images/cncf/kiali.svg"
+  sidebar: false

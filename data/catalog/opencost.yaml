@@ -1,6 +1,7 @@
 name: "OpenCost"
 slug: "opencost"
 alias: "Kubernetes Cost Monitoring"
+productVersion: "v1.121.1"
 
 category:
   hld: "Platform Management"
@@ -8,6 +9,7 @@ category:
 
 descriptions:
   short: "OpenCost provides real-time cost allocation and visibility for Kubernetes workloads."
+  short_fr: "OpenCost fournit une allocation et une visibilité des coûts en temps réel pour les charges de travail Kubernetes."
   long: >-
     OpenCost is used within Aurora to provide transparent, real-time visibility
     into the cost of running Kubernetes workloads. It allocates infrastructure
@@ -16,6 +18,16 @@ descriptions:
     support chargeback or showback models, and make informed decisions about
     resource usage. OpenCost promotes financial accountability while remaining
     vendor-neutral and aligned with open-source cost management practices.
+  long_fr: >-
+    OpenCost est utilisé dans Aurora pour fournir une visibilité transparente
+    et en temps réel sur le coût d'exécution des charges de travail Kubernetes.
+    Il alloue les coûts des ressources d'infrastructure et cloud aux espaces de
+    noms, aux charges de travail et aux étiquettes, permettant aux opérateurs
+    de plateforme et aux équipes clientes de comprendre les schémas de
+    consommation, de soutenir les modèles de facturation ou de présentation et de prendre
+    des décisions éclairées sur l'utilisation des ressources. OpenCost favorise
+    la responsabilité financière tout en restant neutre et aligné sur les
+    pratiques de gestion des coûts en code ouvert.
 
 capabilities:
   - cost-visibility

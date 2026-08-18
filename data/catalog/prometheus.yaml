@@ -1,6 +1,7 @@
 name: "Prometheus"
 slug: "prometheus"
 alias: "Metrics Collection"
+productVersion: "v0.93.1"
 
 category:
   hld: "Observability"
@@ -8,14 +9,24 @@ category:
 
 descriptions:
   short: "Prometheus provides metrics collection, storage, and querying for Kubernetes and cloud-native systems."
+  short_fr: "Prometheus fournit la collecte, le stockage et l'interrogation des métriques pour Kubernetes et les systèmes cloud natifs."
   long: >-
     Prometheus is used within Aurora as the primary metrics collection and
     querying system for Kubernetes clusters and platform services. It scrapes
     metrics from workloads, infrastructure components, and platform services,
     storing time-series data that enables monitoring, alerting, and performance
-    analysis. Prometheus forms the foundation of Aurora’s observability stack
+    analysis. Prometheus forms the foundation of Aurora's observability stack
     and supports standardized metrics-based visibility across multi-tenant
     environments.
+  long_fr: >-
+    Prometheus est utilisé dans Aurora comme système principal de collecte et
+    d'interrogation des métriques pour les clusters Kubernetes et les services
+    de plateforme. Il récupère les métriques des charges de travail, des
+    composants d'infrastructure et des services de plateforme, stockant les
+    données de séries chronologiques qui permettent la surveillance, les alertes
+    et l'analyse des performances. Prometheus constitue la base de la pile
+    d'observabilité d'Aurora et prend en charge la visibilité normalisée basée
+    sur les métriques dans les environnements multi-locataires.
 
 capabilities:
   - metrics

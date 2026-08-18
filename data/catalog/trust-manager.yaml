@@ -1,6 +1,7 @@
 name: "Trust Manager"
 slug: "trust-manager"
 alias: "Certificate Trust Distribution"
+productVersion: "v0.24.0"
 
 category:
   hld: "Platform Security"
@@ -8,6 +9,7 @@ category:
 
 descriptions:
   short: "Trust Manager distributes and manages trusted CA bundles across Kubernetes workloads."
+  short_fr: "Trust Manager distribue et gère les ensembles de certificats CA de confiance pour les charges de travail Kubernetes."
   long: >-
     Trust Manager is used by Aurora to centrally manage and distribute trusted
     certificate authority (CA) bundles across Kubernetes clusters and workloads.
@@ -16,6 +18,16 @@ descriptions:
     Trust Manager reduces configuration drift, simplifies certificate trust
     management, and supports secure service-to-service communication in
     zero-trust and enterprise environments.
+  long_fr: >-
+    Trust Manager est utilisé par Aurora pour gérer et distribuer de manière
+    centralisée les ensembles de certificats d'autorité de certification (CA)
+    de confiance dans les clusters et les charges de travail Kubernetes. Il
+    permet une configuration de confiance cohérente pour les composants de
+    plateforme et d'application en synchronisant les certificats CA dans des
+    ressources natives Kubernetes. Trust Manager réduit la dérive de
+    configuration, simplifie la gestion de la confiance des certificats et
+    prend en charge les communications entre services sécurisées dans les
+    environnements à confiance zéro et d'entreprise.
 
 capabilities:
   - certificate-trust

@@ -19,4 +19,26 @@ components_no_description: No description available.
 components_read_more: Read more about
 components_browse: Browse Components
 
+comp_overview: Overview
+comp_deployment: Deployment
+comp_capabilities: Capabilities
+comp_architecture_role: Architecture Role
+comp_implementation: Implementation
+comp_project: Project
+comp_operational_references: Operational References
+
+comp_also_known_as: "Also known as:"
+comp_part_of: "Part of"
+comp_category: "Category:"
+comp_type: "Type:"
+comp_version: "Version:"
+comp_deployed_in: "Deployed in:"
+comp_deployment_model: "Deployment model:"
+comp_owner: "Owner:"
+comp_project_homepage: Project homepage
+comp_documentation: Documentation
+comp_cncf_landscape: CNCF Landscape
+comp_github: "GitHub:"
+comp_argo_note: "This repository is consumed by Argo CD to deploy and manage the %s platform component in Aurora."
+
 alpha_message: This is an experimental service.

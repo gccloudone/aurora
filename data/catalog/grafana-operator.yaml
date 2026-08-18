@@ -1,0 +1,94 @@
+name: "Grafana Operator"
+slug: "grafana-operator"
+alias: "Grafana Controller"
+productVersion: "v5.24.0"
+
+category:
+  hld: "Observability"
+  type: "Core"
+
+descriptions:
+  short: "Grafana Operator manages Grafana instances, dashboards, and data sources as Kubernetes custom resources."
+  short_fr: "Grafana Operator gère les instances Grafana, les tableaux de bord et les sources de données en tant que ressources personnalisées Kubernetes."
+  long: >-
+    Grafana Operator is a Kubernetes operator that automates the lifecycle
+    management of Grafana deployments, dashboards, and data sources. Within
+    Aurora, it enables declarative, GitOps-driven provisioning of Grafana
+    instances and ensures dashboards are consistently managed and versioned
+    across clusters. The operator reconciles desired state from custom resources,
+    providing automated updates, drift correction, and multi-tenant Grafana
+    management without manual configuration.
+  long_fr: >-
+    Grafana Operator est un opérateur Kubernetes qui automatise la gestion du
+    cycle de vie des déploiements, des tableaux de bord et des sources de
+    données Grafana. Dans Aurora, il permet l'approvisionnement déclaratif et
+    piloté par GitOps des instances Grafana et garantit que les tableaux de
+    bord sont gérés et versionnés de manière cohérente dans les clusters.
+    L'opérateur réconcilie l'état souhaité à partir de ressources
+    personnalisées, offrant des mises à jour automatisées, la correction de
+    dérive et la gestion multi-locataires de Grafana sans configuration
+    manuelle.
+
+capabilities:
+  - grafana-management
+  - dashboard-provisioning
+  - datasource-management
+  - kubernetes-operator
+  - gitops
+  - declarative-config
+
+project:
+  homepage: "https://grafana.github.io/grafana-operator/"
+  documentation: "https://grafana.github.io/grafana-operator/docs/"
+  cncf_landscape: "https://landscape.cncf.io/?item=observability-and-analysis--observability--grafana"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "management-clusters"
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Observability"
+    steward: "Aurora Platform Team"
+  criticality: "high"
+
+architecture:
+  role: >-
+    Manages the lifecycle of Grafana instances and their associated resources
+    (dashboards, data sources, alerting rules) as Kubernetes custom resources.
+    The operator ensures consistent, declarative management of Grafana
+    deployments across Aurora clusters.
+  control_plane_components:
+    - "grafana-operator-controller"
+    - "grafana"
+
+integrations:
+  integrates_with:
+    - "Grafana Cloud"
+    - "Prometheus (data source)"
+    - "Loki (data source)"
+    - "Kubernetes API Server"
+  optional_features:
+    - "Multi-instance Grafana management"
+    - "Dashboard templating"
+    - "Sidecar-injected dashboards"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-core/templates/grafana-operator"
+    release_name: "grafana-operator"
+  adr:
+    - "ADR-001: Adoption of the Cloud Native Platform (CNP) as the Baseline for Aurora"
+  runbooks: []
+  dashboards: []
+
+metadata:
+  image: "/images/cncf/grafana-operator.svg"
+  sidebar: false

@@ -1,6 +1,7 @@
 name: "Tetragon"
 slug: "tetragon"
 alias: "eBPF Runtime Enforcement"
+productVersion: "v1.7.0"
 
 category:
   hld: "Security"
@@ -8,6 +9,7 @@ category:
 
 descriptions:
   short: "Tetragon provides real-time runtime security enforcement and tracing for Kubernetes using eBPF."
+  short_fr: "Tetragon fournit l'application de la sécurité à l'exécution en temps réel et le traçage pour Kubernetes à l'aide d'eBPF."
   long: >-
     Tetragon is used within Aurora to provide real-time runtime security
     enforcement and deep system observability for Kubernetes workloads using
@@ -16,6 +18,16 @@ descriptions:
     instrumentation. Tetragon complements admission-time controls and passive
     detection by enabling active enforcement and fine-grained runtime policy
     aligned with zero-trust and defense-in-depth security models.
+  long_fr: >-
+    Tetragon est utilisé dans Aurora pour fournir l'application de la sécurité
+    à l'exécution en temps réel et une observabilité approfondie du système
+    pour les charges de travail Kubernetes à l'aide d'eBPF. Il permet la
+    détection et la prévention pilotées par des politiques des activités de
+    processus, de fichiers et de réseau indésirables au niveau du noyau, sans
+    nécessiter d'instrumentation applicative. Tetragon complète les contrôles
+    lors de l'admission et la détection passive en permettant l'application
+    active et les politiques à l'exécution fines, alignées sur les modèles de
+    sécurité à confiance zéro et de défense en profondeur.
 
 capabilities:
   - runtime-security

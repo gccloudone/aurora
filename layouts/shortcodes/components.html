@@ -17,13 +17,16 @@
     <article class="component-item">
       <h3 class="mb-400">{{ $featured.name }}</h3>
 
-      {{ with $featured.descriptions.short }}
-        <p class="mb-450">{{ . }}</p>
-      {{ else }}
+      {{/* Use French description if available, fallback to English */}}
+      {{- if and (eq $.Page.Language.Lang "fr") $featured.descriptions.short_fr -}}
+        <p class="mb-450">{{ $featured.descriptions.short_fr }}</p>
+      {{- else if $featured.descriptions.short -}}
+        <p class="mb-450">{{ $featured.descriptions.short }}</p>
+      {{- else -}}
         <p class="mb-450">
           {{ i18n "components_no_description" | default "No description available." }}
         </p>
-      {{ end }}
+      {{- end -}}
 
       {{ with $featured.metadata.image }}
         <img

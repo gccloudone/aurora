@@ -1,21 +1,32 @@
-name: "kube-bench"
+name: "Kube Bench"
 slug: "kube-bench"
 alias: "Kubernetes CIS Benchmark"
+productVersion: "v0.16.0"
 
 category:
   hld: "Platform Security"
   type: "Core"
 
 descriptions:
-  short: "kube-bench checks Kubernetes clusters against CIS security benchmarks."
+  short: "Kube Bench checks Kubernetes clusters against CIS security benchmarks."
+  short_fr: "Kube Bench vérifie les clusters Kubernetes par rapport aux benchmarks de sécurité CIS."
   long: >-
-    kube-bench is used by Aurora to assess Kubernetes clusters against
+    Kube Bench is used by Aurora to assess Kubernetes clusters against
     the Center for Internet Security (CIS) Kubernetes Benchmarks. It
     evaluates cluster configuration, control plane components, and
     node-level settings to identify deviations from recommended security
-    baselines. kube-bench supports compliance reporting, security posture
+    baselines. Kube Bench supports compliance reporting, security posture
     assessments, and continuous improvement of cluster hardening across
     Aurora-managed environments.
+  long_fr: >-
+    Kube Bench est utilisé par Aurora pour évaluer les clusters Kubernetes par
+    rapport aux benchmarks Kubernetes du Center for Internet Security (CIS). Il
+    évalue la configuration du cluster, les composants du plan de contrôle et
+    les paramètres au niveau des nœuds pour identifier les écarts par rapport
+    aux bases de sécurité recommandées. Kube Bench soutient les rapports de
+    conformité, les évaluations de posture de sécurité et l'amélioration
+    continue du durcissement des clusters dans les environnements gérés par
+    Aurora.
 
 capabilities:
   - cis-benchmarking
@@ -44,7 +55,7 @@ architecture:
   role: >-
     Executes benchmark checks against Kubernetes control plane and node
     components by inspecting configuration files, command-line flags,
-    and runtime settings. kube-bench runs periodically or on demand and
+    and runtime settings. Kube Bench runs periodically or on demand and
     produces machine-readable reports that can be consumed by security
     dashboards and compliance workflows.
   control_plane_components:

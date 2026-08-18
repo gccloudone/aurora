@@ -100,7 +100,7 @@ Edit the `config.yaml` for your target cluster, filling in all the `<FILLIN_XYZ>
 
 - App-of-apps configuration: which components are deployed and how they sync.
 - Networking and identity: API server CIDRs, ingress domain, subscription and tenant IDs, and Key Vault references.
-- Core components: toggles for services such as Cilium, cert-manager, and the CIDR allocator.
+- Core components: toggles for services such as Cilium, Cert Manager, and the CIDR allocator.
 
 Commit and push your changes to a new repository, following a naming convention such as `project-example`, where example is the name of the project or department.
 

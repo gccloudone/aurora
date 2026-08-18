@@ -1,8 +1,11 @@
 ---
 title: "OpenCost"
-alias: "FinOps"
-type: "Core"
-description: "OpenCost est un projet open source, neutre envers les fournisseurs, permettant de mesurer et d'allouer les coûts d'infrastructure cloud et de conteneurs en temps réel."
-image: "/images/cncf/opencost.svg"
+slug: "opencost"
+date: "2026-08-17"
+lastmod: "2026-08-17"
+layout: "components/single"
 sidebar: false
+build:
+  render: always
+  list: never
 ---

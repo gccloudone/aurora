@@ -10,6 +10,7 @@
   {{/* Resolve component from catalog using slug */}}
   {{ $slug := .Params.slug | default (urlize .Title) }}
   {{ $scratch := newScratch }}
+  {{ $lang := .Language.Lang }}
 
   {{ range $key, $c := .Site.Data.catalog }}
     {{ if and (ne $key "versions") (eq ($c.slug | default (urlize $c.name)) $slug) }}
@@ -83,42 +84,47 @@
 
               {{ with $component.alias }}
                 <gcds-text text-role="secondary" size="caption">
-                  Also known as: {{ . }}
+                  {{ i18n "comp_also_known_as" }} {{ . }}
                 </gcds-text>
               {{ end }}
 
               {{ with $component.relationships.parent }}
                 <gcds-text text-role="secondary" size="caption">
-                  Part of <a href="/components/{{ . }}/">{{ . | title }}</a>
+                  {{ i18n "comp_part_of" }} <a href="{{ relLangURL (printf "/components/%s/" .) }}">{{ . | title }}</a>
                 </gcds-text>
               {{ end }}
 
-              {{ with $component.descriptions.long }}
-                <gcds-text class="my-400">{{ . }}</gcds-text>
+              {{/* Use French description if available, fallback to English */}}
+              {{ if and (eq $lang "fr") $component.descriptions.long_fr }}
+                <gcds-text class="my-400">{{ $component.descriptions.long_fr }}</gcds-text>
+              {{ else }}
+                {{ with $component.descriptions.long }}
+                  <gcds-text class="my-400">{{ . }}</gcds-text>
+                {{ end }}
               {{ end }}
 
               <!-- Overview -->
-              <gcds-heading tag="h2">Overview</gcds-heading>
+              <gcds-heading tag="h2">{{ i18n "comp_overview" }}</gcds-heading>
               <gcds-text>
-                <strong>Category:</strong> {{ $component.category.hld }}<br>
-                <strong>Type:</strong> {{ $component.category.type }}<br>
-                <strong>Version:</strong>
+                <strong>{{ i18n "comp_category" }}</strong> {{ $component.category.hld }}<br>
+                <strong>{{ i18n "comp_type" }}</strong> {{ $component.category.type }}<br>
+                <strong>{{ i18n "comp_version" }}</strong>
                 {{ if $version }}{{ $version }}{{ else }}{{ $component.deployment.version }}{{ end }}
               </gcds-text>
 
               <!-- Deployment -->
               {{ with $component.deployment }}
-                <gcds-heading tag="h2">Deployment</gcds-heading>
+                <gcds-heading tag="h2">{{ i18n "comp_deployment" }}</gcds-heading>
                 <gcds-text>
-                  <strong>Deployed in:</strong> {{ delimit .deployed_in ", " }}<br>
-                  <strong>Deployment model:</strong> {{ .deployment_model }}<br>
-                  <strong>Owner:</strong> {{ .ownership.team }}
+                  <strong>{{ i18n "comp_deployed_in" }}</strong> {{ delimit .deployed_in ", " }}<br>
+                  <strong>{{ i18n "comp_deployment_model" }}</strong> {{ .deployment_model }}<br>
+                  <strong>{{ i18n "comp_owner" }}</strong> {{ .ownership.team }}
                 </gcds-text>
               {{ end }}
 
               <!-- Capabilities -->
               {{ with $component.capabilities }}
-                <gcds-heading tag="h2">Capabilities</gcds-heading>
+                <gcds-heading tag="h2">{{ i18n "comp_capabilities" }}</gcds-heading>
                 <ul>
                   {{ range . }}
                     <li>{{ . }}</li>
@@ -128,38 +134,37 @@
 
               <!-- Architecture -->
               {{ with $component.architecture.role }}
-                <gcds-heading tag="h2">Architecture Role</gcds-heading>
+                <gcds-heading tag="h2">{{ i18n "comp_architecture_role" }}</gcds-heading>
                 <gcds-text>{{ . }}</gcds-text>
               {{ end }}
 
               <!-- Implementation -->
               {{ with $component.references.charts }}
-                <gcds-heading tag="h2">Implementation</gcds-heading>
+                <gcds-heading tag="h2">{{ i18n "comp_implementation" }}</gcds-heading>
                 <gcds-text>
-                  <strong>GitHub:</strong>
+                  <strong>{{ i18n "comp_github" }}</strong>
                   <a href="{{ .repo }}/tree/main/{{ .path }}">
                     {{ .repo }}/{{ .path }}
                   </a>
                 </gcds-text>
                 <gcds-text text-role="secondary" size="caption">
-                  This repository is consumed by Argo CD to deploy and manage the
-                  {{ $component.name }} platform component in Aurora.
+                  {{ i18n "comp_argo_note" $component.name }}
                 </gcds-text>
               {{ end }}
 
               <!-- Project -->
               {{ with $component.project }}
-                <gcds-heading tag="h2">Project</gcds-heading>
+                <gcds-heading tag="h2">{{ i18n "comp_project" }}</gcds-heading>
                 <ul>
-                  {{ with .homepage }}<li><a href="{{ . }}">Project homepage</a></li>{{ end }}
-                  {{ with .documentation }}<li><a href="{{ . }}">Documentation</a></li>{{ end }}
-                  {{ with .cncf_landscape }}<li><a href="{{ . }}">CNCF Landscape</a></li>{{ end }}
+                  {{ with .homepage }}<li><a href="{{ . }}">{{ i18n "comp_project_homepage" }}</a></li>{{ end }}
+                  {{ with .documentation }}<li><a href="{{ . }}">{{ i18n "comp_documentation" }}</a></li>{{ end }}
+                  {{ with .cncf_landscape }}<li><a href="{{ . }}">{{ i18n "comp_cncf_landscape" }}</a></li>{{ end }}
                 </ul>
               {{ end }}
 
               <!-- Operational References -->
               {{ with $component.references }}
-                <gcds-heading tag="h2">Operational References</gcds-heading>
+                <gcds-heading tag="h2">{{ i18n "comp_operational_references" }}</gcds-heading>
                 <ul>
                   {{ range .adr }}<li>{{ . }}</li>{{ end }}
                   {{ range .runbooks }}<li>{{ . }}</li>{{ end }}

@@ -1,0 +1,357 @@
+[
+  {
+    "name": "Grafana Alloy",
+    "slug": "alloy",
+    "productVersion": "v1.11.0",
+    "category": "Observability",
+    "type": "Core",
+    "description": "Grafana Alloy is a vendor-neutral distribution of the OpenTelemetry Collector for collecting telemetry data.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://grafana.com/docs/alloy/latest/",
+      "https://grafana.com/docs/alloy/latest/"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Argo Workflows",
+    "slug": "argo-workflows",
+    "productVersion": "v4.1.1",
+    "category": "App Development",
+    "type": "App",
+    "description": "Argo Workflows is a container-native workflow engine for orchestrating parallel jobs on Kubernetes.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://argoproj.github.io/workflows/",
+      "https://argoproj.github.io/workflows/",
+      "https://landscape.cncf.io/?item=app-definition-and-development--continuous-integration-delivery--argo"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Argo CD",
+    "slug": "argocd",
+    "productVersion": "v3.1.9",
+    "category": "Platform Management",
+    "type": "Core",
+    "description": "Argo CD is a declarative GitOps continuous delivery tool for Kubernetes.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://argo-cd.readthedocs.io/",
+      "https://argo-cd.readthedocs.io/en/stable/",
+      "https://landscape.cncf.io/?item=app-definition-and-development--continuous-integration-delivery--argo"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "cert-manager",
+    "slug": "cert-manager",
+    "productVersion": "v1.20.3",
+    "category": "Security",
+    "type": "Core",
+    "description": "cert-manager automates the management and renewal of TLS certificates in Kubernetes.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://cert-manager.io/",
+      "https://cert-manager.io/docs/",
+      "https://landscape.cncf.io/?item=provisioning--security-compliance--cert-manager"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Cilium",
+    "slug": "cilium",
+    "productVersion": "v1.20.0",
+    "category": "Networking",
+    "type": "Core",
+    "description": "Cilium provides Kubernetes networking and NetworkPolicy enforcement using an eBPF dataplane.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://cilium.io/",
+      "https://docs.cilium.io/",
+      "https://landscape.cncf.io/?item=runtime--cloud-native-network--cilium"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Fluent Operator",
+    "slug": "fluent-operator",
+    "productVersion": "v3.10.0",
+    "category": "Observability",
+    "type": "Core",
+    "description": "Fluent Operator is a Kubernetes operator that manages Fluent Bit deployments for log collection and forwarding.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://github.com/fluent/fluent-operator",
+      "https://github.com/fluent/fluent-operator/blob/master/docs/README.md",
+      "https://landscape.cncf.io/?item=observability-and-analysis--observability--fluentd"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Gatekeeper",
+    "slug": "gatekeeper",
+    "productVersion": "v3.23.0",
+    "category": "Security",
+    "type": "Core",
+    "description": "Gatekeeper enforces policy and governance controls in Kubernetes using OPA.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://open-policy-agent.github.io/gatekeeper/",
+      "https://open-policy-agent.github.io/gatekeeper/website/docs/",
+      "https://landscape.cncf.io/?item=cnai--governance-policy-security--opa-gatekeeper"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Grafana Operator",
+    "slug": "grafana-operator",
+    "productVersion": "v5.24.0",
+    "category": "Observability",
+    "type": "Core",
+    "description": "Grafana Operator manages Grafana instances, dashboards, and data sources as Kubernetes custom resources.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://grafana.github.io/grafana-operator/",
+      "https://grafana.github.io/grafana-operator/docs/",
+      "https://landscape.cncf.io/?item=observability-and-analysis--observability--grafana"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Hubble",
+    "slug": "hubble",
+    "productVersion": null,
+    "category": "Observability",
+    "type": "Core",
+    "description": "Hubble provides network flow observability for Kubernetes using eBPF.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://cilium.io/hubble/",
+      "https://docs.cilium.io/en/stable/observability/hubble/",
+      "https://landscape.cncf.io/?item=observability-and-analysis--observability--hubble"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Istio",
+    "slug": "istio",
+    "productVersion": "v1.29.1",
+    "category": "Networking",
+    "type": "App",
+    "description": "Istio provides service mesh capabilities for traffic management, security, and observability in Kubernetes.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://istio.io/",
+      "https://istio.io/latest/docs/",
+      "https://landscape.cncf.io/?item=orchestration-management--service-mesh--istio"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Kiali",
+    "slug": "kiali",
+    "productVersion": "v2.30.0",
+    "category": "Observability",
+    "type": "App",
+    "description": "Kiali provides observability and management capabilities for Istio service mesh.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://kiali.io/",
+      "https://kiali.io/documentation/latest/",
+      "https://landscape.cncf.io/?item=observability-and-analysis--observability--kiali"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "kube-bench",
+    "slug": "kube-bench",
+    "productVersion": "v0.16.0",
+    "category": "Platform Security",
+    "type": "Core",
+    "description": "kube-bench checks Kubernetes clusters against CIS security benchmarks.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://github.com/aquasecurity/kube-bench",
+      "https://github.com/aquasecurity/kube-bench",
+      "https://landscape.cncf.io/?item=provisioning--security-compliance--kube-bench"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Loki",
+    "slug": "loki",
+    "productVersion": "v3.7.6",
+    "category": "Platform Observability",
+    "type": "Management",
+    "description": "Loki is a horizontally scalable, highly available log aggregation system.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://grafana.com/oss/loki/",
+      "https://grafana.com/docs/loki/",
+      "https://landscape.cncf.io/?item=observability-and-analysis--observability--grafana-loki"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "OpenCost",
+    "slug": "opencost",
+    "productVersion": "v1.121.1",
+    "category": "Platform Management",
+    "type": "Core",
+    "description": "OpenCost provides real-time cost allocation and visibility for Kubernetes workloads.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://www.opencost.io/",
+      "https://www.opencost.io/docs/",
+      "https://landscape.cncf.io/?item=observability-and-analysis--continuous-optimization--opencost"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "PodTracker",
+    "slug": "podtracker",
+    "productVersion": null,
+    "category": "Platform Observability",
+    "type": "Core",
+    "description": "PodTracker records and exposes Kubernetes pod metadata for platform-level visibility and automation.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://github.com/gccloudone-aurora/podtracker",
+      "https://github.com/gccloudone-aurora/podtracker"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Prometheus",
+    "slug": "prometheus",
+    "productVersion": "v0.93.1",
+    "category": "Observability",
+    "type": "Core",
+    "description": "Prometheus provides metrics collection, storage, and querying for Kubernetes and cloud-native systems.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://prometheus.io/",
+      "https://prometheus.io/docs/",
+      "https://landscape.cncf.io/?item=observability-and-analysis--observability--prometheus"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Strimzi Kafka Operator",
+    "slug": "strimzi-kafka-operator",
+    "productVersion": "v1.1.0",
+    "category": "App Development",
+    "type": "App",
+    "description": "Strimzi Kafka Operator deploys and manages Apache Kafka clusters on Kubernetes.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://strimzi.io/",
+      "https://strimzi.io/docs/operators/latest/overview.html",
+      "https://landscape.cncf.io/?item=app-definition-and-development--streaming-messaging--strimzi"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Tetragon",
+    "slug": "tetragon",
+    "productVersion": "v1.7.0",
+    "category": "Security",
+    "type": "Core",
+    "description": "Tetragon provides real-time runtime security enforcement and tracing for Kubernetes using eBPF.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://tetragon.io/",
+      "https://docs.cilium.io/en/stable/observability/tetragon/",
+      "https://landscape.cncf.io/?item=provisioning--security-compliance--tetragon"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Trivy Operator",
+    "slug": "trivy-operator",
+    "productVersion": "v0.33.0",
+    "category": "Platform Security",
+    "type": "Core",
+    "description": "Trivy Operator provides continuous security scanning for Kubernetes workloads and cluster resources.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://aquasecurity.github.io/trivy-operator/",
+      "https://aquasecurity.github.io/trivy-operator/",
+      "https://landscape.cncf.io/?item=provisioning--security-compliance--trivy"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Trust Manager",
+    "slug": "trust-manager",
+    "productVersion": "v0.24.0",
+    "category": "Platform Security",
+    "type": "Core",
+    "description": "Trust Manager distributes and manages trusted CA bundles across Kubernetes workloads.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://cert-manager.io/docs/projects/trust-manager/",
+      "https://cert-manager.io/docs/projects/trust-manager/",
+      "https://landscape.cncf.io/?item=provisioning--security-compliance--cert-manager"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  },
+  {
+    "name": "Velero",
+    "slug": "velero",
+    "productVersion": "v1.18.2",
+    "category": "Platform Resilience",
+    "type": "Core",
+    "description": "Velero provides backup, restore, and disaster recovery for Kubernetes resources.",
+    "license": "Apache-2.0",
+    "sites": [
+      "https://velero.io/",
+      "https://velero.io/docs/",
+      "https://landscape.cncf.io/?item=runtime--cloud-native-storage--velero"
+    ],
+    "cost": "$0.00 (opensource)",
+    "highestClassification": "Secret",
+    "hostedOnGCNetworks": true
+  }
+]

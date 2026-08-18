@@ -1,6 +1,7 @@
 name: "Trivy Operator"
 slug: "trivy-operator"
 alias: "Kubernetes Security Scanning"
+productVersion: "v0.33.0"
 
 category:
   hld: "Platform Security"
@@ -8,15 +9,26 @@ category:
 
 descriptions:
   short: "Trivy Operator provides continuous security scanning for Kubernetes workloads and cluster resources."
+  short_fr: "Trivy Operator fournit une analyse de sécurité continue pour les charges de travail et les ressources Kubernetes."
   long: >-
     Trivy Operator is used by Aurora to perform continuous, automated security
     scanning of Kubernetes workloads, container images, and cluster
-    configurations. It integrates Trivy’s vulnerability, misconfiguration,
+    configurations. It integrates Trivy's vulnerability, misconfiguration,
     and compliance scanning capabilities directly into the Kubernetes control
     plane by producing Kubernetes-native custom resources. Trivy Operator
     enables proactive risk identification, supports supply chain security
     objectives, and provides visibility into security posture across
     Aurora-managed clusters.
+  long_fr: >-
+    Trivy Operator est utilisé par Aurora pour effectuer une analyse de sécurité
+    continue et automatisée des charges de travail Kubernetes, des images de
+    conteneurs et des configurations de cluster. Il intègre les capacités
+    d'analyse de vulnérabilités, de mauvaises configurations et de conformité
+    de Trivy directement dans le plan de contrôle Kubernetes en produisant des
+    ressources personnalisées natives Kubernetes. Trivy Operator permet
+    l'identification proactive des risques, soutient les objectifs de sécurité
+    de la chaîne d'approvisionnement et fournit une visibilité sur la posture
+    de sécurité dans les clusters gérés par Aurora.
 
 capabilities:
   - vulnerability-scanning

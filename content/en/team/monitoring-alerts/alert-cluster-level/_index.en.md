@@ -34,8 +34,8 @@ Refer to the [general Runbook for investigating cert-manager alerts]({{< ref "ce
 - **certManagerCertFailingToRenew**: A certificate is failing to renew.
 - **certManagerCertFailure**: A certificate is not in a ready state, but is not in need of renewal.
 - **certManagerCertExpired**: A certificate has expired.
-- **certManagerAbsent**: cert-manager is down or not reachable by Prometheus.
-- **certManagerHittingRateLimits**: cert-manager is hitting LetsEncrypt rate limits, which may prevent certificate generation for up to a week.
+- **certManagerAbsent**: Cert Manager is down or not reachable by Prometheus.
+- **certManagerHittingRateLimits**: Cert Manager is hitting LetsEncrypt rate limits, which may prevent certificate generation for up to a week.
 
 ### DNS
 

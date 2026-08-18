@@ -1,6 +1,7 @@
 name: "Cilium"
 slug: "cilium"
 alias: "eBPF"
+productVersion: "v1.20.0"
 
 category:
   hld: "Networking"
@@ -8,13 +9,23 @@ category:
 
 descriptions:
   short: "Cilium provides Kubernetes networking and NetworkPolicy enforcement using an eBPF dataplane."
+  short_fr: "Cilium fournit le réseau Kubernetes et l'application des NetworkPolicy à l'aide d'un plan de données eBPF."
   long: >-
-    Cilium is Aurora’s primary Container Network Interface (CNI) and dataplane for
+    Cilium is Aurora's primary Container Network Interface (CNI) and dataplane for
     Kubernetes workload clusters. It leverages eBPF to deliver high-performance
     pod networking, fine-grained network policy enforcement, and deep traffic
     observability through Hubble. Cilium enables advanced networking patterns,
     including ClusterwideNetworkPolicy and optional BGP-based route advertisement
     to integrate pod and service networking with enterprise firewalls.
+  long_fr: >-
+    Cilium est l'interface réseau de conteneurs (CNI) et le plan de données
+    principal d'Aurora pour les clusters de charges de travail Kubernetes. Il
+    exploite eBPF pour offrir un réseau de pods haute performance, une
+    application fine des politiques réseau et une observabilité approfondie du
+    trafic grâce à Hubble. Cilium permet des configurations réseau avancées,
+    notamment les ClusterwideNetworkPolicy et l'annonce de routes optionnelle
+    basée sur BGP pour intégrer le réseau des pods et des services aux pare-feu
+    d'entreprise.
 
 capabilities:
   - networking

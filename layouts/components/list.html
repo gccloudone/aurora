@@ -80,13 +80,18 @@
                 role="listitem"
                 class="hydrated">
 
-                {{ with $c.descriptions.short }}
-                  <gcds-text>{{ . }}</gcds-text>
+                {{/* Use French description if available, fallback to English */}}
+                {{ if and (eq $.Language.Lang "fr") $c.descriptions.short_fr }}
+                  <gcds-text>{{ $c.descriptions.short_fr }}</gcds-text>
+                {{ else }}
+                  {{ with $c.descriptions.short }}
+                    <gcds-text>{{ . }}</gcds-text>
+                  {{ end }}
                 {{ end }}
 
                 {{ with $c.alias }}
                   <gcds-text text-role="secondary" size="caption">
-                    <em>Other names: {{ . }}</em>
+                    <em>{{ i18n "comp_also_known_as" }} {{ . }}</em>
                   </gcds-text>
                 {{ end }}
 

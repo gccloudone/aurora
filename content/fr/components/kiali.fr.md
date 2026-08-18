@@ -1,9 +1,11 @@
 ---
-title: "Fluent Bit"
-slug: "fluent-bit"
+title: "Kiali"
+slug: "kiali"
+date: "2026-08-17"
+lastmod: "2026-08-17"
 layout: "components/single"
 sidebar: false
-_build:
+build:
   render: always
   list: never
 ---

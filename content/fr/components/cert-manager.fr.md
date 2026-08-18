@@ -1,8 +1,11 @@
 ---
 title: "Cert Manager"
-alias: "Certificates"
-type: "Core"
-description: "Cert Manager est un contrôleur puissant et extensible de certificats X.509 pour Kubernetes."
-image: "/images/cncf/cert-manager.svg"
+slug: "cert-manager"
+date: "2026-08-17"
+lastmod: "2026-08-17"
+layout: "components/single"
 sidebar: false
+build:
+  render: always
+  list: never
 ---

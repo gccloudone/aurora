@@ -1,20 +1,31 @@
-name: "cert-manager"
+name: "Cert Manager"
 slug: "cert-manager"
 alias: "Kubernetes Certificate Controller"
+productVersion: "v1.20.3"
 
 category:
   hld: "Security"
   type: "Core"
 
 descriptions:
-  short: "cert-manager automates the management and renewal of TLS certificates in Kubernetes."
+  short: "Cert Manager automates the management and renewal of TLS certificates in Kubernetes."
+  short_fr: "Cert Manager automatise la gestion et le renouvellement des certificats TLS dans Kubernetes."
   long: >-
-    cert-manager is used within Aurora to automate the issuance, renewal, and
+    Cert Manager is used within Aurora to automate the issuance, renewal, and
     lifecycle management of TLS certificates for Kubernetes workloads and
     platform services. It integrates with external certificate authorities and
     internal PKI systems to ensure secure, policy-compliant encryption for
     ingress, service-to-service communication, and platform endpoints, reducing
     operational risk and manual certificate handling.
+  long_fr: >-
+    Cert Manager est utilisé dans Aurora pour automatiser l'émission, le
+    renouvellement et la gestion du cycle de vie des certificats TLS pour les
+    charges de travail et les services de plateforme Kubernetes. Il s'intègre
+    aux autorités de certification externes et aux systèmes PKI internes pour
+    garantir un chiffrement sécurisé et conforme aux politiques pour les
+    entrées, les communications entre services et les extrémités de
+    plateforme, réduisant ainsi les risques opérationnels et la manipulation
+    manuelle des certificats.
 
 capabilities:
   - certificates

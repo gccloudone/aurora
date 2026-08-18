@@ -1,0 +1,93 @@
+name: "Strimzi Kafka Operator"
+slug: "strimzi-kafka-operator"
+alias: "Kafka Operator"
+productVersion: "v1.1.0"
+
+category:
+  hld: "App Development"
+  type: "App"
+
+descriptions:
+  short: "Strimzi Kafka Operator deploys and manages Apache Kafka clusters on Kubernetes."
+  short_fr: "Strimzi Kafka Operator déploie et gère les clusters Apache Kafka sur Kubernetes."
+  long: >-
+    Strimzi is an Apache Kubernetes operator that simplifies deploying and
+    managing Apache Kafka on Kubernetes. Within Aurora, Strimzi enables teams
+    to run production-ready Kafka clusters for event streaming, message
+    brokering, and data pipeline workloads. The operator automates provisioning,
+    configuration, scaling, and lifecycle management of Kafka brokers,
+    ZooKeeper nodes, and Kafka Connect clusters, providing a declarative,
+    Kubernetes-native approach to managing stateful streaming infrastructure.
+  long_fr: >-
+    Strimzi est un opérateur Kubernetes Apache qui simplifie le déploiement et
+    la gestion d'Apache Kafka sur Kubernetes. Dans Aurora, Strimzi permet aux
+    équipes de gérer des clusters Kafka prêts pour la production pour le
+    streaming d'événements, l'agrégation de messages et les charges de travail
+    de pipeline de données. L'opérateur automatise l'approvisionnement, la
+    configuration, la mise à l'échelle et la gestion du cycle de vie des
+    courtiers Kafka, des nœuds ZooKeeper et des clusters Kafka Connect,
+    offrant une approche déclarative et native de Kubernetes pour la gestion
+    des infrastructures de streaming à état.
+
+capabilities:
+  - kafka-management
+  - event-streaming
+  - message-brokering
+  - cluster-lifecycle
+  - kubernetes-operator
+  - stateful-workloads
+
+project:
+  homepage: "https://strimzi.io/"
+  documentation: "https://strimzi.io/docs/operators/latest/overview.html"
+  cncf_landscape: "https://landscape.cncf.io/?item=app-definition-and-development--streaming-messaging--strimzi"
+  license: "Apache-2.0"
+
+deployment:
+  deployed_in:
+    - "workload-clusters"
+  deployment_model: "Helm"
+  ownership:
+    team: "SIG: Architecture"
+    steward: "Aurora Platform Team"
+  criticality: "medium"
+
+architecture:
+  role: >-
+    Manages the lifecycle of Apache Kafka clusters on Kubernetes. The Strimzi
+    operator reconciles Kafka, KafkaConnect, and KafkaMirrorMaker custom
+    resources to provision and maintain production-ready streaming
+    infrastructure.
+  control_plane_components:
+    - "strimzi-cluster-operator"
+
+integrations:
+  integrates_with:
+    - "Kubernetes API Server"
+    - "Application workloads (producers/consumers)"
+    - "Kafka Connect (data integration)"
+    - "Kafka MirrorMaker (multi-cluster)"
+  optional_features:
+    - "Cruise Control (cluster rebalancing)"
+    - "Kafka Connect managed connectors"
+    - "Topic and user operators"
+    - "Persistent storage (CSI)"
+
+dependencies:
+  requires:
+    - "Kubernetes"
+    - "Persistent storage"
+  conflicts_with: []
+
+references:
+  charts:
+    repo: "https://github.com/gccloudone-aurora/aurora-platform-charts"
+    path: "stable/aurora-platform/charts/aurora-app/templates/strimzi-kafka-operator"
+    release_name: "strimzi-kafka-operator"
+  adr: []
+  runbooks: []
+  dashboards: []
+
+metadata:
+  image: "/images/cncf/strimzi.svg"
+  sidebar: false
