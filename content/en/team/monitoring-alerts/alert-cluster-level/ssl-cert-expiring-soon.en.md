@@ -30,21 +30,21 @@ If the certificate is valid, restart the nginx pod:
 
 `kubectl -n istio-system rollout restart deploy artifactory-ingress`
 
-Otherwise, refer to the following section on troubleshooting cert-manager, noting that the certificate for Artifactory is `wildcard` in `istio-system`.
+Otherwise, refer to the following section on troubleshooting Cert Manager, noting that the certificate for Artifactory is `wildcard` in `istio-system`.
 
 ### Firing on Grafana
 
-1. If the issue has occurred recently, check if there are any pertinent error logs in the cert-manger pod in the cert-manager namespace.
+1. If the issue has occurred recently, check if there are any pertinent error logs in the Cert Manager pod in the cert-manager namespace.
 
 2. Check for an authentication error. Using the following command, errors may be seen in the condition section:
 
     `kubectl -n ingress-general-system describe cert general-istio-ingress-gateway`
 
-3. Restart the cert-manager with kubectl. This can be found in the **cert-manager-system** namespace:
+3. Restart the Cert Manager with kubectl. This can be found in the **cert-manager-system** namespace:
 
     `kubectl -n cert-manager-system rollout restart deploy cert-manager`
 
-Cert-manager only authenticates once per hour. The wildcard certificate must be replaced to force cert-manager to re-authenticate immediately. This can be done by obtaining the YAML for the wildcard certificate, removing instance specific fields, deleting the certificate, and then re-applying the certificate.
+Cert Manager only authenticates once per hour. The wildcard certificate must be replaced to force Cert Manager to re-authenticate immediately. This can be done by obtaining the YAML for the wildcard certificate, removing instance specific fields, deleting the certificate, and then re-applying the certificate.
 
 This process is highlighted in the remaining steps below.
 

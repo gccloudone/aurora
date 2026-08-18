@@ -1,5 +1,5 @@
 ---
-title: "kube-bench"
+title: "Kube Bench"
 slug: "kube-bench"
 date: "2026-08-17"
 lastmod: "2026-08-17"
