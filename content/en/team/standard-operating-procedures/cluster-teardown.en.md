@@ -10,17 +10,19 @@ draft: false
 
 {{< translation-note >}}
 
-This document outlines the process for tearing down a cluster in P6.
+This document outlines the process for tearing down a cluster in P6. You may need to tear down a cluster when a client expresses that it is no longer required.
 
-# Prerequisites
+Prerequisites
+=============
 
 The following prerequisites must be met before beginning the teardown:
 
-* A Linux or WSL environment with Bash, running on a VM with network connectivity to the ESLZ.
-* The following CLI tools installed and accessible: `az` (Azure CLI), `kubectl`, `git`, and `terragrunt`.
-* Access to the `XXXX_XXX_XXXXX_devops_sp` credentials, which can be found in KeePass.
+- A Linux or WSL environment with Bash, running on a VM with network connectivity to the ESLZ.
+- The following CLI tools must be installed and accessible: `az` (Azure CLI), `kubectl`, `git`, and `terragrunt`.
+- Access to the `XXXX_XXX_XXXXX_devops_sp` credentials, which can be found in KeePass.
 
-# Teardown Steps
+Teardown Steps
+==============
 
 1. **Obtain written confirmation from the client.**
 
@@ -60,10 +62,10 @@ The following prerequisites must be met before beginning the teardown:
 
    Load the following environment variables into your terminal:
 
-   * `ARM_CLIENT_ID`
-   * `ARM_CLIENT_SECRET`
-   * `ARM_TENANT_ID`
-   * `ARM_SUBSCRIPTION_ID`
+   - `ARM_CLIENT_ID`
+   - `ARM_CLIENT_SECRET`
+   - `ARM_TENANT_ID`
+   - `ARM_SUBSCRIPTION_ID`
 
    These credentials can be obtained from the `XXXX_XXX_XXXXX_devops_sp` service principal.
 
@@ -86,17 +88,19 @@ The following prerequisites must be met before beginning the teardown:
 
     [Submit a request to the Azure DevOps team](https://www.cloudopsportal.g3.ent.cloud-nuage.canada.ca/support/AzureDevOps/New) to:
 
-    * Delete the remaining L0/L1 resources in the target subscription.
-    * Remove any associated networking and firewall configurations.
-    * Delete the `-iac` and `-cicd` repositories used to configure the ESLZ for the cluster.
+    - Delete the remaining L0/L1 resources in the target subscription.
+    - Remove any associated networking and firewall configurations.
+    - Delete the `-iac` and `-cicd` repositories used to configure the ESLZ for the cluster.
 
 11. **Verify that the subscription has been removed.**
 
     Confirm that the target subscription no longer appears in the Azure portal.
 
-# Troubleshooting
+Troubleshooting
+===============
 
-## Issue: Key Vault cannot be destroyed
+Issue: Key Vault cannot be destroyed
+-------------------------------------
 
 `terragrunt destroy` may fail when attempting to delete the Key Vault due to permission or network-related issues.
 
@@ -104,7 +108,8 @@ This can occur because `terragrunt destroy` removes the access policies delegate
 
 If this occurs, it may be necessary to manually delete the Key Vault through the Azure portal.
 
-## Issue: Terragrunt cannot destroy Kubernetes resources
+Issue: Terragrunt cannot destroy Kubernetes resources
+-----------------------------------------------------
 
 You may encounter this issue if the node pools or target AKS cluster were manually deleted before running `terragrunt destroy`.
 
