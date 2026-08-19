@@ -1,4 +1,5 @@
 ---
+
 title: "Cluster Teardown"
 linkTitle: "Cluster Teardown"
 weight: 5
@@ -11,7 +12,7 @@ draft: false
 
 This document outlines the process for tearing down a cluster in P6.
 
-## Prerequisites
+# Prerequisites
 
 The following prerequisites must be met before beginning the teardown:
 
@@ -19,7 +20,7 @@ The following prerequisites must be met before beginning the teardown:
 * The following CLI tools installed and accessible: `az` (Azure CLI), `kubectl`, `git`, and `terragrunt`.
 * Access to the `XXXX_XXX_XXXXX_devops_sp` credentials, which can be found in KeePass.
 
-## Teardown Steps
+# Teardown Steps
 
 1. **Obtain written confirmation from the client.**
 
@@ -93,9 +94,9 @@ The following prerequisites must be met before beginning the teardown:
 
     Confirm that the target subscription no longer appears in the Azure portal.
 
-## Troubleshooting
+# Troubleshooting
 
-### Issue: Key Vault cannot be destroyed
+## Issue: Key Vault cannot be destroyed
 
 `terragrunt destroy` may fail when attempting to delete the Key Vault due to permission or network-related issues.
 
@@ -103,7 +104,7 @@ This can occur because `terragrunt destroy` removes the access policies delegate
 
 If this occurs, it may be necessary to manually delete the Key Vault through the Azure portal.
 
-### Issue: Terragrunt cannot destroy Kubernetes resources
+## Issue: Terragrunt cannot destroy Kubernetes resources
 
 You may encounter this issue if the node pools or target AKS cluster were manually deleted before running `terragrunt destroy`.
 
