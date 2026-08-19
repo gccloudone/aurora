@@ -39,6 +39,13 @@ Here are the current procedures in place:
   >
   </gcds-card>
   <gcds-card
+    card-title="Cluster teardown"
+    href="/en/team/standard-operating-procedures/cluster-teardown/"
+    badge="Operations"
+    description="Procedure for tearing down a cluster in P6."
+  >
+  </gcds-card>
+  <gcds-card
     card-title="Deploy a Workload Cluster"
     href="/en/team/standard-operating-procedures/workload-cluster/"
     badge="Onboarding"
