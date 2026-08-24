@@ -1,0 +1,90 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"><title>Cluster Teardown | Aurora
+</title><link rel=icon href=/favicon.ico type=image/x-icon><link rel=preload href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css as=style crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@gcds-core/css-shortcuts@1.0.1/dist/gcds-css-shortcuts.min.css><link rel=stylesheet href=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.css><script async type=module src=https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.42.0/dist/gcds/gcds.esm.js></script><link rel=stylesheet href=/scss/main.css><link rel=stylesheet href=/scss/custom.css><style>html{font-size:16px}body{font-size:var(--gcds-font-sizes-text);line-height:var(--gcds-line-heights-text);color:var(--gcds-color-grayscale-1000);font-family:var(--gcds-font-families-body),sans-serif;margin:0;animation:fade .05s forwards ease-in-out}</style><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css></head><body style=margin:0 class=character-limit><main><gcds-container centered size=md><gcds-text size=caption style="text-align: center;"><strong>Alpha</strong>&nbsp;&nbsp;This is an experimental service.</gcds-text>
+</gcds-container><gcds-header lang=en lang-href signature-variant=colour skip-to-href=#><gcds-search lang=en slot=search action=/sr/srb.html placeholder=Aurora></gcds-search><gcds-top-nav slot=menu label="Top navigation" alignment=right><gcds-nav-link href=/en/ slot=home>GC Cloud One: Aurora
+</gcds-nav-link><gcds-nav-group open-trigger=Platform menu-label=Platform><gcds-nav-link href=/en/roadmap/>Roadmap
+</gcds-nav-link><gcds-nav-link href=/en/components/>Components
+</gcds-nav-link><gcds-nav-link href=/en/vision/>Vision
+</gcds-nav-link><gcds-nav-link href=/en/architecture/>Architecture
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="User Guides" menu-label="User Guides"><gcds-nav-link href=/en/user-guides/onboarding/>Onboarding
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Team menu-label=Team><gcds-nav-link href=/en/team/standard-operating-procedures/>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/>Monitoring
+</gcds-nav-link><gcds-nav-link href=/en/team/appendix/>Appendix
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger=Community menu-label=Community><gcds-nav-link href=/en/get-involved/>Get involved
+</gcds-nav-link><gcds-nav-link href=/en/rules-of-engagement/>Rules of Engagement
+</gcds-nav-link><gcds-nav-link href=/en/technical-advisory-group/>Technical Advisory Group
+</gcds-nav-link></gcds-nav-group></gcds-top-nav><gcds-breadcrumbs slot=breadcrumb><gcds-breadcrumbs-item href="https://hosting-services-hebergement.canada.ca/s/gc-cloud-one?language=en_US">GC Cloud One</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/en/>Aurora</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/en/team/>Team Guide</gcds-breadcrumbs-item>
+<gcds-breadcrumbs-item href=/en/team/standard-operating-procedures/>Standard Operating Procedures</gcds-breadcrumbs-item>
+</gcds-breadcrumbs></gcds-header><gcds-container size=xl main-container centered tag=main><gcds-grid tag=section columns=1fr columns-desktop="
+        1fr 3fr
+      " align-items=start class=hydrated><aside role=complementary><gcds-side-nav label="Team Guide"><gcds-nav-link href=/en/team/>Team Guide
+</gcds-nav-link><gcds-nav-group open-trigger="Standard Operating Procedures" menu-label="Standard Operating Procedures" open><gcds-nav-link href=/en/team/standard-operating-procedures/>Standard Operating Procedures
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/deploy-kubernetes-cluster/>Deploy a PBMM Kubernetes Cluster
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/deploy-aurora-platform/>Deploy the Aurora Platform
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/cluster-teardown/ current=true>Cluster Teardown
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/>Adding Components to Aurora Platform Charts
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/aks-cluster-upgrade/>AKS Cluster Upgrade
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/backup-disaster-recovery/>Backup and Disaster Recovery
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/>GitHub Actions for Creating Releases
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/infrastructure-and-configuration-management/>Infrastructure and Configuration Management
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/issue-naming/>Issue and PR Naming Conventions
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/issue-tracking/>Issue Tracking
+</gcds-nav-link><gcds-nav-link href=/en/team/standard-operating-procedures/ssl-cert-issuance/>SSL Cert Issuance
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Monitoring and Alerting" menu-label="Monitoring and Alerting"><gcds-nav-link href=/en/team/monitoring-alerts/>Monitoring and Alerting
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/prometheus/>Prometheus
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/prometheus-operator/>Prometheus Operator
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alertmanager/>Alertmanager
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/blackbox-exporter/>Blackbox Exporter
+</gcds-nav-link><gcds-nav-group open-trigger="Cluster Level Alerts" menu-label="Cluster Level Alerts"><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/>Cluster Level Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/cert-manager/>Cert Manager Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/dns/>DNS Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/node/>Node Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/>Node Pool Capacity Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/probe-failure/>Probe Failure Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/prometheus-storage-low/>Prometheus Storage Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/>SSL Certificate Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-cluster-level/velero/>Velero Alerts
+</gcds-nav-link></gcds-nav-group><gcds-nav-group open-trigger="Namespace Level Alerts" menu-label="Namespace Level Alerts"><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/>Namespace Level Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/container/>Container Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/job/>Job Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/persistent-volume-claims/>Persistent Volume Claim Alerts
+</gcds-nav-link><gcds-nav-link href=/en/team/monitoring-alerts/alert-namespace-level/pod-not-ready/>Pod Alerts
+</gcds-nav-link></gcds-nav-group></gcds-nav-group><gcds-nav-group open-trigger=Appendix menu-label=Appendix><gcds-nav-link href=/en/team/appendix/>Appendix
+</gcds-nav-link><gcds-nav-link href=/en/team/appendix/acronyms/>Acronyms
+</gcds-nav-link><gcds-nav-link href=/en/team/appendix/lexicon/>Lexicon</gcds-nav-link></gcds-nav-group></gcds-side-nav></aside><section class=mb-400><gcds-heading tag=h1>Cluster Teardown</gcds-heading><hr><gcds-alert class=my-300 alert-role=danger heading="Avis de traduction" hide-close-btn=true><gcds-text character-limit=true>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions.
+Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
+</gcds-text></gcds-alert><gcds-text character-limit=true>This document outlines the process for tearing down a cluster in P6. You may need to tear down a cluster when a client expresses that it is no longer required.</gcds-text>
+<gcds-heading tag=h1 id=prerequisites character-limit=true>Prerequisites<gcds-link href=#prerequisites class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>The following prerequisites must be met before beginning the teardown:</gcds-text><ul><li>A Linux or WSL environment with Bash, running on a VM with network connectivity to the ESLZ.</li><li>The following CLI tools must be installed and accessible: <code>az</code> (Azure CLI), <code>kubectl</code>, <code>git</code>, and <code>terragrunt</code>.</li><li>Access to the <code>XXXX_XXX_XXXXX_devops_sp</code> credentials, which can be found in KeePass.</li></ul><gcds-heading tag=h1 id=teardown-steps character-limit=true>Teardown Steps<gcds-link href=#teardown-steps class=pilcrow>¶</gcds-link></gcds-heading><ol><li><gcds-text character-limit=true><strong>Obtain written confirmation from the client.</strong></gcds-text>
+<gcds-text character-limit=true>If the cluster is a department-level cluster, ensure that the client has provided <strong>written confirmation</strong> that the cluster is no longer required.</gcds-text></li><li><gcds-text character-limit=true><strong>Delete the target cluster&rsquo;s platform App of Apps from ArgoCD.</strong></gcds-text>
+<gcds-text character-limit=true>Navigate to the management cluster&rsquo;s ArgoCD portal and delete the platform App of Apps (<code>platform-cluster-name</code>) responsible for deploying the Aurora platform charts to the target cluster.</gcds-text>
+<gcds-text character-limit=true>Select the <strong>Background</strong> deletion option. Wait until all child applications have been removed from the target cluster before proceeding.</gcds-text></li><li><gcds-text character-limit=true><strong>Remove the target cluster configuration from its Git repository.</strong></gcds-text>
+<gcds-text character-limit=true>Delete the <code>config.yaml</code> configuration for the Aurora platform charts from the target cluster&rsquo;s Git repository.</gcds-text>
+<gcds-text character-limit=true>When creating the pull request, attach a copy of the client&rsquo;s written authorization to delete the cluster obtained in Step 1.</gcds-text>
+<gcds-text character-limit=true>If there are no plans to reuse the repository, it may also be deleted.</gcds-text></li><li><gcds-text character-limit=true><strong>Remove the target cluster from the management cluster configuration.</strong></gcds-text>
+<gcds-text character-limit=true>Remove all references to the target cluster from the management cluster&rsquo;s <code>config.yaml</code>.</gcds-text></li><li><gcds-text character-limit=true><strong>Sync the management cluster.</strong></gcds-text>
+<gcds-text character-limit=true>Sync the management cluster in ArgoCD. Verify in the ArgoCD portal that there are no remaining references to the target cluster.</gcds-text></li><li><gcds-text character-limit=true><strong>Connect to the target cluster&rsquo;s jumpbox.</strong></gcds-text>
+<gcds-text character-limit=true>Connect to a jumpbox with network connectivity to the target cluster. Open a terminal and change to the Git repository containing the ESLZ configuration for the target cluster.</gcds-text>
+<gcds-text character-limit=true>The following commands should be run from:</gcds-text>
+<gcds-text character-limit=true><code>/landing_zones_163ent-P6/**/L2_blueprint_aurora</code></gcds-text></li><li><gcds-text character-limit=true><strong>Set the Azure credentials.</strong></gcds-text>
+<gcds-text character-limit=true>Load the following environment variables into your terminal:</gcds-text><ul><li><code>ARM_CLIENT_ID</code></li><li><code>ARM_CLIENT_SECRET</code></li><li><code>ARM_TENANT_ID</code></li><li><code>ARM_SUBSCRIPTION_ID</code></li></ul><gcds-text character-limit=true>These credentials can be obtained from the <code>XXXX_XXX_XXXXX_devops_sp</code> service principal.</gcds-text></li><li><gcds-text character-limit=true><strong>Destroy the L2 resources.</strong></gcds-text>
+<gcds-text character-limit=true>Run:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>terragrunt init
+</span></span><span style=display:flex><span>terragrunt destroy
+</span></span></code></pre></div><gcds-text character-limit=true>Depending on the state of the environment, <code>terragrunt destroy</code> may need to be run multiple times.</gcds-text></li><li><gcds-text character-limit=true><strong>Verify that all L2 resources have been deleted.</strong></gcds-text>
+<gcds-text character-limit=true>Confirm in the Azure portal that all L2 resources associated with the target cluster have been removed.</gcds-text></li><li><gcds-text character-limit=true><strong>Submit a request to the Azure DevOps team.</strong></gcds-text>
+<gcds-text character-limit=true><gcds-link href=https://www.cloudopsportal.g3.ent.cloud-nuage.canada.ca/support/AzureDevOps/New>Submit a request to the Azure DevOps team</gcds-link> to:</gcds-text><ul><li>Delete the remaining L0/L1 resources in the target subscription.</li><li>Remove any associated networking and firewall configurations.</li><li>Delete the <code>-iac</code> and <code>-cicd</code> repositories used to configure the ESLZ for the cluster.</li></ul></li><li><gcds-text character-limit=true><strong>Verify that the subscription has been removed.</strong></gcds-text>
+<gcds-text character-limit=true>Confirm that the target subscription no longer appears in the Azure portal.</gcds-text></li></ol><gcds-heading tag=h1 id=troubleshooting character-limit=true>Troubleshooting<gcds-link href=#troubleshooting class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-heading tag=h2 id=issue-key-vault-cannot-be-destroyed character-limit=true>Issue: Key Vault cannot be destroyed<gcds-link href=#issue-key-vault-cannot-be-destroyed class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true><code>terragrunt destroy</code> may fail when attempting to delete the Key Vault due to permission or network-related issues.</gcds-text>
+<gcds-text character-limit=true>This can occur because <code>terragrunt destroy</code> removes the access policies delegated to the service principal and may also remove the private endpoint before the Key Vault itself is deleted.</gcds-text>
+<gcds-text character-limit=true>If this occurs, it may be necessary to manually delete the Key Vault through the Azure portal.</gcds-text>
+<gcds-heading tag=h2 id=issue-terragrunt-cannot-destroy-kubernetes-resources character-limit=true>Issue: Terragrunt cannot destroy Kubernetes resources<gcds-link href=#issue-terragrunt-cannot-destroy-kubernetes-resources class=pilcrow>¶</gcds-link></gcds-heading>
+<gcds-text character-limit=true>You may encounter this issue if the node pools or target AKS cluster were manually deleted before running <code>terragrunt destroy</code>.</gcds-text>
+<gcds-text character-limit=true>To resolve this issue, manually remove the affected <strong>Kubernetes resources</strong> from the Terraform state using:</gcds-text><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>terragrunt state rm &lt;resource&gt;
+</span></span></code></pre></div><gcds-text character-limit=true>Repeat the command for each affected Kubernetes resource, then run <code>terragrunt destroy</code> again.</gcds-text>
+<gcds-date-modified lang=en>2026-08-24</gcds-date-modified></section></gcds-grid></gcds-container></main><gcds-footer lang=en display=compact contextual-heading=Aurora contextual-links='{ "Contact us": "/en/contact/","Report an issue": "https://github.com/gccloudone/aurora/issues/new/choose","About us": "/en/about/" }'></gcds-footer><script>function normalizeCardImages(){document.querySelectorAll('gcds-card[role="listitem"]').forEach(e=>{if(!e.shadowRoot)return;e.shadowRoot.querySelectorAll("img").forEach(e=>{e.style.height="160px",e.style.maxHeight="160px",e.style.width="auto",e.style.maxWidth="200px",e.style.objectFit="contain",e.style.margin="0 auto 1.5rem",e.style.display="block",e.parentElement.style.textAlign="initial"})})}function waitForCards(){document.querySelectorAll('gcds-card[role="listitem"]').length&&normalizeCardImages(),requestAnimationFrame(waitForCards)}requestAnimationFrame(waitForCards)</script><script src=https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js></script><script>const style=document.createElement("style");style.innerHTML=`
+    .glightbox-container.glightbox-custom-white-bg img {
+      background: white !important;
+    }
+  `,document.head.appendChild(style);const lightbox=GLightbox({openEffect:"zoom",closeEffect:"fade",skin:"custom-white-bg"})</script></body></html>

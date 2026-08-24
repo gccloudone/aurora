@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aurora</title><link>/en/</link><description>Recent content on Aurora</description><generator>Hugo</generator><language>en-CA</language><lastBuildDate>Mon, 24 Aug 2026 09:38:37 -0400</lastBuildDate><atom:link href="/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy a PBMM Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aurora</title><link>/en/</link><description>Recent content on Aurora</description><generator>Hugo</generator><language>en-CA</language><lastBuildDate>Mon, 24 Aug 2026 07:43:50 -0600</lastBuildDate><atom:link href="/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy a PBMM Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
  &lt;gcds-text character-limit="true">
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
@@ -12,7 +12,16 @@
 &lt;/gcds-alert>
 
 &lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>Deploy the Aurora Platform onto an AKS cluster provisioned through the &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/">cluster creation process&lt;/gcds-link>.&lt;/p></description></item><item><title>Adding Components to Aurora Platform Charts</title><link>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
+&lt;p>Deploy the Aurora Platform onto an AKS cluster provisioned through the &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/">cluster creation process&lt;/gcds-link>.&lt;/p></description></item><item><title>Cluster Teardown</title><link>/en/team/standard-operating-procedures/cluster-teardown/</link><pubDate>Wed, 19 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/cluster-teardown/</guid><description>&lt;hr>
+
+
+&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
+ &lt;gcds-text character-limit="true">
+ Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
+ Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
+ &lt;/gcds-text>
+&lt;/gcds-alert>
+&lt;p>This document outlines the process for tearing down a cluster in P6. You may need to tear down a cluster when a client expresses that it is no longer required.&lt;/p></description></item><item><title>Adding Components to Aurora Platform Charts</title><link>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
  &lt;gcds-text character-limit="true">
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
