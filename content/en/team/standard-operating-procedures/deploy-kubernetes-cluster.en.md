@@ -10,6 +10,8 @@ showToc: true
 
 {{< translation-note >}}
 
+## Objective
+
 This SOP provisions a Protected B, Medium Integrity, Medium Availability (PBMM) compliant Azure Kubernetes Service (AKS) cluster using Aurora's Infrastructure as Code (IaC), deployed against an approved Enterprise-Scale Landing Zone (ESLZ).
 
 ![Aurora Platform](/images/architecture/diagrams/aurora-platform.png)
@@ -19,7 +21,7 @@ Two deployment models are supported depending on who owns the L0/L1 foundation:
 - **Departmental Tenant ESLZ**, where your department owns the L0/L1 foundation and you provision the cluster from your own per-cluster Azure DevOps repository and pipeline.
 - **SSC Azure ESLZ**, where the Azure Cloud Team at SSC owns the L0/L1 foundation and Aurora's Infrastructure as Code (IaC) is dropped into their landing-zone structure.
 
-See [Choose your path](#choose-your-path).
+See [Choose your deployment model](#choose-your-deployment-model).
 
 This SOP is written to be followed end to end without prior knowledge of the Aurora platform. Where a step depends on another team (networking, ESLZ intake, identity), that dependency is called out explicitly.
 
@@ -28,7 +30,9 @@ This SOP is written to be followed end to end without prior knowledge of the Aur
 Onboarding a project onto Aurora is a two-part sequence:
 
 1. **Deploy a PBMM-compliant AKS cluster (this guide).** The cluster is hardened to the PBMM baseline. Authorization to operate is handled under the hosting tenant's assessment. It is production-ready and usable on its own, and its security controls are documented in the `security-narratives` repository, which can be freely shared.
-2. **Deploy the Aurora Platform.** The Platform adds a curated, hardened set of CNCF tooling managed by Argo CD (observability, runtime security, certificate automation, and continuous delivery).
+2. **Deploy the Aurora Platform.** The Platform adds a curated, hardened set of CNCF tooling managed by Argo CD (observability, runtime security, certificate automation, and continuous delivery). This second phase is also where the cluster's role is assigned: the same cluster becomes a **management (hub) cluster** or a **workload cluster** depending on the platform configuration applied there (the chart's `mgmt` component, which is disabled by default and enabled through a management cluster's `config.yaml`).
+
+The cluster this SOP produces is **role-neutral**: the steps below are identical for every cluster and do not, on their own, make it a management or workload cluster. That distinction is decided only in phase 2, when the Aurora Platform is deployed.
 
 You may deploy **as many PBMM-compliant AKS clusters as you need** from this SOP's IaC; each is provisioned from the same IaC and hardened to the same PBMM baseline. The Aurora Platform, by contrast, **only works with Aurora's IaC** and must not be deployed onto a cluster that was not created through this SOP.
 
@@ -85,12 +89,23 @@ The Entra ID to Azure / AKS IAM RBAC Architecture below shows how access is stru
 
 Figure 3: Entra ID to Azure / AKS IAM RBAC Architecture
 
-## Choose your path
+## Choose your deployment model
 
 Provisioning follows one of two paths depending on who owns the L0/L1 enterprise foundation. Pick the one that matches your environment and follow its numbered steps end to end. Both paths finish the same way, by handing off to the Aurora Platform.
 
 - **Path A — Departmental Tenant ESLZ.** Your department owns the L0/L1 foundation and you provision the cluster from your own per-cluster Azure DevOps repository, applied through its pipeline. Use this path for standard department and project onboarding in a departmental tenant.
-- **Path B — SSC Azure ESLZ.** The Azure Cloud Team at SSC owns the L0/L1 foundation. You drop Aurora's IaC (`L2_blueprint_aurora`) into their landing-zone repository, which their preconfigured pipeline applies on approved merge requests (or you can run Terragrunt manually from a jumpbox). Use this path when onboarding onto the SSC Enterprise-Scale Landing Zone on Azure.
+- **Path B — SSC Azure ESLZ.** The Azure Cloud Team at SSC owns the L0/L1 foundation and provides the CI boilerplate. You drop Aurora's IaC (`L2_blueprint_aurora`) into their landing-zone repository, which their preconfigured pipeline applies on approved merge requests (or you can run Terragrunt manually from a jumpbox). Use this path when onboarding onto the SSC Enterprise-Scale Landing Zone on Azure.
+
+### Terraform state ownership
+
+On both paths, the cluster's Terraform state is owned and governed by the party that owns the cluster's IaC and pipeline, and it lives in that party's PBMM-compliant backend (an Azure Storage Account), one state per cluster repository:
+
+- **Path A — Departmental Tenant ESLZ.** The governing department owns and administers the state backend.
+- **Path B — SSC Azure ESLZ.** The Azure Cloud Team at SSC owns the state backend for the SSC Enterprise-Scale Landing Zone.
+
+This keeps state ownership aligned with cluster-lifecycle ownership, so the governing team can reliably plan, apply, detect drift, and destroy, and so the state (which can contain sensitive values) stays under the controls the assessment relies on.
+
+A client that wants complete control of the whole cluster, including its Terraform state in a client-owned Storage Account, must request it through the governing department. This arrangement is **discouraged**: it splits lifecycle ownership from state ownership, makes the governing team's operations depend on a backend it does not administer, and adds cross-subscription access and network dependencies for negligible benefit. Where it is nonetheless approved, the client assumes ownership of the full cluster lifecycle and the state backend must meet the same PBMM baseline (private endpoint, public access disabled, encryption, AAD/RBAC data-plane auth, blob versioning, and soft delete).
 
 ## Path A: Departmental Tenant ESLZ
 
@@ -109,6 +124,8 @@ https://dev.azure.com/<AZDO_ORG>/<AZDO_PROJECT>/_git/template
 # the new cluster repository you created
 https://dev.azure.com/<AZDO_ORG>/<AZDO_PROJECT>/_git/<REPO_NAME>
 ```
+
+The template carries the `azure-pipelines.yml` deployment pipeline, so the new repository is ready to run as soon as its ESLZ-aligned subscription and Service Connection are provisioned.
 
 ### 2. Initiate intake for ESLZ and subscription
 
@@ -143,7 +160,7 @@ Total additional VNet space required: one /24 (covering the subnets above) plus 
 
 ### 4. Wait for ESLZ and subscription creation
 
-Await confirmation from the landing-zone team that the ESLZ-aligned Azure subscription has been created and that the Azure DevOps Service Connection is configured against the repository created above and can authenticate to that subscription. Verify it under **Project settings -> Service connections** in the AZDO project: it should target the new subscription and pass its verify/authorize check. The pipeline in later steps runs through this Service Connection, so it must exist and be authorized before proceeding.
+Await confirmation from the landing-zone team that the ESLZ-aligned Azure subscription has been created. As part of provisioning the ESLZ and its Managed DevOps Pool, the Azure DevOps Service Connection for the repository created above is created automatically and linked to the new subscription. Verify it under **Project settings -> Service connections** in the AZDO project: it should target the new subscription and pass its verify/authorize check. The deployment pipeline runs through this Service Connection, so confirm it exists and is authorized before proceeding.
 
 ### 5. Verify VNet peerings
 
@@ -218,7 +235,8 @@ The process builds on the L0/L1 blueprints provided by the Azure Cloud Team. The
 
 Request an ESLZ from the Azure Cloud Team using the following GC Form:
 
-- https://forms-formulaires.alpha.canada.ca/en/id/cmt38qwug00l901yn5cteahzx
+- English: https://forms-formulaires.alpha.canada.ca/en/id/cmt38qwug00l901yn5cteahzx
+- French: https://forms-formulaires.alpha.canada.ca/fr/id/cmt38qwug00l901yn5cteahzx
 
 The Azure Cloud Team will get back to you with:
 

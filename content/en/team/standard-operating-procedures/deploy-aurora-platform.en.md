@@ -76,9 +76,13 @@ For a **workload cluster**, the following also apply:
 
 Aurora provisions most role assignments and access declaratively through its Terraform IaC. Some environments, however, restrict certain permission types that the IaC cannot grant on its own, and those must be arranged manually before they become blockers. Several steps below assign roles to managed identities and service principals and require the relevant Entra ID objects to be visible and assignable to the operator, which in many environments is granted through Privileged Identity Management (PIM) or an equivalent elevated-access request. Submit that request early so access is in place before starting this SOP.
 
+- **Known blocker, Entra visibility via PIM:** Verifying role assignments (Step 2), populating the Argo CD Key Vault secrets (Step 9), and requesting the OIDC service principal (Step 10) all require the operator to see the relevant groups and service principals in Entra ID. This visibility is granted through Privileged Identity Management (PIM) and requires an approved request for elevated permissions in Entra ID. **Until that PIM access is in place, expect significant back-and-forth with the identity team for each RBAC assignment.** Submit the elevated-permissions request early so PIM access is available before starting this SOP.
+
 ## Bootstrap the Management Cluster
 
-### 1. Authenticate to the AKS cluster
+These steps bootstrap the management cluster: authenticate to the cluster, deploy Argo CD via `bootstrap-terraform`, supply the secrets that cannot be automated, and set up DNS and certificate access. Argo CD then reconciles the platform from the cluster's configuration repository until it converges.
+
+### 1. Authenticate to the AKS Cluster
 
 Authenticate to Azure and retrieve the cluster credentials. For a private cluster, run this from a host with network access to the API server (for example a jumpbox or Azure Virtual Desktop).
 
@@ -92,7 +96,7 @@ az aks get-credentials \
 kubelogin convert-kubeconfig -l azurecli
 ```
 
-### 2. Verify cluster access and role assignments
+### 2. Verify Cluster Access and Role Assignments
 
 Confirm the identity you authenticated as has the required roles on the AKS cluster, and that you can reach the cluster before deploying anything.
 
@@ -105,7 +109,7 @@ az aks show \
   --query "id" -o tsv
 ```
 
-List the role assignments against the cluster scope:
+List role assignments against the cluster scope:
 
 ```sh
 az role assignment list \
@@ -124,18 +128,18 @@ Then confirm connectivity and RBAC end to end:
 kubectl get nodes
 ```
 
-If the nodes are listed, authentication and RBAC are working correctly. If either the role check or `kubectl get nodes` fails, resolve the missing role assignments before continuing.
+If the nodes are listed, authentication and RBAC are working correctly. If either the role check or `kubectl get nodes` fails, resolve the missing role assignments before proceeding.
 
-### 3. Clone the bootstrap Terraform repository
+### 3. Clone the Bootstrap Terraform Repository
 
-This repository installs Argo CD directly onto the cluster and creates the `aurora-platform` ApplicationSet, which syncs the Aurora Platform Helm chart from the cluster's configuration repository. With the `mgmt` component enabled in that configuration, the platform includes the tooling to manage this cluster and onboard workload clusters.
+This repository installs Argo CD into the cluster and creates the `aurora-platform` ApplicationSet, which syncs the Aurora Platform Helm chart from the cluster's configuration repository. With the `mgmt` component enabled in that configuration, the platform includes the tooling to manage this cluster and onboard workload clusters.
 
 ```sh
 git clone https://github.com/gccloudone-aurora/bootstrap-terraform
 cd bootstrap-terraform
 ```
 
-### 4. Prepare the project configuration repository
+### 4. Prepare the Project Configuration Repository
 
 The Aurora Platform is driven by a per-cluster configuration repository that Argo CD syncs from. Prepare this repository before continuing.
 
@@ -160,7 +164,7 @@ Edit the `config.yaml` for your target cluster, filling in all the `<FILLIN_XYZ>
 
 Commit and push your changes to a new repository, following a naming convention such as `project-example`, where `example` is the name of the project or department.
 
-### 5. Configure the Terraform variables
+### 5. Configure Terraform Variables
 
 Set the cluster-specific values in `terraform.tfvars`, starting from the example in the repository. At minimum this includes the target subscription and tenant IDs, the cluster name and resource group, the ingress domain and API server CIDR, and the Key Vault references the platform reads its secrets from. See `variables.tf` and the example `terraform.tfvars` in `bootstrap-terraform` for the complete, current list.
 
@@ -177,7 +181,7 @@ Initialize the working directory to download the required providers and modules:
 terraform init
 ```
 
-### 7. Deploy the Argo CD operator
+### 7. Deploy Argo CD Operator
 
 Apply the Argo CD operator Helm chart first, since the Argo CD instance in the next step depends on it:
 
@@ -185,7 +189,7 @@ Apply the Argo CD operator Helm chart first, since the Argo CD instance in the n
 terraform apply -target=helm_release.argo_operator
 ```
 
-### 8. Deploy the Argo CD instance
+### 8. Deploy Argo CD Instance
 
 Apply the Argo CD instance Helm chart:
 
@@ -193,29 +197,29 @@ Apply the Argo CD instance Helm chart:
 terraform apply -target=helm_release.argocd_instance
 ```
 
-### 9. Populate the required Key Vault secrets
+### 9. Populate Required Key Vault Secrets
 
-Some secrets cannot be inferred or automated, so they must be entered manually into the Argo CD Key Vault before syncing the platform components, otherwise the applications will fail to sync when they look for these values:
+Some secrets cannot be inferred or automated because of the specific access the department needs to control. These must be entered manually into the Argo CD Key Vault before the platform can sync successfully. Substitute your environment's Key Vault prefixes (`<ARGO_KV_PREFIX>` and `<PLATFORM_KV_PREFIX>`) from the Environment Values table:
 
-- `<prefix>-argo-kvs-github-username`: GitHub username that Argo CD uses to access the source repositories.
-- `<prefix>-argo-kvs-github-password`: corresponding GitHub password or personal access token.
-- `<prefix>-argo-kvs-cluster-admins`: the set of cluster administrators.
-- `<prefix>-platform-kvs-argocd-oidc-sp-client-id`: client ID of the Argo CD OIDC service principal.
-- `<prefix>-platform-kvs-argocd-oidc-sp-client-secret`: client secret of the Argo CD OIDC service principal.
+- `<ARGO_KV_PREFIX>-github-username`: GitHub username used by Argo CD to access the source repositories
+- `<ARGO_KV_PREFIX>-github-password`: corresponding GitHub password or personal access token
+- `<ARGO_KV_PREFIX>-cluster-admins`: the set of cluster administrators
+- `<PLATFORM_KV_PREFIX>-argocd-oidc-sp-client-id`: client ID of the Argo CD OIDC service principal
+- `<PLATFORM_KV_PREFIX>-argocd-oidc-sp-client-secret`: client secret of the Argo CD OIDC service principal
 
-The two `<prefix>-platform-kvs-argocd-oidc-sp-*` values are produced in the next step (Argo CD OIDC service principal); enter them once you have them.
+The two `<PLATFORM_KV_PREFIX>-argocd-oidc-sp-*` values are produced in Step 10; enter them once you have them.
 
 <!-- markdownlint-disable MD033 -->
 
 <gcds-alert alert-role="info" container="full" heading="Note" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-<gcds-text>The prefix on these secret names changes per environment. Adjust the names to match your target Key Vault's naming convention. This step is required until these values are provisioned automatically as part of Enterprise Landing Zone (ESLZ) onboarding.</gcds-text>
+<gcds-text>The Key Vault prefixes (`<ARGO_KV_PREFIX>`, `<PLATFORM_KV_PREFIX>`) change per environment. The secret suffixes (for example `-github-username`) are constant across environments.</gcds-text>
 </gcds-alert>
 
 <!-- markdownlint-enable MD033 -->
 
-### 10. Argo CD OIDC service principal
+### 10. Argo CD OIDC Service Principal
 
-The OIDC service principal is normally created automatically by Terraform, but that automation may be disabled where departmental policy restricts service principal creation. In that case the service principal must be requested manually via a support ticket. The request should ask to:
+The OIDC service principal is normally created automatically by our Terraform, but that automation had to be disabled due to departmental policies on service principal creation and the permissions involved. As a result, the service principal must be requested manually via a support ticket. The request should ask to:
 
 - Duplicate an existing Argo CD service principal into a new environment-specific one.
 - Match the exact same permissions, groups claim (ID, Access, and SAML token types), and admin consent as the source service principal.
@@ -224,27 +228,27 @@ The OIDC service principal is normally created automatically by Terraform, but t
 
 Once received, store these values in the `<prefix>-platform-kvs-argocd-oidc-sp-client-id` and `<prefix>-platform-kvs-argocd-oidc-sp-client-secret` Key Vault secrets from the previous step.
 
-### 11. Grant Argo CD access to the configuration repository
+### 11. Grant Argo CD Access to the Configuration Repository
 
 Argo CD must be able to pull manifests from the configuration repository you prepared in Step 4. Once the Argo CD instance is running and the Key Vault secrets are in place:
 
 - Confirm the repository specification points Argo CD at the correct Aurora configuration repository.
-- Ensure authentication is provided through the `aurora-svc` service account, using the GitHub personal access token (PAT) from the `<prefix>-argo-kvs-github-password` secret in Step 9. The token must have access to the repository.
+- Ensure authentication is provided through the `aurora-svc` service account, using the GitHub personal access token (PAT) stored in the `<ARGO_KV_PREFIX>-github-password` secret from Step 9. The token must have access to the repository.
 - Approve the `gccloudone-aurora` request under pending repository access requests in your GitHub organization, so Argo CD can pull manifests.
 
-### 12. Deploy the remaining Aurora Platform components
+### 12. Deploy Remaining Aurora Platform Components
 
-Apply the rest of the Terraform configuration. This creates the `aurora-platform` ApplicationSet that deploys the full Aurora Platform through Argo CD:
+Apply all remaining Terraform resources, which includes the `aurora-platform` ApplicationSet that deploys the full Aurora Platform:
 
 ```sh
 terraform apply
 ```
 
-Argo CD reconciles the ApplicationSet asynchronously, so the platform will take some time to converge after the apply completes. You can watch the progress in the Argo CD UI (see the next step).
+Argo CD reconciles the ApplicationSet asynchronously, so the platform takes some time to converge after the apply completes. Watch progress in the Argo CD UI (next step).
 
-### 13. Access the Argo CD UI (optional)
+### 13. Access Argo CD UI (Optional)
 
-If no ingress has been configured yet, you can port-forward the Argo CD service to reach the UI from your workstation.
+If no ingress has been configured yet, you can port-forward the Argo CD service to access the UI locally.
 
 Port-forward the Argo CD server:
 
@@ -258,11 +262,20 @@ Retrieve the temporary admin password:
 kubectl get secret argocd-cluster -n platform-management-system -o go-template='{{index .data "admin.password" | base64decode}}'; echo
 ```
 
-Open `https://localhost:8080` in your browser and log in with the username `admin` and the password returned by the command above.
+Access Argo CD in your browser:
 
-### 14. Verify the deployment
+```
+https://localhost:8080
+```
 
-Confirm that the platform has deployed successfully before considering the process complete. In the Argo CD UI (or with the Argo CD CLI), check that all applications and the `aurora-platform` ApplicationSet report a status of `Synced` and `Healthy`:
+Login with:
+
+- **Username:** `admin`
+- **Password:** the output from the secret retrieval above
+
+### 14. Verify the Deployment
+
+Confirm the platform has deployed successfully before considering the process complete. In the Argo CD UI (or with the Argo CD CLI), check that all applications and the `aurora-platform` ApplicationSet report a status of `Synced` and `Healthy`:
 
 ```sh
 kubectl get applications -n platform-management-system
@@ -270,11 +283,11 @@ kubectl get applications -n platform-management-system
 
 If any application is stuck in `OutOfSync`, `Degraded`, or `Missing`, inspect it in the Argo CD UI for the underlying error. A common cause is a missing or misnamed Key Vault secret from Step 9.
 
-### 15. Add a DNS A record
+### 15. Add a DNS A Record for the Cluster
 
-Once the platform is deployed, the Istio ingress gateway provisions an external load balancer. To reach platform services by hostname, point a wildcard DNS record at that load balancer in the public DNS zone created during Enterprise Landing Zone onboarding.
+Each cluster's Istio ingress gateway provisions its own external load balancer. To route traffic to it (platform services by hostname), add a wildcard A record in the DNS zone (`<DNS_ZONE>`) pointing at that load balancer's IP.
 
-First, find the external IP of the Istio ingress gateway load balancer, exposed by the service in the `ingress-general-system` namespace:
+You can find the external IP of the Istio ingress gateway load balancer, exposed by the service in the `ingress-general-system` namespace:
 
 ```sh
 kubectl get svc -n ingress-general-system
@@ -282,67 +295,84 @@ kubectl get svc -n ingress-general-system
 
 Then, in the public DNS zone for your cluster, create a wildcard A record that points at that address:
 
-- `*.<env>`: points to the external IP of the Istio ingress gateway load balancer.
+```txt
+*.<env> => <ingress-lb-ip> (Istio Ingress Gateway External LB)
+```
 
 Repeat this step whenever a new cluster is added, using that cluster's external LB IP. Once the record has propagated, platform services are reachable at their configured hostnames.
 
-### 16. Grant cert-manager's MSI access to the DNS zone
+### 16. Grant cert-manager's MSI Access to the DNS Zone
 
-For cert-manager to solve DNS-01 challenges, its managed identity must read and manage the `_acme-challenge` TXT records in the DNS zone. Without the correct role, certificate issuance fails with an `AuthorizationFailed` error on `Microsoft.Network/dnsZones/TXT/read`.
+For cert-manager to solve DNS-01 challenges, it must read and manage the `_acme-challenge` TXT records in the DNS zone. Without the correct role, certificate issuance fails with an authorization error similar to:
 
-Raise a ticket to assign the cert-manager managed identity the **DNS Zone Contributor** role, scoped to your DNS zone:
+```txt
+{
+  "error": {
+    "code": "AuthorizationFailed",
+    "message": "The client '...' with object id '...' does not have authorization to perform action 'Microsoft.Network/dnsZones/TXT/read' over scope '/subscriptions/.../resourceGroups/<dns-rg>/providers/Microsoft.Network/dnsZones/<DNS_ZONE>/TXT/_acme-challenge.<host>.<env>' or the scope is invalid. If access was recently granted, please refresh your credentials."
+  }
+}
+```
+
+To resolve this, the cert-manager managed identity requires the **DNS Zone Contributor** role. Raise a ticket to assign the cert-manager MSI (for example, `aks-msi-cert-manager`).
 
 - **Role:** DNS Zone Contributor
-- **Scope:** the cluster's DNS zone
+- **Scope:** the DNS zone (`<DNS_ZONE>`)
 
 ## Onboard a Workload Cluster
 
-A workload cluster does not run its own Argo CD; an existing management cluster's Argo CD deploys and reconciles the platform onto it. This track reuses several steps from the management track above and references them by number rather than repeating them.
+A workload cluster does not run its own Argo CD; an existing management cluster's Argo CD deploys and reconciles the platform onto it. This track reuses several management-track steps above and references them by number rather than repeating them.
 
-### 1. Prepare the project configuration repository
+Prerequisites specific to a workload cluster:
 
-Follow Step 4 (Prepare the project configuration repository) in the management track above, for the workload cluster's `config.yaml`.
+- A management cluster that already exists and is running Argo CD.
+- A firewall path that allows traffic from the management cluster to the workload cluster.
+- `kubectl` and Git, with any previous kubeconfig context cleared to avoid conflicts.
 
-### 2. Register the cluster in the management cluster's Argo CD
+### W1. Prepare the Project Configuration Repository
 
-The management cluster's Argo CD must be updated so it can track the workload cluster and the repository prepared in the previous step. Edit the management cluster's `config.yaml` to add:
+Follow Step 4 (Prepare the Project Configuration Repository) above, for the workload cluster's `config.yaml`.
+
+### W2. Register the Cluster in the Management Cluster's Argo CD
+
+The management cluster's Argo CD must be updated so it can track the workload cluster and the repository prepared in W1. Edit the management cluster's `config.yaml` to add:
 
 - The workload cluster's API server address, token, and `caData`.
 - The workload cluster's Git repository URL and the credentials for accessing it.
 
 See this [example configuration change](https://github.com/gccloudone-aurora/project-aurora-mgmt/pull/113/changes).
 
-### 3. Populate the required Key Vault secrets
+### W3. Populate Required Key Vault Secrets
 
-Follow Step 9 (Populate the required Key Vault secrets) in the management track above, for the workload cluster's Argo CD Key Vault. The `argocd-oidc-sp` values are those already established for the management cluster's Argo CD; a workload cluster does not create its own OIDC service principal.
+Follow Step 9 (Populate Required Key Vault Secrets) above for the workload cluster's Argo CD Key Vault. The `argocd-oidc-sp` values are those already established for the management cluster's Argo CD; a workload cluster does not create its own OIDC service principal.
 
-### 4. Grant Argo CD access to the configuration repository
+### W4. Grant Argo CD Access to the Configuration Repository
 
-Follow Step 11 (Grant Argo CD access to the configuration repository) in the management track above, for the workload cluster's configuration repository.
+Follow Step 11 (Grant Argo CD Access to the Configuration Repository) above, for the workload cluster's configuration repository.
 
-### 5. Grant the management cluster access to the workload Key Vault
+### W5. Grant the Management Cluster Access to the Workload Key Vault
 
-The management cluster's Argo CD service principal needs to read secrets from the workload cluster's Key Vault. In the Azure portal, navigate to the workload cluster's Key Vault and create a new access policy granting all secret permissions to the management cluster's Argo CD service principal, `<management-cluster-name>-ARGO-msi-argocd`.
+The management cluster's Argo CD service principal must read secrets from the workload cluster's Key Vault. In the Azure portal, open the workload cluster's Key Vault and add an access policy granting all secret permissions to the management cluster's Argo CD service principal (`<MGMT_CLUSTER_NAME>-ARGO-msi-argocd`).
 
-### 6. Sync the Argo CD applications
+### W6. Sync the Argo CD Applications
 
 In the management cluster's Argo CD portal, sync the following applications in order:
 
-1. `platform-<management-cluster-name>`
-2. `<management-cluster-name>-argo-foundation-platform-project`
-3. `<management-cluster-name>-argo-foundation-argocd-instance`
+1. `platform-<MGMT_CLUSTER_NAME>`
+2. `<MGMT_CLUSTER_NAME>-argo-foundation-platform-project`
+3. `<MGMT_CLUSTER_NAME>-argo-foundation-argocd-instance`
 
-Once these are synced, the platform application for the new workload cluster appears. Sync it, then sync the newly created applications for the cluster. You may need to run the sync operation more than once:
+Once these are synced, the platform application for the new workload cluster appears. Sync it, then sync the newly created applications for the cluster. You may need to run the sync more than once:
 
-- If a sync fails with an error accessing Key Vault secrets, perform a hard refresh and try again, and confirm the management cluster's Argo CD service principal has access to the workload cluster's Key Vault (step 5).
-- If a sync fails because a CRD does not yet exist, skip that resource and return to it once the Kubernetes job installing the CRD has completed.
+- If a sync fails accessing Key Vault secrets, perform a hard refresh and retry, and confirm the access policy from W5.
+- If a sync fails because a CRD does not yet exist, skip that resource and return to it once the Kubernetes job installing the CRD completes.
 
-Before considering the process complete, confirm in the management cluster's Argo CD that all applications for the workload cluster report a status of `Synced` and `Healthy`.
+Confirm all applications for the workload cluster report `Synced` and `Healthy` before considering the process complete.
 
-### 7. Add a DNS A record
+### W7. Add a DNS A Record for the Cluster
 
-Follow Step 15 (Add a DNS A record) in the management track above, using the workload cluster's Istio ingress gateway external load balancer IP and its `*.<env>` wildcard record.
+Follow Step 15 (Add a DNS A Record for the Cluster) above, using the workload cluster's Istio ingress gateway external LB IP and its `*.<env>` wildcard record.
 
-### 8. Grant cert-manager's MSI access to the DNS zone
+### W8. Grant cert-manager's MSI Access to the DNS Zone
 
-As with a management cluster, the workload cluster's cert-manager managed identity needs the **DNS Zone Contributor** role, scoped to the cluster's DNS zone, to solve DNS-01 challenges. Follow Step 16 (Grant cert-manager's MSI access to the DNS zone) in the management track above, assigning the role to the workload cluster's cert-manager managed identity.
+As with a management cluster, the workload cluster's cert-manager managed identity requires the **DNS Zone Contributor** role to solve DNS-01 challenges. Follow Step 16 (Grant cert-manager's MSI Access to the DNS Zone) above, assigning the role to the workload cluster's cert-manager MSI, scoped to the DNS zone.

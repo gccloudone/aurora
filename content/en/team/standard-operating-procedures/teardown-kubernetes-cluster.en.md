@@ -10,6 +10,8 @@ showToc: true
 
 {{< translation-note >}}
 
+## Objective
+
 This SOP describes the process for tearing down a PBMM Kubernetes cluster in the Azure environment. You may need to tear down a cluster when a client confirms that it is no longer required. The procedure removes the Aurora Platform from the target cluster, cleans up its configuration in Git and on the management cluster, destroys the L2 infrastructure with Terragrunt, and requests removal of the remaining L0/L1 subscription resources.
 
 <!-- markdownlint-disable MD033 -->
@@ -123,7 +125,7 @@ Confirm in the Azure portal that all L2 resources associated with the target clu
 
 ### 10. Submit a request to the Azure DevOps team
 
-[Submit a request to the Azure DevOps team](https://www.cloudopsportal.g3.ent.cloud-nuage.canada.ca/support/AzureDevOps/New) to:
+Submit a request to the Azure DevOps team to:
 
 - Delete the remaining L0/L1 resources in the target subscription.
 - Remove any associated networking and firewall configurations.
