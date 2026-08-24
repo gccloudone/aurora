@@ -26,8 +26,7 @@ Before testing, ensure the following:
 
 Apply the below manifest to create the following Kubernetes resources:
 
-> [!NOTE]
-> Update the domain name in Ingress and Certificate manifest based on the target cluster.
+> [!NOTE] Update the domain name in Ingress and Certificate manifest based on the target cluster.
 
 1. Namespace
 2. Deployment
@@ -41,104 +40,104 @@ Apply the below manifest to create the following Kubernetes resources:
 
 Contents of the test-cert-issuance.yaml manifest
 
-   ```yaml
+```yaml
 ---
 # Create Namespace
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: test-cert-issuance
+name: test-cert-issuance
 ---
 # Create a Sample Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-cert-app
-  namespace: test-cert-issuance
+name: test-cert-app
+namespace: test-cert-issuance
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - image: docker.io/nginx:latest
-        imagePullPolicy: Always
-        name: nginx
-        ports:
-        - containerPort: 80
-          protocol: TCP
+replicas: 1
+selector:
+ matchLabels:
+   app: nginx
+template:
+ metadata:
+   labels:
+     app: nginx
+ spec:
+   containers:
+   - image: docker.io/nginx:latest
+     imagePullPolicy: Always
+     name: nginx
+     ports:
+     - containerPort: 80
+       protocol: TCP
 ---
 # Create Service
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: nginx
-  name: test-cert-app-svc
-  namespace: test-cert-issuance
+labels:
+ app: nginx
+name: test-cert-app-svc
+namespace: test-cert-issuance
 spec:
-  ports:
-  - name: http
-    port: 80
-    protocol: TCP
-    targetPort: 80
-  selector:
-    app: nginx
-  sessionAffinity: None
-  type: ClusterIP
+ports:
+- name: http
+ port: 80
+ protocol: TCP
+ targetPort: 80
+selector:
+ app: nginx
+sessionAffinity: None
+type: ClusterIP
 ---
 # Create Ingress
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: test-cert-app-ingress
-  namespace: test-cert-issuance
+name: test-cert-app-ingress
+namespace: test-cert-issuance
 spec:
-  ingressClassName: ingress-istio-controller
-  rules:
-  - host: test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
-    http:
-      paths:
-      - backend:
-          service:
-            name: test-cert-app-svc
-            port:
-              name: http
-        path: /
-        pathType: Prefix
-  tls:
-  - hosts:
-    - test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
-    secretName: test-cert-app-tls
+ingressClassName: ingress-istio-controller
+rules:
+- host: test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
+ http:
+   paths:
+   - backend:
+       service:
+         name: test-cert-app-svc
+         port:
+           name: http
+     path: /
+     pathType: Prefix
+tls:
+- hosts:
+ - test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
+ secretName: test-cert-app-tls
 ---
 # Create Certificate - This will further create CertificateRequest and Order
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  labels:
-    use-general-solver: "true"
-  name: test-cert-app-certificate
-  namespace: test-cert-issuance
+labels:
+ use-general-solver: "true"
+name: test-cert-app-certificate
+namespace: test-cert-issuance
 spec:
-  commonName: test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
-  dnsNames:
-  - test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
-  issuerRef:
-    kind: ClusterIssuer
-    name: letsencrypt
-  secretName: test-cert-app-tls
-   ```
+commonName: test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
+dnsNames:
+- test1.aurora.ssc-dev-auroramgmt.c.ent.cloud-nuage.canada.ca
+issuerRef:
+ kind: ClusterIssuer
+ name: letsencrypt
+secretName: test-cert-app-tls
+```
 
 ### Step3: Validate the creation of resources
 
 Check whether all resources defined in the manifest have been created. The `Kind: Certificate` manifest further creates a CertificateRequest and Order to generate the SSL cert and stores in tls.crt and tls.key in a K8s secret.
 
-   ```sh
+```sh
 > kubens test-cert-issuance
 ✔ Active namespace is "test-cert-issuance"
 
@@ -170,4 +169,4 @@ test-cert-app-certificate-1   True                True    letsencrypt   system:s
 > k get order
 NAME                                    STATE   AGE
 test-cert-app-certificate-1-379287467   valid   86m
-   ```
+```

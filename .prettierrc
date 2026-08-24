@@ -1,4 +1,6 @@
 {
+  "proseWrap": "never",
+  "embeddedLanguageFormatting": "off",
   "plugins": ["prettier-plugin-go-template"],
   "overrides": [
     {

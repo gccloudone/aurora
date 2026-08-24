@@ -31,34 +31,34 @@ The action automatically uses the built-in GITHUB_TOKEN and permissions are assi
 
 To use this action, create a workflow file (e.g., .github/workflows/trigger_release.yml) in your repository and reference this action.
 
-   ```sh
+```sh
 name: Check Label and Trigger Release
 run-name: "PR #${{ github.event.pull_request.number }} [${{ github.event.action }}]: ${{ github.event.pull_request.title }}"
 
 on:
-  pull_request:
-    types: [opened, reopened, synchronize , labeled, unlabeled, closed]
-    branches:
-      - main
+pull_request:
+ types: [opened, reopened, synchronize , labeled, unlabeled, closed]
+ branches:
+   - main
 
 permissions:
-  contents: write
+contents: write
 
 jobs:
-  publish_release:
-    name: Check Label and Trigger Release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Use Composite Check PR Labels Action
-        id: label
-        uses: gccloudone-aurora-iac/.github/.github/actions/check-pr-labels@main
+publish_release:
+ name: Check Label and Trigger Release
+ runs-on: ubuntu-latest
+ steps:
+   - name: Use Composite Check PR Labels Action
+     id: label
+     uses: gccloudone-aurora-iac/.github/.github/actions/check-pr-labels@main
 
-      - name: Use Composite Create Release Action
-        if: github.event.pull_request.merged == true
-        uses: gccloudone-aurora-iac/.github/.github/actions/create-release@main
-        with:
-          release_type: ${{ steps.label.outputs.release_type }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          release_branch: "main"
+   - name: Use Composite Create Release Action
+     if: github.event.pull_request.merged == true
+     uses: gccloudone-aurora-iac/.github/.github/actions/create-release@main
+     with:
+       release_type: ${{ steps.label.outputs.release_type }}
+       github_token: ${{ secrets.GITHUB_TOKEN }}
+       release_branch: "main"
 
-   ```
+```

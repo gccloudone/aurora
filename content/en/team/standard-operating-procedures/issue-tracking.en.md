@@ -17,11 +17,11 @@ This document explains **where each issue belongs** and how the systems interact
 
 ## 1. Overview
 
-| System           | Primary Use                                                                        | Example                                                                |
-|------------------|------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| **GitHub**       | Public and internal development tracking for Aurora’s open-source and roadmap work | Feature requests, platform component updates, roadmap epics            |
-| **Helix (ITSM)** | Client support and service management                                              | Department service requests, incidents, or support tickets             |
-| **Jira**         | Internal work involving protected or classified information                        | Security Impact Assessment (SIA), UX research, client-specific details |
+| System | Primary Use | Example |
+| --- | --- | --- |
+| **GitHub** | Public and internal development tracking for Aurora’s open-source and roadmap work | Feature requests, platform component updates, roadmap epics |
+| **Helix (ITSM)** | Client support and service management | Department service requests, incidents, or support tickets |
+| **Jira** | Internal work involving protected or classified information | Security Impact Assessment (SIA), UX research, client-specific details |
 
 ---
 
@@ -40,13 +40,11 @@ Jira remains the **system of record** for any work that involves:
 
 ## 3. GitHub
 
-GitHub is the **primary workspace for open and unclassified development** under the Aurora initiative.
-It is where collaboration, transparency, and cross-department contribution happen across SSC and partner organizations.
+GitHub is the **primary workspace for open and unclassified development** under the Aurora initiative. It is where collaboration, transparency, and cross-department contribution happen across SSC and partner organizations.
 
 ### Public Repositories
 
-All feature requests, enhancements, and documentation updates for Aurora’s open-source components should be tracked directly in their respective repositories.
-Each repo links automatically to the Aurora organization-wide **Project Board** for visibility and milestone tracking.
+All feature requests, enhancements, and documentation updates for Aurora’s open-source components should be tracked directly in their respective repositories. Each repo links automatically to the Aurora organization-wide **Project Board** for visibility and milestone tracking.
 
 Examples include:
 
@@ -91,18 +89,15 @@ Helix is the **official IT Service Management (ITSM)** system used across SSC an
 - **STC Helix:** Used by Statistics Canada for internal Cloud Native Platform (CNP) support.
 - Other departments may operate their own Helix instance but follow similar ITSM processes.
 
-> **Note:**
-> The alignment between SSC’s Helix and departmental Helix implementations is still being refined.
-> Aurora follows SSC’s IT Service Lifecycle Management (ITSLM) standards; however, how client-facing requests and platform-level incidents flow between SSC and departmental instances is still under review.
-> Additional guidance will be published once a unified model for Helix integration and escalation is finalized.
+> **Note:** The alignment between SSC’s Helix and departmental Helix implementations is still being refined. Aurora follows SSC’s IT Service Lifecycle Management (ITSLM) standards; however, how client-facing requests and platform-level incidents flow between SSC and departmental instances is still under review. Additional guidance will be published once a unified model for Helix integration and escalation is finalized.
 
 ---
 
 ## 5. Summary
 
-| Category                                       | Where to File                                                         | Visibility      |
-|------------------------------------------------|-----------------------------------------------------------------------|-----------------|
-| Aurora internal coordination                   | GitHub (`gccloudone-aurora/roadmap`)                                  | Private         |
-| Public open-source development & documentation | GitHub (`gccloudone` / `gccloudone-aurora` / `gccloudone-aurora-iac`) | Public          |
-| Client support / incidents                     | Helix                                                                 | Internal (ITSM) |
-| Protected or classified content                | Jira                                                                  | Internal        |
+| Category | Where to File | Visibility |
+| --- | --- | --- |
+| Aurora internal coordination | GitHub (`gccloudone-aurora/roadmap`) | Private |
+| Public open-source development & documentation | GitHub (`gccloudone` / `gccloudone-aurora` / `gccloudone-aurora-iac`) | Public |
+| Client support / incidents | Helix | Internal (ITSM) |
+| Protected or classified content | Jira | Internal |
