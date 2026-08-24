@@ -90,8 +90,7 @@ Entra ID groups and service principals.
   elevated-permissions request early so PIM access is available before it is needed.
 - Both paths deploy through an Azure DevOps service connection backed by a user-assigned
   managed identity (UAMI). That identity must be able to create resources in the target
-  cluster (see
-  [Troubleshooting: forbidden error creating namespaces](#terraform-apply-fails-with-a-forbidden-error-creating-namespaces)).
+  cluster (see Troubleshooting: forbidden error creating namespaces).
 
 ### How cluster access works
 
