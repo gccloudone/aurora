@@ -264,7 +264,7 @@ kubectl get secret argocd-cluster -n platform-management-system -o go-template='
 
 Access Argo CD in your browser:
 
-```
+```sh
 https://localhost:8080
 ```
 
