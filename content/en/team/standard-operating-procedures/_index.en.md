@@ -49,7 +49,7 @@ Here are the current procedures in place:
     card-title="Adding Components to Aurora Platform Charts"
     href="/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/"
     badge="Operations"
-    description="Guidelines for adding new components to the aurora-platform-charts."
+    description="Procedure for adding a new component to the aurora-platform-charts repository, from vetting the Helm chart through templating, values, and deploying via Argo CD, including updating the Aurora SCI Request Form."
   >
   </gcds-card>
   <gcds-card

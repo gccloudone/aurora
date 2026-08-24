@@ -11,6 +11,14 @@ draft: false
 
 This document outlines the process for adding a new component to the [aurora-platform-charts repository](https://github.com/gccloudone-aurora/aurora-platform-charts).
 
+<!-- markdownlint-disable MD033 -->
+
+<gcds-alert alert-role="warning" container="full" heading="Update the Aurora SCI Request Form" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
+<gcds-text>Whenever you add a new component, remember to add it to the <code>Aurora - SCI Request Form.xlsx</code> in the security narratives so the component is captured for supply chain integrity (SCI) review.</gcds-text>
+</gcds-alert>
+
+<!-- markdownlint-enable MD033 -->
+
 ## Context
 
 Aurora uses ArgoCD to deploy Helm charts through the `Application` resource.
@@ -96,10 +104,16 @@ Also add your component under either the `core` or `app` field as `# component: 
 
 Bump the version number specified in the `Chart.yaml` file located under aurora-platform.
 
-### 9. Create a pull request
+### 9. Update the Aurora SCI Request Form
+
+Add the new component to the `Aurora - SCI Request Form.xlsx` in the security narratives so it is captured for supply chain integrity (SCI) review. Record the product name, the pinned version you are deploying, and the upstream source repository, matching the format of the existing entries.
+
+Keeping the form current ensures every platform tool is accounted for and prevents new components from being missed in the supply chain review process.
+
+### 10. Create a pull request
 
 Once you've pushed up your branch with all the changes, create a pull request and request a review from the team.
 
-### 10. Deploy and test
+### 11. Deploy and test
 
 Once your pull request is approved, merge it. Patch the `version` field in the `config.yaml` to the new version of the aurora-platform chart. The new `Applications` should then appear in the ArgoCD instance, where you can manually sync the application to deploy the resources onto the cluster. Finally, test the component and validate that it functions as expected.
