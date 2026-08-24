@@ -35,8 +35,16 @@ Here are the current procedures in place:
     card-title="Deploy the Aurora Platform"
     href="/en/team/standard-operating-procedures/deploy-aurora-platform/"
     badge="Onboarding"
-    description="Procedure for deploying the Aurora Platform onto an AKS cluster. It covers two scenarios: bootstrapping a new management cluster by installing Argo CD with the Bootstrap Terraform, and onboarding a workload cluster into the Argo CD of an existing management cluster."
+    description="Procedure for standing up a management cluster, using the bootstrap Terraform to install Argo CD and deploy the Aurora Platform with the mgmt component enabled."
   >
+  </gcds-card>
+  <gcds-card
+    card-title="Tearing down PBMM Kubernetes Cluster"
+    href="/en/team/standard-operating-procedures/cluster-teardown/"
+    badge="Operations"
+    description="Procedure for tearing down a cluster in Azure."
+  >
+  </gcds-card>
   </gcds-card>
   <gcds-card
     card-title="Adding Components to Aurora Platform Charts"
