@@ -25,24 +25,17 @@ Here are the current procedures in place:
 <div class="mb-400">
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
   <gcds-card
-    card-title="Onboarding Process for the Enterprise Landing Zone"
-    href="/en/team/standard-operating-procedures/enterprise-landing-zone/"
+    card-title="Deploy a PBMM Kubernetes Cluster"
+    href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/"
     badge="Onboarding"
-    description="Prerequisite steps to prepare the Azure Enterprise Landing Zone and provision an AKS cluster ready for the Aurora Platform."
+    description="Procedure to provision a PBMM-compliant Azure Kubernetes Service (AKS) cluster ready for the Aurora Platform, covering both the Departmental Tenant ESLZ and SSC Azure ESLZ deployment models."
   >
   </gcds-card>
   <gcds-card
-    card-title="Bootstrap the Management Cluster"
-    href="/en/team/standard-operating-procedures/management-cluster/"
+    card-title="Deploy the Aurora Platform"
+    href="/en/team/standard-operating-procedures/deploy-aurora-platform/"
     badge="Onboarding"
-    description="Procedure for standing up a management cluster, using the bootstrap Terraform to install Argo CD and deploy the Aurora Platform with the mgmt component enabled."
-  >
-  </gcds-card>
-  <gcds-card
-    card-title="Deploy a Workload Cluster"
-    href="/en/team/standard-operating-procedures/workload-cluster/"
-    badge="Onboarding"
-    description="Procedure for onboarding a workload cluster, deploying the Aurora Platform onto it from an existing management cluster's Argo CD."
+    description="Procedure for deploying the Aurora Platform onto an AKS cluster. It covers two scenarios: bootstrapping a new management cluster by installing Argo CD with the Bootstrap Terraform, and onboarding a workload cluster into the Argo CD of an existing management cluster."
   >
   </gcds-card>
   <gcds-card
