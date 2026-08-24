@@ -42,9 +42,8 @@ Here are the current procedures in place:
     card-title="Tearing down a PBMM Kubernetes Cluster"
     href="/en/team/standard-operating-procedures/teardown-kubernetes-cluster/"
     badge="Offboarding"
-    description="Procedure for decommissioning a PBMM Kubernetes cluster in Azure, from client authorization and ArgoCD/Git cleanup through infrastructure teardown of Azure resources."
+    description="Procedure for decommissioning a PBMM Kubernetes cluster in Azure, from client authorization and Argo CD/Git cleanup through infrastructure teardown of Azure resources."
   >
-  </gcds-card>
   </gcds-card>
   <gcds-card
     card-title="Adding Components to Aurora Platform Charts"
