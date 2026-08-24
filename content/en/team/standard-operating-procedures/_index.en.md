@@ -39,10 +39,10 @@ Here are the current procedures in place:
   >
   </gcds-card>
   <gcds-card
-    card-title="Tearing down PBMM Kubernetes Cluster"
-    href="/en/team/standard-operating-procedures/cluster-teardown/"
-    badge="Operations"
-    description="Procedure for tearing down a cluster in Azure."
+    card-title="Tearing down a PBMM Kubernetes Cluster"
+    href="/en/team/standard-operating-procedures/teardown-kubernetes-cluster/"
+    badge="Offboarding"
+    description="Procedure for decommissioning a PBMM Kubernetes cluster in Azure, from client authorization and ArgoCD/Git cleanup through infrastructure teardown of Azure resources."
   >
   </gcds-card>
   </gcds-card>
