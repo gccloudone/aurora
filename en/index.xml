@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aurora</title><link>/en/</link><description>Recent content on Aurora</description><generator>Hugo</generator><language>en-CA</language><lastBuildDate>Mon, 24 Aug 2026 16:05:00 -0400</lastBuildDate><atom:link href="/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy a PBMM Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aurora</title><link>/en/</link><description>Recent content on Aurora</description><generator>Hugo</generator><language>en-CA</language><lastBuildDate>Mon, 24 Aug 2026 19:55:57 -0400</lastBuildDate><atom:link href="/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy a PBMM Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
  &lt;gcds-text character-limit="true">
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
  &lt;/gcds-text>
 &lt;/gcds-alert>
+
+&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
 &lt;p>This SOP provisions a Protected B, Medium Integrity, Medium Availability (PBMM) compliant Azure Kubernetes Service (AKS) cluster using Aurora&amp;rsquo;s Infrastructure as Code (IaC), deployed against an approved Enterprise-Scale Landing Zone (ESLZ).&lt;/p></description></item><item><title>Deploy the Aurora Platform</title><link>/en/team/standard-operating-procedures/deploy-aurora-platform/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-aurora-platform/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
  &lt;gcds-text character-limit="true">
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
@@ -18,6 +20,8 @@
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
  &lt;/gcds-text>
 &lt;/gcds-alert>
+
+&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
 &lt;p>This SOP describes the process for tearing down a PBMM Kubernetes cluster in the Azure environment. You may need to tear down a cluster when a client confirms that it is no longer required. The procedure removes the Aurora Platform from the target cluster, cleans up its configuration in Git and on the management cluster, destroys the L2 infrastructure with Terragrunt, and requests removal of the remaining L0/L1 subscription resources.&lt;/p></description></item><item><title>Adding Components to Aurora Platform Charts</title><link>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
  &lt;gcds-text character-limit="true">
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
