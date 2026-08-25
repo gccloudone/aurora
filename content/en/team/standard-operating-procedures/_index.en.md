@@ -25,7 +25,7 @@ Here are the current procedures in place:
 <div class="mb-400">
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
   <gcds-card
-    card-title="Deploy a PBMM Kubernetes Cluster"
+    card-title="Deploy a PBMM-Compliant Kubernetes Cluster"
     href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/"
     badge="Onboarding"
     description="Procedure to provision a PBMM-compliant Azure Kubernetes Service (AKS) cluster ready for the Aurora Platform, covering both the Departmental Tenant ESLZ and SSC Azure ESLZ deployment models."
@@ -39,7 +39,7 @@ Here are the current procedures in place:
   >
   </gcds-card>
   <gcds-card
-    card-title="Tearing down a PBMM Kubernetes Cluster"
+    card-title="Tear Down a PBMM-Compliant Kubernetes Cluster"
     href="/en/team/standard-operating-procedures/teardown-kubernetes-cluster/"
     badge="Offboarding"
     description="Procedure for decommissioning a PBMM Kubernetes cluster in Azure, from client authorization and Argo CD/Git cleanup through infrastructure teardown of Azure resources."
