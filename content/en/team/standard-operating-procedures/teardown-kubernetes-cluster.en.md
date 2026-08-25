@@ -1,6 +1,6 @@
 ---
-title: "Tearing down a PBMM Kubernetes Cluster"
-linkTitle: "Tearing down a PBMM Kubernetes Cluster"
+title: "Tear Down a PBMM-Compliant Kubernetes Cluster"
+linkTitle: "Tear Down a PBMM-Compliant Kubernetes Cluster"
 weight: 5
 aliases: ["/team/sop/teardown-kubernetes-cluster"]
 date: 2026-08-19

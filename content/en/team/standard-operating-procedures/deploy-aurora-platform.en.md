@@ -46,7 +46,7 @@ Management and workload clusters run the same Aurora Platform, deployed as a Hel
 
 ## Context
 
-The AKS cluster deployed via the cluster creation process is a hardened, PBMM-compliant platform with an upcoming ATO: a private cluster with a Cilium dataplane, Azure Linux nodes, isolated node pools, private connectivity to Azure services, and multi-zone high availability. See that guide for the full configuration.
+The AKS cluster deployed via the cluster creation process is a hardened, PBMM-compliant platform authorized under the hosting tenant's assessment: a private cluster with a Cilium dataplane, Azure Linux nodes, isolated node pools, private connectivity to Azure services, and multi-zone high availability. See that guide for the full configuration.
 
 The Aurora Platform builds on that foundation with a curated set of hardened CNCF solutions managed through Argo CD, covering observability, runtime security, certificate management, and continuous delivery.
 

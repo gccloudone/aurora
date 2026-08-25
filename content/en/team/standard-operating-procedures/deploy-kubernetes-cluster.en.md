@@ -1,6 +1,6 @@
 ---
-title: "Deploy a PBMM Kubernetes Cluster"
-linkTitle: "Deploy a PBMM Kubernetes Cluster"
+title: "Deploy a PBMM-Compliant Kubernetes Cluster"
+linkTitle: "Deploy a PBMM-Compliant Kubernetes Cluster"
 weight: 3
 aliases: ["/team/sop/deploy-kubernetes-cluster"]
 date: 2026-08-20
@@ -43,7 +43,7 @@ This SOP produces a **private AKS cluster** on a **Non-Overlay** network model, 
 The Non-Overlay model is the detail that shapes most of the networking decisions below: pods receive real, routable IP addresses from a dedicated Pod subnet rather than NAT'd overlay addresses. Three consequences follow, and they matter before the landing zone networking is finalized (whether you request it on Path A or the Azure Cloud Team preconfigures it on Path B):
 
 - **Subnet sizing.** The Pod subnet is sized for the maximum number of pods (the `/23` in the network design) and is separate from the node (System) subnet.
-- **Source IP.** A pod's traffic egresses from the pod's own IP, not the node's. That pod IP is what you supply as the source on firewall and egress requests; using the node or System subnet instead is a common mistake (see Troubleshooting).
+- **Source IP.** A pod's traffic egresses from the pod's own IP, not the node's. That pod IP is what you supply as the source on firewall and egress requests; using the node or System subnet instead is a common mistake.
 - **Routing and policy.** Because pod IPs are real VNet addresses, they are visible to VNet routing, peerings, and firewall/network policy, all of which must account for the Pod subnet CIDR.
 
 ## Prerequisites
@@ -64,7 +64,7 @@ This SOP may be run by an Aurora platform operator or by the department's own pl
 Aurora provisions most role assignments and access declaratively through its Terraform IaC. Some environments, however, restrict certain permission types (for example, Entra ID group and service-principal visibility, or service-principal creation) that the IaC cannot grant on its own; those must be arranged manually. As a result, both cluster creation and platform deployment require the operator running the SOP to see and assign the relevant Entra ID groups and service principals.
 
 - **Known blocker, Entra visibility via PIM:** Assigning Kubernetes RBAC and mapping the correct Entra ID groups and service principals requires the operator to be able to see those objects in Entra ID. This visibility is granted through Privileged Identity Management (PIM) and requires an approved request for elevated permissions in Entra ID. Until that PIM access is in place, expect significant back-and-forth with the identity team for every RBAC assignment during onboarding. Submit the elevated-permissions request early so PIM access is available before it is needed.
-- Both paths deploy through an Azure DevOps service connection backed by a user-assigned managed identity (UAMI). That identity must be able to create resources in the target cluster (see Troubleshooting: forbidden error creating namespaces).
+- Both paths deploy through an Azure DevOps service connection backed by a user-assigned managed identity (UAMI). That identity must be able to create resources in the target cluster; if it cannot, `terraform apply` fails with a forbidden error creating namespaces.
 
 ### How cluster access works
 
@@ -164,7 +164,7 @@ Await confirmation from the landing-zone team that the ESLZ-aligned Azure subscr
 
 ### 5. Verify VNet peerings
 
-Confirm the VNet peerings for the deployed network are established before running the pipeline. In the Azure portal (**Virtual network -> Peerings**) or via `az network vnet peering list`, every relevant peering should show a **Connected** state, including the peering between the workload and management VNets and any peering the pipeline runner (Managed DevOps Pool) relies on to reach the cluster's private API server. Peerings can fall out of sync after address-space changes; re-sync them if so. Proceeding with a peering that is not Connected commonly surfaces later as the API-server i/o timeout described in Troubleshooting.
+Confirm the VNet peerings for the deployed network are established before running the pipeline. In the Azure portal (**Virtual network -> Peerings**) or via `az network vnet peering list`, every relevant peering should show a **Connected** state, including the peering between the workload and management VNets and any peering the pipeline runner (Managed DevOps Pool) relies on to reach the cluster's private API server. Peerings can fall out of sync after address-space changes; re-sync them if so. Proceeding with a peering that is not Connected commonly surfaces later as an API-server i/o timeout.
 
 ### 6. Register required Azure features
 
@@ -200,7 +200,7 @@ The pipeline runs two stages, **Plan** then **Apply**:
 - **Plan** installs Terraform and kubelogin, initializes Terraform against remote state, validates, and runs `terraform plan`. Review the plan output to confirm the changes are expected before Apply proceeds.
 - **Apply** depends on a successful Plan, runs only on the `main` branch, and deploys with `terraform apply` using the environment's Azure Service Connection.
 
-If Apply fails with an API-server i/o timeout or a forbidden error creating namespaces, see Troubleshooting.
+If Apply fails with an API-server i/o timeout or a forbidden error creating namespaces, see your environment's Troubleshooting section, which records the tenant-specific resolutions.
 
 ### 8. Confirm the cluster is ready
 
