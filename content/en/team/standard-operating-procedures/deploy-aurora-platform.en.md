@@ -74,9 +74,15 @@ For a **workload cluster**, the following also apply:
 
 ### RBAC and Identity Prerequisites
 
-Aurora provisions most role assignments and access declaratively through its Terraform IaC. Some environments, however, restrict certain permission types that the IaC cannot grant on its own, and those must be arranged manually before they become blockers. Several steps below assign roles to managed identities and service principals and require the relevant Entra ID objects to be visible and assignable to the operator, which in many environments is granted through Privileged Identity Management (PIM) or an equivalent elevated-access request. Submit that request early so access is in place before starting this SOP.
+The general RBAC and identity prerequisites, including elevated Entra ID visibility via PIM, are covered in the <gcds-link href="{{< relref "/team/standard-operating-procedures/onboarding-background/" >}}">Onboarding Background</gcds-link>.
 
-- **Known blocker, Entra visibility via PIM:** Verifying role assignments (Step 2), populating the Argo CD Key Vault secrets (Step 9), and requesting the OIDC service principal (Step 10) all require the operator to see the relevant groups and service principals in Entra ID. This visibility is granted through Privileged Identity Management (PIM) and requires an approved request for elevated permissions in Entra ID. **Until that PIM access is in place, expect significant back-and-forth with the identity team for each RBAC assignment.** Submit the elevated-permissions request early so PIM access is available before starting this SOP.
+Several steps in this SOP require that visibility to see the relevant groups and service principals in Entra ID:
+
+- Verifying role assignments (Step 2)
+- Populating the Argo CD Key Vault secrets (Step 9)
+- Requesting the OIDC service principal (Step 10)
+
+**Until that PIM access is in place, expect significant back-and-forth with the identity team for each RBAC assignment.**
 
 ## Bootstrap the Management Cluster
 
@@ -199,7 +205,7 @@ terraform apply -target=helm_release.argocd_instance
 
 ### 9. Populate Required Key Vault Secrets
 
-Some secrets cannot be inferred or automated because of the specific access the department needs to control. These must be entered manually into the Argo CD Key Vault before the platform can sync successfully. Substitute your environment's Key Vault prefixes (`<ARGO_KV_PREFIX>` and `<PLATFORM_KV_PREFIX>`) from the Environment Values table:
+Some secrets cannot be inferred or automated because of the specific access the department needs to control. These must be entered manually into the Argo CD Key Vault before the platform can sync successfully. Substitute your environment's Key Vault prefixes (`<ARGO_KV_PREFIX>` and `<PLATFORM_KV_PREFIX>`):
 
 - `<ARGO_KV_PREFIX>-github-username`: GitHub username used by Argo CD to access the source repositories
 - `<ARGO_KV_PREFIX>-github-password`: corresponding GitHub password or personal access token
@@ -226,7 +232,7 @@ The OIDC service principal is normally created automatically by our Terraform, b
 - Update the redirect URIs to the ingress hostnames for the new environment, under your DNS zone, for example `https://<host>.<env>.<dns-zone>/auth/callback`.
 - Return the resulting `client-id` and `client-secret`.
 
-Once received, store these values in the `<prefix>-platform-kvs-argocd-oidc-sp-client-id` and `<prefix>-platform-kvs-argocd-oidc-sp-client-secret` Key Vault secrets from the previous step.
+Once received, store these values in the `<PLATFORM_KV_PREFIX>-kvs-argocd-oidc-sp-client-id` and `<PLATFORM_KV_PREFIX>-kvs-argocd-oidc-sp-client-secret` Key Vault secrets from the previous step.
 
 ### 11. Grant Argo CD Access to the Configuration Repository
 
@@ -340,7 +346,7 @@ The management cluster's Argo CD must be updated so it can track the workload cl
 - The workload cluster's API server address, token, and `caData`.
 - The workload cluster's Git repository URL and the credentials for accessing it.
 
-See this [example configuration change](https://github.com/gccloudone-aurora/project-aurora-mgmt/pull/113/changes).
+See this [example configuration change](https://github.com/gccloudone-aurora/project-aurora-mgmt/pull/113/changes). (Private)
 
 ### W3. Populate Required Key Vault Secrets
 

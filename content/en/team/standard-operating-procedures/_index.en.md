@@ -25,6 +25,13 @@ Here are the current procedures in place:
 <div class="mb-400">
 <gcds-grid tag="ul" columns="1fr" columns-tablet="1fr 1fr" columns-desktop="1fr 1fr" gap="400" class="hydrated">
   <gcds-card
+    card-title="Onboarding Background"
+    href="/en/team/standard-operating-procedures/onboarding-background/"
+    badge="Onboarding"
+    description="Shared context behind Aurora's onboarding SOPs, covering cluster creation, platform deployment, and teardown. Read it once before starting your task."
+  >
+  </gcds-card>
+  <gcds-card
     card-title="Deploy a PBMM-Compliant Kubernetes Cluster"
     href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/"
     badge="Onboarding"

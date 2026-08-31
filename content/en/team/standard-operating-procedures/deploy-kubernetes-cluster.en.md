@@ -1,7 +1,7 @@
 ---
 title: "Deploy a PBMM-Compliant Kubernetes Cluster"
 linkTitle: "Deploy a PBMM-Compliant Kubernetes Cluster"
-weight: 3
+weight: 4
 aliases: ["/team/sop/deploy-kubernetes-cluster"]
 date: 2026-08-20
 draft: false
@@ -38,13 +38,7 @@ You may deploy **as many PBMM-compliant AKS clusters as you need** from this SOP
 
 ## Context
 
-This SOP produces a **private AKS cluster** on a **Non-Overlay** network model, with the **Cilium** data plane, **Azure Linux** nodes, and best-practice security settings.
-
-The Non-Overlay model is the detail that shapes most of the networking decisions below: pods receive real, routable IP addresses from a dedicated Pod subnet rather than NAT'd overlay addresses. Three consequences follow, and they matter before the landing zone networking is finalized (whether you request it on Path A or the Azure Cloud Team preconfigures it on Path B):
-
-- **Subnet sizing.** The Pod subnet is sized for the maximum number of pods (the `/23` in the network design) and is separate from the node (System) subnet.
-- **Source IP.** A pod's traffic egresses from the pod's own IP, not the node's. That pod IP is what you supply as the source on firewall and egress requests; using the node or System subnet instead is a common mistake.
-- **Routing and policy.** Because pod IPs are real VNet addresses, they are visible to VNet routing, peerings, and firewall/network policy, all of which must account for the Pod subnet CIDR.
+This SOP produces a **private AKS cluster** on a **flat (non-overlay)** network model, with the **Cilium** data plane, **Azure Linux** nodes, and best-practice security settings. The networking consequences of the flat network model (subnet sizing, pod source IPs, and routing/policy) are covered in the <gcds-link href="{{< relref "/team/standard-operating-procedures/onboarding-background/" >}}">Onboarding Background</gcds-link>.
 
 ## Prerequisites
 
@@ -53,41 +47,10 @@ The Non-Overlay model is the detail that shapes most of the networking decisions
 - Familiarity with Terraform and Azure networking concepts
 - A Linux or WSL environment with bash, on a VM with inherent connectivity to the ESLZ
 - The following CLI tools installed and accessible: `az` (Azure CLI), `kubectl`, `jq`, `git`, and your provisioning tool (`terraform` or `terragrunt`, see note below)
-- The RBAC and identity access described below
+- The RBAC and identity access described in the <gcds-link href="{{< relref "/team/standard-operating-procedures/onboarding-background/" >}}">Onboarding Background</gcds-link>
+- An Azure DevOps service connection backed by a UAMI that can create resources in the target cluster
 
 **Note:** Most departments and projects provision with Terraform directly. The Azure Enterprise-Scale Landing Zone (ESLZ) at SSC uses Terragrunt as a wrapper around Terraform.
-
-### RBAC and Identity Prerequisites
-
-This SOP may be run by an Aurora platform operator or by the department's own platform team standing up a new cluster; the steps are identical either way. Whoever runs it needs the elevated permissions and Entra ID visibility described below.
-
-Aurora provisions most role assignments and access declaratively through its Terraform IaC. Some environments, however, restrict certain permission types (for example, Entra ID group and service-principal visibility, or service-principal creation) that the IaC cannot grant on its own; those must be arranged manually. As a result, both cluster creation and platform deployment require the operator running the SOP to see and assign the relevant Entra ID groups and service principals.
-
-- **Known blocker, Entra visibility via PIM:** Assigning Kubernetes RBAC and mapping the correct Entra ID groups and service principals requires the operator to be able to see those objects in Entra ID. This visibility is granted through Privileged Identity Management (PIM) and requires an approved request for elevated permissions in Entra ID. Until that PIM access is in place, expect significant back-and-forth with the identity team for every RBAC assignment during onboarding. Submit the elevated-permissions request early so PIM access is available before it is needed.
-- Both paths deploy through an Azure DevOps service connection backed by a user-assigned managed identity (UAMI). That identity must be able to create resources in the target cluster; if it cannot, `terraform apply` fails with a forbidden error creating namespaces.
-
-### How cluster access works
-
-This section is reference material describing the identity model; it is not a setup step.
-
-Two Entra ID groups are foundational to cluster access, and they are wired by two different mechanisms:
-
-- **Cluster administrators** (the `*-cluster-admins` group): passed via Terraform into the cluster at creation and mapped to in-cluster administrator RBAC.
-- **General cluster users** (the `*-general-cluster-users` group): granted the Azure Kubernetes Service Cluster User Role through Azure RBAC so members can pull the cluster kubeconfig (`az aks get-credentials`). Their in-cluster permissions are then governed by Kubernetes RBAC.
-
-The concrete group names and object IDs for the environment are in the AKS Reference Guide.
-
-The AKS Authorization Flow below shows the runtime path when a user accesses the cluster. The user authenticates interactively to Entra ID (with MFA), which issues a JWT containing a `groups` claim of Entra group GUIDs. `kubectl` presents that token to the Kubernetes API server, which validates it via the Entra ID OIDC webhook. The Kubernetes RBAC engine then matches the group GUIDs against the cluster's ClusterRoleBindings and grants the corresponding permissions.
-
-![Aurora AKS Authorization Flow](/images/architecture/diagrams/aurora-aks-authorization-flow.png)
-
-Figure 2: AKS Authorization Flow
-
-The Entra ID to Azure / AKS IAM RBAC Architecture below shows how access is structured across three planes. In the identity plane, Entra ID security groups live in the tenant. In the infrastructure plane, Azure (ARM) role assignments at the subscription scope are applied through Terraform. In the in-cluster plane, the Argo CD bootstrap deploys the Kubernetes ClusterRoles and ClusterRoleBindings that bind specific Entra group GUIDs to in-cluster roles. This is the static mapping that the authorization flow above evaluates at runtime.
-
-![Entra ID to Azure / AKS IAM RBAC Architecture](/images/architecture/diagrams/aurora-entra-rbac.png)
-
-Figure 3: Entra ID to Azure / AKS IAM RBAC Architecture
 
 ## Choose your deployment model
 
@@ -95,17 +58,6 @@ Provisioning follows one of two paths depending on who owns the L0/L1 enterprise
 
 - **Path A — Departmental Tenant ESLZ.** Your department owns the L0/L1 foundation and you provision the cluster from your own per-cluster Azure DevOps repository, applied through its pipeline. Use this path for standard department and project onboarding in a departmental tenant.
 - **Path B — SSC Azure ESLZ.** The Azure Cloud Team at SSC owns the L0/L1 foundation and provides the CI boilerplate. You drop Aurora's IaC (`L2_blueprint_aurora`) into their landing-zone repository, which their preconfigured pipeline applies on approved merge requests (or you can run Terragrunt manually from a jumpbox). Use this path when onboarding onto the SSC Enterprise-Scale Landing Zone on Azure.
-
-### Terraform state ownership
-
-On both paths, the cluster's Terraform state is owned and governed by the party that owns the cluster's IaC and pipeline, and it lives in that party's PBMM-compliant backend (an Azure Storage Account), one state per cluster repository:
-
-- **Path A — Departmental Tenant ESLZ.** The governing department owns and administers the state backend.
-- **Path B — SSC Azure ESLZ.** The Azure Cloud Team at SSC owns the state backend for the SSC Enterprise-Scale Landing Zone.
-
-This keeps state ownership aligned with cluster-lifecycle ownership, so the governing team can reliably plan, apply, detect drift, and destroy, and so the state (which can contain sensitive values) stays under the controls the assessment relies on.
-
-A client that wants complete control of the whole cluster, including its Terraform state in a client-owned Storage Account, must request it through the governing department. This arrangement is **discouraged**: it splits lifecycle ownership from state ownership, makes the governing team's operations depend on a backend it does not administer, and adds cross-subscription access and network dependencies for negligible benefit. Where it is nonetheless approved, the client assumes ownership of the full cluster lifecycle and the state backend must meet the same PBMM baseline (private endpoint, public access disabled, encryption, AAD/RBAC data-plane auth, blob versioning, and soft delete).
 
 ## Path A: Departmental Tenant ESLZ
 
@@ -351,7 +303,7 @@ The cluster is now fully provisioned. Continue to [Deploy the Aurora Platform](#
 
 ## Deploy the Aurora Platform
 
-At this point the PBMM-compliant AKS cluster exists and is production-ready on its own. The next step is to deploy the Aurora Platform onto it. Follow the <gcds-link href="{{< relref "/team/standard-operating-procedures/deploy-aurora-platform/" >}}">Deploy Aurora Platform guide</gcds-link>, which covers both paths: bootstrapping a new management cluster, and onboarding the cluster as a workload cluster into an existing management cluster's Argo CD.
+At this point the PBMM-compliant AKS cluster exists and is production-ready on its own. The next step is to deploy the Aurora Platform onto it. Follow the <gcds-link href="{{< relref "/team/standard-operating-procedures/deploy-aurora-platform/" >}}">Deploy the Aurora Platform</gcds-link> SOP, which covers both paths: bootstrapping a new management cluster, and onboarding the cluster as a workload cluster into an existing management cluster's Argo CD.
 
 ## Troubleshooting
 
