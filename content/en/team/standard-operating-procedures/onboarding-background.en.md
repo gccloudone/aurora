@@ -58,9 +58,9 @@ Provisioning follows one of two paths depending on who owns the L0/L1 enterprise
 
 On both paths, the cluster's Terraform state is owned and governed by the party that owns the cluster's IaC and pipeline, and it lives in that party's PBMM-compliant backend (an Azure Storage Account), one state per cluster repository:
 
-- **Path A — Departmental Tenant ESLZ.** The governing department (for example, JDCP) owns and administers the state backend.
+- **Path A — Departmental Tenant ESLZ.** The governing department owns and administers the state backend.
 - **Path B — SSC Azure ESLZ.** The Azure Cloud Team at SSC owns the state backend for the SSC Enterprise-Scale Landing Zone.
 
 This keeps state ownership aligned with cluster-lifecycle ownership, so the governing team can reliably plan, apply, detect drift, and destroy, and so the state (which can contain sensitive values) stays under the controls the assessment relies on.
 
-A client that wants complete control of the whole cluster, including its Terraform state in a client-owned Storage Account, must request it through JDCP. This arrangement is **discouraged**: it splits lifecycle ownership from state ownership, makes the governing team's operations depend on a backend it does not administer, and adds cross-subscription access and network dependencies for negligible benefit. Where it is nonetheless approved, the client assumes ownership of the full cluster lifecycle and the state backend must meet the same PBMM baseline (private endpoint, public access disabled, encryption, AAD/RBAC data-plane auth, blob versioning, and soft delete).
+A client that wants complete control of the whole cluster, including its Terraform state in a client-owned Storage Account, must request it from the governing department. This arrangement is **discouraged**: it splits lifecycle ownership from state ownership, makes the governing team's operations depend on a backend it does not administer, and adds cross-subscription access and network dependencies for negligible benefit. Where it is nonetheless approved, the client assumes ownership of the full cluster lifecycle and the state backend must meet the same PBMM baseline (private endpoint, public access disabled, encryption, AAD/RBAC data-plane auth, blob versioning, and soft delete).
