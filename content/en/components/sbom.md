@@ -1,5 +1,5 @@
 ---
-title: "Aurora Platform Components (HLD Extract)"
+title: "Aurora Platform Components (SBOM)"
 draft: false
 type: "single"
 sidebar: false

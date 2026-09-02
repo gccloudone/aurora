@@ -1,32 +1,36 @@
-<table>
+<table class="d-table bt-sm bx-sm mb-300">
   <thead>
-    <tr>
-      <th>Component</th>
-      <th>Category</th>
-      <th>Owner</th>
-      <th>Description</th>
+    <tr class="d-table-row bg-light font-bold">
+      <th scope="col">Component</th>
+      <th scope="col">Version</th>
+      <th scope="col">Category</th>
+      <th scope="col">License</th>
+      <th scope="col">Description</th>
     </tr>
   </thead>
   <tbody>
     {{ range $key, $c := site.Data.catalog }}
-      {{ if ne $key "versions" }}
-        <tr>
-          <td><a href="{{ $c.references.charts.repo }}/tree/main/{{ $c.references.charts.path }}">{{ $c.name }}</a></td>
-          <td>{{ $c.category.hld }}</td>
-          <td>{{ $c.deployment.ownership.team }}</td>
-          <td>
-            {{/* Use French description if available, fallback to English */}}
-            {{- if and (eq $.Page.Language.Lang "fr") $c.descriptions.long_fr -}}
-              {{ $c.descriptions.long_fr }}
-            {{- else -}}
-              {{ $c.descriptions.long }}
-            {{- end -}}<br /><br />
-            {{ with $c.project.homepage }}
-              <a href="{{ . }}">{{ . }}</a>
-            {{ end }}
-          </td>
-        </tr>
-      {{ end }}
+    {{ if ne $key "versions" }}
+    <tr class="d-table-row">
+      <td class="d-table-cell"><strong><a
+            href="{{ $c.references.charts.repo }}/tree/main/{{ $c.references.charts.path }}">{{ $c.name }}</a></strong>
+      </td>
+      <td class="d-table-cell">{{ $c.productVersion }}</td>
+      <td class="d-table-cell">{{ $c.category.hld }}</td>
+      <td class="d-table-cell">{{ $c.project.license }}</td>
+      <td class="d-table-cell">
+        {{/* Use French description if available, fallback to English */}}
+        {{- if and (eq $.Page.Language.Lang "fr") $c.descriptions.long_fr -}}
+        {{ $c.descriptions.long_fr }}
+        {{- else -}}
+        {{ $c.descriptions.long }}
+        {{- end -}}<br /><br />
+        {{ with $c.project.homepage }}
+        <a href="{{ . }}">{{ . }}</a>
+        {{ end }}<br /><br />
+      </td>
+    </tr>
+    {{ end }}
     {{ end }}
   </tbody>
 </table>
