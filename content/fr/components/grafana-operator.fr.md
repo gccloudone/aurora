@@ -1,8 +1,8 @@
 ---
 title: "Grafana Operator"
 slug: "grafana-operator"
-date: "2026-08-17"
-lastmod: "2026-08-17"
+date: "2026-09-11"
+lastmod: "2026-09-11"
 layout: "components/single"
 sidebar: false
 build:

@@ -4,7 +4,6 @@ linkTitle: "GitHub Issues for TAG Actions"
 weight: 20
 type: "sigs"
 draft: false
-lang: "en"
 date: 2025-01-01
 ---
 

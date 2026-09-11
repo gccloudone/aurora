@@ -6,7 +6,7 @@
 
   {{ partial "verify" . }}
   {{ partial "header" . }}
-  <gcds-container size="xl" main-container centered tag="main">
+  <gcds-container layout="page">
     <gcds-grid
       tag="section"
       columns="1fr"
@@ -27,9 +27,8 @@
         {{ $showToc := or .Params.showToc .Site.Params.showToc }}
         {{ if and $showToc .TableOfContents }}
         <gcds-fieldset
-          fieldset-id="field-toc"
           legend=""
-          class="mb-400">
+          class="mb-400 toc">
             {{ .TableOfContents }}
           </gcds-fieldset>
         {{ end }}

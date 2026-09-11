@@ -15,12 +15,12 @@ translationKey: homePage
     <li class="list-none md:mb-0 mb-500">
       <h3 class="mb-400">Platform Charts</h3>
       <p class="mb-400">Aurora is and always will be completely open source. Explore the Helm charts that define the platform, discover the code, and help shape it. These charts manage the platform's ongoing state through GitOps.</p>
-      <gcds-link href="https://github.com/gccloudone-aurora/aurora-platform-charts" class="hydrated" variant="light">View Platform Charts</gcds-link>
+      <gcds-link href="https://github.com/gccloudone-aurora/aurora-platform-charts" class="hydrated" link-role="light">View Platform Charts</gcds-link>
     </li>
     <li class="list-none">
       <h3 class="mb-400">Bootstrap Terraform</h3>
       <p class="mb-400">Only needed when there is no pre-existing management cluster. This bootstraps one, installing Argo CD and deploying the Aurora platform, after which the platform charts take over ongoing control.</p>
-      <gcds-link href="https://github.com/gccloudone-aurora/bootstrap-terraform" class="hydrated" variant="light">View Bootstrap Terraform</gcds-link>
+      <gcds-link href="https://github.com/gccloudone-aurora/bootstrap-terraform" class="hydrated" link-role="light">View Bootstrap Terraform</gcds-link>
     </li>
   </gcds-grid>
 </article>

@@ -15,12 +15,12 @@ translationKey: homePage
     <li class="list-none md:mb-0 mb-500">
       <h3 class="mb-400">Chartes de la plateforme</h3>
       <p class="mb-400">Aurora est et restera toujours entièrement à code source ouvert. Explorez les chartes Helm qui définissent la plateforme, découvrez le code et contribuez à la façonner. Ces chartes gèrent l’état continu de la plateforme au moyen du GitOps.</p>
-      <gcds-link href="https://github.com/gccloudone-aurora/aurora-platform-charts" class="hydrated" variant="light">Voir les chartes de la plateforme</gcds-link>
+      <gcds-link href="https://github.com/gccloudone-aurora/aurora-platform-charts" class="hydrated" link-role="light">Voir les chartes de la plateforme</gcds-link>
     </li>
     <li class="list-none">
       <h3 class="mb-400">Bootstrap Terraform</h3>
       <p class="mb-400">Nécessaire uniquement en l’absence d’un cluster de gestion préexistant. Cette étape en amorce un, en installant Argo CD et en déployant la plateforme Aurora, après quoi les chartes de la plateforme prennent en charge le contrôle continu.</p>
-      <gcds-link href="https://github.com/gccloudone-aurora/bootstrap-terraform" class="hydrated" variant="light">Voir Bootstrap Terraform</gcds-link>
+      <gcds-link href="https://github.com/gccloudone-aurora/bootstrap-terraform" class="hydrated" link-role="light">Voir Bootstrap Terraform</gcds-link>
     </li>
   </gcds-grid>
 </article>

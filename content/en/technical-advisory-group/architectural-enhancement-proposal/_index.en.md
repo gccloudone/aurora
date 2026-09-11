@@ -4,7 +4,6 @@ linkTitle: "AEP"
 weight: 25
 type: "aep"
 draft: false
-lang: "en"
 date: 2025-01-01
 ---
 

@@ -5,7 +5,7 @@
 
   {{/* Ignore versions.yaml */}}
   {{- $components := slice -}}
-  {{- range $key, $c := .Site.Data.catalog -}}
+  {{- range $key, $c := hugo.Data.catalog -}}
     {{- if ne $key "versions" -}}
       {{- $components = $components | append $c -}}
     {{- end -}}

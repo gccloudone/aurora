@@ -4,7 +4,6 @@ linkTitle: "Common"
 type: "architecture"
 weight: 15
 draft: true
-lang: "en"
 date: 2024-10-21
 showToc: true
 ---

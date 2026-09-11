@@ -4,7 +4,6 @@ linkTitle: "Meetings"
 weight: 15
 type: "sigs"
 draft: false
-lang: "en"
 date: 2025-01-01
 ---
 

@@ -1,18 +1,18 @@
 ################ Splash page #######################
 [splash]
-languageName = ""
+label = ""
 contentDir = "content/splash"
 weight = 1
 
 ################ English language ##################
 [en]
-languageName = "English"
-languageCode = "en-CA"
+label = "English"
+locale = "en-CA"
 contentDir = "content/en"
 weight = 2
 
 [fr]
-languageName = "Français"
-languageCode = "fr-CA"
+label = "Français"
+locale = "fr-CA"
 contentDir = "content/fr"
 weight = 3

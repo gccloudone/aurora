@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    {{ range $key, $c := site.Data.catalog }}
+    {{ range $key, $c := hugo.Data.catalog }}
     {{ if ne $key "versions" }}
     <tr class="d-table-row">
       <td class="d-table-cell"><strong><a

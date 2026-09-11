@@ -4,7 +4,6 @@ linkTitle: "Architecture"
 type: "architecture"
 weight: 10
 draft: false
-lang: "en"
 showToc: true
 date: 2025-01-01
 ---

@@ -7,10 +7,10 @@
   {{ partial "verify" . }}
   {{ partial "header" . }}
 
-  {{ $catalog := .Site.Data.catalog }}
+  {{ $catalog := hugo.Data.catalog }}
   {{ $versions := $catalog.versions }}
 
-  <gcds-container size="xl" main-container centered tag="main">
+  <gcds-container layout="page">
     <gcds-grid
       tag="section"
       columns="1fr"
@@ -90,7 +90,7 @@
                 {{ end }}
 
                 {{ with $c.alias }}
-                  <gcds-text text-role="secondary" size="caption">
+                  <gcds-text text-role="secondary" size="small">
                     <em>{{ i18n "comp_also_known_as" }} {{ . }}</em>
                   </gcds-text>
                 {{ end }}

@@ -4,7 +4,6 @@ linkTitle: "Architectural Enhancement Proposal (AEP)"
 weight: 25
 type: "sigs"
 draft: false
-lang: "en"
 date: 2025-01-01
 ---
 

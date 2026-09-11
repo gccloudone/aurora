@@ -2,7 +2,6 @@
 title: "Infrastructure and Configuration Management"
 linkTitle: "Infrastructure and Configuration Management"
 weight: 5
-lang: "en"
 date: 2026-08-11
 ---
 

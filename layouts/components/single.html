@@ -12,7 +12,7 @@
   {{ $scratch := newScratch }}
   {{ $lang := .Language.Lang }}
 
-  {{ range $key, $c := .Site.Data.catalog }}
+  {{ range $key, $c := hugo.Data.catalog }}
     {{ if and (ne $key "versions") (eq ($c.slug | default (urlize $c.name)) $slug) }}
       {{ $scratch.Set "component" $c }}
     {{ end }}
@@ -21,7 +21,7 @@
   {{ $component := $scratch.Get "component" }}
 
   {{/* Resolve section + version from versions.yaml */}}
-  {{ range $sectionName, $sectionMap := .Site.Data.catalog.versions }}
+  {{ range $sectionName, $sectionMap := hugo.Data.catalog.versions }}
     {{ with index $sectionMap $slug }}
       {{ $scratch.Set "section" $sectionName }}
       {{ $scratch.Set "version" .version }}
@@ -35,7 +35,7 @@
   {{ if and (not $version) $component.relationships.parent }}
     {{ $parent := $component.relationships.parent }}
 
-    {{ range $sectionName, $sectionMap := .Site.Data.catalog.versions }}
+    {{ range $sectionName, $sectionMap := hugo.Data.catalog.versions }}
       {{ with index $sectionMap $parent }}
         {{ $scratch.Set "version" .version }}
       {{ end }}
@@ -43,7 +43,7 @@
   {{ end }}
   {{ $version := $scratch.Get "version" }}
 
-  <gcds-container size="xl" main-container centered tag="main">
+  <gcds-container layout="page">
     <gcds-grid
       tag="section"
       columns="1fr"
@@ -83,13 +83,13 @@
               <gcds-heading tag="h1">{{ $component.name }}</gcds-heading>
 
               {{ with $component.alias }}
-                <gcds-text text-role="secondary" size="caption">
+                <gcds-text text-role="secondary" size="small">
                   {{ i18n "comp_also_known_as" }} {{ . }}
                 </gcds-text>
               {{ end }}
 
               {{ with $component.relationships.parent }}
-                <gcds-text text-role="secondary" size="caption">
+                <gcds-text text-role="secondary" size="small">
                   {{ i18n "comp_part_of" }} <a href="{{ relLangURL (printf "/components/%s/" .) }}">{{ . | title }}</a>
                 </gcds-text>
               {{ end }}
@@ -147,7 +147,7 @@
                     {{ .repo }}/{{ .path }}
                   </a>
                 </gcds-text>
-                <gcds-text text-role="secondary" size="caption">
+                <gcds-text text-role="secondary" size="small">
                   {{ i18n "comp_argo_note" $component.name }}
                 </gcds-text>
               {{ end }}

@@ -4,7 +4,6 @@ linkTitle: "Templates"
 weight: 15
 type: "templates"
 draft: false
-lang: "en"
 date: 2025-01-01
 ---
 

@@ -4,7 +4,6 @@ linkTitle: "Contingency Plan"
 type: "architecture"
 weight: 10
 draft: false
-lang: "en"
 date: 2025-09-16
 ---
 

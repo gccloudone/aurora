@@ -5,7 +5,6 @@ weight: 15
 type: "tag"
 draft: false
 showToc: true
-lang: "en"
 date: 2025-01-01
 ---
 

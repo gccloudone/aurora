@@ -4,7 +4,6 @@ linkTitle: "Access Control"
 type: "architecture"
 weight: 10
 draft: false
-lang: "en"
 date: 2026-06-08
 ---
 
