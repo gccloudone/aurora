@@ -1,5 +1,5 @@
 # Hugo build stage
-FROM hugomods/hugo:exts-0.145.0 AS hugo-builder
+FROM hugomods/hugo:exts-0.161.1 AS hugo-builder
 
 # Set the working directory
 WORKDIR /site
