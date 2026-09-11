@@ -1,82 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standard Operating Procedures on Aurora</title><link>/en/team/standard-operating-procedures/</link><description>Recent content in Standard Operating Procedures on Aurora</description><generator>Hugo</generator><language>en-CA</language><lastBuildDate>Sun, 30 Aug 2026 21:52:21 -0400</lastBuildDate><atom:link href="/en/team/standard-operating-procedures/index.xml" rel="self" type="application/rss+xml"/><item><title>Onboarding Background</title><link>/en/team/standard-operating-procedures/onboarding-background/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/onboarding-background/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standard Operating Procedures on Aurora</title><link>/en/team/standard-operating-procedures/</link><description>Recent content in Standard Operating Procedures on Aurora</description><generator>Hugo</generator><language>en-CA</language><lastBuildDate>Fri, 11 Sep 2026 10:26:08 -0400</lastBuildDate><atom:link href="/en/team/standard-operating-procedures/index.xml" rel="self" type="application/rss+xml"/><item><title>Onboarding Background</title><link>/en/team/standard-operating-procedures/onboarding-background/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/onboarding-background/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This document collects the shared background for Aurora&amp;rsquo;s onboarding SOPs: &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/">cluster creation&lt;/gcds-link>, &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-aurora-platform/">platform deployment&lt;/gcds-link>, and &lt;gcds-link href="/en/team/standard-operating-procedures/teardown-kubernetes-cluster/">teardown&lt;/gcds-link>. It is reference material, not a procedure: read it once before you begin so the SOPs can get straight to their steps, then follow the SOP for the task at hand. Where a topic below is referenced by a specific SOP, that SOP points back to this document rather than repeating the material.&lt;/p></description></item><item><title>Deploy a PBMM-Compliant Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="objective" character-limit="true"&gt;Objective&lt;gcds-link href="#objective" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This document collects the shared background for Aurora&amp;rsquo;s onboarding SOPs: &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/"&gt;cluster creation&lt;/gcds-link&gt;, &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-aurora-platform/"&gt;platform deployment&lt;/gcds-link&gt;, and &lt;gcds-link href="/en/team/standard-operating-procedures/teardown-kubernetes-cluster/"&gt;teardown&lt;/gcds-link&gt;. It is reference material, not a procedure: read it once before you begin so the SOPs can get straight to their steps, then follow the SOP for the task at hand. Where a topic below is referenced by a specific SOP, that SOP points back to this document rather than repeating the material.&lt;/p&gt;</description></item><item><title>Deploy a PBMM-Compliant Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This SOP provisions a Protected B, Medium Integrity, Medium Availability (PBMM) compliant Azure Kubernetes Service (AKS) cluster using Aurora&amp;rsquo;s Infrastructure as Code (IaC), deployed against an approved Enterprise-Scale Landing Zone (ESLZ).&lt;/p></description></item><item><title>Deploy the Aurora Platform</title><link>/en/team/standard-operating-procedures/deploy-aurora-platform/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-aurora-platform/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="objective" character-limit="true"&gt;Objective&lt;gcds-link href="#objective" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This SOP provisions a Protected B, Medium Integrity, Medium Availability (PBMM) compliant Azure Kubernetes Service (AKS) cluster using Aurora&amp;rsquo;s Infrastructure as Code (IaC), deployed against an approved Enterprise-Scale Landing Zone (ESLZ).&lt;/p&gt;</description></item><item><title>Deploy the Aurora Platform</title><link>/en/team/standard-operating-procedures/deploy-aurora-platform/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-aurora-platform/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>Deploy the Aurora Platform onto an AKS cluster provisioned through the &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/">cluster creation process&lt;/gcds-link>.&lt;/p></description></item><item><title>Tear Down a PBMM-Compliant Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/teardown-kubernetes-cluster/</link><pubDate>Wed, 19 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/teardown-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="objective" character-limit="true"&gt;Objective&lt;gcds-link href="#objective" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;Deploy the Aurora Platform onto an AKS cluster provisioned through the &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/"&gt;cluster creation process&lt;/gcds-link&gt;.&lt;/p&gt;</description></item><item><title>Tear Down a PBMM-Compliant Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/teardown-kubernetes-cluster/</link><pubDate>Wed, 19 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/teardown-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This SOP describes the process for tearing down a PBMM Kubernetes cluster in the Azure environment. You may need to tear down a cluster when a client confirms that it is no longer required. The procedure removes the Aurora Platform from the target cluster, cleans up its configuration in Git and on the management cluster, destroys the L2 infrastructure with Terragrunt, and requests removal of the remaining L0/L1 subscription resources.&lt;/p></description></item><item><title>Adding Components to Aurora Platform Charts</title><link>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="objective" character-limit="true"&gt;Objective&lt;gcds-link href="#objective" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This SOP describes the process for tearing down a PBMM Kubernetes cluster in the Azure environment. You may need to tear down a cluster when a client confirms that it is no longer required. The procedure removes the Aurora Platform from the target cluster, cleans up its configuration in Git and on the management cluster, destroys the L2 infrastructure with Terragrunt, and requests removal of the remaining L0/L1 subscription resources.&lt;/p&gt;</description></item><item><title>Adding Components to Aurora Platform Charts</title><link>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document outlines the process for adding a new component to the 
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document outlines the process for adding a new component to the 
 &lt;gcds-link
- href="https://github.com/gccloudone-aurora/aurora-platform-charts">aurora-platform-charts repository&lt;/gcds-link>.&lt;/p></description></item><item><title>Performing an AKS Cluster Upgrade</title><link>/en/team/standard-operating-procedures/aks-cluster-upgrade/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/aks-cluster-upgrade/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts"&gt;aurora-platform-charts repository&lt;/gcds-link&gt;.&lt;/p&gt;</description></item><item><title>Performing an AKS Cluster Upgrade</title><link>/en/team/standard-operating-procedures/aks-cluster-upgrade/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/aks-cluster-upgrade/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document outlines the process for upgrading an AKS cluster.&lt;/p></description></item><item><title>Backup and Disaster Recovery</title><link>/en/team/standard-operating-procedures/backup-disaster-recovery/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/backup-disaster-recovery/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document outlines the process for upgrading an AKS cluster.&lt;/p&gt;</description></item><item><title>Backup and Disaster Recovery</title><link>/en/team/standard-operating-procedures/backup-disaster-recovery/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/backup-disaster-recovery/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document outlines the steps Aurora administrators must follow to test disaster recovery and confirm that Velero backups can be restored correctly.&lt;/p></description></item><item><title>GitHub Actions for Creating Releases</title><link>/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-&lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document is designed for the GitHub Action repository to help other developers implement release automation in their repositories.&lt;/p></description></item><item><title>Infrastructure and Configuration Management</title><link>/en/team/standard-operating-procedures/infrastructure-and-configuration-management/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/infrastructure-and-configuration-management/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document outlines the steps Aurora administrators must follow to test disaster recovery and confirm that Velero backups can be restored correctly.&lt;/p&gt;</description></item><item><title>GitHub Actions for Creating Releases</title><link>/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400"&gt;
+&lt;gcds-text&gt;Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document is designed for the GitHub Action repository to help other developers implement release automation in their repositories.&lt;/p&gt;</description></item><item><title>Infrastructure and Configuration Management</title><link>/en/team/standard-operating-procedures/infrastructure-and-configuration-management/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/infrastructure-and-configuration-management/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="overview" character-limit="true">Overview&lt;gcds-link href="#overview" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>The Aurora platform is managed entirely as code. Two types of repositories define its intended state and serve as the single source of truth:&lt;/p></description></item><item><title>Issue and PR Naming Conventions</title><link>/en/team/standard-operating-procedures/issue-naming/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/issue-naming/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="overview" character-limit="true"&gt;Overview&lt;gcds-link href="#overview" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;The Aurora platform is managed entirely as code. Two types of repositories define its intended state and serve as the single source of truth:&lt;/p&gt;</description></item><item><title>Issue and PR Naming Conventions</title><link>/en/team/standard-operating-procedures/issue-naming/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/issue-naming/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>To support clarity, traceability, and scale across multiple teams, clouds, and departments, all issues, tasks, and pull requests in should follow a consistent naming and labeling convention.&lt;/p></description></item><item><title>Issue Tracking</title><link>/en/team/standard-operating-procedures/issue-tracking/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/issue-tracking/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;To support clarity, traceability, and scale across multiple teams, clouds, and departments, all issues, tasks, and pull requests in should follow a consistent naming and labeling convention.&lt;/p&gt;</description></item><item><title>Issue Tracking</title><link>/en/team/standard-operating-procedures/issue-tracking/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/issue-tracking/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>Aurora uses multiple systems to manage issues, requests, and deliverables. Each system serves a distinct purpose depending on classification, audience, and type of work.&lt;/p></description></item><item><title>SSL Cert Issuance</title><link>/en/team/standard-operating-procedures/ssl-cert-issuance/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/ssl-cert-issuance/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;Aurora uses multiple systems to manage issues, requests, and deliverables. Each system serves a distinct purpose depending on classification, audience, and type of work.&lt;/p&gt;</description></item><item><title>SSL Cert Issuance</title><link>/en/team/standard-operating-procedures/ssl-cert-issuance/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/ssl-cert-issuance/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document outlines the steps Aurora administrators must follow to deploy a sample Kubernetes application to validate the issuance of an SSL certificate using Cert Manager and Lets Encrypt on the Aurora clusters. The domain used in this example is for the Aurora management dev cluster.&lt;/p></description></item></channel></rss>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document outlines the steps Aurora administrators must follow to deploy a sample Kubernetes application to validate the issuance of an SSL certificate using Cert Manager and Lets Encrypt on the Aurora clusters. The domain used in this example is for the Aurora management dev cluster.&lt;/p&gt;</description></item></channel></rss>

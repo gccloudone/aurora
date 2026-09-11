@@ -1,679 +1,679 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aurora</title><link>/en/</link><description>Recent content on Aurora</description><generator>Hugo</generator><language>en-CA</language><lastBuildDate>Tue, 01 Sep 2026 21:26:05 -0400</lastBuildDate><atom:link href="/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Onboarding Background</title><link>/en/team/standard-operating-procedures/onboarding-background/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/onboarding-background/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aurora</title><link>/en/</link><description>Recent content on Aurora</description><generator>Hugo</generator><language>en-CA</language><lastBuildDate>Fri, 11 Sep 2026 10:26:08 -0400</lastBuildDate><atom:link href="/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Onboarding Background</title><link>/en/team/standard-operating-procedures/onboarding-background/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/onboarding-background/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This document collects the shared background for Aurora&amp;rsquo;s onboarding SOPs: &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/">cluster creation&lt;/gcds-link>, &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-aurora-platform/">platform deployment&lt;/gcds-link>, and &lt;gcds-link href="/en/team/standard-operating-procedures/teardown-kubernetes-cluster/">teardown&lt;/gcds-link>. It is reference material, not a procedure: read it once before you begin so the SOPs can get straight to their steps, then follow the SOP for the task at hand. Where a topic below is referenced by a specific SOP, that SOP points back to this document rather than repeating the material.&lt;/p></description></item><item><title>Deploy a PBMM-Compliant Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="objective" character-limit="true"&gt;Objective&lt;gcds-link href="#objective" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This document collects the shared background for Aurora&amp;rsquo;s onboarding SOPs: &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/"&gt;cluster creation&lt;/gcds-link&gt;, &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-aurora-platform/"&gt;platform deployment&lt;/gcds-link&gt;, and &lt;gcds-link href="/en/team/standard-operating-procedures/teardown-kubernetes-cluster/"&gt;teardown&lt;/gcds-link&gt;. It is reference material, not a procedure: read it once before you begin so the SOPs can get straight to their steps, then follow the SOP for the task at hand. Where a topic below is referenced by a specific SOP, that SOP points back to this document rather than repeating the material.&lt;/p&gt;</description></item><item><title>Deploy a PBMM-Compliant Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This SOP provisions a Protected B, Medium Integrity, Medium Availability (PBMM) compliant Azure Kubernetes Service (AKS) cluster using Aurora&amp;rsquo;s Infrastructure as Code (IaC), deployed against an approved Enterprise-Scale Landing Zone (ESLZ).&lt;/p></description></item><item><title>Deploy the Aurora Platform</title><link>/en/team/standard-operating-procedures/deploy-aurora-platform/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-aurora-platform/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="objective" character-limit="true"&gt;Objective&lt;gcds-link href="#objective" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This SOP provisions a Protected B, Medium Integrity, Medium Availability (PBMM) compliant Azure Kubernetes Service (AKS) cluster using Aurora&amp;rsquo;s Infrastructure as Code (IaC), deployed against an approved Enterprise-Scale Landing Zone (ESLZ).&lt;/p&gt;</description></item><item><title>Deploy the Aurora Platform</title><link>/en/team/standard-operating-procedures/deploy-aurora-platform/</link><pubDate>Thu, 20 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/deploy-aurora-platform/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>Deploy the Aurora Platform onto an AKS cluster provisioned through the &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/">cluster creation process&lt;/gcds-link>.&lt;/p></description></item><item><title>Tear Down a PBMM-Compliant Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/teardown-kubernetes-cluster/</link><pubDate>Wed, 19 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/teardown-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="objective" character-limit="true"&gt;Objective&lt;gcds-link href="#objective" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;Deploy the Aurora Platform onto an AKS cluster provisioned through the &lt;gcds-link href="/en/team/standard-operating-procedures/deploy-kubernetes-cluster/"&gt;cluster creation process&lt;/gcds-link&gt;.&lt;/p&gt;</description></item><item><title>Tear Down a PBMM-Compliant Kubernetes Cluster</title><link>/en/team/standard-operating-procedures/teardown-kubernetes-cluster/</link><pubDate>Wed, 19 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/teardown-kubernetes-cluster/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="objective" character-limit="true">Objective&lt;gcds-link href="#objective" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This SOP describes the process for tearing down a PBMM Kubernetes cluster in the Azure environment. You may need to tear down a cluster when a client confirms that it is no longer required. The procedure removes the Aurora Platform from the target cluster, cleans up its configuration in Git and on the management cluster, destroys the L2 infrastructure with Terragrunt, and requests removal of the remaining L0/L1 subscription resources.&lt;/p></description></item><item><title>Adding Components to Aurora Platform Charts</title><link>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="objective" character-limit="true"&gt;Objective&lt;gcds-link href="#objective" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This SOP describes the process for tearing down a PBMM Kubernetes cluster in the Azure environment. You may need to tear down a cluster when a client confirms that it is no longer required. The procedure removes the Aurora Platform from the target cluster, cleans up its configuration in Git and on the management cluster, destroys the L2 infrastructure with Terragrunt, and requests removal of the remaining L0/L1 subscription resources.&lt;/p&gt;</description></item><item><title>Adding Components to Aurora Platform Charts</title><link>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/adding-components-aurora-platform-chart/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document outlines the process for adding a new component to the 
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document outlines the process for adding a new component to the 
 &lt;gcds-link
- href="https://github.com/gccloudone-aurora/aurora-platform-charts">aurora-platform-charts repository&lt;/gcds-link>.&lt;/p></description></item><item><title>Performing an AKS Cluster Upgrade</title><link>/en/team/standard-operating-procedures/aks-cluster-upgrade/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/aks-cluster-upgrade/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts"&gt;aurora-platform-charts repository&lt;/gcds-link&gt;.&lt;/p&gt;</description></item><item><title>Performing an AKS Cluster Upgrade</title><link>/en/team/standard-operating-procedures/aks-cluster-upgrade/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/aks-cluster-upgrade/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document outlines the process for upgrading an AKS cluster.&lt;/p></description></item><item><title>Backup and Disaster Recovery</title><link>/en/team/standard-operating-procedures/backup-disaster-recovery/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/backup-disaster-recovery/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document outlines the process for upgrading an AKS cluster.&lt;/p&gt;</description></item><item><title>Backup and Disaster Recovery</title><link>/en/team/standard-operating-procedures/backup-disaster-recovery/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/backup-disaster-recovery/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document outlines the steps Aurora administrators must follow to test disaster recovery and confirm that Velero backups can be restored correctly.&lt;/p></description></item><item><title>GitHub Actions for Creating Releases</title><link>/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400">
-&lt;gcds-text>Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document is designed for the GitHub Action repository to help other developers implement release automation in their repositories.&lt;/p></description></item><item><title>Infrastructure and Configuration Management</title><link>/en/team/standard-operating-procedures/infrastructure-and-configuration-management/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/infrastructure-and-configuration-management/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document outlines the steps Aurora administrators must follow to test disaster recovery and confirm that Velero backups can be restored correctly.&lt;/p&gt;</description></item><item><title>GitHub Actions for Creating Releases</title><link>/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/use-gh-action-for-creating-releases/</guid><description>&lt;gcds-alert alert-role="danger" container="full" heading="Avis de traduction" hide-close-btn="true" hide-role-icon="false" is-fixed="false" class="hydrated mb-400"&gt;
+&lt;gcds-text&gt;Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.&lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document is designed for the GitHub Action repository to help other developers implement release automation in their repositories.&lt;/p&gt;</description></item><item><title>Infrastructure and Configuration Management</title><link>/en/team/standard-operating-procedures/infrastructure-and-configuration-management/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/infrastructure-and-configuration-management/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="overview" character-limit="true">Overview&lt;gcds-link href="#overview" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>The Aurora platform is managed entirely as code. Two types of repositories define its intended state and serve as the single source of truth:&lt;/p></description></item><item><title>Issue and PR Naming Conventions</title><link>/en/team/standard-operating-procedures/issue-naming/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/issue-naming/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="overview" character-limit="true"&gt;Overview&lt;gcds-link href="#overview" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;The Aurora platform is managed entirely as code. Two types of repositories define its intended state and serve as the single source of truth:&lt;/p&gt;</description></item><item><title>Issue and PR Naming Conventions</title><link>/en/team/standard-operating-procedures/issue-naming/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/issue-naming/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>To support clarity, traceability, and scale across multiple teams, clouds, and departments, all issues, tasks, and pull requests in should follow a consistent naming and labeling convention.&lt;/p></description></item><item><title>Issue Tracking</title><link>/en/team/standard-operating-procedures/issue-tracking/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/issue-tracking/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;To support clarity, traceability, and scale across multiple teams, clouds, and departments, all issues, tasks, and pull requests in should follow a consistent naming and labeling convention.&lt;/p&gt;</description></item><item><title>Issue Tracking</title><link>/en/team/standard-operating-procedures/issue-tracking/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/issue-tracking/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>Aurora uses multiple systems to manage issues, requests, and deliverables. Each system serves a distinct purpose depending on classification, audience, and type of work.&lt;/p></description></item><item><title>SSL Cert Issuance</title><link>/en/team/standard-operating-procedures/ssl-cert-issuance/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/ssl-cert-issuance/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;Aurora uses multiple systems to manage issues, requests, and deliverables. Each system serves a distinct purpose depending on classification, audience, and type of work.&lt;/p&gt;</description></item><item><title>SSL Cert Issuance</title><link>/en/team/standard-operating-procedures/ssl-cert-issuance/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/team/standard-operating-procedures/ssl-cert-issuance/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>This document outlines the steps Aurora administrators must follow to deploy a sample Kubernetes application to validate the issuance of an SSL certificate using Cert Manager and Lets Encrypt on the Aurora clusters. The domain used in this example is for the Aurora management dev cluster.&lt;/p></description></item><item><title>Cert Manager Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/cert-manager/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;This document outlines the steps Aurora administrators must follow to deploy a sample Kubernetes application to validate the issuance of an SSL certificate using Cert Manager and Lets Encrypt on the Aurora clusters. The domain used in this example is for the Aurora management dev cluster.&lt;/p&gt;</description></item><item><title>Cert Manager Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/cert-manager/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="alert-certmanagercertfailingtorenew" character-limit="true">Alert: certManagerCertFailingToRenew&lt;gcds-link href="#alert-certmanagercertfailingtorenew" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This alert fires when the Cert Manager certificate fails to renew when it should have at the designated renewal time.&lt;/p></description></item><item><title>Container Alerts</title><link>/en/team/monitoring-alerts/alert-namespace-level/container/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-namespace-level/container/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="alert-certmanagercertfailingtorenew" character-limit="true"&gt;Alert: certManagerCertFailingToRenew&lt;gcds-link href="#alert-certmanagercertfailingtorenew" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This alert fires when the Cert Manager certificate fails to renew when it should have at the designated renewal time.&lt;/p&gt;</description></item><item><title>Container Alerts</title><link>/en/team/monitoring-alerts/alert-namespace-level/container/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-namespace-level/container/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="alert-containerlowcpu" character-limit="true">Alert: ContainerLowCPU&lt;gcds-link href="#alert-containerlowcpu" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This alert occurs at the namespace-level within a cluster. This alert will be triggered by default when a container is using up more than &lt;strong>85%&lt;/strong> of its allotted CPU for more than a &lt;strong>five&lt;/strong> minute period.&lt;/p></description></item><item><title>DNS Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/dns/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="alert-containerlowcpu" character-limit="true"&gt;Alert: ContainerLowCPU&lt;gcds-link href="#alert-containerlowcpu" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This alert occurs at the namespace-level within a cluster. This alert will be triggered by default when a container is using up more than &lt;strong&gt;85%&lt;/strong&gt; of its allotted CPU for more than a &lt;strong&gt;five&lt;/strong&gt; minute period.&lt;/p&gt;</description></item><item><title>DNS Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/dns/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="overview" character-limit="true">Overview&lt;gcds-link href="#overview" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>DNS-related issues can occur at two levels:&lt;/p></description></item><item><title>Job Alerts</title><link>/en/team/monitoring-alerts/alert-namespace-level/job/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-namespace-level/job/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="overview" character-limit="true"&gt;Overview&lt;gcds-link href="#overview" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;DNS-related issues can occur at two levels:&lt;/p&gt;</description></item><item><title>Job Alerts</title><link>/en/team/monitoring-alerts/alert-namespace-level/job/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-namespace-level/job/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="alert-completedjobsnotcleared" character-limit="true">Alert: CompletedJobsNotCleared&lt;gcds-link href="#alert-completedjobsnotcleared" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This alert occurs at the namespace-level within a cluster and will be triggered when more than &lt;em>20&lt;/em> completed jobs within a particular namespace are older than 24 hours. This alert indicates that certain completed jobs may need to be cleaned up or that there is an issue preventing jobs from completing successfully.&lt;/p></description></item><item><title>Node Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/node/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="alert-completedjobsnotcleared" character-limit="true"&gt;Alert: CompletedJobsNotCleared&lt;gcds-link href="#alert-completedjobsnotcleared" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This alert occurs at the namespace-level within a cluster and will be triggered when more than &lt;em&gt;20&lt;/em&gt; completed jobs within a particular namespace are older than 24 hours. This alert indicates that certain completed jobs may need to be cleaned up or that there is an issue preventing jobs from completing successfully.&lt;/p&gt;</description></item><item><title>Node Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/node/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="node-pressure-eviction-alerts" character-limit="true">Node Pressure Eviction Alerts&lt;gcds-link href="#node-pressure-eviction-alerts" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>Node pressure eviction alerts are configured to occur at the cluster level. As defined in the 
+&lt;gcds-heading tag="h2" id="node-pressure-eviction-alerts" character-limit="true"&gt;Node Pressure Eviction Alerts&lt;gcds-link href="#node-pressure-eviction-alerts" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;Node pressure eviction alerts are configured to occur at the cluster level. As defined in the 
 &lt;gcds-link
- href="https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/">official Kubernetes documentation&lt;/gcds-link>, &amp;ldquo;node-pressure eviction is the process by which the kubelet proactively terminates pods to reclaim resources on nodes&amp;rdquo;. When a particular node resource such as the memory or disk space reaches a certain threshold, the kubelet can terminate one or more of the pods on the node to reclaim resources and prevent starvation.&lt;/p></description></item><item><title>Node Pool Capacity Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ href="https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/"&gt;official Kubernetes documentation&lt;/gcds-link&gt;, &amp;ldquo;node-pressure eviction is the process by which the kubelet proactively terminates pods to reclaim resources on nodes&amp;rdquo;. When a particular node resource such as the memory or disk space reaches a certain threshold, the kubelet can terminate one or more of the pods on the node to reclaim resources and prevent starvation.&lt;/p&gt;</description></item><item><title>Node Pool Capacity Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/node-pool-pod-capacity/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>Node pool pod capacity alerts are configured to occur at the cluster level. As defined in the 
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;Node pool pod capacity alerts are configured to occur at the cluster level. As defined in the 
 &lt;gcds-link
- href="https://kubernetes.io/docs/concepts/architecture/nodes/">official Kubernetes documentation&lt;/gcds-link>, Kubernetes runs workloads by placing containers into pods to run on nodes. Each node is managed by the control plane and contains the services necessary to run pods. 
+ href="https://kubernetes.io/docs/concepts/architecture/nodes/"&gt;official Kubernetes documentation&lt;/gcds-link&gt;, Kubernetes runs workloads by placing containers into pods to run on nodes. Each node is managed by the control plane and contains the services necessary to run pods. 
 &lt;gcds-link
- href="https://kubernetes.io/docs/setup/best-practices/cluster-large/">Kubernetes is designed to accommodate&lt;/gcds-link> no more than 110 pods per node. However, when nodes are created &lt;code>max-pods&lt;/code> is set to a hard limit of 90 pods per node. When a particular node reaches a certain threshold, the following alerts are triggered:&lt;/p></description></item><item><title>Persistent Volume Claim Alerts</title><link>/en/team/monitoring-alerts/alert-namespace-level/persistent-volume-claims/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-namespace-level/persistent-volume-claims/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ href="https://kubernetes.io/docs/setup/best-practices/cluster-large/"&gt;Kubernetes is designed to accommodate&lt;/gcds-link&gt; no more than 110 pods per node. However, when nodes are created &lt;code&gt;max-pods&lt;/code&gt; is set to a hard limit of 90 pods per node. When a particular node reaches a certain threshold, the following alerts are triggered:&lt;/p&gt;</description></item><item><title>Persistent Volume Claim Alerts</title><link>/en/team/monitoring-alerts/alert-namespace-level/persistent-volume-claims/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-namespace-level/persistent-volume-claims/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="alert-pvcstorageremaininglow" character-limit="true">Alert: PVCStorageRemainingLow&lt;gcds-link href="#alert-pvcstorageremaininglow" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This alert fires when the persistent volume claim has less than 15% storage remaining.&lt;/p></description></item><item><title>Pod Alerts</title><link>/en/team/monitoring-alerts/alert-namespace-level/pod-not-ready/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-namespace-level/pod-not-ready/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="alert-pvcstorageremaininglow" character-limit="true"&gt;Alert: PVCStorageRemainingLow&lt;gcds-link href="#alert-pvcstorageremaininglow" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This alert fires when the persistent volume claim has less than 15% storage remaining.&lt;/p&gt;</description></item><item><title>Pod Alerts</title><link>/en/team/monitoring-alerts/alert-namespace-level/pod-not-ready/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-namespace-level/pod-not-ready/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="alert-podnotready" character-limit="true">Alert: PodNotReady&lt;gcds-link href="#alert-podnotready" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This alert occurs at the namespace-level within a cluster. This alert will be triggered by default when a Pod is in a non-ready state for longer than &lt;strong>fifteen&lt;/strong> minutes.&lt;/p></description></item><item><title>Probe Failure Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/probe-failure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/probe-failure/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="alert-podnotready" character-limit="true"&gt;Alert: PodNotReady&lt;gcds-link href="#alert-podnotready" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This alert occurs at the namespace-level within a cluster. This alert will be triggered by default when a Pod is in a non-ready state for longer than &lt;strong&gt;fifteen&lt;/strong&gt; minutes.&lt;/p&gt;</description></item><item><title>Probe Failure Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/probe-failure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/probe-failure/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>These alert occur at the cluster-level and depend on the configuration of 
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;These alert occur at the cluster-level and depend on the configuration of 
 &lt;gcds-link
- href="/en/team/monitoring-alerts/blackbox-exporter/">Blackbox Exporter&lt;/gcds-link> probes. Unlike most cluster-level alerts, these alerts do not pertain to the cluster they originate from, but rather to what the alert labels identify as the &lt;code>target&lt;/code> cluster. That is because these probes are used for uptime and health monitoring. Since a cluster experiencing such issues may not be capable of transmitting the relevant alerts, clusters are configured to probe other clusters. For example, presently the Management cluster probes the SDLC and Ingress clusters, while the Production cluster in turn probes Management.&lt;/p></description></item><item><title>Prometheus</title><link>/en/team/monitoring-alerts/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/prometheus/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ href="/en/team/monitoring-alerts/blackbox-exporter/"&gt;Blackbox Exporter&lt;/gcds-link&gt; probes. Unlike most cluster-level alerts, these alerts do not pertain to the cluster they originate from, but rather to what the alert labels identify as the &lt;code&gt;target&lt;/code&gt; cluster. That is because these probes are used for uptime and health monitoring. Since a cluster experiencing such issues may not be capable of transmitting the relevant alerts, clusters are configured to probe other clusters. For example, presently the Management cluster probes the SDLC and Ingress clusters, while the Production cluster in turn probes Management.&lt;/p&gt;</description></item><item><title>Prometheus</title><link>/en/team/monitoring-alerts/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/prometheus/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="what-is-prometheus" character-limit="true">What is Prometheus?&lt;gcds-link href="#what-is-prometheus" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>Prometheus is an open-source monitoring and alerting toolkit initially developed by SoundCloud in 2012. Widely adopted by companies and organizations, Prometheus is supported by an active developer and user community. Now an independent, standalone open-source project, it joined the Cloud Native Computing Foundation (CNCF) in 2016 as its second hosted project, after Kubernetes, highlighting its importance and transparent governance.&lt;/p></description></item><item><title>Prometheus Operator</title><link>/en/team/monitoring-alerts/prometheus-operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/prometheus-operator/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="what-is-prometheus" character-limit="true"&gt;What is Prometheus?&lt;gcds-link href="#what-is-prometheus" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;Prometheus is an open-source monitoring and alerting toolkit initially developed by SoundCloud in 2012. Widely adopted by companies and organizations, Prometheus is supported by an active developer and user community. Now an independent, standalone open-source project, it joined the Cloud Native Computing Foundation (CNCF) in 2016 as its second hosted project, after Kubernetes, highlighting its importance and transparent governance.&lt;/p&gt;</description></item><item><title>Prometheus Operator</title><link>/en/team/monitoring-alerts/prometheus-operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/prometheus-operator/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>The Prometheus Operator for Kubernetes simplifies the deployment, management, and configuration of Prometheus instances, as well as monitoring definitions for Kubernetes services.&lt;/p></description></item><item><title>Prometheus Storage Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/prometheus-storage-low/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/prometheus-storage-low/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;The Prometheus Operator for Kubernetes simplifies the deployment, management, and configuration of Prometheus instances, as well as monitoring definitions for Kubernetes services.&lt;/p&gt;</description></item><item><title>Prometheus Storage Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/prometheus-storage-low/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/prometheus-storage-low/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="alert-prometheusstoragelow" character-limit="true">Alert: PrometheusStorageLow&lt;gcds-link href="#alert-prometheusstoragelow" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>PrometheusStorageLow alerts are configured to occur at the cluster level. It triggers when Prometheus disk usage is over 85% in the specified environment. This alert indicates that the storage needs to be increased for that environment.&lt;/p></description></item><item><title>SSL Certificate Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="alert-prometheusstoragelow" character-limit="true"&gt;Alert: PrometheusStorageLow&lt;gcds-link href="#alert-prometheusstoragelow" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;PrometheusStorageLow alerts are configured to occur at the cluster level. It triggers when Prometheus disk usage is over 85% in the specified environment. This alert indicates that the storage needs to be increased for that environment.&lt;/p&gt;</description></item><item><title>SSL Certificate Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/ssl-cert-expiring-soon/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="alert-sslcertexpiringsoon" character-limit="true">Alert: SSLCertExpiringSoon&lt;gcds-link href="#alert-sslcertexpiringsoon" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>This alert occurs at the cluster level. It triggers when the SSL certificate at a given target expires in fewer than 20 days. This alert can indicate that the certificate has failed to automatically renew or that the target&amp;rsquo;s pod has failed to pick up a renewed certificate.&lt;/p></description></item><item><title>Velero Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/velero/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/velero/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="alert-sslcertexpiringsoon" character-limit="true"&gt;Alert: SSLCertExpiringSoon&lt;gcds-link href="#alert-sslcertexpiringsoon" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;This alert occurs at the cluster level. It triggers when the SSL certificate at a given target expires in fewer than 20 days. This alert can indicate that the certificate has failed to automatically renew or that the target&amp;rsquo;s pod has failed to pick up a renewed certificate.&lt;/p&gt;</description></item><item><title>Velero Alerts</title><link>/en/team/monitoring-alerts/alert-cluster-level/velero/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alert-cluster-level/velero/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>Velero is an open source tool used to safely backup and restore, perform disaster recovery, and migrate Kubernetes cluster resources and persistent volumes. A velero alerts occurs when a Velero backup isn&amp;rsquo;t functioning as intended. Currently there are three kinds of Velero alerts:&lt;/p></description></item><item><title>Access Control</title><link>/en/architecture/security/access-control/</link><pubDate>Mon, 08 Jun 2026 00:00:00 -0400</pubDate><guid>/en/architecture/security/access-control/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;Velero is an open source tool used to safely backup and restore, perform disaster recovery, and migrate Kubernetes cluster resources and persistent volumes. A velero alerts occurs when a Velero backup isn&amp;rsquo;t functioning as intended. Currently there are three kinds of Velero alerts:&lt;/p&gt;</description></item><item><title>Access Control</title><link>/en/architecture/security/access-control/</link><pubDate>Mon, 08 Jun 2026 00:00:00 -0400</pubDate><guid>/en/architecture/security/access-control/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>Access control is implemented according to the principle of least privilege.&lt;/p></description></item><item><title>Contingency Plan</title><link>/en/architecture/security/contingency-plan/</link><pubDate>Tue, 16 Sep 2025 00:00:00 -0400</pubDate><guid>/en/architecture/security/contingency-plan/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;Access control is implemented according to the principle of least privilege.&lt;/p&gt;</description></item><item><title>Contingency Plan</title><link>/en/architecture/security/contingency-plan/</link><pubDate>Tue, 16 Sep 2025 00:00:00 -0400</pubDate><guid>/en/architecture/security/contingency-plan/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="context" character-limit="true">Context&lt;gcds-link href="#context" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>The following page discusses what Aurora does for its contingency planning in anticipation of system failures. You will also find information on this page relating to Aurora&amp;rsquo;s resolution times and its priorities for resolving incidents &amp;amp; issues.&lt;/p></description></item><item><title>Azure</title><link>/en/architecture/introduction/azure/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/architecture/introduction/azure/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+&lt;gcds-heading tag="h2" id="context" character-limit="true"&gt;Context&lt;gcds-link href="#context" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;The following page discusses what Aurora does for its contingency planning in anticipation of system failures. You will also find information on this page relating to Aurora&amp;rsquo;s resolution times and its priorities for resolving incidents &amp;amp; issues.&lt;/p&gt;</description></item><item><title>Azure</title><link>/en/architecture/introduction/azure/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/architecture/introduction/azure/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>&lt;em>Welcome!&lt;/em> In this guide, we’ll explore the &lt;strong>Aurora Platform&lt;/strong> on Azure from four different views. Each view offers a perspective on how the system is structured. We’ll use simple language and analogies to make things clear. You should have a good understanding of Aurora’s cloud architecture. Let’s dive in!&lt;/p></description></item><item><title>Alertmanager</title><link>/en/team/monitoring-alerts/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alertmanager/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;&lt;em&gt;Welcome!&lt;/em&gt; In this guide, we’ll explore the &lt;strong&gt;Aurora Platform&lt;/strong&gt; on Azure from four different views. Each view offers a perspective on how the system is structured. We’ll use simple language and analogies to make things clear. You should have a good understanding of Aurora’s cloud architecture. Let’s dive in!&lt;/p&gt;</description></item><item><title>Alertmanager</title><link>/en/team/monitoring-alerts/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/alertmanager/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;
 &lt;gcds-link
- href="https://prometheus.io/docs/alerting/latest/alertmanager/">Alertmanager&lt;/gcds-link> is used by Prometheus to deduplicate, route, group, silence, and inhibit alerts.&lt;/p></description></item><item><title>Blackbox Exporter</title><link>/en/team/monitoring-alerts/blackbox-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/blackbox-exporter/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ href="https://prometheus.io/docs/alerting/latest/alertmanager/"&gt;Alertmanager&lt;/gcds-link&gt; is used by Prometheus to deduplicate, route, group, silence, and inhibit alerts.&lt;/p&gt;</description></item><item><title>Blackbox Exporter</title><link>/en/team/monitoring-alerts/blackbox-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/team/monitoring-alerts/blackbox-exporter/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>The Prometheus 
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;The Prometheus 
 &lt;gcds-link
- href="https://github.com/prometheus/blackbox_exporter">Blackbox Exporter&lt;/gcds-link> enables the monitoring of endpoints using protocols such as HTTP, HTTPS, DNS, TCP, ICMP, and gRPC. It supports &amp;ldquo;blackbox monitoring,&amp;rdquo; which focuses on evaluating the external behavior and availability of a system without requiring access to its internal state.&lt;/p></description></item><item><title>2025-05-01</title><link>/en/technical-advisory-group/meetings/2025-05-01/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/meetings/2025-05-01/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ href="https://github.com/prometheus/blackbox_exporter"&gt;Blackbox Exporter&lt;/gcds-link&gt; enables the monitoring of endpoints using protocols such as HTTP, HTTPS, DNS, TCP, ICMP, and gRPC. It supports &amp;ldquo;blackbox monitoring,&amp;rdquo; which focuses on evaluating the external behavior and availability of a system without requiring access to its internal state.&lt;/p&gt;</description></item><item><title>2025-05-01</title><link>/en/technical-advisory-group/meetings/2025-05-01/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/meetings/2025-05-01/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>Meeting has yet to be held.&lt;/p></description></item><item><title>AEP-001: Example</title><link>/en/technical-advisory-group/architectural-enhancement-proposal/aep-001/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/architectural-enhancement-proposal/aep-001/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;Meeting has yet to be held.&lt;/p&gt;</description></item><item><title>AEP-001: Example</title><link>/en/technical-advisory-group/architectural-enhancement-proposal/aep-001/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/architectural-enhancement-proposal/aep-001/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>AEP has yet to be created.&lt;/p></description></item><item><title>ARC-001: Aurora Initiative</title><link>/en/technical-advisory-group/architectural-review-committee/arc-001/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/architectural-review-committee/arc-001/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;AEP has yet to be created.&lt;/p&gt;</description></item><item><title>ARC-001: Aurora Initiative</title><link>/en/technical-advisory-group/architectural-review-committee/arc-001/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/architectural-review-committee/arc-001/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>&lt;strong>Date:&lt;/strong> March 26th, 2025&lt;br>
-&lt;strong>Location:&lt;/strong> [Virtual/In-Person]&lt;br>
-&lt;strong>Presenter:&lt;/strong> William Hearn (Senior Cloud Architect, GC Cloud One)&lt;br>
-&lt;strong>Attendees:&lt;/strong> ARC Members&lt;br>
-&lt;strong>Objective:&lt;/strong> Review the Aurora initiative and secure approval for its strategic direction and technical architecture.&lt;/p></description></item><item><title>Meetings</title><link>/en/technical-advisory-group/templates/template-meetings/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/templates/template-meetings/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; March 26th, 2025&lt;br&gt;
+&lt;strong&gt;Location:&lt;/strong&gt; [Virtual/In-Person]&lt;br&gt;
+&lt;strong&gt;Presenter:&lt;/strong&gt; William Hearn (Senior Cloud Architect, GC Cloud One)&lt;br&gt;
+&lt;strong&gt;Attendees:&lt;/strong&gt; ARC Members&lt;br&gt;
+&lt;strong&gt;Objective:&lt;/strong&gt; Review the Aurora initiative and secure approval for its strategic direction and technical architecture.&lt;/p&gt;</description></item><item><title>Meetings</title><link>/en/technical-advisory-group/templates/template-meetings/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/templates/template-meetings/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>Consistent meeting practices are essential for ensuring transparency, efficiency, and accountability within the Aurora TAG. Establishing standardized templates for meeting agendas, minutes, and decision records helps streamline meetings, improve collaboration, and ensure that key information is captured systematically. Below are recommended templates and best practices.&lt;/p></description></item><item><title>Membership and Attendance Guidelines</title><link>/en/technical-advisory-group/membership/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/membership/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;Consistent meeting practices are essential for ensuring transparency, efficiency, and accountability within the Aurora TAG. Establishing standardized templates for meeting agendas, minutes, and decision records helps streamline meetings, improve collaboration, and ensure that key information is captured systematically. Below are recommended templates and best practices.&lt;/p&gt;</description></item><item><title>Membership and Attendance Guidelines</title><link>/en/technical-advisory-group/membership/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/membership/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>For Aurora TAG to function effectively, it is essential to establish clear membership criteria and attendance expectations. These guidelines ensure that:&lt;/p></description></item><item><title>Roles and Responsibilities</title><link>/en/technical-advisory-group/roles/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/roles/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;For Aurora TAG to function effectively, it is essential to establish clear membership criteria and attendance expectations. These guidelines ensure that:&lt;/p&gt;</description></item><item><title>Roles and Responsibilities</title><link>/en/technical-advisory-group/roles/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/roles/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>For the Aurora TAG (Technical Architecture Group) to operate effectively within the Government of Canada (GoC) and Shared Services Canada (SSC) context, it is essential to clearly define roles and responsibilities. This guide maps GoC job classifications to key roles within Aurora TAG, ensuring that each participant understands their duties, expected contributions, and decision-making authority.&lt;/p></description></item><item><title>GitHub Issues for TAG Actions</title><link>/en/technical-advisory-group/templates/template-github-issues/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/templates/template-github-issues/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;For the Aurora TAG (Technical Architecture Group) to operate effectively within the Government of Canada (GoC) and Shared Services Canada (SSC) context, it is essential to clearly define roles and responsibilities. This guide maps GoC job classifications to key roles within Aurora TAG, ensuring that each participant understands their duties, expected contributions, and decision-making authority.&lt;/p&gt;</description></item><item><title>GitHub Issues for TAG Actions</title><link>/en/technical-advisory-group/templates/template-github-issues/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/templates/template-github-issues/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>To effectively manage the work of the Aurora Technical Advisory Group (TAG) and ensure decisions lead to tangible actions, GitHub Issues should be used as a tracking tool. This ensures that meeting agendas, outcomes, and follow-ups are well-documented, easily searchable, and linked to relevant discussions.&lt;/p></description></item><item><title>Architectural Enhancement Proposal (AEP)</title><link>/en/technical-advisory-group/templates/template-architectural-enhancement-proposal/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/templates/template-architectural-enhancement-proposal/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;To effectively manage the work of the Aurora Technical Advisory Group (TAG) and ensure decisions lead to tangible actions, GitHub Issues should be used as a tracking tool. This ensures that meeting agendas, outcomes, and follow-ups are well-documented, easily searchable, and linked to relevant discussions.&lt;/p&gt;</description></item><item><title>Architectural Enhancement Proposal (AEP)</title><link>/en/technical-advisory-group/templates/template-architectural-enhancement-proposal/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0500</pubDate><guid>/en/technical-advisory-group/templates/template-architectural-enhancement-proposal/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
-&lt;p>For any significant changes to Aurora’s architecture, a structured and transparent decision-making process is essential. The Architectural Enhancement Proposal (AEP) framework provides a consistent approach to documenting, evaluating, and approving architectural changes, ensuring that all decisions are well-informed, traceable, and aligned with organizational goals.&lt;/p></description></item><item><title>About us</title><link>/en/about/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/about/</guid><description>&lt;p>Aurora is a secure, self-service application hosting platform powered by a curated selection of Cloud Native Computing Foundation (CNCF) technologies that enables solution builders to quickly build and deploy cloud-native solutions in a consistent and well-governed environment. Built by departments, for departments, across the Government of Canada and part of the GC Cloud One initiative, it simplifies the operation of multi-tenant Kubernetes environments at enterprise scale, letting teams focus on delivering applications rather than building and operating platforms.&lt;/p></description></item><item><title>Contact us</title><link>/en/contact/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/contact/</guid><description>&lt;gcds-heading tag="h2" id="reporting-an-incident" character-limit="false">Reporting an incident?&lt;gcds-link href="#reporting-an-incident" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>Report incidents or issues through the SSC ITSM Tool, &lt;gcds-link external href="https://smartit.prod.global.gc.ca/smartit/app/#/create/incident">Remedy&lt;/gcds-link> by setting the support group to &lt;strong>20814 GCCO Aurora/Aurore SIUGC&lt;/strong>. We &lt;strong>strongly encourage&lt;/strong> clients to report incidents through Remedy. Direct client support is available Monday to Friday, from 9:00 AM to 5:00 PM ET.&lt;/p></description></item><item><title>Get involved</title><link>/en/get-involved/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/get-involved/</guid><description>&lt;p>At GC Cloud One: Aurora, we’re building a collaborative community around cloud-native technologies, and we encourage everyone to get involved! Whether you’re a seasoned Kubernetes expert or new to the platform, there are multiple ways to contribute, learn, and grow together. Here’s how you can get started:&lt;/p></description></item><item><title>Roadmap</title><link>/en/roadmap/</link><pubDate>Thu, 01 Jan 2026 00:00:00 -0500</pubDate><guid>/en/roadmap/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true">
- &lt;gcds-text character-limit="true">
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
+&lt;p&gt;For any significant changes to Aurora’s architecture, a structured and transparent decision-making process is essential. The Architectural Enhancement Proposal (AEP) framework provides a consistent approach to documenting, evaluating, and approving architectural changes, ensuring that all decisions are well-informed, traceable, and aligned with organizational goals.&lt;/p&gt;</description></item><item><title>About us</title><link>/en/about/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/about/</guid><description>&lt;p&gt;Aurora is a secure, self-service application hosting platform powered by a curated selection of Cloud Native Computing Foundation (CNCF) technologies that enables solution builders to quickly build and deploy cloud-native solutions in a consistent and well-governed environment. Built by departments, for departments, across the Government of Canada and part of the GC Cloud One initiative, it simplifies the operation of multi-tenant Kubernetes environments at enterprise scale, letting teams focus on delivering applications rather than building and operating platforms.&lt;/p&gt;</description></item><item><title>Contact us</title><link>/en/contact/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/contact/</guid><description>&lt;gcds-heading tag="h2" id="reporting-an-incident" character-limit="false"&gt;Reporting an incident?&lt;gcds-link href="#reporting-an-incident" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;Report incidents or issues through the SSC ITSM Tool, &lt;gcds-link external href="https://smartit.prod.global.gc.ca/smartit/app/#/create/incident"&gt;Remedy&lt;/gcds-link&gt; by setting the support group to &lt;strong&gt;20814 GCCO Aurora/Aurore SIUGC&lt;/strong&gt;. We &lt;strong&gt;strongly encourage&lt;/strong&gt; clients to report incidents through Remedy. Direct client support is available Monday to Friday, from 9:00 AM to 5:00 PM ET.&lt;/p&gt;</description></item><item><title>Get involved</title><link>/en/get-involved/</link><pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate><guid>/en/get-involved/</guid><description>&lt;p&gt;At GC Cloud One: Aurora, we’re building a collaborative community around cloud-native technologies, and we encourage everyone to get involved! Whether you’re a seasoned Kubernetes expert or new to the platform, there are multiple ways to contribute, learn, and grow together. Here’s how you can get started:&lt;/p&gt;</description></item><item><title>Roadmap</title><link>/en/roadmap/</link><pubDate>Thu, 01 Jan 2026 00:00:00 -0500</pubDate><guid>/en/roadmap/</guid><description>&lt;gcds-alert class="my-300" alert-role="danger" heading="Avis de traduction" hide-close-btn="true"&gt;
+ &lt;gcds-text character-limit="true"&gt;
  Veuillez noter que ce document est actuellement en cours de développement actif et pourrait être sujet à des révisions. 
  Une fois terminé, il sera entièrement traduit en français et mis à disposition dans sa version finale.
- &lt;/gcds-text>
-&lt;/gcds-alert>
+ &lt;/gcds-text&gt;
+&lt;/gcds-alert&gt;
 
-&lt;gcds-heading tag="h2" id="2026-platform-themes" character-limit="true">2026 Platform Themes&lt;gcds-link href="#2026-platform-themes" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;!-- markdownlint-disable MD033 -->
-&lt;ol class="list-disc ps-400 mb-300">
- &lt;li>Operate a unified application hosting platform across public cloud and GC Private Cloud environments&lt;/li>
- &lt;li>Build sustainable platform practices that reduce cognitive load for both platform and application teams&lt;/li>
- &lt;li>Enable departments through a community-driven, CNCF-aligned platform with clear guardrails and autonomy&lt;/li>
-&lt;/ol>
-&lt;!-- markdownlint-enable MD033 -->
-&lt;p>The roadmap below highlights the major platform epics and strategic initiatives planned or already in progress for Aurora in 2026.&lt;/p></description></item><item><title>Onboarding</title><link>/en/user-guides/onboarding/</link><pubDate>Sat, 15 Nov 2025 00:00:00 -0500</pubDate><guid>/en/user-guides/onboarding/</guid><description>&lt;p>This document describes how to onboard to the Aurora Managed AKS Cluster.&lt;/p></description></item><item><title>Vision</title><link>/en/vision/</link><pubDate>Wed, 05 Feb 2025 00:00:00 -0500</pubDate><guid>/en/vision/</guid><description>&lt;!-- markdownlint-disable MD033 -->
-&lt;gcds-notice type="info" notice-title-tag="h2" notice-title="A universal platform for modern application hosting">
- &lt;gcds-text>Aurora is a secure, self-service application hosting platform powered by a curated selection of Cloud Native Computing Foundation (CNCF) technologies that enables solution builders to quickly build and deploy cloud-native solutions in a consistent and well-governed environment.&lt;/gcds-text>
-&lt;/gcds-notice>
-&lt;!-- markdownlint-enable MD033 -->
+&lt;gcds-heading tag="h2" id="2026-platform-themes" character-limit="true"&gt;2026 Platform Themes&lt;gcds-link href="#2026-platform-themes" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;!-- markdownlint-disable MD033 --&gt;
+&lt;ol class="list-disc ps-400 mb-300"&gt;
+ &lt;li&gt;Operate a unified application hosting platform across public cloud and GC Private Cloud environments&lt;/li&gt;
+ &lt;li&gt;Build sustainable platform practices that reduce cognitive load for both platform and application teams&lt;/li&gt;
+ &lt;li&gt;Enable departments through a community-driven, CNCF-aligned platform with clear guardrails and autonomy&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- markdownlint-enable MD033 --&gt;
+&lt;p&gt;The roadmap below highlights the major platform epics and strategic initiatives planned or already in progress for Aurora in 2026.&lt;/p&gt;</description></item><item><title>Onboarding</title><link>/en/user-guides/onboarding/</link><pubDate>Sat, 15 Nov 2025 00:00:00 -0500</pubDate><guid>/en/user-guides/onboarding/</guid><description>&lt;p&gt;This document describes how to onboard to the Aurora Managed AKS Cluster.&lt;/p&gt;</description></item><item><title>Vision</title><link>/en/vision/</link><pubDate>Wed, 05 Feb 2025 00:00:00 -0500</pubDate><guid>/en/vision/</guid><description>&lt;!-- markdownlint-disable MD033 --&gt;
+&lt;gcds-notice notice-role="info" notice-title-tag="h2" notice-title="A universal platform for modern application hosting"&gt;
+ &lt;gcds-text&gt;Aurora is a secure, self-service application hosting platform powered by a curated selection of Cloud Native Computing Foundation (CNCF) technologies that enables solution builders to quickly build and deploy cloud-native solutions in a consistent and well-governed environment.&lt;/gcds-text&gt;
+&lt;/gcds-notice&gt;
+&lt;!-- markdownlint-enable MD033 --&gt;
 
-&lt;gcds-heading tag="h2" id="vision" character-limit="false">Vision&lt;gcds-link href="#vision" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>Aurora aims to unify open source and proprietary Kubernetes environments, offering a standardized and scalable platform across public and private clouds while enabling workload mobility without requiring architectural changes, and serving as a common foundation for a wide range of Government of Canada digital services.&lt;/p></description></item><item><title>Rules of Engagement</title><link>/en/rules-of-engagement/</link><pubDate>Mon, 21 Oct 2024 00:00:00 -0400</pubDate><guid>/en/rules-of-engagement/</guid><description>&lt;gcds-heading tag="h2" id="purpose" character-limit="false">Purpose&lt;gcds-link href="#purpose" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>The Aurora initiative is a collaborative effort that brings together diverse stakeholders across the Government of Canada. To ensure a productive, inclusive, and respectful environment, we are committed to fostering a community guided by shared values and principles.&lt;/p></description></item><item><title>Strategic Proposal</title><link>/en/proposal/</link><pubDate>Mon, 21 Oct 2024 00:00:00 -0400</pubDate><guid>/en/proposal/</guid><description>&lt;gcds-heading tag="h2" id="project-overview" character-limit="false">Project overview&lt;gcds-link href="#project-overview" class="pilcrow">¶&lt;/gcds-link>&lt;/gcds-heading>
-&lt;p>Aurora represents the possible future state of a unified application hosting platform for the Government of Canada (GC). The platform integrates open-source Kubernetes (OSS) offerings on managed cloud services and proprietary (in some aspects) Kubernetes offerings delivered as platform-as-a-service (PaaS), providing a standardized, scalable, and secure hosting solution. Aurora&amp;rsquo;s goal is to eliminate the fragmentation that arises from each department managing its own platform, ensuring that the Government of Canada operates with consistency in compliance, security, and operational efficiency.&lt;/p></description></item><item><title>Aurora Platform Components (SBOM)</title><link>/en/components/sbom/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/components/sbom/</guid><description>&lt;table class="d-table bt-sm bx-sm mb-300">
- &lt;thead>
- &lt;tr class="d-table-row bg-light font-bold">
- &lt;th scope="col">Component&lt;/th>
- &lt;th scope="col">Version&lt;/th>
- &lt;th scope="col">Category&lt;/th>
- &lt;th scope="col">License&lt;/th>
- &lt;th scope="col">Description&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/alloy">Grafana Alloy&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.11.0&lt;/td>
- &lt;td class="d-table-cell">Observability&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Grafana Alloy is a vendor-neutral, batteries-included telemetry collector with configuration based on River. It is a distribution of the OpenTelemetry Collector that combines the best parts of the Grafana Agent and the OpenTelemetry Collector into a single binary. Within Aurora, Alloy is used to collect metrics, logs, and traces from workloads and platform components, providing a unified telemetry pipeline that can forward data to multiple observability backends including Grafana, Prometheus, and Loki.&lt;br />&lt;br />
- 
- &lt;a href="https://grafana.com/docs/alloy/latest/">https://grafana.com/docs/alloy/latest/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflows">Argo Workflows&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v4.1.1&lt;/td>
- &lt;td class="d-table-cell">App Development&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Argo Workflows is used within Aurora to define and execute multi-step computational workflows as Kubernetes-native pipelines. It allows teams to model complex processes as directed acyclic graphs (DAGs) of container steps, enabling parallel execution, retries, and artifact passing between steps. Argo Workflows provides a visual UI for monitoring workflow runs and supports event-driven triggers through integrations with Argo Events and other Kubernetes controllers.&lt;br />&lt;br />
- 
- &lt;a href="https://argoproj.github.io/workflows/">https://argoproj.github.io/workflows/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-mgmt/templates/argo-foundation">Argo CD&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v3.1.9&lt;/td>
- &lt;td class="d-table-cell">Platform Management&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Argo CD is Aurora&amp;#39;s primary GitOps engine for deploying and managing platform and application components across Kubernetes clusters. It continuously reconciles the desired state defined in Git repositories with the live state of clusters, providing drift detection, automated synchronization, and auditable change history. Argo CD enables consistent, repeatable deployments while enforcing separation of concerns between platform teams and application teams.&lt;br />&lt;br />
- 
- &lt;a href="https://argo-cd.readthedocs.io/">https://argo-cd.readthedocs.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager">Cert Manager&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.20.3&lt;/td>
- &lt;td class="d-table-cell">Security&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Cert Manager is used within Aurora to automate the issuance, renewal, and lifecycle management of TLS certificates for Kubernetes workloads and platform services. It integrates with external certificate authorities and internal PKI systems to ensure secure, policy-compliant encryption for ingress, service-to-service communication, and platform endpoints, reducing operational risk and manual certificate handling.&lt;br />&lt;br />
- 
- &lt;a href="https://cert-manager.io/">https://cert-manager.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cilium">Cilium&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.20.0&lt;/td>
- &lt;td class="d-table-cell">Networking&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Cilium is Aurora&amp;#39;s primary Container Network Interface (CNI) and dataplane for Kubernetes workload clusters. It leverages eBPF to deliver high-performance pod networking, fine-grained network policy enforcement, and deep traffic observability through Hubble. Cilium enables advanced networking patterns, including ClusterwideNetworkPolicy and optional BGP-based route advertisement to integrate pod and service networking with enterprise firewalls.&lt;br />&lt;br />
- 
- &lt;a href="https://cilium.io/">https://cilium.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/fluent-operator">Fluent Operator&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v3.10.0&lt;/td>
- &lt;td class="d-table-cell">Observability&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Fluent Operator is used within Aurora as the control plane for Kubernetes logging. It manages the lifecycle, configuration, and rollout of Fluent Bit instances across clusters using Kubernetes custom resources. By separating log pipeline configuration from node-level agents, Fluent Operator enables consistent, declarative, and multi-tenant logging practices while reducing operational complexity for platform and application teams.&lt;br />&lt;br />
- 
- &lt;a href="https://github.com/fluent/fluent-operator">https://github.com/fluent/fluent-operator&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/gatekeeper">Gatekeeper&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v3.23.0&lt;/td>
- &lt;td class="d-table-cell">Security&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Gatekeeper is used within Aurora as the Kubernetes admission controller for enforcing policy and governance controls at resource creation and update time. Built on Open Policy Agent (OPA), Gatekeeper enables policy-as-code enforcement for security, compliance, and platform guardrails, ensuring that Kubernetes resources adhere to approved standards before they are admitted into the cluster. This approach reduces operational risk and supports consistent enforcement of enterprise and regulatory requirements.&lt;br />&lt;br />
- 
- &lt;a href="https://open-policy-agent.github.io/gatekeeper/">https://open-policy-agent.github.io/gatekeeper/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/grafana-operator">Grafana Operator&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v5.24.0&lt;/td>
- &lt;td class="d-table-cell">Observability&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Grafana Operator is a Kubernetes operator that automates the lifecycle management of Grafana deployments, dashboards, and data sources. Within Aurora, it enables declarative, GitOps-driven provisioning of Grafana instances and ensures dashboards are consistently managed and versioned across clusters. The operator reconciles desired state from custom resources, providing automated updates, drift correction, and multi-tenant Grafana management without manual configuration.&lt;br />&lt;br />
- 
- &lt;a href="https://grafana.github.io/grafana-operator/">https://grafana.github.io/grafana-operator/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cilium">Hubble&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.17.3&lt;/td>
- &lt;td class="d-table-cell">Observability&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Hubble is the observability component of Cilium that provides deep visibility into Kubernetes network traffic using eBPF. It captures network flows at the kernel level and exposes them through APIs, CLI tools, and a web-based UI. Within Aurora, Hubble enables platform operators and application teams to understand service-to-service communication, troubleshoot connectivity issues, and validate network policy behavior without packet capture or intrusive instrumentation.&lt;br />&lt;br />
- 
- &lt;a href="https://cilium.io/hubble/">https://cilium.io/hubble/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/istio">Istio&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.29.1&lt;/td>
- &lt;td class="d-table-cell">Networking&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Istio is used within Aurora to provide service mesh capabilities for Kubernetes workloads, including traffic management, mutual TLS, identity- aware authorization, and service-to-service observability. It enables fine-grained control over east-west traffic and supports zero-trust networking patterns by enforcing strong identity and policy at the application layer, complementing lower-level network controls provided by the CNI.&lt;br />&lt;br />
- 
- &lt;a href="https://istio.io/">https://istio.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/kiali">Kiali&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v2.30.0&lt;/td>
- &lt;td class="d-table-cell">Observability&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Kiali is a management console for Istio service mesh that provides real-time visualization of the service mesh topology, health metrics, and configuration validation. Within Aurora, Kiali enables platform operators and application teams to understand service-to-service communication, validate Istio configurations, troubleshoot connectivity issues, and monitor the health of services within the mesh. It offers a visual topology map, traffic animation, and configuration auditing to support day-to-day operations.&lt;br />&lt;br />
- 
- &lt;a href="https://kiali.io/">https://kiali.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/kube-bench">Kube Bench&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v0.16.0&lt;/td>
- &lt;td class="d-table-cell">Platform Security&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Kube Bench is used by Aurora to assess Kubernetes clusters against the Center for Internet Security (CIS) Kubernetes Benchmarks. It evaluates cluster configuration, control plane components, and node-level settings to identify deviations from recommended security baselines. Kube Bench supports compliance reporting, security posture assessments, and continuous improvement of cluster hardening across Aurora-managed environments.&lt;br />&lt;br />
- 
- &lt;a href="https://github.com/aquasecurity/kube-bench">https://github.com/aquasecurity/kube-bench&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-mgmt/templates/loki">Loki&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v3.7.6&lt;/td>
- &lt;td class="d-table-cell">Platform Observability&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Loki is used by Aurora as the centralized log aggregation and storage system for platform and application logs generated across Kubernetes clusters. Designed to be cost-effective and tightly integrated with Kubernetes, Loki indexes metadata rather than full log contents, enabling efficient querying and correlation of logs with metrics and traces. Loki supports operational troubleshooting, security investigations, and audit use cases across the Aurora platform.&lt;br />&lt;br />
- 
- &lt;a href="https://grafana.com/oss/loki/">https://grafana.com/oss/loki/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/kubecost">OpenCost&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.121.1&lt;/td>
- &lt;td class="d-table-cell">Platform Management&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- OpenCost is used within Aurora to provide transparent, real-time visibility into the cost of running Kubernetes workloads. It allocates infrastructure and cloud resource costs to namespaces, workloads, and labels, enabling platform operators and client teams to understand consumption patterns, support chargeback or showback models, and make informed decisions about resource usage. OpenCost promotes financial accountability while remaining vendor-neutral and aligned with open-source cost management practices.&lt;br />&lt;br />
- 
- &lt;a href="https://www.opencost.io/">https://www.opencost.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/podtracker">PodTracker&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.0.0&lt;/td>
- &lt;td class="d-table-cell">Platform Observability&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- PodTracker is a custom Aurora platform component that observes Kubernetes pod lifecycle events and records authoritative metadata about running workloads. It provides a reliable source of truth for pod identity, ownership, namespace context, and runtime attributes. PodTracker enables downstream automation and integration use cases, including networking, security, observability, and audit workflows, by making pod-level metadata consistently available outside the cluster.&lt;br />&lt;br />
- 
- &lt;a href="https://github.com/gccloudone-aurora/podtracker">https://github.com/gccloudone-aurora/podtracker&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/prometheus">Prometheus&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v0.93.1&lt;/td>
- &lt;td class="d-table-cell">Observability&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Prometheus is used within Aurora as the primary metrics collection and querying system for Kubernetes clusters and platform services. It scrapes metrics from workloads, infrastructure components, and platform services, storing time-series data that enables monitoring, alerting, and performance analysis. Prometheus forms the foundation of Aurora&amp;#39;s observability stack and supports standardized metrics-based visibility across multi-tenant environments.&lt;br />&lt;br />
- 
- &lt;a href="https://prometheus.io/">https://prometheus.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/strimzi-kafka-operator">Strimzi Kafka Operator&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.1.0&lt;/td>
- &lt;td class="d-table-cell">App Development&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Strimzi is an Apache Kubernetes operator that simplifies deploying and managing Apache Kafka on Kubernetes. Within Aurora, Strimzi enables teams to run production-ready Kafka clusters for event streaming, message brokering, and data pipeline workloads. The operator automates provisioning, configuration, scaling, and lifecycle management of Kafka brokers, ZooKeeper nodes, and Kafka Connect clusters, providing a declarative, Kubernetes-native approach to managing stateful streaming infrastructure.&lt;br />&lt;br />
- 
- &lt;a href="https://strimzi.io/">https://strimzi.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/tetragon">Tetragon&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.7.0&lt;/td>
- &lt;td class="d-table-cell">Security&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Tetragon is used within Aurora to provide real-time runtime security enforcement and deep system observability for Kubernetes workloads using eBPF. It enables policy-driven detection and prevention of undesired process, file, and network activity at the kernel level, without requiring application instrumentation. Tetragon complements admission-time controls and passive detection by enabling active enforcement and fine-grained runtime policy aligned with zero-trust and defense-in-depth security models.&lt;br />&lt;br />
- 
- &lt;a href="https://tetragon.io/">https://tetragon.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/trivy-operator">Trivy Operator&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v0.33.0&lt;/td>
- &lt;td class="d-table-cell">Platform Security&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Trivy Operator is used by Aurora to perform continuous, automated security scanning of Kubernetes workloads, container images, and cluster configurations. It integrates Trivy&amp;#39;s vulnerability, misconfiguration, and compliance scanning capabilities directly into the Kubernetes control plane by producing Kubernetes-native custom resources. Trivy Operator enables proactive risk identification, supports supply chain security objectives, and provides visibility into security posture across Aurora-managed clusters.&lt;br />&lt;br />
- 
- &lt;a href="https://aquasecurity.github.io/trivy-operator/">https://aquasecurity.github.io/trivy-operator/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/trust-manager">Trust Manager&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v0.24.0&lt;/td>
- &lt;td class="d-table-cell">Platform Security&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Trust Manager is used by Aurora to centrally manage and distribute trusted certificate authority (CA) bundles across Kubernetes clusters and workloads. It enables consistent trust configuration for platform and application components by synchronizing CA certificates into Kubernetes-native resources. Trust Manager reduces configuration drift, simplifies certificate trust management, and supports secure service-to-service communication in zero-trust and enterprise environments.&lt;br />&lt;br />
- 
- &lt;a href="https://cert-manager.io/docs/projects/trust-manager/">https://cert-manager.io/docs/projects/trust-manager/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- &lt;tr class="d-table-row">
- &lt;td class="d-table-cell">&lt;strong>&lt;a
- href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/velero">Velero&lt;/a>&lt;/strong>
- &lt;/td>
- &lt;td class="d-table-cell">v1.18.2&lt;/td>
- &lt;td class="d-table-cell">Platform Resilience&lt;/td>
- &lt;td class="d-table-cell">Apache-2.0&lt;/td>
- &lt;td class="d-table-cell">
- Velero is used by Aurora to provide backup and restore capabilities for Kubernetes clusters and their associated resources. It enables disaster recovery, cluster migration, and operational resilience by capturing the state of Kubernetes objects and, where supported, persistent volume data. Velero supports scheduled and on-demand backups and integrates with cloud object storage to retain backups outside the cluster lifecycle.&lt;br />&lt;br />
- 
- &lt;a href="https://velero.io/">https://velero.io/&lt;/a>
- &lt;br />&lt;br />
- &lt;/td>
- &lt;/tr>
- 
- 
- 
- 
- &lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;gcds-heading tag="h2" id="vision" character-limit="false"&gt;Vision&lt;gcds-link href="#vision" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;Aurora aims to unify open source and proprietary Kubernetes environments, offering a standardized and scalable platform across public and private clouds while enabling workload mobility without requiring architectural changes, and serving as a common foundation for a wide range of Government of Canada digital services.&lt;/p&gt;</description></item><item><title>Rules of Engagement</title><link>/en/rules-of-engagement/</link><pubDate>Mon, 21 Oct 2024 00:00:00 -0400</pubDate><guid>/en/rules-of-engagement/</guid><description>&lt;gcds-heading tag="h2" id="purpose" character-limit="false"&gt;Purpose&lt;gcds-link href="#purpose" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;The Aurora initiative is a collaborative effort that brings together diverse stakeholders across the Government of Canada. To ensure a productive, inclusive, and respectful environment, we are committed to fostering a community guided by shared values and principles.&lt;/p&gt;</description></item><item><title>Strategic Proposal</title><link>/en/proposal/</link><pubDate>Mon, 21 Oct 2024 00:00:00 -0400</pubDate><guid>/en/proposal/</guid><description>&lt;gcds-heading tag="h2" id="project-overview" character-limit="false"&gt;Project overview&lt;gcds-link href="#project-overview" class="pilcrow"&gt;¶&lt;/gcds-link&gt;&lt;/gcds-heading&gt;
+&lt;p&gt;Aurora represents the possible future state of a unified application hosting platform for the Government of Canada (GC). The platform integrates open-source Kubernetes (OSS) offerings on managed cloud services and proprietary (in some aspects) Kubernetes offerings delivered as platform-as-a-service (PaaS), providing a standardized, scalable, and secure hosting solution. Aurora&amp;rsquo;s goal is to eliminate the fragmentation that arises from each department managing its own platform, ensuring that the Government of Canada operates with consistency in compliance, security, and operational efficiency.&lt;/p&gt;</description></item><item><title>Aurora Platform Components (SBOM)</title><link>/en/components/sbom/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/components/sbom/</guid><description>&lt;table class="d-table bt-sm bx-sm mb-300"&gt;
+ &lt;thead&gt;
+ &lt;tr class="d-table-row bg-light font-bold"&gt;
+ &lt;th scope="col"&gt;Component&lt;/th&gt;
+ &lt;th scope="col"&gt;Version&lt;/th&gt;
+ &lt;th scope="col"&gt;Category&lt;/th&gt;
+ &lt;th scope="col"&gt;License&lt;/th&gt;
+ &lt;th scope="col"&gt;Description&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/alloy"&gt;Grafana Alloy&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.11.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Observability&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Grafana Alloy is a vendor-neutral, batteries-included telemetry collector with configuration based on River. It is a distribution of the OpenTelemetry Collector that combines the best parts of the Grafana Agent and the OpenTelemetry Collector into a single binary. Within Aurora, Alloy is used to collect metrics, logs, and traces from workloads and platform components, providing a unified telemetry pipeline that can forward data to multiple observability backends including Grafana, Prometheus, and Loki.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://grafana.com/docs/alloy/latest/"&gt;https://grafana.com/docs/alloy/latest/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/argo-workflows"&gt;Argo Workflows&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v4.1.1&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;App Development&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Argo Workflows is used within Aurora to define and execute multi-step computational workflows as Kubernetes-native pipelines. It allows teams to model complex processes as directed acyclic graphs (DAGs) of container steps, enabling parallel execution, retries, and artifact passing between steps. Argo Workflows provides a visual UI for monitoring workflow runs and supports event-driven triggers through integrations with Argo Events and other Kubernetes controllers.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://argoproj.github.io/workflows/"&gt;https://argoproj.github.io/workflows/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-mgmt/templates/argo-foundation"&gt;Argo CD&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v3.1.9&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Platform Management&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Argo CD is Aurora&amp;#39;s primary GitOps engine for deploying and managing platform and application components across Kubernetes clusters. It continuously reconciles the desired state defined in Git repositories with the live state of clusters, providing drift detection, automated synchronization, and auditable change history. Argo CD enables consistent, repeatable deployments while enforcing separation of concerns between platform teams and application teams.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://argo-cd.readthedocs.io/"&gt;https://argo-cd.readthedocs.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cert-manager"&gt;Cert Manager&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.20.3&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Security&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Cert Manager is used within Aurora to automate the issuance, renewal, and lifecycle management of TLS certificates for Kubernetes workloads and platform services. It integrates with external certificate authorities and internal PKI systems to ensure secure, policy-compliant encryption for ingress, service-to-service communication, and platform endpoints, reducing operational risk and manual certificate handling.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://cert-manager.io/"&gt;https://cert-manager.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cilium"&gt;Cilium&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.20.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Networking&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Cilium is Aurora&amp;#39;s primary Container Network Interface (CNI) and dataplane for Kubernetes workload clusters. It leverages eBPF to deliver high-performance pod networking, fine-grained network policy enforcement, and deep traffic observability through Hubble. Cilium enables advanced networking patterns, including ClusterwideNetworkPolicy and optional BGP-based route advertisement to integrate pod and service networking with enterprise firewalls.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://cilium.io/"&gt;https://cilium.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/fluent-operator"&gt;Fluent Operator&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v3.10.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Observability&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Fluent Operator is used within Aurora as the control plane for Kubernetes logging. It manages the lifecycle, configuration, and rollout of Fluent Bit instances across clusters using Kubernetes custom resources. By separating log pipeline configuration from node-level agents, Fluent Operator enables consistent, declarative, and multi-tenant logging practices while reducing operational complexity for platform and application teams.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://github.com/fluent/fluent-operator"&gt;https://github.com/fluent/fluent-operator&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/gatekeeper"&gt;Gatekeeper&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v3.23.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Security&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Gatekeeper is used within Aurora as the Kubernetes admission controller for enforcing policy and governance controls at resource creation and update time. Built on Open Policy Agent (OPA), Gatekeeper enables policy-as-code enforcement for security, compliance, and platform guardrails, ensuring that Kubernetes resources adhere to approved standards before they are admitted into the cluster. This approach reduces operational risk and supports consistent enforcement of enterprise and regulatory requirements.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://open-policy-agent.github.io/gatekeeper/"&gt;https://open-policy-agent.github.io/gatekeeper/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/grafana-operator"&gt;Grafana Operator&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v5.24.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Observability&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Grafana Operator is a Kubernetes operator that automates the lifecycle management of Grafana deployments, dashboards, and data sources. Within Aurora, it enables declarative, GitOps-driven provisioning of Grafana instances and ensures dashboards are consistently managed and versioned across clusters. The operator reconciles desired state from custom resources, providing automated updates, drift correction, and multi-tenant Grafana management without manual configuration.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://grafana.github.io/grafana-operator/"&gt;https://grafana.github.io/grafana-operator/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/cilium"&gt;Hubble&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.17.3&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Observability&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Hubble is the observability component of Cilium that provides deep visibility into Kubernetes network traffic using eBPF. It captures network flows at the kernel level and exposes them through APIs, CLI tools, and a web-based UI. Within Aurora, Hubble enables platform operators and application teams to understand service-to-service communication, troubleshoot connectivity issues, and validate network policy behavior without packet capture or intrusive instrumentation.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://cilium.io/hubble/"&gt;https://cilium.io/hubble/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/istio"&gt;Istio&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.29.1&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Networking&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Istio is used within Aurora to provide service mesh capabilities for Kubernetes workloads, including traffic management, mutual TLS, identity- aware authorization, and service-to-service observability. It enables fine-grained control over east-west traffic and supports zero-trust networking patterns by enforcing strong identity and policy at the application layer, complementing lower-level network controls provided by the CNI.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://istio.io/"&gt;https://istio.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/kiali"&gt;Kiali&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v2.30.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Observability&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Kiali is a management console for Istio service mesh that provides real-time visualization of the service mesh topology, health metrics, and configuration validation. Within Aurora, Kiali enables platform operators and application teams to understand service-to-service communication, validate Istio configurations, troubleshoot connectivity issues, and monitor the health of services within the mesh. It offers a visual topology map, traffic animation, and configuration auditing to support day-to-day operations.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://kiali.io/"&gt;https://kiali.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/kube-bench"&gt;Kube Bench&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v0.16.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Platform Security&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Kube Bench is used by Aurora to assess Kubernetes clusters against the Center for Internet Security (CIS) Kubernetes Benchmarks. It evaluates cluster configuration, control plane components, and node-level settings to identify deviations from recommended security baselines. Kube Bench supports compliance reporting, security posture assessments, and continuous improvement of cluster hardening across Aurora-managed environments.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://github.com/aquasecurity/kube-bench"&gt;https://github.com/aquasecurity/kube-bench&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-mgmt/templates/loki"&gt;Loki&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v3.7.6&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Platform Observability&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Loki is used by Aurora as the centralized log aggregation and storage system for platform and application logs generated across Kubernetes clusters. Designed to be cost-effective and tightly integrated with Kubernetes, Loki indexes metadata rather than full log contents, enabling efficient querying and correlation of logs with metrics and traces. Loki supports operational troubleshooting, security investigations, and audit use cases across the Aurora platform.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://grafana.com/oss/loki/"&gt;https://grafana.com/oss/loki/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/kubecost"&gt;OpenCost&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.121.1&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Platform Management&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ OpenCost is used within Aurora to provide transparent, real-time visibility into the cost of running Kubernetes workloads. It allocates infrastructure and cloud resource costs to namespaces, workloads, and labels, enabling platform operators and client teams to understand consumption patterns, support chargeback or showback models, and make informed decisions about resource usage. OpenCost promotes financial accountability while remaining vendor-neutral and aligned with open-source cost management practices.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://www.opencost.io/"&gt;https://www.opencost.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/podtracker"&gt;PodTracker&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.0.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Platform Observability&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ PodTracker is a custom Aurora platform component that observes Kubernetes pod lifecycle events and records authoritative metadata about running workloads. It provides a reliable source of truth for pod identity, ownership, namespace context, and runtime attributes. PodTracker enables downstream automation and integration use cases, including networking, security, observability, and audit workflows, by making pod-level metadata consistently available outside the cluster.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://github.com/gccloudone-aurora/podtracker"&gt;https://github.com/gccloudone-aurora/podtracker&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/prometheus"&gt;Prometheus&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v0.93.1&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Observability&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Prometheus is used within Aurora as the primary metrics collection and querying system for Kubernetes clusters and platform services. It scrapes metrics from workloads, infrastructure components, and platform services, storing time-series data that enables monitoring, alerting, and performance analysis. Prometheus forms the foundation of Aurora&amp;#39;s observability stack and supports standardized metrics-based visibility across multi-tenant environments.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://prometheus.io/"&gt;https://prometheus.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-app/templates/strimzi-kafka-operator"&gt;Strimzi Kafka Operator&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.1.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;App Development&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Strimzi is an Apache Kubernetes operator that simplifies deploying and managing Apache Kafka on Kubernetes. Within Aurora, Strimzi enables teams to run production-ready Kafka clusters for event streaming, message brokering, and data pipeline workloads. The operator automates provisioning, configuration, scaling, and lifecycle management of Kafka brokers, ZooKeeper nodes, and Kafka Connect clusters, providing a declarative, Kubernetes-native approach to managing stateful streaming infrastructure.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://strimzi.io/"&gt;https://strimzi.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/tetragon"&gt;Tetragon&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.7.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Security&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Tetragon is used within Aurora to provide real-time runtime security enforcement and deep system observability for Kubernetes workloads using eBPF. It enables policy-driven detection and prevention of undesired process, file, and network activity at the kernel level, without requiring application instrumentation. Tetragon complements admission-time controls and passive detection by enabling active enforcement and fine-grained runtime policy aligned with zero-trust and defense-in-depth security models.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://tetragon.io/"&gt;https://tetragon.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/trivy-operator"&gt;Trivy Operator&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v0.33.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Platform Security&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Trivy Operator is used by Aurora to perform continuous, automated security scanning of Kubernetes workloads, container images, and cluster configurations. It integrates Trivy&amp;#39;s vulnerability, misconfiguration, and compliance scanning capabilities directly into the Kubernetes control plane by producing Kubernetes-native custom resources. Trivy Operator enables proactive risk identification, supports supply chain security objectives, and provides visibility into security posture across Aurora-managed clusters.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://aquasecurity.github.io/trivy-operator/"&gt;https://aquasecurity.github.io/trivy-operator/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/trust-manager"&gt;Trust Manager&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v0.24.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Platform Security&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Trust Manager is used by Aurora to centrally manage and distribute trusted certificate authority (CA) bundles across Kubernetes clusters and workloads. It enables consistent trust configuration for platform and application components by synchronizing CA certificates into Kubernetes-native resources. Trust Manager reduces configuration drift, simplifies certificate trust management, and supports secure service-to-service communication in zero-trust and enterprise environments.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://cert-manager.io/docs/projects/trust-manager/"&gt;https://cert-manager.io/docs/projects/trust-manager/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ &lt;tr class="d-table-row"&gt;
+ &lt;td class="d-table-cell"&gt;&lt;strong&gt;&lt;a
+ href="https://github.com/gccloudone-aurora/aurora-platform-charts/tree/main/stable/aurora-platform/charts/aurora-core/templates/velero"&gt;Velero&lt;/a&gt;&lt;/strong&gt;
+ &lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;v1.18.2&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Platform Resilience&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;Apache-2.0&lt;/td&gt;
+ &lt;td class="d-table-cell"&gt;
+ Velero is used by Aurora to provide backup and restore capabilities for Kubernetes clusters and their associated resources. It enables disaster recovery, cluster migration, and operational resilience by capturing the state of Kubernetes objects and, where supported, persistent volume data. Velero supports scheduled and on-demand backups and integrates with cloud object storage to retain backups outside the cluster lifecycle.&lt;br /&gt;&lt;br /&gt;
+ 
+ &lt;a href="https://velero.io/"&gt;https://velero.io/&lt;/a&gt;
+ &lt;br /&gt;&lt;br /&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ &lt;/tbody&gt;
+&lt;/table&gt;</description></item></channel></rss>

@@ -1,6 +1,3 @@
-.hero gcds-heading.hydrated {
-  color: white; }
-
 .bg-full-width {
   position: relative;
   width: calc(100% + var(--gcds-spacing-300));
@@ -21,10 +18,6 @@
 
 .bg-full-width:after {
   right: calc(-100vw + 0.01px); }
-
-.bg-light-blue {
-  background-color: var(--gcds-color-blue-100);
-  color: var(--gcds-color-blue-800); }
 
 .hero {
   background: url(../images/home-hero.jpg) top center no-repeat;
@@ -50,9 +43,12 @@
   width: 100vw;
   height: 100%;
   content: "";
-  background-color: var(--gcds-color-blue-900); }
+  /* Must match the .bg-primary panel this bleeds out of. Use the semantic
+     token rather than a raw palette step: --gcds-color-blue-900 darkened from
+     #26374a to #0a1829 in components v1, which left a visible seam. */
+  background-color: var(--gcds-bg-primary); }
 
-gcds-fieldset[fieldset-id="field-toc"] {
+gcds-fieldset.toc {
   padding-top: 1em; }
 
 #TableOfContents ol {
@@ -93,7 +89,9 @@ blockquote {
   opacity: 0;
   transition: opacity 0.2s;
   text-decoration: none;
-  color: #26374a;
+  /* No colour here: gcds-link colours its own anchor inside the shadow tree
+     (--gcds-link-default), so a colour set on the host never reaches the mark.
+     The pilcrow is a link, so the link colour is the right one anyway. */
   margin-left: 0.25em; }
 
 gcds-heading:hover .pilcrow {
