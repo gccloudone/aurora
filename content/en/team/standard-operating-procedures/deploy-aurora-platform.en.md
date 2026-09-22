@@ -74,9 +74,7 @@ For a **workload cluster**, the following also apply:
 
 ### RBAC and Identity Prerequisites
 
-The general RBAC and identity prerequisites, including elevated Entra ID visibility via PIM, are covered in the <gcds-link href="{{< relref "/team/standard-operating-procedures/onboarding-background/" >}}">Onboarding Background</gcds-link>.
-
-Several steps in this SOP require that visibility to see the relevant groups and service principals in Entra ID:
+This SOP requires elevated Entra ID visibility via PIM to see the relevant groups and service principals in Entra ID. Several steps depend on it:
 
 - Verifying role assignments (Step 2)
 - Populating the Argo CD Key Vault secrets (Step 9)
@@ -189,7 +187,7 @@ terraform init
 
 ### 7. Deploy Argo CD Operator
 
-Apply the Argo CD operator Helm chart first, since the Argo CD instance in the next step depends on it:
+Apply the Argo CD operator Helm chart first:
 
 ```sh
 terraform apply -target=helm_release.argo_operator
@@ -227,7 +225,7 @@ The two `<PLATFORM_KV_PREFIX>-argocd-oidc-sp-*` values are produced in Step 10; 
 
 The OIDC service principal is normally created automatically by our Terraform, but that automation had to be disabled due to departmental policies on service principal creation and the permissions involved. As a result, the service principal must be requested manually via a support ticket. The request should ask to:
 
-- Duplicate an existing Argo CD service principal into a new environment-specific one.
+- Duplicate an existing Argo CD service principal into a new environment-specific one (for example, `aurora-<env>-argo-spn`).
 - Match the exact same permissions, groups claim (ID, Access, and SAML token types), and admin consent as the source service principal.
 - Update the redirect URIs to the ingress hostnames for the new environment, under your DNS zone, for example `https://<host>.<env>.<dns-zone>/auth/callback`.
 - Return the resulting `client-id` and `client-secret`.
@@ -345,8 +343,6 @@ The management cluster's Argo CD must be updated so it can track the workload cl
 
 - The workload cluster's API server address, token, and `caData`.
 - The workload cluster's Git repository URL and the credentials for accessing it.
-
-See this [example configuration change](https://github.com/gccloudone-aurora/project-aurora-mgmt/pull/113/changes). (Private)
 
 ### W3. Populate Required Key Vault Secrets
 

@@ -47,7 +47,6 @@ This SOP produces a **private AKS cluster** on a **flat (non-overlay)** network 
 - Familiarity with Terraform and Azure networking concepts
 - A Linux or WSL environment with bash, on a VM with inherent connectivity to the ESLZ
 - The following CLI tools installed and accessible: `az` (Azure CLI), `kubectl`, `jq`, `git`, and your provisioning tool (`terraform` or `terragrunt`, see note below)
-- The RBAC and identity access described in the <gcds-link href="{{< relref "/team/standard-operating-procedures/onboarding-background/" >}}">Onboarding Background</gcds-link>
 - An Azure DevOps service connection backed by a UAMI that can create resources in the target cluster
 
 **Note:** Most departments and projects provision with Terraform directly. The Azure Enterprise-Scale Landing Zone (ESLZ) at SSC uses Terragrunt as a wrapper around Terraform.
@@ -56,10 +55,10 @@ This SOP produces a **private AKS cluster** on a **flat (non-overlay)** network 
 
 Provisioning follows one of two paths depending on who owns the L0/L1 enterprise foundation. Pick the one that matches your environment and follow its numbered steps end to end. Both paths finish the same way, by handing off to the Aurora Platform.
 
-- **Path A — Departmental Tenant ESLZ.** Your department owns the L0/L1 foundation and you provision the cluster from your own per-cluster Azure DevOps repository, applied through its pipeline. Use this path for standard department and project onboarding in a departmental tenant.
-- **Path B — SSC Azure ESLZ.** The Azure Cloud Team at SSC owns the L0/L1 foundation and provides the CI boilerplate. You drop Aurora's IaC (`L2_blueprint_aurora`) into their landing-zone repository, which their preconfigured pipeline applies on approved merge requests (or you can run Terragrunt manually from a jumpbox). Use this path when onboarding onto the SSC Enterprise-Scale Landing Zone on Azure.
+- **Departmental Tenant ESLZ.** Your department owns the L0/L1 foundation and you provision the cluster from your own per-cluster Azure DevOps repository, applied through its pipeline. Use this path for standard department and project onboarding in a departmental tenant.
+- **SSC Azure ESLZ.** The Azure Cloud Team at SSC owns the L0/L1 foundation and provides the CI boilerplate. You drop Aurora's IaC (`L2_blueprint_aurora`) into their landing-zone repository, which their preconfigured pipeline applies on approved merge requests (or you can run Terragrunt manually from a jumpbox). Use this path when onboarding onto the SSC Enterprise-Scale Landing Zone on Azure.
 
-## Path A: Departmental Tenant ESLZ
+## Departmental Tenant ESLZ
 
 Use this path when your department owns the L0/L1 foundation. Follow the steps in order, then continue to [Deploy the Aurora Platform](#deploy-the-aurora-platform).
 
@@ -156,7 +155,7 @@ If Apply fails with an API-server i/o timeout or a forbidden error creating name
 
 ### 8. Confirm the cluster is ready
 
-Once Apply completes successfully, the PBMM-compliant AKS cluster exists, hardened to the PBMM baseline (authorized under the hosting tenant's assessment). Confirm the AKS cluster and its node pools are present and provisioned in the target subscription's resource group (Azure portal or `az aks show`); full in-cluster verification (for example `kubectl get nodes`) is possible once cluster access is configured. Who can access the cluster is governed by the two Entra ID groups in the RBAC and Identity Prerequisites (cluster administrators, and general cluster users for the kubeconfig).
+Once Apply completes successfully, the PBMM-compliant AKS cluster exists, hardened to the PBMM baseline (authorized under the hosting tenant's assessment). Confirm the AKS cluster and its node pools are present and provisioned in the target subscription's resource group (Azure portal or `az aks show`); full in-cluster verification (for example `kubectl get nodes`) is possible once cluster access is configured.
 
 ### 9. Retrieve AKS credentials
 
@@ -177,7 +176,7 @@ You must also grant admin consent for these permissions in Entra ID so Argo CD c
 
 The cluster is now fully provisioned. Continue to [Deploy the Aurora Platform](#deploy-the-aurora-platform).
 
-## Path B: SSC Azure ESLZ
+## SSC Azure ESLZ
 
 Use this path when onboarding onto the SSC Enterprise-Scale Landing Zone on Azure, where the Azure Cloud Team owns the L0/L1 foundation. Rather than running your own pipeline, you drop Aurora's IaC into their landing-zone repository structure. Follow the steps in order, then continue to [Deploy the Aurora Platform](#deploy-the-aurora-platform).
 
@@ -201,7 +200,7 @@ The Azure Cloud Team will get back to you with:
 
 Begin with the landing zone repository structure provided by the Azure Cloud Team. This ensures your environment remains aligned with Enterprise-Scale Landing Zone (ESLZ) standards.
 
-Unlike Path A, you do not request or design the base networking here. The Azure Cloud Team's L0/L1 already provides the networking foundation, including the VNet, subnets, NSGs, private DNS zones, and policy exemptions. Your task is to drop Aurora's IaC on top of it.
+Unlike the Departmental Tenant ESLZ path, you do not request or design the base networking here. The Azure Cloud Team's L0/L1 already provides the networking foundation, including the VNet, subnets, NSGs, private DNS zones, and policy exemptions. Your task is to drop Aurora's IaC on top of it.
 
 Create the folders for `L2_blueprint_aurora`:
 

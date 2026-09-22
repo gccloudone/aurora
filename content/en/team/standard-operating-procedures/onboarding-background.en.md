@@ -12,7 +12,9 @@ showToc: true
 
 ## Objective
 
-This document collects the shared background for Aurora's onboarding SOPs: <gcds-link href="{{< relref "/team/standard-operating-procedures/deploy-kubernetes-cluster/" >}}">cluster creation</gcds-link>, <gcds-link href="{{< relref "/team/standard-operating-procedures/deploy-aurora-platform/" >}}">platform deployment</gcds-link>, and <gcds-link href="{{< relref "/team/standard-operating-procedures/teardown-kubernetes-cluster/" >}}">teardown</gcds-link>. It is reference material, not a procedure: read it once before you begin so the SOPs can get straight to their steps, then follow the SOP for the task at hand. Where a topic below is referenced by a specific SOP, that SOP points back to this document rather than repeating the material.
+This document collects the shared background for Aurora's onboarding SOPs: <gcds-link href="{{< relref "/team/standard-operating-procedures/deploy-kubernetes-cluster/" >}}">cluster creation</gcds-link>, <gcds-link href="{{< relref "/team/standard-operating-procedures/deploy-aurora-platform/" >}}">platform deployment</gcds-link>, and <gcds-link href="{{< relref "/team/standard-operating-procedures/teardown-kubernetes-cluster/" >}}">teardown</gcds-link>.
+
+Most of it is reference material: read the background sections once before you begin so the SOPs can get straight to their steps. It also includes a hands-on walkthrough for connecting to and operating a cluster once it is provisioned. Where a topic below is referenced by a specific SOP, that SOP points back to this document rather than repeating the material.
 
 ## How cluster access works
 
@@ -37,30 +39,102 @@ Figure 2: Entra ID to Azure / AKS IAM RBAC Architecture
 
 ## Networking: the flat network model
 
-The flat (non-overlay) network model is the detail that shapes most of the networking decisions in the SOPs: pods receive real, routable IP addresses from a dedicated Pod subnet rather than NAT'd overlay addresses. Three consequences follow, and they matter before the landing zone networking is finalized (whether you request it on Path A or the Azure Cloud Team preconfigures it on Path B):
+The flat (non-overlay) network model is the detail that shapes most of the networking decisions in the SOPs: pods receive real, routable IP addresses from a dedicated Pod subnet rather than NAT'd overlay addresses. Three consequences follow, and they matter before the landing zone networking is finalized:
 
 - **Subnet sizing.** The Pod subnet is sized for the maximum number of pods (the `/23` in the network design) and is separate from the node (System) subnet.
 - **Source IP.** A pod's traffic egresses from the pod's own IP, not the node's. That pod IP is what you supply as the source on firewall and egress requests; using the node or System subnet instead is a common mistake.
 - **Routing and policy.** Because pod IPs are real VNet addresses, they are visible to VNet routing, peerings, and firewall/network policy, all of which must account for the Pod subnet CIDR.
 
-## RBAC and identity prerequisites
+## Connecting to and operating the environment
 
-The onboarding SOPs may be run by an Aurora platform operator or by the department's own platform team standing up a new cluster; the steps are identical either way. Whoever runs them needs the elevated permissions and Entra ID visibility described below.
+This walkthrough covers connecting to a provisioned Aurora AKS environment and reaching its dashboards. The placeholders below are the fill-in values for a given tenant; the steps themselves do not change from one tenant to the next.
 
-Aurora provisions most role assignments and access declaratively through its Terraform IaC. Some environments, however, restrict certain permission types (for example, Entra ID group and service-principal visibility, or service-principal creation) that the IaC cannot grant on its own; those must be arranged manually. As a result, both cluster creation and platform deployment require the operator running the SOP to see and assign the relevant Entra ID groups and service principals.
+> **Credentials.** Jumpbox credentials are stored in the Landing Zone Key Vault. Do not embed the jumpbox password in this document or commit it to source control; reference the vault entry and rotate it on a regular cadence.
 
-- **Known blocker, Entra visibility via PIM:** Assigning Kubernetes RBAC and mapping the correct Entra ID groups and service principals requires the operator to be able to see those objects in Entra ID. This visibility is granted through Privileged Identity Management (PIM) and requires an approved request for elevated permissions in Entra ID. Until that PIM access is in place, expect significant back-and-forth with the identity team for every RBAC assignment during onboarding. Submit the elevated-permissions request early so PIM access is available before it is needed.
-- Both paths deploy through an Azure DevOps service connection backed by a user-assigned managed identity (UAMI). That identity must be able to create resources in the target cluster; if it cannot, `terraform apply` fails with a forbidden error creating namespaces.
+### Placeholders
 
-## Terraform state ownership
+| Placeholder             | Meaning                                           |
+|-------------------------|---------------------------------------------------|
+| `<TENANT_ID>`           | Entra ID tenant GUID used for `az login`          |
+| `<TENANT_ENTRA_GROUP>`  | Tenant Entra ID group granting environment access |
+| `<WEBTOP_GROUP>`        | Entra ID group granting Webtop access             |
+| `<VDC_PORTAL_URL>`      | Virtual Desktop (VDC) portal URL                  |
+| `<JUMPBOX_VM>`          | Jumpbox virtual machine name                      |
+| `<JUMPBOX_USERNAME>`    | Jumpbox admin username                            |
+| `<CLUSTER_RG>`          | AKS cluster resource group                        |
+| `<CLUSTER_NAME>`        | AKS cluster name                                  |
+| `<CLUSTER_DOMAIN>`      | Tenant cluster ingress domain                     |
+| `<ARGOCD_PLATFORM_URL>` | Management-cluster Argo CD (Platform; reader)     |
+| `<ARGOCD_SOLUTION_URL>` | Management-cluster Argo CD (Solution; deploy)     |
 
-Provisioning follows one of two paths depending on who owns the L0/L1 enterprise foundation: **Path A — Departmental Tenant ESLZ** (your department owns the L0/L1 foundation) and **Path B — SSC Azure ESLZ** (the Azure Cloud Team at SSC owns it). The <gcds-link href="{{< relref "/team/standard-operating-procedures/deploy-kubernetes-cluster/" >}}">cluster creation SOP</gcds-link> defines these paths in full.
+### Your tenant identity
 
-On both paths, the cluster's Terraform state is owned and governed by the party that owns the cluster's IaC and pipeline, and it lives in that party's PBMM-compliant backend (an Azure Storage Account), one state per cluster repository:
+Entra group: `<TENANT_ENTRA_GROUP>`
 
-- **Path A — Departmental Tenant ESLZ.** The governing department owns and administers the state backend.
-- **Path B — SSC Azure ESLZ.** The Azure Cloud Team at SSC owns the state backend for the SSC Enterprise-Scale Landing Zone.
+### Access you have been granted
 
-This keeps state ownership aligned with cluster-lifecycle ownership, so the governing team can reliably plan, apply, detect drift, and destroy, and so the state (which can contain sensitive values) stays under the controls the assessment relies on.
+| Grant                                       | Scope         |
+|---------------------------------------------|---------------|
+| Contributor                                 | Subscription  |
+| Azure Kubernetes Service Cluster Admin Role | AKS cluster   |
+| Azure Kubernetes Service Cluster User Role  | AKS cluster   |
+| `<WEBTOP_GROUP>`                            | Webtop access |
 
-A client that wants complete control of the whole cluster, including its Terraform state in a client-owned Storage Account, must request it from the governing department. This arrangement is **discouraged**: it splits lifecycle ownership from state ownership, makes the governing team's operations depend on a backend it does not administer, and adds cross-subscription access and network dependencies for negligible benefit. Where it is nonetheless approved, the client assumes ownership of the full cluster lifecycle and the state backend must meet the same PBMM baseline (private endpoint, public access disabled, encryption, AAD/RBAC data-plane auth, blob versioning, and soft delete).
+### Step 1: Connect to the jumpbox
+
+You reach the cluster and all dashboards through the jumpbox.
+
+1. Open the VDC portal: `<VDC_PORTAL_URL>`
+2. Connect to the virtual machine with these credentials:
+
+   | Field           | Value                                                          |
+   |-----------------|----------------------------------------------------------------|
+   | Virtual machine | `<JUMPBOX_VM>`                                                 |
+   | Username        | `<JUMPBOX_USERNAME>`                                           |
+   | Password        | Retrieved from the Landing Zone Key Vault (never store inline) |
+
+### Step 2: Access the AKS cluster
+
+Run these commands from the jumpbox.
+
+```sh
+az login --tenant <TENANT_ID>
+az aks get-credentials --resource-group <CLUSTER_RG> --name <CLUSTER_NAME> --overwrite-existing
+kubelogin convert-kubeconfig -l azurecli
+```
+
+You now have `kubectl` access to your cluster.
+
+> Note: Since this is a private cluster, access is brokered through the jumpbox (Azure Bastion) or Azure Virtual Desktop (AVD).
+
+### Step 3: Dashboards and tools
+
+You reach every dashboard below through the jumpbox.
+
+#### Platform Dashboards (management cluster)
+
+These run in the Aurora management cluster, not in your cluster. That is why you will not see Argo CD inside your own cluster.
+
+Your access differs by dashboard:
+
+- Platform: SSC deploys it. You have reader access.
+- Solutions: you have full access to deploy your solutions onto your cluster.
+
+| Dashboard         | URL                     | Your access   |
+|-------------------|-------------------------|---------------|
+| Argo CD, Platform | `<ARGOCD_PLATFORM_URL>` | Reader        |
+| Argo CD, Solution | `<ARGOCD_SOLUTION_URL>` | Full (deploy) |
+
+> **Known issue.** Routing to the Argo CD dashboards is still being finalized, so these URLs may not resolve yet. This will be confirmed once routing is in place.
+
+#### Solution Dashboards (your cluster)
+
+These services run in your cluster.
+
+| Dashboard    | URL                                            |
+|--------------|------------------------------------------------|
+| Grafana      | `https://grafana.aurora.<CLUSTER_DOMAIN>`      |
+| Prometheus   | `https://prometheus.aurora.<CLUSTER_DOMAIN>`   |
+| AlertManager | `https://alertmanager.aurora.<CLUSTER_DOMAIN>` |
+| Kiali        | `https://kiali.aurora.<CLUSTER_DOMAIN>`        |
+| Hubble       | Pending                                        |

@@ -47,7 +47,7 @@ If the cluster is a department-level cluster, ensure that the client has provide
 
 ### 2. Delete the target cluster's platform App of Apps from Argo CD
 
-Navigate to the management cluster's Argo CD portal and delete the platform App of Apps (`platform-<cluster-name>`) responsible for deploying the Aurora Platform charts to the target cluster. This is the `platform-<cluster-name>` application that was synced when the cluster was onboarded in the <gcds-link href="{{< relref "/team/standard-operating-procedures/deploy-aurora-platform/" >}}">Deploy the Aurora Platform</gcds-link> SOP.
+Navigate to the management cluster's Argo CD portal and delete the platform App of Apps (`platform-<cluster-name>`) responsible for deploying the Aurora Platform charts to the target cluster. This is the `platform-<cluster-name>` application that was synced when the cluster was onboarded in the Deploy the Aurora Platform SOP.
 
 Select the **Background** deletion option. Wait until all child applications have been removed from the target cluster before proceeding.
 
